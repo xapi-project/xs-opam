@@ -1,0 +1,23 @@
+opam-version: "1"
+maintainer: "dave.scott@eu.citrix.com"
+build: [
+  [make "all"]
+  [make "install"]
+]
+remove: [
+  ["ocamlfind" "remove" "xcp"]
+]
+depends: [ "uri"
+           "re"
+           "cmdliner"
+           "cohttp" {>= "0.15.2"}
+           "xmlm"
+           "rpc" {>= "1.9.4"}
+           "ocamlfind"
+           "message-switch" {= "jonludlam#ppx"}
+           "xapi-stdext" {= "xapi-project#master"}
+           "xapi-rrd" {= "xapi-project#master"}
+           "xapi-inventory" {= "xapi-project#master"}
+           "xapi-backtrace" {= "mseri#ppx"}
+          ]
+

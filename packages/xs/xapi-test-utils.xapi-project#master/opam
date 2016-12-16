@@ -1,0 +1,17 @@
+opam-version: "1"
+maintainer: "rob.hoes@citrix.com"
+build: [
+  ["./configure"]
+  [make]
+  [make "install"]
+]
+remove: [
+  ["ocamlfind" "remove" "xapi-test-utils"]
+]
+depends: [
+  "oasis" {build}
+  "ounit"
+  "ocamlfind" {build}
+  "xapi-stdext" {= "xapi-project#master"}
+]
+tags: [ "org:xapi-project" ]

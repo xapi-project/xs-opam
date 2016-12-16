@@ -1,0 +1,24 @@
+opam-version: "1.2"
+maintainer: "jonathan.ludlam@citrix.com"
+authors: "xen-api@lists.xen.org"
+homepage: "https://xapi-project.github.io/"
+bug-reports: "https://github.com/xapi-project/netdev/issues"
+dev-repo: "git://github.com/xapi-project/netdev.git"
+build: [
+  ["oasis" "setup"]
+  [make]
+]
+install: [
+  [make "install" "BINDIR=%{bin}%"]
+]
+remove: [
+  [make "uninstall" "BINDIR=%{bin}%"]
+  ["ocamlfind" "remove" "netdev"]
+]
+available: [ os = "linux" ]
+depends: [
+  "ocamlfind"
+  "xapi-stdext" {>="2.0.0"}
+  "xapi-forkexecd"
+  "oasis" {build}
+]
