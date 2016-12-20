@@ -37,19 +37,22 @@ BuildRequires: xen-ocaml-devel
 
 
 %description
-An opam repository
+Opam repository that contains all libraries necessary to compile XenServer 
+Toolstack components.
 
 %prep
 
 %build
 
-UPSTREAM="$(ls -1 /usr/share/opam-repository/packages/upstream)"
-XS="$(ls -1 /usr/share/opam-repository/packages/xs)"
+# upstream libraries
+PKG=""
+PKG="$PKG $(ls -1 /usr/share/opam-repository/packages/upstream)"
+PKG="$PKG $(ls -1 /usr/share/opam-repository/packages/xs)"
 
 export OPAMROOT=/usr/lib/opamroot
 opam init -y 
 opam config exec -- opam repository add local file:///usr/share/opam-repository
-opam config exec -- opam install -y $UPSTREAM $XS
+opam config exec -- opam install -y $PKG
 
 %install
 mkdir -p %{buildroot}/usr/lib/opamroot/
@@ -61,6 +64,8 @@ rm -rf %{buildroot}/usr/lib/opamroot/system/build/*
 %exclude /usr/lib/opamroot/system/lib/*/*.cmt
 %exclude /usr/lib/opamroot/system/lib/*/*.cmti
 %exclude /usr/lib/opamroot/system/lib/*/*.annot
+%exclude /usr/lib/opamroot/repo/*/archives
+%exclude /usr/lib/opamroot/archives
 /usr/lib/opamroot
 
 %changelog
