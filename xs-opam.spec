@@ -5,7 +5,7 @@ Summary: Opam repository
 License: Various
 URL: http://localhost/src/
 
-Source000: xs-opam.tar.gz
+Source000: https://github.com/lindig/xs-opam/archive/master/xs-opam-master.tar.gz
 
 # generate this list with "make sources.spec"
 Source001: http://github.com/jonludlam/ocaml-rpc/archive/ppx2/ocaml-rpc.tar.gz
