@@ -1,170 +1,170 @@
 xs/rpc.jonludlam#ppx2                      http://github.com/jonludlam/ocaml-rpc/archive/ppx2/ocaml-rpc.tar.gz
 xs/shared-block-ring.jonludlam#ppx         http://github.com/jonludlam/shared-block-ring/archive/ppx/shared-block-ring.tar.gz
-xs/xapi-idl.jonludlam#ppx                  http://github.com/jonludlam/xcp-idl/archive/ppx/xcp-idl.tar.gz
-xs/xen-api-client.jonludlam#new-ocaml-rpc  http://github.com/jonludlam/xen-api-client/archive/new-ocaml-rpc/xen-api-client.tar.gz
-xs/systemd.xapi-project#master             http://github.com/juergenhoetzel/ocaml-systemd/archive/master/systemd.tar.gz
-xs/xapi-netdev.xapi-project#master         http://github.com/xapi-project/netdev/archive/master/xapi-netdev.tar.gz
-xs/xapi-stdext.xapi-project#master         http://github.com/xapi-project/stdext/archive/master/xapi-stdext.tar.gz
-xs/xapi-tapctl.xapi-project#master         http://github.com/xapi-project/tapctl/archive/master/xapi-tapctl.tar.gz
-xs/xapi-test-utils.xapi-project#master     http://github.com/xapi-project/xapi-test-utils/archive/master/xapi-test-utils.tar.gz
-xs/xapi-inventory.xapi-project#master      http://github.com/xapi-project/xcp-inventory/archive/master/xapi-inventory.tar.gz
-xs/xapi-rrd.xapi-project#master            http://github.com/xapi-project/xcp-rrd/archive/master/xcp-rrd.tar.gz
-xs/message-switch.jonludlam#ppx            https://github.com/jonludlam/message-switch/archive/v0.10.99/message-switch-v0.10.99.tar.gz
-xs/xapi-backtrace.mseri#ppx                https://github.com/mseri/backtrace/archive/ppx/xapi-backtrace.tar.gz
-xs/xapi-forkexecd.mseri#ppx                https://github.com/mseri/forkexecd/archive/ppx/xapi-forkexecd.tar.gz
-upstream/mirage-block.0.2                  http://github.com/mirage/mirage-block/archive/v0.2/mirage-block-v0.2.tar.gz
-upstream/bisect.1.3                        http://bisect.x9c.fr/distrib/bisect-1.3.tar.gz
-upstream/syslog.1.4                        http://deb.debian.org/debian/pool/main/s/syslog-ocaml/syslog-ocaml_1.4.orig.tar.gz
-upstream/ocamlfind.1.7.1                   http://download.camlcity.org/download/findlib-1.7.1.tar.gz
-upstream/uuseg.0.9.0                       http://erratique.ch/software/uuseg/releases/uuseg-0.9.0.tbz
-upstream/astring.0.8.3                     http://erratique.ch/software/astring/releases/astring-0.8.3.tbz
-upstream/bos.0.1.4                         http://erratique.ch/software/bos/releases/bos-0.1.4.tbz
-upstream/cmdliner.0.9.8                    http://erratique.ch/software/cmdliner/releases/cmdliner-0.9.8.tbz
-upstream/fmt.0.8.0                         http://erratique.ch/software/fmt/releases/fmt-0.8.0.tbz
-upstream/fpath.0.7.1                       http://erratique.ch/software/fpath/releases/fpath-0.7.1.tbz
-upstream/gg.0.9.1                          http://erratique.ch/software/gg/releases/gg-0.9.1.tbz
-upstream/jsonm.0.9.1                       http://erratique.ch/software/jsonm/releases/jsonm-0.9.1.tbz
-upstream/logs.0.6.2                        http://erratique.ch/software/logs/releases/logs-0.6.2.tbz
-xs/mtime.patched-0.8.1+no-js               http://erratique.ch/software/mtime/releases/mtime-0.8.1.tbz
-upstream/react.1.2.0                       http://erratique.ch/software/react/releases/react-1.2.0.tbz
-upstream/rresult.0.5.0                     http://erratique.ch/software/rresult/releases/rresult-0.5.0.tbz
-upstream/topkg.0.8.1                       http://erratique.ch/software/topkg/releases/topkg-0.8.1.tbz
-upstream/topkg-care.0.8.1                  http://erratique.ch/software/topkg/releases/topkg-0.8.1.tbz
-upstream/uucp.1.1.0                        http://erratique.ch/software/uucp/releases/uucp-1.1.0.tbz
-upstream/uuidm.0.9.6                       http://erratique.ch/software/uuidm/releases/uuidm-0.9.6.tbz
-upstream/uutf.0.9.4                        http://erratique.ch/software/uutf/releases/uutf-0.9.4.tbz
-upstream/vg.0.8.2                          http://erratique.ch/software/vg/releases/vg-0.8.2.tbz
-upstream/webbrowser.0.6.1                  http://erratique.ch/software/webbrowser/releases/webbrowser-0.6.1.tbz
-upstream/xmlm.1.2.0                        http://erratique.ch/software/xmlm/releases/xmlm-1.2.0.tbz
-upstream/ounit.2.0.0                       http://forge.ocamlcore.org/frs/download.php/1258/ounit-2.0.0.tar.gz
-upstream/ocamlify.0.0.1                    http://forge.ocamlcore.org/frs/download.php/379/ocamlify-0.0.1.tar.gz
-upstream/menhir.20161115                   http://gallium.inria.fr/~fpottier/menhir/menhir-20161115.tar.gz
-upstream/typerex-build.1.99.17-beta        http://github.com/OCamlPro/typerex-build/archive/1.99.17-beta/typerex-build-1.99.17-beta.tar.gz
-upstream/ocamlgraph.1.8.5                  http://ocamlgraph.lri.fr/download/ocamlgraph-1.8.5.tar.gz
-upstream/omd.1.3.0                         http://pw374.github.io/distrib/omd/omd-1.3.0.tar.gz
-upstream/ocamlmod.0.0.8                    https://forge.ocamlcore.org/frs/download.php/1544/ocamlmod-0.0.8.tar.gz
-upstream/zarith.1.4.1                      https://forge.ocamlcore.org/frs/download.php/1574/zarith-1.4.1.tgz
-upstream/camlzip.1.06                      https://forge.ocamlcore.org/frs/download.php/1616/camlzip-1.06.tar.gz
-upstream/cryptokit.1.11                    https://forge.ocamlcore.org/frs/download.php/1618/cryptokit-1.11.tar.gz
-upstream/oasis.0.4.8                       https://forge.ocamlcore.org/frs/download.php/1669/oasis-0.4.8.tar.gz
-upstream/cudf.0.7                          https://gforge.inria.fr/frs/download.php/33593/cudf-0.7.tar.gz
-upstream/dose.3.2.2+opam                   https://gforge.inria.fr/frs/download.php/file/33677/dose3-3.2.2.tar.gz
-upstream/bisect_ppx.1.2.0                  https://github.com/aantron/bisect_ppx/archive/1.2.0/bisect_ppx-1.2.0.tar.gz
-upstream/lambdasoup.0.6                    https://github.com/aantron/lambda-soup/archive/0.6/lambda-soup-0.6.tar.gz
-upstream/markup.0.7.2                      https://github.com/aantron/markup.ml/archive/0.7.2/markup.ml-0.7.2.tar.gz
-upstream/ppx_tools.5.0+4.02.0              https://github.com/alainfrisch/ppx_tools/archive/5.0+4.02.0/ppx_tools-5.0+4.02.0.tar.gz
-upstream/ezxmlm.1.0.1                      https://github.com/avsm/ezxmlm/archive/v1.0.1/ezxmlm-v1.0.1.tar.gz
-upstream/hashcons.1.2                      https://github.com/backtracking/ocaml-hashcons/archive/1.2/ocaml-hashcons-1.2.tar.gz
-upstream/csv.1.5                           https://github.com/Chris00/ocaml-csv/releases/download/1.5/csv-1.5.tar.gz
-upstream/lambda-term.1.10.1                https://github.com/diml/lambda-term/archive/1.10.1/lambda-term-1.10.1.tar.gz
-upstream/utop.1.19.3                       https://github.com/diml/utop/archive/1.19.3/utop-1.19.3.tar.gz
-upstream/zed.1.4                           https://github.com/diml/zed/archive/1.4/zed-1.4.tar.gz
-upstream/cryptohash.0.1.1                  https://github.com/fdopen/cryptohash/releases/download/0.1.1/cryptohash-0.1.1.tar.gz
-upstream/angstrom.0.1.1                    https://github.com/inhabitedtype/angstrom/archive/0.1.1/angstrom-0.1.1.tar.gz
-upstream/result.1.2                        https://github.com/janestreet/result/archive/1.2/result-1.2.tar.gz
-xs/message-switch.jonludlam#ppx            https://github.com/jonludlam/message-switch/archive/v0.10.99/message-switch-v0.10.99.tar.gz
-upstream/lipsum.0.2                        https://github.com/lindig/lipsum/archive/v0.2/lipsum-0.2.zip
-upstream/ezjsonm.0.4.3                     https://github.com/mirage/ezjsonm/archive/0.4.3/ezjsonm-0.4.3.tar.gz
-upstream/functoria.1.1.1                   https://github.com/mirage/functoria/archive/1.1.1/functoria-1.1.1.tar.gz
-upstream/io-page-unix.0.9.9                https://github.com/mirage/io-page/archive/v0.9.9/io-page-v0.9.9.tar.gz
-upstream/io-page.1.6.1                     https://github.com/mirage/io-page/archive/v1.6.1/io-page-v1.6.1.tar.gz
-upstream/irmin.0.12.0                      https://github.com/mirage/irmin/releases/download/0.12.0/irmin-0.12.0.tbz
-upstream/mirage-types.2.8.0                https://github.com/mirage/mirage/archive/v2.8.0/mirage-v2.8.0.tar.gz
-upstream/mirage-block-unix.2.4.0           https://github.com/mirage/mirage-block-unix/archive/v2.4.0/mirage-block-unix-v2.4.0.tar.gz
-upstream/channel.1.1.1                     https://github.com/mirage/mirage-channel/releases/download/v1.1.1/channel-1.1.1.tbz
-upstream/mirage-clock-unix.1.0.0           https://github.com/mirage/mirage-clock/archive/v1.0.0/mirage-clock-v1.0.0.tar.gz
-upstream/mirage-console.2.1.3              https://github.com/mirage/mirage-console/archive/v2.1.3/mirage-console-v2.1.3.tar.gz
-upstream/mirage-flow.1.1.0                 https://github.com/mirage/mirage-flow/archive/v1.1.0/mirage-flow-v1.1.0.tar.gz
-upstream/mirage-http.2.5.3                 https://github.com/mirage/mirage-http/releases/download/2.5.3/mirage-http-2.5.3.tbz
-upstream/mirage-unix.2.6.0                 https://github.com/mirage/mirage-platform/archive/v2.6.0/mirage-platform-v2.6.0.tar.gz
-upstream/mirage-profile.0.7.0              https://github.com/mirage/mirage-profile/archive/v0.7.0/mirage-profile-v0.7.0.tar.gz
-upstream/mirage-tc.0.3.0                   https://github.com/mirage/mirage-tc/archive/0.3.0/mirage-0.3.0.tar.gz
-upstream/tcpip.2.8.1                       https://github.com/mirage/mirage-tcpip/archive/v2.8.1/mirage-tcpip-v2.8.1.tar.gz
-upstream/base64.2.1.2                      https://github.com/mirage/ocaml-base64/releases/download/v2.1.2/base64-2.1.2.tbz
-upstream/cohttp.0.21.0                     https://github.com/mirage/ocaml-cohttp/archive/v0.21.0/ocaml-cohttp-v0.21.0.tar.gz
-upstream/conduit.0.13.0                    https://github.com/mirage/ocaml-conduit/archive/v0.13.0/ocaml-conduit-v0.13.0.tar.gz
-upstream/cow.2.2.0                         https://github.com/mirage/ocaml-cow/releases/download/v2.2.0/cow-2.2.0.tbz
-upstream/crunch.1.4.1                      https://github.com/mirage/ocaml-crunch/archive/v1.4.1/ocaml-crunch-v1.4.1.tar.gz
-upstream/cstruct.2.3.0                     https://github.com/mirage/ocaml-cstruct/archive/v2.3.0/ocaml-cstruct-v2.3.0.tar.gz
-upstream/dns.0.18.1                        https://github.com/mirage/ocaml-dns/archive/v0.18.1/ocaml-dns-v0.18.1.tar.gz
-upstream/git.1.8.0                         https://github.com/mirage/ocaml-git/archive/1.8.0/ocaml-git-1.8.0.tar.gz
-upstream/hex.1.0.0                         https://github.com/mirage/ocaml-hex/archive/1.0.0/ocaml-hex-1.0.0.tar.gz
-upstream/ipaddr.2.7.1                      https://github.com/mirage/ocaml-ipaddr/releases/download/2.7.1/ipaddr-2.7.1.tbz
-upstream/magic-mime.1.0.0                  https://github.com/mirage/ocaml-magic-mime/archive/v1.0.0/ocaml-magic-mime-v1.0.0.tar.gz
-upstream/mstruct.1.3.2                     https://github.com/mirage/ocaml-mstruct/archive/1.3.2/ocaml-mstruct-1.3.2.tar.gz
-upstream/uri.1.9.2                         https://github.com/mirage/ocaml-uri/archive/v1.9.2/ocaml-uri-v1.9.2.tar.gz
-upstream/vhd-format.0.8.0                  https://github.com/mirage/ocaml-vhd/archive/v0.8.0/ocaml-vhd-v0.8.0.tar.gz
-upstream/shared-memory-ring.1.3.0          https://github.com/mirage/shared-memory-ring/archive/v1.3.0/shared-memory-ring-v1.3.0.tar.gz
-upstream/nocrypto.0.5.3                    https://github.com/mirleft/ocaml-nocrypto/archive/v0.5.3/ocaml-nocrypto-v0.5.3.tar.gz
-upstream/biniou.1.0.12                     https://github.com/mjambon/biniou/archive/v1.0.12/biniou-v1.0.12.tar.gz
-upstream/cppo.1.4.1                        https://github.com/mjambon/cppo/archive/v1.4.1/cppo-v1.4.1.tar.gz
-upstream/easy-format.1.2.0                 https://github.com/mjambon/easy-format/archive/v1.2.0/easy-format-v1.2.0.tar.gz
-upstream/ocamlscript.2.0.4                 https://github.com/mjambon/ocamlscript/archive/v2.0.4/ocamlscript-v2.0.4.tar.gz
-upstream/yojson.1.3.3                      https://github.com/mjambon/yojson/archive/v1.3.3/yojson-v1.3.3.tar.gz
-upstream/camlp4.4.02+system                https://github.com/ocaml/camlp4/archive/system.0.tar.gz
-upstream/ctypes.0.11.1                     https://github.com/ocamllabs/ocaml-ctypes/archive/0.11.1/ocaml-ctypes-0.11.1.tar.gz
-upstream/re.1.7.1                          https://github.com/ocaml/ocaml-re/archive/1.7.1/ocaml-re-1.7.1.tar.gz
-upstream/omake.0.10.1                      https://github.com/ocaml-omake/omake/archive/omake-0.10.1.tar.gz
-upstream/opam-lib.1.2.2                    https://github.com/ocaml/opam/archive/1.2.2/opam-1.2.2.tar.gz
-upstream/depext.1.0.2                      https://github.com/ocaml/opam-depext/archive/1.0.2/opam-depext-1.0.2.tar.gz
-upstream/ocp-indent.1.5.3                  https://github.com/OCamlPro/ocp-indent/archive/1.5.3/ocp-indent-1.5.3.tar.gz
-upstream/ocplib-endian.1.0                 https://github.com/OCamlPro/ocplib-endian/archive/1.0/ocplib-endian-1.0.tar.gz
-upstream/user-setup.0.6                    https://github.com/OCamlPro/opam-user-setup/archive/0.6/opam-user-setup-0.6.tar.gz
-upstream/uchar.0.0.1                       https://github.com/ocaml/uchar/releases/download/v0.0.1/uchar-0.0.1.tbz
-upstream/js_of_ocaml.2.8.3                 https://github.com/ocsigen/js_of_ocaml/archive/2.8.3/js_of_ocaml-2.8.3.tar.gz
-upstream/lwt.2.6.0                         https://github.com/ocsigen/lwt/archive/2.6.0/lwt-2.6.0.tar.gz
-upstream/notty.0.1.1                       https://github.com/pqwy/notty/archive/v0.1.1/notty-v0.1.1.tar.gz
-upstream/ocb-stubblr.0.1.0                 https://github.com/pqwy/ocb-stubblr/releases/download/v0.1.0/ocb-stubblr-0.1.0.tbz
-upstream/stringext.1.4.3                   https://github.com/rgrinberg/stringext/archive/v1.4.3/stringext-v1.4.3.tar.gz
-upstream/ocveralls.0.3.4                   https://github.com/sagotch/ocveralls/archive/3.3.4/ocveralls-3.3.4.tar.gz
-upstream/irmin-watcher.0.2.0               https://github.com/samoht/irmin-watcher/releases/download/0.2.0/irmin-watcher-0.2.0.tbz
-upstream/ssl.0.5.3                         https://github.com/savonet/ocaml-ssl/releases/download/0.5.3/ocaml-ssl-0.5.3.tar.gz
-upstream/pci.1.0.0                         https://github.com/simonjbeaumont/ocaml-pci/archive/v1.0.0/ocaml-pci-v1.0.0.tar.gz
-upstream/merlin.2.5.3                      https://github.com/the-lambda-church/merlin/archive/v2.5.3/merlin-v2.5.3.tar.gz
-upstream/sha.1.9                           https://github.com/vincenthz/ocaml-sha/archive/ocaml-sha-v1.9.tar.gz
-upstream/ppx_deriving.4.1                  https://github.com/whitequark/ppx_deriving/archive/v4.1/ppx_deriving-v4.1.tar.gz
-upstream/ppx_deriving_yojson.3.0           https://github.com/whitequark/ppx_deriving_yojson/archive/v3.0/ppx_deriving_yojson-v3.0.tar.gz
-upstream/ppx_import.1.1                    https://github.com/whitequark/ppx_import/archive/v1.1/ppx_import-v1.1.tar.gz
-upstream/crc.1.0.0                         https://github.com/xapi-project/ocaml-crc/archive/1.0.0/ocaml-crc-1.0.0.tar.gz
-upstream/netlink.0.2.1                     https://github.com/xapi-project/ocaml-netlink/archive/v0.2.1/ocaml-netlink-v0.2.1.tar.gz
-upstream/opasswd.1.0.1                     https://github.com/xapi-project/ocaml-opasswd/archive/v1.0.1/ocaml-opasswd-1.0.1.tar.gz
-upstream/fd-send-recv.1.0.1                https://github.com/xen-org/ocaml-fd-send-recv/archive/ocaml-fd-send-recv-1.0.1.tar.gz
-upstream/camomile.0.8.5                    https://github.com/yoriyuki/Camomile/releases/download/rel-0.8.5/camomile-0.8.5.tar.bz2
-upstream/type_conv.113.00.02               https://ocaml.janestreet.com/ocaml-core/113.00/files/type_conv-113.00.02.tar.gz
-upstream/async.113.33.03                   https://ocaml.janestreet.com/ocaml-core/113.33/files/async-113.33.03.tar.gz
-upstream/async_extra.113.33.03             https://ocaml.janestreet.com/ocaml-core/113.33/files/async_extra-113.33.03.tar.gz
-upstream/async_kernel.113.33.03            https://ocaml.janestreet.com/ocaml-core/113.33/files/async_kernel-113.33.03.tar.gz
-upstream/async_rpc_kernel.113.33.03        https://ocaml.janestreet.com/ocaml-core/113.33/files/async_rpc_kernel-113.33.03.tar.gz
-upstream/async_unix.113.33.03              https://ocaml.janestreet.com/ocaml-core/113.33/files/async_unix-113.33.03.tar.gz
-upstream/bin_prot.113.33.03                https://ocaml.janestreet.com/ocaml-core/113.33/files/bin_prot-113.33.03.tar.gz
-upstream/core.113.33.03                    https://ocaml.janestreet.com/ocaml-core/113.33/files/core-113.33.03.tar.gz
-upstream/core_kernel.113.33.03             https://ocaml.janestreet.com/ocaml-core/113.33/files/core_kernel-113.33.03.tar.gz
-upstream/fieldslib.113.33.03               https://ocaml.janestreet.com/ocaml-core/113.33/files/fieldslib-113.33.03.tar.gz
-upstream/js-build-tools.113.33.04          https://ocaml.janestreet.com/ocaml-core/113.33/files/js-build-tools-113.33.04.tar.gz
-upstream/ppx_assert.113.33.03              https://ocaml.janestreet.com/ocaml-core/113.33/files/ppx_assert-113.33.03.tar.gz
-upstream/ppx_bench.113.33.03               https://ocaml.janestreet.com/ocaml-core/113.33/files/ppx_bench-113.33.03.tar.gz
-upstream/ppx_bin_prot.113.33.03            https://ocaml.janestreet.com/ocaml-core/113.33/files/ppx_bin_prot-113.33.03.tar.gz
-upstream/ppx_compare.113.33.03             https://ocaml.janestreet.com/ocaml-core/113.33/files/ppx_compare-113.33.03.tar.gz
-upstream/ppx_core.113.33.03                https://ocaml.janestreet.com/ocaml-core/113.33/files/ppx_core-113.33.03.tar.gz
-upstream/ppx_custom_printf.113.33.03       https://ocaml.janestreet.com/ocaml-core/113.33/files/ppx_custom_printf-113.33.03.tar.gz
-upstream/ppx_driver.113.33.03              https://ocaml.janestreet.com/ocaml-core/113.33/files/ppx_driver-113.33.03.tar.gz
-upstream/ppx_enumerate.113.33.03           https://ocaml.janestreet.com/ocaml-core/113.33/files/ppx_enumerate-113.33.03.tar.gz
-upstream/ppx_expect.113.33.03              https://ocaml.janestreet.com/ocaml-core/113.33/files/ppx_expect-113.33.03.tar.gz
-upstream/ppx_fail.113.33.03                https://ocaml.janestreet.com/ocaml-core/113.33/files/ppx_fail-113.33.03.tar.gz
-upstream/ppx_fields_conv.113.33.03         https://ocaml.janestreet.com/ocaml-core/113.33/files/ppx_fields_conv-113.33.03.tar.gz
-upstream/ppx_here.113.33.03                https://ocaml.janestreet.com/ocaml-core/113.33/files/ppx_here-113.33.03.tar.gz
-upstream/ppx_inline_test.113.33.03         https://ocaml.janestreet.com/ocaml-core/113.33/files/ppx_inline_test-113.33.03.tar.gz
-upstream/ppx_jane.113.33.03                https://ocaml.janestreet.com/ocaml-core/113.33/files/ppx_jane-113.33.03.tar.gz
-upstream/ppx_let.113.33.03                 https://ocaml.janestreet.com/ocaml-core/113.33/files/ppx_let-113.33.03.tar.gz
-upstream/ppx_optcomp.113.33.03             https://ocaml.janestreet.com/ocaml-core/113.33/files/ppx_optcomp-113.33.03.tar.gz
-upstream/ppx_pipebang.113.33.03            https://ocaml.janestreet.com/ocaml-core/113.33/files/ppx_pipebang-113.33.03.tar.gz
-upstream/ppx_sexp_conv.113.33.03           https://ocaml.janestreet.com/ocaml-core/113.33/files/ppx_sexp_conv-113.33.03.tar.gz
-upstream/ppx_sexp_message.113.33.03        https://ocaml.janestreet.com/ocaml-core/113.33/files/ppx_sexp_message-113.33.03.tar.gz
-upstream/ppx_sexp_value.113.33.03          https://ocaml.janestreet.com/ocaml-core/113.33/files/ppx_sexp_value-113.33.03.tar.gz
-upstream/ppx_type_conv.113.33.03           https://ocaml.janestreet.com/ocaml-core/113.33/files/ppx_type_conv-113.33.03.tar.gz
-upstream/ppx_typerep_conv.113.33.03        https://ocaml.janestreet.com/ocaml-core/113.33/files/ppx_typerep_conv-113.33.03.tar.gz
-upstream/ppx_variants_conv.113.33.03       https://ocaml.janestreet.com/ocaml-core/113.33/files/ppx_variants_conv-113.33.03.tar.gz
-upstream/sexplib.113.33.03                 https://ocaml.janestreet.com/ocaml-core/113.33/files/sexplib-113.33.03.tar.gz
-upstream/typerep.113.33.03                 https://ocaml.janestreet.com/ocaml-core/113.33/files/typerep-113.33.03.tar.gz
-upstream/variantslib.113.33.03             https://ocaml.janestreet.com/ocaml-core/113.33/files/variantslib-113.33.03.tar.gz
-upstream/extlib.1.7.1                      http://ygrek.org.ua/p/release/ocaml-extlib/extlib-1.7.1.tar.gz
+# xs/xapi-idl.jonludlam#ppx                  http://github.com/jonludlam/xcp-idl/archive/ppx/xcp-idl.tar.gz
+# xs/xen-api-client.jonludlam#new-ocaml-rpc  http://github.com/jonludlam/xen-api-client/archive/new-ocaml-rpc/xen-api-client.tar.gz
+# xs/systemd.xapi-project#master             http://github.com/juergenhoetzel/ocaml-systemd/archive/master/systemd.tar.gz
+# xs/xapi-netdev.xapi-project#master         http://github.com/xapi-project/netdev/archive/master/xapi-netdev.tar.gz
+# xs/xapi-stdext.xapi-project#master         http://github.com/xapi-project/stdext/archive/master/xapi-stdext.tar.gz
+# xs/xapi-tapctl.xapi-project#master         http://github.com/xapi-project/tapctl/archive/master/xapi-tapctl.tar.gz
+# xs/xapi-test-utils.xapi-project#master     http://github.com/xapi-project/xapi-test-utils/archive/master/xapi-test-utils.tar.gz
+# xs/xapi-inventory.xapi-project#master      http://github.com/xapi-project/xcp-inventory/archive/master/xapi-inventory.tar.gz
+# xs/xapi-rrd.xapi-project#master            http://github.com/xapi-project/xcp-rrd/archive/master/xcp-rrd.tar.gz
+# xs/message-switch.jonludlam#ppx            https://github.com/jonludlam/message-switch/archive/v0.10.99/message-switch-v0.10.99.tar.gz
+# xs/xapi-backtrace.mseri#ppx                https://github.com/mseri/backtrace/archive/ppx/xapi-backtrace.tar.gz
+# xs/xapi-forkexecd.mseri#ppx                https://github.com/mseri/forkexecd/archive/ppx/xapi-forkexecd.tar.gz
+# upstream/mirage-block.0.2                  http://github.com/mirage/mirage-block/archive/v0.2/mirage-block-v0.2.tar.gz
+# upstream/bisect.1.3                        http://bisect.x9c.fr/distrib/bisect-1.3.tar.gz
+# upstream/syslog.1.4                        http://deb.debian.org/debian/pool/main/s/syslog-ocaml/syslog-ocaml_1.4.orig.tar.gz
+# upstream/ocamlfind.1.7.1                   http://download.camlcity.org/download/findlib-1.7.1.tar.gz
+# upstream/uuseg.0.9.0                       http://erratique.ch/software/uuseg/releases/uuseg-0.9.0.tbz
+# upstream/astring.0.8.3                     http://erratique.ch/software/astring/releases/astring-0.8.3.tbz
+# upstream/bos.0.1.4                         http://erratique.ch/software/bos/releases/bos-0.1.4.tbz
+# upstream/cmdliner.0.9.8                    http://erratique.ch/software/cmdliner/releases/cmdliner-0.9.8.tbz
+# upstream/fmt.0.8.0                         http://erratique.ch/software/fmt/releases/fmt-0.8.0.tbz
+# upstream/fpath.0.7.1                       http://erratique.ch/software/fpath/releases/fpath-0.7.1.tbz
+# upstream/gg.0.9.1                          http://erratique.ch/software/gg/releases/gg-0.9.1.tbz
+# upstream/jsonm.0.9.1                       http://erratique.ch/software/jsonm/releases/jsonm-0.9.1.tbz
+# upstream/logs.0.6.2                        http://erratique.ch/software/logs/releases/logs-0.6.2.tbz
+# xs/mtime.patched-0.8.1+no-js               http://erratique.ch/software/mtime/releases/mtime-0.8.1.tbz
+# upstream/react.1.2.0                       http://erratique.ch/software/react/releases/react-1.2.0.tbz
+# upstream/rresult.0.5.0                     http://erratique.ch/software/rresult/releases/rresult-0.5.0.tbz
+# upstream/topkg.0.8.1                       http://erratique.ch/software/topkg/releases/topkg-0.8.1.tbz
+# upstream/topkg-care.0.8.1                  http://erratique.ch/software/topkg/releases/topkg-0.8.1.tbz
+# upstream/uucp.1.1.0                        http://erratique.ch/software/uucp/releases/uucp-1.1.0.tbz
+# upstream/uuidm.0.9.6                       http://erratique.ch/software/uuidm/releases/uuidm-0.9.6.tbz
+# upstream/uutf.0.9.4                        http://erratique.ch/software/uutf/releases/uutf-0.9.4.tbz
+# upstream/vg.0.8.2                          http://erratique.ch/software/vg/releases/vg-0.8.2.tbz
+# upstream/webbrowser.0.6.1                  http://erratique.ch/software/webbrowser/releases/webbrowser-0.6.1.tbz
+# upstream/xmlm.1.2.0                        http://erratique.ch/software/xmlm/releases/xmlm-1.2.0.tbz
+# upstream/ounit.2.0.0                       http://forge.ocamlcore.org/frs/download.php/1258/ounit-2.0.0.tar.gz
+# upstream/ocamlify.0.0.1                    http://forge.ocamlcore.org/frs/download.php/379/ocamlify-0.0.1.tar.gz
+# upstream/menhir.20161115                   http://gallium.inria.fr/~fpottier/menhir/menhir-20161115.tar.gz
+# upstream/typerex-build.1.99.17-beta        http://github.com/OCamlPro/typerex-build/archive/1.99.17-beta/typerex-build-1.99.17-beta.tar.gz
+# upstream/ocamlgraph.1.8.5                  http://ocamlgraph.lri.fr/download/ocamlgraph-1.8.5.tar.gz
+# upstream/omd.1.3.0                         http://pw374.github.io/distrib/omd/omd-1.3.0.tar.gz
+# upstream/ocamlmod.0.0.8                    https://forge.ocamlcore.org/frs/download.php/1544/ocamlmod-0.0.8.tar.gz
+# upstream/zarith.1.4.1                      https://forge.ocamlcore.org/frs/download.php/1574/zarith-1.4.1.tgz
+# upstream/camlzip.1.06                      https://forge.ocamlcore.org/frs/download.php/1616/camlzip-1.06.tar.gz
+# upstream/cryptokit.1.11                    https://forge.ocamlcore.org/frs/download.php/1618/cryptokit-1.11.tar.gz
+# upstream/oasis.0.4.8                       https://forge.ocamlcore.org/frs/download.php/1669/oasis-0.4.8.tar.gz
+# upstream/cudf.0.7                          https://gforge.inria.fr/frs/download.php/33593/cudf-0.7.tar.gz
+# upstream/dose.3.2.2+opam                   https://gforge.inria.fr/frs/download.php/file/33677/dose3-3.2.2.tar.gz
+# upstream/bisect_ppx.1.2.0                  https://github.com/aantron/bisect_ppx/archive/1.2.0/bisect_ppx-1.2.0.tar.gz
+# upstream/lambdasoup.0.6                    https://github.com/aantron/lambda-soup/archive/0.6/lambda-soup-0.6.tar.gz
+# upstream/markup.0.7.2                      https://github.com/aantron/markup.ml/archive/0.7.2/markup.ml-0.7.2.tar.gz
+# upstream/ppx_tools.5.0+4.02.0              https://github.com/alainfrisch/ppx_tools/archive/5.0+4.02.0/ppx_tools-5.0+4.02.0.tar.gz
+# upstream/ezxmlm.1.0.1                      https://github.com/avsm/ezxmlm/archive/v1.0.1/ezxmlm-v1.0.1.tar.gz
+# upstream/hashcons.1.2                      https://github.com/backtracking/ocaml-hashcons/archive/1.2/ocaml-hashcons-1.2.tar.gz
+# upstream/csv.1.5                           https://github.com/Chris00/ocaml-csv/releases/download/1.5/csv-1.5.tar.gz
+# upstream/lambda-term.1.10.1                https://github.com/diml/lambda-term/archive/1.10.1/lambda-term-1.10.1.tar.gz
+# upstream/utop.1.19.3                       https://github.com/diml/utop/archive/1.19.3/utop-1.19.3.tar.gz
+# upstream/zed.1.4                           https://github.com/diml/zed/archive/1.4/zed-1.4.tar.gz
+# upstream/cryptohash.0.1.1                  https://github.com/fdopen/cryptohash/releases/download/0.1.1/cryptohash-0.1.1.tar.gz
+# upstream/angstrom.0.1.1                    https://github.com/inhabitedtype/angstrom/archive/0.1.1/angstrom-0.1.1.tar.gz
+# upstream/result.1.2                        https://github.com/janestreet/result/archive/1.2/result-1.2.tar.gz
+# xs/message-switch.jonludlam#ppx            https://github.com/jonludlam/message-switch/archive/v0.10.99/message-switch-v0.10.99.tar.gz
+# upstream/lipsum.0.2                        https://github.com/lindig/lipsum/archive/v0.2/lipsum-0.2.zip
+# upstream/ezjsonm.0.4.3                     https://github.com/mirage/ezjsonm/archive/0.4.3/ezjsonm-0.4.3.tar.gz
+# upstream/functoria.1.1.1                   https://github.com/mirage/functoria/archive/1.1.1/functoria-1.1.1.tar.gz
+# upstream/io-page-unix.0.9.9                https://github.com/mirage/io-page/archive/v0.9.9/io-page-v0.9.9.tar.gz
+# upstream/io-page.1.6.1                     https://github.com/mirage/io-page/archive/v1.6.1/io-page-v1.6.1.tar.gz
+# upstream/irmin.0.12.0                      https://github.com/mirage/irmin/releases/download/0.12.0/irmin-0.12.0.tbz
+# upstream/mirage-types.2.8.0                https://github.com/mirage/mirage/archive/v2.8.0/mirage-v2.8.0.tar.gz
+# upstream/mirage-block-unix.2.4.0           https://github.com/mirage/mirage-block-unix/archive/v2.4.0/mirage-block-unix-v2.4.0.tar.gz
+# upstream/channel.1.1.1                     https://github.com/mirage/mirage-channel/releases/download/v1.1.1/channel-1.1.1.tbz
+# upstream/mirage-clock-unix.1.0.0           https://github.com/mirage/mirage-clock/archive/v1.0.0/mirage-clock-v1.0.0.tar.gz
+# upstream/mirage-console.2.1.3              https://github.com/mirage/mirage-console/archive/v2.1.3/mirage-console-v2.1.3.tar.gz
+# upstream/mirage-flow.1.1.0                 https://github.com/mirage/mirage-flow/archive/v1.1.0/mirage-flow-v1.1.0.tar.gz
+# upstream/mirage-http.2.5.3                 https://github.com/mirage/mirage-http/releases/download/2.5.3/mirage-http-2.5.3.tbz
+# upstream/mirage-unix.2.6.0                 https://github.com/mirage/mirage-platform/archive/v2.6.0/mirage-platform-v2.6.0.tar.gz
+# upstream/mirage-profile.0.7.0              https://github.com/mirage/mirage-profile/archive/v0.7.0/mirage-profile-v0.7.0.tar.gz
+# upstream/mirage-tc.0.3.0                   https://github.com/mirage/mirage-tc/archive/0.3.0/mirage-0.3.0.tar.gz
+# upstream/tcpip.2.8.1                       https://github.com/mirage/mirage-tcpip/archive/v2.8.1/mirage-tcpip-v2.8.1.tar.gz
+# upstream/base64.2.1.2                      https://github.com/mirage/ocaml-base64/releases/download/v2.1.2/base64-2.1.2.tbz
+# upstream/cohttp.0.21.0                     https://github.com/mirage/ocaml-cohttp/archive/v0.21.0/ocaml-cohttp-v0.21.0.tar.gz
+# upstream/conduit.0.13.0                    https://github.com/mirage/ocaml-conduit/archive/v0.13.0/ocaml-conduit-v0.13.0.tar.gz
+# upstream/cow.2.2.0                         https://github.com/mirage/ocaml-cow/releases/download/v2.2.0/cow-2.2.0.tbz
+# upstream/crunch.1.4.1                      https://github.com/mirage/ocaml-crunch/archive/v1.4.1/ocaml-crunch-v1.4.1.tar.gz
+# upstream/cstruct.2.3.0                     https://github.com/mirage/ocaml-cstruct/archive/v2.3.0/ocaml-cstruct-v2.3.0.tar.gz
+# upstream/dns.0.18.1                        https://github.com/mirage/ocaml-dns/archive/v0.18.1/ocaml-dns-v0.18.1.tar.gz
+# upstream/git.1.8.0                         https://github.com/mirage/ocaml-git/archive/1.8.0/ocaml-git-1.8.0.tar.gz
+# upstream/hex.1.0.0                         https://github.com/mirage/ocaml-hex/archive/1.0.0/ocaml-hex-1.0.0.tar.gz
+# upstream/ipaddr.2.7.1                      https://github.com/mirage/ocaml-ipaddr/releases/download/2.7.1/ipaddr-2.7.1.tbz
+# upstream/magic-mime.1.0.0                  https://github.com/mirage/ocaml-magic-mime/archive/v1.0.0/ocaml-magic-mime-v1.0.0.tar.gz
+# upstream/mstruct.1.3.2                     https://github.com/mirage/ocaml-mstruct/archive/1.3.2/ocaml-mstruct-1.3.2.tar.gz
+# upstream/uri.1.9.2                         https://github.com/mirage/ocaml-uri/archive/v1.9.2/ocaml-uri-v1.9.2.tar.gz
+# upstream/vhd-format.0.8.0                  https://github.com/mirage/ocaml-vhd/archive/v0.8.0/ocaml-vhd-v0.8.0.tar.gz
+# upstream/shared-memory-ring.1.3.0          https://github.com/mirage/shared-memory-ring/archive/v1.3.0/shared-memory-ring-v1.3.0.tar.gz
+# upstream/nocrypto.0.5.3                    https://github.com/mirleft/ocaml-nocrypto/archive/v0.5.3/ocaml-nocrypto-v0.5.3.tar.gz
+# upstream/biniou.1.0.12                     https://github.com/mjambon/biniou/archive/v1.0.12/biniou-v1.0.12.tar.gz
+# upstream/cppo.1.4.1                        https://github.com/mjambon/cppo/archive/v1.4.1/cppo-v1.4.1.tar.gz
+# upstream/easy-format.1.2.0                 https://github.com/mjambon/easy-format/archive/v1.2.0/easy-format-v1.2.0.tar.gz
+# upstream/ocamlscript.2.0.4                 https://github.com/mjambon/ocamlscript/archive/v2.0.4/ocamlscript-v2.0.4.tar.gz
+# upstream/yojson.1.3.3                      https://github.com/mjambon/yojson/archive/v1.3.3/yojson-v1.3.3.tar.gz
+# upstream/camlp4.4.02+system                https://github.com/ocaml/camlp4/archive/system.0.tar.gz
+# upstream/ctypes.0.11.1                     https://github.com/ocamllabs/ocaml-ctypes/archive/0.11.1/ocaml-ctypes-0.11.1.tar.gz
+# upstream/re.1.7.1                          https://github.com/ocaml/ocaml-re/archive/1.7.1/ocaml-re-1.7.1.tar.gz
+# upstream/omake.0.10.1                      https://github.com/ocaml-omake/omake/archive/omake-0.10.1.tar.gz
+# upstream/opam-lib.1.2.2                    https://github.com/ocaml/opam/archive/1.2.2/opam-1.2.2.tar.gz
+# upstream/depext.1.0.2                      https://github.com/ocaml/opam-depext/archive/1.0.2/opam-depext-1.0.2.tar.gz
+# upstream/ocp-indent.1.5.3                  https://github.com/OCamlPro/ocp-indent/archive/1.5.3/ocp-indent-1.5.3.tar.gz
+# upstream/ocplib-endian.1.0                 https://github.com/OCamlPro/ocplib-endian/archive/1.0/ocplib-endian-1.0.tar.gz
+# upstream/user-setup.0.6                    https://github.com/OCamlPro/opam-user-setup/archive/0.6/opam-user-setup-0.6.tar.gz
+# upstream/uchar.0.0.1                       https://github.com/ocaml/uchar/releases/download/v0.0.1/uchar-0.0.1.tbz
+# upstream/js_of_ocaml.2.8.3                 https://github.com/ocsigen/js_of_ocaml/archive/2.8.3/js_of_ocaml-2.8.3.tar.gz
+# upstream/lwt.2.6.0                         https://github.com/ocsigen/lwt/archive/2.6.0/lwt-2.6.0.tar.gz
+# upstream/notty.0.1.1                       https://github.com/pqwy/notty/archive/v0.1.1/notty-v0.1.1.tar.gz
+# upstream/ocb-stubblr.0.1.0                 https://github.com/pqwy/ocb-stubblr/releases/download/v0.1.0/ocb-stubblr-0.1.0.tbz
+# upstream/stringext.1.4.3                   https://github.com/rgrinberg/stringext/archive/v1.4.3/stringext-v1.4.3.tar.gz
+# upstream/ocveralls.0.3.4                   https://github.com/sagotch/ocveralls/archive/3.3.4/ocveralls-3.3.4.tar.gz
+# upstream/irmin-watcher.0.2.0               https://github.com/samoht/irmin-watcher/releases/download/0.2.0/irmin-watcher-0.2.0.tbz
+# upstream/ssl.0.5.3                         https://github.com/savonet/ocaml-ssl/releases/download/0.5.3/ocaml-ssl-0.5.3.tar.gz
+# upstream/pci.1.0.0                         https://github.com/simonjbeaumont/ocaml-pci/archive/v1.0.0/ocaml-pci-v1.0.0.tar.gz
+# upstream/merlin.2.5.3                      https://github.com/the-lambda-church/merlin/archive/v2.5.3/merlin-v2.5.3.tar.gz
+# upstream/sha.1.9                           https://github.com/vincenthz/ocaml-sha/archive/ocaml-sha-v1.9.tar.gz
+# upstream/ppx_deriving.4.1                  https://github.com/whitequark/ppx_deriving/archive/v4.1/ppx_deriving-v4.1.tar.gz
+# upstream/ppx_deriving_yojson.3.0           https://github.com/whitequark/ppx_deriving_yojson/archive/v3.0/ppx_deriving_yojson-v3.0.tar.gz
+# upstream/ppx_import.1.1                    https://github.com/whitequark/ppx_import/archive/v1.1/ppx_import-v1.1.tar.gz
+# upstream/crc.1.0.0                         https://github.com/xapi-project/ocaml-crc/archive/1.0.0/ocaml-crc-1.0.0.tar.gz
+# upstream/netlink.0.2.1                     https://github.com/xapi-project/ocaml-netlink/archive/v0.2.1/ocaml-netlink-v0.2.1.tar.gz
+# upstream/opasswd.1.0.1                     https://github.com/xapi-project/ocaml-opasswd/archive/v1.0.1/ocaml-opasswd-1.0.1.tar.gz
+# upstream/fd-send-recv.1.0.1                https://github.com/xen-org/ocaml-fd-send-recv/archive/ocaml-fd-send-recv-1.0.1.tar.gz
+# upstream/camomile.0.8.5                    https://github.com/yoriyuki/Camomile/releases/download/rel-0.8.5/camomile-0.8.5.tar.bz2
+# upstream/type_conv.113.00.02               https://ocaml.janestreet.com/ocaml-core/113.00/files/type_conv-113.00.02.tar.gz
+# upstream/async.113.33.03                   https://ocaml.janestreet.com/ocaml-core/113.33/files/async-113.33.03.tar.gz
+# upstream/async_extra.113.33.03             https://ocaml.janestreet.com/ocaml-core/113.33/files/async_extra-113.33.03.tar.gz
+# upstream/async_kernel.113.33.03            https://ocaml.janestreet.com/ocaml-core/113.33/files/async_kernel-113.33.03.tar.gz
+# upstream/async_rpc_kernel.113.33.03        https://ocaml.janestreet.com/ocaml-core/113.33/files/async_rpc_kernel-113.33.03.tar.gz
+# upstream/async_unix.113.33.03              https://ocaml.janestreet.com/ocaml-core/113.33/files/async_unix-113.33.03.tar.gz
+# upstream/bin_prot.113.33.03                https://ocaml.janestreet.com/ocaml-core/113.33/files/bin_prot-113.33.03.tar.gz
+# upstream/core.113.33.03                    https://ocaml.janestreet.com/ocaml-core/113.33/files/core-113.33.03.tar.gz
+# upstream/core_kernel.113.33.03             https://ocaml.janestreet.com/ocaml-core/113.33/files/core_kernel-113.33.03.tar.gz
+# upstream/fieldslib.113.33.03               https://ocaml.janestreet.com/ocaml-core/113.33/files/fieldslib-113.33.03.tar.gz
+# upstream/js-build-tools.113.33.04          https://ocaml.janestreet.com/ocaml-core/113.33/files/js-build-tools-113.33.04.tar.gz
+# upstream/ppx_assert.113.33.03              https://ocaml.janestreet.com/ocaml-core/113.33/files/ppx_assert-113.33.03.tar.gz
+# upstream/ppx_bench.113.33.03               https://ocaml.janestreet.com/ocaml-core/113.33/files/ppx_bench-113.33.03.tar.gz
+# upstream/ppx_bin_prot.113.33.03            https://ocaml.janestreet.com/ocaml-core/113.33/files/ppx_bin_prot-113.33.03.tar.gz
+# upstream/ppx_compare.113.33.03             https://ocaml.janestreet.com/ocaml-core/113.33/files/ppx_compare-113.33.03.tar.gz
+# upstream/ppx_core.113.33.03                https://ocaml.janestreet.com/ocaml-core/113.33/files/ppx_core-113.33.03.tar.gz
+# upstream/ppx_custom_printf.113.33.03       https://ocaml.janestreet.com/ocaml-core/113.33/files/ppx_custom_printf-113.33.03.tar.gz
+# upstream/ppx_driver.113.33.03              https://ocaml.janestreet.com/ocaml-core/113.33/files/ppx_driver-113.33.03.tar.gz
+# upstream/ppx_enumerate.113.33.03           https://ocaml.janestreet.com/ocaml-core/113.33/files/ppx_enumerate-113.33.03.tar.gz
+# upstream/ppx_expect.113.33.03              https://ocaml.janestreet.com/ocaml-core/113.33/files/ppx_expect-113.33.03.tar.gz
+# upstream/ppx_fail.113.33.03                https://ocaml.janestreet.com/ocaml-core/113.33/files/ppx_fail-113.33.03.tar.gz
+# upstream/ppx_fields_conv.113.33.03         https://ocaml.janestreet.com/ocaml-core/113.33/files/ppx_fields_conv-113.33.03.tar.gz
+# upstream/ppx_here.113.33.03                https://ocaml.janestreet.com/ocaml-core/113.33/files/ppx_here-113.33.03.tar.gz
+# upstream/ppx_inline_test.113.33.03         https://ocaml.janestreet.com/ocaml-core/113.33/files/ppx_inline_test-113.33.03.tar.gz
+# upstream/ppx_jane.113.33.03                https://ocaml.janestreet.com/ocaml-core/113.33/files/ppx_jane-113.33.03.tar.gz
+# upstream/ppx_let.113.33.03                 https://ocaml.janestreet.com/ocaml-core/113.33/files/ppx_let-113.33.03.tar.gz
+# upstream/ppx_optcomp.113.33.03             https://ocaml.janestreet.com/ocaml-core/113.33/files/ppx_optcomp-113.33.03.tar.gz
+# upstream/ppx_pipebang.113.33.03            https://ocaml.janestreet.com/ocaml-core/113.33/files/ppx_pipebang-113.33.03.tar.gz
+# upstream/ppx_sexp_conv.113.33.03           https://ocaml.janestreet.com/ocaml-core/113.33/files/ppx_sexp_conv-113.33.03.tar.gz
+# upstream/ppx_sexp_message.113.33.03        https://ocaml.janestreet.com/ocaml-core/113.33/files/ppx_sexp_message-113.33.03.tar.gz
+# upstream/ppx_sexp_value.113.33.03          https://ocaml.janestreet.com/ocaml-core/113.33/files/ppx_sexp_value-113.33.03.tar.gz
+# upstream/ppx_type_conv.113.33.03           https://ocaml.janestreet.com/ocaml-core/113.33/files/ppx_type_conv-113.33.03.tar.gz
+# upstream/ppx_typerep_conv.113.33.03        https://ocaml.janestreet.com/ocaml-core/113.33/files/ppx_typerep_conv-113.33.03.tar.gz
+# upstream/ppx_variants_conv.113.33.03       https://ocaml.janestreet.com/ocaml-core/113.33/files/ppx_variants_conv-113.33.03.tar.gz
+# upstream/sexplib.113.33.03                 https://ocaml.janestreet.com/ocaml-core/113.33/files/sexplib-113.33.03.tar.gz
+# upstream/typerep.113.33.03                 https://ocaml.janestreet.com/ocaml-core/113.33/files/typerep-113.33.03.tar.gz
+# upstream/variantslib.113.33.03             https://ocaml.janestreet.com/ocaml-core/113.33/files/variantslib-113.33.03.tar.gz
+# upstream/extlib.1.7.1                      http://ygrek.org.ua/p/release/ocaml-extlib/extlib-1.7.1.tar.gz
