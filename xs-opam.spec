@@ -19,7 +19,7 @@ Opam repository containing all upstream and development libraries
 required for building the OCaml components in the XS Toolstack.
 
 %prep
-%setup -q -n xs-opam
+%setup -q -n xs-opam-master
 # link all source files into src/
 mkdir src
 grep -v '^#' sources.txt | while read p url
