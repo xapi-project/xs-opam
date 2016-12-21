@@ -16,5 +16,8 @@ urls: 	sources.txt
 sources.spec: sources.txt
 	awk '/^#/ {next}; /http/ { printf "Source%03d: %s\n", ++n, $$2}' $< > sources.spec
 
+sources.draft:
+	sh sources.sh > $@
+
 clean:
 	rm -f archives urls.txt index.tar.gz 

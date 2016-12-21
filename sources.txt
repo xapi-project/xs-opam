@@ -84,6 +84,7 @@ upstream/ocamlify.0.0.1                    http://forge.ocamlcore.org/frs/downlo
 upstream/ocamlmod.0.0.8                    https://forge.ocamlcore.org/frs/download.php/1544/ocamlmod-0.0.8.tar.gz
 upstream/ocamlscript.2.0.4                 https://github.com/mjambon/ocamlscript/archive/v2.0.4/ocamlscript-v2.0.4.tar.gz
 upstream/ocb-stubblr.0.1.0                 https://github.com/pqwy/ocb-stubblr/releases/download/v0.1.0/ocb-stubblr-0.1.0.tbz
+upstream/oclock.0.4.0			   https://github.com/polazarus/oclock/archive/v0.4.tar.gz
 upstream/ocp-indent.1.5.3                  https://github.com/OCamlPro/ocp-indent/archive/1.5.3/ocp-indent-1.5.3.tar.gz
 upstream/ocplib-endian.1.0                 https://github.com/OCamlPro/ocplib-endian/archive/1.0/ocplib-endian-1.0.tar.gz
 upstream/ocveralls.0.3.4                   https://github.com/sagotch/ocveralls/archive/3.3.4/ocveralls-3.3.4.tar.gz
@@ -167,3 +168,5 @@ xs/xapi-stdext.xapi-project#master         http://github.com/xapi-project/stdext
 xs/xapi-tapctl.xapi-project#master         http://github.com/xapi-project/tapctl/archive/master/xapi-tapctl.tar.gz
 xs/xapi-test-utils.xapi-project#master     http://github.com/xapi-project/xapi-test-utils/archive/master/xapi-test-utils.tar.gz
 xs/xen-api-client.jonludlam#new-ocaml-rpc  http://github.com/jonludlam/xen-api-client/archive/new-ocaml-rpc/xen-api-client.tar.gz
+xs/xenstore.1.3.0                          https://github.com/mirage/ocaml-xenstore/archive/v1.3.0/ocaml-xenstore-v1.3.0.tar.gz
+xs/xenstore_transport.0.9.4                https://github.com/djs55/ocaml-xenstore-clients/archive/0.9.4/ocaml-xenstore-clients-0.9.4.tar.gz
