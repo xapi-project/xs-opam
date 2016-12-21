@@ -1,5 +1,5 @@
 Name: xs-opam
-Version: 0.0.1
+Version: 0.0.2
 Release: 1%{?dist}
 Summary: Opam repository
 License: Various
@@ -94,7 +94,7 @@ Source083: http://forge.ocamlcore.org/frs/download.php/379/ocamlify-0.0.1.tar.gz
 Source084: https://forge.ocamlcore.org/frs/download.php/1544/ocamlmod-0.0.8.tar.gz
 Source085: https://github.com/mjambon/ocamlscript/archive/v2.0.4/ocamlscript-v2.0.4.tar.gz
 Source086: https://github.com/pqwy/ocb-stubblr/releases/download/v0.1.0/ocb-stubblr-0.1.0.tbz
-Source087: https://github.com/polazarus/oclock/archive/v0.4.tar.gz
+Source087: https://github.com/polazarus/oclock/archive/v0.4/oclock-v0.4.tar.gz
 Source088: https://github.com/OCamlPro/ocp-indent/archive/1.5.3/ocp-indent-1.5.3.tar.gz
 Source089: https://github.com/OCamlPro/ocplib-endian/archive/1.0/ocplib-endian-1.0.tar.gz
 Source090: https://github.com/sagotch/ocveralls/archive/3.3.4/ocveralls-3.3.4.tar.gz
