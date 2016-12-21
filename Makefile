@@ -19,5 +19,12 @@ sources.spec: sources.txt
 sources.draft:
 	sh sources.sh > $@
 
+download:
+	mkdir -p src
+	cd src; awk '/^#/ {next}; {print $$2}' ../sources.txt | \
+	while read url; do \
+	      test -f $$(basename $$url) || curl --fail -L -O $$url; \
+	done
+
 clean:
 	rm -f archives urls.txt index.tar.gz 
