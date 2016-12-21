@@ -1,0 +1,21 @@
+opam-version: "1"
+maintainer: "jonathan.ludlam@citrix.com"
+tags: [
+  "org:mirage"
+  "org:xapi-project"
+]
+build: [
+  ["rsync" "-avz" "/usr/lib64/ocaml/xenctrl/" "%{lib}%/xenctrl/"]
+  ["rsync" "-avz" "/usr/lib64/ocaml/xenmmap/" "%{lib}%/xenmmap/"]
+  ["rsync" "-avz" "/usr/lib64/ocaml/xenlight/" "%{lib}%/xenlight/"]
+  ["rsync" "-avz" "/usr/lib64/ocaml/xentoollog/" "%{lib}%/xentoollog/"]
+]
+remove: [
+  ["ocamlfind" "remove" "xenctrl"]
+]
+depends: [
+  "ocamlfind"
+  "lwt"
+  "cmdliner"
+]
+ocaml-version: [>= "4.00.0"]
