@@ -52,3 +52,11 @@ clean:
 sync: 	download spec
 	rsync -r src/ /var/www/html/src
 	cp $(SPEC) $(HOME)/src/xenserver-specs/SPECS
+
+missing: installed
+	cat installed | while read p v; do \
+	f=$$p.$$v; \
+	test -d packages/xs/$$f \
+	|| test -d packages/upstream/$$f \
+	|| echo $$f; \
+	done
