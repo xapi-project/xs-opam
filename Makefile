@@ -5,14 +5,13 @@
 TOP :=  	$(PWD)
 SRC := 		"$(TOP)/src"
 
-repo: 	urls
-	opam-admin make
-
-urls: 	sources.txt
+repo: 	sources.txt
+	rm -rf packages
+	cp -r packages.orig packages
 	grep -v '^#' $< | while read pkg url; do \
 	  echo "http: \"file://$(SRC)/$$(basename $$url)\"" > packages/$$pkg/url;\
 	done
-
+	opam-admin make
 
 SPEC 	+= xs-opam.spec
 SPEC 	+= xs-opam-local.spec
@@ -42,7 +41,7 @@ sources.draft:
 	sh sources.sh > $@
 
 clean:
-	rm -rf archives
+	rm -rf archives packages
 	rm -f urls.txt index.tar.gz 
 	rm -f sources.draft
 	rm -f xs-opam.spec xs-opam-local.spec
