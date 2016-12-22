@@ -13,19 +13,19 @@ repo: 	sources.txt
 	done
 	opam-admin make
 
-SPEC 	+= xs-opam.spec
-SPEC 	+= xs-opam-local.spec
-SPEC 	+= xs-opam-build.spec
-SPEC 	+= xs-opam-build-local.spec
+SPEC 	+= xs-opam-src.spec
+SPEC 	+= xs-opam-src-local.spec
+SPEC 	+= xs-opam-repo.spec
+SPEC 	+= xs-opam-repo-local.spec
 
 spec: 	$(SPEC)
 
-xs-opam.spec: xs-opam.in sources.txt
+xs-opam-src.spec: xs-opam-src.in sources.txt
 	awk '/^#/ {next}; /http/ { printf "Source%03d: %s\n", ++n, $$2}' sources.txt > sources.spec
 	sed '/^# sources.spec/r sources.spec' $< > $@
 	rm sources.spec
 
-xs-opam-local.spec: xs-opam-local.in sources.txt
+xs-opam-src-local.spec: xs-opam-src-local.in sources.txt
 	awk '/^#/ {next}; /http/ { file=$$2; sub(".*/","", file); printf "Source%03d: http://localhost/src/%s\n", ++n, file}' sources.txt > local.spec
 	sed '/^# local.spec/r local.spec' $< > $@
 	rm local.spec
@@ -44,7 +44,7 @@ clean:
 	rm -rf archives packages
 	rm -f urls.txt index.tar.gz 
 	rm -f sources.draft
-	rm -f xs-opam.spec xs-opam-local.spec
+	rm -f xs-opam-src.spec xs-opam-src-local.spec
 
 # private targets
 

@@ -2,7 +2,7 @@
 # The problem is that there are multiple modules with the same name
 # and this confuses the dependency script
 
-Name: xs-opam-build-local
+Name: xs-opam-repo-local
 Version: 0.0.1
 Release: 1%{?dist}
 Summary: Build and install all OCaml libraries
@@ -10,9 +10,10 @@ License: Various
 URL: http://github.com/ocaml/opam-repository
 AutoReqProv: no
 
+BuildRequires: xs-opam-src-local
+
 BuildRequires: opam
 BuildRequires: rsync
-BuildRequires: xs-opam-local
 BuildRequires: ocaml
 BuildRequires: ocaml-camlp4
 BuildRequires: ocaml-camlp4-devel

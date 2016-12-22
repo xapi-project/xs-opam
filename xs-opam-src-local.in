@@ -1,4 +1,4 @@
-Name: xs-opam
+Name: xs-opam-src-local
 Version: 0.0.2
 Release: 1%{?dist}
 Summary: Opam repository
@@ -7,8 +7,7 @@ URL: http://localhost/src/
 AutoReqProv: no
 
 Source000: https://github.com/lindig/xs-opam/archive/master/xs-opam-master.tar.gz
-# sources.spec
-
+# local.spec
 
 BuildRequires: opam
 BuildRequires: rsync
