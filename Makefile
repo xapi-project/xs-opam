@@ -30,11 +30,19 @@ xs-opam-src-local.spec: xs-opam-src-local.in sources.txt
 	sed '/^# local.spec/r local.spec' $< > $@
 	rm local.spec
 
+# download all archives that are not there already
 download:
 	mkdir -p src
 	cd src; awk '/^#/ {next}; {print $$2}' ../sources.txt | \
 	while read url; do \
 	      test -f $$(basename $$url) || curl --fail -L -O $$url; \
+	done
+
+# remove all archives that are likely to track a repo
+expunge:
+	cd src; awk '/^#/ {next}; {print $$1, $$2}' ../sources.txt | \
+	while read pkg url; do \
+		case $$pkg in *master*) rm $$(basename $$url);; esac \
 	done
 
 sources.draft:
