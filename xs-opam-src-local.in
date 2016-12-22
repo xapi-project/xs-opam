@@ -26,7 +26,7 @@ do
   (cd src; test -f $file || ln -s ../../../SOURCES/$file .)
 done
 # rename all URL files such that we only use archive
-find packages -type f -name url -exec mv {} {}.off \;
+find packages.orig -type f -name url -exec mv {} {}.off \;
 
 %build
 make
