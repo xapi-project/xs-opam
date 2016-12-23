@@ -24,9 +24,9 @@ xs-opam-src.spec: xs-opam-src.in sources.txt
 	sed '/^# sources.spec/r sources.spec' $< > $@
 	rm sources.spec
 
-xs-opam-src-local.spec: xs-opam-src-local.in sources.txt
+xs-opam-src-local.spec: xs-opam-src.in sources.txt
 	awk '/^#/ {next}; /http/ { file=$$2; sub(".*/","", file); printf "Source%03d: http://localhost/src/%s\n", ++n, file}' sources.txt > local.spec
-	sed '/^# local.spec/r local.spec' $< > $@
+	sed '/^# sources.spec/r local.spec' $< > $@
 	rm local.spec
 
 # download all archives that are not there already
