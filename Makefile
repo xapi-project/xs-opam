@@ -16,7 +16,6 @@ repo: 	sources.txt
 SPEC 	+= xs-opam-src.spec
 SPEC 	+= xs-opam-src-local.spec
 SPEC 	+= xs-opam-repo.spec
-SPEC 	+= xs-opam-repo-local.spec
 
 spec: 	$(SPEC)
 

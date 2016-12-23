@@ -1,9 +1,9 @@
 Name: xs-opam-src
-Version: 0.0.2
+Version: 0.0.3
 Release: 1%{?dist}
 Summary: Opam repository
 License: Various
-URL: http://localhost/src/
+URL: http://github.com/lindig/xs-opam
 AutoReqProv: no
 
 Source000: https://github.com/lindig/xs-opam/archive/master/xs-opam-master.tar.gz

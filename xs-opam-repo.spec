@@ -3,13 +3,14 @@
 # and this confuses the dependency script
 
 Name: xs-opam-repo
-Version: 0.0.1
+Version: 0.0.3
 Release: 1%{?dist}
 Summary: Build and install all OCaml libraries
 License: Various
-URL: http://github.com/ocaml/opam-repository
+URL: http://github.com/lindig/xs-opam
 AutoReqProv: no
 
+# BuildRequires: xs-opam-src-local
 BuildRequires: xs-opam-src
 
 BuildRequires: opam
