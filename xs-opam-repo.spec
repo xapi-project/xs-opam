@@ -53,7 +53,7 @@ PKG="$PKG $(ls -1 /usr/share/opam-repository/packages/xs)"
 export OPAMROOT=/usr/lib/opamroot
 opam init -y 
 opam config exec -- opam repository add local file:///usr/share/opam-repository
-opam config exec -- opam install -y $PKG
+opam config exec -- opam install -j 8 -y $PKG
 
 %install
 mkdir -p %{buildroot}/usr/lib/opamroot/
