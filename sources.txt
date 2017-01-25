@@ -2,6 +2,8 @@ upstream/angstrom.0.1.1                        https://github.com/inhabitedtype/
 upstream/astring.0.8.3                         http://erratique.ch/software/astring/releases/astring-0.8.3.tbz
 upstream/async.113.33.03                       https://ocaml.janestreet.com/ocaml-core/113.33/files/async-113.33.03.tar.gz
 upstream/async_extra.113.33.03                 https://ocaml.janestreet.com/ocaml-core/113.33/files/async_extra-113.33.03.tar.gz
+upstream/async_find.113.33.03                  https://ocaml.janestreet.com/ocaml-core/113.33/files/async_find-113.33.03.tar.gz
+upstream/async_inotify.113.33.03               https://ocaml.janestreet.com/ocaml-core/113.33/files/async_inotify-113.33.03.tar.gz
 upstream/async_kernel.113.33.03                https://ocaml.janestreet.com/ocaml-core/113.33/files/async_kernel-113.33.03.tar.gz
 upstream/async_rpc_kernel.113.33.03            https://ocaml.janestreet.com/ocaml-core/113.33/files/async_rpc_kernel-113.33.03.tar.gz
 upstream/async_unix.113.33.03                  https://ocaml.janestreet.com/ocaml-core/113.33/files/async_unix-113.33.03.tar.gz
