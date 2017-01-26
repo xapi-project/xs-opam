@@ -3,7 +3,7 @@
 # and this confuses the dependency script
 
 Name: xs-opam-repo
-Version: 0.0.3
+Version: 0.0.5
 Release: 1%{?dist}
 Summary: Build and install all OCaml libraries
 License: Various
@@ -39,7 +39,7 @@ BuildRequires: xen-ocaml-devel
 
 
 %description
-Opam repository that contains all libraries necessary to compile XenServer 
+Opam repository that contains all libraries necessary to compile XenServer
 Toolstack components.
 
 %prep
@@ -52,7 +52,7 @@ PKG="$PKG $(ls -1 /usr/share/opam-repository/packages/upstream)"
 PKG="$PKG $(ls -1 /usr/share/opam-repository/packages/xs)"
 
 export OPAMROOT=/usr/lib/opamroot
-opam init -y 
+opam init -y
 opam config exec -- opam repository add local file:///usr/share/opam-repository
 opam config exec -- opam install -j 8 -y $PKG
 

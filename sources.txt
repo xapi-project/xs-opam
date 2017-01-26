@@ -164,7 +164,7 @@ upstream/zarith.1.4.1                          https://forge.ocamlcore.org/frs/d
 upstream/zed.1.4                               https://github.com/diml/zed/archive/1.4/zed-1.4.tar.gz
 xs/message-switch.jonludlam#ppx                https://github.com/jonludlam/message-switch/archive/v0.10.99/message-switch-v0.10.99.tar.gz
 xs/mtime.patched-0.8.1+no-js                   http://erratique.ch/software/mtime/releases/mtime-0.8.1.tbz
-xs/nbd.mseri#ppx                               https://github.com/mseri/nbd/archive/ppx/nbd-ppx.tar.gz
+xs/nbd.2.1.2                                   https://github.com/xapi-project/nbd/archive/v2.1.2/nbd-2.1.2.tar.gz
 xs/rpc.jonludlam#ppx2                          http://github.com/jonludlam/ocaml-rpc/archive/ppx2/ocaml-rpc.tar.gz
 xs/shared-block-ring.jonludlam#ppx             http://github.com/jonludlam/shared-block-ring/archive/ppx/shared-block-ring.tar.gz
 xs/systemd.xapi-project#master                 http://github.com/juergenhoetzel/ocaml-systemd/archive/master/systemd.tar.gz

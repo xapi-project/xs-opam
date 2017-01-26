@@ -1,5 +1,5 @@
 Name: xs-opam-src
-Version: 0.0.4
+Version: 0.0.5
 Release: 1%{?dist}
 Summary: Opam repository
 License: Various
