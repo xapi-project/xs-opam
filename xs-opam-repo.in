@@ -1,5 +1,5 @@
 Name: xs-opam-repo
-Version: 0.0.588b2edd
+Version: @VERSION@
 Release: 1%{?dist}
 Summary: Build and install OCaml libraries from Opam repository
 License: Various

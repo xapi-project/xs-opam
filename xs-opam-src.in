@@ -1,5 +1,5 @@
 Name: xs-opam-src
-Version: 0.0.5
+Version: @VERSION@
 Release: 1%{?dist}
 Summary: Opam repository
 License: Various
@@ -8,7 +8,6 @@ AutoReqProv: no
 
 Source000: https://github.com/lindig/xs-opam/archive/master/xs-opam-master.tar.gz
 # sources.spec
-
 
 BuildRequires: opam
 BuildRequires: rsync
@@ -19,22 +18,20 @@ required for building the OCaml components in the XS Toolstack.
 
 %prep
 %setup -q -n xs-opam-master
-# link all source files into src/
-mkdir src
+# link all source files into build/src/
+mkdir -p build/src
 grep -v '^#' sources.txt | while read p url
 do
   file=$(basename $url)
-  (cd src; test -f $file || ln -s ../../../SOURCES/$file .)
+  (cd build/src; test -f $file || ln -s ../../../../SOURCES/$file .)
 done
-# rename all URL files such that we only use archive
-find packages.orig -type f -name url -exec mv {} {}.off \;
 
 %build
-make
+make repo
 
 %install
 mkdir -p %{buildroot}/usr/share/opam-repository
-rsync -avz  archives packages %{buildroot}/usr/share/opam-repository/
+(cd build && rsync -avz  archives packages %{buildroot}/usr/share/opam-repository/)
 chmod o+w -R %{buildroot}/usr/share/opam-repository
 
 # create opam root
