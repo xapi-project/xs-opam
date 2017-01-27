@@ -14,7 +14,7 @@ You can add this Git repository as a remote Opam repository:
 
 Running
 
-    make specs
+    make spec
 
 creates two SPEC files:
 
