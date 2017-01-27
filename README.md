@@ -78,7 +78,10 @@ In addition, `sources.txt` contains one line per package, like this:
   upstream/bos.0.1.4  http://erratique.ch/software/bos/releases/bos-0.1.4.tbz
 
 This is used to download the source code packages when constructing the
-RPM and when doing `make download`.
+RPM and when doing `make download`. During the construction of the
+`xs-opam-src` RPM, entries in this file are used to rewrite the `url`
+file. This step is performed by the `make repo` step -- see the
+`Makefile`.
 
 The download location is most of the time a simplified version of the
 content of the `url` file and this is where you would find it. However,
