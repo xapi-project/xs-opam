@@ -54,7 +54,8 @@ update:
 	find packages -name url -type f | \
 		xargs ./utils/sources.rb | sort | column -t > sources.tmp
 	awk '{print $$2}' sources.tmp | while read f; do \
-		echo $$f; curl --head --fail -L $$f > /dev/null; \
+		curl -sS --head --fail -L $$f > /dev/null; \
+		if [ ! $$? -eq 0 ]; then echo $$f; fi \
 	done
 	diff sources.txt sources.tmp || true
 	mv sources.tmp sources.txt
