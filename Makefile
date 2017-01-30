@@ -31,16 +31,12 @@ build:
 
 
 # generate spec files
-spec: 	$(SPEC)
-
-xs-opam-src.spec: xs-opam-src.in sources.txt Makefile
+spec:
 	awk '/^#/ {next}; /http/ { printf "Source%03d: %s\n", ++n, $$2}' sources.txt > sources.spec
-	sed -e '/^# sources.spec/r sources.spec' -e 's/@VERSION@/$(VERSION)/' $< > $@
+	sed -e '/^# sources.spec/r sources.spec' \
+		-e 's/@VERSION@/$(VERSION)/' xs-opam-src.in > xs-opam-src.spec
 	rm sources.spec
-
-xs-opam-repo.spec: xs-opam-repo.in Makefile
-	sed -e 's/@VERSION@/$(VERSION)/' $< > $@
-
+	sed -e 's/@VERSION@/$(VERSION)/' xs-opam-repo.in > xs-opam-repo.spec
 
 # download all archives but skip those that are already present
 download: build
