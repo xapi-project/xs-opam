@@ -97,10 +97,14 @@ not unique. In that case the entry of `sources.txt` will differ from the
     copied from an existing Opam installation. To remove an entry,
     simply remove its directory in `packages/`.
 
-2.  Execute `make update`. This will update `sources.txt` and check all
-    download links. Inspect the difference. You can also edit
-    `sources.txt` manually to add a download link for the package(s) you
-    have added.
+2.  Execute `make update`. This will update all download links in
+    `sources.txt` and check them. A download link is
+    extracted from a package's `url` file and usually used verbatim.
+    However, in the case of links to GitHub, some are rewritten to make
+    sure the resulting file is sensibly named. If the link derived from
+    this step does not make sense, modify method `Opam::url` in
+    `utils/sources.rb`.  You can optionally execute `make download` to
+    download all source code.
 
 3.  Execute `make spec` to generate the SPEC files that you might want
     to use.
