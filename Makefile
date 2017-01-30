@@ -6,11 +6,11 @@ DATE    := $(shell printf '%x' `date +%s`)
 RELEASE := $(shell git describe --always)
 VERSION := 0.0.$(DATE)
 
-TOP :=  	$(PWD)
-SRC := 		"$(TOP)/build/src"
+TOP	:= $(PWD)
+SRC	:= "$(TOP)/build/src"
 
-SPEC 	+= xs-opam-src.spec
-SPEC 	+= xs-opam-repo.spec
+SPEC	+= xs-opam-src.spec
+SPEC	+= xs-opam-repo.spec
 
 
 all: repo spec
@@ -19,10 +19,10 @@ all: repo spec
 # build an Opam repo in build/ with all URL files pointing
 # to sources in build/src.
 #
-repo: 	sources.txt build
+repo:	sources.txt build
 	cp -r packages build
 	grep -v '^#' $< | while read pkg url; do \
-	  echo "http: \"file://$(SRC)/$$(basename $$url)\"" > build/packages/$$pkg/url;\
+		echo "http: \"file://$(SRC)/$$(basename $$url)\"" > build/packages/$$pkg/url;\
 	done
 	cd build; opam-admin make
 
@@ -42,7 +42,7 @@ spec:
 download: build
 	cd $(SRC); awk '/^#/ {next}; {print $$2}' ../../sources.txt | \
 	while read url; do \
-	      test -f $$(basename $$url) || curl --fail -L -O $$url; \
+		test -f $$(basename $$url) || curl --fail -L -O $$url; \
 	done
 
 # update sources.txt by reading all URL files and checking the URL
