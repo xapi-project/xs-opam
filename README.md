@@ -89,16 +89,21 @@ some `url` files point to Git repositories or create file names that are
 not unique. In that case the entry of `sources.txt` will differ from the
 `url` entry.
 
-## How to Add a Package
+## How to Add or Remove a Package
 
 1.  Add an Opam entry under `packages/`. This should go into
     `packages/upstream` if the code is not maintained by the Xapi
     project and `packages/xs` otherwise. Typically the entry can be
-    copied from an existing Opam installation.
+    copied from an existing Opam installation. To remove an entry,
+    simply remove its directory in `packages/`.
 
-2.  Make an entry in `sources.txt` for the source code URL.
+2.  Execute `make update`. This will update `sources.txt` and check all
+    download links. Inspect the difference. You can also edit
+    `sources.txt` manually to add a download link for the package(s) you
+    have added.
 
-3.  Execute `make specs` if you need the SPEC files.
+3.  Execute `make spec` to generate the SPEC files that you might want
+    to use.
 
 ## How it Works
 

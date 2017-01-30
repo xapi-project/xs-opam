@@ -34,12 +34,14 @@ class Opam
     fail "no URI found in #{@path}: #{content}" if not url
     # rewrite some GitHub URLs such that we get a meaningful file
     # name and never refer to a Git repository
-    url.gsub!(%r{github.com/([^/]+)/([^/]+)/archive/([^/]+).tar.gz$},
-             'github.com/\1/\2/archive/\3/\2--\3.tar.gz')
+    url.gsub!(%r{github.com/([^/]+)/([^/]+)/archive/([^/]+).(tar.gz|zip)$},
+             'github.com/\1/\2/archive/\3/\2-\3.\4')
+    url.gsub!(%r{github.com/([^/]+)/([^/]+)/archive//([^/]+).(tar.gz|zip)$},
+             'github.com/\1/\2/archive/\3/\2-\3.\4')
     url.gsub!(%r{git://github.com/([^/]+)/([^/#]+)$},
-             'https://github.com/\1/\2/archive/master/\2--master.tar.gz')
+             'https://github.com/\1/\2/archive/master/\2-master.tar.gz')
     url.gsub!(%r{git://github.com/([^/]+)/([^/#.]+)(.git)?#(.+)$},
-             'https://github.com/\1/\2/archive/\4/\2--\4.tar.gz')
+             'https://github.com/\1/\2/archive/\4/\2-\4.tar.gz')
     return url
   end
 

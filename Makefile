@@ -49,6 +49,16 @@ download: build
 	      test -f $$(basename $$url) || curl --fail -L -O $$url; \
 	done
 
+# update sources.txt by reading all URL files and checking the URL
+update:
+	find packages -name url -type f | \
+		xargs ./utils/sources.rb | sort | column -t > sources.tmp
+	awk '{print $$2}' sources.tmp | while read f; do \
+		echo $$f; curl --head --fail -L $$f > /dev/null; \
+	done
+	diff sources.txt sources.tmp
+	mv sources.tmp sources.txt
+
 clean:
 	rm -rf build
 	rm -f xs-opam-src.spec xs-opam-repo.spec
