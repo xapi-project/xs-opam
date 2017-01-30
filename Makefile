@@ -56,7 +56,7 @@ update:
 	awk '{print $$2}' sources.tmp | while read f; do \
 		echo $$f; curl --head --fail -L $$f > /dev/null; \
 	done
-	diff sources.txt sources.tmp
+	diff sources.txt sources.tmp || true
 	mv sources.tmp sources.txt
 
 clean:
