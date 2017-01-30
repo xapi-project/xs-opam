@@ -7,7 +7,7 @@ build: [
 remove: [make "PREFIX=%{prefix}%" "uninstall"]
 depends: [
   "rpc"
-  "xapi-forkexecd" {= "mseri#ppx"}
+  "xapi-forkexecd" {= "xapi-project#ppx-ely"}
   "xapi-stdext" {= "xapi-project#master"}
   "xapi-idl" {= "jonludlam#ppx"}
   "xapi-libs-transitional" {= "xapi-project#master"}
