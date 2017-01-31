@@ -42,7 +42,7 @@ chmod 777 %{buildroot}/usr/lib/opamroot
 %files
 /usr/share/opam-repository
 /usr/lib/opamroot
-%attr(777, root, root) /usr/lib/opamroot
+%attr(777, root, wheel) /usr/lib/opamroot
 
 %changelog
 * Tue Dec 20 2016 Christian Lindig <christian.lindig@citrix.com> - 0.0.1-1 

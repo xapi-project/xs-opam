@@ -59,6 +59,7 @@ rm -rf %{buildroot}/usr/lib/opamroot/log/*
 rm -rf %{buildroot}/usr/lib/opamroot/system/build/*
 
 %files
+%defattr(-, root, wheel, 775)
 %exclude /usr/lib/opamroot/system/lib/*/*.cmt
 %exclude /usr/lib/opamroot/system/lib/*/*.cmti
 %exclude /usr/lib/opamroot/system/lib/*/*.annot
