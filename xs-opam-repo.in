@@ -3,7 +3,8 @@ Version: @VERSION@
 Release: 1%{?dist}
 Summary: Build and install OCaml libraries from Opam repository
 License: Various
-URL: http://github.com/lindig/xs-opam
+URL: http://github.com/xapi-project/xs-opam
+# Git commit @RELEASE@
 
 AutoReqProv: no
 BuildRequires: xs-opam-src = %{version}
@@ -68,5 +69,8 @@ rm -rf %{buildroot}/usr/lib/opamroot/system/build/*
 /usr/lib/opamroot
 
 %changelog
+* Thu Feb 02 2017 Christian Lindig <christian.lindig@citrix.com> - 0.1.1-1
+- This file is auto-generated and the changelog currently does not
+  reflect the changes.
 * Tue Dec 20 2016 Christian Lindig <christian.lindig@citrix.com> - 0.0.1-1
 - Initial version

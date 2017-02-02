@@ -4,7 +4,7 @@
 
 DATE    := $(shell printf '%x' `date +%s`)
 RELEASE := $(shell git describe --always)
-VERSION := 0.0.$(DATE)
+VERSION := 0.1.$(DATE)
 
 TOP	:= $(PWD)
 SRC	:= "$(TOP)/build/src"
@@ -33,10 +33,14 @@ build:
 # generate spec files
 spec:
 	awk '/^#/ {next}; /http/ { printf "Source%03d: %s\n", ++n, $$2}' sources.txt > sources.spec
-	sed -e '/^# sources.spec/r sources.spec' \
-		-e 's/@VERSION@/$(VERSION)/' xs-opam-src.in > xs-opam-src.spec
+	sed 	-e '/^# sources.spec/r sources.spec'	\
+		-e 's/@VERSION@/$(VERSION)/' 		\
+		-e 's/@RELEASE@/$(RELEASE)/' 		\
+		xs-opam-src.in > xs-opam-src.spec
 	rm sources.spec
-	sed -e 's/@VERSION@/$(VERSION)/' xs-opam-repo.in > xs-opam-repo.spec
+	sed 	-e 's/@VERSION@/$(VERSION)/' 		\
+		-e 's/@RELEASE@/$(RELEASE)/' 		\
+		xs-opam-repo.in > xs-opam-repo.spec
 
 # download all archives but skip those that are already present
 download: build
