@@ -8,10 +8,10 @@ implemented in OCaml. It can be used in two ways:
   remote Opam repository:
 
   ```
-  opam repo add xs-opam https://github.com/lindig/xs-opam.git
+  opam repo add xs-opam https://github.com/xapi-project/xs-opam.git
   ```
 
-* For building and packaging this repo an an RPM.  Running
+* For building and packaging this repo as an RPM.  Running
 
   ```
   make spec
