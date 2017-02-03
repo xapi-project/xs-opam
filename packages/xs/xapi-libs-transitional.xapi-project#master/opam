@@ -22,9 +22,9 @@ remove: [
 os: ["linux"]
 depends: [
   "ocamlfind"
-  "xapi-stdext" {= "xapi-project#master"}
+  "xapi-stdext"
   "xmlm"
-  "xapi-forkexecd" {= "xapi-project#ppx-ely"}
+  "xapi-forkexecd"
   "rpc"
   "xenctrl"
   "xenstore"

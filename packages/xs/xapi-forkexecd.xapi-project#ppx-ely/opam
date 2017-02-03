@@ -18,12 +18,12 @@ remove: [
 depends: [
   "ocamlfind" {build}
   "oasis" {build}
-  "systemd" {= "xapi-project#master"}
+  "systemd"
   "syslog"
   "rpc"
   "fd-send-recv"
   "uuidm"
   "xapi-stdext" {>= "2.0.0"}
   "re"
-  "xapi-idl" {= "jonludlam#ppx"}
+  "xapi-idl"
 ]
