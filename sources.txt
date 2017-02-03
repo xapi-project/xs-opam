@@ -114,8 +114,8 @@ xs/nbd.2.1.2                               https://github.com/xapi-project/nbd/a
 xs/rpc.jonludlam#ppx2                      https://github.com/jonludlam/ocaml-rpc/archive/ppx2/ocaml-rpc-ppx2.tar.gz
 xs/shared-block-ring.jonludlam#ppx         https://github.com/jonludlam/shared-block-ring/archive/ppx/shared-block-ring-ppx.tar.gz
 xs/systemd.xapi-project#master             https://github.com/juergenhoetzel/ocaml-systemd/archive/master/ocaml-systemd-master.tar.gz
-xs/xapi-backtrace.xapi-project#ppx-ely     https://github.com/xapi-project/backtrace/archive/ppx-ely/backtrace-ppx-ely.tar.gz
-xs/xapi-forkexecd.xapi-project#ppx-ely     https://github.com/xapi-project/forkexecd/archive/ppx-ely/forkexecd-ppx-ely.tar.gz
+xs/xapi-backtrace.0.3.ppx                  https://github.com/xapi-project/backtrace/archive/v0.3.ppx/backtrace-0.3.ppx.tar.gz
+xs/xapi-forkexecd.1.1.0.ppx                https://github.com/xapi-project/forkexecd/archive/v1.1.0.ppx/forkexecd-1.1.0.ppx.tar.gz
 xs/xapi-idl.jonludlam#ppx                  https://github.com/jonludlam/xcp-idl/archive/ppx/xcp-idl-ppx.tar.gz
 xs/xapi-inventory.1.0.2                    https://github.com/xapi-project/xcp-inventory/archive/v1.0.2/xcp-inventory-v1.0.2.tar.gz
 xs/xapi-libs-transitional.1.0.0            https://github.com/xapi-project/xen-api-libs-transitional/archive/v1.0.0/xen-api-libs-transitional-v1.0.0.tar.gz
