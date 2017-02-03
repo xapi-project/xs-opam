@@ -20,7 +20,7 @@ depends: [
   "rpc" {>= "1.9.4"}
   "mtime" {= "patched-0.8.1+no-js"}
   "mirage-block-unix"
-  "shared-block-ring" {= "jonludlam#ppx"}
+  "shared-block-ring"
   "cmdliner"
   "ssl"
   "oasis" {build}

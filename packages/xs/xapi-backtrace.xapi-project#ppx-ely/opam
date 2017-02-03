@@ -12,5 +12,5 @@ depends: [
   "ocamlfind"
   "sexplib"
   "ppx_sexp_conv"
-  "rpc" {= "jonludlam#ppx2"}
-] 
+  "rpc"
+]

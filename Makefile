@@ -2,6 +2,12 @@
 #
 #
 
+# override for testing using a personal repository
+#
+# make REPO=http://github.com/lindig/xs-opam spec
+#
+REPO 	:= https://github.com/xapi-project/xs-opam
+
 DATE    := $(shell printf '%x' `date +%s`)
 RELEASE := $(shell git describe --always)
 VERSION := 0.1.$(DATE)
@@ -14,6 +20,8 @@ SPEC	+= xs-opam-repo.spec
 
 
 all: repo spec
+
+sources.txt: 	update
 
 #
 # build an Opam repo in build/ with all URL files pointing
@@ -31,15 +39,17 @@ build:
 
 
 # generate spec files
-spec:
+spec: 	sources.txt
 	awk '/^#/ {next}; /http/ { printf "Source%03d: %s\n", ++n, $$2}' sources.txt > sources.spec
 	sed 	-e '/^# sources.spec/r sources.spec'	\
 		-e 's/@VERSION@/$(VERSION)/' 		\
 		-e 's/@RELEASE@/$(RELEASE)/' 		\
+		-e 's!@REPO@!$(REPO)!' 			\
 		xs-opam-src.in > xs-opam-src.spec
 	rm sources.spec
 	sed 	-e 's/@VERSION@/$(VERSION)/' 		\
 		-e 's/@RELEASE@/$(RELEASE)/' 		\
+		-e 's!@REPO@!$(REPO)!' 			\
 		xs-opam-repo.in > xs-opam-repo.spec
 
 # download all archives but skip those that are already present

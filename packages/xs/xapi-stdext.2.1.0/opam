@@ -20,6 +20,6 @@ depends: [
   "ocamlfind"
   "uuidm"
   "fd-send-recv"
-  "xapi-backtrace" {= "xapi-project#ppx-ely"}
+  "xapi-backtrace"
   "oasis" {build}
-] 
+]

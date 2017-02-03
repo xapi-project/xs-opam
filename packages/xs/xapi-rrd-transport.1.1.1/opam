@@ -14,7 +14,7 @@ depends: [
   "cmdliner"
   "cstruct" {>= "1.0.1"}
   "crc"
-  "xapi-idl" {= "jonludlam#ppx"}
-  "xapi-rrd" {= "xapi-project#master"}
+  "xapi-idl"
+  "xapi-rrd"
   "xen-gnt"
 ]

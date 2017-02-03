@@ -14,10 +14,10 @@ depends: [ "uri"
            "xmlm"
            "rpc" {>= "1.9.4"}
            "ocamlfind"
-           "message-switch" {= "jonludlam#ppx"}
-           "xapi-stdext" {= "xapi-project#master"}
-           "xapi-rrd" {= "xapi-project#master"}
-           "xapi-inventory" {= "xapi-project#master"}
-           "xapi-backtrace" {= "xapi-project#ppx-ely"}
+           "message-switch"
+           "xapi-stdext"
+           "xapi-rrd"
+           "xapi-inventory"
+           "xapi-backtrace"
           ]
 

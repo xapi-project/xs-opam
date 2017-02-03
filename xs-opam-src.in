@@ -3,11 +3,11 @@ Version: @VERSION@
 Release: 1%{?dist}
 Summary: Opam repository
 License: Various
-URL: http://github.com/xapi-project/xs-opam
+URL: @REPO@
 # Git commit @RELEASE@
 AutoReqProv: no
 
-Source000: https://github.com/xapi-project/xs-opam/archive/master/xs-opam-master.tar.gz
+Source000: @REPO@/archive/master/xs-opam-master.tar.gz
 # sources.spec
 
 BuildRequires: opam

@@ -3,7 +3,7 @@ Version: @VERSION@
 Release: 1%{?dist}
 Summary: Build and install OCaml libraries from Opam repository
 License: Various
-URL: http://github.com/xapi-project/xs-opam
+URL: @REPO@
 # Git commit @RELEASE@
 
 AutoReqProv: no
