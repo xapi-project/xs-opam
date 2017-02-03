@@ -119,7 +119,7 @@ xs/xapi-forkexecd.xapi-project#ppx-ely         https://github.com/xapi-project/f
 xs/xapi-idl.jonludlam#ppx                      https://github.com/jonludlam/xcp-idl/archive/ppx/xcp-idl-ppx.tar.gz
 xs/xapi-inventory.1.0.2                        https://github.com/xapi-project/xcp-inventory/archive/v1.0.2/xcp-inventory-v1.0.2.tar.gz
 xs/xapi-libs-transitional.xapi-project#master  https://github.com/xapi-project/xen-api-libs-transitional/archive/master/xen-api-libs-transitional-master.tar.gz
-xs/xapi-netdev.xapi-project#master             https://github.com/xapi-project/netdev/archive/master/netdev-master.tar.gz
+xs/xapi-netdev.1.0.0                           https://github.com/xapi-project/netdev/archive/v1.0.0/netdev-v1.0.0.tar.gz
 xs/xapi-rrd.1.0.0                              https://github.com/xapi-project/xcp-rrd/archive/v1.0.0/xcp-rrd-v1.0.0.tar.gz
 xs/xapi-rrdd-plugin.1.0.1                      https://github.com/xapi-project/ocaml-rrdd-plugin/archive/v1.0.1/ocaml-rrdd-plugin-v1.0.1.tar.gz
 xs/xapi-rrd-transport.1.1.1                    https://github.com/xapi-project/rrd-transport/archive/v1.1.1/rrd-transport-v1.1.1.tar.gz
