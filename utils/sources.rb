@@ -23,7 +23,7 @@ class Opam
 
   def initialize(path)
     @path = Pathname.new(path)
-    fail 'expected #{@@pattern} for #{path}' unless
+    fail "expected #{@@pattern} for #{path}" unless
       @path.fnmatch(@@pattern,File::FNM_DOTMATCH)
   end
 
