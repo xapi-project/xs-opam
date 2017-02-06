@@ -14,7 +14,7 @@ RELEASE := $(shell git describe --always)
 VERSION := 0.1.$(DATE)
 
 TOP	:= $(PWD)
-SRC	:= "$(TOP)/build/src"
+SRC	:= $(TOP)/build/src
 
 SPEC	+= xs-opam-src.spec
 SPEC	+= xs-opam-repo.spec
