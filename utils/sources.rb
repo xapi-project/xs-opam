@@ -23,15 +23,16 @@ class Opam
 
   def initialize(path)
     @path = Pathname.new(path)
-    fail 'expected #{@@pattern} for #{path}' unless
+    fail "expected #{@@pattern} for #{path}" unless
       @path.fnmatch(@@pattern,File::FNM_DOTMATCH)
   end
 
   def url
     content = File.open(@path).read.tr("\n\r", ' ')
     # use first "string" that looks like a URL
-    url = content.scan(/"([^"]+)"/).find { |str| uri?(str[0]) }[0]
+    url = content.scan(/"([^"]+)"/).find { |str| uri?(str[0]) }
     fail "no URI found in #{@path}: #{content}" if not url
+    url = url[0]
     # rewrite some GitHub URLs such that we get a meaningful file
     # name and never refer to a Git repository
     url.gsub!(%r{github.com/([^/]+)/([^/]+)/archive/([^/]+).(tar.gz|zip)$},

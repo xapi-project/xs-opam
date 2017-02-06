@@ -12,6 +12,7 @@ Source000: @REPO@/archive/master/xs-opam-master.tar.gz
 
 BuildRequires: opam
 BuildRequires: rsync
+BuildRequires: ruby
 
 %description
 Opam repository containing all upstream and development libraries
@@ -21,7 +22,7 @@ required for building the OCaml components in the XS Toolstack.
 %setup -q -n xs-opam-master
 # link all source files into build/src/
 mkdir -p build/src
-grep -v '^#' sources.txt | while read p url
+./utils/sources.rb packages/*/*/url | while read p url
 do
   file=$(basename $url)
   (cd build/src; test -f $file || ln -s ../../../../SOURCES/$file .)
@@ -49,6 +50,6 @@ chmod 777 %{buildroot}/usr/lib/opamroot
 * Thu Feb 02 2017 Christian Lindig <christian.lindig@citrix.com> - 0.1.1-1
 - This file is auto-generated and the changelog currently does not
   reflect the changes.
-* Tue Dec 20 2016 Christian Lindig <christian.lindig@citrix.com> - 0.0.1-1 
+* Tue Dec 20 2016 Christian Lindig <christian.lindig@citrix.com> - 0.0.1-1
 - Initial version
 
