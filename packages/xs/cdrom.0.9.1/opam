@@ -10,6 +10,6 @@ depends: [
   "ocamlfind"
   "obuild"
 ]
-dev-repo: "git://github.com/xen-org/cdrom"
+dev-repo: "git://github.com/xapi-project/cdrom"
 available: os = "linux"
 install: [make "install"]
