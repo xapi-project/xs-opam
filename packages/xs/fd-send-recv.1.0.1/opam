@@ -10,5 +10,5 @@ depends: [
   "ocamlfind"
   "ocamlbuild" {build}
 ]
-dev-repo: "git://github.com/xen-org/ocaml-fd-send-recv"
+dev-repo: "git://github.com/xapi-project/ocaml-fd-send-recv"
 install: [make "install"]
