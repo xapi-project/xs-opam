@@ -20,8 +20,10 @@ end
 
 class Opam
   @@pattern = '**/*/*/url'
+  @mirror   = nil
 
-  def initialize(path)
+  def initialize(path, mirror = nil)
+    @mirror = mirror
     @path = Pathname.new(path)
     fail "expected #{@@pattern} for #{path}" unless
       @path.fnmatch(@@pattern,File::FNM_DOTMATCH)
@@ -43,7 +45,13 @@ class Opam
              'https://github.com/\1/\2/archive/master/\2-master.tar.gz')
     url.gsub!(%r{git://github.com/([^/]+)/([^/#.]+)(.git)?#(.+)$},
              'https://github.com/\1/\2/archive/\4/\2-\4.tar.gz')
-    return url
+
+    if @mirror then
+      url = URI.join(@mirror, File.basename(url))
+      return url.to_s
+    else
+      return url
+    end
   end
 
   def package
@@ -61,12 +69,14 @@ class Opam
 end
 
 opts = GetoptLong.new(
-  [ '--help', '-h', GetoptLong::NO_ARGUMENT ],
-  [ '--url' , '-u', GetoptLong::NO_ARGUMENT ],
+  [ '--help'    , '-h', GetoptLong::NO_ARGUMENT       ],
+  [ '--url'     , '-u', GetoptLong::NO_ARGUMENT       ],
+  [ '--mirror'  , '-m', GetoptLong::REQUIRED_ARGUMENT ],
 )
 
 
 url_only = false
+mirror   = nil
 
 opts.each do |opt, arg|
   case opt
@@ -74,11 +84,28 @@ opts.each do |opt, arg|
       puts <<-EOF
       sources.rb [option] path/package/url ..
 
-      --url, -u:    just emit URLs
+      -u, --url                                   just emit URLs
+      -m, --mirror http://example.com/some/path   download from mirror
+      -h, --help                                  show this help
+
+      sources.rb extracts the URLs from the url files provided as
+      arguments and emits them to stdout. It rewrites some GitHub URLs
+      to create unique file names.
+
+      When a mirror is provided, it is used instead: presume the URL is
+
+        http://example.com/path/pack.tar.gz
+
+      and the mirror is http://mirror.example.com/x/y, the resulting URL
+      will be
+
+        http://mirror.example.com/xy/y/pack.tar.gz
       EOF
       exit 0
     when '--url'
       url_only |= true
+    when '--mirror'
+      mirror = arg
     else
       raise ArgumentError, "#{opt} not recognised"
   end
@@ -90,7 +117,7 @@ if ARGV.length <= 0
 end
 
 ARGV.each do |path|
-  opam = Opam.new(path)
+  opam = Opam.new(path,mirror)
   if url_only then
     puts opam.url
   else
