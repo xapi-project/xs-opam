@@ -2,9 +2,9 @@
 # Opam Repository for XenServer
 
 This repository supports building components in the XenServer toolstack
-implemented in OCaml. It can be used in two ways:
+implemented in [OCaml]. It can be used in two ways:
 
-* As an external Opam repositoty.  You can add this Git repository as a
+* As an external [Opam] repository.  You can add this Git repository as a
   remote Opam repository:
 
   ```
@@ -105,4 +105,6 @@ no immediate support for this but `make download` will download the
 source code for all packages. In addition, this repository needs to be
 available as `xs-opam-master.tar.gz` (as listed in `xs-opam-src.spec`).
 
+[Opam]:   http://opam.ocaml.org
+[OCaml]:  http:/ocaml.org
 

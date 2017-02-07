@@ -15,13 +15,12 @@ VERSION	:= 0.1.$(DATE)
 URL	+= packages/upstream/*/url
 URL	+= packages/xs/*/url
 MIRROR	:=
+SRCS 	:= ./utils/sources.rb -m "$(MIRROR)" $(URL)
 
 TOP	:= $(PWD)
 SRC	:= $(TOP)/build/src
 
-SPEC	+= xs-opam-src.spec
-SPEC	+= xs-opam-repo.spec
-
+# default target
 
 all:	check spec
 
@@ -31,7 +30,7 @@ all:	check spec
 #
 repo:	build
 	cp -r packages build
-	./utils/sources.rb $(MIRROR) $(URL) | while read pkg url; do \
+	$(SRCS) | while read package url; do \
 		echo "http: \"file://$(SRC)/$$(basename $$url)\"" > build/packages/$$pkg/url;\
 	done
 	cd build; opam-admin make
@@ -41,7 +40,7 @@ build:
 
 # generate spec files
 spec:
-	./utils/sources.rb $(MIRROR) $(URL) |\
+	$(SRCS) |\
 	awk '/http/ { printf "Source%03d: %s\n", ++n, $$2}' > sources.spec
 	sed	-e '/^# sources.spec/r sources.spec'	\
 		-e 's/@VERSION@/$(VERSION)/'		\
@@ -58,12 +57,12 @@ spec:
 		-e 's!@REPO@!$(REPO)!'			\
 		xs-opam-repo.in > xs-opam-repo.spec
 
-# check all URLs using the HTTP HEAD command but don't download
-# all URLs are checked in parrallel
+# check all URLs using the HTTP HEAD command but don't download.
+# all URLs are checked in parallel
 check:
-	./utils/sources.rb $(MIRROR) --url $(URL) |		\
-	while read f; do					\
-		( curl -sS --head --fail $$f > /dev/null;	\
+	$(SRCS) |						\
+	while read package url; do				\
+		( curl -sS --head --fail $$url > /dev/null;	\
 		if [ ! $$? -eq 0 ]; then echo; echo $$f; fi;) & \
 	done ;							\
 	wait
@@ -71,17 +70,15 @@ check:
 
 # download all archives but skip those that are already present
 download: build
-	cd $(SRC); \
-	for url in $(URL); do \
-		../../utils/sources.rb $(MIRROR) ../../$$url --url; \
-	done |\
-	while read url; do \
+	$(SRCS) | 					\
+	while read package url; do 			\
+		cd $(SRC); 				\
 		test -f $$(basename $$url) || curl --fail -L -O $$url; \
 	done
 
 # generate URLs for debugging
 sources.txt:
-	./utils/sources.rb $(URL) > $@
+	$(SRCS) > $@
 
 clean:
 	rm -rf build
