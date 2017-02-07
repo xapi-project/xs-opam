@@ -84,9 +84,22 @@ opts.each do |opt, arg|
       puts <<-EOF
       sources.rb [option] path/package/url ..
 
-      --url, -u                               just emit URLs
-      --mirror http://example.com/some/path   download from mirror
-      --help                                  show this help
+      -u, --url                                   just emit URLs
+      -m, --mirror http://example.com/some/path   download from mirror
+      -h, --help                                  show this help
+
+      sources.rb extracts the URLs from the url files provided as
+      arguments and emits them to stdout. It rewrites some GitHub URLs
+      to create unique file names.
+
+      When a mirror is provided, it is used instead: presume the URL is
+
+        http://example.com/path/pack.tar.gz
+
+      and the mirror is http://mirror.example.com/x/y, the resulting URL
+      will be
+
+        http://mirror.example.com/xy/y/pack.tar.gz
       EOF
       exit 0
     when '--url'
