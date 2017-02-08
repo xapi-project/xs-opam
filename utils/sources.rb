@@ -71,7 +71,7 @@ end
 opts = GetoptLong.new(
   [ '--help'    , '-h', GetoptLong::NO_ARGUMENT       ],
   [ '--url'     , '-u', GetoptLong::NO_ARGUMENT       ],
-  [ '--mirror'  , '-m', GetoptLong::REQUIRED_ARGUMENT ],
+  [ '--mirror'  , '-m', GetoptLong::OPTIONAL_ARGUMENT ],
 )
 
 
@@ -84,9 +84,9 @@ opts.each do |opt, arg|
       puts <<-EOF
       sources.rb [option] path/package/url ..
 
-      -u, --url                                   just emit URLs
-      -m, --mirror http://example.com/some/path   download from mirror
-      -h, --help                                  show this help
+      -u, --url                                     just emit URLs
+      -m, --mirror [http://example.com/some/path/]  download from mirror
+      -h, --help                                    show this help
 
       sources.rb extracts the URLs from the url files provided as
       arguments and emits them to stdout. It rewrites some GitHub URLs
@@ -96,16 +96,22 @@ opts.each do |opt, arg|
 
         http://example.com/path/pack.tar.gz
 
-      and the mirror is http://mirror.example.com/x/y, the resulting URL
+      and the mirror is http://mirror.example.com/x/y/, the resulting URL
       will be
 
         http://mirror.example.com/xy/y/pack.tar.gz
+
+      Note that the mirror must end with a slash or otherwise the last
+      element of the path will be ignored. It is possible to provide the
+      --mirror flag without an argument - in which case no mirrow will
+      be used. In the future a default mirror might be used in that
+      case.
       EOF
       exit 0
     when '--url'
       url_only |= true
     when '--mirror'
-      mirror = arg
+      mirror = arg == '' ? nil : arg
     else
       raise ArgumentError, "#{opt} not recognised"
   end
