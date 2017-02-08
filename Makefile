@@ -30,7 +30,7 @@ all:	check spec
 #
 repo:	build
 	cp -r packages build
-	$(SRCS) | while read package url; do \
+	$(SRCS) | while read pkg url; do \
 		echo "http: \"file://$(SRC)/$$(basename $$url)\"" > build/packages/$$pkg/url;\
 	done
 	cd build; opam-admin make

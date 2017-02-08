@@ -103,7 +103,9 @@ opts.each do |opt, arg|
 
       Note that the mirror must end with a slash or otherwise the last
       element of the path will be ignored. It is possible to provide the
-      --mirror flag without an argument - in which case no mirrow will be used. In the future a default mirror might be used in that case.
+      --mirror flag without an argument - in which case no mirrow will
+      be used. In the future a default mirror might be used in that
+      case.
       EOF
       exit 0
     when '--url'
