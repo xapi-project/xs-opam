@@ -22,8 +22,9 @@ class Opam
   @@pattern = '**/*/*/url'
   @mirror   = nil
 
-  def initialize(path, mirror = nil)
+  def initialize(path, mirror = nil, raw=false)
     @mirror = mirror
+    @raw    = false
     @path = Pathname.new(path)
     fail "expected #{@@pattern} for #{path}" unless
       @path.fnmatch(@@pattern,File::FNM_DOTMATCH)
@@ -37,6 +38,9 @@ class Opam
     url = url[0]
     # rewrite some GitHub URLs such that we get a meaningful file
     # name and never refer to a Git repository
+
+    return url if @raw
+
     url.gsub!(%r{github.com/([^/]+)/([^/]+)/archive/([^/]+).(tar.gz|zip)$},
              'github.com/\1/\2/archive/\3/\2-\3.\4')
     url.gsub!(%r{github.com/([^/]+)/([^/]+)/archive//([^/]+).(tar.gz|zip)$},
@@ -72,10 +76,12 @@ opts = GetoptLong.new(
   [ '--help'    , '-h', GetoptLong::NO_ARGUMENT       ],
   [ '--url'     , '-u', GetoptLong::NO_ARGUMENT       ],
   [ '--mirror'  , '-m', GetoptLong::OPTIONAL_ARGUMENT ],
+  [ '--raw'     , '-r', GetoptLong::NO_ARGUMENT       ],
 )
 
 
 url_only = false
+raw      = false
 mirror   = nil
 
 opts.each do |opt, arg|
@@ -86,6 +92,7 @@ opts.each do |opt, arg|
 
       -u, --url                                     just emit URLs
       -m, --mirror [http://example.com/some/path/]  download from mirror
+      -r, --raw                                     don't rewrite URLs
       -h, --help                                    show this help
 
       sources.rb extracts the URLs from the url files provided as
@@ -106,10 +113,15 @@ opts.each do |opt, arg|
       --mirror flag without an argument - in which case no mirrow will
       be used. In the future a default mirror might be used in that
       case.
+
+      Option --raw is incompatible with --mirrow because raw URLs can refer
+      to URI schemes that are incompatible with mirroring.
       EOF
       exit 0
     when '--url'
       url_only |= true
+    when '--raw'
+      raw |= true
     when '--mirror'
       mirror = arg == '' ? nil : arg
     else
@@ -123,7 +135,7 @@ if ARGV.length <= 0
 end
 
 ARGV.each do |path|
-  opam = Opam.new(path,mirror)
+  opam = Opam.new(path,mirror,raw)
   if url_only then
     puts opam.url
   else
