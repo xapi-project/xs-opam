@@ -82,8 +82,4 @@ clean:
 	rm -f sources.spec sources.txt
 	rm -f xs-opam-src.spec xs-opam-repo.spec
 
-# development targets
-
-lindig/%:
-	$(MAKE) REPO=http://github.com/lindig/xs-opam $(@F)
 
