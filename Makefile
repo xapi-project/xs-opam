@@ -2,16 +2,11 @@
 # vim: set ts=8 sw=8 noet:
 #
 
-#
-# override for testing using a personal repository:
-#
-#	make REPO=http://github.com/lindig/xs-opam spec
-#
+VERSION	:= 0.2.1
 
 REPO	:= https://github.com/xapi-project/xs-opam
 DATE	:= $(shell printf '%x' `date +%s`)
 RELEASE	:= $(shell git describe --always)
-VERSION	:= 0.1.$(DATE)
 URL	+= xs-opam/packages/upstream/*/url
 URL	+= xs-opam/packages/xs/*/url
 MIRROR	:= https://repo.citrite.net/ctx-local-contrib/xs-opam/
@@ -41,6 +36,7 @@ build:
 # generate spec files
 spec:
 	git diff --quiet HEAD || ( echo "uncommitted changes" && false )
+	git tag $(VERSION) || echo "consider incrementing the VERSION"
 	$(SRCS) |\
 	awk '/http/ { printf "Source%03d: %s\n", ++n, $$2}' > sources.spec
 	sed	-e '/^# sources.spec/r sources.spec'	\

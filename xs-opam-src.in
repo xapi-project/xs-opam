@@ -7,7 +7,7 @@ URL: @REPO@
 # Git commit @RELEASE@
 AutoReqProv: no
 
-Source000: @REPO@/archive/master/xs-opam-master.tar.gz
+Source000: @REPO@/archive/%{version}/xs-opam-%{version}.tar.gz
 # sources.spec
 
 BuildRequires: opam
@@ -19,7 +19,7 @@ Opam repository containing all upstream and development libraries
 required for building the OCaml components in the XS Toolstack.
 
 %prep
-%setup -q -n xs-opam-master
+%setup -q -n xs-opam-%{version}
 # link all source files into build/src/
 mkdir -p build/src
 ./utils/sources.rb -m "@MIRROR@" @URL@ | while read p url
