@@ -37,6 +37,13 @@ implemented in [OCaml]. It can be used in two ways:
     fetches them from `url` files and applies rewriting for some
     URLs pointing to github.com. This step also checks all URLs.
 
+## Useful Makefile Targets
+
+*   `make specs` generates RPM spec files
+*   `make check` checks all URLs to be valid (very fast)
+*   `make download` downloads all source code
+*   `make repo` prepares the Opam repository (requires `download` first)
+
 ## Layout of This Repository
 
 Read this to understand how to make changes

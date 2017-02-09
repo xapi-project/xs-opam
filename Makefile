@@ -2,7 +2,13 @@
 # vim: set ts=8 sw=8 noet:
 #
 
-REPO    := https://github.com/xapi-project/xs-opam
+#
+# override for testing using a personal repository:
+#
+#	make REPO=http://github.com/lindig/xs-opam spec
+#
+
+REPO	:= https://github.com/xapi-project/xs-opam
 DATE	:= $(shell printf '%x' `date +%s`)
 RELEASE	:= $(shell git describe --always)
 VERSION	:= 0.1.$(DATE)
@@ -34,6 +40,7 @@ build:
 
 # generate spec files
 spec:
+	git diff --quiet HEAD || ( echo "uncommitted changes" && false )
 	$(SRCS) |\
 	awk '/http/ { printf "Source%03d: %s\n", ++n, $$2}' > sources.spec
 	sed	-e '/^# sources.spec/r sources.spec'	\
