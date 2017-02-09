@@ -114,7 +114,7 @@ opts.each do |opt, arg|
       be used. In the future a default mirror might be used in that
       case.
 
-      Option --raw is incompatible with --mirrow because raw URLs can refer
+      Option --raw is incompatible with --mirror because raw URLs can refer
       to URI schemes that are incompatible with mirroring.
       EOF
       exit 0
