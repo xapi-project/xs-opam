@@ -7,11 +7,12 @@
 #
 #	make REPO=http://github.com/lindig/xs-opam spec
 #
-REPO	:= https://github.com/xapi-project/xs-opam
 
+VERSION	:= 0.1.$(DATE)
+
+REPO	:= https://github.com/xapi-project/xs-opam
 DATE	:= $(shell printf '%x' `date +%s`)
 RELEASE	:= $(shell git describe --always)
-VERSION	:= 0.1.$(DATE)
 URL	+= packages/upstream/*/url
 URL	+= packages/xs/*/url
 MIRROR	:=
@@ -40,6 +41,7 @@ build:
 
 # generate spec files
 spec:
+	git diff --quiet HEAD || ( echo "uncommitted changes" && false )
 	$(SRCS) |\
 	awk '/http/ { printf "Source%03d: %s\n", ++n, $$2}' > sources.spec
 	sed	-e '/^# sources.spec/r sources.spec'	\
