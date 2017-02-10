@@ -1,6 +1,6 @@
 Name: xs-opam-src
 Version: @VERSION@
-Release: 1%{?dist}
+Release: @DATE@%{?dist}
 Summary: Opam repository
 License: Various
 URL: @REPO@

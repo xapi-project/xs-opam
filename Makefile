@@ -42,6 +42,7 @@ spec:
 	sed	-e '/^# sources.spec/r sources.spec'	\
 		-e 's/@VERSION@/$(VERSION)/'		\
 		-e 's/@RELEASE@/$(RELEASE)/'		\
+		-e 's!@DATE@!$(DATE)!'			\
 		-e 's!@REPO@!$(REPO)!'			\
 		-e 's!@URL@!$(URL)!'			\
 		-e 's!@MIRROR@!$(MIRROR)!'		\
@@ -49,6 +50,7 @@ spec:
 	rm -f sources.spec
 	sed	-e 's/@VERSION@/$(VERSION)/'		\
 		-e 's/@RELEASE@/$(RELEASE)/'		\
+		-e 's!@DATE@!$(DATE)!'			\
 		-e 's!@MIRROR@!$(MIRROR)!'		\
 		-e 's!@URL@!$(URL)!'			\
 		-e 's!@REPO@!$(REPO)!'			\
