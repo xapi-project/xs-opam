@@ -1,7 +1,7 @@
 #! /bin/bash
 #
 
-set -e
+set -ex
 
 OCAML_VERSION=4.02.3
 
@@ -13,13 +13,39 @@ get()
 get .travis-ocaml.sh
 sh  .travis-ocaml.sh
 
-PKG="$PKG $(ls -1 packages/upstream | grep -v systemd.stable)"
-# PKG="$PKG $(ls -1 packages/xs)"
+# list of packages -- excluding some that can't be installed on Travis
+pkg()
+{
+	find packages/upstream -maxdepth 1 -mindepth 1 -type d \
+	| awk -F/ '{print $NF}' \
+	| egrep -v '^(systemd)'
+}
+
+# packages from xs/ that we can compile
+XS='
+cdrom
+crc
+fd-send-recv
+message-switch
+nbd
+netlink
+opasswd
+rpc
+shared-block-ring
+xapi-backtrace
+xapi-idl
+xapi-inventory
+xapi-rrd
+xapi-stdext
+xen-api-client
+xenstore
+xenstore_transport
+'
 
 opam config exec -- opam repository add local file://$PWD
 opam config exec -- opam repository remove default
 opam config exec -- opam repository list
-opam config exec -- opam install -y -j 2 $PKG
+opam config exec -- opam install -y -j 2 $(pkg) $XS
 
 
 
