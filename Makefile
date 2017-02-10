@@ -2,7 +2,7 @@
 # vim: set ts=8 sw=8 noet:
 #
 
-VERSION	:= 0.2.1
+VERSION	:= 0.2.2
 
 REPO	:= https://github.com/xapi-project/xs-opam
 DATE	:= $(shell printf '%x' `date +%s`)
