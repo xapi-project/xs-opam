@@ -3,8 +3,9 @@
 #
 
 VERSION	:= 0.2.4
+PROJECT := ~CHRISTIANLIN
 
-REPO	:= https://code.citrite.net/rest/archive/latest/projects/~CHRISTIANLIN/repos/xs-opam-rpm/archive?at=$(VERSION)\&format=tar.gz\#/xs-opam-rpm-$(VERSION).tar.gz
+REPO	:= https://code.citrite.net/rest/archive/latest/projects/$(PROJECT)/repos/xs-opam/archive?at=$(VERSION)\&format=tar.gz\#/xs-opam-rpm-$(VERSION).tar.gz
 DATE	:= $(shell printf '%x' `date +%s`)
 RELEASE	:= $(shell git describe --always)
 URL	+= packages/upstream/*/url
@@ -36,7 +37,7 @@ build:
 
 # generate spec files
 spec:
-	# git diff --quiet HEAD || ( echo "uncommitted changes" && false )
+	git diff --quiet HEAD || ( echo "uncommitted changes" && false )
 	$(SRCS) |\
 	awk 'BEGIN {n=10} /http/ { printf "Source%03d: %s\n", n++, $$2}' > sources.spec
 	sed	-e '/^# sources.spec/r sources.spec'	\
