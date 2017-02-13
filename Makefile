@@ -2,19 +2,13 @@
 # vim: set ts=8 sw=8 noet:
 #
 
-#
-# override for testing using a personal repository:
-#
-#	make REPO=http://github.com/lindig/xs-opam spec
-#
-REPO	:= https://github.com/xapi-project/xs-opam
-
+REPO    := https://github.com/xapi-project/xs-opam
 DATE	:= $(shell printf '%x' `date +%s`)
 RELEASE	:= $(shell git describe --always)
 VERSION	:= 0.1.$(DATE)
-URL	+= packages/upstream/*/url
-URL	+= packages/xs/*/url
-MIRROR	:=
+URL	+= xs-opam/packages/upstream/*/url
+URL	+= xs-opam/packages/xs/*/url
+MIRROR	:= https://repo.citrite.net/ctx-local-contrib/xs-opam/
 SRCS 	:= ./utils/sources.rb -m "$(MIRROR)" $(URL)
 
 TOP	:= $(PWD)
@@ -29,7 +23,7 @@ all:	check spec
 # to sources in build/src.
 #
 repo:	build
-	cp -r packages build
+	cp -r xs-opam/packages build
 	$(SRCS) | while read pkg url; do \
 		echo "http: \"file://$(SRC)/$$(basename $$url)\"" > build/packages/$$pkg/url;\
 	done
