@@ -7,8 +7,8 @@ VERSION	:= 0.2.3
 REPO	:= https://code.citrite.net/rest/archive/latest/projects/~CHRISTIANLIN/repos/xs-opam-rpm/archive?at=v%{version}\&format=tar.gz\#/xs-opam-rpm-%{version}.tar.gz
 DATE	:= $(shell printf '%x' `date +%s`)
 RELEASE	:= $(shell git describe --always)
-URL	+= xs-opam/packages/upstream/*/url
-URL	+= xs-opam/packages/xs/*/url
+URL	+= packages/upstream/*/url
+URL	+= packages/xs/*/url
 MIRROR	:= https://repo.citrite.net/ctx-local-contrib/xs-opam/
 SRCS 	:= ./utils/sources.rb -m "$(MIRROR)" $(URL)
 
@@ -24,7 +24,7 @@ all:	check spec
 # to sources in build/src.
 #
 repo:	build
-	cp -r xs-opam/packages build
+	cp -r packages build
 	$(SRCS) | while read pkg url; do \
 		echo "http: \"file://$(SRC)/$$(basename $$url)\"" > build/packages/$$pkg/url;\
 	done
