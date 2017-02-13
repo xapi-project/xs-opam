@@ -4,7 +4,7 @@
 
 VERSION	:= 0.2.3
 
-REPO	:= https://code.citrite.net/rest/archive/latest/projects/~CHRISTIANLIN/repos/xs-opam-rpm/archive?at=v%{version}&format=tar.gz#/xs-opam-rpm-%{version}.tar.gz
+REPO	:= https://code.citrite.net/rest/archive/latest/projects/~CHRISTIANLIN/repos/xs-opam-rpm/archive?at=v%{version}\&format=tar.gz\#/xs-opam-rpm-%{version}.tar.gz
 DATE	:= $(shell printf '%x' `date +%s`)
 RELEASE	:= $(shell git describe --always)
 URL	+= xs-opam/packages/upstream/*/url
@@ -35,10 +35,10 @@ build:
 
 # generate spec files
 spec:
-	git diff --quiet HEAD || ( echo "uncommitted changes" && false )
-	git tag $(VERSION) || echo "consider incrementing the VERSION"
+	# git diff --quiet HEAD || ( echo "uncommitted changes" && false )
+	# git tag $(VERSION) || echo "consider incrementing the VERSION"
 	$(SRCS) |\
-	awk '/http/ { printf "Source%03d: %s\n", ++n, $$2}' > sources.spec
+	awk 'BEGIN {n=10} /http/ { printf "Source%03d: %s\n", n++, $$2}' > sources.spec
 	sed	-e '/^# sources.spec/r sources.spec'	\
 		-e 's/@VERSION@/$(VERSION)/'		\
 		-e 's/@RELEASE@/$(RELEASE)/'		\
