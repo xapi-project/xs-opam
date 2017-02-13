@@ -2,9 +2,9 @@
 # vim: set ts=8 sw=8 noet:
 #
 
-VERSION	:= 0.2.2
+VERSION	:= 0.2.3
 
-REPO	:= https://github.com/xapi-project/xs-opam
+REPO	:= https://code.citrite.net/rest/archive/latest/projects/~CHRISTIANLIN/repos/xs-opam-rpm/archive?at=v%{version}&format=tar.gz#/xs-opam-rpm-%{version}.tar.gz
 DATE	:= $(shell printf '%x' `date +%s`)
 RELEASE	:= $(shell git describe --always)
 URL	+= xs-opam/packages/upstream/*/url
