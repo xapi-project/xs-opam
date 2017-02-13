@@ -1,0 +1,9 @@
+language: c
+dist: trusty
+sudo: required
+before_install:
+  # the following packages are required by some of the packages
+  # installting them via "opam depext" is possible, too
+  - sudo apt-get install hwdata libpci-dev libxen-dev
+script:
+  - sh travis.sh
