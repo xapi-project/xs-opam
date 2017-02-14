@@ -52,6 +52,7 @@ implemented in [OCaml]. It can be used in two ways:
 *   `make check` checks all URLs to be valid (very fast)
 *   `make download` downloads all source code
 *   `make repo` prepares the Opam repository (requires `download` first)
+*   `make diff` compares the master and public branch for packages/*
 
 ## Branches
 

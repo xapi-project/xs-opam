@@ -76,6 +76,10 @@ download: build
 		test -f $$(basename $$url) || curl --fail -L -O $$url; \
 	done
 
+# find differences between master and public repo
+diff:
+	git diff master:packages public:packages
+
 # generate URLs for debugging
 sources.txt:
 	$(SRCS) > $@
