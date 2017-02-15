@@ -24,6 +24,7 @@ all:	check spec
 # to sources in build/src.
 #
 repo:	build packages
+	cp -r packages build
 	$(SRCS) | while read pkg url; do \
 		echo "http: \"file://$(SRC)/$$(basename $$url)\"" > build/packages/$$pkg/url;\
 	done
