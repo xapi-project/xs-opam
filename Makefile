@@ -36,19 +36,22 @@ build:
 
 # generate spec files
 spec:
-	git diff --quiet HEAD || ( echo "uncommitted changes" && false )
+	git diff --quiet HEAD \
+		|| ( echo "uncommitted changes" && false )
+	git diff --quiet master:packages public:packages \
+		|| ( echo "update packages on branch public" && false )
 	$(SRCS) |\
 	awk 'BEGIN {n=10} /http/ { printf "Source%03d: %s\n", n++, $$2}' > sources.spec
 	sed	-e '/^# sources.spec/r sources.spec'	\
 		-e 's!@VERSION@!$(VERSION)!'		\
-		-e 's!@RELEASE@!$(RELEASE)!'			\
+		-e 's!@RELEASE@!$(RELEASE)!'		\
 		-e 's!@REPO@!$(REPO)!'			\
 		-e 's!@URL@!$(URL)!'			\
 		-e 's!@MIRROR@!$(MIRROR)!'		\
 		xs-opam-src.in > xs-opam-src.spec
 	rm -f sources.spec
 	sed	-e 's!@VERSION@!$(VERSION)!'		\
-		-e 's!@RELEASE@!$(RELEASE)!'			\
+		-e 's!@RELEASE@!$(RELEASE)!'		\
 		-e 's!@DATE@!$(DATE)!'			\
 		-e 's!@MIRROR@!$(MIRROR)!'		\
 		-e 's!@URL@!$(URL)!'			\
