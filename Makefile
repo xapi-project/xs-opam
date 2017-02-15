@@ -2,7 +2,7 @@
 # vim: set ts=8 sw=8 noet:
 #
 
-VERSION	:= 0.2.8
+VERSION	:= 0.2.9
 PROJECT := ~CHRISTIANLIN
 
 REPO	:= https://code.citrite.net/rest/archive/latest/projects/$(PROJECT)/repos/xs-opam/archive?at=$(VERSION)\&format=tar.gz\#/xs-opam-rpm-$(VERSION).tar.gz
