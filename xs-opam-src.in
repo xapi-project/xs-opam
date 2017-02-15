@@ -23,6 +23,7 @@ required for building the OCaml components in the XS Toolstack.
 %autosetup -p1
 # link all source files into build/src/
 mkdir -p build/src
+(cd build/src; ln -s ../../../../xs-opam.tar.gz .)
 ./utils/sources.rb -m "@MIRROR@" @URL@ | while read p url
 do
   file=$(basename $url)
