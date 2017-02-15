@@ -1,10 +1,10 @@
 Name: xs-opam-repo
 Version: @VERSION@
-Release: @DATE@%{?dist}
+Release: 1{?dist}
 Summary: Build and install OCaml libraries from Opam repository
 License: Various
 URL: @REPO@
-# Git commit @RELEASE@
+# Commit: @RELEASE@
 
 AutoReqProv: no
 BuildRequires: xs-opam-src = %{version}

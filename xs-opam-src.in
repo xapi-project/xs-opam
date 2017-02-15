@@ -1,10 +1,10 @@
 Name: xs-opam-src
 Version: @VERSION@
-Release: @DATE@%{?dist}
+Release: 1%{?dist}
 Summary: Opam repository
 License: Various
 URL: @REPO@
-# Git commit @RELEASE@
+# Commit: @RELEASE@
 AutoReqProv: no
 
 Source000: @REPO@

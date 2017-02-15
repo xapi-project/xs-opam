@@ -36,12 +36,13 @@ implemented in [OCaml]. It can be used in two ways:
 
 2.  Executing `make download` will download all sources into
     `build/src`. If you added or updated a package, its source tar ball
-    needs to be uploaded to Artifactory into:
+		in `'build/src` needs to be uploaded to Artifactory into:
 
       https://repo.citrite.net/ctx-local-contrib/xs-opam/
 
-3.  Update the VERSION in the Makefile and commit all changes. Tag the
-    repository with this VERSION and push the tags and the commits.
+3.  Tag the release and push tags and commits. IF you don't tag the
+		release, the generated SPEC file (see below) will point to last tag
+		and not include your changes.
 
 4.  Execute `make` to generate the SPEC files for xenserver-specs. The
     generated files will point to the tagged realease.

@@ -2,12 +2,11 @@
 # vim: set ts=8 sw=8 noet:
 #
 
-VERSION	:= 0.2.9
+VERSION	:= $(shell git describe --tags | sed 's/-.*$$//')
+RELEASE := $(shell git describe --tags)
 PROJECT := ~CHRISTIANLIN
 
 REPO	:= https://code.citrite.net/rest/archive/latest/projects/$(PROJECT)/repos/xs-opam/archive?at=$(VERSION)\&format=tar.gz\#/xs-opam-rpm-$(VERSION).tar.gz
-DATE	:= $(shell printf '%x' `date +%s`)
-RELEASE	:= $(shell git describe --always)
 URL	+= packages/upstream/*/url
 URL	+= packages/xs/*/url
 MIRROR	:= https://repo.citrite.net/ctx-local-contrib/xs-opam/
@@ -41,16 +40,15 @@ spec:
 	$(SRCS) |\
 	awk 'BEGIN {n=10} /http/ { printf "Source%03d: %s\n", n++, $$2}' > sources.spec
 	sed	-e '/^# sources.spec/r sources.spec'	\
-		-e 's/@VERSION@/$(VERSION)/'		\
-		-e 's/@RELEASE@/$(RELEASE)/'		\
-		-e 's!@DATE@!$(DATE)!'			\
+		-e 's!@VERSION@!$(VERSION)!'		\
+		-e 's!@RELEASE@!$(RELEASE)!'			\
 		-e 's!@REPO@!$(REPO)!'			\
 		-e 's!@URL@!$(URL)!'			\
 		-e 's!@MIRROR@!$(MIRROR)!'		\
 		xs-opam-src.in > xs-opam-src.spec
 	rm -f sources.spec
-	sed	-e 's/@VERSION@/$(VERSION)/'		\
-		-e 's/@RELEASE@/$(RELEASE)/'		\
+	sed	-e 's!@VERSION@!$(VERSION)!'		\
+		-e 's!@RELEASE@!$(RELEASE)!'			\
 		-e 's!@DATE@!$(DATE)!'			\
 		-e 's!@MIRROR@!$(MIRROR)!'		\
 		-e 's!@URL@!$(URL)!'			\
