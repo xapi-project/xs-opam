@@ -28,11 +28,12 @@ implemented in [OCaml]. It can be used in two ways:
 
 ## How to Add or Remove a Package
 
-1.  Add (or remove) an Opam entry under `packages/`. This should go into
-    `packages/upstream` if the code is not maintained by the Xapi
-    project and `packages/xs` otherwise. Typically the entry can be
-    copied from an existing Opam installation. To remove an entry,
-    simply remove its directory in `packages/`.
+1.  Add (or remove) an Opam entry in the public Opam repository
+		at
+
+				http://github.com/xapi-project/xs-opam
+
+2.	Executing `make packages` will download the Opam repository.
 
 2.  Executing `make download` will download all sources into
     `build/src`. If you added or updated a package, its source tar ball

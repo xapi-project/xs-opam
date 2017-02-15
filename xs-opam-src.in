@@ -8,6 +8,7 @@ URL: @REPO@
 AutoReqProv: no
 
 Source000: @REPO@
+Source001: https://github.com/xapi-project/xs-opam/archive/master/xs-opam.tar.gz
 # sources.spec
 
 BuildRequires: opam
