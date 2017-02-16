@@ -40,7 +40,7 @@ implemented in [OCaml]. It can be used in two ways:
 
       https://repo.citrite.net/ctx-local-contrib/xs-opam/
 
-3.  Tag the release and push tags and commits. IF you don't tag the
+3.  Tag the release and push tags and commits. If you don't tag the
 		release, the generated SPEC file (see below) will point to last tag
 		and not include your changes.
 
