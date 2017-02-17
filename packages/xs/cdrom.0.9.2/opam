@@ -1,0 +1,11 @@
+opam-version: "1.2"
+name: "cdrom"
+maintainer: "Euan Harris <euan.harris@citrix.com>"
+author: "Dave Scott <dave@recoil.org>"
+build: [
+  ["./configure" "--prefix=%{prefix}%"]
+  [make]
+]
+install: [make "install"]
+remove: ["ocamlfind" "remove" "cdrom"]
+depends: ["ocamlfind" "oasis"]
