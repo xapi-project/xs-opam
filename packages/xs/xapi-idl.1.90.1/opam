@@ -1,7 +1,16 @@
-opam-version: "1"
+opam-version: "1.2"
+authors: "Dave Scott"
+homepage: "https://github.com/xapi-project/xcp-idl"
+bug-reports: "https://github.com/xapi-project/xcp-idl/issues"
+dev-repo: "git://github.com/xapi-project/xcp-idl"
 maintainer: "dave.scott@eu.citrix.com"
 build: [
   [make "all"]
+]
+build-test: [
+  [make "test"]
+]
+install: [
   [make "install"]
 ]
 remove: [
