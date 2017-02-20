@@ -30,7 +30,7 @@ repo:	build
 		echo "http: \"file://$(SRC)/$$(basename $$url)\"" > build/packages/$$pkg/url;\
 	done
 	cd build; opam-admin make
-	cd build; find packages -type f -name 'url.off' -exec mv '{}' url ';'
+	cd build; find packages -type f -name 'url.off' -execdir mv '{}' url ';'
 
 build:
 	mkdir -p build/src
