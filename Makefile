@@ -71,7 +71,7 @@ check:
 
 # download all archives but skip those that are already present
 download: build
-	$(SRCS) | 					\
+	./utils/sources.rb $(URL) | 			\
 	while read package url; do 			\
 		cd $(SRC); 				\
 		test -f $$(basename $$url) || curl --fail -L -O $$url; \

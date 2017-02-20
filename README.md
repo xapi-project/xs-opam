@@ -34,18 +34,33 @@ implemented in [OCaml]. It can be used in two ways:
     copied from an existing Opam installation. To remove an entry,
     simply remove its directory in `packages/`.
 
-2.  Executing `make download` will download all sources into
+2.  Executing `make download` will download all (original) sources into
     `build/src`. If you added or updated a package, its source tar ball
-		in `'build/src` needs to be uploaded to Artifactory into:
+    in `'build/src` needs to be uploaded to Artifactory into:
 
       https://repo.citrite.net/ctx-local-contrib/xs-opam/
 
+    ```
+    #! /bin/sh
+
+    AF="https://repo.citrite.net/ctx-local-contrib/xs-opam"
+
+    for f in $@; do
+      curl -uchristianlin:XXXXXX -T $f "$AF/$(basename $f)"
+    done
+    ```
+
+    `make download` will only download sources not already downloaded.
+    So it is safe to execute multiple times.
+
 3.  Tag the release and push tags and commits. If you don't tag the
-		release, the generated SPEC file (see below) will point to last tag
-		and not include your changes.
+    release, the generated SPEC file (see below) will point to the last
+    tag and not include your changes.
 
 4.  Execute `make` to generate the SPEC files for xenserver-specs. The
-    generated files will point to the tagged realease.
+    generated files will point to the tagged realease. As part of this
+    `make check` is executed and it checks that all sources are
+    available on the mirror.
 
 ## Useful Makefile Targets
 
