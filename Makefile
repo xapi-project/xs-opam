@@ -26,10 +26,11 @@ all:	check spec
 repo:	build
 	cp -r packages build
 	$(SRCS) | while read pkg url; do \
+		mv build/packages/$$pkg/url build/packages/$$pkg/url.off
 		echo "http: \"file://$(SRC)/$$(basename $$url)\"" > build/packages/$$pkg/url;\
 	done
 	cd build; opam-admin make
-
+	cd build; find packages -type f -name 'url.off' -exec mv '{}' url ';'
 
 build:
 	mkdir -p build/src
