@@ -11,14 +11,11 @@ build: [
 install: [
   [make "install" "BINDIR=%{bin}%" "SBINDIR=%{bin}%" "ETCDIR=%{prefix}%/etc"]
 ]
-remove: [
-  [make "uninstall" "BINDIR=%{bin}%" "SBINDIR=%{bin}%" "ETCDIR=%{prefix}%/etc"]
-  ["ocamlfind" "remove" "forkexec"]
-]
+remove: [make "uninstall" "BINDIR=%{bin}%" "SBINDIR=%{bin}%" "ETCDIR=%{prefix}%/etc"]
 depends: [
   "ocamlfind" {build}
   "oasis" {build}
-  "systemd"
+  "systemd" {build}
   "syslog"
   "rpc"
   "fd-send-recv"
