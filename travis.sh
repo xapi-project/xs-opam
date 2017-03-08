@@ -35,6 +35,7 @@ shared-block-ring
 xapi-backtrace
 xapi-idl
 xapi-inventory
+xapi-netdev
 xapi-rrd
 xapi-stdext
 xen-api-client
