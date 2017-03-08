@@ -35,6 +35,7 @@ shared-block-ring
 xapi-backtrace
 xapi-idl
 xapi-inventory
+xapi-netdev
 xapi-rrd
 xapi-stdext
 xen-api-client
@@ -46,6 +47,8 @@ opam config exec -- opam repository add local file://$PWD
 opam config exec -- opam repository remove default
 opam config exec -- opam repository list
 opam config exec -- opam install -y -j 2 $(pkg) $XS
-
+# Workaround to mark failed uninstall as error
+opam config exec -- opam remove -y $XS
+opam config exec -- opam install -y -j 2 $XS
 
 
