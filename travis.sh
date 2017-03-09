@@ -26,14 +26,12 @@ XS='
 cdrom
 crc
 fd-send-recv
-message-switch
 nbd
 netlink
 opasswd
 rpc
 shared-block-ring
 xapi-backtrace
-xapi-idl
 xapi-inventory
 xapi-rrd
 xapi-stdext
@@ -42,12 +40,20 @@ xenstore
 xenstore_transport
 '
 
+# packages from xs-extra/ that we can compile
+XS_EXTRA='
+message-switch
+'
+
+# all of our packages that we can compile
+XS_ALL="$XS $XS_EXTRA"
+
 opam config exec -- opam repository add local file://$PWD
 opam config exec -- opam repository remove default
 opam config exec -- opam repository list
-opam config exec -- opam install -y -j 2 $(pkg) $XS
+opam config exec -- opam install -y -j 2 $(pkg) $XS_ALL
 # Workaround to mark failed uninstall as error
-opam config exec -- opam remove -y $XS
-opam config exec -- opam install -y -j 2 $XS
+opam config exec -- opam remove -y $XS_ALL
+opam config exec -- opam install -y -j 2 $XS_ALL
 
 
