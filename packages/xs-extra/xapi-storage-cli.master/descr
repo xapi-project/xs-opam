@@ -1,0 +1,4 @@
+A CLI for xapi storage services.
+
+The CLI allows you to directly manipulate virtual disk images, without
+them being attached to VMs.
