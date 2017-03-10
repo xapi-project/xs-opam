@@ -13,33 +13,23 @@ remote Opam repository:
 
 ## Layout of This Repository
 
-Read this to understand how to make changes
+Packages are organised into namespaces for organisational aspects. They
+are equivalent from the perspective of the Opam user.
 
-    +-- compilers                       part of Opam repo (empty)
-    +-- LICENSE
-    +-- packages                        part of Opam repo
-    |   +-- upstream                    all upstream packages
-    |   |   +-- angstrom.0.1.1
-    |   |   |   +-- descr
-    |   |   |   +-- findlib
-    |   |   |   +-- opam
-    |   |   |   \-- url
-    |   |   \-- zed.1.4
-    |   |       +-- descr
-    |   |       +-- findlib
-    |   |       +-- opam
-    |   |       \-- url
-    |   \-- xs                          all XenServer packages
-    |       +-- message-switch.jonludlam#ppx
-    |       |   +-- descr
-    |       |   +-- opam
-    |       |   \-- url
-    |       \-- xenstore_transport.0.9.4
-    |           +-- descr
-    |           +-- findlib
-    |           +-- opam
-    |           \-- url
-    +-- README.md
+* `upstream`: packages that we don't control with fixed versions.
+* `xs`: packages that we control, with fixed versions.
+* `xs-extra`: packages that we control, following their respective
+  master branch.
+
+    ./packages
+    ./packages/upstream
+    ./packages/upstream/rpc.1.9.11.jonludlam
+    ./packages/xs
+    ./packages/xs/xapi-backtrace.0.4
+    ./packages/xs/cdrom.0.9.2
+    ./packages/xs-extra
+    ./packages/xs-extra/message-switch.master
+    ./packages/xs-extra/xapi-rrd-transport.master
 
 The `packages/` directory contains Opam entries for each package. These
 can be copied *untouched* from other, existing Opam repositories. The
