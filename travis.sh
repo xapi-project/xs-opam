@@ -43,6 +43,7 @@ xenstore_transport
 # packages from xs-extra/ that we can compile
 XS_EXTRA='
 message-switch
+vncproxy
 '
 
 # all of our packages that we can compile

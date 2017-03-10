@@ -1,0 +1,29 @@
+opam-version: "1.2"
+name: "vncproxy"
+maintainer: "Marcello Seri <marcello.seri@citrix.com>"
+authors: [ "David Scott"
+           "Marcello Seri <marcello.seri@citrix.com>" ]
+license: "LGPL-2.1 with OCaml linking exception"
+homepage: "https://github.com/xapi-project/vncproxy"
+dev-repo: "https://github.com/xapi-project/vncproxy"
+bug-reports: "https://github.com/xapi-project/vncproxy/issues"
+build: [
+  ["ocaml" "setup.ml" "-configure" "--prefix" prefix]
+  ["ocaml" "setup.ml" "-build"]
+]
+install: ["ocaml" "setup.ml" "-install"]
+remove: [
+  ["ocaml" "%{etc}%/vncproxy/setup.ml" "-C" "%{etc}%/vncproxy" "-uninstall"]
+]
+build-test: [
+  ["ocaml" "setup.ml" "-configure" "--enable-tests"]
+  ["ocaml" "setup.ml" "-build"]
+  ["ocaml" "setup.ml" "-test"]
+]
+depends: [
+  "cmdliner" {build}
+  "lwt" {build}
+  "ocamlbuild" {build}
+  "ocamlfind" {build}
+  "xen-api-client" {build}
+]
