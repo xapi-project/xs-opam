@@ -1,0 +1,28 @@
+opam-version: "1.2"
+name: "wsproxy"
+version: "1.1.0"
+authors: [ "Jon Ludlam" "jonathan.ludlam@citrix.com"
+           "Marcello Seri <marcello.seri@citrix.com>" ]
+license: "LGPL-2.0 with OCaml linking exception"
+homepage: "https://github.com/xapi-project/wsproxy"
+dev-repo: "https://github.com/xapi-project/wsproxy"
+bug-reports: "https://github.com/xapi-project/wsproxy/issues"
+build: [
+  ["oasis" "setup"]
+  ["make"]
+]
+install: [
+    ["oasis" "setup"]
+    ["make" "install"]
+]
+remove: [
+  ["oasis" "setup"]
+  ["make" "uninstall"]
+]
+depends: [
+  "lwt" {build}
+  "ocamlbuild" {build}
+  "ocamlfind" {build}
+  "oasis" {build}
+  "re" {build}
+]
