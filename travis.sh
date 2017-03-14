@@ -3,7 +3,8 @@
 
 set -ex
 
-OCAML_VERSION=4.02.3
+export OCAML_VERSION=4.02
+export OPAM_INIT=false
 
 get()
 {
@@ -49,12 +50,11 @@ vncproxy
 # all of our packages that we can compile
 XS_ALL="$XS $XS_EXTRA"
 
-opam config exec -- opam repository add local file://$PWD
-opam config exec -- opam repository remove default
-opam config exec -- opam repository list
-opam config exec -- opam install -y -j 2 $(pkg) $XS_ALL
-# Workaround to mark failed uninstall as error
+opam init -y local file://$PWD
+opam config exec -- opam install -y -j 4 $(pkg) $XS_ALL
+# Workaround to mark failed uninstall as error. We only test
+# the uninstall of the XS_ALL packages but not of the upstream packages.
 opam config exec -- opam remove -y $XS_ALL
-opam config exec -- opam install -y -j 2 $XS_ALL
+opam config exec -- opam install -y -j 4 $XS_ALL
 
 
