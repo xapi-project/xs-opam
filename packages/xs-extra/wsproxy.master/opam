@@ -9,15 +9,15 @@ dev-repo: "https://github.com/xapi-project/wsproxy"
 bug-reports: "https://github.com/xapi-project/wsproxy/issues"
 build: [
   ["oasis" "setup"]
-  ["make"]
+  ["ocaml" "setup.ml" "-configure" "--prefix" prefix]
+  ["ocaml" "setup.ml" "-build"]
 ]
 install: [
-    ["oasis" "setup"]
-    ["make" "install"]
+  ["ocaml" "setup.ml" "-install"]
 ]
 remove: [
-  ["oasis" "setup"]
-  ["make" "uninstall"]
+  ["ocaml" "setup.ml" "-configure" "--prefix" prefix]
+  ["ocaml" "setup.ml" "-uninstall"]
 ]
 depends: [
   "lwt" {build}
