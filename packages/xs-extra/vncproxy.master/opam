@@ -5,7 +5,7 @@ authors: [ "David Scott"
            "Marcello Seri <marcello.seri@citrix.com>" ]
 license: "LGPL-2.1 with OCaml linking exception"
 homepage: "https://github.com/xapi-project/vncproxy"
-dev-repo: "https://github.com/xapi-project/vncproxy"
+dev-repo: "https://github.com/xapi-project/vncproxy.git"
 bug-reports: "https://github.com/xapi-project/vncproxy/issues"
 build: [
   ["ocaml" "setup.ml" "-configure" "--prefix" prefix]
@@ -21,9 +21,9 @@ build-test: [
   ["ocaml" "setup.ml" "-test"]
 ]
 depends: [
-  "cmdliner" {build}
-  "lwt" {build}
+  "cmdliner"
+  "lwt"
   "ocamlbuild" {build}
   "ocamlfind" {build}
-  "xen-api-client" {build}
+  "xen-api-client" {>= "0.9.14"}
 ]
