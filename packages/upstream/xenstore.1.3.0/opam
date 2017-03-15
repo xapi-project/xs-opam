@@ -22,7 +22,6 @@ depends: [
   "cstruct" {>= "1.9.0"}
   "ppx_tools"
   "lwt"
-  "camlp4" {build}
   "ounit" {build}
 ]
 depexts: [
