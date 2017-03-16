@@ -8,11 +8,11 @@ remove: [
   [make "uninstall" "BINDIR=%{bin}%" "MANDIR=%{man}%"]
 ]
 depends: [
-  "xapi-idl" {>= "0.10.0" }
+  "xapi-idl"
   "xapi-storage"
   "async"
   "async_inotify"
-  "async_unix" {>= "112.24.00" }
+  "async_unix"
   "core"
-  "message-switch" {>= "0.11.0" }
+  "message-switch"
 ]
