@@ -8,7 +8,6 @@ build: [
 remove: [make "uninstall"]
 depends: [
   "oasis" {build}
-  "optcomp"
   "ocamlfind"
   "xmlm"
   "uuidm"
@@ -18,17 +17,16 @@ depends: [
   "uri"
   "re"
   "rpc"
-  "xapi-idl" {= "xapi-project#master"}
-  "xapi-forkexecd" {= "xapi-project#master"}
-  "xapi-stdext" {= "xapi-project#master"}
+  "xapi-idl"
+  "xapi-forkexecd"
+  "xapi-stdext"
   "fd-send-recv"
-  "sexplib" {< "113.24.00"}
+  "sexplib"
   "xenstore"
   "xenstore_transport"
-  "xenctrl" {= "xapi-project#master"}
-  "qmp"
+  "xenctrl"
   "oclock"
-  "xapi-inventory" {= "xapi-project#master"}
+  "xapi-inventory"
 ]
-depopts: "libvirt" {= "djs55#typo"}
+depopts: "libvirt"
 ocaml-version: [>= "4.01.0"]
