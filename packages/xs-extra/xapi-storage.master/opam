@@ -14,10 +14,7 @@ remove: [
   [make "uninstall" "PREFIX=%{prefix}%"]
 ]
 depends: [
-  "cow" {< "2.0.0"}
   "rpc"
-  "caml2html"
-  "xmlm"
+  "re"
   "cmdliner"
-  "ocamlfind"
 ]
