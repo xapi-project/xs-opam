@@ -1,0 +1,34 @@
+opam-version: "1"
+maintainer: "dave.scott@eu.citrix.com"
+build: [
+  ["./configure" "--bindir" "%{bin}%" "--sbindir" "%{bin}%" "--libexecdir" "%{bin}%" "--scriptsdir" "%{bin}%" "--etcdir" "%{prefix}%/etc" "--mandir" "%{man}%"]
+  [make]
+  [make "install"]
+]
+remove: [make "uninstall"]
+depends: [
+  "oasis" {build}
+  "optcomp"
+  "ocamlfind"
+  "xmlm"
+  "uuidm"
+  "uutf"
+  "ounit"
+  "cohttp"
+  "uri"
+  "re"
+  "rpc"
+  "xapi-idl" {= "xapi-project#master"}
+  "xapi-forkexecd" {= "xapi-project#master"}
+  "xapi-stdext" {= "xapi-project#master"}
+  "fd-send-recv"
+  "sexplib" {< "113.24.00"}
+  "xenstore"
+  "xenstore_transport"
+  "xenctrl" {= "xapi-project#master"}
+  "qmp"
+  "oclock"
+  "xapi-inventory" {= "xapi-project#master"}
+]
+depopts: "libvirt" {= "djs55#typo"}
+ocaml-version: [>= "4.01.0"]
