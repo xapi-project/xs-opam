@@ -1,0 +1,19 @@
+opam-version: "1"
+maintainer: "dave.scott@eu.citrix.com"
+build: [
+  [make]
+  [make "install" "DESTDIR=%{prefix}%" "BINDIR=%{bin}%"]
+]
+remove: [make "uninstall" "BINDIR=%{bin}%"]
+depends: [
+  "xapi-idl"
+  "re"
+  "rpc"
+  "ocamlfind"
+  "cmdliner"
+  "cohttp"
+  "syslog"
+  "obuild" {build}
+  "vhd-format"
+  "xapi-tapctl"
+]
