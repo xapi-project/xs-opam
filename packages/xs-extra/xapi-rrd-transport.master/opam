@@ -12,7 +12,7 @@ install: [
 remove: [make "PREFIX=%{prefix}%" "uninstall"]
 depends: [
   "cmdliner"
-  "cstruct" {>= "1.0.1"}
+  "cstruct"
   "crc"
   "xapi-idl"
   "xapi-rrd"

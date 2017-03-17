@@ -17,7 +17,7 @@ remove: [
 ]
 depends: [
   "ocamlfind"
-  "xapi-stdext" {>= "2.0.0"}
+  "xapi-stdext"
   "xapi-forkexecd"
   "oasis" {build}
 ]

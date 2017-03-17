@@ -19,9 +19,9 @@ remove: [
 depends: [ "uri"
            "re"
            "cmdliner"
-           "cohttp" {>= "0.15.2"}
+           "cohttp"
            "xmlm"
-           "rpc" {>= "1.9.4"}
+           "rpc"
            "ocamlfind"
            "message-switch"
            "xapi-stdext"
