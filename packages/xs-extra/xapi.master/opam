@@ -27,7 +27,7 @@ depends: [
   "xapi-idl"
   "xapi-libs-transitional"
   "xen-api-client"
-	# "xapi-netdev" -- provided by ocaml-netdev
+	"xapi-netdev"
   "omake"
   "cdrom"
   "fd-send-recv"
