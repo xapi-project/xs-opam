@@ -1,0 +1,4 @@
+Flat file storage manager for XCP
+
+This is the simplest possible XCP storage manager which stores virtual
+disk images as sparse files on an existing filesystem.

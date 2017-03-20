@@ -1,0 +1,12 @@
+opam-version: "1"
+maintainer: "xen-api@lists.xen.org"
+build: [
+  ["make"]
+  ["make" "PREFIX=%{prefix}%" "install"]
+]
+remove: ["make" "PREFIX=%{prefix}%" "uninstall"]
+depends: [
+  "xapi-rrd"
+  "xapi-stdext"
+  "xmlm"
+]

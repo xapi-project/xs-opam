@@ -1,5 +1,5 @@
 opam-version: "1"
-maintainer: "dave.scott@citrix.com"
+maintainer: "xen-api@lists.xen.org"
 build: [
   ["./configure" "--bindir" "%{bin}%"]
   [make]
@@ -10,7 +10,7 @@ remove: [
 ]
 depends: [
   "ocamlfind"
-  "cohttp" {>= "0.15.0" }
+  "cohttp"
   "rpc"
   "sexplib"
   "ppx_sexp_conv"
@@ -19,7 +19,7 @@ depends: [
   "uri"
   "re"
   "mtime"
-  "mirage-block-unix" {>= "2.4.0"}
+  "mirage-block-unix"
   "shared-block-ring"
   "cmdliner"
   "ssl"

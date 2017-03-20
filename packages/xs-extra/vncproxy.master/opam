@@ -25,5 +25,5 @@ depends: [
   "lwt"
   "ocamlbuild" {build}
   "ocamlfind" {build}
-  "xen-api-client" {>= "0.9.14"}
+  "xen-api-client"
 ]

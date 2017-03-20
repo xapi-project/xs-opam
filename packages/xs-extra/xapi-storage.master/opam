@@ -1,0 +1,20 @@
+opam-version: "1.2"
+maintainer: "xen-api@lists.xen.org"
+authors: "xen-api@lists.xen.org"
+homepage: "https://xapi-project.github.io/"
+bug-reports: "https://github.com/xapi-project/xapi-storage/issues"
+dev-repo: "git://github.com/xapi-project/xapi-storage.git"
+build: [
+  [make]
+]
+install: [
+  [make "install" "PREFIX=%{prefix}%"]
+]
+remove: [
+  [make "uninstall" "PREFIX=%{prefix}%"]
+]
+depends: [
+  "rpc"
+  "re"
+  "cmdliner"
+]

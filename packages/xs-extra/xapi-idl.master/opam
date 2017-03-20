@@ -3,7 +3,7 @@ authors: "Dave Scott"
 homepage: "https://github.com/xapi-project/xcp-idl"
 bug-reports: "https://github.com/xapi-project/xcp-idl/issues"
 dev-repo: "git://github.com/xapi-project/xcp-idl"
-maintainer: "dave.scott@eu.citrix.com"
+maintainer: "xen-api@lists.xen.org"
 build: [
   [make "all"]
 ]
@@ -19,9 +19,9 @@ remove: [
 depends: [ "uri"
            "re"
            "cmdliner"
-           "cohttp" {>= "0.15.2"}
+           "cohttp"
            "xmlm"
-           "rpc" {>= "1.9.4"}
+           "rpc"
            "ocamlfind"
            "message-switch"
            "xapi-stdext"

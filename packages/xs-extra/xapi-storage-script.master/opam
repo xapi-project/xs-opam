@@ -1,0 +1,18 @@
+opam-version: "1"
+maintainer: "xen-api@lists.xen.org"
+build: [
+  [make]
+  [make "install" "BINDIR=%{bin}%" "MANDIR=%{man}%"]
+]
+remove: [
+  [make "uninstall" "BINDIR=%{bin}%" "MANDIR=%{man}%"]
+]
+depends: [
+  "xapi-idl"
+  "xapi-storage"
+  "async"
+  "async_inotify"
+  "async_unix"
+  "core"
+  "message-switch"
+]

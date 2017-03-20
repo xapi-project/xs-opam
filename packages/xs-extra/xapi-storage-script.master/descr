@@ -1,0 +1,4 @@
+A directory full of scripts can be a Xapi storage implementation
+
+This daemon watches a directory for subdirectories, and when a subdir
+is created a storage service is registered.

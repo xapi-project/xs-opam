@@ -1,0 +1,19 @@
+opam-version: "1"
+maintainer: "xen-api@lists.xen.org"
+build: [
+  [make]
+  [make "install" "DESTDIR=%{prefix}%" "BINDIR=%{bin}%"]
+]
+remove: [make "uninstall" "BINDIR=%{bin}%"]
+depends: [
+  "xapi-idl"
+  "re"
+  "rpc"
+  "ocamlfind"
+  "cmdliner"
+  "cohttp"
+  "syslog"
+  "obuild" {build}
+  "vhd-format"
+  "xapi-tapctl"
+]

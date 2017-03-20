@@ -1,5 +1,5 @@
 opam-version: "1.2"
-maintainer: "dave@recoil.org"
+maintainer: "xen-api@lists.xen.org"
 authors: [ "Jonathan Ludlam" "David Scott" ]
 license: "LGPL-2 with OCaml linking exception"
 homepage: "https://github.com/xapi-project/nbd"
@@ -38,4 +38,3 @@ depends: [
   "ppx_sexp_conv" {!= "113.33.00+4.03"}
 ]
 tags: [ "org:mirage" "org:xapi-project" ]
-available: [ ocaml-version >= "4.02.0" ]

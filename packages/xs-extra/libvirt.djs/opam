@@ -1,0 +1,21 @@
+opam-version: "1"
+maintainer: "xen-api@lists.xen.org"
+build: [
+  ["autoconf"]
+  ["./configure"]
+  ["make" "all"]
+  ["make" "opt"]
+  ["make" "install-opt"]
+]
+remove: [
+  ["ocamlfind" "remove" "libvirt"]
+]
+depends: [
+  "ocamlfind"
+]
+depexts: [
+  [["debian"] ["libvirt-dev" "autoconf"]]
+  [["ubuntu"] ["libvirt-dev" "autoconf" "blktap-dev"]]
+  [["centos"] ["libvirt-devel" "autoconf"]]
+]
+

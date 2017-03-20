@@ -1,0 +1,13 @@
+opam-version: "1"
+maintainer: "xen-api@lists.xen.org"
+build: [
+  ["oasis" "setup"]
+  ["make"]
+]
+remove: ["make" "uninstall" "BINDIR=%{bin}%"]
+depends: [
+  "xapi-idl"
+  "re"
+  "rpc"
+  "ocamlfind"
+]

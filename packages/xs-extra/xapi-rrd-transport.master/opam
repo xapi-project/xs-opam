@@ -1,5 +1,5 @@
 opam-version: "1"
-maintainer: "john.else@citrix.com"
+maintainer: "xen-api@lists.xen.org"
 build: [
   [make]
 ]
@@ -12,7 +12,7 @@ install: [
 remove: [make "PREFIX=%{prefix}%" "uninstall"]
 depends: [
   "cmdliner"
-  "cstruct" {>= "1.0.1"}
+  "cstruct"
   "crc"
   "xapi-idl"
   "xapi-rrd"
