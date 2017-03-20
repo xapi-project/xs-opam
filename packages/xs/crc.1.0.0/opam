@@ -28,4 +28,3 @@ depends: [
 depopts: [
   "mirage-xen"
 ]
-available: [ ocaml-version >= "4.00.1"]

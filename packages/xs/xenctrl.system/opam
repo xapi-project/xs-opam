@@ -18,4 +18,3 @@ depends: [
   "lwt"
   "cmdliner"
 ]
-ocaml-version: [>= "4.00.0"]
