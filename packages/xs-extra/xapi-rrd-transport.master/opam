@@ -1,5 +1,5 @@
 opam-version: "1"
-maintainer: "john.else@citrix.com"
+maintainer: "xen-api@lists.xen.org"
 build: [
   [make]
 ]

@@ -1,5 +1,5 @@
 opam-version: "1"
-maintainer: "john.else@eu.citrix.com"
+maintainer: "xen-api@lists.xen.org"
 build: [
   [make]
   [make "install"
@@ -38,5 +38,4 @@ depends: [
   "bisect_ppx"
   "systemd"
 ]
-ocaml-version: [>= "4.01.0"]
 

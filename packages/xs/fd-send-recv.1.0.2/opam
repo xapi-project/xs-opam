@@ -1,5 +1,5 @@
 opam-version: "1.2"
-maintainer: "dave@recoil.org"
+maintainer: "xen-api@lists.xen.org"
 authors: [
   "David Scott"
   "David Sheets"

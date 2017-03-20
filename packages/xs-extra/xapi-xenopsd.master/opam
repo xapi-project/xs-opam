@@ -1,5 +1,5 @@
 opam-version: "1"
-maintainer: "dave.scott@eu.citrix.com"
+maintainer: "xen-api@lists.xen.org"
 build: [
 	["./configure"
 	"--bindir"      "%{bin}%"
@@ -35,4 +35,3 @@ depends: [
   "xapi-inventory"
 ]
 depopts: "libvirt"
-ocaml-version: [>= "4.01.0"]

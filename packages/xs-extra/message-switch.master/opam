@@ -1,5 +1,5 @@
 opam-version: "1"
-maintainer: "dave.scott@citrix.com"
+maintainer: "xen-api@lists.xen.org"
 build: [
   ["./configure" "--bindir" "%{bin}%"]
   [make]
