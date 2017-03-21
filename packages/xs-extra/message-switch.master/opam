@@ -19,7 +19,7 @@ depends: [
   "uri"
   "re"
   "mtime"
-  "mirage-block-unix"
+  "mirage-block-unix" {= "2.4.0"}
   "shared-block-ring"
   "cmdliner"
   "ssl"
