@@ -17,7 +17,7 @@ sh  .travis-ocaml.sh
 # list of packages -- excluding some that can't be installed on Travis
 pkg()
 {
-	find packages/upstream -maxdepth 1 -mindepth 1 -type d \
+	find packages/upstream packages/upstream-extra -maxdepth 1 -mindepth 1 -type d \
 	| awk -F/ '{print $NF}' \
 	| egrep -v '^(systemd)'
 }
