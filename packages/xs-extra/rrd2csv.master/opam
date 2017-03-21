@@ -1,0 +1,27 @@
+opam-version: "1.2"
+name: "rrd2csv"
+version: "1.0.0"
+maintainer: "opam-devel@lists.ocaml.org"
+authors: [ "Guillem Rieu" ]
+license: "LGPL-2.1 with OCaml linking exception"
+build: [
+  ["ocaml" "setup.ml" "-configure" "--prefix" prefix]
+  ["ocaml" "setup.ml" "-build"]
+]
+install: ["ocaml" "setup.ml" "-install"]
+remove: [
+  ["ocaml" "%{etc}%/rrd2csv/setup.ml" "-C" "%{etc}%/rrd2csv" "-uninstall"]
+]
+build-test: [
+  ["ocaml" "setup.ml" "-configure" "--enable-tests"]
+  ["ocaml" "setup.ml" "-build"]
+  ["ocaml" "setup.ml" "-test"]
+]
+depends: [
+  "base-threads" {build}
+  "ocamlbuild" {build}
+  "ocamlfind" {build}
+  "xapi-client" {build}
+  "xapi-idl" {build}
+  "xapi-rrd" {build}
+]
