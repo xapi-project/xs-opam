@@ -13,25 +13,26 @@ remote Opam repository:
 
 ## Layout of This Repository
 
-Packages are organised into namespaces. They are equivalent from the
-perspective of the [Opam] user.
+Packages are organised into namespaces:
 
 * `upstream`: packages that we don't control with fixed versions.
+* `upstream-extra`: packages that we don't control with fixed versions
+  and don't require as a build dependency.
 * `xs`: packages that we control, with fixed versions.
 * `xs-extra`: packages that we control, following their respective
   master branch.
 
-    ```
-    ./packages
-    ./packages/upstream
-    ./packages/upstream/rpc.1.9.11.jonludlam
-    ./packages/xs
-    ./packages/xs/xapi-backtrace.0.4
-    ./packages/xs/cdrom.0.9.2
-    ./packages/xs-extra
-    ./packages/xs-extra/message-switch.master
-    ./packages/xs-extra/xapi-rrd-transport.master
-    ```
+The namespaces are treated differently as part of the build process of
+XenServer components but this should not concern an Opam user - packages
+in all namespaces together form the repository and there is no
+difference between them.
+
+```
+./packages/upstream
+./packages/upstream-extra
+./packages/xs
+./packages/xs-extra
+```
 
 The `packages/` hierarchy contains [Opam] entries for each package. These
 can be copied *untouched* from other, existing [Opam] repositories. The
@@ -41,6 +42,20 @@ remote Opam repository. A typical entry consists of three files:
 * `descr` - textual desciption
 * `opam` - dependencies and build instructions
 * `url` - link to source code
+
+Note how versions are designated:
+
+    packages/xs/cdrom.0.9.2
+    packages/xs/crc.1.0.0
+    packages/xs-extra/libvirt.djs
+    packages/xs-extra/message-switch.master
+    packages/xs-extra/rrddump.master
+    packages/xs-extra/vncproxy.master
+    packages/xs-extra/wsproxy.master
+    packages/xs/fd-send-recv.1.0.2
+    packages/xs/nbd.2.1.2
+    packages/xs/netlink.0.2.1
+
 
 [Opam]:   http://opam.ocaml.org
 [OCaml]:  http:/ocaml.org
