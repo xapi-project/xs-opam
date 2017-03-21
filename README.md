@@ -16,7 +16,8 @@ remote Opam repository:
 Packages are organised into namespaces:
 
 * `upstream`: packages that we don't control with fixed versions.
-* `upstream-extra`: packages that we don't control with fixed versions.
+* `upstream-extra`: packages that we don't control with fixed versions
+  and don't require as a build dependency.
 * `xs`: packages that we control, with fixed versions.
 * `xs-extra`: packages that we control, following their respective
   master branch.
@@ -26,12 +27,12 @@ XenServer components but this should not concern an Opam user - packages
 in all namespaces together form the repository and there is no
 difference between them.
 
-    ```
-    ./packages/upstream
-    ./packages/upstream-extra
-    ./packages/xs
-    ./packages/xs-extra
-    ```
+```
+./packages/upstream
+./packages/upstream-extra
+./packages/xs
+./packages/xs-extra
+```
 
 The `packages/` hierarchy contains [Opam] entries for each package. These
 can be copied *untouched* from other, existing [Opam] repositories. The
