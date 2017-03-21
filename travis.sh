@@ -15,31 +15,25 @@ get .travis-ocaml.sh
 sh  .travis-ocaml.sh
 
 # list of packages -- excluding some that can't be installed on Travis
-pkg()
+upstream()
 {
-	find packages/upstream packages/upstream-extra -maxdepth 1 -mindepth 1 -type d \
-	| awk -F/ '{print $NF}' \
-	| egrep -v '^(systemd)'
+  find \
+    packages/upstream               \
+    packages/upstream-extra         \
+    -maxdepth 1 -mindepth 1 -type d \
+  | awk -F/ '{print $NF}'           \
+  | egrep -v '^(systemd)'
 }
 
-# packages from xs/ that we can compile
-XS='
-cdrom
-crc
-fd-send-recv
-nbd
-netlink
-opasswd
-rpc
-shared-block-ring
-xapi-backtrace
-xapi-inventory
-xapi-rrd
-xapi-stdext
-xen-api-client
-xenstore
-xenstore_transport
-'
+# list of packages -- excluding some that can't be installed on Travis
+xs()
+{
+  find \
+    packages/xs                     \
+    -maxdepth 1 -mindepth 1 -type d \
+  | awk -F/ '{print $NF}'           \
+  | egrep -v '^(xenctrl|xapi-test-utils)'
+}
 
 # packages from xs-extra/ that we can compile
 XS_EXTRA='
@@ -49,10 +43,10 @@ wsproxy
 '
 
 # all of our packages that we can compile
-XS_ALL="$XS $XS_EXTRA"
+XS_ALL="$(xs) $XS_EXTRA"
 
 opam init -y local file://$PWD
-opam config exec -- opam install -y -j 4 $(pkg) $XS_ALL
+opam config exec -- opam install -y -j 4 $(upstream) $XS_ALL
 # Workaround to mark failed uninstall as error. We only test
 # the uninstall of the XS_ALL packages but not of the upstream packages.
 opam config exec -- opam remove -y $XS_ALL
