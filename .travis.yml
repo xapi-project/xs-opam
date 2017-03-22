@@ -1,9 +1,20 @@
 language: c
 dist: trusty
+install:
+  - wget https://raw.githubusercontent.com/ocaml/ocaml-travisci-skeleton/master/.travis-opam.sh
+script: bash -ex .travis-opam.sh
 sudo: required
-before_install:
-  # the following packages are required by some of the packages
-  # installting them via "opam depext" is possible, too
-  - sudo apt-get install hwdata libpci-dev libxen-dev
-script:
-  - sh travis.sh
+env:
+  global:
+    - OCAML_VERSION=4.02
+  matrix:
+    - BASE_REMOTE=git://github.com/xapi-project/xs-opam
+    - EXTRA_REMOTES=git://github.com/xapi-project/xs-opam
+    - OCAML_VERSION=4.04 EXTRA_REMOTES=git://github.com/xapi-project/xs-opam
+
+matrix:
+    fast_finish: true
+    allow_failure:
+        - OCAML_VERSION=4.02 EXTRA_REMOTES=git://github.com/xapi-project/xs-opam
+        - OCAML_VERSION=4.04 EXTRA_REMOTES=git://github.com/xapi-project/xs-opam
+
