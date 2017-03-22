@@ -21,7 +21,7 @@ depends: [
   "base-threads" {build}
   "ocamlbuild" {build}
   "ocamlfind" {build}
-  "xapi-client" {build}
+  "xapi" {build}
   "xapi-idl" {build}
   "xapi-rrd" {build}
 ]
