@@ -3,6 +3,8 @@
 
 set -ex
 
+sh  into_repo.sh
+
 get()
 {
   wget "https://raw.githubusercontent.com/ocaml/ocaml-ci-scripts/master/$1"
@@ -31,9 +33,12 @@ xs()
     | awk -F/ '{print $NF}'
 }
 
-if [ ! -z ${EXTRA_REMOTE+x} ]; then
-    opam remote add extra $EXTRA_REMOTE
+if [ ! -z "${EXTRA_REMOTES}" ]; then
+    opam remote add extra "$EXTRA_REMOTES"
 fi
+
+# opam install -y depext
+# opam depext -y $(upstream) $(xs)
 opam install -y -j 4 $(upstream) $(xs)
 # Workaround to mark failed uninstall as error. We only test
 # the uninstall of the XS_ALL packages but not of the upstream packages.
