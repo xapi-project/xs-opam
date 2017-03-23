@@ -39,9 +39,13 @@ fi
 
 # opam install -y depext
 # opam depext -y $(upstream) $(xs)
-opam install -y -j 4 $(upstream) $(xs)
-# Workaround to mark failed uninstall as error. We only test
-# the uninstall of the XS_ALL packages but not of the upstream packages.
-opam remove -y $(xs)
-opam install -y -j 4 $(xs)
+if [ ! -z "${OPAM_LINT}" ]; then
+    find packages -iname opam -print | xargs -n 1 opam lint
+else
+    opam install -y -j 4 $(upstream) $(xs)
+    # Workaround to mark failed uninstall as error. We only test
+    # the uninstall of the XS_ALL packages but not of the upstream packages.
+    opam remove -y $(xs)
+    opam install -y -j 4 $(xs)
+fi
 
