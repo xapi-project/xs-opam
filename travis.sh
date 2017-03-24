@@ -14,47 +14,22 @@ get()
 get .travis-ocaml.sh
 sh  .travis-ocaml.sh
 
-# list of upstream packages
-upstream()
-{
-  find \
-    packages/upstream               \
-    -maxdepth 1 -mindepth 1 -type d \
-    | awk -F/ '{print $NF}'
-}
 
-upstream-extra()
+pkg()
 {
-  find \
-    packages/upstream-extra         \
-    -maxdepth 1 -mindepth 1 -type d \
-    | awk -F/ '{print $NF}'
-}
-
-
-# list of xs packages
-xs()
-{
-  find \
-    packages/xs                     \
-    -maxdepth 1 -mindepth 1 -type d \
-    | awk -F/ '{print $NF}'
-}
-
-xs-extra()
-{
-  find \
-    packages/xs-extra               \
-    -maxdepth 1 -mindepth 1 -type d \
-    | awk -F/ '{print $NF}'
+    pushd packages > /dev/null
+    find  $@\
+      -maxdepth 1 -mindepth 1 -type d \
+      | awk -F/ '{print $NF}'
+    popd > /dev/null
 }
 
 if [ "${COMPILE_ALL}" = 1 ]; then
-    UPSTREAM="$(upstream) $(upstream-extra)"
-    XS="$(xs) $(xs-extra)"
+    UPSTREAM="$(pkg upstream upstream-extra)"
+    XS="$(pkg xs xs-extra)"
 else
-    UPSTREAM="$(upstream)"
-    XS="$(xs)"
+    UPSTREAM="$(pkg upstream)"
+    XS="$(pkg xs)"
 fi
 
 if [ "${EXTRA_REMOTES}" = 1 ]; then
