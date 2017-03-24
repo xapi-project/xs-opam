@@ -49,7 +49,7 @@ xs-extra()
     | awk -F/ '{print $NF}'
 }
 
-if [ ! -z "${COMPILE_ALL}" ]; then
+if [ "${COMPILE_ALL}" = 1 ]; then
     UPSTREAM="$(upstream) $(upstream-extra)"
     XS="$(xs) $(xs-extra)"
 else
@@ -57,13 +57,13 @@ else
     XS="$(xs)"
 fi
 
-if [ ! -z "${EXTRA_REMOTES}" ]; then
+if [ "${EXTRA_REMOTES}" = 1 ]; then
     opam remote add extra "$EXTRA_REMOTES"
 fi
 
 # opam install -y depext
 # opam depext -y $(upstream) $(xs)
-if [ ! -z "${OPAM_LINT}" ]; then
+if [ "${OPAM_LINT}" = 1 ]; then
     find packages -iname opam -print | xargs -n 1 opam lint
 else
     opam install -y -j 4 $UPSTREAM $XS
