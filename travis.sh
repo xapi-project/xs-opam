@@ -3,8 +3,8 @@
 
 set -ex
 
-export OCAML_VERSION=4.02
-export OPAM_INIT=false
+# override xenctrl.system to have a full-fledged opam repository
+sh  into_repo.sh
 
 get()
 {
@@ -14,42 +14,62 @@ get()
 get .travis-ocaml.sh
 sh  .travis-ocaml.sh
 
-# list of packages -- excluding some that can't be installed on Travis
+# list of upstream packages
 upstream()
 {
   find \
     packages/upstream               \
-    packages/upstream-extra         \
     -maxdepth 1 -mindepth 1 -type d \
-  | awk -F/ '{print $NF}'           \
-  | egrep -v '^(systemd)'
+    | awk -F/ '{print $NF}'
 }
 
-# list of packages -- excluding some that can't be installed on Travis
+upstream-extra()
+{
+  find \
+    packages/upstream-extra         \
+    -maxdepth 1 -mindepth 1 -type d \
+    | awk -F/ '{print $NF}'
+}
+
+
+# list of xs packages
 xs()
 {
   find \
     packages/xs                     \
     -maxdepth 1 -mindepth 1 -type d \
-  | awk -F/ '{print $NF}'           \
-  | egrep -v '^(xenctrl|xapi-test-utils)'
+    | awk -F/ '{print $NF}'
 }
 
-# packages from xs-extra/ that we can compile
-XS_EXTRA='
-message-switch
-vncproxy
-wsproxy
-'
+xs-extra()
+{
+  find \
+    packages/xs-extra               \
+    -maxdepth 1 -mindepth 1 -type d \
+    | awk -F/ '{print $NF}'
+}
 
-# all of our packages that we can compile
-XS_ALL="$(xs) $XS_EXTRA"
+if [ "${COMPILE_ALL}" = 1 ]; then
+    UPSTREAM="$(upstream) $(upstream-extra)"
+    XS="$(xs) $(xs-extra)"
+else
+    UPSTREAM="$(upstream)"
+    XS="$(xs)"
+fi
 
-opam init -y local file://$PWD
-opam config exec -- opam install -y -j 4 $(upstream) $XS_ALL
-# Workaround to mark failed uninstall as error. We only test
-# the uninstall of the XS_ALL packages but not of the upstream packages.
-opam config exec -- opam remove -y $XS_ALL
-opam config exec -- opam install -y -j 4 $XS_ALL
+if [ "${EXTRA_REMOTES}" = 1 ]; then
+    opam remote add extra "$EXTRA_REMOTES"
+fi
 
+if [ "${OPAM_LINT}" = 1 ]; then
+    find packages -iname opam -print | xargs -n 1 opam lint
+else
+    opam install -y depext
+    opam depext  -y $UPSTREAM $XS
+    opam install -y -j 4 $UPSTREAM $XS
+    # Workaround to mark failed uninstall as error. We only test
+    # the uninstall of the xs packages but not of the upstream packages.
+    opam remove  -y $XS
+    opam install -y -j 4 $XS
+fi
 

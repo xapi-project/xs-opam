@@ -1,34 +1,29 @@
 opam-version: "1"
 maintainer: "xen-api@lists.xen.org"
 build: [
-	[	"./configure"
-		"--disable-warn-error"
-		"--varpatchdir"         "%{prefix}%/var/patch"
-		"--optdir"              "%{lib}%/xcp"
-		"--plugindir"           "%{lib}%/xcp/plugins"
-		"--hooksdir"            "%{prefix}%/etc/hook-scripts"
-		"--xapiconf"            "%{prefix}%/etc/xapi.conf"
-		"--libexecdir"          "%{lib}%/xcp/bin"
-		"--scriptsdir"          "%{lib}%/xcp/scripts"
-		"--sharedir"            "%{share}%/xcp"
-		"--webdir"              "%{share}%/xcp/web"
-		"--cluster-stack-root"  "%{lib}%/xcp/bin/cluster-stack"
-		"--bindir"              "%{bin}%"
-		"--sbindir"             "%{bin}%"
-		"--etcdir"              "%{prefix}%/etc"]
+	["./configure"]
   [make]
-  ["install" "-m" "0755" "ocaml/xapi/xapi.opt" "%{bin}%/xapi"]
 ]
-build-test: [make "test" ]
-remove: ["rm" "%{bin}%/xapi"]
+install: [
+    ["oasis" "setup"]
+    ["ocaml" "setup.ml" "-install"]
+]
+build-test: [make "test"]
+remove: [
+    ["oasis" "setup"]
+    ["ocaml" "setup.ml" "-uninstall"]
+    ["ocamlfind" "remove" "xapi"]
+    ["ocamlfind" "remove" "xapi-client"]
+    ["ocamlfind" "remove" "xapi-datamodel"]
+]
 depends: [
-  "ocamlfind"
+  "oasis" {build}
+  "ocamlfind" {build}
   "xapi-test-utils"
   "xapi-idl"
   "xapi-libs-transitional"
   "xen-api-client"
 	"xapi-netdev"
-  "omake"
   "cdrom"
   "fd-send-recv"
   "xapi-forkexecd"
