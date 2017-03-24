@@ -50,11 +50,11 @@ xs-extra()
 }
 
 if [ ! -z "${COMPILE_ALL}" ]; then
-    UPSTREAM=$(upstream) $(upstream-extra)
-    XS=$(xs) $(xs-extra)
+    UPSTREAM="$(upstream) $(upstream-extra)"
+    XS="$(xs) $(xs-extra)"
 else
-    UPSTREAM=$(upstream)
-    XS=$(xs)
+    UPSTREAM="$(upstream)"
+    XS="$(xs)"
 fi
 
 if [ ! -z "${EXTRA_REMOTES}" ]; then
