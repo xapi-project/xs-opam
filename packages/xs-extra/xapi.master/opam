@@ -3,18 +3,27 @@ maintainer: "xen-api@lists.xen.org"
 build: [
 	["./configure"]
   [make]
-  [make "install"]
+]
+install: [
+    ["oasis" "setup"]
+    ["ocaml" "setup.ml" "-install"]
 ]
 build-test: [make "test"]
-remove: ["rm" "%{bin}%/xapi"]
+remove: [
+    ["oasis" "setup"]
+    ["ocaml" "setup.ml" "-uninstall"]
+    ["ocamlfind" "remove" "xapi"]
+    ["ocamlfind" "remove" "xapi-client"]
+    ["ocamlfind" "remove" "xapi-datamodel"]
+]
 depends: [
-  "ocamlfind"
+  "oasis" {build}
+  "ocamlfind" {build}
   "xapi-test-utils"
   "xapi-idl"
   "xapi-libs-transitional"
   "xen-api-client"
 	"xapi-netdev"
-  "omake"
   "cdrom"
   "fd-send-recv"
   "xapi-forkexecd"
