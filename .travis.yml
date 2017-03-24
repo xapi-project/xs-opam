@@ -1,6 +1,5 @@
 language: c
 dist: trusty
-script: bash -ex travis.sh
 sudo: required
 before_install:
     - sudo add-apt-repository -y "deb http://archive.ubuntu.com/ubuntu/ trusty main universe"
@@ -9,6 +8,7 @@ before_install:
     - wget "http://archive.ubuntu.com/ubuntu/ubuntu/pool/main/s/systemd/libsystemd0_219-7ubuntu3_amd64.deb"
     - wget "http://archive.ubuntu.com/ubuntu/ubuntu/pool/main/s/systemd/libsystemd-dev_219-7ubuntu3_amd64.deb"
     - sudo dpkg -i libsystemd0_219-7ubuntu3_amd64.deb libsystemd-dev_219-7ubuntu3_amd64.deb
+script: bash -ex travis.sh
 env:
   global:
     - OCAML_VERSION=4.02
@@ -18,7 +18,6 @@ env:
     - BASE_REMOTE=$TRAVIS_BUILD_DIR COMPILE_ALL=1
     - EXTRA_REMOTES=$TRAVIS_BUILD_DIR COMPILE_ALL=1
     - OCAML_VERSION=4.04 EXTRA_REMOTES=$TRAVIS_BUILD_DIR COMPILE_ALL=1
-
 matrix:
   fast_finish: true
   allow_failures:
@@ -26,7 +25,6 @@ matrix:
     - env: BASE_REMOTE=$TRAVIS_BUILD_DIR COMPILE_ALL=1
     - env: EXTRA_REMOTES=$TRAVIS_BUILD_DIR COMPILE_ALL=1
     - env: OCAML_VERSION=4.04 EXTRA_REMOTES=$TRAVIS_BUILD_DIR COMPILE_ALL=1
-
 addons:
   apt:
     packages:
