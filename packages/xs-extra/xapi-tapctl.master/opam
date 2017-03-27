@@ -13,7 +13,6 @@ install: [
 ]
 remove: [
   ["ocamlfind" "remove" "tapctl"]
-  [make "uninstall" "BINDIR=%{bin}%"]
 ]
 depends: [
   "ocamlfind"
