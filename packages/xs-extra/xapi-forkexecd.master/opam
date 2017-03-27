@@ -9,15 +9,13 @@ build: [
   [make]
 ]
 install: [
-  [make "install"
-		"BINDIR=%{bin}%"
-		"SBINDIR=%{bin}%"
-		"ETCDIR=%{prefix}%/etc"]
+  [make "install"]
 ]
-remove: [make "uninstall"
-	"BINDIR=%{bin}%"
-	"SBINDIR=%{bin}%"
-	"ETCDIR=%{prefix}%/etc"]
+remove: [
+    ["oasis" "setup"]
+    [make "uninstall"]
+    ["ocamlfind" "remove" "forkexec"]
+]
 depends: [
   "ocamlfind" {build}
   "oasis" {build}
