@@ -2,7 +2,10 @@ opam-version: "1"
 maintainer: "xen-api@lists.xen.org"
 build: [
   ["oasis" "setup"]
-  [make "install"]
+  [make]
+]
+install: [
+  ["ocaml" "setup.ml" "-install"]
 ]
 build-test: [
   [make "test"]
@@ -20,6 +23,7 @@ depends: [
   "xenstore_transport"
   "xapi-xenops"
   "io-page"
+  "inotify"
   "xen-gnt"
   "xapi-rrd-transport"
   "oclock"
