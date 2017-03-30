@@ -5,6 +5,7 @@ homepage: "https://github.com/xapi-project/xenopsd"
 build: [
 	["oasis" "setup"]
 	["./configure"]
+  ["ocaml" "setup.ml" "-configure" "--disable-libvirt"]
 	[make]
 ]
 install: [
