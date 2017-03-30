@@ -1,17 +1,21 @@
-opam-version: "1"
+opam-version: "1.2"
 maintainer: "xen-api@lists.xen.org"
+authors: "xen-api@lists.xen.org"
+homepage: "https://github.com/xapi-project/xenopsd"
 build: [
-	["./configure"
-	"--bindir"      "%{bin}%"
-	"--sbindir"     "%{bin}%"
-	"--libexecdir"  "%{bin}%"
-	"--scriptsdir"  "%{bin}%"
-	"--etcdir"      "%{prefix}%/etc"
-	"--mandir"      "%{man}%"]
+	["oasis" "setup"]
+	["./configure"]
+  ["ocaml" "setup.ml" "-configure" "--disable-libvirt"]
 	[make]
-  [make "install"]
 ]
-remove: [make "uninstall"]
+install: [
+ 	["ocaml" "setup.ml" "-install"]
+]
+remove: [
+        ["oasis" "setup"]
+        ["ocaml" "setup.ml" "-uninstall"]
+        ["ocamlfind" "remove" "xenopsd"]
+]
 depends: [
   "oasis" {build}
   "ocamlfind"
@@ -33,5 +37,6 @@ depends: [
   "xenctrl"
   "oclock"
   "xapi-inventory"
+  "ezxenstore"
 ]
 depopts: "libvirt"
