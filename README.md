@@ -11,8 +11,8 @@ remote Opam repository:
   opam repo add xs-opam https://github.com/xapi-project/xs-opam.git
   ```
 
-This however will not contain all the packages. To have a full-fledged opam
-repository you can proceed as follows:
+Not all packages in `packages/xs-extra` can be built. To have a
+full-fledged opam repository you can proceed as follows:
 
   ```
   git clone https://github.com/xapi-project/xs-opam.git
@@ -66,7 +66,13 @@ Note how versions are designated:
     packages/xs/nbd.2.1.2
     packages/xs/netlink.0.2.1
 
+# Travis
+
+A subset of packages in this repository are built on the [Travis] CI
+service. These are library packages that part of XenServer. The full set
+of packages is built as well but failure to build it doesn't count as a
+build failure so far. See `.travis.yml` and `travis.sh` for details.
 
 [Opam]:   http://opam.ocaml.org
 [OCaml]:  http:/ocaml.org
-
+[Travis]: https://travis-ci.org/xapi-project/xs-opam
