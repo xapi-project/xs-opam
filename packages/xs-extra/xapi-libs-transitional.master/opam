@@ -29,6 +29,7 @@ depends: [
   "xenctrl"
   "xenstore"
   "xenstore_transport"
+  "ezxenstore"
 ]
 depexts: [
   [["debian"] ["libxen-dev"]]

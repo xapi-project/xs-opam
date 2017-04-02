@@ -43,6 +43,7 @@ depends: [
   "xapi-rrdd-plugin"
   "pci"
   "sha"
+  "xapi-xenopsd"
 ]
 depexts: [
   [["centos"] ["pam-devel"]]
