@@ -4,8 +4,19 @@
 # Opam Repository for XenServer
 
 This [Opam] repository supports building components in the XenServer
-toolstack implemented in [OCaml].  You can add this Git repository as a
-remote Opam repository:
+toolstack implemented in [OCaml].
+
+## Adding the OPAM Repository
+
+This repository has been tested with OCaml 4.02.3. To initialize an OPAM
+configuration with this compiler version, run:
+
+  ```
+  opam init --comp=4.02.3
+  eval `opam config env`
+  ```
+
+You can add this Git repository as a remote OPAM repository:
 
   ```
   opam repo add xs-opam https://github.com/xapi-project/xs-opam.git
