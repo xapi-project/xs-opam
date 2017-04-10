@@ -1,0 +1,34 @@
+opam-version: "1.2"
+maintainer: "xen-api@lists.xen.org"
+authors: ["dave.scott@citrix.com"]
+homepage: "https://github.com/xapi-project/xapi-nbd"
+bug-reports: "https://github.com/xapi-project/xapi-nbd/issues"
+dev-repo: "https://github.com/xapi-project/xapi-nbd.git"
+build: [
+  ["oasis" "setup"]
+  ["./configure" "--prefix" prefix]
+  [make]
+]
+install: [
+  [make "install" "BINDIR=%{bin}%"]
+]
+remove: [
+  [make "uninstall" "BINDIR=%{bin}%"]
+]
+depends: [
+  "oasis"
+  "ocamlfind"
+  "lwt"
+  "cstruct" {> "1.0.0"}
+  "cmdliner"
+  "sexplib"
+  "mirage-block-unix"
+  "io-page"
+  "mirage"
+  "nbd"
+  "xen-api-client"
+  "uri"
+  "xapi-idl"
+  "message-switch"
+]
+tags: [ "org:mirage" "org:xapi-project" ]
