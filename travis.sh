@@ -3,8 +3,10 @@
 
 set -ex
 
-# override xenctrl.system to have a full-fledged opam repository
-sh  into_repo.sh
+# override xenctrl.dummy to have a full-fledged opam repository
+if [ ! "${COMPILE_ALL}" = 1 ]; then
+    sh into_repo.sh
+fi
 
 get()
 {
@@ -26,7 +28,7 @@ pkg()
 
 if [ "${COMPILE_ALL}" = 1 ]; then
     UPSTREAM="$(pkg upstream upstream-extra)"
-    XS="$(pkg xs xs-extra)"
+    XS="$(pkg xs xs-extra | grep -v xenctrl.dummy)"
 else
     UPSTREAM="$(pkg upstream)"
     XS="$(pkg xs)"
