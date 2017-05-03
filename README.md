@@ -22,16 +22,6 @@ You can add this Git repository as a remote OPAM repository:
   opam repo add xs-opam https://github.com/xapi-project/xs-opam.git
   ```
 
-Not all packages in `packages/xs-extra` can be built. To have a
-full-fledged opam repository you can proceed as follows:
-
-  ```
-  git clone https://github.com/xapi-project/xs-opam.git
-  cd xs-opam
-  sh into_repo.sh
-  opam repo add xs-opam .
-  ```
-
 ## Layout of This Repository
 
 Packages are organised into namespaces:
