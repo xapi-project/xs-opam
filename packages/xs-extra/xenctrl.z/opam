@@ -1,0 +1,38 @@
+opam-version: "1.2"
+maintainer: "jonathan.ludlam@citrix.com"
+authors: "xen-devel@lists.xen.org"
+homepage: "http://www.xenproject.org/"
+bug-reports: "xen-devel@lists.xen.org"
+dev-repo: "git://github.com/xapi-project/ocaml-xen-lowlevel-libs"
+tags: [
+  "org:mirage"
+  "org:xapi-project"
+]
+build: [
+  ["./configure"]
+  [make]
+]
+install: [
+  [make "install" "BINDIR=%{bin}%"]
+]
+remove: [
+  ["./configure"]
+  [make "uninstall"]
+]
+depends: [
+  "ocamlfind"
+  "lwt"
+  "cmdliner"
+]
+depexts: [
+  [["debian"] ["libxen-dev" "uuid-dev"]]
+  [["ubuntu"] ["libxen-dev" "uuid-dev"]]
+  [["centos"] ["xen-devel"]]
+  [["fedora"] ["xen-devel"]]
+  [["rhel"] ["xen-devel"]]
+  [["oraclelinux"] ["xen-devel"]]
+  [["xenserver"] ["xen-dom0-libs-devel" "xen-libs-devel"]]
+  [["alpine"] ["xen-dev"]]
+]
+available: [ ocaml-version >= "4.00.0" ]
+
