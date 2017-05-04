@@ -16,11 +16,12 @@ install: [
   ["ocaml" "setup.ml" "-install"]
 ]
 remove: [
+  ["oasis" "setup"]
   ["ocaml" "setup.ml" "-configure" "--prefix" prefix]
   ["ocaml" "setup.ml" "-uninstall"]
 ]
 depends: [
-  "lwt"
+  "lwt" {< "3.0.0"}
   "ocamlbuild" {build}
   "ocamlfind" {build}
   "oasis" {build}

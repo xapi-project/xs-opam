@@ -34,7 +34,7 @@ else
     XS="$(pkg xs)"
 fi
 
-if [ "${EXTRA_REMOTES}" = 1 ]; then
+if [ ! -z "${EXTRA_REMOTES}" ]; then
     opam remote add extra "$EXTRA_REMOTES"
 fi
 
@@ -42,11 +42,18 @@ if [ "${OPAM_LINT}" = 1 ]; then
     find packages -iname opam -print | xargs -n 1 opam lint
 else
     opam install -y depext
-    opam depext  -y $UPSTREAM $XS
-    opam install -y -j 4 $UPSTREAM $XS
-    # Workaround to mark failed uninstall as error. We only test
-    # the uninstall of the xs packages but not of the upstream packages.
-    opam remove  -y $XS
-    opam install -y -j 4 $XS
+    # Do the full install/uninstall check only on the current compiler
+    # For new compilers we care more to see if we can actually compile anything
+    if [ "${OCAML_VERSION}" = "4.02" ]; then
+        opam depext  -y $UPSTREAM $XS
+        opam install -y -j 4 $UPSTREAM $XS
+        # Workaround to mark failed uninstall as error. We only test
+        # the uninstall of the xs packages but not of the upstream packages.
+        opam remove  -y $XS
+        opam install -y -j 4 $XS
+    else
+        opam depext  -y $XS
+        opam install -y -j 4 $XS
+    fi
 fi
 

@@ -10,7 +10,10 @@ install: [
 build-test: [
   [make "test"]
 ]
-remove: [make "uninstall"]
+remove: [
+    [make "uninstall"]
+    ["ocamlfind" "remove" "rrdd-libs"]
+]
 depends: [
   "ocamlfind"
   "xapi-backtrace"
