@@ -58,7 +58,6 @@ Note how versions are designated:
 
     packages/xs/cdrom.0.9.2
     packages/xs/crc.1.0.0
-    packages/xs-extra/libvirt.djs
     packages/xs-extra/message-switch.master
     packages/xs-extra/rrddump.master
     packages/xs-extra/vncproxy.master
