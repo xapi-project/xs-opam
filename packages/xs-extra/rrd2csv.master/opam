@@ -10,7 +10,7 @@ build: [
 ]
 install: ["ocaml" "setup.ml" "-install"]
 remove: [
-  ["ocaml" "%{etc}%/rrd2csv/setup.ml" "-C" "%{etc}%/rrd2csv" "-uninstall"]
+  ["ocaml" "setup.ml" "-uninstall"]
 ]
 build-test: [
   ["ocaml" "setup.ml" "-configure" "--enable-tests"]

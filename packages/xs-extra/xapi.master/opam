@@ -14,7 +14,11 @@ remove: [
     ["ocaml" "setup.ml" "-uninstall"]
     ["ocamlfind" "remove" "xapi"]
     ["ocamlfind" "remove" "xapi-client"]
+    ["ocamlfind" "remove" "xapi-cli-protocol"]
+    ["ocamlfind" "remove" "xapi-consts"]
     ["ocamlfind" "remove" "xapi-datamodel"]
+    ["ocamlfind" "remove" "xapi-database"]
+    ["ocamlfind" "remove" "xapi-types"]
 ]
 depends: [
   "oasis" {build}

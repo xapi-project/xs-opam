@@ -6,6 +6,7 @@ build: [
 ]
 remove: [
   [make "PREFIX=%{prefix}%" "uninstall"]
+  ["ocamlfind" "remove" "worker"]
 ]
 depends: [
   "obuild" {build}
