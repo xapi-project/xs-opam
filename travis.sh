@@ -34,7 +34,7 @@ else
     XS="$(pkg xs)"
 fi
 
-if [ "${EXTRA_REMOTES}" = 1 ]; then
+if [ ! -z "${EXTRA_REMOTES}" ]; then
     opam remote add extra "$EXTRA_REMOTES"
 fi
 
