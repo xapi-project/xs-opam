@@ -20,7 +20,7 @@ remove: [
   ["ocaml" "setup.ml" "-uninstall"]
 ]
 depends: [
-  "lwt"
+  "lwt" {< "3.0.0"}
   "ocamlbuild" {build}
   "ocamlfind" {build}
   "oasis" {build}
