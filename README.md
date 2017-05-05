@@ -20,7 +20,11 @@ You can add this Git repository as a remote OPAM repository:
 
   ```
   opam repo add xs-opam https://github.com/xapi-project/xs-opam.git
+  opam pin add lwt 2.7.1
   ```
+
+Due to constraints missing from old libraries, pinning the `lwt` package
+is necessary for certain configurations.
 
 ## Layout of This Repository
 
