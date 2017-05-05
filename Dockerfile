@@ -9,6 +9,7 @@ RUN sudo apt-get update \
 
 RUN opam update \
     && opam upgrade -y \
-    && opam install merlin ocp-browser ocp-indent ocp-index depext user-setup utop \
+    && opam pin add lwt 2.7.1 -y \
+    && opam install merlin ocp-browser ocp-indent ocp-index depext user-setup utop -y \
     && opam user-setup install
 
