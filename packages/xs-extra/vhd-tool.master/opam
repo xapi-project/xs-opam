@@ -28,4 +28,6 @@ depends: [
   "uri"
   "vhd-format" {>= "0.7.0"}
   "xapi-tapctl"
+  "xenstore"
+  "xenstore_transport"
 ]
