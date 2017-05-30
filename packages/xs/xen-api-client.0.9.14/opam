@@ -23,7 +23,7 @@ depends: [
   "ocamlfind" {build}
   "oasis"     {build}
   "lwt" {>= "2.4.3"}
-  "cstruct" {>= "1.0.1"}
+  "cstruct" {>= "1.0.1" & < "3.0.0"}
   "ssl"
   "ounit"
   "cohttp" {>= "0.12.0"}
