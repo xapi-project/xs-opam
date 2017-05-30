@@ -18,7 +18,7 @@ depends: [
   "ocamlfind" {build}
   "cmdliner"
   "cohttp" {>="0.12.0" & < "0.22.0"}
-  "cstruct" {>= "1.0.1"}
+  "cstruct" {>= "1.0.1" & < "3.0.0"}
   "io-page-unix"
   "lwt" {>= "2.4.3" & < "3.0.0"}
   "nbd" {>= "1.0.1" & < "3.0.0"}

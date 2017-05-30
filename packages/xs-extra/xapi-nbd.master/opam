@@ -19,7 +19,7 @@ depends: [
   "oasis"
   "ocamlfind"
   "lwt" {< "3.0.0"}
-  "cstruct" {> "1.0.0"}
+  "cstruct" {> "1.0.0" & < "3.0.0"}
   "cmdliner"
   "sexplib"
   "mirage-block-unix"
