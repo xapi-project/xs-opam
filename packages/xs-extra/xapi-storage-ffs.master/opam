@@ -11,7 +11,7 @@ depends: [
   "rpc"
   "ocamlfind"
   "cmdliner"
-  "cohttp"
+  "cohttp" {< "0.22.0"}
   "syslog"
   "obuild" {build}
   "vhd-format"
