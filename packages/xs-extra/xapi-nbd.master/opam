@@ -24,7 +24,7 @@ depends: [
   "sexplib"
   "mirage-block-unix"
   "io-page"
-  "mirage"
+  "mirage" {< "3.0.0"}
   "nbd"
   "xen-api-client"
   "uri"
