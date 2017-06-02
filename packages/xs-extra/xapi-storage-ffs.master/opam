@@ -6,14 +6,4 @@ build: [
 ]
 remove: [make "uninstall" "BINDIR=%{bin}%"]
 depends: [
-  "xapi-idl"
-  "re"
-  "rpc"
-  "ocamlfind"
-  "cmdliner"
-  "cohttp" {< "0.22.0"}
-  "syslog"
-  "obuild" {build}
-  "vhd-format"
-  "xapi-tapctl"
 ]
