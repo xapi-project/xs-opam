@@ -19,7 +19,7 @@ remove: [
 depends: [ "uri"
            "re"
            "cmdliner"
-           "cohttp"
+           "cohttp" {< "0.22.0"}
            "xmlm"
            "rpc"
            "ocamlfind"

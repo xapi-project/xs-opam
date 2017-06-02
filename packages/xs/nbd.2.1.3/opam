@@ -19,7 +19,7 @@ install: [
   [make "install" "BINDIR=%{bin}%"]
 ]
 remove: [
-  [make "uninstall" "BINDIR=%{bin}%"]
+  [make "uninstall" "BINDIR=%{bin}%" "CONFIGUREFLAGS=--disable-tests"]
   ["ocamlfind" "remove" "nbd"]
 ]
 depends: [
@@ -27,14 +27,17 @@ depends: [
   "ounit" {test}
   "ocamlfind" {build}
   "ppx_tools" {build}
-  "lwt"
+  "lwt" {>= "2.6.0" & < "3.0.0"}
   "cstruct" {>= "1.9.0" & < "3.0.0"}
   "cmdliner"
   "sexplib"
-  "mirage-block-unix"
+  "mirage-block-unix" {< "2.5.0"}
   "io-page"
-  "mirage" {>= "1.1.0"}
+  "mirage-types-lwt" {= "2.8.0"}
+  "mirage-types" {= "2.8.0"}
   "uri"
+  "ppx_deriving" {build}
   "ppx_sexp_conv" {!= "113.33.00+4.03"}
 ]
-tags: [ "org:mirage" "org:xapi-project" ]
+tags: [ "org:xapi-project" ]
+available: [ocaml-version >= "4.02.3"]

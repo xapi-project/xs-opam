@@ -22,7 +22,7 @@ depends: [
   "uuidm"
   "uutf"
   "ounit"
-  "cohttp"
+  "cohttp" {< "0.22.0"}
   "uri"
   "re"
   "rpc"

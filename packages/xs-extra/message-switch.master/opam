@@ -16,7 +16,7 @@ remove: [
 ]
 depends: [
   "ocamlfind"
-  "cohttp" {>= "0.15.0" }
+  "cohttp" {>= "0.15.0"  & < "0.22.0"}
   "rpc"
   "sexplib"
   "ppx_sexp_conv"
