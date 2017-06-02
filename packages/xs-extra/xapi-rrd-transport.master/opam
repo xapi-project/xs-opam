@@ -16,5 +16,5 @@ depends: [
   "crc"
   "xapi-idl"
   "xapi-rrd"
-  "xen-gnt"
+  "xen-gnt" {< "3.0.0"}
 ]

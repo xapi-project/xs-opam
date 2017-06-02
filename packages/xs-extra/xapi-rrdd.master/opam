@@ -27,7 +27,7 @@ depends: [
   "xapi-xenops"
   "io-page"
   "inotify"
-  "xen-gnt"
+  "xen-gnt" {< "3.0.0"}
   "xapi-rrd-transport"
   "oclock"
   "ounit"
