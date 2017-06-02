@@ -9,6 +9,8 @@ remove: [
   ["ocamlfind" "remove" "worker"]
 ]
 depends: [
-  "obuild" {build}
+  "oasis" {build}
+  "ocamlbuild" {build}
+  "base-unix"
   "rpc"
 ]
