@@ -7,23 +7,10 @@ license: "LGPL-2.0 with OCaml linking exception"
 homepage: "https://github.com/xapi-project/wsproxy"
 dev-repo: "https://github.com/xapi-project/wsproxy.git"
 bug-reports: "https://github.com/xapi-project/wsproxy/issues"
-build: [
-  ["oasis" "setup"]
-  ["ocaml" "setup.ml" "-configure" "--prefix" prefix]
-  ["ocaml" "setup.ml" "-build"]
-]
-install: [
-  ["ocaml" "setup.ml" "-install"]
-]
-remove: [
-  ["oasis" "setup"]
-  ["ocaml" "setup.ml" "-configure" "--prefix" prefix]
-  ["ocaml" "setup.ml" "-uninstall"]
-]
+build: [[ "jbuilder" "build" "-p" name "-j" jobs ]]
 depends: [
-  "lwt" {< "3.0.0"}
-  "ocamlbuild" {build}
-  "ocamlfind" {build}
-  "oasis" {build}
+  "jbuilder" {build}
+  "lwt" { < "3.0.0" }
   "re"
 ]
+tags: [ "org:xapi-project" ]
