@@ -16,17 +16,20 @@ build: [
 depends: [
   "oasis" {build}
   "ocamlfind" {build}
+  "base-threads"
   "cmdliner"
   "cohttp" {>="0.12.0" & < "0.22.0"}
   "cstruct" {>= "1.0.1" & < "3.0.0"}
   "io-page-unix"
   "lwt" {>= "2.4.3" & < "3.0.0"}
   "nbd" {>= "1.0.1" & < "3.0.0"}
+  "re"
   "sha"
   "ssl"
   "tar-format" {>"0.5.0"}
   "uri"
   "vhd-format" {>= "0.7.0"}
+  "xapi-idl"
   "xapi-tapctl"
   "xenstore"
   "xenstore_transport"
