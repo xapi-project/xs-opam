@@ -14,6 +14,9 @@ tags: [
 build: [
   [make]
 ]
+build-test: [
+  [make "test"]
+]
 install: [
   [make "install"]
 ]
