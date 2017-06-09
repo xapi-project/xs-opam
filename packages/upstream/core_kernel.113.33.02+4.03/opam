@@ -25,4 +25,4 @@ depends: [
   "typerep"         {>= "113.24.00" & < "113.25.00"}
   "variantslib"     {>= "113.24.00" & < "113.25.00"}
 ]
-available: [ ocaml-version >= "4.03.0" ]
+available: [ ocaml-version >= "4.04.0" ]
