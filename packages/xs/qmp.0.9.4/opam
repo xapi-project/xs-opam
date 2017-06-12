@@ -16,7 +16,8 @@ remove: [
   ["ocamlfind" "remove" "qmp"]
 ]
 depends: [
-  "ocamlfind"
+  "oasis"     {build}
+  "ocamlfind" {build}
   "yojson"
   "ounit"
   "cmdliner"
