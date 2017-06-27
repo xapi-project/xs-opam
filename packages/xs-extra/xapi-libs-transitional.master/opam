@@ -1,11 +1,20 @@
-opam-version: "1"
+opam-version: "1.2"
 maintainer: "jonathan.ludlam@eu.citrix.com"
+authors: "xen-api@lists.xen.org"
+homepage: "https://xapi-project.github.io/"
+bug-reports: "https://github.com/xapi-project/xen-api-libs-transitional/issues"
+dev-repo: "https://github.com/xapi-project/xen-api-libs-transitional.git"
 build: [
   [make]
+]
+install: [
   [make "install" "BINDIR=%{bin}%"]
 ]
+build-test: [
+  [make "configure" "CONFIGUREFLAGS=--enable-tests"]
+  [make "test"]
+]
 remove: [
-  ["ocamlfind" "remove" "cpuid"]
   ["ocamlfind" "remove" "gzip"]
   ["ocamlfind" "remove" "http-svr"]
   ["ocamlfind" "remove" "log"]
@@ -15,14 +24,12 @@ remove: [
   ["ocamlfind" "remove" "stunnel"]
   ["ocamlfind" "remove" "uuid"]
   ["ocamlfind" "remove" "xenctrlext"]
-  ["ocamlfind" "remove" "xenstore-compat"]
-  ["ocamlfind" "remove" "xen-utils"]
   ["ocamlfind" "remove" "xml-light2"]
 ]
-os: ["linux"]
+available: [ os = "linux" ]
 depends: [
   "ocamlfind"
-  "xapi-stdext"
+  "xapi-stdext" {>= "2.0.0"}
   "xmlm"
   "xapi-forkexecd"
   "rpc"
@@ -30,6 +37,8 @@ depends: [
   "xenstore"
   "xenstore_transport"
   "ezxenstore"
+  "oasis" {build}
+  "ounit" {test & >= "2.0.0"}
 ]
 depexts: [
   [["debian"] ["libxen-dev"]]
