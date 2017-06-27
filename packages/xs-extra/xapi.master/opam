@@ -1,5 +1,9 @@
-opam-version: "1"
+opam-version: "1.2"
 maintainer: "xen-api@lists.xen.org"
+authors: [ "xen-api@lists.xen.org" ]
+homepage: "https://github.com/xapi-project/xen-api"
+bug-reports: "https://github.com/xapi-project/xen-api/issues"
+dev-repo: "git://github.com/xapi-project/xen-api"
 build: [
 	["./configure"]
   [make]
