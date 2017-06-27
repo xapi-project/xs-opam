@@ -10,8 +10,8 @@ install: [
 ]
 build-test: [make "test"]
 remove: [
-    ["oasis" "setup"]
-    ["ocaml" "setup.ml" "-uninstall"]
+    ["./configure"]
+    [make "uninstall"]
     ["ocamlfind" "remove" "xapi"]
     ["ocamlfind" "remove" "xapi-client"]
     ["ocamlfind" "remove" "xapi-cli-protocol"]
