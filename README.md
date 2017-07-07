@@ -20,11 +20,38 @@ You can add this Git repository as a remote OPAM repository:
 
   ```
   opam repo add xs-opam https://github.com/xapi-project/xs-opam.git
-  opam pin add lwt 2.7.1
   ```
 
-Due to constraints missing from old libraries, pinning the `lwt` package
-is necessary for certain configurations.
+## Building packages
+
+To install a package it's enough to run
+
+  ```
+  opam depext $PKG
+  opam install $PKG
+  ```
+
+however, for development, it is often useful to clone the package sources
+and only install its dependencies, leaving the job to build the package
+and make changes to the developer.  This can be done as follows:
+
+  ```
+  opam depext $PKG
+  opam install --deps-only $PKG
+  ```
+
+After that, you can enter the folder containing the cloned sources and
+run the appropriate build command.
+
+Refer to the relevant opam files in `xs-opam` to check how to
+build specific repositories.  All our packages are currently using
+[`oasis`](http://oasis.forge.ocamlcore.org/documentation.html) or
+[`jbuilder`](http://jbuilder.readthedocs.io/en/latest/) as build systems.
+
+The `pin` command in `opam` is often useful when writing lower level
+libraries. For more information see the
+[relevant opam blog page](https://opam.ocaml.org/blog/opam-1-2-pin/)
+or the official documentation.
 
 ## Layout of This Repository
 
@@ -80,3 +107,24 @@ build failure so far. See `.travis.yml` and `travis.sh` for details.
 [Opam]:   http://opam.ocaml.org
 [OCaml]:  http:/ocaml.org
 [Travis]: https://travis-ci.org/xapi-project/xs-opam
+
+# Neat tricks
+
+- list all the dependencies of a package:
+  `opam list --rec --required-by $PKG --short`
+
+- list all packages depending on a package:
+  `opam list --rec --depends-on $PKG --short`
+
+- install system dependencies of a package:
+  `opam depext $PKG`
+
+- create opam sandboxes for library development:
+  `opam switch $SWITCH_NAME --alias-of=4.02.3`
+
+- obtain sources of an opam package without knowing the repository:
+  `opam source $PKG`
+
+Refer to the [`opam` manual](https://opam.ocaml.org/doc/Usage.html) for
+additional information.
+
