@@ -4,23 +4,11 @@ version: "1.0.0"
 maintainer: "opam-devel@lists.ocaml.org"
 authors: [ "Guillem Rieu" ]
 license: "LGPL-2.1 with OCaml linking exception"
-build: [
-  ["ocaml" "setup.ml" "-configure" "--prefix" prefix]
-  ["ocaml" "setup.ml" "-build"]
-]
-install: ["ocaml" "setup.ml" "-install"]
-remove: [
-  ["ocaml" "setup.ml" "-uninstall"]
-]
-build-test: [
-  ["ocaml" "setup.ml" "-configure" "--enable-tests"]
-  ["ocaml" "setup.ml" "-build"]
-  ["ocaml" "setup.ml" "-test"]
-]
+build: ["jbuilder" "build" "-p" name "-j" jobs]
+build-test: ["jbuilder" "runtest" "-p" name]
 depends: [
+  "jbuilder" {build}
   "base-threads" {build}
-  "ocamlbuild" {build}
-  "ocamlfind" {build}
   "xapi" {build}
   "xapi-idl" {build}
   "xapi-rrd" {build}
