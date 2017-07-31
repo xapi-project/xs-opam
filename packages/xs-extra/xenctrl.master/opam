@@ -27,7 +27,7 @@ depends: [
 depexts: [
   [["debian"] ["libxen-dev" "uuid-dev"]]
   [["ubuntu"] ["libxen-dev" "uuid-dev"]]
-  [["centos"] ["xen-devel"]]
+  [["centos"] ["xen-devel" "libuuid-devel"]]
   [["fedora"] ["xen-devel"]]
   [["rhel"] ["xen-devel"]]
   [["oraclelinux"] ["xen-devel"]]
