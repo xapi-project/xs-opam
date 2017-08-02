@@ -1,6 +1,6 @@
-A deprecated collection of utility functions
+Deprecated xapi standard library extension
 
-Backward compatibility wrapper.
+This is a dummy package to facilitate the migration to xapi-stdext 3.0.0
+of oasis-built packages, where several package were split out of the main
+stdext package and the findlib name changed from stdext to xapi-stdext.
 
-This library is provided for a transitionary period only.
-No new code should use this library.

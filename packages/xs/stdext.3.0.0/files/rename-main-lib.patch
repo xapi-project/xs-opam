@@ -1,0 +1,32 @@
+From dbaadd7874212f00db3613d5fe3091cc116a6fc7 Mon Sep 17 00:00:00 2001
+From: Marcello Seri <marcello.seri@citrix.com>
+Date: Wed, 2 Aug 2017 15:48:49 +0100
+Subject: [PATCH] Name the wrapper stdext
+
+Signed-off-by: Marcello Seri <marcello.seri@citrix.com>
+---
+ lib/xapi-stdext/jbuild          | 2 +-
+ xapi-stdext.opam => stdext.opam | 0
+ 2 files changed, 1 insertion(+), 1 deletion(-)
+ rename xapi-stdext.opam => stdext.opam (100%)
+
+diff --git a/lib/xapi-stdext/jbuild b/lib/xapi-stdext/jbuild
+index fbc6fa7..f0beca8 100644
+--- a/lib/xapi-stdext/jbuild
++++ b/lib/xapi-stdext/jbuild
+@@ -1,7 +1,7 @@
+ (jbuild_version 1)
+ 
+ (library
+-  ((public_name xapi-stdext)
++  ((public_name stdext)
+    (name stdext)
+    (modules (stdext))
+    (wrapped false)
+diff --git a/xapi-stdext.opam b/stdext.opam
+similarity index 100%
+rename from xapi-stdext.opam
+rename to stdext.opam
+-- 
+2.11.0
+
