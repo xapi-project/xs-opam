@@ -8,7 +8,10 @@ tags: [ "org:xapi-project" ]
 
 build:  [[ "jbuilder" "build" "-p" name "-j" jobs ]]
 
-patches: [ "rename-main-lib.patch" ]
+patches: [
+  "rename-main-lib.patch"
+  "re-expose-hashtblext.patch"
+]
 
 depends: [
   "jbuilder" {build}

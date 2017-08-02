@@ -1,0 +1,25 @@
+From 50ec829ba6737bef7fb98cfcd3f4f9f8af824505 Mon Sep 17 00:00:00 2001
+From: Marcello Seri <marcello.seri@citrix.com>
+Date: Wed, 2 Aug 2017 16:31:15 +0100
+Subject: [PATCH] stdext: expose hashtblext
+
+Signed-off-by: Marcello Seri <marcello.seri@citrix.com>
+---
+ lib/xapi-stdext/stdext.ml | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/lib/xapi-stdext/stdext.ml b/lib/xapi-stdext/stdext.ml
+index 398d0fb..2db4c47 100644
+--- a/lib/xapi-stdext/stdext.ml
++++ b/lib/xapi-stdext/stdext.ml
+@@ -13,6 +13,7 @@ module Opt = Xapi_stdext_monadic.Opt
+ (* Standard library extensions and additions*)
+ module Pervasiveext = Xapi_stdext_pervasives.Pervasiveext
+ module Filenameext = Xapi_stdext_std.Filenameext
++module Hashtblext = Xapi_stdext_std.Hashtblext
+ module Listext = Xapi_stdext_std.Listext
+ module Xstringext = Xapi_stdext_std.Xstringext
+ 
+-- 
+2.11.0
+
