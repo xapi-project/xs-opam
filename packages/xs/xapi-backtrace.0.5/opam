@@ -5,19 +5,11 @@ homepage: "https://github.com/xapi-project/backtrace"
 bug-reports: "https://github.com/xapi-project/backtrace/issues"
 dev-repo: "git://github.com/xapi-project/backtrace.git"
 tags: [ "org:xapi-project" ]
-build: [
-  [make]
-]
-install: [
-  [make "install"]
-]
-remove: [
-  [make "uninstall"]
-  ["ocamlfind" "remove" "xapi-backtrace"]
-]
+
+build: ["jbuilder" "build" "-p" name "-j" jobs]
+
 depends: [
-  "ocamlfind" {build}
-  "ocamlbuild" {build}
+  "jbuilder" {build}
   "base-threads"
   "sexplib"
   "ppx_sexp_conv"

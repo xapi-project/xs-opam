@@ -6,26 +6,11 @@ homepage: "https://github.com/xapi-project/nbd"
 dev-repo: "https://github.com/xapi-project/nbd.git"
 bug-reports: "https://github.com/xapi-project/nbd/issues"
 
-build: [
-  ["oasis" "setup"]
-  ["./configure" "--prefix" prefix]
-  [make]
-]
-build-test: [
-  ["./configure" "--enable-tests"]
-  [make "test"]
-]
-install: [
-  [make "install" "BINDIR=%{bin}%"]
-]
-remove: [
-  [make "uninstall" "BINDIR=%{bin}%" "CONFIGUREFLAGS=--disable-tests"]
-  ["ocamlfind" "remove" "nbd"]
-]
+build: ["jbuilder" "build" "-p" name "-j" jobs]
+build-test: ["jbuilder" "runtest" "-p" name]
 depends: [
-  "oasis" {build}
+  "jbuilder" {build}
   "ounit" {test}
-  "ocamlfind" {build}
   "ppx_tools" {build}
   "lwt" {>= "2.6.0" & < "3.0.0"}
   "cstruct" {>= "1.9.0" & < "3.0.0"}
