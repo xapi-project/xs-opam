@@ -1,5 +1,5 @@
 opam-version: "1.2"
-maintainer: "xen-api@lists.xen.org"
+maintainer: "dave@recoil.org"
 authors: [
   "David Scott"
   "David Sheets"
@@ -14,10 +14,8 @@ tags: [
   "org:mirage"
   "org:xapi-project"
 ]
-build: make
-remove: [["ocamlfind" "remove" "fd-send-recv"]]
+build: [["jbuilder" "build" "-p" name "-j" jobs]]
+build-test: [["jbuilder" "runtest" "-p" name "-j" jobs]]
 depends: [
-  "ocamlfind"
-  "ocamlbuild" {build}
+  "jbuilder" {build}
 ]
-install: [make "install"]

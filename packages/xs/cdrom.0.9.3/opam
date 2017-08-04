@@ -1,14 +1,12 @@
 opam-version: "1.2"
 name: "cdrom"
-maintainer: "Euan Harris <euan.harris@citrix.com>"
+maintainer: "xen-api@list.xen.org"
 author: "Dave Scott <dave@recoil.org>"
 homepage: "https://github.com/xapi-project/cdrom"
 dev-repo: "https://github.com/xapi-project/cdrom"
 bug-reports: "https://github.com/xapi-project/cdrom/issues"
-build: [
-  ["./configure" "--prefix=%{prefix}%"]
-  [make]
+build: ["jbuilder" "build" "-p" name "-j" jobs]
+depends: [
+  "jbuilder" {build}
 ]
-install: [make "install"]
-remove: ["ocamlfind" "remove" "cdrom"]
-depends: ["ocamlfind" "oasis"]
+tags: [ "org:xapi-project" ]
