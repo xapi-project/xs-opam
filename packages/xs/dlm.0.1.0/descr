@@ -1,3 +1,0 @@
-OCaml bindings for libdlm
-
-Bindings to the Linux Distributed Lock Manager libdlm(3).
