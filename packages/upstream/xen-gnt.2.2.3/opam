@@ -1,5 +1,5 @@
 opam-version: "1.2"
-maintainer: "xen-api@lists.xen.org"
+maintainer: "john.else@citrix.com"
 authors: ["Anil Madhavapeddy" "John Else" "Thomas Leonard" "Andrew Cooper" "David Scott"]
 homepage:      "https://github.com/mirage/ocaml-gnt"
 bug-reports:   "https://github.com/mirage/ocaml-gnt/issues"
