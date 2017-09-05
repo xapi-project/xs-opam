@@ -5,17 +5,8 @@ set -ex
 
 # override xenctrl.dummy to have a full-fledged opam repository
 if [ ! "${COMPILE_ALL}" = 1 ]; then
-    sh into_repo.sh
+    sudo sh into_repo.sh
 fi
-
-get()
-{
-  wget "https://raw.githubusercontent.com/ocaml/ocaml-ci-scripts/master/$1"
-}
-
-get .travis-ocaml.sh
-sh  .travis-ocaml.sh
-
 
 pkg()
 {
@@ -34,7 +25,12 @@ else
     XS="$(pkg xs)"
 fi
 
-if [ ! -z "${EXTRA_REMOTES}" ]; then
+if [ ! "${BASE_REMOTE}" = "" ]; then
+    opam remote remove default
+    opam remote add base "$BASE_REMOTE"
+fi
+
+if [ ! "${EXTRA_REMOTES}" = "" ]; then
     opam remote add extra "$EXTRA_REMOTES"
 fi
 
@@ -44,7 +40,7 @@ else
     opam install -y depext
     # Do the full install/uninstall check only on the current compiler
     # For new compilers we care more to see if we can actually compile anything
-    if [ "${OCAML_VERSION}" = "4.02" ]; then
+    if [ "${OCAML_VERSION}" = "4.04.2" ]; then
         opam depext  -y $UPSTREAM $XS
         opam install -y -j 4 $UPSTREAM $XS
         # Workaround to mark failed uninstall as error. We only test
