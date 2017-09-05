@@ -13,7 +13,7 @@ depends: [
   "ounit" {test}
   "lwt" {>= "2.6.0" & < "3.0.0"}
   "ssl"
-  "cstruct" {>= "2.4.0" & < "3.0.0"}
+  "cstruct" {>= "2.3.0" & < "3.0.0"}
   "cmdliner"
   "sexplib"
   "mirage-block-unix" {< "2.5.0"}
