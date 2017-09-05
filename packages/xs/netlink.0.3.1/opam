@@ -11,4 +11,5 @@ depends: [
 depexts: [
  [ ["debian"] ["libnl-3" ] ]
  [ ["ubuntu"] ["libnl-3-200" "libnl-route-3-200"] ]
+ [ ["centos"] ["libnl3"] ]
 ]
