@@ -4,13 +4,13 @@ services:
   - docker
 script:
   - echo FROM ocaml/opam:${DISTRO}_ocaml-${OCAML_VERSION} > Dockerfile.test
-  - echo VOLUME /bd >> Dockerfile.test
-  - echo VOLUME /repo >> Dockerfile.test
+  - echo VOLUME /bd    >> Dockerfile.test
+  - echo VOLUME /repo  >> Dockerfile.test
   - echo WORKDIR /repo >> Dockerfile.test
-  - echo EXTRA_REMOTES="$EXTRA_REMOTES" > env.list
-  - echo BASE_REMOTE="$BASE_REMOTE" >> env.list
-  - echo COMPILE_ALL="$COMPILE_ALL" >> env.list
-  - echo OPAM_LINT="$OPAM_LINT" >> env.list
+  - echo "BASE_REMOTE=${BASE_REMOTE}"      > env.list
+  - echo "EXTRA_REMOTES=${EXTRA_REMOTES}" >> env.list
+  - echo "COMPILE_ALL=${COMPILE_ALL}"     >> env.list
+  - echo "OPAM_LINT=${OPAM_LINT}"         >> env.list
   - docker build -t local-build -f Dockerfile.test .
   - docker run --env-file=env.list -v ~/build/$TRAVIS_REPO_SLUG:/repo -v $TRAVIS_BUILD_DIR:/bd local-build bash travis.sh
 env:
@@ -22,6 +22,7 @@ env:
     - BASE_REMOTE=/bd COMPILE_ALL=1
     - EXTRA_REMOTES=/bd COMPILE_ALL=1
     - BASE_REMOTE=/bd OPAM_LINT=1
+    - DISTRO=debian-unstable BASE_REMOTE=/bd COMPILE_ALL=1
     - OCAML_VERSION=4.05.0 EXTRA_REMOTES=/bd COMPILE_ALL=1
 matrix:
   fast_finish: true
@@ -29,4 +30,5 @@ matrix:
     - env: BASE_REMOTE=/bd OPAM_LINT=1
     - env: EXTRA_REMOTES=/bd COMPILE_ALL=1
     - env: OCAML_VERSION=4.05.0 EXTRA_REMOTES=/bd COMPILE_ALL=1
+    - env: DISTRO=debian-unstable BASE_REMOTE=/bd COMPILE_ALL=1
 
