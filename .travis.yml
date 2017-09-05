@@ -1,27 +1,34 @@
 language: c
-dist: trusty
-sudo: required
-before_install:
-    - sudo add-apt-repository -y "deb http://archive.ubuntu.com/ubuntu/ trusty main universe"
-    - sudo apt-get update -qq
-    - sudo apt-get install libgcrypt20 liblzma5 libselinux1
-    - wget "http://archive.ubuntu.com/ubuntu/ubuntu/pool/main/s/systemd/libsystemd0_219-7ubuntu3_amd64.deb"
-    - wget "http://archive.ubuntu.com/ubuntu/ubuntu/pool/main/s/systemd/libsystemd-dev_219-7ubuntu3_amd64.deb"
-    - sudo dpkg -i libsystemd0_219-7ubuntu3_amd64.deb libsystemd-dev_219-7ubuntu3_amd64.deb
-script: bash -ex travis.sh
+sudo: false
+services:
+  - docker
+script:
+  - echo FROM ocaml/opam:${DISTRO}_ocaml-${OCAML_VERSION} > Dockerfile.test
+  - echo VOLUME /bd    >> Dockerfile.test
+  - echo VOLUME /repo  >> Dockerfile.test
+  - echo WORKDIR /repo >> Dockerfile.test
+  - echo "BASE_REMOTE=${BASE_REMOTE}"      > env.list
+  - echo "EXTRA_REMOTES=${EXTRA_REMOTES}" >> env.list
+  - echo "COMPILE_ALL=${COMPILE_ALL}"     >> env.list
+  - echo "OPAM_LINT=${OPAM_LINT}"         >> env.list
+  - docker build -t local-build -f Dockerfile.test .
+  - docker run --env-file=env.list -v ~/build/$TRAVIS_REPO_SLUG:/repo -v $TRAVIS_BUILD_DIR:/bd local-build bash travis.sh
 env:
   global:
-    - OCAML_VERSION=4.04
+    - OCAML_VERSION=4.04.2
+    - DISTRO=centos-7
   matrix:
-    - BASE_REMOTE=$TRAVIS_BUILD_DIR
-    - BASE_REMOTE=$TRAVIS_BUILD_DIR COMPILE_ALL=1
-    - EXTRA_REMOTES=$TRAVIS_BUILD_DIR COMPILE_ALL=1
-    - OCAML_VERSION=4.05 EXTRA_REMOTES=$TRAVIS_BUILD_DIR COMPILE_ALL=1
-    - BASE_REMOTE=$TRAVIS_BUILD_DIR OPAM_LINT=1
+    - BASE_REMOTE=/bd
+    - BASE_REMOTE=/bd COMPILE_ALL=1
+    - EXTRA_REMOTES=/bd COMPILE_ALL=1
+    - BASE_REMOTE=/bd OPAM_LINT=1
+    - DISTRO=debian-unstable BASE_REMOTE=/bd COMPILE_ALL=1
+    - OCAML_VERSION=4.05.0 EXTRA_REMOTES=/bd COMPILE_ALL=1
 matrix:
   fast_finish: true
   allow_failures:
-    - env: BASE_REMOTE=$TRAVIS_BUILD_DIR OPAM_LINT=1
-    - env: BASE_REMOTE=$TRAVIS_BUILD_DIR COMPILE_ALL=1
-    - env: EXTRA_REMOTES=$TRAVIS_BUILD_DIR COMPILE_ALL=1
-    - env: OCAML_VERSION=4.05 EXTRA_REMOTES=$TRAVIS_BUILD_DIR COMPILE_ALL=1
+    - env: BASE_REMOTE=/bd OPAM_LINT=1
+    - env: EXTRA_REMOTES=/bd COMPILE_ALL=1
+    - env: OCAML_VERSION=4.05.0 EXTRA_REMOTES=/bd COMPILE_ALL=1
+    - env: DISTRO=debian-unstable BASE_REMOTE=/bd COMPILE_ALL=1
+

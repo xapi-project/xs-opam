@@ -8,11 +8,11 @@ toolstack implemented in [OCaml].
 
 ## Adding the OPAM Repository
 
-This repository has been tested with OCaml 4.02.3. To initialize an OPAM
+This repository has been tested with OCaml 4.04.2. To initialize an OPAM
 configuration with this compiler version, run:
 
   ```
-  opam init --comp=4.02.3
+  opam init --comp=4.04.2
   eval `opam config env`
   ```
 
@@ -20,6 +20,13 @@ You can add this Git repository as a remote OPAM repository:
 
   ```
   opam repo add xs-opam https://github.com/xapi-project/xs-opam.git
+  ```
+
+If you are using OCaml `4.02.3`, you can still use this as a repository
+by adding instead
+
+  ```
+  opam repo add xs-opam https://github.com/xapi-project/xs-opam.git#1.8.0
   ```
 
 ## Building packages
