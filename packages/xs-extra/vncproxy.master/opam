@@ -7,23 +7,10 @@ license: "LGPL-2.1 with OCaml linking exception"
 homepage: "https://github.com/xapi-project/vncproxy"
 dev-repo: "https://github.com/xapi-project/vncproxy.git"
 bug-reports: "https://github.com/xapi-project/vncproxy/issues"
-build: [
-  ["ocaml" "setup.ml" "-configure" "--prefix" prefix]
-  ["ocaml" "setup.ml" "-build"]
-]
-install: ["ocaml" "setup.ml" "-install"]
-remove: [
-  ["ocaml" "%{etc}%/vncproxy/setup.ml" "-C" "%{etc}%/vncproxy" "-uninstall"]
-]
-build-test: [
-  ["ocaml" "setup.ml" "-configure" "--enable-tests"]
-  ["ocaml" "setup.ml" "-build"]
-  ["ocaml" "setup.ml" "-test"]
-]
+build: [[ "jbuilder" "build" "-p" name "-j" jobs ]]
 depends: [
+  "jbuilder" {build}
   "cmdliner"
   "lwt" {< "3.0.0"}
-  "ocamlbuild" {build}
-  "ocamlfind" {build}
-  "xen-api-client"
+  "xen-api-client" {>= "0.9.14"}
 ]
