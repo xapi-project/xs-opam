@@ -4,32 +4,37 @@ services:
   - docker
 script:
   - echo FROM ocaml/opam:${DISTRO}_ocaml-${OCAML_VERSION} > Dockerfile.test
-  - echo VOLUME /bd    >> Dockerfile.test
-  - echo VOLUME /repo  >> Dockerfile.test
-  - echo WORKDIR /repo >> Dockerfile.test
-  - echo "BASE_REMOTE=${BASE_REMOTE}"      > env.list
-  - echo "EXTRA_REMOTES=${EXTRA_REMOTES}" >> env.list
-  - echo "COMPILE_ALL=${COMPILE_ALL}"     >> env.list
-  - echo "OPAM_LINT=${OPAM_LINT}"         >> env.list
-  - echo "OCAML_VERSION=${OCAML_VERSION}" >> env.list
+  - echo COPY . /xs-opam >> Dockerfile.test
+  - echo "ENV BASE_REMOTE=${BASE_REMOTE}"     >> Dockerfile.test
+  - echo "ENV EXTRA_REMOTES=${EXTRA_REMOTES}" >> Dockerfile.test
+  - echo "ENV COMPILE_ALL=${COMPILE_ALL}"     >> Dockerfile.test
+  - echo "ENV OPAM_LINT=${OPAM_LINT}"         >> Dockerfile.test
+  - echo "ENV OCAML_VERSION=${OCAML_VERSION}" >> Dockerfile.test
+  - echo WORKDIR /xs-opam                     >> Dockerfile.test
+  - echo RUN bash travis.sh                   >> Dockerfile.test
   - docker build -t local-build -f Dockerfile.test .
-  - docker run --env-file=env.list -v ~/build/$TRAVIS_REPO_SLUG:/repo -v $TRAVIS_BUILD_DIR:/bd local-build bash travis.sh
+after_success:
+  - if [ "$TRAVIS_PULL_REQUEST" = "false" -a "$TRAVIS_BRANCH" = "master" -a -n "$DOCKER_HUB_TAG" ]; then
+      docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD";
+      docker tag local-build gaborigloi/xs-opam:$DOCKER_HUB_TAG;
+      docker push gaborigloi/xs-opam:$DOCKER_HUB_TAG;
+    fi
 env:
   global:
     - OCAML_VERSION=4.04.2
     - DISTRO=centos-7
   matrix:
-    - BASE_REMOTE=/bd
-    - BASE_REMOTE=/bd COMPILE_ALL=1
-    - EXTRA_REMOTES=/bd COMPILE_ALL=1
-    - BASE_REMOTE=/bd OPAM_LINT=1
-    - DISTRO=debian-unstable BASE_REMOTE=/bd COMPILE_ALL=1
-    - OCAML_VERSION=4.05.0 EXTRA_REMOTES=/bd COMPILE_ALL=1
+    - BASE_REMOTE=/xs-opam DOCKER_HUB_TAG=latest
+    - BASE_REMOTE=/xs-opam COMPILE_ALL=1 DOCKER_HUB_TAG=latest_extra
+    - EXTRA_REMOTES=/xs-opam COMPILE_ALL=1
+    - BASE_REMOTE=/xs-opam OPAM_LINT=1
+    - DISTRO=debian-unstable BASE_REMOTE=/xs-opam COMPILE_ALL=1
+    - OCAML_VERSION=4.05.0 EXTRA_REMOTES=/xs-opam COMPILE_ALL=1 DOCKER_HUB_TAG=latest_extra_ocaml-4.05
 matrix:
   fast_finish: true
   allow_failures:
-    - env: BASE_REMOTE=/bd OPAM_LINT=1
-    - env: EXTRA_REMOTES=/bd COMPILE_ALL=1
-    - env: OCAML_VERSION=4.05.0 EXTRA_REMOTES=/bd COMPILE_ALL=1
-    - env: DISTRO=debian-unstable BASE_REMOTE=/bd COMPILE_ALL=1
+    - env: BASE_REMOTE=/xs-opam OPAM_LINT=1
+    - env: EXTRA_REMOTES=/xs-opam COMPILE_ALL=1
+    - env: OCAML_VERSION=4.05.0 EXTRA_REMOTES=/xs-opam COMPILE_ALL=1 DOCKER_HUB_TAG=latest_extra_ocaml-4.05
+    - env: DISTRO=debian-unstable BASE_REMOTE=/xs-opam COMPILE_ALL=1
 
