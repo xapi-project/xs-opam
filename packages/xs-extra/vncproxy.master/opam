@@ -11,6 +11,6 @@ build: [[ "jbuilder" "build" "-p" name "-j" jobs ]]
 depends: [
   "jbuilder" {build}
   "cmdliner"
-  "lwt" {< "3.0.0"}
+  "lwt"
   "xen-api-client-lwt"
 ]
