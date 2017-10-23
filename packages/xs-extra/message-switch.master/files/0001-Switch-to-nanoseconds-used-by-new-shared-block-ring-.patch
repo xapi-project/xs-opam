@@ -1,0 +1,26 @@
+From a8c6565aed9b020c646882dfc93549481b535d03 Mon Sep 17 00:00:00 2001
+From: Gabor Igloi <gabor.igloi@citrix.com>
+Date: Fri, 20 Oct 2017 23:23:05 +0100
+Subject: [PATCH] Switch to nanoseconds used by new shared-block-ring interface
+
+Signed-off-by: Gabor Igloi <gabor.igloi@citrix.com>
+---
+ switch/switch_main.ml | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/switch/switch_main.ml b/switch/switch_main.ml
+index 895a856..17b2724 100644
+--- a/switch/switch_main.ml
++++ b/switch/switch_main.ml
+@@ -179,7 +179,7 @@ let make_server config =
+       Block.connect ~buffered:true redo_log_path
+       >>= fun block ->
+       let open Lwt_result in
+-      Redo_log.start ~flush_interval:5. block (process_redo_log statedir)
++      Redo_log.start ~flush_interval:5_000_000_000L block (process_redo_log statedir)
+       >>= fun redo_log ->
+       info "Redo-log playback complete: everything should be in sync";
+       queues := !on_disk_queues; (* everything should be in sync *)
+-- 
+2.11.0
+

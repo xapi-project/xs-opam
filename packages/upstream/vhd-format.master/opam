@@ -1,0 +1,35 @@
+opam-version: "1.2"
+maintainer: "dave@recoil.org"
+tags: [
+  "org:mirage"
+  "org:xapi-project"
+]
+authors: [ "Dave Scott" "Jon Ludlam" ]
+homepage: "https://github.com/mirage/ocaml-vhd"
+bug-reports: "https://github.com/mirage/ocaml-vhd/issues"
+dev-repo: "git://github.com/mirage/ocaml-vhd"
+build: make
+remove: [[make "uninstall"]]
+depends: [
+  "ocamlfind"
+  "lwt" {>= "2.4.3"}
+  "cstruct" {>= "1.9"}
+  "mirage-types-lwt" {>= "3.0.0"}
+  "ipaddr"
+  "io-page"
+  "uuidm"
+  "ounit"
+  "ppx_tools" {build}
+  "ocamlbuild" {build}
+]
+depexts: [
+ [["alpine"]["linux-headers"]]
+]
+available: [ (os = "linux" | os = "darwin") & ocaml-version >= "4.02.3" ]
+install: [make "install"]
+patches: [
+  "0001-_oasis-update-for-Mirage-3.patch"
+  "0001-Rename-Result-to-Vhd_result-to-avoid-conflict-with-O.patch"
+  "0001-Move-from-polymorphic-result-to-the-built-in-one.patch"
+  "0001-lib-block.ml-Update-to-match-new-Mirage_types_lwt.BL.patch"
+]
