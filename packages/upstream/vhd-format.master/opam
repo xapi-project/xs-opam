@@ -27,9 +27,3 @@ depexts: [
 ]
 available: [ (os = "linux" | os = "darwin") & ocaml-version >= "4.02.3" ]
 install: [make "install"]
-patches: [
-  "0001-_oasis-update-for-Mirage-3.patch"
-  "0001-Rename-Result-to-Vhd_result-to-avoid-conflict-with-O.patch"
-  "0001-Move-from-polymorphic-result-to-the-built-in-one.patch"
-  "0001-lib-block.ml-Update-to-match-new-Mirage_types_lwt.BL.patch"
-]
