@@ -1,0 +1,35 @@
+From 37fc3866ccb31085c3c610737a198af9e826f5b7 Mon Sep 17 00:00:00 2001
+From: Gabor Igloi <gabor.igloi@citrix.com>
+Date: Fri, 20 Oct 2017 22:24:50 +0100
+Subject: [PATCH] switch/time: switch to signature expected by
+ shared-block-ring
+
+Signed-off-by: Gabor Igloi <gabor.igloi@citrix.com>
+---
+ switch/time.ml  | 2 +-
+ switch/time.mli | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/switch/time.ml b/switch/time.ml
+index 6e3d014..6b33f36 100644
+--- a/switch/time.ml
++++ b/switch/time.ml
+@@ -16,4 +16,4 @@
+ 
+ type +'a io = 'a Lwt.t
+ 
+-let sleep = Lwt_unix.sleep
++let sleep_ns nanoseconds = Lwt_unix.sleep ((Int64.to_float nanoseconds) *. Mtime.ns_to_s)
+diff --git a/switch/time.mli b/switch/time.mli
+index 8fdac18..fb08b14 100644
+--- a/switch/time.mli
++++ b/switch/time.mli
+@@ -14,4 +14,4 @@
+  * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+  *)
+ 
+-include V1_LWT.TIME
++include Shared_block.S.TIME
+-- 
+2.11.0
+

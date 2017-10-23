@@ -1,0 +1,266 @@
+From 4ddb244904abbfd8cfaeb087f2e085f7dee4987e Mon Sep 17 00:00:00 2001
+From: Gabor Igloi <gabor.igloi@citrix.com>
+Date: Fri, 20 Oct 2017 15:51:02 +0100
+Subject: [PATCH] Rename Result to Vhd_result to avoid conflict with OCaml's
+ Result module
+
+Signed-off-by: Gabor Igloi <gabor.igloi@citrix.com>
+---
+ _oasis            |  2 +-
+ _tags             |  4 ++--
+ lib/f.ml          | 18 +++++++++---------
+ lib/f.mli         |  6 +++---
+ lib/result.ml     | 14 --------------
+ lib/vhd.mlpack    |  2 +-
+ lib/vhd_result.ml | 14 ++++++++++++++
+ setup.ml          |  9 +++++----
+ 8 files changed, 35 insertions(+), 34 deletions(-)
+ delete mode 100644 lib/result.ml
+ create mode 100644 lib/vhd_result.ml
+
+diff --git a/_oasis b/_oasis
+index f0d70ec..a1a614a 100644
+--- a/_oasis
++++ b/_oasis
+@@ -12,7 +12,7 @@ Library vhd
+   CompiledObject:     best
+   Path:               lib
+   Findlibname:        vhd-format
+-  Modules:            F, S, Result, Element, Patterns
++  Modules:            F, S, Vhd_result, Element, Patterns
+   BuildDepends:       uuidm, cstruct, io-page, cstruct.ppx
+ 
+ Library vhd_lwt
+diff --git a/_tags b/_tags
+index 323b1c3..dee9c7d 100644
+--- a/_tags
++++ b/_tags
+@@ -1,5 +1,5 @@
+ # OASIS_START
+-# DO NOT EDIT (digest: bb6e6c89fdc74d9a557e4fdf4e9943fb)
++# DO NOT EDIT (digest: ec904a89e58a93a16498dbe5cabaa338)
+ # Ignore VCS directories, you can use the same kind of rule outside
+ # OASIS_START/STOP if you want to exclude directories that contains
+ # useless stuff for the build process
+@@ -18,7 +18,7 @@ true: annot, bin_annot
+ "lib/vhd.cmxs": use_vhd
+ "lib/f.cmx": for-pack(Vhd)
+ "lib/s.cmx": for-pack(Vhd)
+-"lib/result.cmx": for-pack(Vhd)
++"lib/vhd_result.cmx": for-pack(Vhd)
+ "lib/element.cmx": for-pack(Vhd)
+ "lib/patterns.cmx": for-pack(Vhd)
+ <lib/*.ml{,i,y}>: pkg_cstruct
+diff --git a/lib/f.ml b/lib/f.ml
+index ba2cb46..d90797b 100644
+--- a/lib/f.ml
++++ b/lib/f.ml
+@@ -110,7 +110,7 @@ module Disk_type = struct
+   exception Unknown of int32
+ 
+   let of_int32 =
+-    let open Result in function
++    let open Vhd_result in function
+     | 2l -> return Fixed_hard_disk 
+     | 3l -> return Dynamic_hard_disk
+     | 4l -> return Differencing_hard_disk
+@@ -440,7 +440,7 @@ type footer = {
+     { t with checksum }
+ 
+   let unmarshal (buf: Cstruct.t) =
+-    let open Result in
++    let open Vhd_result in
+     let magic' = copy_footer_magic buf in
+     ( if magic' <> magic
+       then fail (Failure (Printf.sprintf "Unsupported footer cookie: expected %s, got %s" magic magic'))
+@@ -500,7 +500,7 @@ module Platform_code = struct
+   let macx = 0x4d616358l
+ 
+   let of_int32 =
+-    let open Result in function
++    let open Vhd_result in function
+     | 0l -> `Ok None
+     | x when x = wi2r -> `Ok Wi2r
+     | x when x = wi2k -> `Ok Wi2k
+@@ -607,7 +607,7 @@ module Parent_locator = struct
+     set_header_platform_data_offset buf t.platform_data_offset
+ 
+   let unmarshal (buf: Cstruct.t) =
+-    let open Result in
++    let open Vhd_result in
+     Platform_code.of_int32 (get_header_platform_code buf) >>= fun platform_code ->
+     let platform_data_space_original = get_header_platform_data_space buf in
+     (* The spec says this field should be stored in sectors. However some viridian vhds
+@@ -798,7 +798,7 @@ module Header = struct
+     { t with checksum }
+ 
+   let unmarshal (buf: Cstruct.t) =
+-    let open Result in
++    let open Vhd_result in
+     let magic' = copy_header_magic buf in
+     ( if magic' <> magic
+       then fail (Failure (Printf.sprintf "Expected cookie %s, got %s" magic magic'))
+@@ -966,7 +966,7 @@ module Batmap_header = struct
+   }
+ 
+   let unmarshal (buf: Cstruct.t) =
+-    let open Result in
++    let open Vhd_result in
+     let magic' = copy_header_magic buf in
+     ( if magic' <> magic
+       then fail (Failure (Printf.sprintf "Expected cookie %s, got %s" magic magic'))
+@@ -1018,7 +1018,7 @@ module Batmap = struct
+     byte land mask <> mask
+ 
+   let unmarshal (buf: Cstruct.t) (h: Header.t) (bh: Batmap_header.t) =
+-    let open Result in
++    let open Vhd_result in
+     let needed = Cstruct.sub buf 0 (sizeof_bytes h) in
+     let checksum = Checksum.of_cstruct buf in
+     ( if checksum <> bh.Batmap_header.checksum
+@@ -1397,7 +1397,7 @@ module From_input = functor (I: S.INPUT) -> struct
+     | Cons of 'a * (unit -> 'a ll t)
+     | End
+ 
+-  (* Convert Result.Error values into failed threads *)
++  (* Convert Vhd_result.Error values into failed threads *)
+   let (>>|=) m f = match m with
+     | `Error e -> fail e
+     | `Ok x -> f x
+@@ -1472,7 +1472,7 @@ end
+ module From_file = functor(F: S.FILE) -> struct
+   open F
+ 
+-  (* Convert Result.Error values into failed threads *)
++  (* Convert Vhd_result.Error values into failed threads *)
+   let (>>|=) m f = match m with
+     | `Error e -> fail e
+     | `Ok x -> f x
+diff --git a/lib/f.mli b/lib/f.mli
+index 11751d4..3402c54 100644
+--- a/lib/f.mli
++++ b/lib/f.mli
+@@ -121,7 +121,7 @@ module Footer: sig
+ 
+   val sizeof : int
+   val marshal : Cstruct.t -> t -> t
+-  val unmarshal : Cstruct.t -> (t, exn) Result.t
++  val unmarshal : Cstruct.t -> (t, exn) Vhd_result.t
+ 
+   val to_string: t -> string
+ end
+@@ -163,7 +163,7 @@ module Parent_locator : sig
+ 
+   val sizeof : int
+   val marshal : Cstruct.t -> t -> unit
+-  val unmarshal : Cstruct.t -> (t, exn) Result.t
++  val unmarshal : Cstruct.t -> (t, exn) Vhd_result.t
+ end
+ 
+ module Header : sig
+@@ -214,7 +214,7 @@ module Header : sig
+   val sizeof : int
+ 
+   val marshal : Cstruct.t -> t -> t
+-  val unmarshal : Cstruct.t -> (t, exn) Result.t
++  val unmarshal : Cstruct.t -> (t, exn) Vhd_result.t
+ end
+ 
+ module BAT : sig
+diff --git a/lib/result.ml b/lib/result.ml
+deleted file mode 100644
+index 6a04386..0000000
+--- a/lib/result.ml
++++ /dev/null
+@@ -1,14 +0,0 @@
+-type ('ok, 'err) t = [
+-  | `Ok of 'ok
+-  | `Error of 'err
+-]
+-
+-let return x = `Ok x
+-
+-let bind m f = match m with
+-  | `Ok x -> f x
+-  | `Error x -> `Error x
+-
+-let (>>=) = bind
+-
+-let fail x = `Error x
+diff --git a/lib/vhd.mlpack b/lib/vhd.mlpack
+index 110a3dd..f6f4d63 100644
+--- a/lib/vhd.mlpack
++++ b/lib/vhd.mlpack
+@@ -2,7 +2,7 @@
+ # DO NOT EDIT (digest: e7f11182e610c8dafd5cae42866593a3)
+ F
+ S
+-Result
++Vhd_result
+ Element
+ Patterns
+ # OASIS_STOP
+diff --git a/lib/vhd_result.ml b/lib/vhd_result.ml
+new file mode 100644
+index 0000000..6a04386
+--- /dev/null
++++ b/lib/vhd_result.ml
+@@ -0,0 +1,14 @@
++type ('ok, 'err) t = [
++  | `Ok of 'ok
++  | `Error of 'err
++]
++
++let return x = `Ok x
++
++let bind m f = match m with
++  | `Ok x -> f x
++  | `Error x -> `Error x
++
++let (>>=) = bind
++
++let fail x = `Error x
+diff --git a/setup.ml b/setup.ml
+index aeca2bf..263d159 100644
+--- a/setup.ml
++++ b/setup.ml
+@@ -1,7 +1,7 @@
+ (* setup.ml generated for the first time by OASIS v0.3.1 *)
+ 
+ (* OASIS_START *)
+-(* DO NOT EDIT (digest: d1dfe9e317b5a946e9c888e94252e03d) *)
++(* DO NOT EDIT (digest: 1532595f7219aee7d99e0aabb6e61917) *)
+ (*
+    Regenerated by OASIS v0.4.10
+    Visit http://oasis.forge.ocamlcore.org for more information and
+@@ -7184,7 +7184,7 @@ let setup_t =
+                    },
+                    {
+                       lib_modules =
+-                        ["F"; "S"; "Result"; "Element"; "Patterns"];
++                        ["F"; "S"; "Vhd_result"; "Element"; "Patterns"];
+                       lib_pack = true;
+                       lib_internal_modules = [];
+                       lib_findlib_parent = None;
+@@ -7697,7 +7697,8 @@ let setup_t =
+        };
+      oasis_fn = Some "_oasis";
+      oasis_version = "0.4.10";
+-     oasis_digest = Some "0\136eC\130\131\236K\024S\230dE\018\179\160";
++     oasis_digest =
++       Some "\136\132\129\138\169q\131\249%\238\172\024`\014i\196";
+      oasis_exec = None;
+      oasis_setup_args = [];
+      setup_update = false
+@@ -7705,7 +7706,7 @@ let setup_t =
+ 
+ let setup () = BaseSetup.setup setup_t;;
+ 
+-# 7709 "setup.ml"
++# 7710 "setup.ml"
+ let setup_t = BaseCompat.Compat_0_4.adapt_setup_t setup_t
+ open BaseCompat.Compat_0_4
+ (* OASIS_STOP *)
+-- 
+2.7.4
+

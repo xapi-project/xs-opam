@@ -1,0 +1,28 @@
+From 3303ad184f4f0b5de899775b8ab1646c50df5a20 Mon Sep 17 00:00:00 2001
+From: Gabor Igloi <gabor.igloi@citrix.com>
+Date: Mon, 23 Oct 2017 10:46:01 +0100
+Subject: [PATCH] Use Core, Async instead of their deprecated Std submodules
+
+Signed-off-by: Gabor Igloi <gabor.igloi@citrix.com>
+---
+ main.ml | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/main.ml b/main.ml
+index dbe683a..fd92607 100644
+--- a/main.ml
++++ b/main.ml
+@@ -15,8 +15,8 @@ module U = Unix
+ module R = Rpc
+ module B = Backtrace
+ 
+-open Core.Std
+-open Async.Std
++open Core
++open Async
+ 
+ open Xapi_storage_script_types
+ 
+-- 
+2.7.4
+

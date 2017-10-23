@@ -1,0 +1,76 @@
+From 3a4bffe932b9faab4bf1235d7148a2be41fffe11 Mon Sep 17 00:00:00 2001
+From: Gabor Igloi <gabor.igloi@citrix.com>
+Date: Fri, 20 Oct 2017 20:19:35 +0100
+Subject: [PATCH] Use Core, Async instead of their deprecated Std submodules
+
+Signed-off-by: Gabor Igloi <gabor.igloi@citrix.com>
+---
+ async/protocol_async.ml        | 4 ++--
+ async/protocol_async.mli       | 4 ++--
+ core_test/client_async_main.ml | 4 ++--
+ core_test/server_async_main.ml | 4 ++--
+ 4 files changed, 8 insertions(+), 8 deletions(-)
+
+diff --git a/async/protocol_async.ml b/async/protocol_async.ml
+index c4e2fee..1ccf8a3 100644
+--- a/async/protocol_async.ml
++++ b/async/protocol_async.ml
+@@ -17,8 +17,8 @@
+ let whoami () = Printf.sprintf "%s:%d"
+     (Filename.basename Sys.argv.(0)) (Unix.getpid ())
+ 
+-open Core.Std
+-open Async.Std
++open Core
++open Async
+ open Message_switch
+ open Protocol
+ open Cohttp
+diff --git a/async/protocol_async.mli b/async/protocol_async.mli
+index 6e2a10b..13f47e5 100644
+--- a/async/protocol_async.mli
++++ b/async/protocol_async.mli
+@@ -13,8 +13,8 @@
+  * ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+  * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+  *)
+-open Core.Std
+-open Async.Std
++open Core
++open Async
+ open Message_switch
+ 
+ module Client : S.CLIENT
+diff --git a/core_test/client_async_main.ml b/core_test/client_async_main.ml
+index e365a8b..a8c666b 100644
+--- a/core_test/client_async_main.ml
++++ b/core_test/client_async_main.ml
+@@ -16,8 +16,8 @@
+ 
+ module P = Printf
+ 
+-open Core.Std
+-open Async.Std
++open Core
++open Async
+ 
+ open Protocol
+ open Protocol_async
+diff --git a/core_test/server_async_main.ml b/core_test/server_async_main.ml
+index f79e683..dea04fb 100644
+--- a/core_test/server_async_main.ml
++++ b/core_test/server_async_main.ml
+@@ -16,8 +16,8 @@
+ 
+ module P = Printf
+ 
+-open Core.Std
+-open Async.Std
++open Core
++open Async
+ 
+ open Protocol
+ open Protocol_async
+-- 
+2.11.0
+
