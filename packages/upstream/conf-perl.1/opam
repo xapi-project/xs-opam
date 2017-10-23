@@ -12,4 +12,5 @@ depexts: [
   [["nixpkgs"] ["perl"]]
   [["archlinux"] ["perl"]]
   [["fedora"] ["perl-Pod-Html"]]
+  [["centos"] ["perl"]]
 ]
