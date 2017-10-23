@@ -1,0 +1,68 @@
+From 326f6bbcb0513619607a833c1bcc3e487d2f334e Mon Sep 17 00:00:00 2001
+From: Gabor Igloi <gabor.igloi@citrix.com>
+Date: Fri, 20 Oct 2017 22:55:01 +0100
+Subject: [PATCH] switch/clock: use Mtime_clock to satisfy CLOCK signature of
+ shared-block-ring
+
+Remove the fallback to Unix functions - Mtime_clock supports platformst
+with a POSIX clock, including Linux.
+
+Also, remove the unused s () function.
+
+Signed-off-by: Gabor Igloi <gabor.igloi@citrix.com>
+---
+ switch/clock.ml  | 20 +++++++-------------
+ switch/clock.mli |  5 +----
+ 2 files changed, 8 insertions(+), 17 deletions(-)
+
+diff --git a/switch/clock.ml b/switch/clock.ml
+index 04eae1a..15bacc9 100644
+--- a/switch/clock.ml
++++ b/switch/clock.ml
+@@ -14,20 +14,14 @@
+  * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+  *)
+ 
+-let use_mtime () = Mtime.Span.to_uint64_ns (Mtime_clock.elapsed ())
++include Mtime_clock
+ 
+-let use_timeofday () = Int64.of_float (Unix.gettimeofday () *. Mtime.s_to_ns)
++type +'a io = 'a Lwt.t
+ 
+-let ns =
+-  try
+-    Mtime_clock.now () |> ignore;
+-    use_mtime
+-  with Sys_error e -> begin
+-      Logging.warn "Error: %s. No monotonic clock source: falling back to calendar time" e;
+-      use_timeofday
+-    end
++type t = unit
+ 
+-include Unix
+-let time = gettimeofday
++let disconnect () = Lwt.return_unit
+ 
+-let s () = Int64.to_float (ns ()) /. 1e9
++let connect () = Lwt.return_unit
++
++let ns () = Mtime.Span.to_uint64_ns (Mtime_clock.elapsed ())
+diff --git a/switch/clock.mli b/switch/clock.mli
+index 70f55de..9e8984b 100644
+--- a/switch/clock.mli
++++ b/switch/clock.mli
+@@ -14,10 +14,7 @@
+  * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+  *)
+ 
+-include V1.CLOCK
++include Shared_block.S.CLOCK
+ 
+ val ns: unit -> int64
+ (** [ns ()] time in ns since the program started *)
+-
+-val s: unit -> float
+-(** [s ()] time in seconds since the program started *)
+-- 
+2.11.0
+

@@ -21,7 +21,7 @@ depends: [
   "sha"
   "ssl"
   "stdext"
-  "tar-format"
+  "tar-unix"
   "vhd-format"
   "x509"
   "xapi-cli-protocol"
@@ -50,3 +50,6 @@ depexts: [
   [["centos"] ["hwdata" "pciutils-devel" "pam-devel"]]
 ]
 
+patches: [
+  "0001-Depend-on-new-tar-unix-ocamlfind-package.patch"
+]
