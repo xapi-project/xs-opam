@@ -1,0 +1,26 @@
+From d1c14b979b737cc7c2e4913c4d52ad78bd64d1e9 Mon Sep 17 00:00:00 2001
+From: Gabor Igloi <gabor.igloi@citrix.com>
+Date: Mon, 23 Oct 2017 10:55:58 +0100
+Subject: [PATCH] Update after Async bind signature change
+
+Signed-off-by: Gabor Igloi <gabor.igloi@citrix.com>
+---
+ main.ml | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/main.ml b/main.ml
+index 1732e7c..00c68bc 100644
+--- a/main.ml
++++ b/main.ml
+@@ -61,7 +61,7 @@ module RRD = struct
+   module Client = Rrd_interface.ClientM(struct
+     type 'a t = 'a Deferred.t
+     let return = return
+-    let bind = Deferred.bind
++    let bind a f = Deferred.bind a ~f
+     let fail = raise
+     let rpc call = json_switch_rpc !Rrd_interface.queue_name call
+ end)
+-- 
+2.7.4
+
