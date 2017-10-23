@@ -16,10 +16,14 @@ build: [[ "jbuilder" "build" "-p" name ]]
 
 depends: [
   "jbuilder" {build & >= "1.0+beta11"}
-  "async" {>= "111.13.00" & < "v0.9.0"}
-  "cohttp" {>= "0.12.0" & < "0.22.0"}
+  "async" {>= "111.13.00"}
+  "cohttp" {>= "0.12.0"}
   "rpc" {>= "1.9.52"}
   "uri"
   "xen-api-client"
   "xmlm"
+]
+
+patches: [
+  "0001-Update-after-Async-bind-signature-change.patch"
 ]

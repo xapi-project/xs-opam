@@ -13,7 +13,7 @@ depends: [
   "xapi-stdext"
   "ocamlfind"
   "uuidm"
-  "cohttp" {< "0.22.0"}
+  "cohttp"
   "uri"
   "re"
   "rpc"
