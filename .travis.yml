@@ -11,6 +11,7 @@ script:
   - echo "EXTRA_REMOTES=${EXTRA_REMOTES}" >> env.list
   - echo "COMPILE_ALL=${COMPILE_ALL}"     >> env.list
   - echo "OPAM_LINT=${OPAM_LINT}"         >> env.list
+  - echo "OCAML_VERSION=${OCAML_VERSION}" >> env.list
   - docker build -t local-build -f Dockerfile.test .
   - docker run --env-file=env.list -v ~/build/$TRAVIS_REPO_SLUG:/repo -v $TRAVIS_BUILD_DIR:/bd local-build bash travis.sh
 env:
