@@ -23,6 +23,7 @@ depends: [
   "stdext"
   "tar-format"
   "vhd-format"
+  "x509"
   "xapi-cli-protocol"
   "xapi-client"
   "xapi-consts"
@@ -34,11 +35,13 @@ depends: [
   "xapi-libs-transitional"
   "xapi-netdev"
   "xapi-rrdd-plugin"
+  "xapi-tapctl"
   "xapi-test-utils"
   "xapi-types"
   "xapi-xenopsd"
   "xenctrl"
   "xenstore"
+  "yojson"
 ]
 depexts: [
   [["centos"] ["pam-devel"]]
