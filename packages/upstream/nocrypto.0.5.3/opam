@@ -9,6 +9,7 @@ license:      "BSD2"
 build: [
   [ "./configure" "--prefix" prefix
      "--%{lwt:enable}%-lwt"
+     "--disable-modernity"
      "--%{mirage-xen+mirage-entropy-xen:enable}%-xen" ]
   [ make ]
 ]
@@ -39,7 +40,7 @@ conflicts: [
 ]
 
 build-test: [
-  [ "./configure" "--%{ounit:enable}%-tests" ]
+  [ "./configure" "--%{ounit:enable}%-tests" "--disable-modernity" ]
   [ make "test" ]
 ]
 
