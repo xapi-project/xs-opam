@@ -12,7 +12,8 @@ available:     [ ocaml-version >= "4.02.0" ]
 build: ["ocaml" "pkg/pkg.ml" "build" "--pinned" "%{pinned}%" "--tests" "false"
                 "--with-lwt" "%{lwt:installed}%"
                 "--xen" "%{mirage-xen:installed}%"
-                "--freestanding" "%{mirage-solo5:installed}%"]
+                "--freestanding" "%{mirage-solo5:installed}%"
+                "--accelerate" "false"]
 
 depends: [
   "ocamlfind" {build}
