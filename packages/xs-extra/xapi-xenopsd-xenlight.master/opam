@@ -1,5 +1,5 @@
 opam-version: "1.2"
-name: "xapi-xenopsd"
+name: "xapi-xenopsd-xenlight"
 maintainer: "xen-api@lists.xen.org"
 authors: "xen-api@lists.xen.org"
 homepage: "https://github.com/xapi-project/xenopsd"
@@ -9,14 +9,13 @@ build: [
   ["./configure"]
   [ "jbuilder" "build" "-p" name "-j" jobs ]
 ]
-build-test: [[ "jbuilder" "runtest" "-p" name "-j" jobs ]]
 depends: [
   "jbuilder" {build}
+  "xapi-xenopsd"
   "cohttp"
   "core"
   "ezxenstore"
   "fd-send-recv"
-  "ounit" {test}
   "qmp"
   "re"
   "rpc"
