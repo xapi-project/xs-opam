@@ -16,8 +16,8 @@ script:
 after_success:
   - if [ "$TRAVIS_PULL_REQUEST" = "false" -a "$TRAVIS_BRANCH" = "master" -a -n "$DOCKER_HUB_TAG" ]; then
       docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD";
-      docker tag local-build gaborigloi/xs-opam:$DOCKER_HUB_TAG;
-      docker push gaborigloi/xs-opam:$DOCKER_HUB_TAG;
+      docker tag local-build xenserver/xs-opam:$DOCKER_HUB_TAG;
+      docker push xenserver/xs-opam:$DOCKER_HUB_TAG;
     fi
 env:
   global:
