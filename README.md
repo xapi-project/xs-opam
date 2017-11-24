@@ -111,9 +111,48 @@ service. These are library packages that part of XenServer. The full set
 of packages is built as well but failure to build it doesn't count as a
 build failure so far. See `.travis.yml` and `travis.sh` for details.
 
-[Opam]:   http://opam.ocaml.org
-[OCaml]:  http:/ocaml.org
-[Travis]: https://travis-ci.org/xapi-project/xs-opam
+# Docker Images
+
+After each successful [Travis] build, Docker images containing the
+compiled packages are pushed to Docker Hub:
+https://hub.docker.com/r/xenserver/xs-opam/tags/
+
+Currently the following images are pushed to Docker hub:
+
+* `xenserver/xs-opam:latest`: This image contains the packages in the
+  `packages/upstream` and `packages/xs` directories.
+* `xenserver/xs-opam:latest_extra`: In addition to the packages in
+  `xenserver/xs-opam:latest`, this image also contains the packages in
+  the `packages/upstream-extra` and `packages/xs-extra` directories.
+  
+Among other things, these images can be used to build toolstack components.
+However, this only works if the UID of the current user is `1000`, which is
+the default for most desktop Linux installations.
+Packages in the `packages/upstream` and `packages/xs` directories only need
+the `latest` image for building, packages in the `packages/upstream-extra`
+and `packages/xs-extra` directories usually require the `latest_extra`
+image.
+
+For example, the [`ezxenstore`](https://github.com/xapi-project/ezxenstore)
+project can be built in the following way using the `xenserver/xs-opam:latest`
+image:
+```
+docker run --rm -itv $PWD:/mnt -w /mnt xenserver/xs-opam:latest
+# Now we are inside the container.
+make release
+```
+
+The following commands can be used to build
+[`xapi`](https://github.com/xapi-project/xen-api) with the
+`xenserver/xs-opam:latest_extra` image:
+```
+docker run --rm -itv $PWD:/mnt -w /mnt xenserver/xs-opam:latest_extra
+# Now we are inside the container.
+# To avoid stack overflow error:
+ulimit -s 16384
+./configure
+make
+```
 
 # Neat tricks
 
@@ -135,3 +174,7 @@ build failure so far. See `.travis.yml` and `travis.sh` for details.
 Refer to the [`opam` manual](https://opam.ocaml.org/doc/Usage.html) for
 additional information.
 
+
+[Opam]:   http://opam.ocaml.org
+[OCaml]:  http:/ocaml.org
+[Travis]: https://travis-ci.org/xapi-project/xs-opam
