@@ -3,7 +3,7 @@
 
 set -ex
 
-cat <<EOF > Dockerfile.txt
+cat <<EOF > Dockerfile.test
 FROM ocaml/opam:${DISTRO}_ocaml-${OCAML_VERSION}
 COPY . /xs-opam
 "ENV BASE_REMOTE=${BASE_REMOTE}"
