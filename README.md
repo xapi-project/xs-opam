@@ -154,6 +154,27 @@ ulimit -s 16384
 make
 ```
 
+## Building the Docker Images Locally
+
+You can use the `build-docker.sh` script to to run the Travis tests and build
+the above Docker images locally. You need to supply the same environment
+variables that are specified for our Travis build in the `.travis.yml` file.
+
+For example, the following command can be used to compile the packages in the
+`packages/upstream` and `packages/xs` directories on CentOS 7, using OCaml
+4.04.2, and `xs-opam` instead of the default one as the base OPAM repository:
+```
+env OCAML_VERSION=4.04.2 DISTRO=centos-7 BASE_REMOTE=/xs-opam ./build-docker.sh
+```
+This produces a Docker image called `local-build` containing the compiled
+packages.
+
+The following command can be used to build _all_ packages in this repository
+with the same parameters as above:
+```
+env OCAML_VERSION=4.04.2 DISTRO=centos-7 BASE_REMOTE=/xs-opam COMPILE_ALL=1 ./build-docker.sh
+```
+
 # Neat tricks
 
 - list all the dependencies of a package:
