@@ -1,12 +1,10 @@
 opam-version: "1"
-maintainer: "xen-api@lists.xen.org"
+maintainer: "john.else@citrix.com"
 build: [
-  ["make"]
-  ["make" "PREFIX=%{prefix}%" "install"]
+     ["jbuilder" "build" "-p" name "-j" jobs]
 ]
-remove: ["make" "PREFIX=%{prefix}%" "uninstall"]
 depends: [
   "xapi-rrd"
-  "xapi-stdext"
+  "xapi-stdext-unix"
   "xmlm"
 ]
