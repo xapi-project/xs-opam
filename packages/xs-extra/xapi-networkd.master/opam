@@ -2,19 +2,22 @@ opam-version: "1.2"
 maintainer: "jonathan.ludlam@eu.citrix.com"
 authors: "jonathan.ludlam@eu.citrix.com"
 homepage: "https://github.com/xapi-project/xcp-networkd"
+
 build: [
-  [make]
-  [make "install" "BINDIR=%{bin}%" "SBINDIR=%{bin}%" "LIBEXECDIR=%{bin}%" "SCRIPTSDIR=%{bin}%" "ETCDIR=%{prefix}%/etc" "MANDIR=%{man}"]
+  "jbuilder" "build" "-p" name "-j" jobs
 ]
-remove: [make "uninstall" "BINDIR=%{bin}%" "SBINDIR=%{bin}%" "LIBEXECDIR=%{bin}%" "SCRIPTSDIR=%{bin}%" "ETCDIR=%{prefix}%/etc" "MANDIR=%{man}"]
+
+build-test: ["jbuilder" "runtest" "-p" name]
+
 depends: [
-  "bisect_ppx"
+  "jbuilder" {build}
   "netlink"
-  "ocamlfind"
+  "rpc"
   "systemd"
+  "xapi-forkexecd"
   "xapi-idl"
   "xapi-inventory"
   "xapi-libs-transitional"
-  "xapi-test-utils"
+  "xapi-stdext" {>= "3.0.0"}
   "xen-api-client"
 ]
