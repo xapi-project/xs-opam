@@ -16,7 +16,6 @@ depends: [
   "nbd"
   "opasswd"
   "ounit"
-  "pci"
   "rpc"
   "sha"
   "ssl"
@@ -43,8 +42,10 @@ depends: [
   "xenstore"
   "yojson"
 ]
+
 depexts: [
-  [["centos"] ["pam-devel"]]
-  [["debian"] ["libpam-dev"]]
-  [["ubuntu"] ["libpam-dev"]]
+  [["debian"] ["hwdata" "libpci-dev" "libpam-dev"]]
+  [["ubuntu"] ["hwdata" "libpci-dev" "libpam-dev"]]
+  [["centos"] ["hwdata" "pciutils-devel" "pam-devel"]]
 ]
+
