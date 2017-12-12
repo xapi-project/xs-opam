@@ -32,5 +32,5 @@ depends: [
 ]
 
 patches: [
-  "0001-Update-to-new-nbd-3-library.patch"
+  "0001-Update-nbd-and-vhd-format.patch"
 ]
