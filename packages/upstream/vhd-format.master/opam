@@ -8,7 +8,7 @@ authors: [ "Dave Scott" "Jon Ludlam" ]
 homepage: "https://github.com/mirage/ocaml-vhd"
 bug-reports: "https://github.com/mirage/ocaml-vhd/issues"
 dev-repo: "git://github.com/mirage/ocaml-vhd"
-build: make
+build: [[make "release"]]
 remove: [[make "uninstall"]]
 depends: [
   "ocamlfind"
