@@ -8,22 +8,15 @@ authors: [ "Dave Scott" "Jon Ludlam" ]
 homepage: "https://github.com/mirage/ocaml-vhd"
 bug-reports: "https://github.com/mirage/ocaml-vhd/issues"
 dev-repo: "git://github.com/mirage/ocaml-vhd"
-build: [[make "release"]]
-remove: [[make "uninstall"]]
+build: [[ "jbuilder" "build" "-p" name "-j" jobs ]]
 depends: [
-  "ocamlfind"
-  "lwt" {>= "2.4.3"}
   "cstruct" {>= "1.9"}
-  "mirage-types-lwt" {>= "3.0.0"}
-  "ipaddr"
   "io-page"
+  "rresult"
   "uuidm"
-  "ounit"
-  "ppx_tools" {build}
-  "ocamlbuild" {build}
+  "ppx_cstruct" {build}
 ]
 depexts: [
  [["alpine"]["linux-headers"]]
 ]
 available: [ (os = "linux" | os = "darwin") & ocaml-version >= "4.02.3" ]
-install: [make "install"]
