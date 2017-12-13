@@ -12,6 +12,7 @@ build: [[ "jbuilder" "build" "-p" name "-j" jobs ]]
 depends: [
   "cstruct" {>= "1.9"}
   "io-page"
+  "jbuilder" {build}
   "rresult"
   "uuidm"
   "ppx_cstruct" {build}
