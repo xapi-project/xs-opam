@@ -25,7 +25,7 @@ depends: [
   "tar-unix"
   "uri"
   "vhd-format" {>= "0.7.0"}
-  "vhd-format-lwt" {>= "0.7.0"}
+  "vhd-format-lwt"
   "xapi-idl"
   "xapi-tapctl"
   "xenstore"
