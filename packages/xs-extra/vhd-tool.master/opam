@@ -25,6 +25,7 @@ depends: [
   "tar-unix"
   "uri"
   "vhd-format" {>= "0.7.0"}
+  "vhd-format-lwt"
   "xapi-idl"
   "xapi-tapctl"
   "xenstore"
@@ -32,5 +33,5 @@ depends: [
 ]
 
 patches: [
-  "0001-Update-to-new-nbd-3-library.patch"
+  "0001-Update-nbd-and-vhd-format.patch"
 ]
