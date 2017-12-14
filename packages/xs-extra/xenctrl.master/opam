@@ -20,9 +20,9 @@ remove: [
   [make "uninstall"]
 ]
 depends: [
-  "ocamlfind"
-  "lwt"
-  "cmdliner"
+  "ocamlfind" {build}
+  "lwt"       {test}
+  "cmdliner"  {build}
 ]
 depexts: [
   [["debian"] ["libxen-dev" "uuid-dev"]]
