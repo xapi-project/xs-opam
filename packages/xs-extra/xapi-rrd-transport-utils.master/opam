@@ -4,6 +4,9 @@ authors: "john.else@citrix.com"
 homepage: "https://github.com/xapi-project/rrd-transport"
 dev-repo: "https://github.com/xapi-project/rrd-transport"
 bug-reports: "https://github.com/xapi-project/rrd-transport"
+build: [[ "jbuilder" "build" "-p" name "-j" jobs ]]
 depends: [
-  "rrd-transport" {>= "2.0.0"}
+  "jbuilder" {build & >= "1.0+beta10"}
+  "cmdliner"
+  "xapi-rrd-transport" {>= "2.0.0"}
 ]
