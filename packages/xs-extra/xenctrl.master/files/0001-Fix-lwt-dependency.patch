@@ -1,0 +1,378 @@
+From 5704a692d2b1e9fb9fb649df8410a53bde50443c Mon Sep 17 00:00:00 2001
+From: Marcello Seri <marcello.seri@citrix.com>
+Date: Thu, 14 Dec 2017 15:13:09 +0000
+Subject: [PATCH] Fix lwt dependency
+
+Signed-off-by: Marcello Seri <marcello.seri@citrix.com>
+---
+ _oasis              |  4 ++--
+ _tags               |  7 +-----
+ lib/META            |  6 ++---
+ myocamlbuild.ml     | 20 ++++++-----------
+ setup.ml            | 64 +++++++++++++++++++++++------------------------------
+ xenguest-4.2/META   |  4 ++--
+ xenlight-4.7/META   |  4 ++--
+ xentoollog-4.7/META |  4 ++--
+ 8 files changed, 47 insertions(+), 66 deletions(-)
+
+diff --git a/_oasis b/_oasis
+index 6709616..dab46b1 100644
+--- a/_oasis
++++ b/_oasis
+@@ -23,7 +23,7 @@ Library xenctrl
+   CSources:           xenmmap_stubs.c, mmap_stubs.h, xenctrl_stubs.c, config.h
+   CCLib:              -lxenctrl -lxenguest -lxenstore
+   CCOpt:              -Wno-unused-function -g -ggdb
+-  BuildDepends:       unix, lwt, bigarray
++  BuildDepends:       unix, bigarray
+   XMETAExtraLines:    xen_linkopts = "-lxenctrl_stubs"
+ 
+ Library xenlight
+@@ -73,4 +73,4 @@ Executable test_hvm_check_pvdriver
+   MainIs:             test_hvm_check_pvdriver.ml
+   Custom:             true
+   Install:            false
+-  BuildDepends:       xenctrl
++  BuildDepends:       xenctrl, lwt
+diff --git a/_tags b/_tags
+index 060272e..26f02c1 100644
+--- a/_tags
++++ b/_tags
+@@ -1,5 +1,5 @@
+ # OASIS_START
+-# DO NOT EDIT (digest: dcd3ef160e8ae5b99cd33fed790be7b6)
++# DO NOT EDIT (digest: 40af9a2ed381915b91ae625e94375ce7)
+ # Ignore VCS directories, you can use the same kind of rule outside
+ # OASIS_START/STOP if you want to exclude directories that contains
+ # useless stuff for the build process
+@@ -26,13 +26,10 @@ true: annot, bin_annot
+ "lib/dllxenctrl_stubs.so": oasis_library_xenctrl_cclib
+ <lib/xenctrl.{cma,cmxa}>: use_libxenctrl_stubs
+ <lib/*.ml{,i,y}>: pkg_bigarray
+-<lib/*.ml{,i,y}>: pkg_lwt
+ <lib/*.ml{,i,y}>: pkg_unix
+ "lib/xenmmap_stubs.c": pkg_bigarray
+-"lib/xenmmap_stubs.c": pkg_lwt
+ "lib/xenmmap_stubs.c": pkg_unix
+ "lib/xenctrl_stubs.c": pkg_bigarray
+-"lib/xenctrl_stubs.c": pkg_lwt
+ "lib/xenctrl_stubs.c": pkg_unix
+ # Library xentoollog
+ "xentoollog/xentoollog.cmxs": use_xentoollog
+@@ -62,12 +59,10 @@ true: annot, bin_annot
+ <xenguest-4.2/xenguest42.{cma,cmxa}>: use_libxenguest42_stubs
+ # Executable xenguest
+ <xenguest-4.2/xenguest_main.{native,byte}>: pkg_bigarray
+-<xenguest-4.2/xenguest_main.{native,byte}>: pkg_lwt
+ <xenguest-4.2/xenguest_main.{native,byte}>: pkg_unix
+ <xenguest-4.2/xenguest_main.{native,byte}>: use_xenctrl
+ <xenguest-4.2/xenguest_main.{native,byte}>: use_xenguest42
+ <xenguest-4.2/*.ml{,i,y}>: pkg_bigarray
+-<xenguest-4.2/*.ml{,i,y}>: pkg_lwt
+ <xenguest-4.2/*.ml{,i,y}>: pkg_unix
+ <xenguest-4.2/*.ml{,i,y}>: use_xenctrl
+ <xenguest-4.2/*.ml{,i,y}>: use_xenguest42
+diff --git a/lib/META b/lib/META
+index 438f58a..070837e 100644
+--- a/lib/META
++++ b/lib/META
+@@ -1,8 +1,8 @@
+ # OASIS_START
+-# DO NOT EDIT (digest: 9f9c737843b0af06ce2b079f85cde368)
+-version = "0.9.32"
++# DO NOT EDIT (digest: ba87acf3ff057b201f7c1e8e2fee8e4f)
++version = "0.10.0"
+ description = "Xen low-level bindings"
+-requires = "unix lwt bigarray"
++requires = "unix bigarray"
+ archive(byte) = "xenctrl.cma"
+ archive(byte, plugin) = "xenctrl.cma"
+ archive(native) = "xenctrl.cmxa"
+diff --git a/myocamlbuild.ml b/myocamlbuild.ml
+index e828efb..dc15b2c 100644
+--- a/myocamlbuild.ml
++++ b/myocamlbuild.ml
+@@ -1,5 +1,5 @@
+ (* OASIS_START *)
+-(* DO NOT EDIT (digest: efa8aef583480197e5232650542244ae) *)
++(* DO NOT EDIT (digest: e45326853f48f94bc8590d33208684ec) *)
+ module OASISGettext = struct
+ (* # 22 "src/oasis/OASISGettext.ml" *)
+ 
+@@ -105,10 +105,7 @@ module OASISString = struct
+         ok := false;
+       incr str_idx
+     done;
+-    if !what_idx = String.length what then
+-      true
+-    else
+-      false
++    !what_idx = String.length what
+ 
+ 
+   let strip_starts_with ~what str =
+@@ -131,10 +128,7 @@ module OASISString = struct
+         ok := false;
+       decr str_idx
+     done;
+-    if !what_idx = -1 then
+-      true
+-    else
+-      false
++    !what_idx = -1
+ 
+ 
+   let strip_ends_with ~what str =
+@@ -440,7 +434,7 @@ module OASISExpr = struct
+ end
+ 
+ 
+-# 443 "myocamlbuild.ml"
++# 437 "myocamlbuild.ml"
+ module BaseEnvLight = struct
+ (* # 22 "src/base/BaseEnvLight.ml" *)
+ 
+@@ -520,7 +514,7 @@ module BaseEnvLight = struct
+ end
+ 
+ 
+-# 523 "myocamlbuild.ml"
++# 517 "myocamlbuild.ml"
+ module MyOCamlbuildFindlib = struct
+ (* # 22 "src/plugins/ocamlbuild/MyOCamlbuildFindlib.ml" *)
+ 
+@@ -881,7 +875,7 @@ module MyOCamlbuildBase = struct
+ end
+ 
+ 
+-# 884 "myocamlbuild.ml"
++# 878 "myocamlbuild.ml"
+ open Ocamlbuild_plugin;;
+ let package_default =
+   {
+@@ -1010,6 +1004,6 @@ let conf = {MyOCamlbuildFindlib.no_automatic_syntax = false}
+ 
+ let dispatch_default = MyOCamlbuildBase.dispatch_default conf package_default;;
+ 
+-# 1014 "myocamlbuild.ml"
++# 1008 "myocamlbuild.ml"
+ (* OASIS_STOP *)
+ Ocamlbuild_plugin.dispatch dispatch_default;;
+diff --git a/setup.ml b/setup.ml
+index 576aafd..f29a482 100644
+--- a/setup.ml
++++ b/setup.ml
+@@ -1,9 +1,9 @@
+ (* setup.ml generated for the first time by OASIS v0.3.0 *)
+ 
+ (* OASIS_START *)
+-(* DO NOT EDIT (digest: 8c7d8719ac0b99ed9d648eea162c0e73) *)
++(* DO NOT EDIT (digest: a27865b4e94e594ba461aacc0abd29e5) *)
+ (*
+-   Regenerated by OASIS v0.4.8
++   Regenerated by OASIS v0.4.10
+    Visit http://oasis.forge.ocamlcore.org for more information and
+    documentation about functions used in this file.
+ *)
+@@ -112,10 +112,7 @@ module OASISString = struct
+         ok := false;
+       incr str_idx
+     done;
+-    if !what_idx = String.length what then
+-      true
+-    else
+-      false
++    !what_idx = String.length what
+ 
+ 
+   let strip_starts_with ~what str =
+@@ -138,10 +135,7 @@ module OASISString = struct
+         ok := false;
+       decr str_idx
+     done;
+-    if !what_idx = -1 then
+-      true
+-    else
+-      false
++    !what_idx = -1
+ 
+ 
+   let strip_ends_with ~what str =
+@@ -3162,7 +3156,7 @@ module OASISFileUtil = struct
+ end
+ 
+ 
+-# 3165 "setup.ml"
++# 3159 "setup.ml"
+ module BaseEnvLight = struct
+ (* # 22 "src/base/BaseEnvLight.ml" *)
+ 
+@@ -3242,7 +3236,7 @@ module BaseEnvLight = struct
+ end
+ 
+ 
+-# 3245 "setup.ml"
++# 3239 "setup.ml"
+ module BaseContext = struct
+ (* # 22 "src/base/BaseContext.ml" *)
+ 
+@@ -5665,7 +5659,7 @@ module BaseCompat = struct
+ end
+ 
+ 
+-# 5668 "setup.ml"
++# 5662 "setup.ml"
+ module InternalConfigurePlugin = struct
+ (* # 22 "src/plugins/internal/InternalConfigurePlugin.ml" *)
+ 
+@@ -6016,17 +6010,14 @@ module InternalInstallPlugin = struct
+ 
+   let install =
+ 
+-    let in_destdir =
++    let in_destdir fn =
+       try
+-        let destdir =
+-          destdir ()
+-        in
+-          (* Practically speaking destdir is prepended
+-           * at the beginning of the target filename
+-           *)
+-          fun fn -> destdir^fn
++        (* Practically speaking destdir is prepended at the beginning of the
++           target filename
++        *)
++        (destdir ())^fn
+       with PropList.Not_set _ ->
+-        fun fn -> fn
++        fn
+     in
+ 
+     let install_file ~ctxt ?(prepend_destdir=true) ?tgt_fn src_file envdir =
+@@ -6471,7 +6462,7 @@ module InternalInstallPlugin = struct
+ end
+ 
+ 
+-# 6474 "setup.ml"
++# 6465 "setup.ml"
+ module OCamlbuildCommon = struct
+ (* # 22 "src/plugins/ocamlbuild/OCamlbuildCommon.ml" *)
+ 
+@@ -6828,11 +6819,10 @@ module OCamlbuildDocPlugin = struct
+     run_ocamlbuild ~ctxt (index_html :: run.extra_args) argv;
+     List.iter
+       (fun glb ->
+-         BaseBuilt.register
+-           ~ctxt
+-           BaseBuilt.BDoc
+-           cs.cs_name
+-           [OASISFileUtil.glob ~ctxt (Filename.concat tgt_dir glb)])
++         match OASISFileUtil.glob ~ctxt (Filename.concat tgt_dir glb) with
++         | (_ :: _) as filenames ->
++             BaseBuilt.register ~ctxt BaseBuilt.BDoc cs.cs_name [filenames]
++         | [] -> ())
+       ["*.html"; "*.css"]
+ 
+ 
+@@ -6844,7 +6834,7 @@ module OCamlbuildDocPlugin = struct
+ end
+ 
+ 
+-# 6847 "setup.ml"
++# 6837 "setup.ml"
+ open OASISTypes;;
+ 
+ let setup_t =
+@@ -6865,7 +6855,7 @@ let setup_t =
+        {
+           oasis_version = "0.3";
+           ocaml_version = None;
+-          version = "0.9.32";
++          version = "0.10.0";
+           license =
+             OASISLicense.DEP5License
+               (OASISLicense.DEP5Unit
+@@ -6928,7 +6918,6 @@ let setup_t =
+                       bs_build_depends =
+                         [
+                            FindlibPackage ("unix", None);
+-                           FindlibPackage ("lwt", None);
+                            FindlibPackage ("bigarray", None)
+                         ];
+                       bs_build_tools = [ExternalTool "ocamlbuild"];
+@@ -7683,7 +7672,11 @@ let setup_t =
+                       bs_install = [(OASISExpr.EBool true, false)];
+                       bs_path = "test";
+                       bs_compiled_object = Best;
+-                      bs_build_depends = [InternalLibrary "xenctrl"];
++                      bs_build_depends =
++                        [
++                           InternalLibrary "xenctrl";
++                           FindlibPackage ("lwt", None)
++                        ];
+                       bs_build_tools = [ExternalTool "ocamlbuild"];
+                       bs_interface_patterns =
+                         [
+@@ -7849,9 +7842,8 @@ let setup_t =
+           plugin_data = []
+        };
+      oasis_fn = Some "_oasis";
+-     oasis_version = "0.4.8";
+-     oasis_digest =
+-       Some "\128\142\1775\244+\0067\244\224\132\001\129j\244\245";
++     oasis_version = "0.4.10";
++     oasis_digest = Some "(\185\217\1977\b/\015\175\209B\021\235i\206{";
+      oasis_exec = None;
+      oasis_setup_args = [];
+      setup_update = false
+@@ -7859,7 +7851,7 @@ let setup_t =
+ 
+ let setup () = BaseSetup.setup setup_t;;
+ 
+-# 7863 "setup.ml"
++# 7855 "setup.ml"
+ let setup_t = BaseCompat.Compat_0_3.adapt_setup_t setup_t
+ open BaseCompat.Compat_0_3
+ (* OASIS_STOP *)
+diff --git a/xenguest-4.2/META b/xenguest-4.2/META
+index 28aa5f4..8610145 100644
+--- a/xenguest-4.2/META
++++ b/xenguest-4.2/META
+@@ -1,6 +1,6 @@
+ # OASIS_START
+-# DO NOT EDIT (digest: b18549f033f1d425983a13d5edeedda5)
+-version = "0.9.32"
++# DO NOT EDIT (digest: 3cdbd60c1319f5407b9368be1ffc049f)
++version = "0.10.0"
+ description = "Xen low-level bindings"
+ archive(byte) = "xenguest42.cma"
+ archive(byte, plugin) = "xenguest42.cma"
+diff --git a/xenlight-4.7/META b/xenlight-4.7/META
+index ceaf5bb..d74076c 100644
+--- a/xenlight-4.7/META
++++ b/xenlight-4.7/META
+@@ -1,6 +1,6 @@
+ # OASIS_START
+-# DO NOT EDIT (digest: 3d6b3467a516b0481ff2621830581997)
+-version = "0.9.32"
++# DO NOT EDIT (digest: b5d0abbf2c1baa1226a34835c4e52ea2)
++version = "0.10.0"
+ description = "Xen low-level bindings"
+ requires = "xentoollog"
+ archive(byte) = "xenlight.cma"
+diff --git a/xentoollog-4.7/META b/xentoollog-4.7/META
+index 697d637..dcb9cab 100644
+--- a/xentoollog-4.7/META
++++ b/xentoollog-4.7/META
+@@ -1,6 +1,6 @@
+ # OASIS_START
+-# DO NOT EDIT (digest: aa8886d84a61033ff41a85834af1d7a3)
+-version = "0.9.32"
++# DO NOT EDIT (digest: 4bd791621321fe6db96a0ea7cfaa24c8)
++version = "0.10.0"
+ description = "Xen low-level bindings"
+ archive(byte) = "xentoollog.cma"
+ archive(byte, plugin) = "xentoollog.cma"
+-- 
+2.14.1
+

@@ -20,9 +20,9 @@ remove: [
   [make "uninstall"]
 ]
 depends: [
-  "ocamlfind"
-  "lwt"
-  "cmdliner"
+  "ocamlfind" {build}
+  "lwt"       {test}
+  "cmdliner"  {build}
 ]
 depexts: [
   [["debian"] ["libxen-dev" "uuid-dev"]]
@@ -35,4 +35,6 @@ depexts: [
   [["alpine"] ["xen-dev"]]
 ]
 available: [ ocaml-version >= "4.00.0" ]
-
+patches: [
+    "0001-Fix-lwt-dependency.patch"
+]

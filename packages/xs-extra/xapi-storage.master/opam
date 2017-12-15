@@ -18,3 +18,8 @@ depends: [
   "re"
   "cmdliner"
 ]
+depexts: [
+  [ ["debian"] ["python"] ]
+  [ ["ubuntu"] ["python"] ]
+  [ ["centos"] ["python"] ]
+]
