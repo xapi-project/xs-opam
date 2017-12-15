@@ -1,16 +1,17 @@
-From dedba3c831b67e16bbebfda6c1b3a65fdbad3942 Mon Sep 17 00:00:00 2001
+From cae2b6df888ff8287460d75c58d06fc35167309d Mon Sep 17 00:00:00 2001
 From: Yarsin He <yarsin.he@citrix.com>
 Date: Tue, 12 Dec 2017 15:29:06 +0000
 Subject: [PATCH] Updates to make xs-opam build on next
 
 Signed-off-by: Yarsin He <yarsin.he@citrix.com>
+Signed-off-by: Marcello Seri <marcello.seri@citrix.com>
 ---
  cli/get_vhd_vsize.ml |  12 +++---
  cli/sparse_dd.ml     |   4 +-
- src/impl.ml          | 104 +++++++++++++++++++++++++--------------------------
+ src/impl.ml          | 108 +++++++++++++++++++++++++--------------------------
  src/jbuild           |   4 +-
  vhd-tool.opam        |   3 +-
- 5 files changed, 64 insertions(+), 63 deletions(-)
+ 5 files changed, 66 insertions(+), 65 deletions(-)
 
 diff --git a/cli/get_vhd_vsize.ml b/cli/get_vhd_vsize.ml
 index 07b0d1b..66e1824 100644
@@ -70,7 +71,7 @@ index 4213507..a08549a 100644
  
  	let src = match !src with
 diff --git a/src/impl.ml b/src/impl.ml
-index 634802a..5c6b92a 100644
+index 634802a..4a098c2 100644
 --- a/src/impl.ml
 +++ b/src/impl.ml
 @@ -18,9 +18,9 @@ open Lwt
@@ -244,6 +245,17 @@ index 634802a..5c6b92a 100644
          Lwt_unix.LargeFile.lseek fd (Int64.mul 512L sector_start) Unix.SEEK_SET
          >>= fun (_: int64) ->
          c.Channels.copy_from fd (Int64.mul 512L sector_len)
+@@ -305,8 +305,8 @@ let sha1_update_cstruct ctx buffer =
+   let buf = buffer.Cstruct.buffer in
+   let buffer' : (char, Bigarray.int8_unsigned_elt, Bigarray.c_layout) Bigarray.Array1.t = Bigarray.Array1.sub buf ofs len in
+   (* XXX: need a better way to do this *)
+-  let buffer'': (int,  Bigarray.int8_unsigned_elt, Bigarray.c_layout) Bigarray.Array1.t = Obj.magic buffer' in
+-  Sha1.update_buffer ctx buffer''
++  (* let buffer'': (int,  Bigarray.int8_unsigned_elt, Bigarray.c_layout) Bigarray.Array1.t = Obj.magic buffer' in *)
++  Sha1.update_buffer ctx buffer'
+ 
+ module TarStream = struct
+   type t = {
 @@ -346,7 +346,7 @@ let stream_tar common c s _ prefix ?(progress = no_progress_bar) () =
      Cstruct.set_uint8 zeroes i 0
    done;
@@ -476,5 +488,5 @@ index 7c93a98..eb74ad2 100644
    "sha"
    "ssl"
 -- 
-2.7.2.windows.1
+2.14.1
 
