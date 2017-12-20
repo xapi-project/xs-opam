@@ -11,7 +11,7 @@ fi
 pkg()
 {
     pushd packages > /dev/null
-    if [ "${OCAML_VERSION}" = "4.05.0" ]; then
+    if [ ! "${OCAML_VERSION}" = "4.05.0" ]; then
         find  $@\
           -maxdepth 1 -mindepth 1 -type d \
           | grep -v 'camlp4.4.05+2' | grep -v 'ppx_tools.5.0+4.05' | awk -F/ '{print $NF}'
