@@ -11,25 +11,23 @@ fi
 pkg()
 {
     pushd packages > /dev/null
-    find  $@\
-      -maxdepth 1 -mindepth 1 -type d \
-      | awk -F/ '{print $NF}'
+    if [ "${OCAML_VERSION}" = "4.05.0" ]; then
+        find  $@\
+          -maxdepth 1 -mindepth 1 -type d \
+          | grep -v 'camlp4.4.05+2' | grep -v 'ppx_tools.5.0+4.05' | awk -F/ '{print $NF}'
+    else
+        find  $@\
+          -maxdepth 1 -mindepth 1 -type d \
+          | awk -F/ '{print $NF}'
+    fi
     popd > /dev/null
 }
 
 if [ "${COMPILE_ALL}" = 1 ]; then
-    if [ "${OCAML_VERSION}" = "4.05.0" ]; then
-        UPSTREAM="$(pkg upstream upstream-extra | grep -v 'camlp4.4.05+2' | grep -v 'ppx_tools.5.0+4.05')"
-    else
-        UPSTREAM="$(pkg upstream upstream-extra)"
-    fi
+    UPSTREAM="$(pkg upstream upstream-extra)"
     XS="$(pkg xs xs-extra | grep -v xenctrl.dummy)"
 else
-    if [ "${OCAML_VERSION}" = "4.05.0" ]; then
-        UPSTREAM="$(pkg upstream | grep -v 'camlp4.4.05+2' | grep -v 'ppx_tools.5.0+4.05')"
-    else
-        UPSTREAM="$(pkg upstream)"
-    fi
+    UPSTREAM="$(pkg upstream)"
     XS="$(pkg xs)"
 fi
 
