@@ -5,5 +5,5 @@ homepage: "https://github.com/xapi-project/rrd-transport"
 dev-repo: "https://github.com/xapi-project/rrd-transport"
 bug-reports: "https://github.com/xapi-project/rrd-transport"
 depends: [
-  "rrd-transport"
+  "rrd-transport" {>= "2.0.0"}
 ]
