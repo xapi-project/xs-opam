@@ -18,10 +18,18 @@ pkg()
 }
 
 if [ "${COMPILE_ALL}" = 1 ]; then
-    UPSTREAM="$(pkg upstream upstream-extra)"
+    if [ "${OCAML_VERSION}" = "4.05.0" ]; then
+        UPSTREAM="$(pkg upstream upstream-extra | grep -v 'camlp4.4.05+2' | grep -v 'ppx_tools.5.0+4.05')"
+    else
+        UPSTREAM="$(pkg upstream upstream-extra)"
+    fi
     XS="$(pkg xs xs-extra | grep -v xenctrl.dummy)"
 else
-    UPSTREAM="$(pkg upstream)"
+    if [ "${OCAML_VERSION}" = "4.05.0" ]; then
+        UPSTREAM="$(pkg upstream | grep -v 'camlp4.4.05+2' | grep -v 'ppx_tools.5.0+4.05')"
+    else
+        UPSTREAM="$(pkg upstream)"
+    fi
     XS="$(pkg xs)"
 fi
 
