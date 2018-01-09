@@ -25,5 +25,5 @@ depends: [
 ]
 
 patches: [
-  "0001-Update-after-Async-bind-signature-change.patch"
+  "0001-Update-to-be-compliant-with-async-0.10.0.patch"
 ]

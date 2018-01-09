@@ -1,0 +1,27 @@
+From 68e8b7652afb17173bbcb13a93710dce917622c1 Mon Sep 17 00:00:00 2001
+From: Yarsin He <yarsin.he@citrix.com>
+Date: Tue, 9 Jan 2018 17:51:24 +0800
+Subject: [PATCH] Updates to be compliant with upstream cohttp updates to
+ 0.10.0
+
+Signed-off-by: Yarsin He <yarsin.he@citrix.com>
+---
+ lwt/protocol_lwt.ml | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/lwt/protocol_lwt.ml b/lwt/protocol_lwt.ml
+index 880ec08..7a7fc2a 100644
+--- a/lwt/protocol_lwt.ml
++++ b/lwt/protocol_lwt.ml
+@@ -26,7 +26,7 @@ module M = struct
+       (Filename.basename Sys.argv.(0)) (Unix.getpid ())
+ 
+   module IO = struct
+-    include Cohttp_lwt_unix_io
++    include Cohttp_lwt_unix.IO
+ 
+     let map = Lwt.map
+     let iter = Lwt_list.iter_s
+-- 
+2.12.2.windows.2
+

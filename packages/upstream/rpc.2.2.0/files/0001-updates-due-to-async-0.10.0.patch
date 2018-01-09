@@ -1,0 +1,24 @@
+From 7dc549f95b059098d108f05baa9eda265c663f5a Mon Sep 17 00:00:00 2001
+From: Yarsin He <yarsin.he@citrix.com>
+Date: Tue, 9 Jan 2018 16:34:38 +0800
+Subject: [PATCH] Update to be comply with async 0.10.0
+
+Signed-off-by: Yarsin He <yarsin.he@citrix.com>
+---
+ lib/rpc_async.ml | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/lib/rpc_async.ml b/lib/rpc_async.ml
+index afa0a2c..ae8efe8 100644
+--- a/lib/rpc_async.ml
++++ b/lib/rpc_async.ml
+@@ -1,5 +1,5 @@
+ open Idl
+-module Deferred = Async.Std.Deferred
++module Deferred = Async.Deferred
+ 
+ type async_rpcfn = Rpc.call -> Rpc.response Deferred.t
+ 
+-- 
+2.12.2.windows.2
+

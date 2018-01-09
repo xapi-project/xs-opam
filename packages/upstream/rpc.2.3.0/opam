@@ -39,6 +39,6 @@ depends: [
 ]
 depopts: [ "js_of_ocaml" ]
 patches: [
-    "0001-Workaround-for-_oasis-bug-when-using-cppo.patch"
+  "0001-Workaround-for-_oasis-bug-when-using-cppo.patch"
+  "0001-updates-due-to-async-0.10.0.patch"
 ]
-
