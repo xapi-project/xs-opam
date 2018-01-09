@@ -25,7 +25,7 @@ build-test: [
 depends: [
   "oasis" {build}
   "cppo"  {build}
-  "async" {< "v0.10.0"}
+  "async" {>= "v0.9.0" & <= "v0.11.0"}
   "camlp4"
   "cmdliner"
   "cow"
