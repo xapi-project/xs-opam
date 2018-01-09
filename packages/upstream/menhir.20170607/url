@@ -1,2 +1,2 @@
-archive: "http://gallium.inria.fr/~fpottier/menhir/menhir-20170607.tar.gz"
-checksum: "993b60845182c71d777b1f3cf9a01b96"
+archive: "https://gitlab.inria.fr/fpottier/menhir/repository/20170607/archive.tar.gz"
+checksum: "8d632ea40799f6307c07a94b7b195d76"
