@@ -26,7 +26,7 @@ build-test: [
 depends: [
   "oasis" {build}
   "cppo"  {build}
-  "async" {< "v0.10.0"}
+  "async"
   "cmdliner"
   "cow"
   "lwt"
