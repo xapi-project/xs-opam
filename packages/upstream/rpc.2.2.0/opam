@@ -38,3 +38,6 @@ depends: [
   "yojson"
 ]
 depopts: [ "js_of_ocaml" ]
+patches: [
+  "0001-updates-due-to-async-0.10.0.patch"
+]
