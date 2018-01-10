@@ -1,4 +1,4 @@
-From cae2b6df888ff8287460d75c58d06fc35167309d Mon Sep 17 00:00:00 2001
+From e7f8a0a05a71ea8ef5538e9cfcd84446e1946adf Mon Sep 17 00:00:00 2001
 From: Yarsin He <yarsin.he@citrix.com>
 Date: Tue, 12 Dec 2017 15:29:06 +0000
 Subject: [PATCH] Updates to make xs-opam build on next
@@ -454,7 +454,7 @@ index 634802a..4a098c2 100644
      `Ok ()
    with Failure x ->
 diff --git a/src/jbuild b/src/jbuild
-index 105debb..0a605ba 100644
+index 5dc2e10..4d28f54 100644
 --- a/src/jbuild
 +++ b/src/jbuild
 @@ -26,13 +26,13 @@ let () = Printf.ksprintf Jbuild_plugin.V1.send {|
@@ -465,7 +465,7 @@ index 105debb..0a605ba 100644
 +    nbd-lwt-unix
      re.str
      sha.sha1
-     tapctl
+     xapi-tapctl
      tar
      vhd-format
 -    vhd-format.lwt
