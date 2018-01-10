@@ -1,15 +1,16 @@
-From 020f9434680697911d497189a96f3564d9e8c270 Mon Sep 17 00:00:00 2001
+From e6606c779c1ad110f6b8c44c2e9b2012ce5b1f91 Mon Sep 17 00:00:00 2001
 From: Gabor Igloi <gabor.igloi@citrix.com>
 Date: Fri, 20 Oct 2017 23:34:41 +0100
 Subject: [PATCH] Depend on new tar-unix ocamlfind package
 
 Signed-off-by: Gabor Igloi <gabor.igloi@citrix.com>
+Signed-off-by: Marcello Seri <marcello.seri@citrix.com>
 ---
  ocaml/xapi/jbuild | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/ocaml/xapi/jbuild b/ocaml/xapi/jbuild
-index 9d26df656..417a949d0 100644
+index 296a0d80d..fdd545d69 100644
 --- a/ocaml/xapi/jbuild
 +++ b/ocaml/xapi/jbuild
 @@ -76,7 +76,7 @@ let () = Printf.ksprintf Jbuild_plugin.V1.send {|
@@ -18,9 +19,9 @@ index 9d26df656..417a949d0 100644
     tar
 -   tar.unix
 +   tar-unix
-    tapctl
+    xapi-tapctl
+    x509
     xapi_version
-    xapi-types
 -- 
 2.11.0
 
