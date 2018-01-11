@@ -14,4 +14,7 @@ depends: [
   "lwt"
   "re"
 ]
+patches: [
+    "0001-cli-wsproxy.ml-fix-compilation-with-Lwt-3.patch"
+]
 tags: [ "org:xapi-project" ]
