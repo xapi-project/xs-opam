@@ -7,18 +7,15 @@ bug-reports: "https://github.com/mirage/alcotest/issues/"
 license:     "ISC"
 doc:         "https://mirage.github.io/alcotest/"
 
-build: ["ocaml" "pkg/pkg.ml" "build" "--pinned" "%{pinned}%"]
-build-test: [
-  ["ocaml" "pkg/pkg.ml" "build" "--pinned" "%{pinned}%" "--tests" "true"]
-  ["ocaml" "pkg/pkg.ml" "test" ]
+build: [
+  ["jbuilder" "subst" "-n" name] {pinned}
+  ["jbuilder" "build" "-p" name "-j" jobs]
 ]
+build-test: [["jbuilder" "runtest" "-p" name "-j" jobs]]
+
 depends: [
-  "ocamlfind"  {build}
-  "ocamlbuild" {build}
-  "topkg"      {build}
-  "fmt"
-  "astring"
-  "result"
-  "cmdliner"
+  "jbuilder" {build & >= "1.0+beta10"}
+  "alcotest" {>= "0.8.0"}
+  "lwt" "logs"
 ]
-available: [ocaml-version >= "4.01.0"]
+available: [ocaml-version >= "4.02.3"]
