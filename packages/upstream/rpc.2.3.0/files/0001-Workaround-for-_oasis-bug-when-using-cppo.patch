@@ -1,0 +1,28 @@
+From b8f026db1ba6d4bbb56668d320d6da6719700532 Mon Sep 17 00:00:00 2001
+From: Marcello Seri <marcello.seri@citrix.com>
+Date: Wed, 17 Jan 2018 14:57:12 +0000
+Subject: [PATCH] Workaround for _oasis bug when using cppo
+
+Signed-off-by: Marcello Seri <marcello.seri@citrix.com>
+---
+ Makefile | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+diff --git a/Makefile b/Makefile
+index 387a682..90e00db 100644
+--- a/Makefile
++++ b/Makefile
+@@ -13,6 +13,10 @@ all:
+ 
+ install: setup.data
+ 	$(SETUP) -install $(INSTALLFLAGS)
++	# Workaround a bug in _oasis when cppo is used
++	RPCLIB=$$(ocamlfind query rpclib);   \
++	cp _build/lib/codegen.cmx $${RPCLIB}; \
++	cp _build/lib/rpc.cmx $${RPCLIB}
+ 
+ clean:
+ 	$(SETUP) -clean $(CLEANFLAGS)
+-- 
+2.11.0
+

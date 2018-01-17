@@ -9,7 +9,6 @@ tags: [
   "org:xapi-project"
 ]
 build: [
-  [configure]
   [make]
 ]
 install: [
@@ -27,6 +26,7 @@ depends: [
   "oasis" {build}
   "cppo"  {build}
   "async" {< "v0.10.0"}
+  "camlp4"
   "cmdliner"
   "cow"
   "lwt"
@@ -38,3 +38,7 @@ depends: [
   "yojson"
 ]
 depopts: [ "js_of_ocaml" ]
+patches: [
+    "0001-Workaround-for-_oasis-bug-when-using-cppo.patch"
+]
+
