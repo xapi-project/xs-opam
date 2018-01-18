@@ -16,7 +16,8 @@ depends: [
   "async_inotify"
   "async_unix" {>= "112.24.00" }
   "core"
-  "message-switch-async" {>= "0.11.0" }
+  "message-switch-unix"
+  "message-switch-async"
   "rpc"
   "ppx_sexp_conv"
 ]
