@@ -1,0 +1,78 @@
+From 41ed2f25ba107f8c9e4161c22e8b3de53e2cee80 Mon Sep 17 00:00:00 2001
+From: Gabor Igloi <gabor.igloi@citrix.com>
+Date: Fri, 20 Oct 2017 20:19:35 +0100
+Subject: [PATCH 02/13] Use Core, Async instead of their deprecated Std
+ submodules
+
+Signed-off-by: Gabor Igloi <gabor.igloi@citrix.com>
+Signed-off-by: Marcello Seri <marcello.seri@citrix.com>
+---
+ async/protocol_async.ml              | 4 ++--
+ async/protocol_async.mli             | 4 ++--
+ core_test/async/client_async_main.ml | 4 ++--
+ core_test/async/server_async_main.ml | 4 ++--
+ 4 files changed, 8 insertions(+), 8 deletions(-)
+
+diff --git a/async/protocol_async.ml b/async/protocol_async.ml
+index 5471230..37596a4 100644
+--- a/async/protocol_async.ml
++++ b/async/protocol_async.ml
+@@ -17,8 +17,8 @@
+ let whoami () = Printf.sprintf "%s:%d"
+     (Filename.basename Sys.argv.(0)) (Unix.getpid ())
+ 
+-open Core.Std
+-open Async.Std
++open Core
++open Async
+ open Message_switch_core.Protocol
+ open Cohttp
+ open Cohttp_async
+diff --git a/async/protocol_async.mli b/async/protocol_async.mli
+index f756b56..c264698 100644
+--- a/async/protocol_async.mli
++++ b/async/protocol_async.mli
+@@ -13,8 +13,8 @@
+  * ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+  * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+  *)
+-open Core.Std
+-open Async.Std
++open Core
++open Async
+ open Message_switch_core
+ 
+ module Client : S.CLIENT
+diff --git a/core_test/async/client_async_main.ml b/core_test/async/client_async_main.ml
+index 4a5f255..02bbe75 100644
+--- a/core_test/async/client_async_main.ml
++++ b/core_test/async/client_async_main.ml
+@@ -16,8 +16,8 @@
+ 
+ module P = Printf
+ 
+-open Core.Std
+-open Async.Std
++open Core
++open Async
+ 
+ open Message_switch_core.Protocol
+ open Message_switch_async.Protocol_async
+diff --git a/core_test/async/server_async_main.ml b/core_test/async/server_async_main.ml
+index 5967451..0b6e776 100644
+--- a/core_test/async/server_async_main.ml
++++ b/core_test/async/server_async_main.ml
+@@ -16,8 +16,8 @@
+ 
+ module P = Printf
+ 
+-open Core.Std
+-open Async.Std
++open Core
++open Async
+ 
+ open Message_switch_core.Protocol
+ open Message_switch_async.Protocol_async
+-- 
+2.14.1
+

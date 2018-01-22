@@ -1,0 +1,26 @@
+From 8f4cd86c440dfd6782adbf961f5d7d30f46f384c Mon Sep 17 00:00:00 2001
+From: Marcello Seri <marcello.seri@citrix.com>
+Date: Fri, 19 Jan 2018 16:44:03 +0000
+Subject: [PATCH 11/13] message-switch-lwt: update dependencies
+
+Signed-off-by: Marcello Seri <marcello.seri@citrix.com>
+---
+ message-switch-lwt.opam | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/message-switch-lwt.opam b/message-switch-lwt.opam
+index b7ebd07..6590e77 100644
+--- a/message-switch-lwt.opam
++++ b/message-switch-lwt.opam
+@@ -14,6 +14,7 @@ depends: [
+   "jbuilder" {build}
+   "ocamlfind" {build}
+   "message-switch-core"
+-  "lwt"
++  "lwt" {>= "3.0.0"}
++  "cohttp-lwt-unix"
+ ]
+ 
+-- 
+2.14.1
+

@@ -1,114 +1,31 @@
-From 98ee2c3b044d37f69fee14bdc21803d5b8dbc022 Mon Sep 17 00:00:00 2001
+From d52821e5a3ba2ea37cac1a0beb0f2c1bed91d492 Mon Sep 17 00:00:00 2001
 From: Gabor Igloi <gabor.igloi@citrix.com>
 Date: Fri, 20 Oct 2017 17:31:56 +0100
-Subject: [PATCH] Update dependencies for new cohttp
+Subject: [PATCH 01/13] Update dependencies for new cohttp
 
 cohttp v0.99.0 has been split into multiple OPAM packages, and the
 ocamlfind packages have also been renamed.
 
 Signed-off-by: Gabor Igloi <gabor.igloi@citrix.com>
+Signed-off-by: Marcello Seri <marcello.seri@citrix.com>
 ---
- _oasis | 18 +++++++++---------
- opam   |  4 +++-
- 2 files changed, 12 insertions(+), 10 deletions(-)
+ message-switch-core.opam | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
 
-diff --git a/_oasis b/_oasis
-index 926f444..e810e84 100644
---- a/_oasis
-+++ b/_oasis
-@@ -34,7 +34,7 @@ Library message_switch_lwt
-   Findlibparent:      message_switch
-   Findlibname:        lwt
-   Modules:            Protocol_lwt
--  BuildDepends:       lwt,lwt.unix,cohttp (>= 0.15.0),cohttp.lwt,rpclib,rpclib.json,ppx_deriving_rpc,message_switch
-+  BuildDepends:       lwt,lwt.unix,cohttp (>= 0.15.0),cohttp-lwt-unix,rpclib,rpclib.json,ppx_deriving_rpc,message_switch
- 
- Library message_switch_async
-   Build$:             flag(async)
-@@ -45,7 +45,7 @@ Library message_switch_async
-   Findlibparent:      message_switch
-   Findlibname:        async
-   Modules:            Protocol_async
--  BuildDepends:       threads,async,cohttp (>= 0.15.0),cohttp.async,rpclib,rpclib.json,ppx_deriving_rpc,message_switch
-+  BuildDepends:       threads,async,cohttp (>= 0.15.0),cohttp-async,rpclib,rpclib.json,ppx_deriving_rpc,message_switch
- 
- Library message_switch_unix
-   CompiledObject:     best
-@@ -68,7 +68,7 @@ Library message_switch_server
-   Findlibparent:      message_switch
-   Findlibname:        server
-   Modules:            Clock, Relation, Q, Logging, Mswitch
--  BuildDepends:       lwt,sexplib,ppx_sexp_conv,mtime,mtime.clock.os,cohttp (>= 0.15.0),cohttp.lwt,rpclib,rpclib.json,ppx_deriving_rpc,message_switch,mirage-block-unix,shared-block-ring,cmdliner,io-page.unix
-+  BuildDepends:       lwt,sexplib,ppx_sexp_conv,mtime,mtime.clock.os,cohttp (>= 0.15.0),cohttp-lwt-unix,rpclib,rpclib.json,ppx_deriving_rpc,message_switch,mirage-block-unix,shared-block-ring,cmdliner,io-page.unix
- 
- Executable m_cli
-   CompiledObject:     best
-@@ -89,7 +89,7 @@ Executable link_test
-   MainIs:             link_test_main.ml
-   Custom:             true
-   Install:            false
--  BuildDepends:       message_switch, message_switch.lwt, lwt, lwt.unix, cohttp, cohttp.lwt
-+  BuildDepends:       message_switch, message_switch.lwt, lwt, lwt.unix, cohttp, cohttp-lwt-unix
- 
- Executable client
-   Build$:             flag(lwt)&&flag(tests)
-@@ -100,7 +100,7 @@ Executable client
-   MainIs:             client_main.ml
-   Custom:             true
-   Install:            false
--  BuildDepends:       message_switch, message_switch.lwt, lwt, lwt.unix, cohttp, cohttp.lwt
-+  BuildDepends:       message_switch, message_switch.lwt, lwt, lwt.unix, cohttp, cohttp-lwt-unix
- 
- Executable client_async
-   Build$:             flag(async)&&flag(tests)
-@@ -111,7 +111,7 @@ Executable client_async
-   MainIs:             client_async_main.ml
-   Custom:             true
-   Install:            false
--  BuildDepends:       message_switch, message_switch.async, async, async_unix, threads, cohttp, cohttp.async
-+  BuildDepends:       message_switch, message_switch.async, async, async_unix, threads, cohttp, cohttp-async
- 
- Executable client_unix
-   CompiledObject:     best
-@@ -133,7 +133,7 @@ Executable server
-   MainIs:             server_main.ml
-   Custom:             true
-   Install:            false
--  BuildDepends:       message_switch, message_switch.lwt, lwt, lwt.unix, cohttp, cohttp.lwt, cmdliner
-+  BuildDepends:       message_switch, message_switch.lwt, lwt, lwt.unix, cohttp, cohttp-lwt-unix, cmdliner
- 
- Executable server_async
-   Build$:             flag(async)&&flag(tests)
-@@ -144,7 +144,7 @@ Executable server_async
-   MainIs:             server_async_main.ml
-   Custom:             true
-   Install:            false
--  BuildDepends:       message_switch, message_switch.async, async, async_unix, threads, cohttp, cohttp.async
-+  BuildDepends:       message_switch, message_switch.async, async, async_unix, threads, cohttp, cohttp-async
- 
- Executable server_unix
-   CompiledObject:     best
-@@ -166,4 +166,4 @@ Executable switch
-   MainIs:             switch_main.ml
-   Custom:             true
-   Install:            false
--  BuildDepends:       message_switch, message_switch.lwt, message_switch.server, lwt, lwt.unix, cohttp, cohttp.lwt
-+  BuildDepends:       message_switch, message_switch.lwt, message_switch.server, lwt, lwt.unix, cohttp, cohttp-lwt-unix
-diff --git a/opam b/opam
-index 12ef87b..f88a4fe 100644
---- a/opam
-+++ b/opam
-@@ -19,7 +19,9 @@ depends: [
-   "oasis" {build}
+diff --git a/message-switch-core.opam b/message-switch-core.opam
+index c3296b4..12af7c4 100644
+--- a/message-switch-core.opam
++++ b/message-switch-core.opam
+@@ -13,7 +13,8 @@ build: [
+ depends: [
+   "jbuilder" {build}
    "ocamlfind" {build}
-   "base-unix"
 -  "cohttp" {>= "0.21.1" & < "0.22.0"}
++  "base-unix"
 +  "cohttp" {>= "0.21.1"}
-+  "cohttp-lwt-unix"
-+  "cohttp-async"
    "rpc" {>= "1.9.51"}
    "sexplib"
    "ppx_sexp_conv"
 -- 
-2.7.4
+2.14.1
 

@@ -1,0 +1,48 @@
+From 81065af8cf6070f76aeae0ac2a8ee984f8ba6567 Mon Sep 17 00:00:00 2001
+From: Marcello Seri <marcello.seri@citrix.com>
+Date: Fri, 19 Jan 2018 16:42:46 +0000
+Subject: [PATCH 10/13] Run tests
+
+Signed-off-by: Marcello Seri <marcello.seri@citrix.com>
+---
+ core_test/jbuild    | 1 +
+ message-switch.opam | 6 ++++++
+ 2 files changed, 7 insertions(+)
+
+diff --git a/core_test/jbuild b/core_test/jbuild
+index d496e95..529ad57 100644
+--- a/core_test/jbuild
++++ b/core_test/jbuild
+@@ -36,6 +36,7 @@ let () = Printf.ksprintf Jbuild_plugin.V1.send {|
+     ../cli/main.exe
+     basic-rpc-test.sh
+   ))
++  (package message-switch)
+   (action (run ./basic-rpc-test.sh))
+ ))
+ |} coverage_rewriter
+diff --git a/message-switch.opam b/message-switch.opam
+index ebd1b29..4fcd901 100644
+--- a/message-switch.opam
++++ b/message-switch.opam
+@@ -10,11 +10,17 @@ build: [
+   ["./configure" "--bindir" "%{bin}%"]
+   [ "jbuilder" "build" "-p" name "-j" jobs ]
+ ]
++build-test: [
++  [ "jbuilder" "runtest" "-p" name "-j" jobs ]
++]
+ depends: [
+   "jbuilder" {build}
+   "ocamlfind" {build}
+   "message-switch-lwt"
+   "message-switch-unix"
+   "cmdliner"
++  "cohttp-async" {test}
++  "cohttp-lwt-unix" {test}
++  "message-switch-async" {test}
+ ]
+ 
+-- 
+2.14.1
+
