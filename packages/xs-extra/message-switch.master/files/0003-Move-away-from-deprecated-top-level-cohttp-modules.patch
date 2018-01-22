@@ -1,0 +1,41 @@
+From 73e01b9714dc2c7961687b050dd59b5267ab93ae Mon Sep 17 00:00:00 2001
+From: Gabor Igloi <gabor.igloi@citrix.com>
+Date: Fri, 20 Oct 2017 21:21:09 +0100
+Subject: [PATCH 03/13] Move away from deprecated top level cohttp modules
+
+Signed-off-by: Gabor Igloi <gabor.igloi@citrix.com>
+Signed-off-by: Marcello Seri <marcello.seri@citrix.com>
+---
+ async/protocol_async.ml | 2 +-
+ switch/switch_main.ml   | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/async/protocol_async.ml b/async/protocol_async.ml
+index 37596a4..9235ee0 100644
+--- a/async/protocol_async.ml
++++ b/async/protocol_async.ml
+@@ -29,7 +29,7 @@ module M = struct
+   let whoami = whoami
+ 
+   module IO = struct
+-    include Cohttp_async_io
++    include Cohttp_async.Io
+ 
+     let map f t = Deferred.map ~f t
+     let iter f t = Deferred.List.iter t ~f
+diff --git a/switch/switch_main.ml b/switch/switch_main.ml
+index 623d18f..40504db 100644
+--- a/switch/switch_main.ml
++++ b/switch/switch_main.ml
+@@ -213,7 +213,7 @@ let make_server config =
+     >>= fun _ ->
+     let conn_id_s = Cohttp.Connection.to_string conn_id in
+     let open Message_switch_core.Protocol in
+-    Cohttp_lwt_body.to_string body >>= fun body ->
++    Cohttp_lwt.Body.to_string body >>= fun body ->
+     let uri = Cohttp.Request.uri req in
+     let path = Uri.path uri in
+     match In.of_request body (Cohttp.Request.meth req) path with
+-- 
+2.14.1
+

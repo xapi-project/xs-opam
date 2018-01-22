@@ -1,0 +1,29 @@
+From 0912cea2b8d706455119498531e202c83dd74528 Mon Sep 17 00:00:00 2001
+From: Gabor Igloi <gabor.igloi@citrix.com>
+Date: Fri, 20 Oct 2017 23:14:31 +0100
+Subject: [PATCH 06/13] Update to new Mirage 3 Block module
+
+Signed-off-by: Gabor Igloi <gabor.igloi@citrix.com>
+Signed-off-by: Marcello Seri <marcello.seri@citrix.com>
+---
+ switch/switch_main.ml | 4 ----
+ 1 file changed, 4 deletions(-)
+
+diff --git a/switch/switch_main.ml b/switch/switch_main.ml
+index 40504db..845b103 100644
+--- a/switch/switch_main.ml
++++ b/switch/switch_main.ml
+@@ -171,10 +171,6 @@ let make_server config =
+       on_disk_queues := qs;
+       info "Reading the redo-log from %s" redo_log_path;
+       Block.connect ~buffered:true redo_log_path
+-      >>= (function
+-          | `Ok block -> Lwt.return block
+-          | `Error `Unknown s -> Lwt.fail (Failure (Printf.sprintf "Unexpected failure when opening block: %s" s))
+-          | `Error _ -> Lwt.fail (Failure "Other error"))
+       >>= fun block ->
+       let open Lwt_result in
+       Redo_log.start ~flush_interval:5. block (process_redo_log statedir)
+-- 
+2.14.1
+
