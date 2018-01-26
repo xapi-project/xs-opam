@@ -17,7 +17,7 @@ depends: [
   "cohttp" {>="0.12.0"}
   "cstruct" {>= "1.0.1"}
   "io-page-unix"
-  "lwt" {>= "2.4.3"}
+  "lwt" {>= "3.0.0"}
   "nbd-lwt-unix"
   "re"
   "sha"
@@ -30,8 +30,4 @@ depends: [
   "xapi-tapctl"
   "xenstore"
   "xenstore_transport"
-]
-
-patches: [
-  "0001-Update-sha-nbd-and-vhd-format.patch"
 ]

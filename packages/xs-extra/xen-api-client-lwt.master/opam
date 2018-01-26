@@ -18,7 +18,7 @@ depends: [
   "jbuilder" {build & >= "1.0+beta11"}
   "cohttp" {>= "0.12.0"}
   "cstruct" {>= "1.0.1"}
-  "lwt" {>= "2.4.3"}
+  "lwt" {>= "3.0.0"}
   "lwt_ssl"
   "re"
   "rpc" {>= "1.9.51"}
@@ -29,6 +29,3 @@ depends: [
   "xmlm"
 ]
 
-patches: [
-  "0001-lwt-jbuild-update-dependencies-to-Lwt-3.patch"
-]

@@ -12,20 +12,12 @@ depends: [
   "jbuilder" {build}
   "xapi-idl" {>= "0.10.0" }
   "xapi-storage"
-  "async"
+  "async" {>= "v0.9.0"}
   "async_inotify"
   "async_unix" {>= "112.24.00" }
-  "core"
+  "core" {>= "v0.9.0"}
   "message-switch-unix"
   "message-switch-async"
   "rpc"
   "ppx_sexp_conv"
-]
-
-patches: [
-  "0001-Use-Core-Async-instead-of-their-deprecated-Std-submo.patch"
-  "0001-Move-to-Core.Unix.Syslog-module.patch"
-  "0001-Update-after-Async-bind-signature-change.patch"
-  "0001-Add-needed-equal-params-after-List-signature-change-.patch"
-  "0001-Update-due-to-upstream-core_kernel-updates-to-0.10.0.patch"
 ]

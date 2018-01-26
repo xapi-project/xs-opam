@@ -17,17 +17,3 @@ depends: [
   "lwt" {>= "3.0.0"}
   "cohttp-lwt-unix"
 ]
-patches: [
-  "0001-Update-dependencies-for-new-cohttp.patch"
-  "0002-Use-Core-Async-instead-of-their-deprecated-Std-submo.patch"
-  "0003-Move-away-from-deprecated-top-level-cohttp-modules.patch"
-  "0004-switch-time-switch-to-signature-expected-by-shared-b.patch"
-  "0005-switch-clock-use-Mtime_clock-to-satisfy-CLOCK-signat.patch"
-  "0006-Update-to-new-Mirage-3-Block-module.patch"
-  "0007-Switch-to-nanoseconds-used-by-new-shared-block-ring-.patch"
-  "0008-Updates-to-be-compliant-with-upstream-cohttp-updates.patch"
-  "0010-Run-tests.patch"
-  "0011-message-switch-lwt-update-dependencies.patch"
-  "0012-message-switch-message-switch-async-update-dependenc.patch"
-  "0013-jbuild-files-update-dependencies.patch"
-]

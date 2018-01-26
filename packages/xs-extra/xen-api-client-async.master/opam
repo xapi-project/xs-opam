@@ -17,13 +17,10 @@ build: [[ "jbuilder" "build" "-p" name ]]
 depends: [
   "jbuilder" {build & >= "1.0+beta11"}
   "async" {>= "v0.9.0"}
-  "cohttp" {>= "0.12.0"}
+  "cohttp" {>= "0.22.0"}
   "rpc" {>= "1.9.52"}
   "uri"
   "xen-api-client"
   "xmlm"
 ]
 
-patches: [
-  "0001-Update-to-be-compliant-with-async-0.10.0.patch"
-]

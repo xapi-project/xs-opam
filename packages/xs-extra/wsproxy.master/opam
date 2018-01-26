@@ -11,10 +11,9 @@ build: [[ "jbuilder" "build" "-p" name "-j" jobs ]]
 depends: [
   "jbuilder" {build}
   "base64"
-  "lwt"
+  "lwt" {>= "3.0.0"}
   "re"
-]
-patches: [
-    "0001-cli-wsproxy.ml-fix-compilation-with-Lwt-3.patch"
+  "ounit" {test}
+  "qcheck" {test}
 ]
 tags: [ "org:xapi-project" ]

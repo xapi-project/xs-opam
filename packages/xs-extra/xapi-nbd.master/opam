@@ -10,15 +10,12 @@ depends: [
   "jbuilder" {build}
   "alcotest" {test}
   "cmdliner"
-  "lwt"
+  "lwt" {>= "3.0.0"}
   "mirage-block-unix"
   "nbd-lwt-unix"
   "uri"
   "uuidm"
   "xapi-inventory"
   "xen-api-client-lwt"
-]
-patches: [
-    "0001-Update-to-newer-NBD-library.patch"
 ]
 tags: [ "org:mirage" "org:xapi-project" ]
