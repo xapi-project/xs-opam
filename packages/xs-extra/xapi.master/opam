@@ -22,7 +22,7 @@ depends: [
   "sha"
   "ssl"
   "stdext"
-  "tar-format"
+  "tar-unix"
   "vhd-format"
   "x509"
   "xapi-cli-protocol"
@@ -43,9 +43,11 @@ depends: [
   "xenctrl"
   "xenstore"
   "yojson"
+  "alcotest"
 ]
 depexts: [
   [["debian"] ["hwdata" "libpci-dev" "libpam-dev"]]
   [["ubuntu"] ["hwdata" "libpci-dev" "libpam-dev"]]
   [["centos"] ["hwdata" "pciutils-devel" "pam-devel"]]
 ]
+

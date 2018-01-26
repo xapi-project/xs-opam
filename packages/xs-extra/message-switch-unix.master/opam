@@ -15,4 +15,3 @@ depends: [
   "ocamlfind" {build}
   "message-switch-core"
 ]
-

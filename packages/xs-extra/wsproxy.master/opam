@@ -11,7 +11,9 @@ build: [[ "jbuilder" "build" "-p" name "-j" jobs ]]
 depends: [
   "jbuilder" {build}
   "base64"
-  "lwt" { < "3.0.0" }
+  "lwt" {>= "3.0.0"}
   "re"
+  "ounit" {test}
+  "qcheck" {test}
 ]
 tags: [ "org:xapi-project" ]
