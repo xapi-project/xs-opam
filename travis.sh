@@ -17,8 +17,11 @@ pkg()
     popd > /dev/null
 }
 
-if [ "${DISTRO}" = "centos-7" ]; then
+if [[ "${DISTRO}" == centos* ]]; then
     sudo yum install -y epel-release
+fi
+if [[ "${DISTRO}" == debian* ]]; then
+    sudo apt-get update -y
 fi
 
 if [ "${COMPILE_ALL}" = 1 ]; then
