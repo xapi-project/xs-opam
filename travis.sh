@@ -17,6 +17,10 @@ pkg()
     popd > /dev/null
 }
 
+if [ "${DISTRO}" = "centos-7" ]; then
+    sudo yum install -y epel-release
+fi
+
 if [ "${COMPILE_ALL}" = 1 ]; then
     UPSTREAM="$(pkg upstream upstream-extra)"
     XS="$(pkg xs xs-extra | grep -v xenctrl.dummy)"
