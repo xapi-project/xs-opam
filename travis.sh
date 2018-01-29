@@ -17,12 +17,18 @@ pkg()
     popd > /dev/null
 }
 
-if [[ "${DISTRO}" == centos* ]]; then
-    sudo yum install -y epel-release
-fi
-if [[ "${DISTRO}" == debian* ]]; then
-    sudo apt-get update -y
-fi
+case "${DISTRO}" in
+    centos*)
+        sudo yum install -y epel-release
+        ;;
+
+    debian*)
+        sudo apt-get update -y
+        ;;
+    *)
+        echo "unknown DISTRO=${DISTRO}; nothing to do"
+        ;;
+esac
 
 if [ "${COMPILE_ALL}" = 1 ]; then
     UPSTREAM="$(pkg upstream upstream-extra)"
