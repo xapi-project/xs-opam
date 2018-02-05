@@ -5,7 +5,7 @@ set -ex
 
 # override xenctrl.dummy to have a full-fledged opam repository
 if [ ! "${COMPILE_ALL}" = 1 ]; then
-    sudo sh into_repo.sh
+    sudo sh tools/into_repo.sh
 fi
 
 pkg()
