@@ -205,7 +205,7 @@ def parse_args_or_exit(argv=None):
                         "If omitted, the script will do a dry-run.")
 
     # In principle we don't need a default as requests can use netrc on
-    # its own, however we need to know if we can find an out or now, so
+    # its own, however we need to know if we can find an auth or not, so
     # we infer it by ourselves.
     parser.add_argument("--auth", metavar="AUTH",
                         default=get_netrc_auth(), action=AuthAction,
