@@ -16,8 +16,6 @@ except ImportError:
     sys.exit("The `requests` package needs to be installed. Aborting.")
 
 
-########## Types ##########
-
 class Package:
     "Opam package, contains name, current version and an optional new version."
 
@@ -63,8 +61,6 @@ class Package:
             return self.new_path(prefix)
         return self.current_path(prefix)
 
-
-########## Helpers ##########
 
 def download(session, url, file_path):
     "Download the file at [url] in [file_path]."
@@ -168,6 +164,8 @@ def get_opam_upgrade_output():
     return list(filtered_out)
 
 
+# Argument parsing
+
 class AuthAction(argparse.Action):
     """
     Argparse type action for auth command line arguments of the form:
@@ -217,6 +215,10 @@ def parse_args_or_exit(argv=None):
                         "If omitted, the script will try to use the "
                         "$HOME/.netrc file.")
 
+    parser.add_argument("--ignore-xs", dest="ignore_xs", action="store_true",
+                        help="Do not check if we are trying to "
+                        "upgrade packages in `xs` or `xs-extra`.")
+
     args = parser.parse_args(argv)
 
     if args.auth is None and args.xs_opam is not None:
@@ -224,6 +226,8 @@ def parse_args_or_exit(argv=None):
 
     return args
 
+
+# Main body
 
 def main(argv=None):
     """
@@ -270,20 +274,21 @@ def main(argv=None):
         d for d in os.listdir(upstream_extra_p)
         if os.path.isdir(os.path.join(upstream_extra_p, d)))
 
-    xs = set(
-        d for d in os.listdir(xs_p)
-        if os.path.isdir(os.path.join(xs_p, d))
-    ).union(
-        d for d in os.listdir(xs_extra_p)
-        if os.path.isdir(os.path.join(xs_extra_p, d))
-    )
-
     # Fail if we detect upstream updates for packages in xs or xs-extra
-    for pkg in chain(upgrades, updates):
-        if pkg.current_name in xs:
-            sys.exit("Packages in `xs` or `xs-extra` should not be "
-                     "upgraded by opam: upgrading {}".format(
-                         pkg.current_name))
+    if not args.ignore_xs:
+        xs = set(
+            d for d in os.listdir(xs_p)
+            if os.path.isdir(os.path.join(xs_p, d))
+        ).union(
+            d for d in os.listdir(xs_extra_p)
+            if os.path.isdir(os.path.join(xs_extra_p, d))
+        )
+
+        for pkg in chain(upgrades, updates):
+            if pkg.current_name in xs:
+                sys.exit("Packages in `xs` or `xs-extra` should not be "
+                         "upgraded by opam: upgrading {}".format(
+                             pkg.current_name))
 
     with requests.Session() as session:
         session.headers.update({"Accept": "application/vnd.github.v3+json"})
