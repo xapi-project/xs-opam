@@ -25,4 +25,10 @@ depexts: [
   [["ubuntu"] ["libdlm-dev"]]
   [["rhel"] ["dlm-devel"]]
   [["centos"] ["dlm-devel"]]
+  [["fedora"] ["dlm-devel"]]
+  [["oraclelinux"] ["dlm-devel"]]
+  [["archlinux"] ["dlm-git"]]
+  [["opensuse"] ["libdlm-devel"]]
 ]
+
+available: [ os = "linux" ]
