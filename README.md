@@ -166,7 +166,7 @@ For example, the following command can be used to compile the packages in the
 4.04.2, and `xs-opam` instead of the default one as the base OPAM repository:
 
 ```bash
-env OCAML_VERSION=4.04.2 DISTRO=centos-7 BASE_REMOTE=/xs-opam ./build-docker.sh
+env OCAML_VERSION=4.04.2 DISTRO=centos-7 BASE_REMOTE=/xs-opam ./tools/build-docker.sh
 ```
 
 This produces a Docker image called `local-build` containing the compiled
@@ -176,7 +176,7 @@ The following command can be used to build _all_ packages in this repository
 with the same parameters as above:
 
 ```bash
-env OCAML_VERSION=4.04.2 DISTRO=centos-7 BASE_REMOTE=/xs-opam COMPILE_ALL=1 ./build-docker.sh
+env OCAML_VERSION=4.04.2 DISTRO=centos-7 BASE_REMOTE=/xs-opam COMPILE_ALL=1 ./tools/build-docker.sh
 ```
 
 ## Neat tricks
@@ -198,6 +198,25 @@ env OCAML_VERSION=4.04.2 DISTRO=centos-7 BASE_REMOTE=/xs-opam COMPILE_ALL=1 ./bu
 
 Refer to the [`opam` manual](https://opam.ocaml.org/doc/Usage.html) for
 additional information.
+
+
+## Additional tools
+
+The tools folder contains additional utilities.
+
+- `opam-updates.py`: you can create the following file
+  ```bash
+  cat <<EOF > opam-update.sh
+  sudo yum install python-requests -y
+  python tools/opam-updates.py . --auth USER:TOKEN
+  EOF
+  ```
+  where USER is your github user name and token is a private access
+  token (refer to `opam-updates.py --help` for additional details),
+  and run `docker run --rm -itv $PWD:/mnt -w /mnt xenserver/xs-opam:latest sh opam-update.sh`
+  to prepare the local clone of `xs-opam` with the `xs-opam` package
+  updates coming from the upstream opam repository.
+
 
 [Opam]:   http://opam.ocaml.org
 [OCaml]:  http:/ocaml.org
