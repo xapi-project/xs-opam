@@ -144,6 +144,9 @@ def print_update_actions(upgrades, updates, new_packages):
             print("\t- {} {}".format(pkg.name, pkg.new))
         print()
 
+    if not any([upgrades, updates, new_packages]):
+        print("Nothing to do, xs-opam is already up to date.")
+
 
 def get_opam_upgrade_output():
     """
