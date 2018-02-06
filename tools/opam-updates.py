@@ -298,22 +298,24 @@ def main(argv=None):
 
         for pkg in upgrades:
             if pkg.current_name in upstream:
-                shutil.move(
-                    pkg.current_path(upstream_p),
-                    pkg.new_path(upstream_p))
+                shutil.rmtree(pkg.current_path(upstream_p))
+                os.makedirs(pkg.new_path(upstream_p))
                 update_files(session, args.auth, pkg, upstream_p)
 
             if pkg.current_name in upstream_extra:
-                shutil.move(
-                    pkg.current_path(upstream_extra_p),
-                    pkg.new_path(upstream_extra_p))
+                shutil.rmtree(pkg.current_path(upstream_extra_p))
+                os.makedirs(pkg.new_path(upstream_extra_p))
                 update_files(session, args.auth, pkg, upstream_extra_p)
 
         for pkg in updates:
             if pkg in upstream:
+                shutil.rmtree(pkg.current_path(upstream_p))
+                os.makedirs(pkg.current_path(upstream_p))
                 update_files(session, args.auth, pkg, upstream_p)
 
             if pkg in upstream_extra:
+                shutil.rmtree(pkg.current_path(upstream_extra_p))
+                os.makedirs(pkg.current_path(upstream_extra_p))
                 update_files(session, args.auth, pkg, upstream_extra_p)
 
         # XXX: the new packages could be due to upstream-extra stuff.
