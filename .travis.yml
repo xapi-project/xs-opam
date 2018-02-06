@@ -3,7 +3,7 @@ sudo: false
 services:
   - docker
 script:
-  - bash ./build-docker.sh
+  - bash ./tools/build-docker.sh
 after_success:
   - if [ "$TRAVIS_PULL_REQUEST" = "false" -a "$TRAVIS_BRANCH" = "master" -a -n "$DOCKER_HUB_TAG" ]; then
       docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD";

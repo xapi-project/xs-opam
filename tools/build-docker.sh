@@ -15,6 +15,6 @@ ENV OPAM_LINT=${OPAM_LINT}
 ENV OCAML_VERSION=${OCAML_VERSION}
 ENV DISTRO=${DISTRO}
 WORKDIR /xs-opam
-RUN bash travis.sh
+RUN bash tools/travis.sh
 EOF
 docker build -t local-build -f Dockerfile.test .
