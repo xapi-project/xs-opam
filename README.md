@@ -217,6 +217,17 @@ The tools folder contains additional utilities.
   to prepare the local clone of `xs-opam` with the `xs-opam` package
   updates coming from the upstream opam repository.
 
+- `dev-repo.sh`: report all Git repos from opam files
+
+  ```
+  $ ./tools/dev-repos.sh 2> /dev/null | head -5
+  darcs://https://forge.ocamlcore.org/anonscm/darcs/ocamlmod/ocamlmod
+  git://github.com/alainfrisch/ppx_tools.git
+  git://github.com/diml/ppx_derivers.git
+  git://github.com/let-def/ocaml-migrate-parsetree.git
+  git://github.com/let-def/ppx_tools_versioned.git
+  ```
+
 
 [Opam]:   http://opam.ocaml.org
 [OCaml]:  http:/ocaml.org
