@@ -222,6 +222,11 @@ def parse_args_or_exit(argv=None):
                         help="Do not check if we are trying to "
                         "upgrade packages in `xs` or `xs-extra`.")
 
+    parser.add_argument("--ignore-updates", dest="ignore_updates",
+                        action="store_true",
+                        help="Ignore the upstream changed packages. This is "
+                        "often unreliable in opam 1.2.*.")
+
     args = parser.parse_args(argv)
 
     if args.auth is None and args.xs_opam is not None:
@@ -256,7 +261,7 @@ def main(argv=None):
     updates = [
         extract_update(row) for row in out
         if "upstream changes" in row and "xenctrl" not in row
-    ]
+    ] if not args.ignore_updates else []
 
     new_packages = [
         extract_install(row) for row in out
