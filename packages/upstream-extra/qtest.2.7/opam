@@ -12,20 +12,12 @@ tags: ["test" "property" "quickcheck"]
 dev-repo: "git@github.com:vincent-hugot/iTeML.git"
 build: [make "build"]
 install: [make "BIN=%{bin}%" "install"]
-remove: [
-  ["rm" "%{bin}%/qtest"]
-]
+remove: ["rm" "%{bin}%/qtest"]
 depends: [
   "ocamlfind"
+  "base-bytes"
   "ounit" {>= "2.0.0"}
   "ocamlbuild" {build}
   "qcheck" {>= "0.5"}
 ]
 available: [ocaml-version >= "4.00.0"]
-post-messages:
-  "Version similar to 2.4, except it uses qcheck as an external library
-  instead of embedding it. There should be no other difference.
-
-  To use it, still call `qtest` on your .ml/.mli files to extract tests,
-  then compile the resulting suite using oUnit and qcheck.
-  "
