@@ -47,6 +47,9 @@ if [ ! "${EXTRA_REMOTES}" = "" ]; then
     opam remote add extra "$EXTRA_REMOTES"
 fi
 
+# Set ulimit to make xapi compile
+ulimit -s 16384
+
 if [ "${OPAM_LINT}" = 1 ]; then
     find packages -iname opam -print | xargs -n 1 opam lint
 else
