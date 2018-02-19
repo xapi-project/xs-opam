@@ -149,8 +149,6 @@ The following commands can be used to build
 ```bash
 docker run --rm -itv $PWD:/mnt -w /mnt xenserver/xs-opam:latest_extra
 # Now we are inside the container.
-# To avoid stack overflow error:
-ulimit -s 16384
 ./configure
 make
 ```
