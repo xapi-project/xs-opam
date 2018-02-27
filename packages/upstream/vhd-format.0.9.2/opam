@@ -10,9 +10,9 @@ bug-reports: "https://github.com/mirage/ocaml-vhd/issues"
 dev-repo: "git://github.com/mirage/ocaml-vhd"
 build: [[ "jbuilder" "build" "-p" name "-j" jobs ]]
 depends: [
+  "jbuilder" {build}
   "cstruct" {>= "1.9"}
   "io-page"
-  "jbuilder" {build}
   "rresult"
   "uuidm"
   "ppx_cstruct" {build}
@@ -20,4 +20,4 @@ depends: [
 depexts: [
  [["alpine"]["linux-headers"]]
 ]
-available: [ (os = "linux" | os = "darwin") & ocaml-version >= "4.02.3" ]
+available: [ (os = "linux" | os = "darwin") & ocaml-version >= "4.03.0" ]
