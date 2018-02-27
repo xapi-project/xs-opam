@@ -9,18 +9,15 @@ homepage: "https://github.com/mirage/ocaml-vhd"
 bug-reports: "https://github.com/mirage/ocaml-vhd/issues"
 dev-repo: "git://github.com/mirage/ocaml-vhd"
 build: [[ "jbuilder" "build" "-p" name "-j" jobs ]]
-build-test: [["jbuilder" "runtest" "-p" name "-j" jobs]]
 depends: [
-  "cstruct"
   "jbuilder" {build}
-  "lwt" {>= "2.4.3"}
-  "mirage-block"
-  "mirage-types-lwt" {>= "3.0.0"}
-  "ounit"
-  "vhd-format" {= "0.9.1"}
-  "io-page-unix" {test}
+  "cstruct" {>= "1.9"}
+  "io-page"
+  "rresult"
+  "uuidm"
+  "ppx_cstruct" {build}
 ]
 depexts: [
  [["alpine"]["linux-headers"]]
 ]
-available: [ (os = "linux" | os = "darwin") & ocaml-version >= "4.02.3" ]
+available: [ (os = "linux" | os = "darwin") & ocaml-version >= "4.03.0" ]
