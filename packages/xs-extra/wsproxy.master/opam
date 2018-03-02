@@ -12,6 +12,7 @@ depends: [
   "jbuilder" {build}
   "base64"
   "lwt" {>= "3.0.0"}
+  "lwt_log"
   "re"
   "ounit" {test}
   "qcheck" {test}
