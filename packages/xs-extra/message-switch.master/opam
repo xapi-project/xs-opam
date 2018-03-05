@@ -16,6 +16,8 @@ build-test: [
 depends: [
   "jbuilder" {build}
   "ocamlfind" {build}
+  "lwt"
+  "lwt_log"
   "message-switch-lwt"
   "message-switch-unix"
   "cmdliner"
