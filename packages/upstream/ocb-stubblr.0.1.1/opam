@@ -15,3 +15,7 @@ depends: [
   "astring" ]
 depopts: []
 build: [ "ocaml" "pkg/pkg.ml" "build" "--pinned" "%{pinned}%" "--tests" "false" ]
+patches: [
+    "0001-bytecode-custom-needs-cclib-as-well.patch"
+]
+
