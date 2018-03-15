@@ -8,15 +8,9 @@ tags: [ "org:xapi-project" ]
 
 build:  [[ "jbuilder" "build" "-p" name "-j" jobs ]]
 
-patches: [
-  "rename-main-lib.patch"
-  "re-expose-hashtblext.patch"
-]
-
 depends: [
   "jbuilder" {build}
   "xapi-stdext-base64"
-  "xapi-stdext-bigbuffer"
   "xapi-stdext-date"
   "xapi-stdext-deprecated"
   "xapi-stdext-encodings"
