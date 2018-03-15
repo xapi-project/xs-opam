@@ -8,16 +8,12 @@ dev-repo:     "https://github.com/mirage/ocaml-tar.git"
 doc:          "https://mirage.github.io/ocaml-tar/"
 
 build: [
-  [ "jbuilder" "build" "--only-packages=tar,tar-unix" ]
-]
-
-build-test: [
-  [ "jbuilder" "runtest" ]
+  ["jbuilder" "subst" "-p" name "--name" name] {pinned}
+  ["jbuilder" "build" "-p" name "-j" jobs]
 ]
 
 depends: [
   "jbuilder"          {build & >="1.0+beta7"}
-  "ocamlfind"         {build}
   "tar"
   "cstruct"           {>= "1.9.0"}
   "cstruct-lwt"
@@ -25,4 +21,5 @@ depends: [
   "result"
   "lwt"
 ]
-available: [ ocaml-version >= "4.01.0" ]
+available: [ ocaml-version >= "4.03.0" ]
+patches: [ "0001-Do-not-always-build-with-safe-string-this-can-break-.patch" ]

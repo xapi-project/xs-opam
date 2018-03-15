@@ -1,0 +1,61 @@
+From ad7a125bfd7c3a0fa64e5533f3e29d741cc60220 Mon Sep 17 00:00:00 2001
+From: Marcello Seri <marcello.seri@citrix.com>
+Date: Thu, 15 Mar 2018 17:39:28 +0000
+Subject: [PATCH] Do not always build with -safe-string, this can break
+ packages not using safe-string
+
+Signed-off-by: Marcello Seri <marcello.seri@citrix.com>
+---
+ lib/jbuild      | 1 -
+ lib_test/jbuild | 1 -
+ mirage/jbuild   | 1 -
+ unix/jbuild     | 1 -
+ 4 files changed, 4 deletions(-)
+
+diff --git a/lib/jbuild b/lib/jbuild
+index cad8b7a..4bc3bd6 100644
+--- a/lib/jbuild
++++ b/lib/jbuild
+@@ -3,6 +3,5 @@
+   (public_name tar)
+   (wrapped false)
+   (libraries   (result cstruct re.str))
+-  (flags (:standard -safe-string))
+   (preprocess (pps (cstruct.ppx)))
+ ))
+diff --git a/lib_test/jbuild b/lib_test/jbuild
+index 94ee2f7..e4532be 100644
+--- a/lib_test/jbuild
++++ b/lib_test/jbuild
+@@ -1,6 +1,5 @@
+ (executables
+  ((names (parse_test))
+-  (flags (:standard -safe-string))
+   (libraries (mirage-block-unix mirage-types-lwt oUnit lwt io-page-unix
+               tar-unix tar-mirage))
+ ))
+diff --git a/mirage/jbuild b/mirage/jbuild
+index 47c6877..0ca7558 100644
+--- a/mirage/jbuild
++++ b/mirage/jbuild
+@@ -2,6 +2,5 @@
+  ((name        tar_mirage)
+   (public_name tar-mirage)
+   (libraries   (tar io-page lwt mirage-types-lwt mirage-block mirage-block-lwt))
+-  (flags (:standard -safe-string))
+   (wrapped     false)
+ ))
+diff --git a/unix/jbuild b/unix/jbuild
+index 5ad6d6c..92ac645 100644
+--- a/unix/jbuild
++++ b/unix/jbuild
+@@ -2,6 +2,5 @@
+  ((name        tar_unix)
+   (public_name tar-unix)
+   (libraries   (tar lwt cstruct.lwt))
+-  (flags (:standard -safe-string))
+   (wrapped     false)
+ ))
+-- 
+2.14.1
+
