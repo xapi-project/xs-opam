@@ -4,30 +4,19 @@ authors: ["Anil Madhavapeddy" "John Else" "Thomas Leonard" "Andrew Cooper" "Davi
 homepage:      "https://github.com/mirage/ocaml-gnt"
 bug-reports:   "https://github.com/mirage/ocaml-gnt/issues"
 dev-repo:      "https://github.com/mirage/ocaml-gnt.git"
+doc:           "https://mirage.github.com/ocaml-gnt"
+
 build: [
-  [make "TESTS_FLAG=--disable-tests"]
+  [ "jbuilder" "subst"] {pinned}
+  [ "jbuilder" "build" "-p" name "-j" jobs ]
 ]
-build-test: [
-  [make "TESTS_FLAG=--enable-tests"]
-]
-install: [
-  [make "PREFIX=%{prefix}%" "install"]
-]
-remove: [
-  [make "PREFIX=%{prefix}%" "uninstall"]
-]
+
 depends: [
-  "ocamlfind"      {build}
-  "ocamlbuild"     {build}
-  "ounit"          {test}
+  "jbuilder"  {build & >="1.0+beta9"}
   "cstruct" {>= "1.0.1"}
   "io-page"
   "lwt" {>="2.4.3"}
   "cmdliner"
   "mirage-profile" {>="0.3"}
 ]
-depexts: [
-  [["debian"] ["libxen-dev"]]
-  [["ubuntu"] ["libxen-dev"]]
-]
-available: [ ocaml-version >= "4.00.0" ]
+available: [ ocaml-version >= "4.03.0" ]
