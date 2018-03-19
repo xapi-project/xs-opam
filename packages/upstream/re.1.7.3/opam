@@ -20,8 +20,7 @@ build: [
 build-test: [["jbuilder" "runtest" "-p" name "-j" jobs]]
 
 depends: [
-  "jbuilder" {build}
-  "base-bytes"
+  "jbuilder" {build & >= "1.0+beta10"}
   "ounit" {test}
 ]
 
