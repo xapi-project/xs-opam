@@ -17,18 +17,21 @@ pkg()
     popd > /dev/null
 }
 
-case "${DISTRO}" in
-    centos*)
-        sudo yum install -y epel-release
-        ;;
+update_distro_packages()
+{
+    case "${DISTRO}" in
+        centos*)
+            sudo yum install -y epel-release
+            ;;
 
-    debian*)
-        sudo apt-get update -y
-        ;;
-    *)
-        echo "unknown DISTRO=${DISTRO}; nothing to do"
-        ;;
-esac
+        debian*)
+            sudo apt-get update -y
+            ;;
+        *)
+            echo "unknown DISTRO=${DISTRO}; nothing to do"
+            ;;
+    esac
+}
 
 if [ "${COMPILE_ALL}" = 1 ]; then
     UPSTREAM="$(pkg upstream upstream-extra)"
@@ -49,7 +52,18 @@ fi
 
 if [ "${OPAM_LINT}" = 1 ]; then
     find packages -iname opam -print | xargs -n 1 opam lint
+elif [ "${CHECK_UNUSED}" = 1 ]; then
+    opam install -y --fake $XS $(pkg xs-extra-dummy)
+    # Fail if there are unused packages in $UPSTREAM:
+    AVAILABLE=$(pkg upstream | sed 's/\..*$//' | sort)
+    INSTALLED=$(opam list | grep -v \# | cut -d' ' -f1 | sort)
+    UNNEEDED=$(comm -23 <(echo "$AVAILABLE") <(echo "$INSTALLED"))
+    if [ -n "$UNNEEDED" ]; then
+        echo Unused packages in upstream/: $UNNEEDED
+        exit 1
+    fi
 else
+    update_distro_packages
     opam install -y depext
     opam depext  -y $XS
     opam install -y -j 4 $XS
