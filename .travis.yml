@@ -18,6 +18,7 @@ env:
     - BASE_REMOTE=/xs-opam DOCKER_HUB_TAG=latest
     - BASE_REMOTE=/xs-opam COMPILE_ALL=1 DOCKER_HUB_TAG=latest_extra
     - EXTRA_REMOTES=/xs-opam COMPILE_ALL=1
+    - BASE_REMOTE=/xs-opam COMPILE_ALL=1 CHECK_UNUSED=1
     - BASE_REMOTE=/xs-opam OPAM_LINT=1
     - DISTRO=debian-stable BASE_REMOTE=/xs-opam COMPILE_ALL=1
     - OCAML_VERSION=4.05.0 EXTRA_REMOTES=/xs-opam COMPILE_ALL=1

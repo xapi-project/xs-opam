@@ -1,0 +1,21 @@
+opam-version: "1.2"
+
+depends: [
+  "jbuilder" {build}
+  "ounit" {build}
+  "angstrom"
+  "astring"
+  "base64"
+  "cohttp"
+  "cohttp-lwt"
+  "cohttp-lwt-unix"
+  "dlm"
+  "fmt"
+  "inotify"
+  "ipaddr"
+  "message-switch-lwt"
+  "mtime" { >= "1.1.0" }
+  "rpc" { >= "1.9.53" }
+  "uuidm"
+  "xapi-idl"
+]
