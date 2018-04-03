@@ -13,5 +13,5 @@ depends: [
   "ctypes-foreign"
 ]
 tags: [ "org:xapi-project" ]
-available: [ ocaml-version >= "4.01.0" & ocaml-version <= "4.05.0" ]
+available: [ ocaml-version >= "4.01.0" & ocaml-version <= "4.07.0" ]
 
