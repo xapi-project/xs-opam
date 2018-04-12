@@ -24,12 +24,13 @@ update_distro_packages()
         centos*)
             sudo yum install -y epel-release
             # remove fake aspcud and install our own rpms
-            wget https://github.com/xapi-project/xapi-travis-scripts/raw/master/aspcud/aspcud-1.9.0-1.el7.centos.x86_64.rpm
-            wget https://github.com/xapi-project/xapi-travis-scripts/raw/master/aspcud/clasp-3.1.0-1.el7.centos.x86_64.rpm
-            wget https://github.com/xapi-project/xapi-travis-scripts/raw/master/aspcud/gringo-4.4.0-1.el7.centos.x86_64.rpm
+            mkdir /tmp/aspcud
+            wget https://github.com/xapi-project/xapi-travis-scripts/raw/master/aspcud/aspcud-1.9.0-1.el7.centos.x86_64.rpm -P /tmp/aspcud
+            wget https://github.com/xapi-project/xapi-travis-scripts/raw/master/aspcud/clasp-3.1.0-1.el7.centos.x86_64.rpm -P /tmp/aspcud
+            wget https://github.com/xapi-project/xapi-travis-scripts/raw/master/aspcud/gringo-4.4.0-1.el7.centos.x86_64.rpm -P /tmp/aspcud
             sudo rm -rf /usr/bin/aspcud
-            sudo yum install -y *.rpm
-            rm *.rpm
+            sudo yum install -y /tmp/aspcud/*.rpm
+            rm -rf /tmp/aspcud
             ;;
 
         debian*)
