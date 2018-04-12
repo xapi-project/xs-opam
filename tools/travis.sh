@@ -18,11 +18,10 @@ pkg()
     popd > /dev/null
 }
 
-update_distro_packages()
+replace_centos_aspcud()
 {
     case "${DISTRO}" in
         centos*)
-            sudo yum install -y epel-release
             # remove fake aspcud and install our own rpms
             mkdir /tmp/aspcud
             wget https://github.com/xapi-project/xapi-travis-scripts/raw/master/aspcud/aspcud-1.9.0-1.el7.centos.x86_64.rpm -P /tmp/aspcud
@@ -31,6 +30,17 @@ update_distro_packages()
             sudo rm -rf /usr/bin/aspcud
             sudo yum install -y /tmp/aspcud/*.rpm
             rm -rf /tmp/aspcud
+            ;;
+        *) echo "Nothing to be done for DISTRO=${DISTRO};"
+            ;;
+    esac
+}
+
+update_distro_packages()
+{
+    case "${DISTRO}" in
+        centos*)
+            sudo yum install -y epel-release
             ;;
 
         debian*)
@@ -49,6 +59,8 @@ else
     UPSTREAM="$(pkg upstream)"
     XS="$(pkg xs)"
 fi
+
+replace_centos_aspcud
 
 if [ ! "${BASE_REMOTE}" = "" ]; then
     opam remote remove default
@@ -72,7 +84,6 @@ elif [ "${CHECK_UNUSED}" = 1 ]; then
         exit 1
     fi
 else
-    update_distro_packages
     opam install -y depext
     opam depext  -y $XS
     opam install -y -j 4 $XS
