@@ -8,6 +8,7 @@ if [ ! "${COMPILE_ALL}" = 1 ]; then
     sudo sh tools/into_repo.sh
 fi
 
+
 pkg()
 {
     pushd packages > /dev/null
@@ -15,6 +16,24 @@ pkg()
       -maxdepth 1 -mindepth 1 -type d \
       | awk -F/ '{print $NF}'
     popd > /dev/null
+}
+
+replace_centos_aspcud()
+{
+    case "${DISTRO}" in
+        centos*)
+            # remove fake aspcud and install our own rpms
+            mkdir /tmp/aspcud
+            wget https://github.com/xapi-project/xapi-travis-scripts/raw/master/aspcud/aspcud-1.9.0-1.el7.centos.x86_64.rpm -P /tmp/aspcud
+            wget https://github.com/xapi-project/xapi-travis-scripts/raw/master/aspcud/clasp-3.1.0-1.el7.centos.x86_64.rpm -P /tmp/aspcud
+            wget https://github.com/xapi-project/xapi-travis-scripts/raw/master/aspcud/gringo-4.4.0-1.el7.centos.x86_64.rpm -P /tmp/aspcud
+            sudo rm -rf /usr/bin/aspcud
+            sudo yum install -y /tmp/aspcud/*.rpm
+            rm -rf /tmp/aspcud
+            ;;
+        *) echo "Nothing to be done for DISTRO=${DISTRO};"
+            ;;
+    esac
 }
 
 update_distro_packages()
@@ -41,6 +60,8 @@ else
     XS="$(pkg xs)"
 fi
 
+replace_centos_aspcud
+
 if [ ! "${BASE_REMOTE}" = "" ]; then
     opam remote remove default
     opam remote add base "$BASE_REMOTE"
@@ -63,7 +84,6 @@ elif [ "${CHECK_UNUSED}" = 1 ]; then
         exit 1
     fi
 else
-    update_distro_packages
     opam install -y depext
     opam depext  -y $XS
     opam install -y -j 4 $XS
