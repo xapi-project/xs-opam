@@ -8,6 +8,7 @@ if [ ! "${COMPILE_ALL}" = 1 ]; then
     sudo sh tools/into_repo.sh
 fi
 
+
 pkg()
 {
     pushd packages > /dev/null
@@ -22,6 +23,13 @@ update_distro_packages()
     case "${DISTRO}" in
         centos*)
             sudo yum install -y epel-release
+            # remove fake aspcud and install our own rpms
+            wget https://github.com/xapi-project/xapi-travis-scripts/raw/master/aspcud/aspcud-1.9.0-1.el7.centos.x86_64.rpm
+            wget https://github.com/xapi-project/xapi-travis-scripts/raw/master/aspcud/clasp-3.1.0-1.el7.centos.x86_64.rpm
+            wget https://github.com/xapi-project/xapi-travis-scripts/raw/master/aspcud/gringo-4.4.0-1.el7.centos.x86_64.rpm
+            sudo rm -rf /usr/bin/aspcud
+            sudo yum install -y *.rpm
+            rm *.rpm
             ;;
 
         debian*)
