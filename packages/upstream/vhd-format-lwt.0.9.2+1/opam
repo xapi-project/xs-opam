@@ -13,7 +13,7 @@ build-test: [["jbuilder" "runtest" "-p" name "-j" jobs]]
 depends: [
   "jbuilder" {build}
   "cstruct"
-  "lwt" {>= "2.4.3"}
+  "lwt" {>= "3.2.0"}
   "mirage-block"
   "mirage-types-lwt" {>= "3.0.0"}
   "ounit"
@@ -24,3 +24,6 @@ depexts: [
  [["alpine"]["linux-headers"]]
 ]
 available: [ (os = "linux" | os = "darwin") & ocaml-version >= "4.03.0" ]
+patches: [
+    "0001-lwt.preemptive-merged-in-lwt.unix-since-lwt-3.2.0.patch"
+]

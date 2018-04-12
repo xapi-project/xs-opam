@@ -36,3 +36,7 @@ depends: [
   "rresult"
   "duration"
 ]
+patches: [
+    "0001-Update-the-code-to-be-safe-string-compatible.patch"
+    "0002-update-opam-and-_oasis-file-for-the-lwt-lwt_log-spli.patch"
+]

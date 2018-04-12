@@ -1,5 +1,5 @@
 opam-version: "1.2"
-version: "3.3.0"
+version: "4.0.0"
 maintainer: [
   "Anton Bachin <antonbachin@yahoo.com>"
   "Mauricio Fernandez <mfp@acm.org>"
@@ -16,12 +16,9 @@ license: "LGPL with OpenSSL linking exception"
 dev-repo: "https://github.com/ocsigen/lwt.git"
 
 build: [
-  [ "ocaml" "src/util/configure.ml" "-use-libev" "%{conf-libev:installed}%"
-                                    "-use-camlp4" "%{camlp4:installed}%" ]
+  [ "ocaml" "src/util/configure.ml" "-use-libev" "%{conf-libev:installed}%" ]
   [ "jbuilder" "build" "-p" name "-j" jobs ]
-  [ "ocaml" "src/util/install_filter.ml" ]
 ]
-build-test: [ [ "jbuilder" "runtest" "-p" name ] ]
 
 depends: [
   "cppo" {build & >= "1.1.0"}
@@ -35,15 +32,12 @@ depends: [
   # dependency should be converted to a conflict, and package jbuilder should be
   # constrained such that it also includes the error lines fix.
   "ocamlfind" {build & >= "1.7.3-1"}
-  "ocaml-migrate-parsetree"
-  "ppx_tools_versioned" {>= "5.0.1"}
   # result is needed as long as Lwt still supports OCaml 4.02.
   "result"
 ]
 depopts: [
   "base-threads"
   "base-unix"
-  "camlp4"
   "conf-libev"
 ]
 # In practice, Lwt requires OCaml >= 4.02.3, as that is a constraint of the
@@ -59,6 +53,6 @@ messages: [
     {!lwt_log:installed}
 ]
 post-messages: [
-  "Lwt 4.0.0 will make some breaking changes in March 2018. See
+  "Lwt 4.0.0 has made some breaking changes. See
   https://github.com/ocsigen/lwt/issues/453"
 ]
