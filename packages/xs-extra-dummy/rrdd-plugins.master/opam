@@ -8,6 +8,7 @@ bug-reports: "https://github.com/xenserver/rrdd-plugins/issues"
 dev-repo: "git://github.com/xenserver/rrdd-plugins"
 depends: [
   "jbuilder" {build}
+  "cstruct-unix"
   "rrdd-plugin"
   "xapi-libs-transitional"
   "xapi-stdext-std"
