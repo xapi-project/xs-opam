@@ -2,7 +2,8 @@ opam-version: "1.2"
 
 depends: [
   "jbuilder" {build}
-  "ounit" {build}
+  "alcotest" {test}
+  "alcotest-lwt" {test}
   "angstrom"
   "astring"
   "base64"
