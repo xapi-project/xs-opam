@@ -94,13 +94,17 @@ def update_files(session, auth, package, prefix):
         r = session.get(os.path.join(base_url, "files"), auth=auth)
         r.raise_for_status()
         entries = r.json()
-        prefix = os.path.join(package.path(prefix), "files")
-        os.makedirs(prefix, exist_ok=True)
+        path = os.path.join(package.path(prefix), "files")
+        try:
+            os.makedirs(path) # exist_ok=True requires python3 :(
+        except os.error as err:
+            if err.errno != os.errno.EEXIST:
+                raise
 
         for entry in entries:
             if entry["type"] == "dir":
                 continue
-            new_path = os.path.join(package.path(prefix), entry["name"])
+            new_path = os.path.join(path, entry["name"])
             download(session, entry["download_url"], new_path)
 
 

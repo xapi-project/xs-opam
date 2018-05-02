@@ -4,10 +4,6 @@ author:       "Gerd Stolpmann <gerd@gerd-stolpmann.de>"
 homepage:     "http://projects.camlcity.org/projects/findlib.html"
 bug-reports:  "https://gitlab.camlcity.org/gerd/lib-findlib/issues"
 dev-repo:     "https://gitlab.camlcity.org/gerd/lib-findlib.git"
-patches: [
-  "check-num-in-sitelib.patch"
-  "threads.patch"
-]
 build: [
   ["./configure" "-bindir" bin "-sitelib" lib "-mandir" man "-config" "%{lib}%/findlib.conf" "-no-custom" "-no-topfind" {preinstalled}]
   [make "all"]
@@ -23,7 +19,7 @@ remove: [
   [make "uninstall"]
   ["rm" "-f" "%{bin}%/ocaml"] {preinstalled}
 ]
-available: [ocaml-version >= "3.12.0"] # ocamlfind refers to cmxs
+available: [ocaml-version >= "4.00.0"]
 depends: [
   "conf-m4" {build}
 ]
