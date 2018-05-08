@@ -15,9 +15,12 @@ depends: [
   "async" {>= "v0.9.0"}
   "async_inotify"
   "async_unix" {>= "112.24.00" }
-  "core" {>= "v0.9.0"}
+  "core"
   "message-switch-unix"
   "message-switch-async"
-  "rpc"
+  "rpclib"
+  "rpclib-async"
+  "ppx_deriving_rpc"
   "ppx_sexp_conv"
+  "xapi-stdext-date"
 ]
