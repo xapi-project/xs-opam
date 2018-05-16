@@ -1,0 +1,35 @@
+From 298bf977f1bc3e1cf1097e356ad0a4cfdcad61a5 Mon Sep 17 00:00:00 2001
+From: Docker CI <docker@example.com>
+Date: Wed, 16 May 2018 09:17:51 +0000
+Subject: [PATCH] xapi-backtrace: add support for ppx_sexp_conv.v0.11.0
+
+Signed-off-by: Docker CI <docker@example.com>
+---
+ lib/jbuild | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/lib/jbuild b/lib/jbuild
+index c6bc7e8..112c866 100644
+--- a/lib/jbuild
++++ b/lib/jbuild
+@@ -8,7 +8,7 @@ let flags = function
+     List.fold_left (fun acc pkg -> acc ^ " -package " ^ pkg) "" pkgs
+   ) in
+   let ic = Unix.open_process_in
+-    (cmd ^ " | grep -oEe '-ppx (\"([^\"\\]|\\.)+\"|\w+)'")
++    (cmd ^ " | grep -oEe '-ppx (\"([^\"\\]|\\.)+\"|\\w+)'")
+   in
+   let rec go ic acc =
+     try go ic (acc ^ " " ^ input_line ic) with End_of_file -> close_in ic; acc
+@@ -24,7 +24,7 @@ let () = Printf.ksprintf Jbuild_plugin.V1.send {|
+  ((name backtrace)
+   (public_name xapi-backtrace)
+   (libraries (ppx_deriving_rpc
+-              ppx_sexp_conv
++              ppx_sexp_conv.runtime-lib
+               rpclib
+               rpclib.json
+               threads
+-- 
+1.8.3.1
+

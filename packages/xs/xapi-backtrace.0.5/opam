@@ -12,6 +12,9 @@ depends: [
   "jbuilder" {build}
   "base-threads"
   "sexplib"
-  "ppx_sexp_conv"
+  "ppx_sexp_conv" { >= "v0.11.0" }
   "rpc" {>= "1.9.51"}
+]
+patches: [
+    "0001-xapi-backtrace-add-support-for-ppx_sexp_conv.v0.11.0.patch"
 ]
