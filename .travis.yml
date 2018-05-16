@@ -12,14 +12,24 @@ after_success:
     fi
 env:
   global:
-    - OCAML_VERSION=4.06.0
+    - OCAML_VERSION=4.04.2
     - DISTRO=centos-7
     - SAFE_STRING=1
   matrix:
-    - BASE_REMOTE=/xs-opam
-    - BASE_REMOTE=/xs-opam COMPILE_ALL=1
-    - SAFE_STRING=0 BASE_REMOTE=/xs-opam DOCKER_HUB_TAG=406_latest
-    - SAFE_STRING=0 BASE_REMOTE=/xs-opam COMPILE_ALL=1
+    - BASE_REMOTE=/xs-opam DOCKER_HUB_TAG=latest
+    - BASE_REMOTE=/xs-opam COMPILE_ALL=1 DOCKER_HUB_TAG=latest_extra
+    - BASE_REMOTE=/xs-opam COMPILE_ALL=1 CHECK_UNUSED=1
+    - SAFE_STRING=0 OCAML_VERSION=4.06.1 BASE_REMOTE=/xs-opam DOCKER_HUB_TAG=latest_406
+    - SAFE_STRING=0 OCAML_VERSION=4.06.1 BASE_REMOTE=/xs-opam COMPILE_ALL=1 DOCKER_HUB_TAG=latest_extra_406
+    - BASE_REMOTE=/xs-opam OPAM_LINT=1
+    - EXTRA_REMOTES=/xs-opam COMPILE_ALL=1
+    - OCAML_VERSION=4.06.1 BASE_REMOTE=/xs-opam
+    - OCAML_VERSION=4.06.1 BASE_REMOTE=/xs-opam COMPILE_ALL=1
 matrix:
   fast_finish: true
+  allow_failures:
+    - env: BASE_REMOTE=/xs-opam OPAM_LINT=1
+    - env: EXTRA_REMOTES=/xs-opam COMPILE_ALL=1
+    - env: OCAML_VERSION=4.06.1 BASE_REMOTE=/xs-opam
+    - env: OCAML_VERSION=4.06.1 BASE_REMOTE=/xs-opam COMPILE_ALL=1
 
