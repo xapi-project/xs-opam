@@ -19,7 +19,7 @@ build-test: [
 depends: [
   "ocamlfind" {build}
   "ocamlbuild" {build}
-  "ppx_sexp_conv" {build}
+  "ppx_sexp_conv"
   "topkg" {build}
   "result"
   "cstruct" {>= "1.6.0"}
@@ -34,3 +34,6 @@ depends: [
 
 tags: [ "org:mirage" ]
 available: [ ocaml-version >= "4.02.2" ]
+patches: [
+    "0001-x509-add-support-for-ppx_sexp_conv.v0.11.0.patch"
+]
