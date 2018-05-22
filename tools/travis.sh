@@ -62,7 +62,7 @@ fi
 
 replace_centos_aspcud
 
-if [ "${SAFE_STRING}" = 0 ]; then
+if [ "${SAFE_STRING}" = 0 -a "${OCAML_VERSION:0:4}" = "4.06" ]; then
    opam switch set 4.06.0+default-unsafe-string
    eval $(opam config env)
 fi
