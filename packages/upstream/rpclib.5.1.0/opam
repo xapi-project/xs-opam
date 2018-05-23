@@ -8,12 +8,16 @@ tags: [
   "org:mirage"
   "org:xapi-project"
 ]
+build-test: [
+    ["jbuilder" "runtest" "-p" name]
+]
 build: [["jbuilder" "build" "-p" name "-j" jobs]]
 depends: [
+  "alcotest" {test}
   "jbuilder"  {build}
   "cmdliner"
   "rresult"
   "xmlm"
   "yojson"
 ]
-available: [ ocaml-version >= "4.03.0" ]
+available: [ ocaml-version >= "4.04.0" ]
