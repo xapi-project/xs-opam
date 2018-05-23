@@ -20,7 +20,6 @@ depends: [
   "xapi-stdext-std"
   "xapi-stdext-threads"
   "xapi-stdext-unix"
-  "xapi-xenops"
 ]
 ocaml-version: [>= "4.02.0"]
 
