@@ -17,7 +17,7 @@ depends: [
   "io-page"
   "mirage-block-lwt"
   "mirage-types-lwt" {>= "3.0.0"}
-  "lwt" {>= "2.7.0"}
+  "lwt" {>= "2.7.0" & < "4.0.0"}
   "lwt_log"
   "result"
   "rresult"
