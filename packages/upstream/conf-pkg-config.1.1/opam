@@ -1,5 +1,5 @@
 opam-version: "1.2"
-maintainer: "francois.berenger@inria.fr"
+maintainer: "unixjunkie@sdf.org"
 authors: ["Francois Berenger"]
 homepage: "http://www.freedesktop.org/wiki/Software/pkg-config/"
 bug-reports: "https://github.com/ocaml/opam-repository/issues"
@@ -7,6 +7,15 @@ dev-repo: "git://github.com/ocaml/opam-repository"
 license: "GPL"
 build: [
   ["pkg-config" "--help"]
+]
+install: [
+  ["ln" "-s" "/usr/local/bin/pkgconf" "%{bin}%/pkg-config"] {os = "openbsd"}
+]
+remove: [
+  ["rm" "-f" "%{bin}%/pkg-config"] {os = "openbsd"}
+]
+post-messages: [
+  "conf-pkg-config: A symlink to /usr/local/bin/pkgconf has been installed in the OPAM bin directory (%{bin}%) on your PATH as 'pkg-config'. This is necessary for correct operation." {os = "openbsd"}
 ]
 depexts: [
   [["debian"] ["pkg-config"]]
