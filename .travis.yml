@@ -14,15 +14,13 @@ env:
   global:
     - OCAML_VERSION=4.06.0
     - DISTRO=centos-7
-    - SAFE_STRING=0
+    - SAFE_STRING=1
   matrix:
     - BASE_REMOTE=/xs-opam DOCKER_HUB_TAG=latest
     - BASE_REMOTE=/xs-opam COMPILE_ALL=1 DOCKER_HUB_TAG=latest_extra
     - BASE_REMOTE=/xs-opam COMPILE_ALL=1 CHECK_UNUSED=1
     - BASE_REMOTE=/xs-opam OPAM_LINT=1
     - EXTRA_REMOTES=/xs-opam COMPILE_ALL=1
-    - SAFE_STRING=1 BASE_REMOTE=/xs-opam
-    - SAFE_STRING=1 BASE_REMOTE=/xs-opam COMPILE_ALL=1
 matrix:
   fast_finish: true
   allow_failures:
