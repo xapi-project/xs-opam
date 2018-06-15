@@ -1,2 +1,2 @@
-archive: "https://github.com/mirage/ocaml-cohttp/archive/v1.0.2.tar.gz"
-checksum: "aaf6c08814025158afd8425775fb0b83"
+archive: "https://github.com/mirage/ocaml-cohttp/releases/download/v1.0.2/cohttp-1.0.2.tbz"
+checksum: "d0a46e32911773862e1a9b420c0058bc"

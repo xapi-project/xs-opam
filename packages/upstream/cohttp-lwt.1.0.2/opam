@@ -21,8 +21,8 @@ build: [
 build-test: [["jbuilder" "runtest" "-p" name "-j" jobs]]
 depends: [
   "jbuilder" {build & >= "1.0+beta10"}
-  "cohttp"
-  "lwt"
+  "cohttp" {>="1.0.0"}
+  "lwt" 
 ]
 conflicts: [
   "lwt" {< "2.5.0"}
