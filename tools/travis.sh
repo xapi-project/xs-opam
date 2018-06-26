@@ -88,9 +88,10 @@ elif [ "${CHECK_UNUSED}" = 1 ]; then
         echo Unused packages in upstream/: $UNNEEDED
         exit 1
     fi
+elif [ "${CHECK_ALL_DEPS}" = 1 ]; then
+    opam install -t -y --fake $XS $(pkg xs-extra-dummy)
 else
     opam install -y depext
     opam depext  -y $XS
     opam install -y -j 4 $XS
 fi
-
