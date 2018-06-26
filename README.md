@@ -7,11 +7,11 @@ toolstack implemented in [OCaml].
 
 ## Adding the OPAM Repository
 
-This repository has been tested with OCaml 4.04.2. To initialize an OPAM
+This repository has been tested with OCaml 4.06.1. To initialize an OPAM
 configuration with this compiler version, run:
 
 ```bash
-opam init --comp=4.04.2
+opam init --comp=4.06.1
 eval `opam config env`
 ```
 
@@ -161,10 +161,10 @@ variables that are specified for our Travis build in the `.travis.yml` file.
 
 For example, the following command can be used to compile the packages in the
 `packages/upstream` and `packages/xs` directories on CentOS 7, using OCaml
-4.04.2, and `xs-opam` instead of the default one as the base OPAM repository:
+4.06.0, and `xs-opam` instead of the default one as the base OPAM repository:
 
 ```bash
-env OCAML_VERSION=4.04.2 DISTRO=centos-7 BASE_REMOTE=/xs-opam ./tools/build-docker.sh
+env OCAML_VERSION=4.06.0 DISTRO=centos-7 BASE_REMOTE=/xs-opam ./tools/build-docker.sh
 ```
 
 This produces a Docker image called `local-build` containing the compiled
@@ -174,7 +174,7 @@ The following command can be used to build _all_ packages in this repository
 with the same parameters as above:
 
 ```bash
-env OCAML_VERSION=4.04.2 DISTRO=centos-7 BASE_REMOTE=/xs-opam COMPILE_ALL=1 ./tools/build-docker.sh
+env OCAML_VERSION=4.06.0 DISTRO=centos-7 BASE_REMOTE=/xs-opam COMPILE_ALL=1 ./tools/build-docker.sh
 ```
 
 ## Neat tricks
