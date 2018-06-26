@@ -78,7 +78,8 @@ fi
 
 if [ "${OPAM_LINT}" = 1 ]; then
     find packages -iname opam -print | xargs -n 1 opam lint
-elif [ "${CHECK_UNUSED}" = 1 ]; then
+elif [ "${CHECK_DEPENDENCIES}" = 1 ]; then
+    echo "Checking for unneeded packages in upstream"
     opam install -y --fake $XS $(pkg xs-extra-dummy)
     # Fail if there are unused packages in $UPSTREAM:
     AVAILABLE=$(pkg upstream | sed 's/\..*$//' | sort)
@@ -88,8 +89,8 @@ elif [ "${CHECK_UNUSED}" = 1 ]; then
         echo Unused packages in upstream/: $UNNEEDED
         exit 1
     fi
-elif [ "${CHECK_ALL_DEPS}" = 1 ]; then
-    opam install -t -y --fake $XS $(pkg xs-extra-dummy)
+    echo "Checking that all test dependencies are present for $XS"
+    opam install -t -y --fake $XS
 else
     opam install -y depext
     opam depext  -y $XS
