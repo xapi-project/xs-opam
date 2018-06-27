@@ -10,6 +10,9 @@ after_success:
       docker tag local-build xenserver/xs-opam:$DOCKER_HUB_TAG;
       docker push xenserver/xs-opam:$DOCKER_HUB_TAG;
     fi
+stages:
+    - dependencies
+    - test # default stage for build matrix
 env:
   global:
     - OCAML_VERSION=4.06.0
@@ -18,7 +21,6 @@ env:
   matrix:
     - BASE_REMOTE=/xs-opam DOCKER_HUB_TAG=latest
     - BASE_REMOTE=/xs-opam COMPILE_ALL=1 DOCKER_HUB_TAG=latest_extra
-    - BASE_REMOTE=/xs-opam COMPILE_ALL=1 CHECK_DEPENDENCIES=1
     - BASE_REMOTE=/xs-opam OPAM_LINT=1
     - EXTRA_REMOTES=/xs-opam COMPILE_ALL=1
 matrix:
@@ -26,4 +28,9 @@ matrix:
   allow_failures:
     - env: BASE_REMOTE=/xs-opam OPAM_LINT=1
     - env: EXTRA_REMOTES=/xs-opam COMPILE_ALL=1
-
+jobs:
+    include:
+        - stage: dependencies
+          env: BASE_REMOTE=/xs-opam COMPILE_ALL=1 CHECK_TEST_DEPENDENCIES=1
+        - stage: dependencies
+          env: BASE_REMOTE=/xs-opam COMPILE_ALL=1 CHECK_UNUSED=1
