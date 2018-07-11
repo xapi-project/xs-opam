@@ -9,12 +9,13 @@ tags:          [ "org:mirage"]
 license:       "ISC"
 
 build: [
-  [ "jbuilder" "subst" ] {pinned}
+  [ "jbuilder" "subst" "-p" name ] {pinned}
   [ "jbuilder" "build" "-p" name "-j" jobs ]
 ]
 
 depends: [
   "jbuilder"  {build & >="1.0+beta7"}
   "fmt"
-  "result"
 ]
+
+available: [ ocaml-version >= "4.04.2" ]
