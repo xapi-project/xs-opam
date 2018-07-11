@@ -9,7 +9,7 @@ tags:          [ "org:mirage"]
 license:       "ISC"
 
 build: [
-  [ "jbuilder" "subst" ] {pinned}
+  [ "jbuilder" "subst" "-p" name ] {pinned}
   [ "jbuilder" "build" "-p" name "-j" jobs ]
 ]
 
@@ -22,3 +22,5 @@ depends: [
   "mirage-clock" {>= "1.2.0"}
   "mirage-flow" {>= "1.2.0"}
 ]
+
+available: [ ocaml-version >= "4.04.2" ]
