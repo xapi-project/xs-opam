@@ -15,8 +15,6 @@ depends: [
   "fd-send-recv"
   "message-switch-unix"
   "mtime"
-  "nbd"
-  "opasswd"
   "ounit"
   "rpc"
   "sha"
@@ -43,11 +41,9 @@ depends: [
   "xenctrl"
   "xenstore"
   "yojson"
-  "alcotest"
 ]
 depexts: [
   [["debian"] ["hwdata" "libpci-dev" "libpam-dev"]]
   [["ubuntu"] ["hwdata" "libpci-dev" "libpam-dev"]]
   [["centos"] ["hwdata" "pciutils-devel" "pam-devel"]]
 ]
-
