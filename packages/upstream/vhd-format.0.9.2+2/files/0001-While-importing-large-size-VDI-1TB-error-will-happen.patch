@@ -1,0 +1,101 @@
+From 6237b7dd5d5cbb4efd436f7b00b9c0b8127c74a9 Mon Sep 17 00:00:00 2001
+From: minl1 <min.li1@citrix.com>
+Date: Tue, 3 Jul 2018 13:24:31 +0800
+Subject: [PATCH 1/2] While importing large size VDI (>1TB), error will happens
+ due to an overflow for getting virtual address through BAT. This fix use
+ `integers` to convert signed one to unsigned.
+
+Signed-off-by: Min Li <min.li1@citrix.com>
+---
+ vhd-format-lwt.opam | 1 +
+ vhd-format.opam     | 1 +
+ vhd_format/f.ml     | 8 ++++----
+ vhd_format/f.mli    | 2 +-
+ vhd_format/jbuild   | 1 +
+ 5 files changed, 8 insertions(+), 5 deletions(-)
+
+diff --git a/vhd-format-lwt.opam b/vhd-format-lwt.opam
+index 8b553f5..ace0508 100644
+--- a/vhd-format-lwt.opam
++++ b/vhd-format-lwt.opam
+@@ -12,6 +12,7 @@ build: [[ "jbuilder" "build" "-p" name "-j" jobs ]]
+ build-test: [["jbuilder" "runtest" "-p" name "-j" jobs]]
+ depends: [
+   "cstruct"
++  "integers"
+   "lwt" {>= "2.4.3"}
+   "mirage-block"
+   "mirage-types-lwt" {>= "3.0.0"}
+diff --git a/vhd-format.opam b/vhd-format.opam
+index f4e41e3..82d77f8 100644
+--- a/vhd-format.opam
++++ b/vhd-format.opam
+@@ -11,6 +11,7 @@ dev-repo: "git://github.com/mirage/ocaml-vhd"
+ build: [[ "jbuilder" "build" "-p" name "-j" jobs ]]
+ depends: [
+   "cstruct" {>= "1.9"}
++  "integers"
+   "io-page"
+   "rresult"
+   "uuidm"
+diff --git a/vhd_format/f.ml b/vhd_format/f.ml
+index 32bab7d..1d8e149 100644
+--- a/vhd_format/f.ml
++++ b/vhd_format/f.ml
+@@ -880,8 +880,8 @@ module BAT = struct
+       if i = t.max_table_entries
+       then acc
+       else
+-        let v = get t i in
+-        if v = unused
++        let v = get t i |> Unsigned.UInt32.of_int32 |> Unsigned.UInt32.to_int64 in
++        if v = Int64.of_int32 unused
+         then loop acc (i + 1)
+         else loop (f i v acc) (i + 1) in
+     loop initial 0
+@@ -1428,7 +1428,7 @@ module From_input = functor (I: S.INPUT) -> struct
+     let bat = BAT.unmarshal buffer header in
+     Fragment.BAT bat >+> fun () ->
+     (* Create a mapping of physical sector -> virtual sector *)
+-    let module M = Map.Make(Int32) in
++    let module M = Map.Make(Int64) in
+     let phys_to_virt = BAT.fold (fun idx sector acc -> M.add sector idx acc) bat M.empty in
+     let bitmap = alloc (Header.sizeof_bitmap header) in
+     let data = alloc (1 lsl (header.Header.block_size_sectors_shift + sector_shift)) in
+@@ -1438,7 +1438,7 @@ module From_input = functor (I: S.INPUT) -> struct
+       else
+         let s, idx = M.min_binding blocks in
+         let physical_block_offset = Int64.(shift_left (of_int idx) header.Header.block_size_sectors_shift) in
+-        skip_to fd Int64.(shift_left (of_int32 s) sector_shift) >>= fun () ->
++        skip_to fd Int64.(shift_left s sector_shift) >>= fun () ->
+         read fd bitmap >>= fun () ->
+         let bitmap = Bitmap.Partial bitmap in
+         let num_sectors = 1 lsl header.Header.block_size_sectors_shift in
+diff --git a/vhd_format/f.mli b/vhd_format/f.mli
+index b271278..b7c0ebd 100644
+--- a/vhd_format/f.mli
++++ b/vhd_format/f.mli
+@@ -231,7 +231,7 @@ module BAT : sig
+   val set: t -> int -> int32 -> unit
+   (** [set t i j] sets the [i]th entry to [j] *)
+ 
+-  val fold: (int -> int32 -> 'a -> 'a) -> t -> 'a -> 'a
++  val fold: (int -> int64 -> 'a -> 'a) -> t -> 'a -> 'a
+   (** [fold f t initial] folds [f] across all valid entries *)
+ 
+   val length: t -> int
+diff --git a/vhd_format/jbuild b/vhd_format/jbuild
+index 4ee664f..392e461 100644
+--- a/vhd_format/jbuild
++++ b/vhd_format/jbuild
+@@ -3,6 +3,7 @@
+   (public_name vhd-format)
+   (libraries
+    (cstruct
++    integers
+     io-page
+     rresult
+     uuidm))
+-- 
+2.18.0
+

@@ -9,15 +9,22 @@ homepage: "https://github.com/mirage/ocaml-vhd"
 bug-reports: "https://github.com/mirage/ocaml-vhd/issues"
 dev-repo: "git://github.com/mirage/ocaml-vhd"
 build: [[ "jbuilder" "build" "-p" name "-j" jobs ]]
+build-test: [["jbuilder" "runtest" "-p" name "-j" jobs]]
 depends: [
   "jbuilder" {build}
-  "cstruct" {>= "1.9"}
-  "io-page"
-  "rresult"
-  "uuidm"
-  "ppx_cstruct"
+  "cstruct"
+  "lwt" {>= "3.2.0"}
+  "mirage-block"
+  "mirage-types-lwt" {>= "3.0.0"}
+  "ounit"
+  "vhd-format" {>= "0.9.0" & < "0.10.0"}
+  "io-page-unix" {test}
 ]
 depexts: [
  [["alpine"]["linux-headers"]]
 ]
 available: [ (os = "linux" | os = "darwin") & ocaml-version >= "4.03.0" ]
+patches: [
+    "0001-While-importing-large-size-VDI-1TB-error-will-happen.patch"
+    "0002-1.lwt.preemptive-merged-in-lwt.unix-since-lwt-3.2.0.patch"
+]

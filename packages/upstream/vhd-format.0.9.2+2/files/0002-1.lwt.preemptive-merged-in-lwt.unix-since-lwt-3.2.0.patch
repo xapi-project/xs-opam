@@ -1,0 +1,143 @@
+From 7d96f3d9f9da2401884c6ebc1c2e984715719ca5 Mon Sep 17 00:00:00 2001
+From: minl1 <min.li1@citrix.com>
+Date: Fri, 6 Jul 2018 17:35:13 +0800
+Subject: [PATCH 2/2] 1.lwt.preemptive merged in lwt.unix since lwt 3.2.0 2.fix
+ safe-string errors and remove centos-7 in travis.yml
+
+Signed-off-by: Min Li<min.li1@citrix.com>
+---
+ .travis.yml                |  5 -----
+ disk/disk.ml               | 12 ++++++------
+ disk/jbuild                |  2 +-
+ vhd-format-lwt.opam        |  3 ++-
+ vhd-format.opam            |  1 +
+ vhd_format_lwt/jbuild      |  1 -
+ vhd_format_lwt_test/jbuild |  2 +-
+ 7 files changed, 11 insertions(+), 15 deletions(-)
+
+diff --git a/.travis.yml b/.travis.yml
+index 6e6b037..ebbd6fb 100644
+--- a/.travis.yml
++++ b/.travis.yml
+@@ -11,9 +11,4 @@ env:
+    - PACKAGE=vhd-format DISTRO=debian-stable OCAML_VERSION=4.04.2
+    - PACKAGE=vhd-format-lwt DISTRO=ubuntu-16.04 OCAML_VERSION=4.03.0
+    - PACKAGE=vhd-format-lwt DISTRO=debian-stable OCAML_VERSION=4.04.2
+-   - PACKAGE=vhd-format-lwt DISTRO=centos-7 OCAML_VERSION=4.05.0
+    - PACKAGE=vhd-format-lwt DISTRO=alpine OCAML_VERSION=4.06.0
+-matrix:
+-  fast_finish: true
+-  allow_failures:
+-    - env: PACKAGE=vhd-format-lwt DISTRO=alpine OCAML_VERSION=4.06.0
+diff --git a/disk/disk.ml b/disk/disk.ml
+index 65356c4..8c9f03f 100644
+--- a/disk/disk.ml
++++ b/disk/disk.ml
+@@ -22,7 +22,7 @@ let empty = Int64Map.empty
+ 
+ let sector_size = 512
+ 
+-let empty_sector = String.make sector_size '\000'
++let empty_sector = Bytes.make sector_size '\000'
+ 
+ let write t ofs cstr = Int64Map.add ofs cstr t
+ let write_string t ofs s =
+@@ -33,7 +33,7 @@ let write_string t ofs s =
+ let of_file filename =
+   let result = ref Int64Map.empty in
+   Lwt_unix.openfile filename [ Unix.O_RDONLY ] 0o0 >>= fun fd ->
+-  let buf = String.make sector_size '\000' in
++  let buf = Bytes.make sector_size '\000' in
+   let i = ref 0L in
+   let finished = ref false in
+   let%lwt () =
+@@ -42,7 +42,7 @@ let of_file filename =
+       finished := n <> sector_size;
+       if buf <> empty_sector then begin
+         let sector = Cstruct.create n in
+-        Cstruct.blit_from_string buf 0 sector 0 n;
++        Cstruct.blit_from_bytes buf 0 sector 0 n;
+         result := Int64Map.add !i sector !result;
+       end;
+       i := Int64.add !i 1L;
+@@ -57,9 +57,9 @@ let print_ocaml out t =
+   Printf.fprintf out "  let t = ref Disk.empty in\n";
+   Int64Map.iter
+     (fun ofs cstr ->
+-      let buf = String.make (Cstruct.len cstr) '\000' in
+-      Cstruct.blit_to_string cstr 0 buf 0 (Cstruct.len cstr);
+-      Printf.fprintf out "  t := Disk.write_string !t %LdL \"%s\";\n" ofs (String.escaped buf)
++      let buf = Bytes.make (Cstruct.len cstr) '\000' in
++      Cstruct.blit_to_bytes cstr 0 buf 0 (Cstruct.len cstr);
++      Printf.fprintf out "  t := Disk.write_string !t %LdL \"%s\";\n" ofs (buf |> Bytes.to_string)
+     ) t;
+   Printf.fprintf out "  !t\n"
+ 
+diff --git a/disk/jbuild b/disk/jbuild
+index a270939..1293fd5 100644
+--- a/disk/jbuild
++++ b/disk/jbuild
+@@ -4,4 +4,4 @@
+    (cstruct
+     lwt
+     lwt.unix))
+-  (preprocess (pps (lwt.ppx)))))
++  (preprocess (pps (lwt_ppx)))))
+diff --git a/vhd-format-lwt.opam b/vhd-format-lwt.opam
+index ace0508..f354911 100644
+--- a/vhd-format-lwt.opam
++++ b/vhd-format-lwt.opam
+@@ -13,11 +13,12 @@ build-test: [["jbuilder" "runtest" "-p" name "-j" jobs]]
+ depends: [
+   "cstruct"
+   "integers"
+-  "lwt" {>= "2.4.3"}
++  "lwt" {>= "3.2.0"}
+   "mirage-block"
+   "mirage-types-lwt" {>= "3.0.0"}
+   "ounit"
+   "vhd-format"
++  "lwt_ppx"
+   "io-page-unix" {test}
+   "jbuilder" {build}
+ ]
+diff --git a/vhd-format.opam b/vhd-format.opam
+index 82d77f8..96731c4 100644
+--- a/vhd-format.opam
++++ b/vhd-format.opam
+@@ -15,6 +15,7 @@ depends: [
+   "io-page"
+   "rresult"
+   "uuidm"
++  "lwt_ppx"
+   "jbuilder" {build}
+   "ppx_cstruct" {build}
+ ]
+diff --git a/vhd_format_lwt/jbuild b/vhd_format_lwt/jbuild
+index a5fca2a..3d5ecee 100644
+--- a/vhd_format_lwt/jbuild
++++ b/vhd_format_lwt/jbuild
+@@ -4,7 +4,6 @@
+   (libraries
+    (cstruct
+     lwt
+-    lwt.preemptive
+     lwt.unix
+     mirage-block
+     mirage-types-lwt
+diff --git a/vhd_format_lwt_test/jbuild b/vhd_format_lwt_test/jbuild
+index af17237..a9b8fa3 100644
+--- a/vhd_format_lwt_test/jbuild
++++ b/vhd_format_lwt_test/jbuild
+@@ -9,7 +9,7 @@
+       oUnit
+       vhd-format
+       vhd_format_lwt))
+-   (preprocess (pps (lwt.ppx)))))
++   (preprocess (pps (lwt_ppx)))))
+ 
+ (alias
+   ((name   runtest)
+-- 
+2.18.0
+
