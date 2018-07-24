@@ -1,0 +1,33 @@
+From a42394eee48698105674dd50b4f9fc3bf6616ff9 Mon Sep 17 00:00:00 2001
+From: Christian Lindig <christian.lindig@citrix.com>
+Date: Tue, 24 Jul 2018 10:21:42 +0100
+Subject: [PATCH 3/4] Fix string escaping in code generator
+
+The OCaml code emitted by Disk.print_ocaml is missing a String.escape
+that was lost when the code was moved to use Bytes to make it
+safe-string compliant. See commit
+
+    7d96f3d9f9da2401884c6ebc1c2e984715719ca5
+
+Signed-off-by: Christian Lindig <christian.lindig@citrix.com>
+---
+ disk/disk.ml | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/disk/disk.ml b/disk/disk.ml
+index 8c9f03f..cd6a22f 100644
+--- a/disk/disk.ml
++++ b/disk/disk.ml
+@@ -59,7 +59,8 @@ let print_ocaml out t =
+     (fun ofs cstr ->
+       let buf = Bytes.make (Cstruct.len cstr) '\000' in
+       Cstruct.blit_to_bytes cstr 0 buf 0 (Cstruct.len cstr);
+-      Printf.fprintf out "  t := Disk.write_string !t %LdL \"%s\";\n" ofs (buf |> Bytes.to_string)
++      Printf.fprintf out "  t := Disk.write_string !t %LdL \"%s\";\n"
++        ofs (buf |> Bytes.to_string |> String.escaped)
+     ) t;
+   Printf.fprintf out "  !t\n"
+ 
+-- 
+2.18.0
+
