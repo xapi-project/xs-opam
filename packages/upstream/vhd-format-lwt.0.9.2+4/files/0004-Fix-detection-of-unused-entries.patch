@@ -1,0 +1,41 @@
+From 87cc3c46495046b4b7f2976179393231911a0573 Mon Sep 17 00:00:00 2001
+From: Christian Lindig <christian.lindig@citrix.com>
+Date: Tue, 24 Jul 2018 11:21:50 +0100
+Subject: [PATCH 4/4] Fix detection of unused entries
+
+An unused table entry is denoted by 0xffff_ffff. The code fails to
+detect this in a  64-bit comparison because it extends 0xffff_ffff to
+0xffff_ffff_ffff_ffff. This commit corrects this by using the correct
+64-bit constant for comparison.
+
+Signed-off-by: Christian Lindig <christian.lindig@citrix.com>
+---
+ vhd_format/f.ml | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+
+diff --git a/vhd_format/f.ml b/vhd_format/f.ml
+index 1d8e149..f70cb92 100644
+--- a/vhd_format/f.ml
++++ b/vhd_format/f.ml
+@@ -863,7 +863,8 @@ module BAT = struct
+     mutable highest_value: int32;
+   }
+ 
+-  let unused = 0xffffffffl
++  let unused  = 0xffffffffl
++  let unused' = 0xffffffffL
+ 
+   let get t i = Cstruct.BE.get_uint32 t.data (i * 4)
+   let set t i j =
+@@ -881,7 +882,7 @@ module BAT = struct
+       then acc
+       else
+         let v = get t i |> Unsigned.UInt32.of_int32 |> Unsigned.UInt32.to_int64 in
+-        if v = Int64.of_int32 unused
++        if v = unused'
+         then loop acc (i + 1)
+         else loop (f i v acc) (i + 1) in
+     loop initial 0
+-- 
+2.18.0
+
