@@ -16,7 +16,8 @@ depends: [
   "io-page"
   "rresult"
   "uuidm"
-  "ppx_cstruct"
+  "lwt_ppx"
+  "ppx_cstruct" {build}
 ]
 depexts: [
  [["alpine"]["linux-headers"]]
