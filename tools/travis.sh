@@ -18,18 +18,12 @@ pkg()
     popd > /dev/null
 }
 
-replace_centos_aspcud()
+enable_centos_virt_xen()
 {
     case "${DISTRO}" in
         centos*)
-            # remove fake aspcud and install our own rpms
-            mkdir /tmp/aspcud
-            wget https://github.com/xapi-project/xapi-travis-scripts/raw/master/aspcud/aspcud-1.9.0-1.el7.centos.x86_64.rpm -P /tmp/aspcud
-            wget https://github.com/xapi-project/xapi-travis-scripts/raw/master/aspcud/clasp-3.1.0-1.el7.centos.x86_64.rpm -P /tmp/aspcud
-            wget https://github.com/xapi-project/xapi-travis-scripts/raw/master/aspcud/gringo-4.4.0-1.el7.centos.x86_64.rpm -P /tmp/aspcud
-            sudo rm -rf /usr/bin/aspcud
-            sudo yum install -y /tmp/aspcud/*.rpm
-            rm -rf /tmp/aspcud
+            sudo cp /xs-opam/tools/CentOS-Xen.repo /etc/yum.repos.d/
+            sudo cp /xs-opam/tools/RPM-GPG-KEY-CentOS-SIG-Virtualization /etc/pki/rpm-gpg/
             ;;
         *) echo "Nothing to be done for DISTRO=${DISTRO};"
             ;;
@@ -60,7 +54,7 @@ else
     XS="$(pkg xs)"
 fi
 
-replace_centos_aspcud
+enable_centos_virt_xen
 
 if [ "${SAFE_STRING}" = 0 -a "${OCAML_VERSION:0:4}" = "4.06" ]; then
    opam switch set 4.06.0+default-unsafe-string
