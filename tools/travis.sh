@@ -1,7 +1,7 @@
 #! /bin/bash
-# This script attempts to install all upstream dependencies 
-# using OCaml 4.07 in a Docker container. This must be run 
-# from the root of the xs-opam repository.
+# This script attempts to install all upstream dependencies using OCaml
+# in a Docker container. This must be run from the root of the xs-opam
+# repository.
 # 
 
 set -e
