@@ -3,8 +3,8 @@
 
 opam-version:   "1.2"
 name:           "xs-toolstack"
-maintainer:     "Christian Lindig <christian.lindig@citrix>"
-authors:        "Christian Lindig <christian.lindig@citrix>"
+maintainer:     "Christian Lindig <christian.lindig@citrix.com>"
+authors:        "Christian Lindig <christian.lindig@citrix.com>"
 homepage:       "https://github.com/xapi-project/xs-opam"
 license:        "BSD"
 depends: [
