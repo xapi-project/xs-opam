@@ -1,5 +1,6 @@
 opam-version: "1.2"
 name: "vncproxy"
+version: "0.0.3"
 maintainer: "Marcello Seri <marcello.seri@citrix.com>"
 authors: [ "David Scott"
            "Marcello Seri <marcello.seri@citrix.com>" ]

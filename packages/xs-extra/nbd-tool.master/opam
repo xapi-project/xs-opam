@@ -1,15 +1,19 @@
 opam-version: "1.2"
-maintainer: "dave@recoil.org"
-authors: [ "Jonathan Ludlam" "David Scott" ]
+maintainer: "jonathan.ludlam@citrix.com"
+authors: [ "Jonathan Ludlam" "David Scott" "Thomas Sanders" ]
 license: "LGPL-2 with OCaml linking exception"
 homepage: "https://github.com/xapi-project/nbd"
 dev-repo: "https://github.com/xapi-project/nbd.git"
 bug-reports: "https://github.com/xapi-project/nbd/issues"
-build: ["jbuilder" "build" "-p" name "-j" jobs]
+build: ["dune" "build" "-p" name "-j" jobs]
+build-test: ["dune" "runtest" "-p" name]
 depends: [
-  "jbuilder" {build}
+  "dune" {build}
+  "alcotest" {test}
+  "alcotest-lwt" {test}
   "cmdliner"
   "lwt" {>= "2.7.0"}
+  "lwt_log"
   "mirage-block-unix"
   "nbd-lwt-unix"
   "uri"

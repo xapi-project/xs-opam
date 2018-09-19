@@ -4,15 +4,14 @@ authors: ["dave.scott@citrix.com"]
 homepage: "https://github.com/xapi-project/xapi-nbd"
 bug-reports: "https://github.com/xapi-project/xapi-nbd/issues"
 dev-repo: "https://github.com/xapi-project/xapi-nbd.git"
-build: [[ "jbuilder" "build" "-p" name "-j" jobs ]]
-build-test: [[ "jbuilder" "runtest" ]]
+build: [[ make "release" ]]
+build-test: [[ "dune" "runtest" ]]
 depends: [
-  "jbuilder" {build}
+  "dune" {build}
   "alcotest" {test}
   "alcotest-lwt" {test}
   "cmdliner"
   "lwt" {>= "3.0.0"}
-  "lwt_log"
   "mirage-block-unix"
   "nbd-lwt-unix"
   "uri"

@@ -16,7 +16,7 @@ opam repo remove --all default
 opam repo add xs-opam file:///mnt
 
 cd /mnt
-opam depext -iy xs-toolstack
+opam depext -iy -j $(getconf _NPROCESSORS_ONLN) xs-toolstack
 EOF
 
 
