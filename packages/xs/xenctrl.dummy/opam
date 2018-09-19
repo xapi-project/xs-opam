@@ -9,6 +9,7 @@ build: [
   ["rsync" "-avz" "/usr/lib64/ocaml/xenmmap/" "%{lib}%/xenmmap/"]
   ["rsync" "-avz" "/usr/lib64/ocaml/xenlight/" "%{lib}%/xenlight/"]
   ["rsync" "-avz" "/usr/lib64/ocaml/xentoollog/" "%{lib}%/xentoollog/"]
+  ["rsync" "-avz" "/usr/lib64/ocaml/xeneventchn/" "%{lib}%/xeneventchn/"]
 ]
 remove: [
   ["ocamlfind" "remove" "xenctrl"]
