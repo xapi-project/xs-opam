@@ -6,4 +6,3 @@ dev-repo: "git://github.com/xapi-project/xcp-idl"
 maintainer: "xen-api@lists.xen.org"
 tags: [ "org:xapi-project" ]
 depends: [ "xcp" ]
-
