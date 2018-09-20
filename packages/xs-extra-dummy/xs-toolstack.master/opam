@@ -8,6 +8,7 @@ authors:        "Christian Lindig <christian.lindig@citrix.com>"
 homepage:       "https://github.com/xapi-project/xs-opam"
 license:        "BSD"
 depends: [
+  "angstrom"
   "forkexec"
   "gzip"
   "http-svr"
