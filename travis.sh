@@ -1,33 +1,28 @@
 #! /bin/bash
-#
+# This script attempts to install all upstream dependencies using OCaml
+# in a Docker container. This must be run from the root of the xs-opam
+# repository.
+# 
 
-set -ex
+IMG='ocaml/opam:ubuntu-12.04_ocaml-4.02.3'
 
-# override xenctrl.system to have a full-fledged opam repository
-sh  into_repo.sh
+docker pull $IMG
+docker run --rm -iv $PWD:/mnt $IMG <<'EOF'
+set -x
 
-get()
-{
-  wget "https://raw.githubusercontent.com/ocaml/ocaml-ci-scripts/master/$1"
-}
+cp -r /mnt /tmp/opam
+rm -r /tmp/opam/packages/upstream/camlp4.*
+opam depext -iy camlp4
+opam repo remove default
+opam repo add xs-opam file:///tmp/opam
 
-get .travis-ocaml.sh
-sh  .travis-ocaml.sh
+# Travis is broken. We exclude some packages
+P=$(cd /tmp/opam/packages/upstream; ls | egrep -v 'systemd|pci')
+
+cd /mnt
+export OPAMUSEINTERNALSOLVER=yes
+opam depext -iy -j $(getconf _NPROCESSORS_ONLN) $P
+EOF
 
 
-pkg()
-{
-    pushd packages > /dev/null
-    find  $@\
-      -maxdepth 1 -mindepth 1 -type d \
-      | awk -F/ '{print $NF}'
-    popd > /dev/null
-}
-
-UPSTREAM="$(pkg upstream)"
-XS="$(pkg xs)"
-
-opam install -y depext
-opam depext  -y $UPSTREAM $XS
-opam install -y -j 4 $UPSTREAM $XS
 
