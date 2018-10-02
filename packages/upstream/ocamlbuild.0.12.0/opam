@@ -19,7 +19,11 @@ build: [
     "OCAML_NATIVE=%{ocaml:native}%"
     "OCAML_NATIVE_TOOLS=%{ocaml:native}%"
   ]
-  [make "check-if-preinstalled" "all" "opam-install"]
+  [ make
+    "CHECK_IF_PREINSTALLED=false"
+    "check-if-preinstalled"
+    "all" "opam-install"
+  ]
 ]
 conflicts: [
   "base-ocamlbuild"
