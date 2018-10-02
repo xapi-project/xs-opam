@@ -1,14 +1,14 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "jonathan.ludlam@citrix.com"
 authors: ["xen-api@lists.xensource.com"]
 license: "ISC"
 homepage: "https://github.com/xapi-project/ezxenstore"
 bug-reports: "https://github.com/xapi-project/ezxenstore/issues"
-dev-repo: "https://github.com/xapi-project/ezxenstore.git"
-
+dev-repo: "git+https://github.com/xapi-project/ezxenstore.git"
 build: [[ "jbuilder" "build" "-p" name "-j" jobs ]]
 
 depends: [
+  "ocaml"
   "jbuilder" {build}
   "cmdliner"
   "logs"
@@ -16,3 +16,13 @@ depends: [
   "xenstore"
   "xenstore_transport"
 ]
+synopsis:
+  "An easy-to-use xenstore library with a simplified interface geared"
+description: """
+towards use within a daemon that maintains a single connection to
+xenstored."""
+url {
+  src:
+    "https://github.com/xapi-project/ezxenstore/archive/v0.2.0/ezxenstore-0.2.0.tar.gz"
+  checksum: "md5=3847153c3139594957c2e756e62b4b04"
+}

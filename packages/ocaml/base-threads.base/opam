@@ -1,0 +1,5 @@
+opam-version: "1"
+name: "base-threads"
+version: "base"
+synopsis: "Threads library distributed with the OCaml compiler"
+maintainer: "https://github.com/ocaml/opam-repository/issues"

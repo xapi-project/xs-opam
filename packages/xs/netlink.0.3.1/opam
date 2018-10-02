@@ -1,15 +1,25 @@
-opam-version: "1.2"
+opam-version: "2.0"
 authors: "rob.hoes@citrix.com"
 maintainer: "rob.hoes@citrix.com"
 homepage: "https://github.com/xapi-project/ocaml-netlink"
 build: ["jbuilder" "build" "-p" name "-j" jobs]
 depends: [
+  "ocaml"
   "jbuilder" {build}
   "ctypes"
   "ctypes-foreign"
 ]
 depexts: [
- [ ["debian"] ["libnl-3-200" "libnl-route-3-200"] ]
- [ ["ubuntu"] ["libnl-3-200" "libnl-route-3-200"] ]
- [ ["centos"] ["libnl3"] ]
+  ["libnl-3-200" "libnl-route-3-200"] {os-distribution = "debian"}
+  ["libnl-3-200" "libnl-route-3-200"] {os-distribution = "ubuntu"}
+  ["libnl3"] {os-distribution = "centos"}
 ]
+synopsis: "Bindings to the Netlink Protocol Library Suite (libnl)"
+description: """
+The Netlink Protocol Library Suite (libnl, see
+http://www.infradead.org/~tgr/libnl/) provides APIs to the netlink
+protocol, allowing you to interact with network devices in the Linux kernel."""
+url {
+  src: "https://github.com/xapi-project/ocaml-netlink/archive/v0.3.1.tar.gz"
+  checksum: "md5=ff8e5156ff48ebf1432fd39804adc5a4"
+}

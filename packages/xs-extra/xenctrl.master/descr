@@ -1,2 +1,0 @@
-OCaml bindings for low-level xen management functions. All code developed here should be upstreamed to xen-unstable eventually.
-

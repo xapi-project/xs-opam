@@ -1,4 +1,4 @@
-opam-version: "1.2"
+opam-version: "2.0"
 name: "xapi-netdev"
 maintainer: "jonathan.ludlam@citrix.com"
 authors: "xen-api@lists.xen.org"
@@ -9,8 +9,16 @@ dev-repo: "git://github.com/xapi-project/netdev.git"
 build: [[ "jbuilder" "build" "-p" name "-j" jobs ]]
 available: [ os = "linux" ]
 depends: [
+  "ocaml"
   "jbuilder" {build}
   "xapi-stdext-std"
   "xapi-stdext-unix"
   "forkexec"
 ]
+synopsis: "Host network device configuration"
+description: """
+This library allows local bridges and openvswitch instances
+to be configured."""
+url {
+  src: "https://github.com/xapi-project/netdev/archive/master.tar.gz"
+}

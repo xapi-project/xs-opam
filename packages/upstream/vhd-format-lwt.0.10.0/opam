@@ -1,4 +1,4 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "dave@recoil.org"
 tags: [
   "org:mirage"
@@ -8,9 +8,12 @@ authors: [ "Dave Scott" "Jon Ludlam" ]
 homepage: "https://github.com/mirage/ocaml-vhd"
 bug-reports: "https://github.com/mirage/ocaml-vhd/issues"
 dev-repo: "git://github.com/mirage/ocaml-vhd"
-build: [[ "jbuilder" "build" "-p" name "-j" jobs ]]
-build-test: [["jbuilder" "runtest" "-p" name "-j" jobs]]
+build: [
+  ["jbuilder" "build" "-p" name "-j" jobs]
+  ["jbuilder" "runtest" "-p" name "-j" jobs] {with-test}
+]
 depends: [
+  "ocaml" {>= "4.03.0"}
   "cstruct"
   "integers"
   "lwt" {>= "3.2.0"}
@@ -19,10 +22,15 @@ depends: [
   "ounit"
   "vhd-format"
   "lwt_ppx"
-  "io-page-unix" {test}
+  "io-page-unix" {with-test}
   "jbuilder" {build}
 ]
-depexts: [
- [["alpine"]["linux-headers"]]
-]
-available: [ (os = "linux" | os = "darwin") & ocaml-version >= "4.03.0" ]
+depexts: ["linux-headers"] {os-distribution = "alpine"}
+available: os = "linux" | os = "macos"
+synopsis: "Pure OCaml library for reading and writing .vhd format data"
+description:
+  "It has a particular emphasis on efficient streaming and format conversion."
+url {
+  src: "https://github.com/mirage/ocaml-vhd/archive/v0.10.0.tar.gz"
+  checksum: "md5=6bc442a149c251e39f1f19c7735b0127"
+}

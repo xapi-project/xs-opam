@@ -1,10 +1,10 @@
-opam-version: "1"
+opam-version: "2.0"
 maintainer: "john.else@citrix.com"
 build: [
      ["jbuilder" "build" "-p" name "-j" jobs]
 ]
-depends: [
-  "xapi-rrd"
-  "xapi-stdext-unix"
-  "xmlm"
-]
+depends: ["ocaml" "xapi-rrd" "xapi-stdext-unix" "xmlm"]
+synopsis: "Program for dumping RRD files"
+url {
+  src: "https://github.com/xapi-project/rrddump/archive/master/master.tar.gz"
+}

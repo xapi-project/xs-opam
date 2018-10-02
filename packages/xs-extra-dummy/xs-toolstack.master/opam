@@ -1,13 +1,11 @@
-# vim: set et:
-#
-
-opam-version:   "1.2"
+opam-version: "2.0"
 name:           "xs-toolstack"
 maintainer:     "Christian Lindig <christian.lindig@citrix.com>"
 authors:        "Christian Lindig <christian.lindig@citrix.com>"
 homepage:       "https://github.com/xapi-project/xs-opam"
 license:        "BSD"
 depends: [
+  "ocaml"
   "angstrom"
   "forkexec"
   "gzip"
@@ -57,4 +55,3 @@ depends: [
   "xenops"
   "xml-light2"
 ]
-

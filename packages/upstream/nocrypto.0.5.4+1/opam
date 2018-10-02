@@ -1,14 +1,12 @@
-opam-version: "1.2"
+opam-version: "2.0"
 homepage:     "https://github.com/mirleft/ocaml-nocrypto"
-dev-repo:     "https://github.com/mirleft/ocaml-nocrypto.git"
+dev-repo: "git+https://github.com/mirleft/ocaml-nocrypto.git"
 bug-reports:  "https://github.com/mirleft/ocaml-nocrypto/issues"
 doc:          "https://mirleft.github.io/ocaml-nocrypto/doc"
 authors:      ["David Kaloper <david@numm.org>"]
 maintainer:   "David Kaloper <david@numm.org>"
 license:      "ISC"
 tags:          [ "org:mirage" ]
-available:     [ ocaml-version >= "4.02.0" ]
-
 build: ["ocaml" "pkg/pkg.ml" "build" "--pinned" "%{pinned}%" "--tests" "false"
                 "--jobs" "1"
                 "--with-lwt" "%{lwt:installed}%"
@@ -17,6 +15,7 @@ build: ["ocaml" "pkg/pkg.ml" "build" "--pinned" "%{pinned}%" "--tests" "false"
                 "--accelerate" "false"]
 
 depends: [
+  "ocaml" {>= "4.02.0"}
   "ocamlfind" {build}
   "ocamlbuild" {build}
   "topkg" {build}
@@ -24,17 +23,17 @@ depends: [
   "ocb-stubblr" {build}
   "ppx_deriving" {build}
   "ppx_sexp_conv" {build}
-  "ounit" {test}
-  "cstruct" {>="2.4.0"}
+  "ounit" {with-test}
+  "cstruct" {>= "2.4.0"}
   "cstruct-lwt"
   "ocplib-endian"
   "zarith"
   "lwt"
   "sexplib"
-  ("mirage-no-xen" | ("mirage-xen" & "mirage-entropy" & "zarith-xen"))
-  ("mirage-no-solo5" | ("mirage-solo5" & "mirage-entropy" & "zarith-freestanding"))
+  "mirage-no-xen" | ("mirage-xen" & "mirage-entropy" & "zarith-xen")
+  "mirage-no-solo5" |
+  ("mirage-solo5" & "mirage-entropy" & "zarith-freestanding")
 ]
-
 conflicts: [
   "topkg" {<"0.8.0"}
   "ocb-stubblr" {<"0.1.0"}
@@ -44,3 +43,20 @@ conflicts: [
 patches: [
     "0001-Update-to-support-latest-cstruct-and-ppx_sexp_conv-a.patch"
 ]
+synopsis: "Simpler crypto"
+description: """
+nocrypto is a small cryptographic library that puts emphasis on the applicative
+style and ease of use. It includes basic ciphers (AES, 3DES, RC4), hashes (MD5,
+SHA1, SHA2), public-key primitives (RSA, DSA, DH) and a strong RNG (Fortuna).
+
+RSA timing attacks are countered by blinding. AES timing attacks are avoided by
+delegating to AES-NI."""
+extra-files: [
+  "0001-Update-to-support-latest-cstruct-and-ppx_sexp_conv-a.patch"
+  "md5=01ace16f550833f967f955255b2b65b8"
+]
+url {
+  src:
+    "https://github.com/mirleft/ocaml-nocrypto/releases/download/v0.5.4/nocrypto-0.5.4.tbz"
+  checksum: "md5=c331a7a4d2a563d1d5ed581aeb849011"
+}

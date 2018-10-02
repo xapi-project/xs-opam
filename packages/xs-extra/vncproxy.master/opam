@@ -1,17 +1,22 @@
-opam-version: "1.2"
+opam-version: "2.0"
 name: "vncproxy"
-version: "0.0.3"
 maintainer: "Marcello Seri <marcello.seri@citrix.com>"
 authors: [ "David Scott"
            "Marcello Seri <marcello.seri@citrix.com>" ]
 license: "LGPL-2.1 with OCaml linking exception"
 homepage: "https://github.com/xapi-project/vncproxy"
-dev-repo: "https://github.com/xapi-project/vncproxy.git"
+dev-repo: "git+https://github.com/xapi-project/vncproxy.git"
 bug-reports: "https://github.com/xapi-project/vncproxy/issues"
 build: [[ "jbuilder" "build" "-p" name "-j" jobs ]]
 depends: [
+  "ocaml"
   "jbuilder" {build}
   "cmdliner"
   "lwt"
   "xen-api-client-lwt"
 ]
+synopsis: "Allows remote connections to XenServer VM consoles."
+url {
+  src:
+    "https://github.com/xapi-project/vncproxy/archive/master/master.tar.gz"
+}

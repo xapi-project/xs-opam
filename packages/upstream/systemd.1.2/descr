@@ -1,3 +1,0 @@
-OCaml module for native access to the systemd facilities
-
-OCaml library allowing interaction with systemd and journald

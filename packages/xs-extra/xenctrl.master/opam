@@ -1,4 +1,4 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "jonathan.ludlam@citrix.com"
 authors: "xen-devel@lists.xen.org"
 homepage: "http://www.xenproject.org/"
@@ -20,18 +20,24 @@ remove: [
   [make "uninstall"]
 ]
 depends: [
+  "ocaml" {>= "4.00.0"}
   "ocamlfind" {build}
-  "lwt"       {test}
-  "cmdliner"  {build}
+  "lwt" {with-test}
+  "cmdliner" {build}
 ]
 depexts: [
-  [["debian"] ["libxen-dev" "uuid-dev"]]
-  [["ubuntu"] ["libxen-dev" "uuid-dev"]]
-  [["centos"] ["xen-devel" "libuuid-devel"]]
-  [["fedora"] ["xen-devel"]]
-  [["rhel"] ["xen-devel"]]
-  [["oraclelinux"] ["xen-devel"]]
-  [["xenserver"] ["xen-dom0-libs-devel" "xen-libs-devel"]]
-  [["alpine"] ["xen-dev"]]
+  ["libxen-dev" "uuid-dev"] {os-distribution = "debian"}
+  ["libxen-dev" "uuid-dev"] {os-distribution = "ubuntu"}
+  ["xen-devel" "libuuid-devel"] {os-distribution = "centos"}
+  ["xen-devel"] {os-distribution = "fedora"}
+  ["xen-devel"] {os-distribution = "rhel"}
+  ["xen-devel"] {os-distribution = "oraclelinux"}
+  ["xen-dom0-libs-devel" "xen-libs-devel"] {os = "xenserver"}
+  ["xen-dev"] {os-distribution = "alpine"}
 ]
-available: [ ocaml-version >= "4.00.0" ]
+synopsis:
+  "OCaml bindings for low-level xen management functions. All code developed here should be upstreamed to xen-unstable eventually."
+url {
+  src:
+    "https://github.com/xapi-project/ocaml-xen-lowlevel-libs/archive/master.tar.gz"
+}

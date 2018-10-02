@@ -1,0 +1,5 @@
+opam-version: "1"
+name: "base-unix"
+version: "base"
+synopsis: "Unix library distributed with the OCaml compiler"
+maintainer: "https://github.com/ocaml/opam-repository/issues"

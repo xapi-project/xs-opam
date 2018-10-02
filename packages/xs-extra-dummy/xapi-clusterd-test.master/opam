@@ -1,6 +1,6 @@
-opam-version: "1.2"
-
+opam-version: "2.0"
 depends: [
+  "ocaml"
   "jbuilder" {build}
   "angstrom"
   "astring"
@@ -13,8 +13,8 @@ depends: [
   "inotify"
   "ipaddr"
   "message-switch-lwt"
-  "mtime" { >= "1.1.0" }
-  "rpc" { >= "1.9.53" }
+  "mtime" {>= "1.1.0"}
+  "rpc" {>= "1.9.53"}
   "uuidm"
   "xapi-idl"
   "xen-api-client"

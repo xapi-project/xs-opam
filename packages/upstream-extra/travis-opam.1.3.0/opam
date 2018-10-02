@@ -1,8 +1,8 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer:   "thomas@gazagnaire.org"
 homepage:     "https://github.com/ocaml/ocaml-ci-scripts"
 bug-reports:  "https://github.com/ocaml/ocaml-ci-scripts/issues"
-dev-repo:     "https://github.com/ocaml/ocaml-ci-scripts.git"
+dev-repo: "git+https://github.com/ocaml/ocaml-ci-scripts.git"
 doc:          "https://ocaml.github.io/ocaml-ci-scripts/"
 
 authors: [
@@ -17,6 +17,24 @@ build: [
 ]
 
 depends: [
+  "ocaml"
   "jbuilder" {build}
   "jsonm" {build}
 ]
+synopsis: "Travis CI (Continuous Integration) helpers"
+description: """
+This package installs a set of helper tools that integrate your 
+OCaml project with the Travis CI (http://travis-ci.org) online
+continuous integration system.
+
+It can test several combinations of OCaml and OPAM across multiple
+Linux distributions, making it particularly handy for testing
+C linkage or external library dependencies quickly.
+
+See <https://github.com/ocaml/ocaml-ci-scripts> for more
+information and usage."""
+url {
+  src:
+    "https://github.com/ocaml/ocaml-ci-scripts/releases/download/1.3.0/travis-opam-1.3.0.tbz"
+  checksum: "md5=92ec20a8e0e86c0599b909c50d478b9c"
+}

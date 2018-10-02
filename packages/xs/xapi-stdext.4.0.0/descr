@@ -1,6 +1,0 @@
-Deprecated xapi standard library extension
-
-This is a dummy package to facilitate the migration to xapi-stdext 3.0.0
-of oasis-built packages, where several package were split out of the main
-stdext package and the findlib name changed from stdext to xapi-stdext.
-

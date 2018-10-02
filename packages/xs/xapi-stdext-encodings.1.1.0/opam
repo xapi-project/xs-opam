@@ -1,4 +1,4 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "jonathan.ludlam@citrix.com"
 authors: "xen-api@list.xen.org"
 bug-reports: "https://github.com/xapi-project/stdext/issues"
@@ -9,5 +9,15 @@ tags: [ "org:xapi-project" ]
 build:  [[ "jbuilder" "build" "-p" name "-j" jobs ]]
 
 depends: [
+  "ocaml"
   "jbuilder" {build}
 ]
+synopsis: "A deprecated collection of utility functions - Encodings module"
+description: """
+This library is provided for a transitionary period only.
+No new code should use this library."""
+url {
+  src:
+    "https://github.com/xapi-project/stdext/archive/v4.0.0/stdext-4.0.0.tar.gz"
+  checksum: "md5=47b19146dde4137f10c9961ec604b483"
+}

@@ -1,15 +1,14 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "jonathan.ludlam@eu.citrix.com"
 authors: "jonathan.ludlam@eu.citrix.com"
 homepage: "https://github.com/xapi-project/xcp-networkd"
 
 build: [
-  "jbuilder" "build" "-p" name "-j" jobs
+  ["jbuilder" "build" "-p" name "-j" jobs]
+  ["jbuilder" "runtest" "-p" name] {with-test}
 ]
-
-build-test: ["jbuilder" "runtest" "-p" name]
-
 depends: [
+  "ocaml"
   "jbuilder" {build}
   "netlink"
   "rpc"
@@ -21,3 +20,8 @@ depends: [
   "xapi-stdext" {>= "3.0.0"}
   "xen-api-client"
 ]
+synopsis: "The XCP networking daemon"
+url {
+  src:
+    "https://github.com/xapi-project/xcp-networkd/archive/master/master.tar.gz"
+}

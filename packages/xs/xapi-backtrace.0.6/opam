@@ -1,4 +1,4 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "xen-api@lists.xen.org"
 authors: "xen-api@lists.xen.org"
 homepage: "https://github.com/xapi-project/backtrace"
@@ -9,10 +9,18 @@ tags: [ "org:xapi-project" ]
 build: ["jbuilder" "build" "-p" name "-j" jobs]
 
 depends: [
+  "ocaml"
   "jbuilder" {build}
   "base-threads"
   "sexplib"
-  "ppx_sexp_conv" { >= "v0.11.0" }
+  "ppx_sexp_conv" {>= "v0.11.0"}
   "rpc" {>= "1.9.51"}
 ]
-
+synopsis: "A simple library for recording and managing backtraces"
+description: """
+This allows backtraces from multiple processes to be combined together
+and pretty-printed."""
+url {
+  src: "https://github.com/xapi-project/backtrace/archive/v0.6.tar.gz"
+  checksum: "md5=8dad1793ae1989e551274ec68cff3c63"
+}
