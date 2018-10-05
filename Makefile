@@ -7,7 +7,7 @@ NAME 	= xs-opam-repo-$(VERSION)
 .PHONY: all archive clean
 
 all:
-	./tools/travis.sh
+	docker build -f tools/Dockerfile -t xenserver/xs-opam:$(VERSION) .
 
 archive: $(NAME).tar.gz
 
