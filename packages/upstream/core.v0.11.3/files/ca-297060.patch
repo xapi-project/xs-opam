@@ -1,0 +1,12 @@
+diff -ur core.v0.11.3-b/src/time_stamp_counter.ml core.v0.11.3-a/src/time_stamp_counter.ml
+--- core.v0.11.3-b/src/time_stamp_counter.ml	2018-08-28 10:16:58.000000000 +0100
++++ core.v0.11.3-a/src/time_stamp_counter.ml	2018-10-08 14:16:58.079842519 +0100
+@@ -156,7 +156,7 @@
+      the duration of time, i.e. longer time samples are given more weight and shorter time
+      samples are given lesser weight. *)
+   let alpha_for_interval time_diff =
+-    1. -. exp (-0.5 *. time_diff)
++    Float.max 0.0 (1. -. exp (-0.5 *. time_diff))
+   ;;
+ 
+   let catchup_cycles                  = 1E9
