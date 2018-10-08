@@ -5,6 +5,7 @@ homepage: "https://github.com/janestreet/core"
 bug-reports: "https://github.com/janestreet/core/issues"
 dev-repo: "https://github.com/janestreet/core.git"
 license: "Apache-2.0"
+patches: [ "ca-297060.patch" ]
 build: [
   ["./configure" "--prefix" prefix]
   [make]
