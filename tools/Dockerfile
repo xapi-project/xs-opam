@@ -5,11 +5,12 @@ MAINTAINER  Christian Lindig <christian.lindig@citrix.com>
 RUN sudo apt-get install -qq -yy \
   debianutils hwdata libdlm-dev libffi-dev libgmp-dev libnl-3-200   \
   libnl-route-3-200 libpam-dev libpci-dev libssl-dev libsystemd-dev \
-  libxen-dev linux-libc-dev m4 perl pkg-config python uuid-dev
+  libxen-dev linux-libc-dev m4 perl pkg-config python uuid-dev \
+  && sudo apt-get clean
 
-COPY . /mnt
+COPY . /tmp/xs-opam
 
-RUN opam repo remove --all default
-RUN opam repo add xs-opam file:///mnt
-RUN opam depext -y xs-toolstack
-RUN opam install -j 4 xs-toolstack
+RUN opam repo remove --all default \
+ && opam repo add xs-opam file:///tmp/xs-opam \
+ && opam depext -y xs-toolstack \
+ && opam install -j 4 xs-toolstack
