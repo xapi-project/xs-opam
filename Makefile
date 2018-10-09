@@ -13,7 +13,7 @@ archive: $(NAME).tar.gz
 
 $(NAME).tar.gz:
 	# don't package ocaml, do package cache
-	rm -rf packages/ocaml .
+	mv packages/ocaml .
 	opam admin cache
 	git archive --format=tar.gz --prefix=$(NAME)/ HEAD > $@
 	tar zxf $@
