@@ -19,6 +19,7 @@ sudo apt-get install -qq -yy \
 
 opam repo remove --all default
 opam repo add xs-opam file:///mnt
+opam depext -vv -y xs-toolstack
 opam install -j $(getconf _NPROCESSORS_ONLN) xs-toolstack
 EOF
 
