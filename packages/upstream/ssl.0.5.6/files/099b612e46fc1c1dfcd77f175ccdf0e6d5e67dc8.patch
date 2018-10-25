@@ -1,0 +1,98 @@
+From 099b612e46fc1c1dfcd77f175ccdf0e6d5e67dc8 Mon Sep 17 00:00:00 2001
+From: Rudi Grinberg <rudi.grinberg@gmail.com>
+Date: Sat, 15 Sep 2018 16:45:49 +0400
+Subject: [PATCH] Correctly set #define's for ssl_stubs
+
+Fix #40
+
+Signed-off-by: Rudi Grinberg <rudi.grinberg@gmail.com>
+---
+ src/config/discover.ml | 43 ++++++++++++++++++++++++++++++++++++++++++
+ src/dune               |  2 +-
+ src/ssl_stubs.c        |  2 ++
+ 3 files changed, 46 insertions(+), 1 deletion(-)
+
+diff --git a/src/config/discover.ml b/src/config/discover.ml
+index 972e3fe..ca75893 100644
+--- a/src/config/discover.ml
++++ b/src/config/discover.ml
+@@ -15,6 +15,24 @@ let default c : C.Pkg_config.package_conf =
+     ; cflags = []
+     }
+ 
++let prog fun_name =
++  Printf.sprintf {c|
++#include <openssl/ssl.h>
++int main(int argc, char **argv) {
++  void *foo = %s;
++  return 0;
++}|c} fun_name
++
++let function_tests =
++  [ "TLSv1_1_method", "HAVE_TLS11"
++  ; "TLSv1_2_method", "HAVE_TLS12"
++  ; "EC_KEY_free", "HAVE_EC"
++  ]
++
++let macro_tests =
++  [ "SSL_set_tlsext_host_name", "HAVE_SNI"
++  ]
++
+ let () =
+   C.main ~name:"ssl" (fun c ->
+       let default = default c in
+@@ -27,5 +45,30 @@ let () =
+             | None -> default
+           end
+       in
++      let results =
++        C.C_define.import c
++          ~c_flags:conf.cflags
++          ~includes:["openssl/ssl.h"]
++          (List.map (fun (c, _) -> (c, C.C_define.Type.Switch))
++            macro_tests)
++      in
++      let defines =
++        List.combine macro_tests results
++        |> List.map (fun ((name, const), (name', value)) ->
++            assert (name = name');
++            (const, value))
++      in
++      let defines =
++        List.fold_left (fun acc (fun_name, var_name) ->
++            let defined =
++              prog fun_name
++              |> C.c_test c ~c_flags:conf.cflags ~link_flags:conf.libs
++            in
++            ( var_name
++            , C.C_define.Value.Switch defined
++            ) :: acc
++          ) defines function_tests
++      in
++      C.C_define.gen_header_file c ~fname:"ocaml_ssl.h" defines;
+       C.Flags.write_sexp "c_library_flags.sexp" conf.libs;
+       C.Flags.write_sexp "c_flags.sexp" conf.cflags)
+diff --git a/src/dune b/src/dune
+index 0260bcb..81a6608 100644
+--- a/src/dune
++++ b/src/dune
+@@ -8,5 +8,5 @@
+  (c_names ssl_stubs))
+ 
+ (rule
+- (targets c_flags.sexp c_library_flags.sexp)
++ (targets c_flags.sexp c_library_flags.sexp ocaml_ssl.h)
+  (action (run ./config/discover.exe)))
+diff --git a/src/ssl_stubs.c b/src/ssl_stubs.c
+index fa4cbbf..7cc071b 100644
+--- a/src/ssl_stubs.c
++++ b/src/ssl_stubs.c
+@@ -49,6 +49,8 @@
+ #include <openssl/crypto.h>
+ #include <openssl/tls1.h>
+ 
++#include "ocaml_ssl.h"
++
+ #ifdef WIN32
+ #include <windows.h>
+ #else
