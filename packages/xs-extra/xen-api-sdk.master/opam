@@ -7,10 +7,10 @@ homepage: "https://github.com/xapi-project/xen-api-sdk"
 bug-reports: "https://github.com/xapi-project/xen-api-sdk/issues"
 dev-repo: "git+https://github.com/xapi-project/xen-api-sdk.git"
 tags: [ "org:xapi-project" ]
-build: [[ "jbuilder" "build" "-p" name ]]
+build: [[ "dune" "build" "-p" name ]]
 depends: [
   "ocaml"
-  "jbuilder" {build}
+  "dune" {build}
   "xapi-datamodel"
   "mustache"
   "astring"
