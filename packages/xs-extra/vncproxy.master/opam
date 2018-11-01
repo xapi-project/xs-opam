@@ -7,10 +7,9 @@ license: "LGPL-2.1 with OCaml linking exception"
 homepage: "https://github.com/xapi-project/vncproxy"
 dev-repo: "git+https://github.com/xapi-project/vncproxy.git"
 bug-reports: "https://github.com/xapi-project/vncproxy/issues"
-build: [[ "jbuilder" "build" "-p" name "-j" jobs ]]
+build: [[ "dune" "build" "-p" name "-j" jobs ]]
 depends: [
-  "ocaml"
-  "jbuilder" {build}
+  "dune" {build}
   "cmdliner"
   "lwt"
   "xen-api-client-lwt"
