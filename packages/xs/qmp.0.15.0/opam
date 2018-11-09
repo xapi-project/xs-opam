@@ -22,6 +22,6 @@ depends: [
 dev-repo: "git://github.com/xapi-project/ocaml-qmp"
 synopsis: "OCaml implementation of a Qemu Message Protocol (QMP) client"
 url {
-  src: "https://github.com/xapi-project/ocaml-qmp/archive/0.14.0.tar.gz"
-  checksum: "md5=9b017dcb8154215ec286ec548955a553"
+  src: "https://github.com/xapi-project/ocaml-qmp/archive/0.15.0.tar.gz"
+  checksum: "md5=cef34b4f1674a6a0398c7d7fea522bea"
 }
