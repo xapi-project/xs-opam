@@ -16,14 +16,12 @@ build: [
 depends: [
   "ocaml" {>= "4.03.0"}
   "jbuilder" {build}
-  "cppo" {build}
-  "rpclib" {>= "5.0.0"}
+  "rpclib" {>= "6.0.0"}
   "rresult"
-  "ppx_deriving"
-  "ppx_tools"
+  "ppxlib" {>= "0.3.1"}
   "ppxfind"
-  "rpclib-lwt" {with-test & >= "5.0.0"}
-  "rpclib-async" {with-test & >= "5.0.0"}
+  "rpclib-lwt" {with-test & >= "6.0.0"}
+  "rpclib-async" {with-test & >= "6.0.0"}
   "lwt" {with-test & >= "3.0.0"}
   "async" {with-test}
 ]
@@ -50,6 +48,6 @@ It also supports the `@key` annotations for having different field names:
 type t = { foo: int [@key "type"]; bar: int [@key "let"]; } [@@deriving rpc]
 ```"""
 url {
-  src: "https://github.com/mirage/ocaml-rpc/archive/v5.9.0.tar.gz"
-  checksum: "md5=177db71621a7aa7a55cbea6c237eb6dc"
+  src: "https://github.com/mirage/ocaml-rpc/archive/v6.0.0.tar.gz"
+  checksum: "md5=9d10fc413a559e1d8aa380a8b145736f"
 }
