@@ -14,7 +14,7 @@ archive: $(NAME).tar.gz
 $(NAME).tar.gz:
 	# don't package ocaml, do package cache
 	mv packages/ocaml .
-	opam admin cache
+	env OPAMFETCH=wget opam admin cache
 	git archive --format=tar.gz --prefix=$(NAME)/ HEAD > $@
 	tar zxf $@
 	cd $(NAME) && ln -fs ../cache .
