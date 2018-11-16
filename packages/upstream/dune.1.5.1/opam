@@ -1,4 +1,24 @@
 opam-version: "2.0"
+maintainer: "opensource@janestreet.com"
+authors: ["Jane Street Group, LLC <opensource@janestreet.com>"]
+homepage: "https://github.com/ocaml/dune"
+bug-reports: "https://github.com/ocaml/dune/issues"
+dev-repo: "git+https://github.com/ocaml/dune.git"
+license: "MIT"
+depends: [
+  "ocaml" {>= "4.02"}
+]
+build: [
+  # opam 2 sets OPAM_SWITCH_PREFIX, so we don't need a hardcoded path
+  ["ocaml" "configure.ml" "--libdir" lib] {opam-version < "2"}
+  ["ocaml" "bootstrap.ml"]
+  ["./boot.exe" "--release" "--subst"] {pinned}
+  ["./boot.exe" "--release" "-j" jobs]
+]
+conflicts: [
+  "jbuilder" {!= "transition"}
+]
+
 synopsis: "Fast, portable and opinionated build system"
 description: """
 dune is a build system that was designed to simplify the release of
@@ -16,26 +36,9 @@ repositories into the same directory.
 It also supports multi-context builds, such as building against
 several opam roots/switches simultaneously. This helps maintaining
 packages across several versions of OCaml and gives cross-compilation
-for free."""
-maintainer: "opensource@janestreet.com"
-authors: "Jane Street Group, LLC <opensource@janestreet.com>"
-license: "MIT"
-homepage: "https://github.com/ocaml/dune"
-bug-reports: "https://github.com/ocaml/dune/issues"
-depends: [
-  "ocaml" {>= "4.02"}
-]
-conflicts: [
-  "jbuilder" {!= "transition"}
-]
-build: [
-  ["ocaml" "configure.ml" "--libdir" lib] {opam-version < "2"}
-  ["ocaml" "bootstrap.ml"]
-  ["./boot.exe" "--release" "--subst"] {pinned}
-  ["./boot.exe" "--release" "-j" jobs]
-]
-dev-repo: "git+https://github.com/ocaml/dune.git"
+for free.
+"""
 url {
-  src: "https://github.com/ocaml/dune/releases/download/1.4.0/dune-1.4.0.tbz"
-  checksum: "md5=dc862e5d821ff4d8bef16a78bd472431"
+  src: "https://github.com/ocaml/dune/releases/download/1.5.1/dune-1.5.1.tbz"
+  checksum: "md5=071ff387b85e08bdfd49dee728dc8358"
 }
