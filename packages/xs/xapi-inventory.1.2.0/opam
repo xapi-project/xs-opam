@@ -4,14 +4,25 @@ maintainer: "xen-api@lists.xen.org"
 authors: "xen-api@lists.xen.org"
 homepage: "https://github.com/xapi-project/xcp-inventory"
 bug-reports: "https://github.com/xapi-project/xcp-inventory/issues"
-dev-repo: "git://github.com/xapi-project/xcp-inventory.git"
+dev-repo: "git+http://github.com/xapi-project/xcp-inventory.git"
 tags: [ "org:xapi-project" ]
 build: [
   ["./configure" "--default_inventory=%{prefix}%/etc"]
-  ["jbuilder" "build" "-p" name "-j" jobs]
-  ["jbuilder" "runtest" "-p" name "-j" jobs] {with-test}
+  ["dune" "build" "-p" name "-j" jobs]
+  ["dune" "runtest" "-p" name "-j" jobs] {with-test}
 ]
-depends: ["ocaml" "xcp-inventory"]
+depends: [
+  "ocaml"
+  "ocamlfind" {build}
+  "dune" {build}
+  "base-threads"
+  "astring"
+  "xapi-stdext-unix"
+  "xapi-stdext-threads"
+  "cmdliner"
+  "uuidm"
+]
+conflicts: "xcp-inventory" {!= "transition"}
 synopsis: "Library for accessing the xapi toolstack inventory file"
 description: """
 The inventory file provides global host identify information
