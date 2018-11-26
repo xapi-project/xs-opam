@@ -10,7 +10,8 @@ build: [[ "jbuilder" "build" "-p" name "-j" jobs ]]
 available: [ os = "linux" ]
 depends: [
   "ocaml"
-  "jbuilder" {build}
+  "dune" {build & >= "1.4" }
+  "odoc" {with-doc}
   "xapi-stdext-std"
   "xapi-stdext-unix"
   "forkexec"
