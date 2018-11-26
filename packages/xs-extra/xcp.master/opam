@@ -35,7 +35,7 @@ depends: [
   "xapi-stdext-monadic"
   "xapi-stdext-pervasives"
   "xapi-stdext-threads"
-  "xcp-inventory"
+  "xapi-inventory"
   "xmlm"
 ]
 synopsis: "Interface descriptions and common boilerplate for xapi services."
