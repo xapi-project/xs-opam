@@ -10,7 +10,7 @@ build: [
   ["jbuilder" "runtest" "-p" name "-j" jobs] {with-test}
 ]
 depends: [
-  "ocaml" {>= "4.01.0" & <= "4.07.0"}
+  "ocaml" {>= "4.01.0" }
   "jbuilder" {build}
   "ctypes" {>= "0.2.2"}
   "ctypes-foreign"

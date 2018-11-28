@@ -6,17 +6,13 @@
 
 set -e
 
-IMG='ocaml/opam2:debian-9-ocaml-4.06'
+IMG='ocaml/opam2:debian-9-ocaml-4.07'
 
 docker pull $IMG
 docker run --rm -iv $PWD:/mnt $IMG <<'EOF'
 set -e
 
-sudo apt-get install -qq -yy \
-  debianutils hwdata libdlm-dev libffi-dev libgmp-dev libnl-3-200   \
-  libnl-route-3-200 libpam-dev libpci-dev libssl-dev libsystemd-dev \
-  libxen-dev linux-libc-dev m4 perl pkg-config python uuid-dev
-
+sudo apt-get update
 opam repo remove --all default
 opam repo add xs-opam file:///mnt
 opam depext -vv -y xs-toolstack

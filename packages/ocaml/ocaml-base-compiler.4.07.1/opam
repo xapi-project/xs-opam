@@ -1,8 +1,8 @@
 opam-version: "2.0"
-synopsis: "Official 4.06.1 release"
+synopsis: "Official release 4.07.1"
 maintainer: "platform@lists.ocaml.org"
 depends: [
-  "ocaml" {= "4.06.1" & post}
+  "ocaml" {= "4.07.1" & post}
   "base-unix" {post}
   "base-bigarray" {post}
   "base-threads" {post}
@@ -28,6 +28,6 @@ build: [
 ]
 install: [make "install"]
 url {
-  src: "https://github.com/ocaml/ocaml/archive/4.06.1.tar.gz"
-  checksum: "md5=d02eb67b828de22c3f97d94b3c46acba"
+  src: "https://github.com/ocaml/ocaml/archive/4.07.1.tar.gz"
+  checksum: "md5=352fe8d46cb238a26aa10c38bad6ecb6"
 }
