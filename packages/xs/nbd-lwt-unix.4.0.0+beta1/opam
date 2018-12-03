@@ -17,7 +17,7 @@ depends: [
   "mirage-types-lwt" {>= "3.0.0"}
   "mirage-block-lwt"
   "mirage-block-unix"
-  "nbd"
+  "nbd" {>= "4.0.0"}
   "lwt_ssl"
   "ssl"
 ]
