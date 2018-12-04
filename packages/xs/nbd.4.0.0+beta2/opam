@@ -7,19 +7,20 @@ doc: "https://xapi-project.github.io/nbd/nbd/index.html"
 dev-repo: "git+https://github.com/xapi-project/nbd.git"
 bug-reports: "https://github.com/xapi-project/nbd/issues"
 
-build: [
-  ["jbuilder" "build" "-p" name "-j" jobs]
-  ["jbuilder" "runtest" "-p" name] {with-test}
-]
+build: ["dune" "build" "-p" name "-j" jobs]
+run-test: ["dune" "runtest" "-p" name "-j" jobs]
+
 depends: [
   "ocaml" {>= "4.03.0"}
-  "jbuilder" {build & >= "1.0+beta10"}
-  "ounit" {with-test}
+  "dune" {build}
+  "alcotest" {with-test}
+  "alcotest-lwt" {with-test}
+  "io-page-unix" {with-test}
   "cstruct" {>= "3.1.0"}
   "io-page"
   "mirage-block-lwt"
   "mirage-types-lwt" {>= "3.0.0"}
-  "lwt" {>= "2.7.0" & < "4.0.0"}
+  "lwt" {>= "2.7.0"}
   "lwt_log"
   "result"
   "rresult"
@@ -34,6 +35,6 @@ description: """
 This library allows applications to export and consume block
 devices using the NBD protocol (as used by Linux, qemu etc)"""
 url {
-  src: "https://github.com/xapi-project/nbd/archive/v4.0.0+beta1.tar.gz"
-  checksum: "md5=3d3b3cfc8193ab9b09a2c4a904e19195"
+  src: "https://github.com/xapi-project/nbd/archive/v4.0.0+beta2.tar.gz"
+  checksum: "md5=d9874a7743c1203dcca73e4853f61def"
 }
