@@ -31,6 +31,7 @@ synopsis: "Pure OCaml library for reading and writing .vhd format data"
 description:
   "It has a particular emphasis on efficient streaming and format conversion."
 url {
-  src: "https://github.com/mirage/ocaml-vhd/archive/v0.10.0.tar.gz"
-  checksum: "md5=6bc442a149c251e39f1f19c7735b0127"
+  src: "https://github.com/mirage/ocaml-vhd/archive/v0.11.0/ocaml-vhd-v0.11.0.tar.gz"
+  checksum: "md5=dd6dee9596e4fca2c46a5ae505bc45f4"
 }
+
