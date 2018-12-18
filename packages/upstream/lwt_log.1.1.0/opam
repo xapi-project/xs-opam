@@ -1,0 +1,22 @@
+opam-version: "2.0"
+name: "lwt_log"
+version: "1.1.0"
+synopsis: "Lwt logging library (deprecated)"
+maintainer: "Anton Bachin <antonbachin@yahoo.com>"
+authors: ["Shawn Wagner" "Jérémie Dimino"]
+license: "LGPL"
+homepage: "https://github.com/aantron/lwt_log"
+doc:
+  "https://github.com/aantron/lwt_log/blob/master/src/core/lwt_log_core.mli"
+bug-reports: "https://github.com/aantron/lwt_log/issues"
+depends: [
+  "ocaml"
+  "jbuilder" {build & >= "1.0+beta10"}
+  "lwt" {>= "4.0.0"}
+]
+build: ["jbuilder" "build" "-p" name "-j" jobs]
+dev-repo: "git+https://github.com/aantron/lwt_log.git"
+url {
+  src: "https://github.com/aantron/lwt_log/archive/1.1.0.tar.gz"
+  checksum: "md5=92142135d01a4d7e805990cc98653d55"
+}
