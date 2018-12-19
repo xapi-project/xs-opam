@@ -5,24 +5,25 @@ license: "ISC"
 homepage: "https://github.com/xapi-project/ezxenstore"
 bug-reports: "https://github.com/xapi-project/ezxenstore/issues"
 dev-repo: "git+https://github.com/xapi-project/ezxenstore.git"
-build: [[ "jbuilder" "build" "-p" name "-j" jobs ]]
-
+build: [[ "dune" "build" "-p" name "-j" jobs ]]
 depends: [
   "ocaml"
-  "jbuilder" {build}
+  "dune" {build & >= "1.4"}
   "cmdliner"
   "logs"
+  "uuidm"
   "xenctrl"
   "xenstore"
   "xenstore_transport"
 ]
 synopsis:
-  "An easy-to-use xenstore library with a simplified interface geared"
+  "An easy-to-use interface to xenstore"
 description: """
+An easy-to-use xenstore library with a simplified interface geared
 towards use within a daemon that maintains a single connection to
 xenstored."""
 url {
   src:
-    "https://github.com/xapi-project/ezxenstore/archive/v0.3.0/ezxenstore-0.3.0.tar.gz"
-  checksum: "md5=35f08b4fffeb54c14141634c488d9041"
+    "https://github.com/xapi-project/ezxenstore/archive/v0.3.1.tar.gz"
+  checksum: "md5=1240db91617d7343cff215f92c252f1c"
 }
