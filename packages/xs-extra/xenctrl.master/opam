@@ -24,6 +24,7 @@ depends: [
   "ocamlfind" {build}
   "lwt" {with-test}
   "cmdliner" {build}
+  "ocamlbuild"
 ]
 depexts: [
   ["libxen-dev" "uuid-dev"] {os-distribution = "debian"}
