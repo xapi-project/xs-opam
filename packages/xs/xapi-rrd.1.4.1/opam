@@ -8,12 +8,12 @@ tags: [
   "org:xapi-project"
 ]
 build: [
-  ["jbuilder" "build" "-p" name "-j" jobs]
-  ["jbuilder" "runtest" "-p" name] {with-test}
+  ["dune" "build" "-p" name "-j" jobs]
+  ["dune" "runtest" "-p" name] {with-test}
 ]
 depends: [
   "ocaml"
-  "jbuilder" {build & >= "1.0+beta10"}
+  "dune" {build & >= "1.4.0"}
   "base-bigarray"
   "base-unix"
   "rpc" {>= "1.9.51" & < "5.0.0"} | ("rpclib" & "ppx_deriving_rpc")
@@ -27,7 +27,6 @@ Round-Robin Databases (RRDs) are constant-space datastructures
 used for archiving historical data where the older data is stored
 at a lower resolution."""
 url {
-  src: "https://github.com/xapi-project/xcp-rrd/archive/v1.4.0/xcp-rrd-v1.4.0.tar.gz"
-  checksum: "md5=7afb6ea921a84a49555442a72fdf50b6"
+  src: "https://github.com/xapi-project/xcp-rrd/archive/v1.4.1.tar.gz"
+  checksum: "md5=53b8ddd018940ea893bc34bb4175105e"
 }
-
