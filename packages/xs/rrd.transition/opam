@@ -7,11 +7,7 @@ dev-repo: "git+https://github.com/xapi-project/xcp-rrd.git"
 tags: [
   "org:xapi-project"
 ]
-depends: ["ocaml" "rrd"]
+depends: ["ocaml" "xapi-rrd"]
 synopsis: "RRD library for use with xapi"
 description: """
-Round-Robin Databases (RRDs) are constant-space datastructures
-used for archiving historical data where the older data is stored
-at a lower resolution.
-
-Dummy package. Will have to become the main package in the future"""
+This package has been renamed to 'xapi-rrd' and can safely be removed"""
