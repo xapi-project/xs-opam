@@ -1,10 +1,11 @@
 opam-version: "2.0"
 maintainer: "tim@gfxmonk.net"
 homepage: "https://www.gnu.org/software/ncurses/"
+authors: "GNU Project"
 bug-reports: "https://github.com/ocaml/opam-repository/issues"
-dev-repo: "git+https://github.com/ocaml/opam-repository.git"
 license: "MIT"
-depends: ["ocaml" "conf-pkg-config"]
+build: ["pkg-config" "ncurses"] {os-distribution != "opensuse"}
+depends: ["conf-pkg-config" {build & os-distribution != "opensuse"}]
 depexts: [
   ["ncurses-dev"] {os-distribution = "debian"}
   ["ncurses-dev"] {os-distribution = "ubuntu"}
@@ -14,10 +15,11 @@ depexts: [
   ["ncurses-devel"] {os-distribution = "oraclelinux"}
   ["ncurses-devel"] {os-distribution = "centos"}
   ["ncurses-devel"] {os-distribution = "rhel"}
-  ["ncurses-devel"] {os-distribution = "opensuse"}
+  ["ncurses-devel"] {os-family = "suse"}
   ["ncurses"] {os-distribution = "archlinux"}
 ]
 available: os != "macos" & os != "freebsd" & os != "netbsd" & os != "openbsd"
 synopsis: "Virtual package relying on ncurses"
 description:
   "This package can only install if the ncurses library is installed on the system."
+flags: conf

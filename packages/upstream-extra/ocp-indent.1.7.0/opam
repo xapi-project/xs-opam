@@ -1,6 +1,5 @@
 opam-version: "2.0"
-name: "ocp-indent"
-version: "1.7.0"
+maintainer: "contact@ocamlpro.com"
 synopsis: "A simple tool to indent OCaml programs"
 description: """
 Ocp-indent is based on an approximate, tolerant OCaml parser and a simple stack
@@ -12,17 +11,24 @@ Includes:
 - An indentor program, callable from the command-line or from within editors
 - Bindings for popular editors
 - A library that can be directly used by editor writers, or just for
-  fault-tolerant/approximate parsing."""
-maintainer: "contact@ocamlpro.com"
+  fault-tolerant/approximate parsing.
+"""
 authors: [
   "Louis Gesbert <louis.gesbert@ocamlpro.com>"
   "Thomas Gazagnaire <thomas@gazagnaire.org>"
   "Jun Furuse"
 ]
-license: "LGPL"
-tags: ["org:ocamlpro" "org:typerex"]
 homepage: "http://www.typerex.org/ocp-indent.html"
 bug-reports: "https://github.com/OCamlPro/ocp-indent/issues"
+license: "LGPL"
+tags: ["org:ocamlpro" "org:typerex"]
+dev-repo: "git+https://github.com/OCamlPro/ocp-indent.git"
+build: [
+  ["dune" "build" "-p" name "-j" jobs]
+]
+run-test: [
+  ["dune" "runtest" "-p" name]
+]
 depends: [
   "ocaml"
   "dune" {build}
@@ -30,20 +36,18 @@ depends: [
   "ocamlfind"
   "base-bytes"
 ]
-build: ["dune" "build" "-p" name "-j" jobs]
-run-test: ["dune" "runtest" "-p" name]
-post-messages:
-  """
-This package requires additional configuration for use in editors. Install package 'user-setup', or manually:
+post-messages: [
+  "This package requires additional configuration for use in editors. Install package 'user-setup', or manually:
 
 * for Emacs, add these lines to ~/.emacs:
-  (add-to-list 'load-path "%{share}%/emacs/site-lisp")
+  (add-to-list 'load-path \"%{share}%/emacs/site-lisp\")
   (require 'ocp-indent)
 
 * for Vim, add this line to ~/.vimrc:
-  set rtp^="%{share}%/ocp-indent/vim\""""
-    {success & !user-setup:installed}
-dev-repo: "git+https://github.com/OCamlPro/ocp-indent.git"
+  set rtp^=\"%{share}%/ocp-indent/vim\"
+"
+  {success & !user-setup:installed}
+]
 url {
   src: "https://github.com/OCamlPro/ocp-indent/archive/1.7.0.tar.gz"
   checksum: [
