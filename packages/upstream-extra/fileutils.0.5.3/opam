@@ -22,11 +22,10 @@ depends: [
   "ocamlfind" {build}
   "ounit" {with-test & >= "2.0.0"}
 ]
-synopsis:
-  "Library to provide pure OCaml functions to manipulate real file (POSIX like) and filename."
+synopsis: "Functions to manipulate real file (POSIX like) and filename."
 flags: light-uninstall
 url {
   src:
-    "https://forge.ocamlcore.org/frs/download.php/1728/ocaml-fileutils-0.5.3.tar.gz"
+    "https://forge-static.ocamlcore.org/frs/download.php/1728/ocaml-fileutils-0.5.3.tar.gz"
   checksum: "md5=9b719b19b96525004c88bf7bc846fa1d"
 }
