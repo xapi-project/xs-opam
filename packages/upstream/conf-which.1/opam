@@ -8,7 +8,7 @@ build: [["which" "which"]]
 depexts: [
   ["which"] {os-distribution = "centos"}
   ["which"] {os-distribution = "fedora"}
-  ["which"] {os-distribution = "opensuse"}
+  ["which"] {os-family = "suse"}
   ["debianutils"] {os-distribution = "debian"}
   ["debianutils"] {os-distribution = "ubuntu"}
   ["which"] {os-distribution = "nixos"}
@@ -17,4 +17,4 @@ depexts: [
 synopsis: "Virtual package relying on which"
 description:
   "This package can only install if the which program is installed on the system."
-depends: ["ocaml"]
+flags: conf
