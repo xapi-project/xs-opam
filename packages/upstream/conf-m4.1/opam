@@ -13,11 +13,11 @@ depexts: [
   ["m4"] {os-distribution = "centos"}
   ["m4"] {os-distribution = "alpine"}
   ["m4"] {os-distribution = "nixos"}
-  ["m4"] {os-distribution = "opensuse"}
+  ["m4"] {os-family = "suse"}
   ["m4"] {os-distribution = "oraclelinux"}
   ["m4"] {os-distribution = "archlinux"}
 ]
 synopsis: "Virtual package relying on m4"
 description:
   "This package can only install if the m4 binary is installed on the system."
-depends: ["ocaml"]
+flags: conf
