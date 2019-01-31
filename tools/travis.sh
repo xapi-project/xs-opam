@@ -16,7 +16,8 @@ sudo apt-get update
 opam repo remove --all default
 opam repo add xs-opam file:///mnt
 opam depext -vv -y xs-toolstack
-opam install -j $(getconf _NPROCESSORS_ONLN) xs-toolstack
+# opam2 only runs tests for packages explicitly listed, so expand xs-toolstack
+opam list --required-by=xs-toolstack --short | xargs opam install -j $(getconf _NPROCESSORS_ONLN) --with-test
 EOF
 
 
