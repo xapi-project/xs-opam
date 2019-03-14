@@ -11,13 +11,14 @@ build:  [[ "jbuilder" "build" "-p" name "-j" jobs ]]
 depends: [
   "ocaml"
   "jbuilder" {build}
+  "base-unix"
 ]
-synopsis: "A deprecated collection of utility functions - Zerocheck module"
+synopsis: "A deprecated collection of utility functions - Date module"
 description: """
 This library is provided for a transitionary period only.
 No new code should use this library."""
 url {
   src:
-    "https://github.com/xapi-project/stdext/archive/v4.4.1/stdext-4.4.1.tar.gz"
-  checksum: "md5=e4140501af1811eb2c5c3312a4767ac4"
+    "https://github.com/xapi-project/stdext/archive/v4.5.0/stdext-4.5.0.tar.gz"
+  checksum: "md5=5838853646b7045972417444db6898ff"
 }
