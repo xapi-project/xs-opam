@@ -6,6 +6,9 @@ bug-reports: "https://github.com/ocaml/ocamlbuild/issues"
 license: "LGPL-2 with OCaml linking exception"
 doc: "https://github.com/ocaml/ocamlbuild/blob/master/manual/manual.adoc"
 dev-repo: "git+https://github.com/ocaml/ocamlbuild.git"
+synopsis:
+  "OCamlbuild is a build system with builtin rules to easily build most OCaml projects."
+
 build: [
   [
     make
@@ -19,22 +22,18 @@ build: [
     "OCAML_NATIVE=%{ocaml:native}%"
     "OCAML_NATIVE_TOOLS=%{ocaml:native}%"
   ]
-  [ make
-    "CHECK_IF_PREINSTALLED=false"
-    "check-if-preinstalled"
-    "all" "opam-install"
-  ]
+  [make "check-if-preinstalled" "all" "opam-install"]
 ]
+
 conflicts: [
   "base-ocamlbuild"
   "ocamlfind" {< "1.6.2"}
 ]
-synopsis:
-  "OCamlbuild is a build system with builtin rules to easily build most OCaml projects."
+
 depends: [
-  "ocaml" {>= "4.03" & < "4.08.0"}
+  "ocaml" {>= "4.03"}
 ]
 url {
-  src: "https://github.com/ocaml/ocamlbuild/archive/0.12.0.tar.gz"
-  checksum: "md5=442baa19470bd49150f153122e22907b"
+  src: "https://github.com/ocaml/ocamlbuild/archive/0.14.0.tar.gz"
+  checksum: "md5=a7bf2fe594cd16907807c756b14d501f"
 }
