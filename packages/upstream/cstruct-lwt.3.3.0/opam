@@ -7,22 +7,18 @@ homepage:     "https://github.com/mirage/ocaml-cstruct"
 license:      "ISC"
 dev-repo: "git+https://github.com/mirage/ocaml-cstruct.git"
 bug-reports:  "https://github.com/mirage/ocaml-cstruct/issues"
+doc: "https://mirage.github.io/ocaml-cstruct/"
 tags: [ "org:mirage" "org:ocamllabs" ]
 build: [
-  ["jbuilder" "subst" "-p" name "--name" name] {pinned}
-  ["jbuilder" "build" "-p" name "-j" jobs]
-  ["jbuilder" "runtest" "-p" name "-j" jobs] {with-test}
+  ["dune" "subst"] {pinned}
+  ["dune" "build" "-p" name "-j" jobs]
 ]
 depends: [
   "ocaml" {>= "4.03.0"}
-  "jbuilder" {build & >= "1.0+beta9"}
-  "cstruct" {>= "3.1.1"}
-  "ounit" {with-test}
-  "ppx_tools_versioned" {>= "5.0.1"}
-  "ocaml-migrate-parsetree"
-  "ppx_driver" {with-test & >= "v0.9.0"}
-  "ppx_sexp_conv" {with-test & < "v0.12"}
-  "cstruct-unix" {with-test}
+  "base-unix"
+  "lwt"
+  "cstruct" {>="3.2.0"}
+  "dune" {build & >= "1.0"}
 ]
 synopsis: "Access C-like structures directly from OCaml"
 description: """
@@ -31,6 +27,6 @@ structures directly from OCaml.  It supports both reading and writing to these
 structures, and they are accessed via the `Bigarray` module."""
 url {
   src:
-    "https://github.com/mirage/ocaml-cstruct/releases/download/v3.2.1/cstruct-3.2.1.tbz"
-  checksum: "md5=c1eb6a48f3d3b0b1e358f06a8c92a4c1"
+    "https://github.com/mirage/ocaml-cstruct/releases/download/v3.3.0/cstruct-v3.3.0.tbz"
+  checksum: "md5=7451389f3941d938575f8887c55c5e6b"
 }
