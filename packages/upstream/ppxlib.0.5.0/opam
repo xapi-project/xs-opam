@@ -7,18 +7,23 @@ dev-repo: "git+https://github.com/ocaml-ppx/ppxlib.git"
 doc: "https://ocaml-ppx.github.io/ppxlib/"
 license: "MIT"
 build: [
-  ["jbuilder" "build" "-p" name "-j" jobs]
+  ["dune" "subst"] {pinned}
+  ["dune" "build" "-p" name "-j" jobs]
+]
+run-test: [
+  ["dune" "runtest" "-p" name "-j" jobs] { ocaml >= "4.06" }
 ]
 depends: [
-  "base"                    {>= "v0.11.0" & < "v0.12"}
-  "jbuilder"                {build & >= "1.0+beta18.1"}
+  "ocaml"                   {>= "4.04.1"}
+  "base"                    {>= "v0.11.0"}
+  "dune"                    {build}
   "ocaml-compiler-libs"     {>= "v0.11.0"}
   "ocaml-migrate-parsetree" {>= "1.0.9"}
   "ppx_derivers"            {>= "1.0"}
-  "stdio"                   {>= "v0.11.0" & < "v0.12"}
-  "ocaml"                   {>= "4.04.1"}
+  "stdio"                   {>= "v0.11.0"}
+  "ocamlfind"               {with-test}
 ]
-
+synopsis: "Base library and tools for ppx rewriters"
 description: """
 A comprehensive toolbox for ppx development. It features:
 - a OCaml AST / parser / pretty-printer snapshot,to create a full
@@ -30,8 +35,7 @@ A comprehensive toolbox for ppx development. It features:
    OCaml AST in the OCaml syntax;
 - a generator of open recursion classes from type definitions.
 """
-
 url {
-  src: "https://github.com/ocaml-ppx/ppxlib/releases/download/0.3.1/ppxlib-0.3.1.tbz"
-  checksum: ["md5=d83dd03bc744651d4642b84063bffcf9"]
+  src: "https://github.com/ocaml-ppx/ppxlib/releases/download/0.5.0/ppxlib-0.5.0.tbz"
+  checksum: "md5=bb278ff6e819e0e4a4d8a005bb2512a4"
 }
