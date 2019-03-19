@@ -16,7 +16,6 @@ depends: [
   "rpc"
   "sha"
   "stunnel"
-  "xapi-stdext-base64"
   "xapi-stdext-date"
   "xapi-stdext-monadic"
   "xapi-stdext-pervasives"
