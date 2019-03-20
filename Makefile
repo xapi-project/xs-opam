@@ -14,12 +14,14 @@ archive: $(NAME).tar.gz
 $(NAME).tar.gz:
 	# don't package ocaml, do package cache
 	mv packages/ocaml .
+	mv packages/upstream-extra .
 	env OPAMFETCH=wget opam admin cache
 	git archive --format=tar.gz --prefix=$(NAME)/ HEAD > $@
 	tar zxf $@
 	cd $(NAME) && ln -fs ../cache .
 	tar czhf $@ $(NAME)
 	mv ocaml packages
+	mv upstream-extra packages
 
 clean:
 	rm -f  $(NAME).tar.gz
