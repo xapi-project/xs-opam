@@ -6,10 +6,10 @@ license: "LGPL-2.1 with OCaml linking exception"
 homepage: "https://github.com/xapi-project/ocaml-xapi-plugin"
 dev-repo: "git+https://github.com/xapi-project/ocaml-xapi-plugin.git"
 bug-reports: "https://github.com/xapi-project/ocaml-xapi-plugin/issues"
-build: [[ "jbuilder" "build" "-p" name "-j" jobs ]]
+build: [[ "dune" "build" "-p" name "-j" jobs ]]
 depends: [
   "ocaml"
-  "jbuilder" {build}
+  "dune" {build}
   "base-unix"
   "rpc"
 ]

@@ -15,6 +15,7 @@ depends: [
   "alcotest-lwt" {with-test}
   "cmdliner"
   "lwt" {>= "3.0.0"}
+  "lwt_log"
   "mirage-block-unix"
   "nbd-lwt-unix"
   "uri"
