@@ -4,7 +4,7 @@ authors:      ["Mindy Preston <meetup@yomimono.org>"]
 homepage:     "https://github.com/mirage/mirage-protocols"
 doc:          "https://mirage.github.io/mirage-protocols/"
 license:      "ISC"
-dev-repo: "git+https://github.com/mirage/mirage-protocols.git"
+dev-repo:     "git+https://github.com/mirage/mirage-protocols.git"
 bug-reports:  "https://github.com/mirage/mirage-protocols/issues"
 tags:         ["org:mirage"]
 
@@ -14,15 +14,16 @@ build: [
 ]
 
 depends: [
-  "ocaml" {>= "4.03.0"}
-  "jbuilder" {build & >= "1.0+beta9"}
-  "mirage-protocols" {>= "1.4.0"}
-  "ipaddr" {>= "2.0.0" & < "3.0.0"}
-  "lwt"
-  "cstruct" {>= "1.9.0"}
+  "ocaml" {>= "4.04.2"}
+  "jbuilder" {build & >="1.0+beta9"}
+  "mirage-device" {>= "1.0.0"}
+  "mirage-flow" {>= "1.2.0"}
+  "fmt"
+  "duration"
 ]
 synopsis: "MirageOS signatures for network protocols"
-description: """
+description: """\
+
 mirage-protocols provides a set of module types which libraries intended to be used as MirageOS network implementations should implement.
 
 The set of protocols defined is:
@@ -36,7 +37,6 @@ The set of protocols defined is:
 
 mirage-protocols is distributed under the ISC license."""
 url {
-  src:
-    "https://github.com/mirage/mirage-protocols/releases/download/v1.4.0/mirage-protocols-1.4.0.tbz"
-  checksum: "md5=3557203aa8557aa5d3ffe7a0c7583925"
+archive: "https://github.com/mirage/mirage-protocols/releases/download/v1.4.1/mirage-protocols-1.4.1.tbz"
+checksum: "5ad641be29e1e09b78fc3d1c2b3b9721"
 }
