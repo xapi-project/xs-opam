@@ -21,7 +21,7 @@ depends: [
   "base-unix"
   "dune" {build}
   "ocaml" {>= "4.02.0"}
-  "ocaml-migrate-parsetree" {>= "1.0.3"}
+  "ocaml-migrate-parsetree" {>= "1.1.0"}
   "ppx_tools_versioned"
 
   "ocamlfind" {dev}
@@ -44,6 +44,6 @@ Usage is simple - add package bisect_ppx when building tests, run your tests,
 then run the Bisect_ppx report tool on the generated visitation files."
 
 url {
-  src: "https://github.com/aantron/bisect_ppx/archive/1.4.0.tar.gz"
-  checksum: "md5=1d7990510bb53dd7ee13a5629ce2aa66"
+  src: "https://github.com/aantron/bisect_ppx/archive/1.4.1.tar.gz"
+  checksum: "md5=05d514706646adc947ed21e7e69a1cf1"
 }
