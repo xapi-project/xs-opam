@@ -23,6 +23,6 @@ This library is provided for a transitionary period only.
 No new code should use this library."""
 url {
   src:
-    "https://github.com/xapi-project/stdext/archive/v4.3.0/stdext-4.3.0.tar.gz"
-  checksum: "md5=bcf64a71c4a9a6bb7e9b38fe93ea7f8b"
+    "https://github.com/xapi-project/stdext/archive/v4.3.1/stdext-4.3.1.tar.gz"
+  checksum: "md5=b7de3f5073e19e060280d8af63ec24d8"
 }
