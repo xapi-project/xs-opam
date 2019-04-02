@@ -11,13 +11,18 @@ build:  [[ "jbuilder" "build" "-p" name "-j" jobs ]]
 depends: [
   "ocaml"
   "jbuilder" {build}
+  "base-unix"
+  "fd-send-recv" {>= "2.0.0"}
+  "xapi-stdext-pervasives"
+  "xapi-stdext-std"
 ]
-synopsis: "A deprecated collection of utility functions - Encodings module"
+synopsis:
+  "A deprecated collection of utility functions - Unix module extensions"
 description: """
 This library is provided for a transitionary period only.
 No new code should use this library."""
 url {
   src:
-    "https://github.com/xapi-project/stdext/archive/v4.5.0/stdext-4.5.0.tar.gz"
-  checksum: "md5=5838853646b7045972417444db6898ff"
+    "https://github.com/xapi-project/stdext/archive/v4.6.0/stdext-4.6.0.tar.gz"
+  checksum: "md5=1c5e7203d3b78d4e7ac0840089f9db9e"
 }
