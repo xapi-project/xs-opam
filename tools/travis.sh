@@ -6,7 +6,7 @@
 
 set -e
 
-IMG='ocaml/opam2:debian-9-ocaml-4.07'
+IMG='ocaml/opam2:debian-unstable'
 
 docker pull $IMG
 docker run --rm -iv $PWD:/mnt $IMG <<'EOF'
