@@ -4,17 +4,17 @@ authors: "xen-api@lists.xen.org"
 homepage: "https://xapi-project.github.io/"
 bug-reports: "https://github.com/xapi-project/xapi-test-utils/issues"
 dev-repo: "git://github.com/xapi-project/xapi-test-utils.git"
-build: [[ "jbuilder" "build" "-p" name "-j" jobs ]]
+build: [[ "dune" "build" "-p" name "-j" jobs ]]
 depends: [
   "ocaml"
-  "jbuilder" {build}
+  "dune" {build}
   "ounit"
   "xapi-stdext-monadic"
 ]
 tags: [ "org:xapi-project" ]
 synopsis: "An OCaml package with modules for easy unit testing"
+
 url {
-  src:
-    "https://github.com/xapi-project/xapi-test-utils/archive/v1.1.0.tar.gz"
-  checksum: "md5=2496f76831557a82c16f714f96abe7f4"
+   src: "https://github.com/xapi-project/xapi-test-utils/archive/v1.2.0.tar.gz"
+   checksum: "md5=4c208a41adec3002a96d18c419aab46e"
 }
