@@ -25,6 +25,6 @@ depends: [
 flags: plugin
 url {
   src:
-    "https://github.com/ocaml/opam-depext/releases/download/v1.1.2/opam-depext-full-1.1.2.tbz"
-  checksum: "md5=d71c9c0ada811ccf0669d09e1b0329da"
+    "https://github.com/ocaml/opam-depext/releases/download/v1.1.3/opam-depext-full-1.1.3.tbz"
+  checksum: "md5=72c082a0a6606398669b6fc2f4c4ae84"
 }
