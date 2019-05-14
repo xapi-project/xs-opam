@@ -19,6 +19,7 @@ depends: [
   "xen-gnt" {>= "3.0.0"}
   "xen-gnt-unix" {>= "3.0.0"}
   "ounit" {with-test}
+  "ezjsonm"
 ]
 synopsis: "Shared-memory protocols for exposing performance counters"
 description: """
