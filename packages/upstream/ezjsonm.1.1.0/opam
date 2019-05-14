@@ -10,7 +10,7 @@ depends: [
   "ocaml" {>="4.03.0"}
   "dune" {build & >= "1.0"}
   "alcotest" {with-test & >= "0.4.0"}
-  "jsonm" {>= "0.9.1"}
+  "jsonm" {>= "1.0.0"}
   "sexplib"
   "hex"
 ]
@@ -31,6 +31,6 @@ use it directly, rather than be saddled with the Ezjsonm interface.
 """
 url {
   src:
-    "https://github.com/mirage/ezjsonm/releases/download/v1.0.0/ezjsonm-v1.0.0.tbz"
-  checksum: "md5=bb8655912d114e093d7b5382df7f843a"
+    "https://github.com/mirage/ezjsonm/releases/download/v1.1.0/ezjsonm-v1.1.0.tbz"
+  checksum: "md5=e8f207c6cd2226b2c4784b1e56556797"
 }
