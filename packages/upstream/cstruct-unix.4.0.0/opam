@@ -2,7 +2,7 @@ opam-version: "2.0"
 maintainer:   "anil@recoil.org"
 authors:      ["Anil Madhavapeddy" "Richard Mortier" "Thomas Gazagnaire"
                "Pierre Chambart" "David Kaloper" "Jeremy Yallop" "David Scott"
-               "Mindy Preston" "Thomas Leonard" ]
+               "Mindy Preston" "Thomas Leonard" "Etienne Millon" ]
 homepage:     "https://github.com/mirage/ocaml-cstruct"
 license:      "ISC"
 dev-repo: "git+https://github.com/mirage/ocaml-cstruct.git"
@@ -15,10 +15,10 @@ build: [
   ["dune" "build" "-p" name "-j" jobs]
 ]
 depends: [
-  "ocaml" {>= "4.03.0"}
+  "ocaml" {>= "4.06.0"}
   "dune" {build & >= "1.0"}
   "base-unix"
-  "cstruct" {>="3.2.0"}
+  "cstruct" {=version}
 ]
 synopsis: "Access C-like structures directly from OCaml"
 
@@ -29,6 +29,6 @@ structures, and they are accessed via the `Bigarray` module.
 """
 url {
   src:
-    "https://github.com/mirage/ocaml-cstruct/releases/download/v3.3.0/cstruct-v3.3.0.tbz"
-  checksum: "md5=7451389f3941d938575f8887c55c5e6b"
+    "https://github.com/mirage/ocaml-cstruct/releases/download/v4.0.0/cstruct-v4.0.0.tbz"
+  checksum: "md5=e01a2036d1fb08d1d8e47d4f3e122bf0"
 }
