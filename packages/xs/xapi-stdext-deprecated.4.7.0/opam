@@ -12,13 +12,12 @@ depends: [
   "ocaml"
   "jbuilder" {build}
 ]
-synopsis:
-  "A deprecated collection of utility functions - Monadic modules (Monad, Listext, Either)"
+synopsis: "A deprecated collection of utility functions - Deprecated modules"
 description: """
 This library is provided for a transitionary period only.
 No new code should use this library."""
 url {
   src:
-    "https://github.com/xapi-project/stdext/archive/v4.6.0/stdext-4.6.0.tar.gz"
-  checksum: "md5=1c5e7203d3b78d4e7ac0840089f9db9e"
+    "https://github.com/xapi-project/stdext/archive/v4.7.0/stdext-4.7.0.tar.gz"
+  checksum: "md5=2e78036cc819b4e807e7147b6fb165d1"
 }
