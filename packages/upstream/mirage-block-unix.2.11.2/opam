@@ -20,9 +20,7 @@ depends: [
   "ounit" {with-test}
   "diet" {with-test}
   "fmt" {with-test}
-  "ppx_tools" {with-test}
-  "ppx_sexp_conv" {with-test}
-  "ppx_type_conv" {with-test}
+  "ppx_sexp_conv" {>= "v0.9.0" & with-test}
 ]
 build: [
   ["dune" "subst"] {pinned}
@@ -39,6 +37,9 @@ caching as possible.
 """
 url {
   src:
-    "https://github.com/mirage/mirage-block-unix/releases/download/v2.11.1/mirage-block-unix-v2.11.1.tbz"
-  checksum: "md5=95d3b8e9bd3c44c35ef454d38727afbd"
+    "https://github.com/mirage/mirage-block-unix/releases/download/v2.11.2/mirage-block-unix-v2.11.2.tbz"
+  checksum: [
+    "sha256=eb2a9896ca3eeae343891af1dee1031d658ee18843b437ea6a6900da8071a838"
+    "sha512=090b6d8e6951069048bad7b39f4887d5ea44cf17745d1d90d017232032d99d4dea8e0d9ed8a62efbb35e2e7e9905efec1ef296dd7d576c4c2e09c0ab9e63ec75"
+  ]
 }
