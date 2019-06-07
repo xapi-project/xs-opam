@@ -17,7 +17,7 @@ depends: [
   "dune" {build & >= "1.2.0"}
   "ounit" {with-test & >= "1.0.2"}
   "ppx_sexp_conv" {build & >= "v0.9.0"}
-  "re" {>= "1.7.2"}
+  "re" {>= "1.9.0"}
   "sexplib0"
   "stringext" {>= "1.4.0"}
 ]
@@ -28,6 +28,9 @@ build: [
 ]
 url {
   src:
-    "https://github.com/mirage/ocaml-uri/releases/download/v2.2.0/uri-v2.2.0.tbz"
-  checksum: "md5=e52e17fc6cc3491ab44994e6ebc5664c"
+    "https://github.com/mirage/ocaml-uri/releases/download/v2.2.1/uri-v2.2.1.tbz"
+  checksum: [
+    "sha256=f6348edbae9b9011b3f65e85e775f2cf7b87735c5ceb54d6962377daec3bf56b"
+    "sha512=28a4a659695d5d02f8a1b2965cbb05bc864bea5576c447707bb7db0e7411cafc78323ba6729e32b8b31fdc24a53e906274812d377e62829ebc9ebd6602331176"
+  ]
 }
