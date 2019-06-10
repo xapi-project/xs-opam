@@ -17,7 +17,5 @@ depends: [
   "opasswd"
 
   # TODO: remove these once we check they really are not used
-  "caml2html"
-  "cow"
   "xapi-stdext-bigbuffer"
 ]
