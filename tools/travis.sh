@@ -9,15 +9,15 @@ set -e
 IMG='ocaml/opam2:debian-unstable'
 
 docker pull $IMG
-docker run --rm -iv $PWD:/mnt $IMG <<'EOF'
+docker run --rm -iv $PWD:/mnt $IMG <<EOF
 set -e
-
+set -x
 sudo apt-get update
 opam repo remove --all default
 opam repo add xs-opam --all-switches file:///mnt
+opam switch ${OCAML_VERSION}
 opam depext -vv -y xs-toolstack
-opam switch 4.07
-opam install -j $(getconf _NPROCESSORS_ONLN) xs-toolstack
+opam install -j \$(getconf _NPROCESSORS_ONLN) xs-toolstack
 EOF
 
 

@@ -4,3 +4,11 @@ services:
   - docker
 script:
   - bash tools/travis.sh
+env:
+  matrix:
+  - OCAML_VERSION=4.07
+  - OCAML_VERSION=4.08
+matrix:
+  fast_finish: true
+  allow_failures:
+    - env: OCAML_VERSION=4.08
