@@ -14,7 +14,7 @@ set -e
 
 sudo apt-get update
 opam repo remove --all default
-opam repo add xs-opam file:///mnt
+opam repo add xs-opam --all-switches file:///mnt
 opam depext -vv -y xs-toolstack
 opam switch 4.07
 opam install -j $(getconf _NPROCESSORS_ONLN) xs-toolstack
