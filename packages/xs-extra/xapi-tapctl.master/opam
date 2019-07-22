@@ -15,7 +15,7 @@ depends: [
   "xapi-stdext-threads"
   "xapi-stdext-monadic"
   "xapi-forkexecd"
-  "rpc"
+  "rpc" | ("rpclib" & "ppx_deriving_rpc")
   "base-threads"
 ]
 synopsis: "A library to control tapdisk on a Xen host"

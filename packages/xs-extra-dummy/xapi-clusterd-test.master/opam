@@ -14,7 +14,7 @@ depends: [
   "ipaddr"
   "message-switch-lwt"
   "mtime" {>= "1.1.0"}
-  "rpc" {>= "1.9.53"}
+  "rpc" {>= "1.9.53"} | ("rpclib" & "ppx_deriving_rpc")
   "uuidm"
   "xapi-idl"
   "xen-api-client"

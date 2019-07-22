@@ -12,7 +12,7 @@ depends: [
   "io-page"
   "mtime"
   "ounit" {with-test}
-  "rpc"
+  "rpc" | ("rpclib" & "ppx_deriving_rpc")
   "systemd"
   "xapi-backtrace"
   "xapi-idl"

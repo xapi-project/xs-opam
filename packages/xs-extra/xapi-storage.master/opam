@@ -16,7 +16,7 @@ depends: [
   "lwt" {with-test}
   "rpclib" {with-test}
   "ppx_deriving_rpc" {with-test}
-  "rpc"
+  "rpc" | ("rpclib" & "ppx_deriving_rpc")
   "xmlm"
   "cmdliner"
 ]

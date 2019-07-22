@@ -13,7 +13,7 @@ depends: [
   "ocaml"
   "dune" {build}
   "astring"
-  "rpc"
+  "rpc" | ("rpclib" & "ppx_deriving_rpc")
   "sha"
   "stunnel"
   "xapi-stdext-date"
