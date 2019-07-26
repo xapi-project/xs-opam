@@ -6,9 +6,9 @@ bug-reports: "https://github.com/xapi-project/xapi-test-utils/issues"
 dev-repo: "git://github.com/xapi-project/xapi-test-utils.git"
 build: [[ "dune" "build" "-p" name "-j" jobs ]]
 depends: [
+  "alcotest"
   "ocaml"
   "dune" {build}
-  "ounit"
   "xapi-stdext-monadic"
 ]
 tags: [ "org:xapi-project" ]
