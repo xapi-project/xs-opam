@@ -1,7 +1,7 @@
 opam-version: "2.0"
 depends: [
   "ocaml"
-  "jbuilder" {build}
+  "dune" {build & >= "1.0"}
   "angstrom"
   "astring"
   "base64"
@@ -12,9 +12,12 @@ depends: [
   "fmt"
   "inotify"
   "ipaddr"
+  "ptime"
+  "re"
   "message-switch-lwt"
-  "mtime" {>= "1.1.0"}
-  "rpc" {>= "1.9.53"}
+  "mtime" { >= "1.1.0" }
+  "ppx_deriving_rpc"
+  "rpclib"
   "uuidm"
   "xapi-idl"
   "xen-api-client"

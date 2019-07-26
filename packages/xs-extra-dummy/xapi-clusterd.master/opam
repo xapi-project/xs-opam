@@ -1,12 +1,12 @@
 opam-version: "2.0"
 depends: [
   "ocaml"
-  "jbuilder" {build}
-  "alcotest" {build}
-  "alcotest-lwt" {build}
+  "dune" {build & >= "1.0"}
+  "alcotest" {test}
+  "alcotest-lwt" {test}
   "angstrom"
   "astring"
-  "base64"
+  "base64" { >= "3.1.0" }
   "cohttp"
   "cohttp-lwt"
   "cohttp-lwt-unix"
@@ -15,8 +15,9 @@ depends: [
   "inotify"
   "ipaddr"
   "message-switch-lwt"
-  "mtime" {>= "1.1.0"}
-  "rpc" {>= "1.9.53"}
+  "mtime" { >= "1.1.0" }
+  "ppx_deriving_rpc"
+  "rpclib"
   "uuidm"
   "xapi-idl"
 ]
