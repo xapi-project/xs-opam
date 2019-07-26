@@ -15,8 +15,8 @@ depends: [
   "alcotest" {with-test}
   "lwt" {with-test}
   "rpclib" {with-test}
-  "ppx_deriving_rpc" {with-test}
-  "rpc" | ("rpclib" & "ppx_deriving_rpc")
+  "ppx_deriving_rpc"
+  "rpclib"
   "xmlm"
   "cmdliner"
 ]

@@ -11,7 +11,8 @@ depends: [
   "ocaml"
   "jbuilder" {build}
   "netlink"
-  "rpc" | ("rpclib" & "ppx_deriving_rpc")
+  "ppx_deriving_rpc"
+  "rpclib"
   "systemd"
   "xapi-forkexecd"
   "xapi-idl"

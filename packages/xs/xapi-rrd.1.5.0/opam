@@ -16,7 +16,8 @@ depends: [
   "dune" {build & >= "1.4.0"}
   "base-bigarray"
   "base-unix"
-  "rpc" {>= "1.9.51" & < "5.0.0"} | ("rpclib" & "ppx_deriving_rpc")
+  "ppx_deriving_rpc"
+  "rpclib"
   "xmlm"
   "uuidm"
   "ounit" {with-test}

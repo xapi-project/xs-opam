@@ -9,7 +9,8 @@ depends: [
   "ocaml"
   "dune" {build & >= "1.0+beta10"}
   "astring"
-  "rpc" | ("rpclib" & "ppx_deriving_rpc")
+  "ppx_deriving_rpc"
+  "rpclib"
   "xapi-forkexecd"
   "xapi-stdext-pervasives"
   "xapi-stdext-std"

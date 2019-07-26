@@ -16,7 +16,8 @@ depends: [
   "ipaddr"
   "message-switch-lwt"
   "mtime" { >= "1.1.0" }
-  "rpc" { >= "1.9.53" } | ("rpclib" & "ppx_deriving_rpc")
+  "ppx_deriving_rpc"
+  "rpclib"
   "uuidm"
   "xapi-idl"
 ]

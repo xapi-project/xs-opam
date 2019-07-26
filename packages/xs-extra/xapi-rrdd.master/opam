@@ -12,7 +12,8 @@ depends: [
   "io-page"
   "mtime"
   "ounit" {with-test}
-  "rpc" | ("rpclib" & "ppx_deriving_rpc")
+  "ppx_deriving_rpc"
+  "rpclib"
   "systemd"
   "xapi-backtrace"
   "xapi-idl"
