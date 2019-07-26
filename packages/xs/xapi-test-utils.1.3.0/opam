@@ -15,6 +15,6 @@ tags: [ "org:xapi-project" ]
 synopsis: "An OCaml package with modules for easy unit testing"
 
 url {
-   src: "https://github.com/xapi-project/xapi-test-utils/archive/v1.2.0.tar.gz"
-   checksum: "md5=4c208a41adec3002a96d18c419aab46e"
+   src: "https://github.com/xapi-project/xapi-test-utils/archive/v1.3.0.tar.gz"
+   checksum: "md5=cc131280bf9d5abb9ca00412931c7aec"
 }
