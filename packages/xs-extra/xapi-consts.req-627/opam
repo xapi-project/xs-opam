@@ -9,27 +9,11 @@ build: [[ "dune" "build" "-p" name ]]
 depends: [
   "ocaml"
   "dune" {build & >= "1.4"}
-  "astring"
-  "http-svr"
-  "ocaml-migrate-parsetree"
-  "ppx_deriving_rpc"
-  "rpclib"
-  "sexpr"
-  "base-threads"
-  "uuid"
-  "uuidm"
-  "xapi-consts"
-  "xapi-datamodel"
-  "xapi-stdext-date"
-  "xapi-stdext-pervasives"
-  "xapi-stdext-std"
-  "xapi-stdext-unix"
-  "xapi-idl"
 ]
 synopsis: "The xapi toolstack daemon which implements the XenAPI"
 description: """
 This daemon exposes the XenAPI and is used by clients such as 'xe'
 and 'XenCenter' to manage clusters of Xen-enabled hosts."""
 url {
-  src: "https://github.com/xapi-project/xen-api/archive/master/master.tar.gz"
+  src: "https://github.com/xapi-project/xen-api/archive/REQ-627/REQ-627.tar.gz"
 }
