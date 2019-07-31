@@ -4,3 +4,11 @@ services:
   - docker
 script:
   - bash tools/travis.sh
+matrix:
+  include:
+    - env: OPAMWITHTEST=false
+    - env: OPAMWITHTEST=true
+    - env: OPAMWITHTEST=true RECURSIVE=--recursive
+  fast_finish: true
+  allow_failures:
+    - env: OPAMWITHTEST=true RECURSIVE=--recursive
