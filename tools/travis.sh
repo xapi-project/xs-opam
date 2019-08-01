@@ -13,7 +13,7 @@ if [ "${OPAMWITHTEST}" = "true" ]; then
     # opam 2.x only tests packages listed on the cmdline, unlike opam 1.x
     INSTALL="opam list ${RECURSIVE} -s --required-by xs-toolstack | xargs opam install -t"
 else
-    INSTALL="opam install -j $(getconf _NPROCESSORS_ONLN) xs-toolstack"
+    INSTALL="opam install xs-toolstack"
 fi
 
 docker run --rm -iv $PWD:/mnt $IMG <<EOF
