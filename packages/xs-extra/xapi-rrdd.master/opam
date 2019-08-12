@@ -1,13 +1,19 @@
 opam-version: "2.0"
 maintainer: "xen-api@lists.xen.org"
+authors:  "xen-api@lists.xen.org"
+homepage: "https://github.com/xapi-project/xcp-rrdd"
+bug-reports: "https://github.com/xapi-project/xcp-rrdd/issues"
+dev-repo: "git+https://github.com/xapi-project/xcp-rrdd.git"
 build: [
-  ["jbuilder" "build" "-p" name "-j" jobs]
-  ["jbuilder" "runtest" "-p" name] {with-test}
+  ["dune" "build" "-p" name "-j" jobs]
+  ["dune" "runtest" "-p" name] {with-test}
 ]
 depends: [
   "ocaml" {>= "4.02.0"}
-  "jbuilder" {build & >= "1.0+beta10"}
+  "dune" {build}
   "astring"
+  "gzip"
+  "http-svr"
   "inotify"
   "io-page"
   "mtime"
@@ -15,9 +21,10 @@ depends: [
   "ppx_deriving_rpc"
   "rpclib"
   "systemd"
+  "ezxenstore"
+  "uuid"
   "xapi-backtrace"
   "xapi-idl"
-  "xapi-libs-transitional"
   "xapi-rrd"
   "xapi-rrd-transport"
   "xapi-stdext-monadic"

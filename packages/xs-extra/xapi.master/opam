@@ -12,6 +12,7 @@ depends: [
   "ocaml"
   "dune" {build & >= "1.4"}
   "alcotest"
+  "base64"
   "cdrom"
   "ctypes"
   "ctypes-foreign"
@@ -53,7 +54,6 @@ depends: [
   "xapi-xenopsd"
   "xapi-idl"
   "xapi-inventory"
-  "xenctrl"
   "xml-light2"
   "yojson"
   "zstd"
