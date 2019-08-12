@@ -1,25 +1,29 @@
 opam-version: "2.0"
 maintainer: "Daniel Bünzli <daniel.buenzl i@erratique.ch>"
-authors: [ "Daniel Bünzli <daniel.buenzl i@erratique.ch>" ]
-homepage: "http://erratique.ch/software/mtime"
-doc: "http://erratique.ch/software/mtime"
-dev-repo: "git+http://erratique.ch/repos/mtime.git"
+authors: [ "The mtime programmers" ]
+homepage: "https://erratique.ch/software/mtime"
+doc: "https://erratique.ch/software/mtime"
+dev-repo: "git+https://erratique.ch/repos/mtime.git"
 bug-reports: "https://github.com/dbuenzli/mtime/issues"
 tags: [ "time" "monotonic" "system" "org:erratique" ]
 license: "ISC"
-depends: [
+depends:
+[
   "ocaml" {>= "4.03.0"}
   "ocamlfind" {build}
   "ocamlbuild" {build}
   "topkg" {build}
 ]
 depopts: [ "js_of_ocaml" ]
+conflicts: ["js_of_ocaml" {<= "3.3.0"} ]
 build: [[
    "ocaml" "pkg/pkg.ml" "build"
    "--pinned" "%{pinned}%"
    "--with-js_of_ocaml" "%{js_of_ocaml:installed}%" ]]
-synopsis: "Monotonic wall-clock time for OCaml"
-description: """
+
+synopsis: """Monotonic wall-clock time for OCaml"""
+description: """\
+
 Mtime has platform independent support for monotonic wall-clock time
 in pure OCaml. This time increases monotonically and is not subject to
 operating system calendar time adjustments. The library has types to
@@ -32,8 +36,9 @@ Mtime has a no dependency. Mtime_clock depends on your system library.
 The optional JavaScript support depends on [js_of_ocaml][jsoo]. Mtime
 and its libraries are distributed under the ISC license.
 
-[jsoo]: http://ocsigen.org/js_of_ocaml/"""
+[jsoo]: http://ocsigen.org/js_of_ocaml/
+"""
 url {
-  src: "http://erratique.ch/software/mtime/releases/mtime-1.1.0.tbz"
-  checksum: "md5=2935fe4a36b721735f60c9c65ad63a26"
+archive: "https://erratique.ch/software/mtime/releases/mtime-1.2.0.tbz"
+checksum: "f3f4c1333c0f74fc27b05c35b9c0dab9"
 }
