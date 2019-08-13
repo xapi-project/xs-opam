@@ -66,5 +66,15 @@ xapi-idl                  $XAPI/xcp-idl
 xapi-tapctl               $XAPI/tapctl"
 
 echo "$MAP" | while read -r opam repo; do
-  curl -L https://raw.githubusercontent.com/"$repo"/master/"$opam".opam > "$EXTRA/$opam.master/opam"
+  opam_file="$EXTRA/$opam.master/opam"
+  url_source="\
+url {
+  src: \"https://github.com/$repo/archive/master.tar.gz\"
+}"
+
+  curl -L https://raw.githubusercontent.com/"$repo"/master/"$opam".opam > "$opam_file"
+  # do not add the field if it's already in the opam file
+  if ! grep -Fq "url {" "$opam_file"; then
+    echo "$url_source" >> "$opam_file"
+  fi
 done
