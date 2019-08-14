@@ -23,6 +23,7 @@ depends: [
   "sha1"
   "stunnel"
   "uuid"
+  "varstored-guard"
   "vhd-tool"
   "vncproxy"
   "wsproxy"
