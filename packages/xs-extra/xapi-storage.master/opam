@@ -27,6 +27,5 @@ depexts: [
 ]
 synopsis: "Code and documentation generator for the Xapi storage interface"
 url {
-  src:
-    "https://github.com/xapi-project/xapi-storage/archive/master/master.tar.gz"
+  src: "https://github.com/xapi-project/xapi-storage/archive/master.tar.gz"
 }
