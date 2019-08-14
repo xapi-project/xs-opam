@@ -30,6 +30,5 @@ depends: [
 synopsis:
   "Xen-API client library for remotely-controlling an XCP or XenServer host"
 url {
-  src:
-    "https://github.com/xapi-project/xen-api-client/archive/master/master.tar.gz"
+  src: "https://github.com/xapi-project/xen-api-client/archive/master.tar.gz"
 }

@@ -19,7 +19,6 @@ depends: [
   "xapi-stdext-unix"
   "cohttp" {>= "0.11.0"}
   "uri"
-  "ppx_deriving_rpc"
   "re"
   "rpclib"
   "xapi-idl"

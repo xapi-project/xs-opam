@@ -11,11 +11,9 @@ depends: [
   "ocaml"
   "dune" {build}
   "base-unix"
-  "ppx_deriving_rpc"
   "rpclib"
 ]
 synopsis: "Library to simplify writing xapi plugins in OCaml"
 url {
-  src:
-    "https://github.com/xapi-project/ocaml-xapi-plugin/archive/master/master.tar.gz"
+  src: "https://github.com/xapi-project/ocaml-xapi-plugin/archive/master.tar.gz"
 }
