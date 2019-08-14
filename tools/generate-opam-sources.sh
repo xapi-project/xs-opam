@@ -5,10 +5,13 @@
 EXTRA="packages/xs-extra"
 XAPI="xapi-project"
 XSER="xenserver"
+LIND='lindig'
 
 MAP="\
 nbd-tool                  $XAPI/nbd
 rrd2csv                   $XSER/rrd2csv
+rrddump                   $XAPI/rrddump
+varstored-guard           $XAPI/varstored-guard
 xen-api-client-lwt        $XAPI/xen-api-client
 xen-api-client            $XAPI/xen-api-client
 xen-api-client-async      $XAPI/xen-api-client
@@ -50,6 +53,7 @@ pciutil                   $XAPI/xen-api-libs-transitional
 stunnel                   $XAPI/xen-api-libs-transitional
 gzip                      $XAPI/xen-api-libs-transitional
 sha1                      $XAPI/xen-api-libs-transitional
+xapi-compression          $XAPI/xen-api-libs-transitional
 xml-light2                $XAPI/xen-api-libs-transitional
 zstd                      $XAPI/xen-api-libs-transitional
 rrdd-plugin               $XAPI/ocaml-rrdd-plugin
@@ -58,6 +62,7 @@ xapi-rrd-transport-utils  $XAPI/rrd-transport
 xapi-rrd-transport        $XAPI/rrd-transport
 xapi-rrdd                 $XAPI/xcp-rrdd
 rrd-transport             $XAPI/rrd-transport
+xenctrl                   $LIND/xenctrl
 xenops                    $XAPI/xenops
 xapi-xenops               $XAPI/xenops
 xapi-xenops-utils         $XAPI/xenops
