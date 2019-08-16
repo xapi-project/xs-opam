@@ -51,3 +51,20 @@ Travis builds the entire universe represented by this Opam repository.
 [OCaml]:  http:/ocaml.org
 [Travis]: https://travis-ci.org/xapi-project/xs-opam
 
+### Using it on your travis builds
+
+Load the config on the install step for .travis-docker.sh at install time, then run the script for testing your package:
+```
+language: c
+sudo: required
+service: docker
+install:
+  - wget https://raw.githubusercontent.com/ocaml/ocaml-ci-scripts/master/.travis-docker.sh
+  - wget https://raw.githubusercontent.com/xapi-project/xs-opam/master/tools/xs-opam-ci.env
+  - source xs-opam-ci.env
+script: bash -ex .travis-docker.sh
+env:
+  global:
+    - PINS="EXAMPLE:."
+    - PACKAGE="EXAMPLE"
+```
