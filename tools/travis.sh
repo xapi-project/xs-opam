@@ -16,12 +16,16 @@ else
     INSTALL="opam install xs-toolstack"
 fi
 
+if [ "${OCAML_VERSION}" = "" ]; then
+    OCAML_VERSION="4.07"
+fi
+
 docker run --rm -iv $PWD:/mnt $IMG <<EOF
 set -e
 sudo apt-get update
 opam repo remove --all default
 opam repo add xs-opam --all-switches file:///mnt
-opam switch 4.07
+opam switch ${OCAML_VERSION}
 opam depext -vv -y xs-toolstack
 ${INSTALL}
 EOF
