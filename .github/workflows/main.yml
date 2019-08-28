@@ -1,0 +1,23 @@
+name: xs-toolstack build
+
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+    strategy:
+      matrix:
+        env: [OPAMWITHTEST: false,
+              OPAMWITHTEST: true,
+              { OPAMWITHTEST: true,
+                RECURSIVE: --recursive
+              },
+              { OPAMWITHTEST: true,
+                OCAML_VERSION: 4.09
+              }
+             ]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Build the whole xs-toolstack
+        run: bash tools/travis.sh
