@@ -15,8 +15,8 @@ build: [
 ]
 
 depends:   [
-  "ocaml" {>= "4.04.2"}
-  "dune" {build & >= "1.1.0"}
+  "ocaml" {>= "4.05.0"}
+  "dune" {>= "1.1.0"}
   "lwt"
   "cstruct" {>="3.2.1"}
   "ipaddr" {>= "3.0.0"}
@@ -48,6 +48,9 @@ for several that are left abstract in `mirage-types`:
 """
 url {
   src:
-    "https://github.com/mirage/mirage/releases/download/v3.5.0/mirage-v3.5.0.tbz"
-  checksum: "md5=4254a635bbf4744bb8a7d1d1cc4011b4"
+    "https://github.com/mirage/mirage/releases/download/v3.5.2/mirage-v3.5.2.tbz"
+  checksum: [
+    "sha256=5d8afad75900edd69fcd7c8e77662e9281884358bac4e85c411b37093f6838e0"
+    "sha512=a4933b9834ea83c7b21a82d97e3e3869f652f946bf8af878ff972f673e8155ee65df345740afbd11a43d23851970c74c5b552d295e5418b2e06b5467b4a8decc"
+  ]
 }
