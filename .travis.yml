@@ -9,6 +9,7 @@ matrix:
   include:
     - env: OPAMWITHTEST=false
     - env: OPAMWITHTEST=true
+    - env: OPAMWITHTEST=true OCAML_VERSION=4.08
     - env: OPAMWITHTEST=true RECURSIVE=--recursive
   allow_failures:
     - env: OPAMWITHTEST=true RECURSIVE=--recursive

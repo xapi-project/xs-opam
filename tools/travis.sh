@@ -21,7 +21,7 @@ set -e
 sudo apt-get update
 opam repo remove --all default
 opam repo add xs-opam --all-switches file:///mnt
-opam switch 4.07
+opam switch ${OCAML_VERSION:-4.07}
 opam depext -vv -y xs-toolstack
 ${INSTALL}
 EOF
