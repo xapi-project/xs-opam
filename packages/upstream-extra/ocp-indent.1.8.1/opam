@@ -20,18 +20,18 @@ authors: [
 ]
 homepage: "http://www.typerex.org/ocp-indent.html"
 bug-reports: "https://github.com/OCamlPro/ocp-indent/issues"
-license: "LGPL"
+license: "LGPL-2.1-only with OCaml-LGPL-linking-exception"
 tags: ["org:ocamlpro" "org:typerex"]
 dev-repo: "git+https://github.com/OCamlPro/ocp-indent.git"
 build: [
   ["dune" "build" "-p" name "-j" jobs]
 ]
 run-test: [
-  ["dune" "runtest" "-p" name]
+  ["dune" "runtest" "-p" name "-j" jobs]
 ]
 depends: [
   "ocaml"
-  "dune" {build}
+  "dune" {>= "1.0"}
   "cmdliner" {>= "1.0.0"}
   "ocamlfind"
   "base-bytes"
@@ -49,9 +49,9 @@ post-messages: [
   {success & !user-setup:installed}
 ]
 url {
-  src: "https://github.com/OCamlPro/ocp-indent/archive/1.7.0.tar.gz"
+  src: "https://github.com/OCamlPro/ocp-indent/archive/1.8.1.tar.gz"
   checksum: [
-    "md5=3bc327e38f453f38494098725c97d2cb"
-    "sha512=5b28ae8695612c95cb0f5748de9b9f01d8ef4ad18b31340dc526ccae5fb1b6ee7e12024ff1beb817a43796183a83bca144222ca2d77d7750f2ff56108b5fa350"
+    "md5=a62d50b18ded0645b3350fdc25910e87"
+    "sha512=9257017fd5013687e453416107a763d807fd1b27a02998b6ca99b8e554747c5f2df78c2d22f0d57594e7eea76854ff6b8186ee530657ee1b33d2443630afef2e"
   ]
 }
