@@ -11,13 +11,15 @@ build: [
 depends: [
   "ocaml"
   "dune" {build & >= "1.4"}
-  "alcotest"
+  "alcotest" {with-test}
+  "angstrom"
   "base64"
   "cdrom"
   "ctypes"
   "ctypes-foreign"
   "domain-name"
   "ezxenstore"
+  "fmt" {with-test}
   "http-svr"
   "message-switch-unix"
   "mtime"
