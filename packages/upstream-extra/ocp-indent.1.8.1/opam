@@ -51,7 +51,7 @@ post-messages: [
 url {
   src: "https://github.com/OCamlPro/ocp-indent/archive/1.8.1.tar.gz"
   checksum: [
-    "md5=a62d50b18ded0645b3350fdc25910e87"
-    "sha512=9257017fd5013687e453416107a763d807fd1b27a02998b6ca99b8e554747c5f2df78c2d22f0d57594e7eea76854ff6b8186ee530657ee1b33d2443630afef2e"
+    "md5=70db6649a8c08a682ad63730c9752e31"
+    "sha512=565353de333dd44375366fff75e85a6256c3cd9ff52b3db79803141f975e77cda04dfe32f5e0f2d4c82c59be8f04e9c2bf4d066b113b2cdf267f4c3dcfa401da"
   ]
 }
