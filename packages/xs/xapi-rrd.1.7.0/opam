@@ -20,8 +20,9 @@ depends: [
   "rpclib"
   "xmlm"
   "uuidm"
-  "ounit" {with-test}
   "ezjsonm"
+  "alcotest" {with-test}
+  "crowbar" {with-test}
 ]
 synopsis: "RRD library for use with xapi"
 description: """
@@ -29,6 +30,6 @@ Round-Robin Databases (RRDs) are constant-space datastructures
 used for archiving historical data where the older data is stored
 at a lower resolution."""
 url {
-  src: "https://github.com/xapi-project/xcp-rrd/archive/v1.6.0.tar.gz"
-  checksum: "md5=cf0585e055365404513235a1bd330a98"
+  src: "https://github.com/xapi-project/xcp-rrd/archive/v1.7.0.tar.gz"
+  checksum: "md5=66b1bf0bf731b79d4cc5320a842ce555"
 }
