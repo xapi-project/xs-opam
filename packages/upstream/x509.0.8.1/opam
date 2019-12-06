@@ -12,14 +12,14 @@ homepage: "https://github.com/mirleft/ocaml-x509"
 doc: "https://mirleft.github.io/ocaml-x509/doc"
 bug-reports: "https://github.com/mirleft/ocaml-x509/issues"
 depends: [
-  "ocaml" {>= "4.04.2"}
+  "ocaml" {>= "4.05.0"}
   "dune" {>= "1.2"}
   "cstruct" {>= "4.0.0"}
   "asn1-combinators" {>= "0.2.0"}
   "ptime"
   "nocrypto" {>= "0.5.3"}
   "rresult"
-  "fmt"
+  "fmt" {>= "0.8.7"}
   "alcotest" {with-test}
   "cstruct-unix" {with-test & >= "3.0.0"}
   "gmap" {>= "0.3.0"}
@@ -43,9 +43,9 @@ namely PKCS 1, PKCS 7, PKCS 8, PKCS 9 and PKCS 10.
 """
 url {
   src:
-    "https://github.com/mirleft/ocaml-x509/releases/download/v0.7.1/x509-v0.7.1.tbz"
+    "https://github.com/mirleft/ocaml-x509/releases/download/v0.8.1/x509-v0.8.1.tbz"
   checksum: [
-    "sha256=3cc0aecd83aee1be52caf52483608279e3d6ce5ded6e6741c49cbb50dba3d342"
-    "sha512=10bea21d06fe67a7eb9e0eca82a603f706529eaaed85206ab0e4f469b624ac9d69045b8fed79f345b1ff3f9dc2bb1ef6acea05ff7540d08880d33ea0a1ecc009"
+    "sha256=a586b925fe7e84b1a5833dacf66a920967683cf8aab21d7291a3074630e57880"
+    "sha512=e355420d608eb7840a64e0fe673cef459fc377163801ce3cca4f0dfb4b3f294c6d2273442b475aa01b4660362c987e81c363de2de602a1a38ab3b143118b9cf1"
   ]
 }
