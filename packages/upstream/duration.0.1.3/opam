@@ -7,7 +7,7 @@ doc: "https://hannesm.github.io/duration/doc"
 bug-reports: "https://github.com/hannesm/duration/issues"
 depends: [
   "ocaml" {>= "4.04.2"}
-  "dune" {build}
+  "dune" {>= "1.0"}
   "alcotest" {with-test & >= "0.8.1"}
 ]
 build: [
@@ -24,6 +24,9 @@ on negative or out of bound input.
 """
 url {
   src:
-    "https://github.com/hannesm/duration/releases/download/0.1.2/duration-0.1.2.tbz"
-  checksum: "md5=2fca16d20fe9413948a309084ac66261"
+    "https://github.com/hannesm/duration/releases/download/0.1.3/duration-0.1.3.tbz"
+  checksum: [
+    "sha256=b0a41b0487b79d1e6447bbb048a32447684b296b72e5de767a28d10bbd023955"
+    "sha512=e7c0270f9e32adecee3c1e25e25c560f646360f146162a66ef15c7231b991cb746178ab806c35feb3494b78f978659db83e9c895329886e76c09f8a0facbd0f2"
+  ]
 }
