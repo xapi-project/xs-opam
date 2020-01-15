@@ -30,6 +30,9 @@ build: [
   ["dune" "build" "-p" name "-j" jobs]
   ["dune" "runtest" "-p" name "-j" jobs] {with-test}
 ]
+patches: [
+  "0001-signature-algorithm.patch"
+]
 dev-repo: "git+https://github.com/mirleft/ocaml-x509.git"
 synopsis: "Public Key Infrastructure (RFC 5280, PKCS) purely in OCaml"
 description: """
@@ -41,6 +44,12 @@ The Public Key Cryptography Standards (PKCS) defines encoding and decoding
 (in ASN.1 DER and PEM format), which is also implemented by this library -
 namely PKCS 1, PKCS 7, PKCS 8, PKCS 9 and PKCS 10.
 """
+extra-files: [
+  [
+    "0001-signature-algorithm.patch"
+    "sha256=6ee8a3d8b758c7e4d021813665f37d492ba7e4d0ce245d972dbfcf073cd9bcc3"
+  ]
+]
 url {
   src:
     "https://github.com/mirleft/ocaml-x509/releases/download/v0.8.1/x509-v0.8.1.tbz"
