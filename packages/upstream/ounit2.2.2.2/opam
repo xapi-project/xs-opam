@@ -26,9 +26,9 @@ frameworks.
 """
 url {
   src:
-    "https://github.com/gildor478/ounit/releases/download/v2.2.1/ounit-v2.2.1.tbz"
+    "https://github.com/gildor478/ounit/releases/download/v2.2.2/ounit-v2.2.2.tbz"
   checksum: [
-    "sha256=db781e8c3cddb2a9be6e0c43b1cd24217d4ce19a4e0c7efe86fd67aca8895e39"
-    "sha512=7448a52ffd05f4f05eb5410ad696a8eeb0d2f02f1a104ad91f6490b5b9b901e40a315222ef43612522d9a177a68d1798b401255aadc66f1b45d75abd1744ea37"
+    "sha256=53439ae8958d4016afd596d7afbe0b613163533761253e8c781d7afe3d6b9dc0"
+    "sha512=24c56141c9063c81e9cd193f9b927f01766e344bd8fbddd702fe1a2765e1bf626082d7b0b29704e1c86ce6eb67493d1f70c0a454e39c6e79209820d0e60db9bd"
   ]
 }
