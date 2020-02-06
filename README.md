@@ -56,7 +56,6 @@ Travis builds the entire universe represented by this Opam repository.
 Load the config on the install step for .travis-docker.sh at install time, then run the script for testing your package:
 ```
 language: c
-sudo: required
 service: docker
 install:
   - wget https://raw.githubusercontent.com/ocaml/ocaml-ci-scripts/master/.travis-docker.sh
@@ -66,5 +65,6 @@ script: bash -ex .travis-docker.sh
 env:
   global:
     - PINS="EXAMPLE:."
+  jobs:
     - PACKAGE="EXAMPLE"
 ```
