@@ -6,17 +6,26 @@ license: "LGPL-2.1 with OCaml linking exception"
 homepage: "https://github.com/xenserver/rrdd-plugins"
 bug-reports: "https://github.com/xenserver/rrdd-plugins/issues"
 dev-repo: "git://github.com/xenserver/rrdd-plugins"
+build: [[ "dune" "build" "-p" name "-j" jobs ]]
+synopsis: "Plugins registering to the RRD daemon and exposing various metrics"
 depends: [
   "ocaml"
-  "jbuilder" {build}
+  "dune" {build}
+  "base-threads"
+  "base-unix"
   "cstruct-unix"
+  "ezxenstore"
+  "inotify"
   "rrdd-plugin"
+  "uuid"
   "xapi-libs-transitional"
   "xapi-stdext-std"
   "xapi-stdext-unix"
-  "base-threads"
-  "ezxenstore"
-  "xenstore"
-  "xenops"
   "xenctrl"
+  "xenops"
+  "xenstore"
+  "mtime"
 ]
+url {
+  src: "https://github.com/xenserver/rrdd-plugins/archive/master.tar.gz"
+}

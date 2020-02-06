@@ -57,6 +57,7 @@ xapi-compression          $XAPI/xen-api-libs-transitional
 xml-light2                $XAPI/xen-api-libs-transitional
 zstd                      $XAPI/xen-api-libs-transitional
 rrdd-plugin               $XAPI/ocaml-rrdd-plugin
+rrdd-plugins              $XSER/rrdd-plugins
 xapi-rrdd-plugin          $XAPI/ocaml-rrdd-plugin
 xapi-rrd-transport-utils  $XAPI/rrd-transport
 xapi-rrd-transport        $XAPI/rrd-transport
