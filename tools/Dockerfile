@@ -1,4 +1,4 @@
-FROM        ocaml/opam2:debian-9-ocaml-4.07
+FROM        ocaml/opam2:debian-10-ocaml-4.08
 MAINTAINER  Christian Lindig <christian.lindig@citrix.com>
 
 COPY --chown=opam:opam . /tmp/xs-opam
