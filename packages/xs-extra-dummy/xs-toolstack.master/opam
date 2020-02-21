@@ -20,7 +20,6 @@ depends: [
   "rrddump"
   "rrd-transport"
   "sexpr"
-  "sha1"
   "stunnel"
   "uuid"
   "varstored-guard"
