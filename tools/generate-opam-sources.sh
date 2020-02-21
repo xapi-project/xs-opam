@@ -52,7 +52,6 @@ sexpr                     $XAPI/xen-api-libs-transitional
 pciutil                   $XAPI/xen-api-libs-transitional
 stunnel                   $XAPI/xen-api-libs-transitional
 gzip                      $XAPI/xen-api-libs-transitional
-sha1                      $XAPI/xen-api-libs-transitional
 xapi-compression          $XAPI/xen-api-libs-transitional
 xml-light2                $XAPI/xen-api-libs-transitional
 zstd                      $XAPI/xen-api-libs-transitional
