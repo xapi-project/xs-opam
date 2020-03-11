@@ -5,7 +5,6 @@
 EXTRA="packages/xs-extra"
 XAPI="xapi-project"
 XSER="xenserver"
-LIND='lindig'
 
 MAP="\
 nbd-tool                  $XAPI/nbd
@@ -62,7 +61,7 @@ xapi-rrd-transport-utils  $XAPI/rrd-transport
 xapi-rrd-transport        $XAPI/rrd-transport
 xapi-rrdd                 $XAPI/xcp-rrdd
 rrd-transport             $XAPI/rrd-transport
-xenctrl                   $LIND/xenctrl
+xenctrl                   $XAPI/xenctrl
 xenops                    $XAPI/xenops
 xapi-xenops               $XAPI/xenops
 xapi-xenops-utils         $XAPI/xenops

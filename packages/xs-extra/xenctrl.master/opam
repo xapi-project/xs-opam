@@ -3,8 +3,8 @@ synopsis: "Mock OCaml bindings for the Xen Hypervisor"
 maintainer: "lindig@gmail.com"
 authors: "lindig@gmail.com"
 license: "LGPL"
-homepage: "https://github.com/lindig/xenctrl"
-bug-reports: "https://github.com/lindig/xenctrl/issues"
+homepage: "https://github.com/xapi-project/xenctrl"
+bug-reports: "https://github.com/xapi-project/xenctrl/issues"
 depends: [
   "ocaml"
   "dune" {build}
@@ -22,7 +22,7 @@ depexts: [
   ["xen-dev"] {os-distribution = "alpine"}
 ]
 
-dev-repo: "git+https://github.com/lindig/xenctrl.git"
+dev-repo: "git+https://github.com/xapi-project/xenctrl.git"
 url {
-  src: "https://github.com/lindig/xenctrl/archive/master.tar.gz"
+  src: "https://github.com/xapi-project/xenctrl/archive/master.tar.gz"
 }
