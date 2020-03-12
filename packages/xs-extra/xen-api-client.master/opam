@@ -23,7 +23,6 @@ depends: [
   "cohttp" {>= "0.22.0"}
   "re"
   "rpclib"
-  "rrd"
   "uri"
   "uuidm"
   "xapi-client"
