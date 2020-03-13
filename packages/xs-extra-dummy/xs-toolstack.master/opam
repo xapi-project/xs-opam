@@ -24,7 +24,6 @@ depends: [
   "uuid"
   "varstored-guard"
   "vhd-tool"
-  "vncproxy"
   "wsproxy"
   "xapi"
   "xapi-client"
