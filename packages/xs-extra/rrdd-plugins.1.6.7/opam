@@ -1,0 +1,25 @@
+opam-version: "2.0"
+name: "rrdd-plugins"
+maintainer: "xs-devel@lists.xenserver.org"
+authors: [ "xs-devel@lists.xenserver.org" ]
+license: "LGPL-2.1 with OCaml linking exception"
+homepage: "https://github.com/xenserver/rrdd-plugins"
+bug-reports: "https://github.com/xenserver/rrdd-plugins/issues"
+dev-repo: "git://github.com/xenserver/rrdd-plugins"
+depends: [
+  "ocaml"
+  "jbuilder" {build}
+  "cstruct-unix"
+  "rrdd-plugin"
+  "xapi-libs-transitional"
+  "xapi-stdext-std"
+  "xapi-stdext-unix"
+  "base-threads"
+  "ezxenstore"
+  "xenstore"
+  "xenops"
+  "xenctrl"
+]
+url {
+    src: "https://github.com/xenserver/rrdd-plugins/archive/v1.6.7.tar.gz"
+}
