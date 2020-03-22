@@ -23,7 +23,7 @@ opam repo remove --all default
 opam repo add xs-opam --all-switches file:///mnt
 opam switch ${OCAML_VERSION:-4.08}
 opam depext -vv -y xs-toolstack
-${INSTALL}
+OPAMERRLOGLEN=10000 ${INSTALL}
 EOF
 
 
