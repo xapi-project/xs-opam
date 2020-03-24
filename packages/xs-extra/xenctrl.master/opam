@@ -1,4 +1,6 @@
 opam-version: "2.0"
+name: "xenctrl"
+version: "master"
 synopsis: "Mock OCaml bindings for the Xen Hypervisor"
 maintainer: "lindig@gmail.com"
 authors: "lindig@gmail.com"
@@ -21,7 +23,6 @@ depexts: [
   ["xen-dom0-libs-devel" "xen-libs-devel"] {os = "xenserver"}
   ["xen-dev"] {os-distribution = "alpine"}
 ]
-
 dev-repo: "git+https://github.com/xapi-project/xenctrl.git"
 url {
   src: "https://github.com/xapi-project/xenctrl/archive/master.tar.gz"

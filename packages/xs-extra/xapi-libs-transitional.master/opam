@@ -1,10 +1,14 @@
 opam-version: "2.0"
+name: "xapi-libs-transitional"
+version: "master"
+synopsis: "Further transitional libraries required by xapi"
+description: """
+These libraries are provided for backwards compatibility only.
+No new code should use these libraries."""
 maintainer: "xen-api@lists.xen.org"
 authors: "xen-api@lists.xen.org"
 homepage: "https://xapi-project.github.io/"
 bug-reports: "https://github.com/xapi-project/xen-api-libs-transitional.git"
-dev-repo: "git+https://github.com/xapi-project/xen-api-libs-transitional.git"
-available: [ os = "linux" ]
 depends: [
   "ocaml"
   "ounit" {with-test}
@@ -17,11 +21,9 @@ depends: [
   "xenctrlext"
   "xml-light2"
 ]
-synopsis: "Further transitional libraries required by xapi"
-description: """
-These libraries are provided for backwards compatibility only.
-No new code should use these libraries."""
+available: os = "linux"
 build: ["dune" "runtest" "-j" jobs] {with-test}
+dev-repo: "git+https://github.com/xapi-project/xen-api-libs-transitional.git"
 url {
   src:
     "https://github.com/xapi-project/xen-api-libs-transitional/archive/master.tar.gz"

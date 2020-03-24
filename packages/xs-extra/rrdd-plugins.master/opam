@@ -1,13 +1,13 @@
 opam-version: "2.0"
 name: "rrdd-plugins"
+version: "master"
+synopsis:
+  "Plugins registering to the RRD daemon and exposing various metrics"
 maintainer: "xs-devel@lists.xenserver.org"
-authors: [ "xs-devel@lists.xenserver.org" ]
+authors: "xs-devel@lists.xenserver.org"
 license: "LGPL-2.1 with OCaml linking exception"
 homepage: "https://github.com/xenserver/rrdd-plugins"
 bug-reports: "https://github.com/xenserver/rrdd-plugins/issues"
-dev-repo: "git://github.com/xenserver/rrdd-plugins"
-build: [[ "dune" "build" "-p" name "-j" jobs ]]
-synopsis: "Plugins registering to the RRD daemon and exposing various metrics"
 depends: [
   "ocaml"
   "dune" {build}
@@ -26,6 +26,8 @@ depends: [
   "xenstore"
   "mtime"
 ]
+build: ["dune" "build" "-p" name "-j" jobs]
+dev-repo: "git://github.com/xenserver/rrdd-plugins"
 url {
   src: "https://github.com/xenserver/rrdd-plugins/archive/master.tar.gz"
 }

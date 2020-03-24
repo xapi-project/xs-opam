@@ -1,16 +1,15 @@
 opam-version: "2.0"
 name: "xapi-inventory"
+version: "1.2.1"
+synopsis: "Library for accessing the xapi toolstack inventory file"
+description: """
+The inventory file provides global host identify information
+needed by multiple services."""
 maintainer: "xen-api@lists.xen.org"
 authors: "xen-api@lists.xen.org"
+tags: "org:xapi-project"
 homepage: "https://github.com/xapi-project/xcp-inventory"
 bug-reports: "https://github.com/xapi-project/xcp-inventory/issues"
-dev-repo: "git+http://github.com/xapi-project/xcp-inventory.git"
-tags: [ "org:xapi-project" ]
-build: [
-  ["./configure" "--default_inventory=%{prefix}%/etc"]
-  ["dune" "build" "-p" name "-j" jobs]
-  ["dune" "runtest" "-p" name "-j" jobs] {with-test}
-]
 depends: [
   "ocaml"
   "ocamlfind" {build}
@@ -22,11 +21,15 @@ depends: [
   "cmdliner"
   "uuidm"
 ]
-conflicts: "xcp-inventory" {!= "transition"}
-synopsis: "Library for accessing the xapi toolstack inventory file"
-description: """
-The inventory file provides global host identify information
-needed by multiple services."""
+conflicts: [
+  "xcp-inventory" {!= "transition"}
+]
+build: [
+  ["./configure" "--default_inventory=%{prefix}%/etc"]
+  ["dune" "build" "-p" name "-j" jobs]
+  ["dune" "runtest" "-p" name "-j" jobs] {with-test}
+]
+dev-repo: "git+http://github.com/xapi-project/xcp-inventory.git"
 url {
   src: "https://github.com/xapi-project/xcp-inventory/archive/v1.2.1.tar.gz"
   checksum: "md5=15d24391dd45d4b318451a639c3beb46"

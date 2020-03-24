@@ -1,15 +1,12 @@
 opam-version: "2.0"
+name: "vhd-tool"
+version: "master"
+synopsis: ".vhd file manipulation"
 maintainer: "xen-api@lists.xen.org"
-authors: [ "xen-api@lists.xen.org" ]
+authors: "xen-api@lists.xen.org"
+tags: ["org:mirage" "org:xapi-project"]
 homepage: "https://github.com/xapi-project/vhd-tool"
 bug-reports: "https://github.com/xapi-project/vhd-tool/issues"
-dev-repo: "git+https://github.com/xapi-project/vhd-tool.git"
-tags: [
-  "org:mirage"
-  "org:xapi-project"
-]
-build: [[ "dune" "build" "-p" name "-j" jobs ]
-]
 depends: [
   "ocaml"
   "dune" {build}
@@ -31,13 +28,14 @@ depends: [
   "xenstore"
   "xenstore_transport"
 ]
+build: ["dune" "build" "-p" name "-j" jobs]
 depexts: [
   ["libssl-dev"] {os-distribution = "debian"}
   ["libssl-dev"] {os-distribution = "ubuntu"}
   ["openssl-devel"] {os-distribution = "centos"}
   ["openssl-devel"] {os-distribution = "fedora"}
 ]
-synopsis: ".vhd file manipulation"
+dev-repo: "git+https://github.com/xapi-project/vhd-tool.git"
 url {
   src: "https://github.com/xapi-project/vhd-tool/archive/master.tar.gz"
 }

@@ -1,22 +1,22 @@
 opam-version: "2.0"
+name: "xapi-stdext-date"
+version: "4.7.0"
+synopsis: "A deprecated collection of utility functions - Date module"
+description: """
+This library is provided for a transitionary period only.
+No new code should use this library."""
 maintainer: "jonathan.ludlam@citrix.com"
 authors: "xen-api@list.xen.org"
-bug-reports: "https://github.com/xapi-project/stdext/issues"
-dev-repo: "git://github.com/xapi-project/stdext.git"
+tags: "org:xapi-project"
 homepage: "https://xapi-project.github.io/"
-tags: [ "org:xapi-project" ]
-
-build:  [[ "jbuilder" "build" "-p" name "-j" jobs ]]
-
+bug-reports: "https://github.com/xapi-project/stdext/issues"
 depends: [
   "ocaml"
   "jbuilder" {build}
   "base-unix"
 ]
-synopsis: "A deprecated collection of utility functions - Date module"
-description: """
-This library is provided for a transitionary period only.
-No new code should use this library."""
+build: ["jbuilder" "build" "-p" name "-j" jobs]
+dev-repo: "git://github.com/xapi-project/stdext.git"
 url {
   src:
     "https://github.com/xapi-project/stdext/archive/v4.7.0/stdext-4.7.0.tar.gz"

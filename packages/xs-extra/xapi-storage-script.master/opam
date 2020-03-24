@@ -1,13 +1,16 @@
 opam-version: "2.0"
 name: "xapi-storage-script"
+version: "master"
+synopsis: "A directory full of scripts can be a Xapi storage implementation"
+description: """
+This daemon watches a directory for subdirectories, and when a subdir
+is created a storage service is registered."""
 maintainer: "xen-api@lists.xen.org"
-authors: [ "xen-api@lists.xen.org" ]
+authors: "xen-api@lists.xen.org"
 license: "LGPL-2.1 with OCaml linking exception"
+tags: "org:xapi-project"
 homepage: "https://github.com/xapi-project/xapi-storage-script"
 bug-reports: "https://github.com/xapi-project/xapi-storage-script/issues"
-dev-repo: "git://github.com/xapi-project/xapi-storage-script"
-tags: [ "org:xapi-project" ]
-build: [[ "dune" "build" "-p" name "-j" jobs ]]
 depends: [
   "ocaml"
   "dune" {build}
@@ -25,10 +28,8 @@ depends: [
   "ppx_sexp_conv"
   "xapi-stdext-date"
 ]
-synopsis: "A directory full of scripts can be a Xapi storage implementation"
-description: """
-This daemon watches a directory for subdirectories, and when a subdir
-is created a storage service is registered."""
+build: ["dune" "build" "-p" name "-j" jobs]
+dev-repo: "git://github.com/xapi-project/xapi-storage-script"
 url {
   src:
     "https://github.com/xapi-project/xapi-storage-script/archive/master/master.tar.gz"

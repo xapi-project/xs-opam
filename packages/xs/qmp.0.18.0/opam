@@ -1,16 +1,12 @@
 opam-version: "2.0"
+name: "qmp"
+version: "0.18.0"
+synopsis: "OCaml implementation of a Qemu Message Protocol (QMP) client"
 maintainer: "xen-api@lists.xen.org"
-authors: [ "Dave Scott" ]
+authors: "Dave Scott"
+tags: ["org:mirage" "org:xapi-project"]
 homepage: "https://github.com/xapi-project/ocaml-qmp"
 bug-reports: "https://github.com/xapi-project/ocaml-qmp/issues"
-tags: [
-  "org:mirage"
-  "org:xapi-project"
-]
-build: [
-  ["dune" "build" "-p" name "-j" jobs]
-  ["dune" "runtest" "-p" name "-j" jobs] {with-test}
-]
 depends: [
   "ocaml"
   "base-unix"
@@ -19,8 +15,12 @@ depends: [
   "cmdliner"
   "ounit" {with-test}
 ]
+build: [
+  ["dune" "build" "-p" name "-j" jobs]
+  ["dune" "runtest" "-p" name "-j" jobs] {with-test}
+]
 dev-repo: "git://github.com/xapi-project/ocaml-qmp"
-synopsis: "OCaml implementation of a Qemu Message Protocol (QMP) client"
 url {
   src: "https://github.com/xapi-project/ocaml-qmp/archive/v0.18.0.tar.gz"
-  checksum: "md5=9b9fb2a383a12ae7b430cf5ba9983155"}
+  checksum: "md5=9b9fb2a383a12ae7b430cf5ba9983155"
+}

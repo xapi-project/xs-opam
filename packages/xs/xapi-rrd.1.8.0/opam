@@ -1,16 +1,16 @@
 opam-version: "2.0"
+name: "xapi-rrd"
+version: "1.8.0"
+synopsis: "RRD library for use with xapi"
+description: """
+Round-Robin Databases (RRDs) are constant-space datastructures
+used for archiving historical data where the older data is stored
+at a lower resolution."""
 maintainer: "xen-api@lists.xen.org"
 authors: ["Dave Scott" "Jon Ludlam" "John Else"]
+tags: "org:xapi-project"
 homepage: "https://github.com/xapi-project/xcp-rrd"
 bug-reports: "https://github.com/xapi-project/xcp-rrd/issues"
-dev-repo: "git+https://github.com/xapi-project/xcp-rrd.git"
-tags: [
-  "org:xapi-project"
-]
-build: [
-  ["dune" "build" "-p" name "-j" jobs]
-  ["dune" "runtest" "-p" name] {with-test}
-]
 depends: [
   "ocaml"
   "dune" {build & >= "1.4.0"}
@@ -24,12 +24,13 @@ depends: [
   "alcotest" {with-test}
   "crowbar" {with-test}
 ]
-synopsis: "RRD library for use with xapi"
-description: """
-Round-Robin Databases (RRDs) are constant-space datastructures
-used for archiving historical data where the older data is stored
-at a lower resolution."""
+build: [
+  ["dune" "build" "-p" name "-j" jobs]
+  ["dune" "runtest" "-p" name] {with-test}
+]
+dev-repo: "git+https://github.com/xapi-project/xcp-rrd.git"
 url {
   src: "https://github.com/xapi-project/xcp-rrd/archive/v1.8.0.tar.gz"
-  checksum: "sha256=9db9180b90c36f2bb571c35545d1b926d7f139435d379800bc55bfb7b234fc1c"
+  checksum:
+    "sha256=9db9180b90c36f2bb571c35545d1b926d7f139435d379800bc55bfb7b234fc1c"
 }

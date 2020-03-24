@@ -1,8 +1,10 @@
 opam-version: "2.0"
+name: "varstored-guard"
+version: "master"
+synopsis: "varstored-guard"
 maintainer: "xen-api@lists.xen.org"
-authors: [ "xen-api@lists.xen.org" ]
+authors: "xen-api@lists.xen.org"
 homepage: "https://github.com/xapi-project/varstored-guard"
-dev-repo: "git+https://github.com/xapi-project/varstored-guard.git"
 bug-reports: "https://github.com/xapi-project/varstored-guard"
 depends: [
   "cmdliner"
@@ -12,8 +14,8 @@ depends: [
   "xapi-idl"
   "xen-api-client-lwt"
 ]
-synopsis: "varstored-guard"
-description: ""
+dev-repo: "git+https://github.com/xapi-project/varstored-guard.git"
 url {
-  src: "https://github.com/xapi-project/varstored-guard/archive/master.tar.gz"
+  src:
+    "https://github.com/xapi-project/varstored-guard/archive/master.tar.gz"
 }

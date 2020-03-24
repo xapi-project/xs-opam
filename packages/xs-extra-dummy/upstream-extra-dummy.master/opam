@@ -1,21 +1,18 @@
 opam-version: "2.0"
-name:           "upstream-extra-dummy"
-maintainer:     "Christian Lindig <christian.lindig@citrix.com>"
-authors:        "Christian Lindig <christian.lindig@citrix.com>"
-homepage:       "https://github.com/xapi-project/xs-opam"
-license:        "BSD"
+name: "upstream-extra-dummy"
+version: "master"
+maintainer: "Christian Lindig <christian.lindig@citrix.com>"
+authors: "Christian Lindig <christian.lindig@citrix.com>"
+license: "BSD"
+homepage: "https://github.com/xapi-project/xs-opam"
 depends: [
   "ocaml-system"
   "ocp-indent"
   "travis-opam"
   "merlin"
-  "xenctrl" { = "dummy"}
+  "xenctrl" {= "dummy"}
   "ocveralls"
   "utop"
-
-  # TODO: not used but we may want to keep
   "opasswd"
-
-  # TODO: remove these once we check they really are not used
   "xapi-stdext-bigbuffer"
 ]

@@ -1,13 +1,11 @@
 opam-version: "2.0"
 name: "crc"
-version: "2.0.0"
-authors: [ "David Scott" "John Else" ]
+version: "2.1.0"
+synopsis: "CRC implementation supporting strings and cstructs"
+maintainer: "xen-api@lists.xen.org"
+authors: ["David Scott" "John Else"]
 homepage: "https://github.com/xapi-project/ocaml-crc"
 bug-reports: "https://github.com/xapi-project/ocaml-crc/issues"
-dev-repo: "git+https://github.com/xapi-project/ocaml-crc"
-maintainer: "xen-api@lists.xen.org"
-build: [[ "dune" "build" "-p" name ]]
-run-test: [[ "dune" "runtest" "-p" name "-j" jobs ]]
 depends: [
   "dune"
   "ocaml" {>= "4.00.1"}
@@ -17,7 +15,9 @@ depends: [
   "ppx_deriving_rpc"
   "ppx_sexp_conv" {>= "v0.11.0"}
 ]
-synopsis: "CRC implementation supporting strings and cstructs"
+build: ["dune" "build" "-p" name]
+run-test: ["dune" "runtest" "-p" name "-j" jobs]
+dev-repo: "git+https://github.com/xapi-project/ocaml-crc"
 url {
   src: "https://github.com/xapi-project/ocaml-crc/archive/2.1.0.tar.gz"
   checksum: "md5=9161b48a164f6f3e15b3245b2123153c"

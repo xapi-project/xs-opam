@@ -1,9 +1,11 @@
 opam-version: "2.0"
+name: "xenctrl"
+version: "dummy"
+synopsis: "Dummy package to use the system xenctrl package"
 maintainer: "jonathan.ludlam@citrix.com"
-tags: [
-  "org:mirage"
-  "org:xapi-project"
-]
+tags: ["org:mirage" "org:xapi-project"]
+depends: ["ocaml" "ocamlfind"]
+flags: light-uninstall
 build: [
   ["rsync" "-avz" "/usr/lib64/ocaml/xenctrl/" "%{lib}%/xenctrl/"]
   ["rsync" "-avz" "/usr/lib64/ocaml/xenmmap/" "%{lib}%/xenmmap/"]
@@ -11,9 +13,4 @@ build: [
   ["rsync" "-avz" "/usr/lib64/ocaml/xentoollog/" "%{lib}%/xentoollog/"]
   ["rsync" "-avz" "/usr/lib64/ocaml/xeneventchn/" "%{lib}%/xeneventchn/"]
 ]
-remove: [
-  ["ocamlfind" "remove" "xenctrl"]
-]
-depends: ["ocaml" "ocamlfind"]
-synopsis: "Dummy package to use the system xenctrl package"
-flags: light-uninstall
+remove: ["ocamlfind" "remove" "xenctrl"]

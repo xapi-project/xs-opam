@@ -1,4 +1,6 @@
 opam-version: "2.0"
+name: "nbd-tool"
+version: "master"
 synopsis: "Network Block Device (NBD) protocol implementation"
 description: """
 This library allows applications to export and consume block
@@ -21,12 +23,13 @@ depends: [
   "nbd-lwt-unix"
   "uri"
 ]
-depexts: [
-  ["qemu-img" "nbd" "nmap-ncat"] {with-test & os-family = "rhel"}
-  ["qemu-utils" "nbd-client" "netcat-openbsd"] {with-test & os-family = "debian"}
-]
 build: ["dune" "build" "-p" name "-j" jobs]
 run-test: ["dune" "runtest" "-p" name "-j" jobs]
+depexts: [
+  ["qemu-img" "nbd" "nmap-ncat"] {with-test & os-family = "rhel"}
+  ["qemu-utils" "nbd-client" "netcat-openbsd"]
+    {with-test & os-family = "debian"}
+]
 dev-repo: "git+https://github.com/xapi-project/nbd.git"
 url {
   src: "https://github.com/xapi-project/nbd/archive/master/master.tar.gz"

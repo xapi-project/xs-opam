@@ -1,16 +1,12 @@
-
 opam-version: "2.0"
 name: "rrd2csv"
+version: "master"
+synopsis: "Convert XenServer RRD data into CSV format"
 maintainer: "opam-devel@lists.ocaml.org"
-authors: [ "Guillem Rieu" ]
+authors: "Guillem Rieu"
 license: "LGPL-2.1 with OCaml linking exception"
 homepage: "https://github.com/xenserver/rrd2csv"
 bug-reports: "https://github.com/xenserver/rrd2csv/issues"
-dev-repo: "git+https://github.com/xenserver/rrd2csv.git"
-build: [
-  ["dune" "build" "-p" name "-j" jobs]
-  ["dune" "runtest" "-p" name] {with-test}
-]
 depends: [
   "ocaml"
   "dune" {build}
@@ -23,7 +19,11 @@ depends: [
   "xapi-stdext-std"
   "xapi-stdext-threads"
 ]
-synopsis: "Convert XenServer RRD data into CSV format"
+build: [
+  ["dune" "build" "-p" name "-j" jobs]
+  ["dune" "runtest" "-p" name] {with-test}
+]
+dev-repo: "git+https://github.com/xenserver/rrd2csv.git"
 url {
   src: "https://github.com/xenserver/rrd2csv/archive/master/master.tar.gz"
 }

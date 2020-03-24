@@ -1,26 +1,27 @@
 opam-version: "2.0"
+name: "opasswd"
+version: "1.3.1"
+synopsis:
+  "OCaml bindings to the glibc passwd file and shadow password file interface"
 maintainer: "xen-api@lists.xen.org"
-authors: [ "Mike McClurg" ]
+authors: "Mike McClurg"
 license: "ISC"
+tags: "org:xapi-project"
 homepage: "https://github.com/xapi-project/ocaml-opasswd"
-dev-repo: "git+https://github.com/xapi-project/ocaml-opasswd.git"
 bug-reports: "https://github.com/xapi-project/ocaml-opasswd/issues"
-build: [
-  ["dune" "build" "-p" name "-j" jobs]
-  ["dune" "runtest" "-p" name "-j" jobs] {with-test}
-]
 depends: [
-  "ocaml" {>= "4.01.0" }
+  "ocaml" {>= "4.01.0"}
   "dune" {build}
   "ctypes" {>= "0.2.2"}
   "ctypes-foreign"
   "odoc" {with-doc}
 ]
-tags: [ "org:xapi-project" ]
-synopsis:
-  "OCaml bindings to the glibc passwd file and shadow password file interface"
+build: [
+  ["dune" "build" "-p" name "-j" jobs]
+  ["dune" "runtest" "-p" name "-j" jobs] {with-test}
+]
+dev-repo: "git+https://github.com/xapi-project/ocaml-opasswd.git"
 url {
-  src:
-    "https://github.com/xapi-project/ocaml-opasswd/archive/v1.3.1.tar.gz"
+  src: "https://github.com/xapi-project/ocaml-opasswd/archive/v1.3.1.tar.gz"
   checksum: "md5=b5e1bf76c79d5590d9e3fe62292ac825"
 }

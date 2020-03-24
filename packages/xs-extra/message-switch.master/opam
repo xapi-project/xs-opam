@@ -1,16 +1,15 @@
 opam-version: "2.0"
 name: "message-switch"
+version: "master"
+synopsis: "A simple store-and-forward message switch"
+description: """
+The switch stores messages in queues with well-known names. Clients use
+a simple HTTP protocol to enqueue and dequeue messages."""
 maintainer: "xen-api@lists.xen.org"
-authors: [ "xen-api@lists.xen.org" ]
+authors: "xen-api@lists.xen.org"
+tags: "org:xapi-project"
 homepage: "https://github.com/xapi-project/message-switch"
 bug-reports: "https://github.com/xapi-project/message-switch/issues"
-dev-repo: "git://github.com/xapi-project/message-switch"
-tags: [ "org:xapi-project" ]
-build: [
-  ["./configure" "--bindir" "%{bin}%"]
-  ["dune" "build" "-p" name "-j" jobs]
-  ["dune" "runtest" "-p" name "-j" jobs] {with-test}
-]
 depends: [
   "ocaml"
   "dune" {build & >= "1.4"}
@@ -30,10 +29,12 @@ depends: [
   "sexplib"
   "shared-block-ring" {>= "2.3.0"}
 ]
-synopsis: "A simple store-and-forward message switch"
-description: """
-The switch stores messages in queues with well-known names. Clients use
-a simple HTTP protocol to enqueue and dequeue messages."""
+build: [
+  ["./configure" "--bindir" "%{bin}%"]
+  ["dune" "build" "-p" name "-j" jobs]
+  ["dune" "runtest" "-p" name "-j" jobs] {with-test}
+]
+dev-repo: "git://github.com/xapi-project/message-switch"
 url {
   src: "https://github.com/xapi-project/message-switch/archive/master.tar.gz"
 }

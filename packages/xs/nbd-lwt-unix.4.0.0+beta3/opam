@@ -1,4 +1,6 @@
 opam-version: "2.0"
+name: "nbd-lwt-unix"
+version: "4.0.0+beta3"
 synopsis: "Network Block Device (NBD) protocol implementation"
 description: """
 This library allows applications to export and consume block

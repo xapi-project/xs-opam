@@ -1,13 +1,11 @@
 opam-version: "2.0"
 name: "xapi-storage"
+version: "master"
+synopsis: "Code and documentation generator for the Xapi storage interface"
 maintainer: "xen-api@lists.xen.org"
 authors: "xen-api@lists.xen.org"
 homepage: "https://xapi-project.github.io/"
 bug-reports: "https://github.com/xapi-project/xapi-storage/issues"
-dev-repo: "git://github.com/xapi-project/xapi-storage.git"
-build: [
-  ["dune" "build" "-p" name "-j" jobs]
-]
 depends: [
   "ocaml"
   "dune" {build}
@@ -20,12 +18,13 @@ depends: [
   "xmlm"
   "cmdliner"
 ]
+build: ["dune" "build" "-p" name "-j" jobs]
 depexts: [
   ["python"] {os-distribution = "centos"}
   ["python"] {os-distribution = "debian"}
   ["python"] {os-distribution = "ubuntu"}
 ]
-synopsis: "Code and documentation generator for the Xapi storage interface"
+dev-repo: "git://github.com/xapi-project/xapi-storage.git"
 url {
   src: "https://github.com/xapi-project/xapi-storage/archive/master.tar.gz"
 }

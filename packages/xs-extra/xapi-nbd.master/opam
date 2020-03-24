@@ -1,13 +1,12 @@
 opam-version: "2.0"
+name: "xapi-nbd"
+version: "master"
+synopsis: "Expose XenServer disks conveniently over NBD"
 maintainer: "xen-api@lists.xen.org"
-authors: ["dave.scott@citrix.com"]
+authors: "dave.scott@citrix.com"
+tags: ["org:mirage" "org:xapi-project"]
 homepage: "https://github.com/xapi-project/xapi-nbd"
 bug-reports: "https://github.com/xapi-project/xapi-nbd/issues"
-dev-repo: "git+https://github.com/xapi-project/xapi-nbd.git"
-build: [
-  [make "release"]
-  ["dune" "runtest"] {with-test}
-]
 depends: [
   "ocaml"
   "dune" {build}
@@ -23,8 +22,11 @@ depends: [
   "xapi-inventory"
   "xen-api-client-lwt"
 ]
-tags: [ "org:mirage" "org:xapi-project" ]
-synopsis: "Expose XenServer disks conveniently over NBD"
+build: [
+  [make "release"]
+  ["dune" "runtest"] {with-test}
+]
+dev-repo: "git+https://github.com/xapi-project/xapi-nbd.git"
 url {
   src:
     "https://github.com/xapi-project/xapi-nbd/archive/master/master.tar.gz"

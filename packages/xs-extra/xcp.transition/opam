@@ -1,12 +1,13 @@
 opam-version: "2.0"
 name: "xcp"
+version: "transition"
+synopsis: "Interface descriptions and common boilerplate for xapi services"
+description:
+  "This package has been renamed to 'xapi-idl' and can safely be removed"
+maintainer: "xen-api@lists.xen.org"
 authors: "Dave Scott"
+tags: "org:xapi-project"
 homepage: "https://github.com/xapi-project/xcp-idl"
 bug-reports: "https://github.com/xapi-project/xcp-idl/issues"
-dev-repo: "git://github.com/xapi-project/xcp-idl"
-maintainer: "xen-api@lists.xen.org"
-tags: [ "org:xapi-project" ]
 depends: ["ocaml" "xapi-idl"]
-synopsis: "Interface descriptions and common boilerplate for xapi services"
-description: """
-This package has been renamed to 'xapi-idl' and can safely be removed"""
+dev-repo: "git://github.com/xapi-project/xcp-idl"

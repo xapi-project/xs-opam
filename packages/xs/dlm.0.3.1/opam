@@ -1,16 +1,14 @@
 opam-version: "2.0"
+name: "dlm"
 version: "0.3.1"
+synopsis: "Libdlm bindings"
+description: "Bindings to the Linux Distributed Lock Manager `libdlm(3)`."
 maintainer: "xen-api@list.xensource.com"
-authors: ["Edwin Török"]
-homepage: "https://github.com/xapi-project/ocaml-dlm/"
-bug-reports: "https://github.com/xapi-project/ocaml-dlm/issues"
-dev-repo: "git+https://github.com/xapi-project/ocaml-dlm.git"
-doc: "https://xapi-project.github.io/ocaml-dlm/doc"
+authors: "Edwin Török"
 license: "LGPL-2.1 with OCaml linking exception"
-build: [
-  ["dune" "build" "--only" name "--root" "." "-j" jobs "@install"]
-]
-run-test: ["dune" "runtest" "-p" name "-j" jobs]
+homepage: "https://github.com/xapi-project/ocaml-dlm/"
+doc: "https://xapi-project.github.io/ocaml-dlm/doc"
+bug-reports: "https://github.com/xapi-project/ocaml-dlm/issues"
 depends: [
   "ocaml"
   "dune" {build & >= "1.4"}
@@ -20,6 +18,9 @@ depends: [
   "ounit"
   "uuidm"
 ]
+available: os = "linux"
+build: ["dune" "build" "--only" name "--root" "." "-j" jobs "@install"]
+run-test: ["dune" "runtest" "-p" name "-j" jobs]
 depexts: [
   ["libdlm-dev"] {os-distribution = "debian"}
   ["libdlm-dev"] {os-distribution = "ubuntu"}
@@ -30,11 +31,8 @@ depexts: [
   ["dlm-git"] {os-distribution = "archlinux"}
   ["libdlm-devel"] {os-distribution = "opensuse"}
 ]
-available: [ os = "linux" ]
-synopsis: "Libdlm bindings"
-description: "Bindings to the Linux Distributed Lock Manager `libdlm(3)`."
+dev-repo: "git+https://github.com/xapi-project/ocaml-dlm.git"
 url {
-  src:
-    "https://github.com/xapi-project/ocaml-dlm/archive/v0.3.1.tar.gz"
+  src: "https://github.com/xapi-project/ocaml-dlm/archive/v0.3.1.tar.gz"
   checksum: "md5=b9828082d6d4dbf9f2960f711e7e2e44"
 }

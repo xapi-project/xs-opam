@@ -1,20 +1,22 @@
 opam-version: "2.0"
+name: "xapi-test-utils"
+version: "1.3.0"
+synopsis: "An OCaml package with modules for easy unit testing"
 maintainer: "rob.hoes@citrix.com"
 authors: "xen-api@lists.xen.org"
+tags: "org:xapi-project"
 homepage: "https://xapi-project.github.io/"
 bug-reports: "https://github.com/xapi-project/xapi-test-utils/issues"
-dev-repo: "git://github.com/xapi-project/xapi-test-utils.git"
-build: [[ "dune" "build" "-p" name "-j" jobs ]]
 depends: [
   "alcotest"
   "ocaml"
   "dune" {build}
   "xapi-stdext-monadic"
 ]
-tags: [ "org:xapi-project" ]
-synopsis: "An OCaml package with modules for easy unit testing"
-
+build: ["dune" "build" "-p" name "-j" jobs]
+dev-repo: "git://github.com/xapi-project/xapi-test-utils.git"
 url {
-   src: "https://github.com/xapi-project/xapi-test-utils/archive/v1.3.0.tar.gz"
-   checksum: "md5=cc131280bf9d5abb9ca00412931c7aec"
+  src:
+    "https://github.com/xapi-project/xapi-test-utils/archive/v1.3.0.tar.gz"
+  checksum: "md5=cc131280bf9d5abb9ca00412931c7aec"
 }

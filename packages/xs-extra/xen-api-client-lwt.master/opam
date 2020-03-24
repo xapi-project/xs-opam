@@ -1,18 +1,22 @@
 opam-version: "2.0"
+name: "xen-api-client-lwt"
+version: "master"
+synopsis:
+  "Xen-API client library for remotely-controlling an XCP or XenServer host"
 maintainer: "xen-api@lists.xen.org"
-authors: [ "David Scott" "Anil Madhavapeddy" "Jerome Maloberti" "John Else" "Jon Ludlam" "Thomas Sanders" "Mike McClurg" ]
-license: "LGPL"
-homepage: "https://github.com/xapi-project/xen-api-client"
-dev-repo: "git+https://github.com/xapi-project/xen-api-client.git"
-bug-reports: "https://github.com/xapi-project/xen-api-client/issues"
-
-tags: [
-  "org:mirage"
-  "org:xapi-project"
+authors: [
+  "David Scott"
+  "Anil Madhavapeddy"
+  "Jerome Maloberti"
+  "John Else"
+  "Jon Ludlam"
+  "Thomas Sanders"
+  "Mike McClurg"
 ]
-
-build: [[ "dune" "build" "-p" name ]]
-
+license: "LGPL"
+tags: ["org:mirage" "org:xapi-project"]
+homepage: "https://github.com/xapi-project/xen-api-client"
+bug-reports: "https://github.com/xapi-project/xen-api-client/issues"
 depends: [
   "ocaml"
   "dune" {build}
@@ -28,8 +32,8 @@ depends: [
   "xmlm"
   "ounit" {with-test}
 ]
-synopsis:
-  "Xen-API client library for remotely-controlling an XCP or XenServer host"
+build: ["dune" "build" "-p" name]
+dev-repo: "git+https://github.com/xapi-project/xen-api-client.git"
 url {
   src: "https://github.com/xapi-project/xen-api-client/archive/master.tar.gz"
 }

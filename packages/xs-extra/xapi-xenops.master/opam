@@ -1,13 +1,6 @@
 opam-version: "2.0"
-maintainer: "john.else@citrix.com"
-authors: "xen-api@lists.xen.org"
-homepage: "https://xapi-project.github.io/"
-bug-reports: "https://github.com/xapi-project/xenops/issues"
-dev-repo: "git://github.com/xapi-project/xenops.git"
-depends: [
-  "ocaml" {>= "4.01.0"}
-  "xenops"
-]
+name: "xapi-xenops"
+version: "master"
 synopsis: "Create/destroy/manipulate Xen domains"
 description: """
 This library provides a set of building-blocks for constructing a Xen
@@ -15,6 +8,15 @@ domain manager (aka a "toolstack"). There are functions for
   - creating and building a domain
   - attaching virtual disk and network devices
   - spawning hardware emulators"""
+maintainer: "john.else@citrix.com"
+authors: "xen-api@lists.xen.org"
+homepage: "https://xapi-project.github.io/"
+bug-reports: "https://github.com/xapi-project/xenops/issues"
+depends: [
+  "ocaml" {>= "4.01.0"}
+  "xenops"
+]
+dev-repo: "git://github.com/xapi-project/xenops.git"
 url {
   src: "https://github.com/xapi-project/xenops/archive/master.tar.gz"
 }
