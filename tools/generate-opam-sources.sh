@@ -9,7 +9,7 @@ XSER="xenserver"
 MAP="\
 nbd-tool                  $XAPI/nbd
 rrd2csv                   $XSER/rrd2csv
-rrddump                   $XAPI/rrddump
+rrddump                   $XAPI/xcp-rrdd
 varstored-guard           $XAPI/varstored-guard
 xen-api-client-lwt        $XAPI/xen-api-client
 xen-api-client            $XAPI/xen-api-client
