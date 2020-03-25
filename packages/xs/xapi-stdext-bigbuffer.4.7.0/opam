@@ -6,11 +6,11 @@ dev-repo: "git://github.com/xapi-project/stdext.git"
 homepage: "https://xapi-project.github.io/"
 tags: [ "org:xapi-project" ]
 
-build:  [[ "jbuilder" "build" "-p" name "-j" jobs ]]
+build:  [[ "dune" "build" "-p" name "-j" jobs ]]
 
 depends: [
   "ocaml"
-  "jbuilder" {build}
+  "dune" {build}
 ]
 synopsis: "A deprecated collection of utility functions - bigbuffer module"
 description: """
