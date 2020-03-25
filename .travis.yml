@@ -1,10 +1,11 @@
 language: c
-sudo: false
+os: linux
+dist: xenial
 services:
   - docker
 script:
   - bash tools/travis.sh
-matrix:
+jobs:
   fast_finish: true
   include:
     - env: OPAMWITHTEST=false
