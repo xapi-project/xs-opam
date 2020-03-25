@@ -6,48 +6,32 @@ bug-reports: "https://github.com/stedolan/crowbar/issues"
 dev-repo: "git+https://github.com/stedolan/crowbar.git"
 license: "MIT"
 build: [
-  [
-    "jbuilder"
-    "build"
-    "--only-packages"
-    name
-    "--root"
-    "."
-    "-j"
-    jobs
-    "@install"
-  ]
-  [
-    "jbuilder"
-    "build"
-    "--only-packages"
-    name
-    "--root"
-    "."
-    "-j"
-    jobs
-    "@runtest"
-  ] {with-test}
+  [ "dune" "build" "-p" name "-j" jobs ]
+]
+run-test: [
+  [ "dune" "runtest" "-p" name "-j" jobs ]
 ]
 depends: [
-  "ocaml" {>= "4.03"}
-  "jbuilder" {build}
+  "dune" {build & >= "1.1"}
+  "ocaml" {>= "4.02.0"}
   "ocplib-endian"
   "cmdliner"
   "afl-persistent" {>= "1.1"}
   "calendar" {with-test}
   "xmldiff" {with-test}
   "fpath" {with-test}
+  "pprint" {with-test & < "20180528"}
   "uucp" {with-test}
   "uunf" {with-test}
   "uutf" {with-test}
 ]
-synopsis: "write tests, let a fuzzer find failing cases"
+synopsis: "Write tests, let a fuzzer find failing cases"
 description: """
 Crowbar is a library for testing code, combining QuickCheck-style
 property-based testing and the magical bug-finding powers of
-[afl-fuzz](http://lcamtuf.coredump.cx/afl/)."""
+[afl-fuzz](http://lcamtuf.coredump.cx/afl/).
+"""
 url {
-  src: "https://github.com/stedolan/crowbar/archive/v0.1.tar.gz"
-  checksum: "md5=cb7379d5182b56a18aba11aa40ed279a"
+  src: "https://github.com/stedolan/crowbar/archive/9bbb8013c41c632e15db639cdba8a0d180c9755f.tar.gz"
+  checksum: "sha256=6d74c41bbf0d14337794789d5b7c645b8efac8bb72cb080a12a5080303f78851"
 }
