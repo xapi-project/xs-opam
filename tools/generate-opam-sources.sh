@@ -42,7 +42,6 @@ xapi-plugin               $XAPI/ocaml-xapi-plugin
 xapi-storage-script       $XAPI/xapi-storage-script
 xapi-storage-cli          $XAPI/sm-cli
 xapi-nbd                  $XAPI/xapi-nbd
-vncproxy                  $XAPI/vncproxy
 xapi-libs-transitional    $XAPI/xen-api-libs-transitional
 xenctrlext                $XAPI/xen-api-libs-transitional
 uuid                      $XAPI/xen-api-libs-transitional
