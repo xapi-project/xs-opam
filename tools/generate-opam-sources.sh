@@ -7,7 +7,6 @@ XAPI="xapi-project"
 XSER="xenserver"
 
 MAP="\
-nbd-tool                  $XAPI/nbd
 rrd2csv                   $XSER/rrd2csv
 rrddump                   $XAPI/xcp-rrdd
 varstored-guard           $XAPI/varstored-guard
