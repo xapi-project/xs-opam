@@ -1,7 +1,7 @@
 FROM        ocaml/opam2:debian-10-ocaml-4.08
 MAINTAINER  Christian Lindig <christian.lindig@citrix.com>
 
-COPY --chown=opam:opam . /tmp/xs-opam
+COPY . /tmp/xs-opam
 
 RUN sudo apt-get update
 RUN opam repo remove --all default \
