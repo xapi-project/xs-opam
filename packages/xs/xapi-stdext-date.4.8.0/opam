@@ -12,17 +12,14 @@ depends: [
   "ocaml"
   "dune" {build}
   "base-unix"
-  "fd-send-recv" {>= "2.0.0"}
-  "xapi-stdext-pervasives"
-  "xapi-stdext-std"
+  "ptime"
 ]
-synopsis:
-  "A deprecated collection of utility functions - Unix module extensions"
+synopsis: "A deprecated collection of utility functions - Date module"
 description: """
 This library is provided for a transitionary period only.
 No new code should use this library."""
 url {
   src:
-    "https://github.com/xapi-project/stdext/archive/v4.7.0/stdext-4.7.0.tar.gz"
-  checksum: "md5=2e78036cc819b4e807e7147b6fb165d1"
+    "https://github.com/xapi-project/stdext/archive/v4.8.0.tar.gz"
+  checksum: "sha256=645fa57a77829099bb0e73198b7ffa17a69da0546b99c71476237b40baa4eac1"
 }
