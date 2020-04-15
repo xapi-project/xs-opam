@@ -1,0 +1,40 @@
+opam-version: "2.0"
+synopsis: "Ctypes bindings to libpci for OCaml"
+maintainer: "xen-api@lists.xen.org"
+authors: "Si Beaumont"
+homepage: "https://github.com/xapi-project/ocaml-pci"
+bug-reports: "https://github.com/xapi-project/ocaml-pci/issues"
+depends: [
+  "ocaml" {>= "4.08.0"}
+  "ctypes" {>= "0.4.0"}
+  "ctypes-foreign" {>= "0.4.0"}
+  "dune" {build}
+  "ounit" {with-test}
+  "odoc" {with-doc}
+]
+available: os = "linux"
+build: [
+  ["dune" "build" "-p" name "-j" jobs]
+  ["dune" "runtest" "-p" name] {with-test}
+]
+post-messages: [
+  "This package requires libpci-dev (>= 3.2.0) to be installed on your system"
+    {failure & os = "debian"}
+  "This package requires libpci-dev (>= 3.2.0) to be installed on your system"
+    {failure & os = "ubuntu"}
+  "This package requires pciutils-devel (>= 3.2.0) to be installed on your system"
+    {failure & os = "centos"}
+]
+depexts: [
+  ["hwdata" "libpci-dev"] {os-family = "debian"}
+  ["hwdata" "pciutils-dev"] {os-distribution = "alpine"}
+  ["hwdata" "pciutils-devel"] {os-distribution = "centos"}
+  ["hwdata" "pciutil-devel"] {os-distribution = "fedora"}
+
+]
+dev-repo: "git+https://github.com/simonjbeaumont/ocaml-pci.git"
+url {
+  src:
+    "https://github.com/xapi-project/ocaml-pci/archive/v1.0.2.tar.gz"
+  checksum: "sha256=e05289445ccaaf3d6f2a32672277451c0bf8f52bc61570cc30b3bc435da131ed"
+}
