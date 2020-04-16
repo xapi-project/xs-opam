@@ -40,6 +40,6 @@ It's currently providing SHA1, SHA256 and SHA512 hash functions."""
 dev-repo: "git+https://github.com/djs55/ocaml-sha.git"
 url {
   src:
-    "https://github.com/djs55/ocaml-sha/archive/28da8a6795db5ad986ca607cccaf3c904a23dd5a.tar.gz"
-  checksum: "sha256=526aa7b85d7cefca3308510bd10006ae8311dd2f918fc6b532a46c2609fa1e67"
+    "https://github.com/djs55/ocaml-sha/releases/download/v1.13/sha-v1.13.tbz"
+  checksum: "sha256=048c473c7114465ea4a4c2ea72563a9641989a1dbe1599138021a6ad1dd1e203"
 }
