@@ -27,6 +27,7 @@ depends: [
   "mirage-crypto-rng" {with-test}
   "gmap" {>= "0.3.0"}
   "domain-name" {>= "0.3.0"}
+  "logs"
 ]
 build: [
   ["dune" "subst"] {pinned}
@@ -46,9 +47,9 @@ namely PKCS 1, PKCS 7, PKCS 8, PKCS 9 and PKCS 10.
 """
 url {
   src:
-    "https://github.com/mirleft/ocaml-x509/releases/download/v0.10.0/x509-v0.10.0.tbz"
+    "https://github.com/mirleft/ocaml-x509/releases/download/v0.11.0/x509-v0.11.0.tbz"
   checksum: [
-    "sha256=7f40b17c4ae4fab6723fcd4f142cb68b97aa42e6b57e72ec143d1b874f525cb2"
-    "sha512=a4abcef7944da4c7a711e32e70ff4cf46e7698f04b8c145a4017a32faffe4ededd10a68ced81f2672c9d4a8b4cc9d50ff6e291697fe5fce3544e141334b93bb6"
+    "sha256=1508993f7ccce9ba7ab8e04e1e94774e06dec382378a45b0e8bdf758ef1e9a3d"
+    "sha512=4ddeb6e991faae1e93a8061dfba88506cea6bc8b1fd5e0dbcd89bbbda52ac8be7f92b79c29ea2736a938615eadf1b0cf61e3268e2e5260a681ed39a467cd14d7"
   ]
 }
