@@ -11,15 +11,14 @@ build:  [[ "dune" "build" "-p" name "-j" jobs ]]
 depends: [
   "ocaml"
   "dune" {build}
-  "base-unix"
-  "ptime"
 ]
-synopsis: "A deprecated collection of utility functions - Date module"
+synopsis:
+  "A deprecated collection of utility functions - Monadic modules (Monad, Listext, Either)"
 description: """
 This library is provided for a transitionary period only.
 No new code should use this library."""
 url {
   src:
-    "https://github.com/xapi-project/stdext/archive/v4.8.0.tar.gz"
-  checksum: "sha256=645fa57a77829099bb0e73198b7ffa17a69da0546b99c71476237b40baa4eac1"
+    "https://github.com/xapi-project/stdext/archive/v4.10.0.tar.gz"
+  checksum: "sha256=2d9b4fa5f6dd14b810b95709be7faaef93ac53ab6f6513bf60b8c14a6218978f"
 }
