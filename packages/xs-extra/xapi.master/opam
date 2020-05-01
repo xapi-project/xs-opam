@@ -21,10 +21,13 @@ depends: [
   "ezxenstore"
   "fmt" {with-test}
   "http-svr"
+  "mirage-crypto" {with-test}
+  "mirage-crypto-pk"
+  "mirage-crypto-rng" {with-test}
   "message-switch-unix"
   "mtime"
   "ocaml-migrate-parsetree"
-  "ounit"
+  "ounit" {with-test} # needed for ocaml-pci
   "pciutil"
   "ppx_deriving_rpc"
   "ppx_sexp_conv"
