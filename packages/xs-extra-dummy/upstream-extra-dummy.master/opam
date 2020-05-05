@@ -15,7 +15,4 @@ depends: [
 
   # TODO: not used but we may want to keep
   "opasswd"
-
-  # TODO: remove these once we check they really are not used
-  "xapi-stdext-bigbuffer"
 ]
