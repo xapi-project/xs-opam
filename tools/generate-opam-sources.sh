@@ -45,6 +45,7 @@ xapi-libs-transitional    $XAPI/xen-api-libs-transitional
 xenctrlext                $XAPI/xen-api-libs-transitional
 uuid                      $XAPI/xen-api-libs-transitional
 http-svr                  $XAPI/xen-api-libs-transitional
+safe-resources            $XAPI/xen-api-libs-transitional
 sexpr                     $XAPI/xen-api-libs-transitional
 pciutil                   $XAPI/xen-api-libs-transitional
 stunnel                   $XAPI/xen-api-libs-transitional
