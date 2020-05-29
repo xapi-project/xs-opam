@@ -12,7 +12,6 @@ depends: [
   "dune" {build & >= "1.4"}
   "stunnel"
   "base-threads"
-  "fpath"
   "xapi-cli-protocol"
   "xapi-consts"
   "xapi-datamodel"
