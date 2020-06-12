@@ -50,7 +50,6 @@ depends: [
   "xapi-xenopsd"
   "xapi-xenopsd-xc"
   "xapi-xenopsd-simulator"
-  "xcp"
   "xe"
   "xen-api-client"
   "xen-api-client-async"
