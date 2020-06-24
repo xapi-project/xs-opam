@@ -6,6 +6,7 @@ jobs:
   build:
     runs-on: ubuntu-20.04
     strategy:
+      fail-fast: false
       matrix:
         env: [OPAMWITHTEST: false,
               OPAMWITHTEST: true,
@@ -21,3 +22,5 @@ jobs:
         uses: actions/checkout@v2
       - name: Build the whole xs-toolstack
         run: bash tools/travis.sh
+        env: ${{ matrix.env }}
+        continue-on-error: ${{ matrix.env.RECURSIVE == '--recursive' || matrix.env.OCAML_VERSION == 4.09 }}
