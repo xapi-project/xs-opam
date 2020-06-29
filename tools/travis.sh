@@ -6,7 +6,7 @@
 
 set -e
 
-IMG='ocaml/opam2:debian-unstable'
+IMG='ocaml/opam2:debian-10-ocaml-4.08'
 
 docker pull $IMG
 if [ "${OPAMWITHTEST}" = "true" ]; then
