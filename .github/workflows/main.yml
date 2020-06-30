@@ -19,9 +19,6 @@ jobs:
         env: [OPAMWITHTEST: false,
               OPAMWITHTEST: true,
               { OPAMWITHTEST: true,
-                RECURSIVE: --recursive
-              },
-              { OPAMWITHTEST: true,
                 OCAML_VERSION: 4.09
               }
              ]
@@ -31,4 +28,4 @@ jobs:
       - name: Build the whole xs-toolstack
         run: bash tools/travis.sh
         env: ${{ matrix.env }}
-        continue-on-error: ${{ matrix.env.RECURSIVE == '--recursive' || matrix.env.OCAML_VERSION == 4.09 }}
+        continue-on-error: ${{ matrix.env.OCAML_VERSION == 4.09 }}
