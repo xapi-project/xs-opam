@@ -6,10 +6,8 @@ services:
 script:
   - bash tools/travis.sh
 jobs:
-  fast_finish: true
   include:
-    - env: OPAMWITHTEST=false
-    - env: OPAMWITHTEST=true
-    - env: OPAMWITHTEST=true OCAML_VERSION=4.09
+    - env: OCAML_VERSION=4.08
+    - env: OCAML_VERSION=4.09
   allow_failures:
-    - env: OPAMWITHTEST=true OCAML_VERSION=4.09
+    - env: OCAML_VERSION=4.09

@@ -9,12 +9,6 @@ set -e
 IMG='ocaml/opam2:debian-10-ocaml-4.08'
 
 docker pull $IMG
-if [ "${OPAMWITHTEST}" = "true" ]; then
-    # opam 2 only tests packages listed on the cmdline
-    INSTALL="opam list -s --required-by xs-toolstack | xargs opam install -t"
-else
-    INSTALL="opam install xs-toolstack"
-fi
 
 docker run --rm -iv "$PWD:/mnt" $IMG <<EOF
 set -e
@@ -23,8 +17,6 @@ opam repo remove --all default
 opam repo add xs-opam --all-switches file:///mnt
 opam switch ${OCAML_VERSION:-4.08}
 opam depext -vv -y xs-toolstack
-OPAMERRLOGLEN=10000 ${INSTALL}
+# opam 2 only tests packages listed on the cmdline
+OPAMERRLOGLEN=10000 opam list -s --required-by xs-toolstack | xargs opam install -t
 EOF
-
-
-
