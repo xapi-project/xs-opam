@@ -9,6 +9,9 @@ on:
       - '*'
   pull_request:
     types: [opened, synchronize, reopened]
+  schedule:
+    # run daily
+    - cron: '41 3 * * *'
 
 jobs:
   build:
