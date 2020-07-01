@@ -16,19 +16,12 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        env: [OPAMWITHTEST: false,
-              OPAMWITHTEST: true,
-              { OPAMWITHTEST: true,
-                RECURSIVE: --recursive
-              },
-              { OPAMWITHTEST: true,
-                OCAML_VERSION: 4.09
-              }
-             ]
+        ocaml-version: [4.08, 4.09]
     steps:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Build the whole xs-toolstack
         run: bash tools/travis.sh
-        env: ${{ matrix.env }}
-        continue-on-error: ${{ matrix.env.RECURSIVE == '--recursive' || matrix.env.OCAML_VERSION == 4.09 }}
+        env:
+          OCAML_VERSION: ${{ matrix.ocaml-version }}
+        continue-on-error: ${{ matrix.ocaml-version == 4.09 }}
