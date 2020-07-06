@@ -56,7 +56,6 @@ depends: [
   "xen-api-client-async"
   "xen-api-sdk"
   "xenctrl"
-  "xenctrlext"
   "xenops"
   "xenops-cli"
   "xml-light2"
