@@ -42,7 +42,6 @@ xapi-storage-script       $XAPI/xapi-storage-script
 xapi-storage-cli          $XAPI/sm-cli
 xapi-nbd                  $XAPI/xapi-nbd
 xapi-libs-transitional    $XAPI/xen-api-libs-transitional
-xenctrlext                $XAPI/xen-api-libs-transitional
 uuid                      $XAPI/xen-api-libs-transitional
 http-svr                  $XAPI/xen-api-libs-transitional
 safe-resources            $XAPI/xen-api-libs-transitional
