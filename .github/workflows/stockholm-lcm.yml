@@ -1,0 +1,26 @@
+name: Build and test (Stockholm)
+
+on:
+  push:
+    branches:
+      - 'release/stockholm/lcm'
+    tags:
+      - '6.35.*'
+  pull_request:
+    branches:
+      - 'release/stockholm/lcm'
+  schedule:
+    # run daily
+    - cron: '23 2 * * *'
+
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Build the whole xs-toolstack
+        run: bash tools/travis.sh
+        env:
+          OCAML_VERSION: 4.08
+          OPAMWITHTEST: true

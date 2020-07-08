@@ -4,11 +4,11 @@ on:
   push:
     branches:
       - master
-      - 'release/*/lcm'
     tags:
-      - '*'
+      - '*.0'
   pull_request:
-    types: [opened, synchronize, reopened]
+    branches:
+      - master
   schedule:
     # run daily
     - cron: '41 3 * * *'
