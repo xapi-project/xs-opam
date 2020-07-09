@@ -1,9 +1,18 @@
 opam-version: "2.0"
 maintainer: "jonathan.ludlam@citrix.com"
-version: "0"
 tags: [
   "org:mirage"
   "org:xapi-project"
+]
+depexts: [
+  ["m4" "libxen-dev" "libsystemd-dev"] {os-distribution = "debian"}
+  ["libxen-dev" "uuid-dev"] {os-distribution = "ubuntu"}
+  ["xen-devel" "libuuid-devel"] {os-distribution = "centos"}
+  ["xen-devel"] {os-distribution = "fedora"}
+  ["xen-devel"] {os-distribution = "rhel"}
+  ["xen-devel"] {os-distribution = "oraclelinux"}
+  ["xen-dom0-libs-devel" "xen-libs-devel"] {os = "xenserver"}
+  ["xen-dev"] {os-distribution = "alpine"}
 ]
 build: [
   ["rsync" "-avz" "/usr/lib64/ocaml/xenctrl/" "%{lib}%/xenctrl/"]
