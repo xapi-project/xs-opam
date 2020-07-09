@@ -1,14 +1,6 @@
-name: Build and test (Stockholm)
+name: Build and test (Stockholm, scheduled)
 
 on:
-  push:
-    branches:
-      - 'release/stockholm/lcm'
-    tags:
-      - '6.35.*'
-  pull_request:
-    branches:
-      - 'release/stockholm/lcm'
   schedule:
     # run daily
     - cron: '23 2 * * *'
@@ -19,6 +11,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+        with:
+          ref: 'release/stockholm/lcm'
       - name: Build the whole xs-toolstack
         run: bash tools/travis.sh
         env:
