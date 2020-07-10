@@ -27,4 +27,3 @@ jobs:
         run: bash tools/travis.sh
         env:
           OCAML_VERSION: ${{ matrix.ocaml-version }}
-        continue-on-error: ${{ matrix.ocaml-version == 4.09 }}
