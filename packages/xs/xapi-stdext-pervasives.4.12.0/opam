@@ -11,16 +11,17 @@ build:  [[ "dune" "build" "-p" name "-j" jobs ]]
 depends: [
   "ocaml"
   "dune" {build}
-  "astring"
-  "base-unix"
-  "ptime"
+  "logs"
+  "xapi-backtrace"
 ]
-synopsis: "A deprecated collection of utility functions - Date module"
+synopsis:
+  "A deprecated collection of utility functions - Pervasives extension"
 description: """
 This library is provided for a transitionary period only.
 No new code should use this library."""
 url {
   src:
-    "https://github.com/xapi-project/stdext/archive/v4.11.0.tar.gz"
-  checksum: "sha256=d24b4475632f0795df895c14def93d8ee5e7dd3570dda010b10323f56e8894a3"
+    "https://github.com/xapi-project/stdext/archive/v4.12.0.tar.gz"
+  checksum:
+    "sha256=6ff1710ec96d41a049fa1b7128ea96ea6bf7aca8e55c45680011992fe40f1a55"
 }
