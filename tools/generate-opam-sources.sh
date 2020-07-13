@@ -60,9 +60,6 @@ xapi-rrd-transport        $XAPI/rrd-transport
 xapi-rrdd                 $XAPI/xcp-rrdd
 rrd-transport             $XAPI/rrd-transport
 xenctrl                   $XAPI/xenctrl
-xenops                    $XAPI/xenops
-xapi-xenops               $XAPI/xenops
-xapi-xenops-utils         $XAPI/xenops
 xenops-cli                $XAPI/xenops-cli
 wsproxy                   $XAPI/wsproxy
 xapi-idl                  $XAPI/xcp-idl
