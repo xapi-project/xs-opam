@@ -35,6 +35,6 @@ description: """
 This library allows applications to export and consume block
 devices using the NBD protocol (as used by Linux, qemu etc)"""
 url {
-  src: "https://github.com/xapi-project/nbd/archive/v4.0.1.tar.gz"
-  checksum: "sha256=12ed77a7fff0014980cf53f76e948dd870424b42e210a81958f18d85a61a3c73"
+  src: "https://github.com/xapi-project/nbd/archive/v4.0.2.tar.gz"
+  checksum: "sha256=bb797fe13a3592b82ecb0be64102175071d5fde44f3021c1b476868e3ecb8458"
 }
