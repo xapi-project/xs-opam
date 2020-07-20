@@ -47,6 +47,7 @@ depends: [
   "xapi-storage-script"
   "xapi-tapctl"
   "xapi-xenopsd"
+  "xapi-xenopsd-cli"
   "xapi-xenopsd-xc"
   "xapi-xenopsd-simulator"
   "xe"
@@ -54,6 +55,5 @@ depends: [
   "xen-api-client-async"
   "xen-api-sdk"
   "xenctrl"
-  "xenops-cli"
   "xml-light2"
 ]
