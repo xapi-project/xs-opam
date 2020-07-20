@@ -9,7 +9,7 @@ depends: [
   "ocp-indent"
   "travis-opam"
   "merlin"
-  "xenctrl" { = "dummy"}
+  "xenctrl" { = "0~dummy"}
   "ocveralls"
   "utop"
 

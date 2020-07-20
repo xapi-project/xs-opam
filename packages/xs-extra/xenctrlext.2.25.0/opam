@@ -10,7 +10,7 @@ available: [ os = "linux" ]
 depends: [
   "ocaml"
   "dune" {build}
-  "xenctrl" {= "1.1.0"}
+  "xenctrl"
 ]
 depexts: [
   ["libxen-dev"] {os-distribution = "debian"}
