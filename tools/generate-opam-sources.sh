@@ -21,9 +21,10 @@ xapi                      $XAPI/xen-api
 xapi-cli-protocol         $XAPI/xen-api
 xapi-datamodel            $XAPI/xen-api
 xe                        $XAPI/xen-api
-xapi-xenopsd-xc           $XAPI/xenopsd
 xapi-xenopsd              $XAPI/xenopsd
+xapi-xenopsd-cli          $XAPI/xenopsd
 xapi-xenopsd-simulator    $XAPI/xenopsd
+xapi-xenopsd-xc           $XAPI/xenopsd
 xapi-squeezed             $XAPI/squeezed
 xapi-networkd             $XAPI/xcp-networkd
 forkexec                  $XAPI/forkexecd
@@ -60,7 +61,6 @@ xapi-rrd-transport        $XAPI/rrd-transport
 xapi-rrdd                 $XAPI/xcp-rrdd
 rrd-transport             $XAPI/rrd-transport
 xenctrl                   $XAPI/xenctrl
-xenops-cli                $XAPI/xenops-cli
 wsproxy                   $XAPI/wsproxy
 xapi-idl                  $XAPI/xcp-idl
 xapi-tapctl               $XAPI/tapctl"
