@@ -9,12 +9,11 @@ depends: [
   "alcotest"
   "ocaml"
   "dune" {build}
-  "xapi-stdext-monadic"
 ]
 tags: [ "org:xapi-project" ]
 synopsis: "An OCaml package with modules for easy unit testing"
 
 url {
-   src: "https://github.com/xapi-project/xapi-test-utils/archive/v1.3.0.tar.gz"
-   checksum: "md5=cc131280bf9d5abb9ca00412931c7aec"
+   src: "https://github.com/xapi-project/xapi-test-utils/archive/v1.4.0.tar.gz"
+   checksum: "sha256=a02f84d345bc8521f8e1ff65499b6c9a54e5505c583ffa11f9c95f7c0d1300e0"
 }
