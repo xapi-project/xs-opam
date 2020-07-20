@@ -2,13 +2,7 @@ name: xs-toolstack build
 
 on:
   push:
-    branches:
-      - master
-    tags:
-      - '*.0'
   pull_request:
-    branches:
-      - master
   schedule:
     # run daily
     - cron: '41 3 * * *'
