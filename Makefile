@@ -5,7 +5,7 @@ SHELL   = /bin/bash
 VERSION = $(shell git describe --abbrev=0 --tags)
 NAME 	= xs-opam-repo-$(VERSION)
 
-.PHONY: all archive clean
+.PHONY: all archive clean licenses
 
 all:
 	docker build -f tools/Dockerfile -t xenserver/xs-opam:$(VERSION) .
@@ -23,6 +23,10 @@ $(NAME).tar.gz:
 	tar czhf $@ $(NAME)
 	mv ocaml packages
 	mv upstream-extra packages
+
+# report licenses of xs-toolstack from *installed* packages
+licenses:
+	./tools/licenses.sh | column -s: -t
 
 clean:
 	rm -f  $(NAME).tar.gz
