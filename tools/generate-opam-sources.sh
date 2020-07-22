@@ -7,7 +7,7 @@ XAPI="xapi-project"
 XSER="xenserver"
 
 MAP="\
-rrd2csv                   $XSER/rrd2csv
+rrd2csv                   $XAPI/xen-api
 rrddump                   $XAPI/xcp-rrdd
 varstored-guard           $XAPI/varstored-guard
 xen-api-client-lwt        $XAPI/xen-api-client
