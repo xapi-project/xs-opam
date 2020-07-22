@@ -1,6 +1,5 @@
 opam-version: "2.0"
 maintainer: "stephen.dolan@cl.cam.ac.uk"
-authors: ["Stephen Dolan"]
 homepage: "https://github.com/stedolan/crowbar"
 bug-reports: "https://github.com/stedolan/crowbar/issues"
 dev-repo: "git+https://github.com/stedolan/crowbar.git"
@@ -9,18 +8,22 @@ build: [
   [ "dune" "build" "-p" name "-j" jobs ]
 ]
 run-test: [
-  [ "dune" "runtest" "-p" name "-j" jobs ]
+  [ "dune" "build" "-p" name "-j" jobs
+    "@examples/calendar/runtest"
+    "@examples/fpath/runtest"
+    "@examples/map/runtest"
+    "@examples/serializer/runtest"
+    "@examples/uunf/runtest"
+  ]
 ]
 depends: [
-  "dune" {build & >= "1.1"}
-  "ocaml" {>= "4.02.0"}
+  "dune" {>= "1.1"}
+  "ocaml" {>= "4.08"}
   "ocplib-endian"
   "cmdliner"
   "afl-persistent" {>= "1.1"}
   "calendar" {with-test}
-  "xmldiff" {with-test}
   "fpath" {with-test}
-  "pprint" {with-test & < "20180528"}
   "uucp" {with-test}
   "uunf" {with-test}
   "uutf" {with-test}
@@ -32,6 +35,6 @@ property-based testing and the magical bug-finding powers of
 [afl-fuzz](http://lcamtuf.coredump.cx/afl/).
 """
 url {
-  src: "https://github.com/stedolan/crowbar/archive/9bbb8013c41c632e15db639cdba8a0d180c9755f.tar.gz"
-  checksum: "sha256=6d74c41bbf0d14337794789d5b7c645b8efac8bb72cb080a12a5080303f78851"
+  src: "https://github.com/stedolan/crowbar/archive/v0.2.tar.gz"
+  checksum: "md5=55e85b9fcc3a777bc7c70ec57b136e7c"
 }

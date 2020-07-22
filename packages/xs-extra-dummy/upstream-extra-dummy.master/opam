@@ -5,13 +5,13 @@ authors:        "Christian Lindig <christian.lindig@citrix.com>"
 homepage:       "https://github.com/xapi-project/xs-opam"
 license:        "BSD"
 depends: [
-  "ocaml-system"
-  "ocp-indent"
-  "travis-opam"
   "merlin"
-  "xenctrl" { = "dummy"}
-  "ocveralls"
+  "ocaml-system"
+  "ocamlformat"
+  "odig"
+  "travis-opam"
   "utop"
+  "xenctrl" { = "dummy"}
 
   # TODO: not used but we may want to keep
   "opasswd"
