@@ -28,6 +28,9 @@ $(NAME).tar.gz:
 licenses:
 	./tools/licenses.sh | column -s: -t
 
+nolicense:
+	./tools/licenses.sh | grep ': *$$' || true
+
 clean:
 	rm -f  $(NAME).tar.gz
 	rm -rf $(NAME)
