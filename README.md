@@ -44,7 +44,7 @@ run the appropriate build command.
 
 ## Using Opam inside Docker for Dev Work
 
-If you prefer to to use [Docker] for development environments, you can
+If you prefer to use [Docker] for development environments, you can
 do this as well:
 
 ```bash
