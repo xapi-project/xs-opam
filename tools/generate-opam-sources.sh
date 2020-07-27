@@ -56,10 +56,10 @@ zstd                      $XAPI/xen-api-libs-transitional
 rrdd-plugin               $XAPI/ocaml-rrdd-plugin
 rrdd-plugins              $XSER/rrdd-plugins
 xapi-rrdd-plugin          $XAPI/ocaml-rrdd-plugin
-xapi-rrd-transport-utils  $XAPI/rrd-transport
-xapi-rrd-transport        $XAPI/rrd-transport
+xapi-rrd-transport-utils  $XAPI/xcp-rrdd
+xapi-rrd-transport        $XAPI/xcp-rrdd
 xapi-rrdd                 $XAPI/xcp-rrdd
-rrd-transport             $XAPI/rrd-transport
+rrd-transport             $XAPI/xcp-rrdd
 xenctrl                   $XAPI/xenctrl
 wsproxy                   $XAPI/wsproxy
 xapi-idl                  $XAPI/xcp-idl
