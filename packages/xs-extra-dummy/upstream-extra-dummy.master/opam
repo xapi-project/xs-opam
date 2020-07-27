@@ -12,7 +12,4 @@ depends: [
   "travis-opam"
   "utop"
   "xenctrl" { = "dummy"}
-
-  # TODO: not used but we may want to keep
-  "opasswd"
 ]
