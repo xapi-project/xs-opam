@@ -25,5 +25,5 @@ xenstored."""
 url {
   src:
     "https://github.com/xapi-project/ezxenstore/archive/v0.4.1.tar.gz"
-  checksum: "md5=92151e5b6cd47c2701ddd06a245d2556"
+  checksum: "sha256=bb065e6335d594d02d0b6fe5274c31baa62a2bf4e74844cd91db1b981bad7c05"
 }
