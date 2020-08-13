@@ -15,6 +15,7 @@ depends: [
   "message-switch-cli"
   "nbd-tool"
   "pciutil"
+  "polly"
   "rrd2csv"
   "rrdd-plugin"
   "rrdd-plugins"
