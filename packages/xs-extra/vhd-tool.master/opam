@@ -1,9 +1,9 @@
 opam-version: "2.0"
 maintainer: "xen-api@lists.xen.org"
 authors: [ "xen-api@lists.xen.org" ]
-homepage: "https://github.com/xapi-project/vhd-tool"
-bug-reports: "https://github.com/xapi-project/vhd-tool/issues"
-dev-repo: "git+https://github.com/xapi-project/vhd-tool.git"
+homepage: "https://github.com/xapi-project/tapctl"
+bug-reports: "https://github.com/xapi-project/tapctl/issues"
+dev-repo: "git+https://github.com/xapi-project/tapctl.git"
 tags: [
   "org:mirage"
   "org:xapi-project"
@@ -13,6 +13,8 @@ build: [[ "dune" "build" "-p" name "-j" jobs ]
 depends: [
   "ocaml"
   "dune" {build}
+  "alcotest" {with-test}
+  "alcotest-lwt" {with-test}
   "cohttp-lwt"
   "cstruct" {>= "3.0.0"}
   "io-page"
@@ -39,5 +41,5 @@ depexts: [
 ]
 synopsis: ".vhd file manipulation"
 url {
-  src: "https://github.com/xapi-project/vhd-tool/archive/master.tar.gz"
+  src: "https://github.com/xapi-project/tapctl/archive/master.tar.gz"
 }

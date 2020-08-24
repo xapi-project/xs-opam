@@ -36,7 +36,7 @@ message-switch-cli        $XAPI/message-switch
 message-switch-core       $XAPI/message-switch
 message-switch-unix       $XAPI/message-switch
 xapi-storage              $XAPI/xapi-storage
-vhd-tool                  $XAPI/vhd-tool
+vhd-tool                  $XAPI/tapctl
 xen-api-sdk               $XAPI/xen-api-sdk
 xapi-plugin               $XAPI/ocaml-xapi-plugin
 xapi-storage-script       $XAPI/xapi-storage-script
