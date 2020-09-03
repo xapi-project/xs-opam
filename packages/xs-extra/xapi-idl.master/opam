@@ -5,8 +5,10 @@ bug-reports: "https://github.com/xapi-project/xcp-idl/issues"
 dev-repo: "git://github.com/xapi-project/xcp-idl"
 maintainer: "xen-api@lists.xen.org"
 tags: [ "org:xapi-project" ]
-build: [["dune" "build" "-p" name "-j" jobs]]
-run-test: [[ "dune" "runtest" "-p" name "-j" jobs ]]
+build: [
+  ["dune" "build" "-p" name "-j" jobs]
+  ["dune" "runtest" "-p" name "-j" jobs] {with-test}
+]
 depends: [
   "ocaml"
   "dune" {build}
@@ -45,5 +47,5 @@ The xapi toolstack is a set of communicating services including
   - rrdd: manages datasources and records history
 plus storage 'plugins'"""
 url {
-  src: "https://github.com/xapi-project/xcp-idl/archive/master.tar.gz"
+  src: "https://github.com/psafont/xcp-idl/archive/rpclib_7.tar.gz"
 }

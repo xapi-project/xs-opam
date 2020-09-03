@@ -48,5 +48,5 @@ via a simple API. The API has been tailored to suit the needs of xapi,
 which manages clusters of hosts running Xen, but it can also be used
 standalone."""
 url {
-  src: "https://github.com/xapi-project/xenopsd/archive/master/master.tar.gz"
+  src: "https://github.com/psafont/xenopsd/archive/rpclib_7.tar.gz"
 }

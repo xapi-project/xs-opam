@@ -5,8 +5,10 @@ homepage: "https://github.com/xapi-project/xen-api"
 bug-reports: "https://github.com/xapi-project/xen-api/issues"
 dev-repo: "git+https://github.com/xapi-project/xen-api.git"
 build-env: [[ XAPI_VERSION = "v0.0.0" ]]
-build: [[ "dune" "build" "-p" name ]]
-
+build: [
+  ["dune" "build" "-p" name "-j" jobs]
+  ["dune" "runtest" "-p" name "-j" jobs] {with-test}
+]
 depends: [
   "ocaml"
   "dune" {build & >= "1.4"}
@@ -26,5 +28,5 @@ description: """
 This daemon exposes the XenAPI and is used by clients such as 'xe'
 and 'XenCenter' to manage clusters of Xen-enabled hosts."""
 url {
-  src: "https://github.com/xapi-project/xen-api/archive/master/master.tar.gz"
+  src: "https://github.com/psafont/xen-api/archive/rpclib_7.tar.gz"
 }

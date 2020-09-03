@@ -8,4 +8,4 @@ script:
 jobs:
   include:
     - env: OCAML_VERSION=4.08
-    - env: OCAML_VERSION=4.09
+    - env: OCAML_VERSION=4.10
