@@ -5,7 +5,8 @@
 
 set -e
 
-OCAML_VERSION=${OCAML_VERSION:-4.08}
+OCAML_VERSION_FULL=${OCAML_VERSION_FULL:-4.08.1}
+OCAML_VERSION=${OCAML_VERSION_FULL%.*}
 
 IMG="ocaml/opam2:debian-10-ocaml-$OCAML_VERSION"
 
@@ -16,7 +17,7 @@ set -e
 sudo apt-get update
 opam repo remove --all default
 opam repo add xs-opam --all-switches file:///mnt
-opam switch $OCAML_VERSION
+opam switch $OCAML_VERSION && opam upgrade ocaml=$OCAML_VERSION_FULL --unlock-base -y
 opam depext -vv -y xs-toolstack
 # opam 2 only tests packages listed on the cmdline
 OPAMERRLOGLEN=10000 opam list -s --required-by xs-toolstack | xargs opam install -t

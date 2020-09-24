@@ -13,11 +13,11 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        ocaml-version: ["4.08", "4.10"]
+        ocaml-version: ["4.08.1", "4.10.1"]
     steps:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Build the whole xs-toolstack
         run: bash tools/travis.sh
         env:
-          OCAML_VERSION: ${{ matrix.ocaml-version }}
+          OCAML_VERSION_FULL: ${{ matrix.ocaml-version }}
