@@ -31,5 +31,5 @@ This daemon watches a directory for subdirectories, and when a subdir
 is created a storage service is registered."""
 url {
   src:
-    "https://github.com/psafont/xapi-storage-script/archive/rpclib_7.tar.gz"
+    "https://github.com/xapi-project/xapi-storage-script/archive/master/master.tar.gz"
 }
