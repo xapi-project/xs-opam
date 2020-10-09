@@ -4,7 +4,7 @@ on:
   push:
   pull_request:
   schedule:
-    # run daily
+    # run daily, for initializing the cache if not generated yet.
     - cron: '41 3 * * *'
 
 jobs:
@@ -23,13 +23,34 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
+      - name: Retrieve date for cache key
+        id: cache-key
+        run: echo "::set-output name=date::$(/bin/date -u "+%Y%m%d")"
+        shell: bash
+
+      - name: Restore opam cache
+        id: opam-cache
+        uses: actions/cache@v2
+        with:
+          path: "~/.opam"
+          # invalidate cache daily, gets built daily using a scheduled job
+          key: ${{ steps.cache-key.outputs.date }}-${{ matrix.ocaml-version }}
+
       - name: Use ocaml
         uses: avsm/setup-ocaml@v1.1.2
         with:
           ocaml-version: ${{ matrix.ocaml-version }}
           opam-repository: "."
 
+      - name: Upgrade existing packages
+        run: opam upgrade
+
       - name: Build xs-toolstack, test its dependencies
         run: |
           opam depext -vv -y xs-toolstack
           OPAMERRLOGLEN=10000 opam list -s --required-by xs-toolstack | xargs opam install -t
+
+      - name: Uninstall unversioned packages
+        # This should purge them from the cache, unversioned package have
+        # 'master' as its version
+        run: opam list | awk -F " " '$2 == "master" { print $1 }' |  xargs opam uninstall
