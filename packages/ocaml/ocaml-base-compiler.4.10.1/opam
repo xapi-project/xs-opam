@@ -1,12 +1,12 @@
 opam-version: "2.0"
-synopsis: "Official release 4.10.0"
+synopsis: "Official release 4.10.1"
 maintainer: "platform@lists.ocaml.org"
 authors: "Xavier Leroy and many contributors"
 homepage: "https://ocaml.org"
 bug-reports: "https://github.com/ocaml/ocaml/issues"
 dev-repo: "git://github.com/ocaml/ocaml"
 depends: [
-  "ocaml" {= "4.10.0" & post}
+  "ocaml" {= "4.10.1" & post}
   "base-unix" {post}
   "base-bigarray" {post}
   "base-threads" {post}
@@ -27,8 +27,8 @@ build: [
 ]
 install: [make "install"]
 url {
-  src: "https://github.com/ocaml/ocaml/archive/4.10.0.tar.gz"
-  checksum: "sha256=58bae0f0a79daf86ec755a173e593fef4ef588f15c6185993af88ceb9722bc39"
+  src: "https://github.com/ocaml/ocaml/archive/4.10.1.tar.gz"
+  checksum: "sha256=d1dd3d39dc2d06aca694e8a97983d25d5730c19ad8ceff83c3072fd05adaf28e"
 }
 extra-files: ["ocaml-base-compiler.install" "md5=3e969b841df1f51ca448e6e6295cb451"]
 post-messages: [

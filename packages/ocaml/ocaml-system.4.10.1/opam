@@ -12,7 +12,7 @@ depends: [
   "base-bigarray" {post}
 ]
 conflict-class: "ocaml-core-compiler"
-available: sys-ocaml-version = "4.10.0"
+available: sys-ocaml-version = "4.10.1"
 flags: compiler
 build: ["ocaml" "gen_ocaml_config.ml"]
 substs: "gen_ocaml_config.ml"

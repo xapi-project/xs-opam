@@ -7,5 +7,5 @@ script:
   - bash tools/travis.sh
 jobs:
   include:
-    - env: OCAML_VERSION=4.08
-    - env: OCAML_VERSION=4.10
+    - env: OCAML_VERSION_FULL=4.08.1
+    - env: OCAML_VERSION_FULL=4.10.1
