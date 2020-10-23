@@ -37,7 +37,7 @@ jobs:
           key: ${{ steps.cache-key.outputs.date }}-${{ matrix.ocaml-version }}
 
       - name: Use ocaml
-        uses: avsm/setup-ocaml@v1.1.2
+        uses: avsm/setup-ocaml@v1
         with:
           ocaml-version: ${{ matrix.ocaml-version }}
           opam-repository: "."
