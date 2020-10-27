@@ -6,7 +6,7 @@ bug-reports: "https://github.com/xapi-project/xen-api/issues"
 dev-repo: "git+https://github.com/xapi-project/xen-api.git"
 build-env: [[ XAPI_VERSION = "v0.0.0" ]]
 build: [
-  ["dune" "build" "-p" name "-j" jobs]
+  ["dune" "build" "-p" name "-j" jobs ]
   ["dune" "runtest" "-p" name "-j" jobs] {with-test}
 ]
 depends: [
@@ -22,6 +22,7 @@ depends: [
   "ezxenstore"
   "fmt" {with-test}
   "http-svr"
+  "ipaddr"
   "mirage-crypto" {with-test}
   "mirage-crypto-pk"
   "mirage-crypto-rng" {with-test}
@@ -37,7 +38,6 @@ depends: [
   "rresult"
   "sexpr"
   "sha"
-  "stdext"
   "stunnel"
   "tar"
   "tar-unix"
@@ -55,6 +55,7 @@ depends: [
   "xapi-stdext-std"
   "xapi-stdext-threads"
   "xapi-stdext-unix"
+  "xapi-stdext-zerocheck"
   "xapi-tapctl"
   "xapi-test-utils" {with-test}
   "xapi-types"

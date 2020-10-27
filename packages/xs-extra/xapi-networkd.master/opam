@@ -9,12 +9,12 @@ build: [
   ["dune" "runtest" "-p" name "-j" jobs] {with-test}
 ]
 depends: [
-  "astring"          
+  "astring"
+  "alcotest" {with-test}
   "base-threads"
   "forkexec"
   "mtime"
   "netlink"
-  "ounit"
   "re"
   "rpclib"
   "systemd"
