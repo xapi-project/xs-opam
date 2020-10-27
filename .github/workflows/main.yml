@@ -43,11 +43,13 @@ jobs:
           opam-repository: "."
 
       - name: Upgrade existing packages
-        run: opam upgrade
+        run: |
+          opam update
+          opam depext -vv -y xs-toolstack
+          opam upgrade
 
       - name: Build xs-toolstack, test its dependencies
         run: |
-          opam depext -vv -y xs-toolstack
           OPAMERRLOGLEN=10000 opam list -s --required-by xs-toolstack | xargs opam install -t
 
       - name: Uninstall unversioned packages
