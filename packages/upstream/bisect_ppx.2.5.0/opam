@@ -1,7 +1,8 @@
 opam-version: "2.0"
 
 synopsis: "Code coverage for OCaml"
-license: "MPL2"
+version: "2.5.0"
+license: "MIT"
 homepage: "https://github.com/aantron/bisect_ppx"
 doc: "https://github.com/aantron/bisect_ppx"
 bug-reports: "https://github.com/aantron/bisect_ppx/issues"
@@ -19,20 +20,19 @@ maintainer: [
 
 depends: [
   "base-unix"
-  "dune" {build}
+  "cmdliner" {>= "1.0.0"}
+  "dune" {>= "2.7.0"}
   "ocaml" {>= "4.02.0"}
-  "ocaml-migrate-parsetree" {>= "1.1.0"}
-  "ppx_tools_versioned"
+  "ocaml-migrate-parsetree" {>= "1.7.0" & < "2.0.0"}
+  "ppx_tools_versioned" {>= "5.4.0"}
 
-  "ocamlfind" {dev}
-  "ounit" {dev}
-]
-conflicts: [
-  "ocveralls" {<= "0.3.2"}
+  "ocamlfind" {with-test}
+  "ounit2" {with-test}
 ]
 
 build: [
   ["dune" "build" "-p" name "-j" jobs]
+  ["dune" "runtest" "-p" name] {with-test}
 ]
 
 description: "Bisect_ppx helps you test thoroughly. It is a small preprocessor
@@ -44,6 +44,6 @@ Usage is simple - add package bisect_ppx when building tests, run your tests,
 then run the Bisect_ppx report tool on the generated visitation files."
 
 url {
-  src: "https://github.com/aantron/bisect_ppx/archive/1.4.1.tar.gz"
-  checksum: "md5=05d514706646adc947ed21e7e69a1cf1"
+  src: "https://github.com/aantron/bisect_ppx/archive/2.5.0.tar.gz"
+  checksum: "md5=2eaf2f24c5d91ff975050db37d8a4cd2"
 }
