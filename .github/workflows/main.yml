@@ -20,6 +20,10 @@ jobs:
       OCAML_VERSION: ${{ matrix.ocaml-version }}
 
     steps:
+      - name: Update apt cache
+        run: sudo apt-get update 
+        shell: bash
+
       - name: Checkout
         uses: actions/checkout@v2
 
