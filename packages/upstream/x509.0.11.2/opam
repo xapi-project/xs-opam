@@ -6,7 +6,7 @@ authors: [
   "Hannes Mehnert <hannes@mehnert.org>"
   "David Kaloper <dk505@cam.ac.uk>"
 ]
-license: "BSD2"
+license: "BSD-2-Clause"
 tags: "org:mirage"
 homepage: "https://github.com/mirleft/ocaml-x509"
 doc: "https://mirleft.github.io/ocaml-x509/doc"
@@ -47,9 +47,9 @@ namely PKCS 1, PKCS 7, PKCS 8, PKCS 9 and PKCS 10.
 """
 url {
   src:
-    "https://github.com/mirleft/ocaml-x509/releases/download/v0.11.0/x509-v0.11.0.tbz"
+    "https://github.com/mirleft/ocaml-x509/releases/download/v0.11.2/x509-v0.11.2.tbz"
   checksum: [
-    "sha256=1508993f7ccce9ba7ab8e04e1e94774e06dec382378a45b0e8bdf758ef1e9a3d"
-    "sha512=4ddeb6e991faae1e93a8061dfba88506cea6bc8b1fd5e0dbcd89bbbda52ac8be7f92b79c29ea2736a938615eadf1b0cf61e3268e2e5260a681ed39a467cd14d7"
+    "sha256=42ccf807a7b397b8f5411d261f64ae3cb671e59b2a2f10f16b507a5ae16594ac"
+    "sha512=e7f9757f74e2b4caa4f5fb2eb801aa203ba1b77ab7629f01a4bd6e4a02cb82dc67bd97353d45999a5862519b2c704b8285f5e36115efc3e01553379a6f9d1f6c"
   ]
 }

@@ -14,31 +14,30 @@ build: [ ["dune" "subst"] {pinned}
 
 depends: [
   "conf-pkg-config" {build}
-  "ocaml" {>= "4.07.0"}
-  "dune" {>= "1.7"}
+  "ocaml" {>= "4.08.0"}
+  "dune" {>= "2.6"}
   "dune-configurator" {>= "2.0.0"}
-  "cpuid" {build}
   "ounit" {with-test}
   "cstruct" {>="3.2.0"}
-  "ocplib-endian"
+  "eqaf" {>= "0.7"}
 ]
 depopts: [
-  "mirage-xen-posix"
   "ocaml-freestanding"
 ]
 conflicts: [
-  "mirage-xen" {< "3.1.0"}
+  "mirage-xen" {< "6.0.0"}
   "ocaml-freestanding" {< "0.4.1"}
 ]
 description: """
-Mirage-crypto provides symmetric ciphers (DES, AES, RC4), and hashes (MD5,
-SHA-1, SHA-2).
+Mirage-crypto provides symmetric ciphers (DES, AES, RC4, ChaCha20/Poly1305), and
+hashes (MD5, SHA-1, SHA-2).
 """
+x-commit-hash: "de521205fe4f14178f8e07ebce8063e355303d69"
 url {
   src:
-    "https://github.com/mirage/mirage-crypto/releases/download/v0.6.2/mirage-crypto-v0.6.2.tbz"
+    "https://github.com/mirage/mirage-crypto/releases/download/v0.8.7/mirage-crypto-v0.8.7.tbz"
   checksum: [
-    "sha256=e2284dc0f8d37110f4713b87145a26a2bbce3e43f14be51e88de18db5922b823"
-    "sha512=2c9808261aec8498921e4dce2d66214e10dfe65e2c3729c081731d6c44abc0e990233e5398c9c2d31a97d1a40bdd38920c54817f572d3b592f4257ce85b331da"
+    "sha256=bebbbe6c175aa68c763c2e5caad42de588ab0493a420bae7c03f8d390d34a8bf"
+    "sha512=e8c3f57e868361b16014666e95dbadbd22cf9295a168c61e2ab278333d79039772407468154b3a88662bb47b49b199a45b568a5d04054b445cf4e065cb448809"
   ]
 }
