@@ -13,7 +13,7 @@ doc: "https://mirage.github.io/ocaml-ipaddr/"
 bug-reports: "https://github.com/mirage/ocaml-ipaddr/issues"
 depends: [
   "ocaml" {>= "4.04.0"}
-  "dune" {>= "1.9"}
+  "dune" {>= "1.9.0"}
   "ipaddr" {= version}
   "ipaddr-cstruct" {with-test & = version}
   "ounit" {with-test}
@@ -25,11 +25,12 @@ build: [
   ["dune" "runtest" "-p" name "-j" jobs] {with-test}
 ]
 dev-repo: "git+https://github.com/mirage/ocaml-ipaddr.git"
+x-commit-hash: "dc36c61789255003bb10c95f550b64fad33f600e"
 url {
   src:
-    "https://github.com/mirage/ocaml-ipaddr/releases/download/v5.0.0/ipaddr-v5.0.0.tbz"
+    "https://github.com/mirage/ocaml-ipaddr/releases/download/v5.0.1/ipaddr-v5.0.1.tbz"
   checksum: [
-    "sha256=2e8f35b1ddf3f5b9847f59fccdd61475e7771f34d693fa69271b41ff9119c7ac"
-    "sha512=b2a250e96ad10376f592c38df7f5d2d849d58252dad787176d24f8d41c3c5f8420dfe215f50fee32046f84a45d8327ff2a317b50ce96266094d8df34bda5ab73"
+    "sha256=00f7c3c38cff938d3ace70dd32e6d3103390567c9030b406ba85840f01d76602"
+    "sha512=0c01117255692f929bb99ba0f7b973859bebb09e7d738adb72954471099a6a4d10741cd5796415fa106f04169c2b5455fa669d4a7fee400505bd3ba005b5b7fb"
   ]
 }
