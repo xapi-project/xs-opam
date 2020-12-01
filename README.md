@@ -89,30 +89,66 @@ Packages are organised into namespaces:
 * `xs`: packages required for xs-extra
 * `xs-extra`: toolstack components - latest version
 
-## Travis
+## Continuous Integration
 
-Travis builds the entire universe represented by this Opam repository.
+Github Actions builds the entire universe represented by this Opam repository.
 
-[Opam]:   http://opam.ocaml.org
-[OCaml]:  http:/ocaml.org
-[Travis]: https://travis-ci.org/xapi-project/xs-opam
-[Docker]: https://www.docker.com/
-[xenopsd]: https://github.com/xapi-project/xenopsd
+[Opam]:    http://opam.ocaml.org
+[OCaml]:   http:/ocaml.org
+[Docker]:  https://www.docker.com/
 
-### Using it on your travis builds
+### Using xs-opam on github actions builds
 
-Load the config on the install step for .travis-docker.sh at install time, then run the script for testing your package:
-```
-language: c
-service: docker
-install:
-  - wget https://raw.githubusercontent.com/ocaml/ocaml-ci-scripts/master/.travis-docker.sh
-  - wget https://raw.githubusercontent.com/xapi-project/xs-opam/master/tools/xs-opam-ci.env
-  - source xs-opam-ci.env
-script: bash -ex .travis-docker.sh
-env:
-  global:
-    - PINS="EXAMPLE:."
-  jobs:
-    - PACKAGE="EXAMPLE"
+To use the repository in github actions 3 steps are needed to set up the opam environment:
+- One to download the .env file
+- One to load it into the environment
+- One to initialize the opam environment
+
+Here's an example template for the standard `.github/workflows/main.yml`, package should be change to include the opam packages available in the repository and the build and test steps adapted to the repository.
+
+```yaml
+name: Build and test
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  ocaml-test:
+    name: Ocaml tests
+    runs-on: ubuntu-20.04
+    env:
+      package: "EXAMPLE-BINARY EXAMPLE-LIBRARY"
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Pull configuration from xs-opam
+        run: |
+          curl --fail --silent https://raw.githubusercontent.com/xapi-project/xs-opam/master/tools/xs-opam-ci.env | cut -f2 -d " " > .env
+
+      - name: Load environment file
+        id: dotenv
+        uses: falti/dotenv-action@v0.2.4
+
+      - name: Use ocaml
+        uses: avsm/setup-ocaml@v1
+        with:
+          ocaml-version: ${{ steps.dotenv.outputs.ocaml_version_full }}
+          opam-repository: ${{ steps.dotenv.outputs.repository }}
+
+      - name: Install dependencies
+        run: |
+          opam pin add . --no-action
+          opam depext -u ${{ env.package }}
+          opam install ${{ env.package }} --deps-only --with-test -v
+
+      - name: Build
+        run: |
+          opam exec -- ./configure
+          opam exec -- make
+
+      - name: Run tests
+        run: opam exec -- make test
 ```
