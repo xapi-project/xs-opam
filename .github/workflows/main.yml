@@ -54,7 +54,9 @@ jobs:
 
       - name: Build xs-toolstack, test its dependencies
         run: |
-          OPAMERRLOGLEN=10000 opam list -s --required-by xs-toolstack | xargs opam install -t
+          opam list -s --required-by xs-toolstack | xargs opam install -t
+        env:
+          OPAMERRLOGLEN: 10000
 
       - name: Uninstall unversioned packages
         # This should purge them from the cache, unversioned package have
