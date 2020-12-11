@@ -16,6 +16,7 @@ depends: [
   "angstrom"
   "base64"
   "cdrom"
+  "conf-pam"
   "ctypes"
   "ctypes-foreign"
   "domain-name"
@@ -67,10 +68,10 @@ depends: [
   "zstd"
 ]
 depexts: [
-  ["hwdata" "libpci-dev" "libpam-dev" "libxxhash-dev" "libxxhash0"] {os-distribution = "debian"}
-  ["hwdata" "libpci-dev" "libpam-dev" "libxxhash-dev" "libxxhash0"] {os-distribution = "ubuntu"}
-  ["hwdata" "pciutils-devel" "pam-devel" "xxhash-devel" "xxhash-libs"] {os-distribution = "centos"}
-  ["hwdata" "pciutils-devel" "pam-devel" "xxhash-devel" "xxhash-libs"] {os-distribution = "fedora"}
+  ["hwdata" "libpci-dev" "libxxhash-dev" "libxxhash0"] {os-distribution = "debian"}
+  ["hwdata" "libpci-dev" "libxxhash-dev" "libxxhash0"] {os-distribution = "ubuntu"}
+  ["hwdata" "pciutils-devel" "xxhash-devel" "xxhash-libs"] {os-distribution = "centos"}
+  ["hwdata" "pciutils-devel" "xxhash-devel" "xxhash-libs"] {os-distribution = "fedora"}
 ]
 synopsis: "The xapi toolstack daemon which implements the XenAPI"
 description: """
