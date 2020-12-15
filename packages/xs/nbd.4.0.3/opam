@@ -12,7 +12,7 @@ run-test: ["dune" "runtest" "-p" name "-j" jobs]
 
 depends: [
   "ocaml" {>= "4.03.0"}
-  "dune" {build}
+  "dune" {>= "1.0"}
   "alcotest" {with-test}
   "alcotest-lwt" {with-test}
   "io-page-unix" {with-test}
@@ -35,6 +35,6 @@ description: """
 This library allows applications to export and consume block
 devices using the NBD protocol (as used by Linux, qemu etc)"""
 url {
-  src: "https://github.com/xapi-project/nbd/archive/v4.0.2.tar.gz"
-  checksum: "sha256=bb797fe13a3592b82ecb0be64102175071d5fde44f3021c1b476868e3ecb8458"
+  src: "https://github.com/xapi-project/nbd/archive/v4.0.3.tar.gz"
+  checksum: "sha256=a86533562fc4fd2d284cb525318141f1d673cd9fcc5ad3d1707622e54cb55287"
 }
