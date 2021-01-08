@@ -11,14 +11,18 @@ build:  [[ "dune" "build" "-p" name "-j" jobs ]]
 depends: [
   "ocaml"
   "dune" {build}
+  "base-unix"
+  "fd-send-recv" {>= "2.0.0"}
+  "xapi-stdext-pervasives"
+  "xapi-stdext-std"
 ]
 synopsis:
-  "A deprecated collection of utility functions - Monadic modules (Monad, Listext, Either)"
+  "A deprecated collection of utility functions - Unix module extensions"
 description: """
 This library is provided for a transitionary period only.
 No new code should use this library."""
 url {
   src:
-    "https://github.com/xapi-project/stdext/archive/v4.11.1.tar.gz"
-  checksum: "sha256=9219e973963c2596a0458dd187f9bf51977625faf0794b75f8d174e27bfc50ce"
+    "https://github.com/xapi-project/stdext/archive/v4.11.2.tar.gz"
+  checksum: "sha256=0c5276e68ecbba743e76b7a609664a73dfa7cfb8d918e80084c25773528ce56e"
 }

@@ -11,16 +11,17 @@ build:  [[ "dune" "build" "-p" name "-j" jobs ]]
 depends: [
   "ocaml"
   "dune" {build}
-  "logs"
-  "xapi-backtrace"
+  "base-threads"
+  "base-unix"
+  "xapi-stdext-pervasives"
 ]
 synopsis:
-  "A deprecated collection of utility functions - Pervasives extension"
+  "A deprecated collection of utility functions - Threads extensions and Semaphore"
 description: """
 This library is provided for a transitionary period only.
 No new code should use this library."""
 url {
   src:
-    "https://github.com/xapi-project/stdext/archive/v4.11.1.tar.gz"
-  checksum: "sha256=9219e973963c2596a0458dd187f9bf51977625faf0794b75f8d174e27bfc50ce"
+    "https://github.com/xapi-project/stdext/archive/v4.11.2.tar.gz"
+  checksum: "sha256=0c5276e68ecbba743e76b7a609664a73dfa7cfb8d918e80084c25773528ce56e"
 }
