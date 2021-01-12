@@ -38,6 +38,7 @@ depends: [
   "xapi-nbd"
   "xapi-networkd"
   "xapi-plugin"
+  "xapi-rrd"
   "xapi-rrdd"
   "xapi-rrdd-plugin"
   "xapi-rrd-transport"

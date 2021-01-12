@@ -11,6 +11,7 @@ build: [
 depends: [
   "ocaml"
   "dune" {build}
+  "conf-python-2-7"
   "ounit" {with-test}
   "alcotest" {with-test}
   "lwt" {with-test}
@@ -19,11 +20,6 @@ depends: [
   "rpclib"
   "xmlm"
   "cmdliner"
-]
-depexts: [
-  ["python"] {os-distribution = "centos"}
-  ["python"] {os-distribution = "debian"}
-  ["python"] {os-distribution = "ubuntu"}
 ]
 synopsis: "Code and documentation generator for the Xapi storage interface"
 url {
