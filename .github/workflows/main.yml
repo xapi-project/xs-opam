@@ -21,7 +21,7 @@ jobs:
 
     steps:
       - name: Update apt cache
-        run: sudo apt-get update 
+        run: sudo apt-get update
         shell: bash
 
       - name: Checkout
@@ -45,6 +45,9 @@ jobs:
         with:
           ocaml-version: ${{ matrix.ocaml-version }}
           opam-repository: "."
+
+      - name: Check whether there are packages with more than a version
+        run: tools/opam-single-version-check.bash
 
       - name: Upgrade existing packages
         run: |

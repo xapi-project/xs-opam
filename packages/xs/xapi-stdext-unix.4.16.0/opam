@@ -11,14 +11,19 @@ build:  [[ "dune" "build" "-p" name "-j" jobs ]]
 depends: [
   "ocaml"
   "dune" {build}
+  "base-unix"
+  "fd-send-recv" {>= "2.0.0"}
+  "xapi-stdext-pervasives"
+  "xapi-stdext-std"
 ]
-synopsis: "A deprecated collection of utility functions - Zerocheck module"
+synopsis:
+  "A deprecated collection of utility functions - Unix module extensions"
 description: """
 This library is provided for a transitionary period only.
 No new code should use this library."""
 url {
   src:
-    "https://github.com/xapi-project/stdext/archive/v4.14.0.tar.gz"
+    "https://github.com/xapi-project/stdext/archive/v4.16.0.tar.gz"
   checksum:
-    "sha256=ac1b58f3ab9760858365828212ecf265dc2cff83574096c140a6cdfafd73805d"
+    "sha256=ed012587042f93b2cf2b1c49ecf7fb2c4ffd6bfea4af82cdfb8b9b78fd957215"
 }

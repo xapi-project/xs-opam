@@ -17,6 +17,7 @@ $(NAME).tar.gz:
 	mv packages/ocaml .
 	mv packages/upstream-extra .
 	env OPAMFETCH=wget opam admin cache |& tee cache.log
+	! grep ERROR cache.log
 	git archive --format=tar.gz --prefix=$(NAME)/ HEAD > $@
 	tar zxf $@
 	cd $(NAME) && ln -fs ../cache .
