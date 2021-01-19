@@ -37,6 +37,6 @@ threads and another deals with Lwt co-operative threads.
 """
 url {
   src:
-    "https://github.com/xapi-project/ocaml-xenstore-clients/archive/v1.1.0.tar.gz"
-  checksum: "md5=3a2e01adf0a5fc4b6834fabf778d3836"
+    "https://github.com/xapi-project/ocaml-xenstore-clients/archive/v1.2.0.tar.gz"
+  checksum: "md5=0cdf391c14589a57828e561e0f1473aa"
 }
