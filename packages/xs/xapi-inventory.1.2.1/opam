@@ -12,9 +12,9 @@ build: [
   ["dune" "runtest" "-p" name "-j" jobs] {with-test}
 ]
 depends: [
-  "ocaml"
+  "ocaml" {>= "4.08"}
   "ocamlfind" {build}
-  "dune" {build}
+  "dune" {>= "1.4"}
   "base-threads"
   "astring"
   "xapi-stdext-unix"

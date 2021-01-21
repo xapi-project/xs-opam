@@ -12,8 +12,8 @@ build: [
   ["dune" "runtest" "-p" name] {with-test}
 ]
 depends: [
-  "ocaml"
-  "dune" {build & >= "1.4.0"}
+  "ocaml" {>= "4.08"}
+  "dune" {>= "1.4"}
   "base-bigarray"
   "base-unix"
   "ppx_deriving_rpc"

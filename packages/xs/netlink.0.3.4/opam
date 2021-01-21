@@ -7,7 +7,7 @@ dev-repo: "git+https://github.com/xapi-project/ocaml-netlink.git"
 build: ["dune" "build" "-p" name "-j" jobs]
 depends: [
   "ocaml"
-  "dune" {build}
+  "dune" {>= "1.4"}
   "ctypes"
   "ctypes-foreign"
   "conf-libnl3"

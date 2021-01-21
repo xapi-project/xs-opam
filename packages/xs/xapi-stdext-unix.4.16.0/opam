@@ -9,13 +9,17 @@ tags: [ "org:xapi-project" ]
 build:  [[ "dune" "build" "-p" name "-j" jobs ]]
 
 depends: [
-  "ocaml"
-  "dune" {build}
+  "ocaml" {>= "4.08"}
+  "dune" {>= "1.11"}
   "base-unix"
   "fd-send-recv" {>= "2.0.0"}
-  "xapi-stdext-pervasives"
-  "xapi-stdext-std"
+  "xapi-stdext-pervasives" {=version}
+  "xapi-stdext-std" {=version}
 ]
+depexts: [
+  ["linux-headers"] {os-distribution = "alpine"}
+]
+available: [ os = "linux" ]
 synopsis:
   "A deprecated collection of utility functions - Unix module extensions"
 description: """
