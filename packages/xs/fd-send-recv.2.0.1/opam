@@ -21,7 +21,7 @@ build: [
 ]
 depends: [
   "ocaml"
-  "dune" {build}
+  "dune" {>= "1.4"}
   "odoc" {with-doc}
 ]
 synopsis:

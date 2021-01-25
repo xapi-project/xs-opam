@@ -9,8 +9,8 @@ tags: [ "org:xapi-project" ]
 build:  [[ "dune" "build" "-p" name "-j" jobs ]]
 
 depends: [
-  "ocaml"
-  "dune" {build}
+  "ocaml" {>= "4.08"}
+  "dune" {>= "1.11"}
   "logs"
   "xapi-backtrace"
 ]
