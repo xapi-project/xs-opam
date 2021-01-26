@@ -8,6 +8,7 @@ depends: [
   "merlin"
   "ocaml-system"
   "ocamlformat"
+  "ocaml-lsp-server"
   "odig"
   "travis-opam"
   "utop"
