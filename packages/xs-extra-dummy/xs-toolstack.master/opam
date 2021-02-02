@@ -12,6 +12,7 @@ depends: [
   "http-svr"
   "message-switch"
   "message-switch-cli"
+  "mirage-crypto-pk"
   "nbd-tool"
   "pciutil"
   "rrd2csv"
