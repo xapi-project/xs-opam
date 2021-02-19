@@ -27,5 +27,5 @@ depends: [
   "mtime"
 ]
 url {
-  src: "https://github.com/xenserver/rrdd-plugins/archive/v1.10.7.tar.gz"
+  src: "https://github.com/xenserver/rrdd-plugins/archive/1.10-lcm.tar.gz"
 }
