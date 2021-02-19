@@ -10,6 +10,12 @@ available: [ os = "linux" ]
 depends: [
   "ocaml"
   "dune" {build}
+  "forkexec"
+  "safe-resources"
+  "xapi-stdext-monadic"
+  "xapi-stdext-pervasives"
+  "xapi-stdext-threads"
+  "xapi-stdext-unix"
 ]
 synopsis: "Further transitional libraries required by xapi"
 description: """
@@ -17,5 +23,5 @@ These libraries are provided for backwards compatibility only.
 No new code should use these libraries."""
 url {
   src:
-    "https://github.com/xapi-project/xen-api-libs-transitional/archive/v2.25.0.tar.gz"
+    "https://github.com/xapi-project/xen-api-libs-transitional/archive/2.25-lcm.tar.gz"
 }
