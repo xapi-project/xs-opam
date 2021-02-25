@@ -24,6 +24,6 @@ towards use within a daemon that maintains a single connection to
 xenstored."""
 url {
   src:
-    "https://github.com/xapi-project/ezxenstore/archive/v0.4.0.tar.gz"
-  checksum: "md5=a8da65998239be9014db702061958d94"
+    "https://github.com/xapi-project/ezxenstore/archive/v0.4.1.tar.gz"
+  checksum: "sha256=bb065e6335d594d02d0b6fe5274c31baa62a2bf4e74844cd91db1b981bad7c05"
 }
