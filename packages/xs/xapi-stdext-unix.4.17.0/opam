@@ -6,25 +6,28 @@ dev-repo: "git://github.com/xapi-project/stdext.git"
 homepage: "https://xapi-project.github.io/"
 tags: [ "org:xapi-project" ]
 
-build:  [
-  ["dune" "build" "-p" name "-j" jobs]
-  ["dune" "runtest" "-p" name "-j" jobs] {with-test}
-]
+build:  [[ "dune" "build" "-p" name "-j" jobs ]]
 
 depends: [
   "ocaml" {>= "4.08"}
   "dune" {>= "1.11"}
-  "uuidm"
-  "alcotest" {with-test}
+  "base-unix"
+  "fd-send-recv" {>= "2.0.0"}
+  "xapi-stdext-pervasives" {=version}
+  "xapi-stdext-std" {=version}
 ]
+depexts: [
+  ["linux-headers"] {os-distribution = "alpine"}
+]
+available: [ os = "linux" ]
 synopsis:
-  "A deprecated collection of utility functions - Standard library extensions"
+  "A deprecated collection of utility functions - Unix module extensions"
 description: """
 This library is provided for a transitionary period only.
 No new code should use this library."""
 url {
   src:
-    "https://github.com/xapi-project/stdext/archive/v4.16.0.tar.gz"
+    "https://github.com/xapi-project/stdext/archive/v4.17.0.tar.gz"
   checksum:
-    "sha256=ed012587042f93b2cf2b1c49ecf7fb2c4ffd6bfea4af82cdfb8b9b78fd957215"
+    "sha256=8a7294ba6d3fa2d6fdee1e8e48e76cd2a8b5377c9d48d12278d577df6c3eecee"
 }

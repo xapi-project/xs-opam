@@ -18,7 +18,7 @@ This library is provided for a transitionary period only.
 No new code should use this library."""
 url {
   src:
-    "https://github.com/xapi-project/stdext/archive/v4.16.0.tar.gz"
+    "https://github.com/xapi-project/stdext/archive/v4.17.0.tar.gz"
   checksum:
-    "sha256=ed012587042f93b2cf2b1c49ecf7fb2c4ffd6bfea4af82cdfb8b9b78fd957215"
+    "sha256=8a7294ba6d3fa2d6fdee1e8e48e76cd2a8b5377c9d48d12278d577df6c3eecee"
 }
