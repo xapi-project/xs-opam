@@ -30,7 +30,7 @@ depends: [
   "message-switch-unix"
   "mtime"
   "ocaml-migrate-parsetree"
-  "ounit" {with-test} # needed for ocaml-pci
+  "pci"
   "pciutil"
   "ppx_deriving_rpc"
   "ppx_sexp_conv"
@@ -68,10 +68,10 @@ depends: [
   "zstd"
 ]
 depexts: [
-  ["hwdata" "libpci-dev" "libxxhash-dev" "libxxhash0"] {os-distribution = "debian"}
-  ["hwdata" "libpci-dev" "libxxhash-dev" "libxxhash0"] {os-distribution = "ubuntu"}
-  ["hwdata" "pciutils-devel" "xxhash-devel" "xxhash-libs"] {os-distribution = "centos"}
-  ["hwdata" "pciutils-devel" "xxhash-devel" "xxhash-libs"] {os-distribution = "fedora"}
+  ["hwdata" "libxxhash-dev" "libxxhash0"] {os-distribution = "debian"}
+  ["hwdata" "libxxhash-dev" "libxxhash0"] {os-distribution = "ubuntu"}
+  ["hwdata" "xxhash-devel" "xxhash-libs"] {os-distribution = "centos"}
+  ["hwdata" "xxhash-devel" "xxhash-libs"] {os-distribution = "fedora"}
 ]
 synopsis: "The xapi toolstack daemon which implements the XenAPI"
 description: """
