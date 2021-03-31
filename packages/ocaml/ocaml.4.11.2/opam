@@ -6,9 +6,9 @@ and polls it to initialise specific variables like `ocaml:native-dynlink`"""
 maintainer: "platform@lists.ocaml.org"
 depends: [
   "ocaml-config"
-  "ocaml-base-compiler" {= "4.08.1"} |
-  "ocaml-variants" {>= "4.08.1" & < "4.08.2~"} |
-  "ocaml-system" {>= "4.08.1" & < "4.08.2~"}
+  "ocaml-base-compiler" {= "4.11.2"} |
+  "ocaml-variants" {>= "4.11.2" & < "4.11.3~"} |
+  "ocaml-system" {>= "4.11.2" & < "4.11.3~"}
 ]
 setenv: [
   [CAML_LD_LIBRARY_PATH = "%{_:stubsdir}%"]
