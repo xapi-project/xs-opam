@@ -14,7 +14,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        ocaml-version: ["4.08.1", "4.10.1"]
+        ocaml-version: ["4.10.1", "4.11.2"]
 
     env:
       OCAML_VERSION: ${{ matrix.ocaml-version }}
