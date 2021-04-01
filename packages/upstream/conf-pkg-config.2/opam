@@ -1,7 +1,8 @@
 opam-version: "2.0"
 name: "conf-pkg-config"
-version: "1.3"
-synopsis: "Virtual package relying on pkg-config installation"
+version: "2"
+synopsis:
+  "Check if pkg-config is installed and create an opam switch local pkgconfig folder"
 description: """
 This package can only install if the pkg-config package is installed
 on the system."""
@@ -11,10 +12,15 @@ license: "GPL-1.0-or-later"
 homepage: "http://www.freedesktop.org/wiki/Software/pkg-config/"
 bug-reports: "https://github.com/ocaml/opam-repository/issues"
 flags: conf
-build: ["pkg-config" "--help"]
-install:
+setenv: PKG_CONFIG_PATH += "%{lib}%/pkgconfig"
+build: [
+  ["pkg-config" "--help"] {os != "openbsd"}
+  ["/usr/local/bin/pkgconf" "--help"] {os = "openbsd"}
+]
+install: [
+  ["mkdir" "-p" "%{lib}%/pkgconfig"]
   ["ln" "-s" "/usr/local/bin/pkgconf" "%{bin}%/pkg-config"] {os = "openbsd"}
-remove: ["rm" "-f" "%{bin}%/pkg-config"] {os = "openbsd"}
+]
 post-messages:
   "conf-pkg-config: A symlink to /usr/local/bin/pkgconf has been installed in the OPAM bin directory (%{bin}%) on your PATH as 'pkg-config'. This is necessary for correct operation."
     {os = "openbsd"}
@@ -34,5 +40,5 @@ depexts: [
   ["pkgconf"] {os = "freebsd"}
   ["pkgconf-pkg-config"] {os-distribution = "rhel" & os-version >= "8"}
   ["pkgconf-pkg-config"] {os-distribution = "centos" & os-version >= "8"}
-  ["pkg-config"] {os-distribution = "cygwinports"}
+  ["system:pkgconf"] {os = "win32" & os-distribution = "cygwinports"}
 ]
