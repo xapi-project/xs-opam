@@ -15,10 +15,10 @@ build: [
 ]
 depends: [
   "base-bytes"
-  "ounit" { >= "2.0.0" }
+  "ounit2"
   "dune" { >= "1.1" }
-  "qcheck" { >= "0.5" }
-  "ocaml" { >= "4.02.0" }
+  "qcheck" { >= "0.14" }
+  "ocaml" { >= "4.03.0" }
 ]
 tags: [
   "test"
@@ -26,9 +26,9 @@ tags: [
   "quickcheck"
 ]
 url {
-  src: "https://github.com/vincent-hugot/qtest/archive/v2.10.1.tar.gz"
+  src: "https://github.com/vincent-hugot/qtest/archive/v2.11.2.tar.gz"
   checksum: [
-    "md5=02bc66f1f5174e405ab839f8b711fe8e"
-    "sha512=838ff1951b8da35f0551b1db4d36a03ad803a57ba8b85816a51e6b1bc2ad7778299a7fd026a062437252b40c0de1c83b6171605b19f01e3874274b2676341bf0"
+    "md5=73b6f3f885cb8a404f491c6ab50aa373"
+    "sha512=3edb8471b29c9eb2f6ba11b157abf7ca43ef965d4b1500aaaf1acaeb261972a61c9b104887ada6ca63dc85e06b1d27e34f391885b2fbeb7ea5646323d3be08d0"
   ]
 }
