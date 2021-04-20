@@ -16,6 +16,7 @@ depends: [
 ]
 synopsis: "Bindings for OpenSSL"
 authors: "Samuel Mimram <samuel.mimram@ens-lyon.org>"
+patches: [ "0001-REQ-403-provide-custom-verification-callback.patch" ]
 url {
   src: "https://github.com/savonet/ocaml-ssl/archive/0.5.9.tar.gz"
   checksum: [

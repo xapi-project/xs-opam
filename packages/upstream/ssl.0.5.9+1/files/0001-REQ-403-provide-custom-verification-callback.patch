@@ -1,0 +1,89 @@
+From 2f277eb39be139c8857df7a79bce039e83119a11 Mon Sep 17 00:00:00 2001
+From: Ben Anson <ben.anson@citrix.com>
+Date: Mon, 19 Apr 2021 15:03:49 +0100
+Subject: [PATCH] REQ-403 provide custom verification callback
+
+Intended usage from ocaml:
+
+```
+let ctx = (* my SSL_CTX *) in
+Ssl.load_verify_locations ctx "bundle.pem" "" ;
+Ssl.set_verify ctx [ Ssl.Verify_peer ] (Some Ssl.Citrix.exact_match_cb) ;
+
+(* when the bundle changes, we should refresh the trusted certs *)
+Ssl.load_verify_locations ctx "bundle.pem" "";
+```
+
+Signed-off-by: Ben Anson <ben.anson@citrix.com>
+---
+ src/ssl.ml      |  6 ++++++
+ src/ssl.mli     |  6 ++++++
+ src/ssl_stubs.c | 27 +++++++++++++++++++++++++++
+ 3 files changed, 39 insertions(+)
+
+diff --git a/src/ssl.ml b/src/ssl.ml
+index 4ecd57d..df75c43 100644
+--- a/src/ssl.ml
++++ b/src/ssl.ml
+@@ -331,3 +331,9 @@ let input_int ssl =
+     i := (!i lsl 8) + int_of_char (Bytes.get tmp 2);
+     i := (!i lsl 8) + int_of_char (Bytes.get tmp 3);
+     !i
++
++module Citrix = struct
++  external get_exact_match_cb : unit -> verify_callback = "ocaml_ssl_get_exact_match_cb"
++
++  let exact_match_cb = get_exact_match_cb ()
++end
+diff --git a/src/ssl.mli b/src/ssl.mli
+index eb62baa..3a68be9 100644
+--- a/src/ssl.mli
++++ b/src/ssl.mli
+@@ -473,3 +473,9 @@ val input_int : socket -> int
+ 
+ (** Write an integer on an SSL socket. *)
+ val output_int : socket -> int -> unit
++
++module Citrix : sig
++  val exact_match_cb : verify_callback
++  (** This callback can be used to check that a peer's certificate _exactly_ matches
++   *  a trusted certificate. The trusted certificates can be set using [load_verify_locations] *)
++end
+diff --git a/src/ssl_stubs.c b/src/ssl_stubs.c
+index 3d431b8..6b1598e 100644
+--- a/src/ssl_stubs.c
++++ b/src/ssl_stubs.c
+@@ -1664,3 +1664,30 @@ err:
+   if (bio != NULL) BIO_free(bio);
+   return(ret);
+ }
++
++static int exact_match_cb(int ok, X509_STORE_CTX *ctx) {
++  // See openssl/x509_vfy.c:lookup_cert_match
++  //
++  // Consider a certificate valid if and only if it exactly matches
++  // a trusted certificate in the store
++
++  ok = 0;
++
++  X509 *peer_cert = X509_STORE_CTX_get_current_cert(ctx);
++  X509_STORE_CTX_lookup_certs_fn lookup =  X509_STORE_CTX_get_lookup_certs(ctx);
++  STACK_OF(X509) *trusted_certs = lookup(ctx, X509_get_subject_name(peer_cert));
++  for(int i = 0; i < sk_X509_num(trusted_certs); i++) {
++    X509 *c = sk_X509_value(trusted_certs, i);
++    if (X509_cmp(c, peer_cert) == 0) {
++      ok = 1;
++      break;
++    }
++  }
++
++  return ok;
++}
++
++CAMLprim value ocaml_ssl_get_exact_match_cb(value unit)
++{
++  return (value)exact_match_cb;
++}
+-- 
+2.25.1
+
