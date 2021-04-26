@@ -11,8 +11,8 @@ bug-reports: "https://github.com/mirage/ocaml-conduit/issues"
 depends: [
   "ocaml" {>= "4.03.0"}
   "dune"
-  "ppx_sexp_conv" {>= "v0.13.0" & < "v0.15"}
-  "sexplib" {< "v0.15"}
+  "ppx_sexp_conv" {>="v0.12.0"}
+  "sexplib"
   "astring"
   "uri"
   "logs" {>= "0.5.0"}
@@ -48,9 +48,9 @@ The useful opam packages available that extend this library are:
 """
 url {
   src:
-    "https://github.com/mirage/ocaml-conduit/releases/download/v2.1.0/conduit-v2.1.0.tbz"
+    "https://github.com/mirage/ocaml-conduit/releases/download/v2.2.2/conduit-v2.2.2.tbz"
   checksum: [
-    "sha256=7b4dd1faca7ed4dc77c1b5d765fca9053209dcfcb2c379d666a19314d8f77e72"
-    "sha512=2f0baaa0b1d99874c12b2382ba2f95989a782c3b37ccc06fa69c61efb068100c0bf904f6e04d6ec64fd2346d696f0c97870f9f5a740ff278d51820af28ed0ac1"
+    "sha256=a57cc1843aa7eaaa183a5d08d98a13e78c848b37aabb7b55ee88257c051f68fd"
+    "sha512=c2ca50cdae36f6b9cef4053844a4b719e4e065997a2dc6e1858f8c0bc3ce03d5728d10308368f1968154d217dfc84038cd1de007b1168e7adf476dc57af3f513"
   ]
 }
