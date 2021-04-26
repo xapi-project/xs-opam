@@ -27,6 +27,9 @@ build: [
   ["dune" "subst"] {pinned}
   ["dune" "build" "-p" name "-j" jobs]
 ]
+patches: [
+  "0001-backport-Add-openssl_overrides-to-conduit-context.patch"
+]
 dev-repo: "git+https://github.com/mirage/ocaml-conduit.git"
 synopsis: "A network connection establishment library for Lwt_unix"
 url {
