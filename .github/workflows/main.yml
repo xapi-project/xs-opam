@@ -46,14 +46,17 @@ jobs:
           ocaml-version: ${{ matrix.ocaml-version }}
           opam-repository: "."
 
-      - name: Check whether there are packages with more than a version
-        run: tools/opam-single-version-check.bash
-
       - name: Upgrade existing packages
         run: |
           opam update
           opam depext -vv -y xs-toolstack
           opam upgrade
+
+      - name: Check whether there are packages with more than a version
+        run: tools/opam-single-version-check.bash
+
+      - name: Check whether there are unused packages
+        run: tools/find-unused-packages.sh
 
       - name: Build xs-toolstack, test its dependencies
         run: |
