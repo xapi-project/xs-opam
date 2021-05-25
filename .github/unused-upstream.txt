@@ -1,12 +1,11 @@
 bisect_ppx
 conf-perl
-cpuid
 fix
 logs-syslog
 ocaml-version
 ocamlformat
 odoc
-ppx_fail
 syslog-message
+tyre
 tyxml
 uuseg
