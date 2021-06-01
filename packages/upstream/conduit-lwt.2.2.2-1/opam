@@ -8,27 +8,23 @@ tags: "org:mirage"
 homepage: "https://github.com/mirage/ocaml-conduit"
 bug-reports: "https://github.com/mirage/ocaml-conduit/issues"
 depends: [
-  "ocaml" {>= "4.07.0"}
+  "ocaml" {>= "4.03.0"}
   "dune"
   "base-unix"
   "ppx_sexp_conv" {>="v0.12.0"}
-  "conduit-lwt" {>="2.1.0" & <"2.3.0"}
+  "sexplib"
+  "conduit" {=version}
   "lwt" {>= "3.0.0"}
-  "uri" {>= "1.9.4"}
-  "ipaddr" {>= "4.0.0"}
-  "ipaddr-sexp"
-]
-depopts: ["tls" "lwt_ssl" "launchd"]
-conflicts: [
-  "tls" {< "0.12.2"}
-  "ssl" {< "0.5.9"}
 ]
 build: [
   ["dune" "subst"] {pinned}
   ["dune" "build" "-p" name "-j" jobs]
 ]
+patches: [
+  "0001-backport-Add-openssl_overrides-to-conduit-context.patch"
+]
 dev-repo: "git+https://github.com/mirage/ocaml-conduit.git"
-synopsis: "A network connection establishment library for Lwt_unix"
+synopsis: "A portable network connection establishment library using Lwt"
 url {
   src:
     "https://github.com/mirage/ocaml-conduit/releases/download/v2.2.2/conduit-v2.2.2.tbz"
