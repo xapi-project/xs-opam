@@ -11,23 +11,17 @@ build:  [[ "dune" "build" "-p" name "-j" jobs ]]
 depends: [
   "ocaml" {>= "4.08"}
   "dune" {>= "1.11"}
-  "base-unix"
-  "fd-send-recv" {>= "2.0.0"}
-  "xapi-stdext-pervasives" {=version}
-  "xapi-stdext-std" {=version}
+  "logs"
+  "xapi-backtrace"
 ]
-depexts: [
-  ["linux-headers"] {os-distribution = "alpine"}
-]
-available: [ os = "linux" ]
 synopsis:
-  "A deprecated collection of utility functions - Unix module extensions"
+  "A deprecated collection of utility functions - Pervasives extension"
 description: """
 This library is provided for a transitionary period only.
 No new code should use this library."""
 url {
   src:
-    "https://github.com/xapi-project/stdext/archive/v4.17.0.tar.gz"
+    "https://github.com/xapi-project/stdext/archive/v4.18.0.tar.gz"
   checksum:
-    "sha256=8a7294ba6d3fa2d6fdee1e8e48e76cd2a8b5377c9d48d12278d577df6c3eecee"
+    "sha256=9f1613687958169efc7c4c58599c2348c124d96db35429b1c6d03650788d4c98"
 }
