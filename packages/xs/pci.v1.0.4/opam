@@ -35,6 +35,6 @@ depexts: [
 dev-repo: "git+https://github.com/simonjbeaumont/ocaml-pci.git"
 url {
   src:
-    "https://github.com/xapi-project/ocaml-pci/archive/v1.0.3.tar.gz"
-  checksum: "sha256=fc27aa67931035d5ecfb7be7f8e1ad688f814572da0c78c2c6ee1c5889a451f1"
+    "https://github.com/xapi-project/ocaml-pci/archive/v1.0.4.tar.gz"
+  checksum: "sha256=9fb5e56ecc418cf54e514b70d4b6bdbff017467efbf5b02aa57c87f50477858b"
 }
