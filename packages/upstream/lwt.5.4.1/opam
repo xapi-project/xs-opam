@@ -1,6 +1,6 @@
 opam-version: "2.0"
 name: "lwt"
-version: "5.4.0"
+version: "5.4.1"
 synopsis: "Promises and event-driven I/O"
 description: """
 A promise is a value that may become determined in the future.
@@ -51,9 +51,9 @@ build: [
 ]
 dev-repo: "git+https://github.com/ocsigen/lwt.git"
 url {
-  src: "https://github.com/ocsigen/lwt/archive/5.4.0.zip"
+  src: "https://github.com/ocsigen/lwt/archive/refs/tags/5.4.1.tar.gz"
   checksum: [
-    "md5=fc4721bdb1a01225b96e3a2debde95fa"
-    "sha512=e427f08223b77f9af696c9e6f90ff68e27e02e446910ef90d3da542e7b00bf23dd191ac77c1871288faa2289f8d28fc2f44efc3d3fe9165fe1c7a6be88ee49ff"
+    "md5=5a8d2a83ee9314781f137d147a4c62ae"
+    "sha512=b872b7abe546c431ba62fe466423d7ace8e487ebd85ea5e859f462eb4c0a6884b242d9efd4a557b6da3ae699b0b695e0a783f89a1d1147cba7d99c4ae9d2db17"
   ]
 }
