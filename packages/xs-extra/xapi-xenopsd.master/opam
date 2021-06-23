@@ -28,7 +28,6 @@ depends: [
   "rresult"
   "sexplib"
   "sexplib0"
-  "tyre" { >= "0.5" }
   "uri"
   "uuidm"
   "uutf"
