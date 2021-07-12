@@ -1,14 +1,14 @@
-name: Build and test (Stockholm)
+name: Build and test (Yangtze)
 
 on:
   push:
     branches:
-      - 'release/stockholm/lcm'
+      - 'release/yangtze/lcm'
     tags:
       - '*'
   pull_request:
     branches:
-      - 'release/stockholm/lcm'
+      - 'release/yangtze/lcm'
 jobs:
   build:
     runs-on: ubuntu-20.04
