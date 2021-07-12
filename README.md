@@ -10,7 +10,7 @@ toolstack and their upstream dependencies.
 You can add this Git repository as a remote OPAM repository:
 
 ```bash
-opam repo add xs-opam-stockholm https://github.com/xapi-project/xs-opam.git#release/stockholm/lcm
+opam repo add xs-opam-yangtze https://github.com/xapi-project/xs-opam.git#release/yangtze/lcm
 ```
 
 ## Building packages
