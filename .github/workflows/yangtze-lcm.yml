@@ -1,0 +1,20 @@
+name: Build and test (Yangtze, scheduled)
+
+on:
+  schedule:
+    # run daily
+    - cron: '51 2 * * *'
+
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          ref: 'release/yangtze/lcm'
+      - name: Build the whole xs-toolstack
+        run: bash tools/travis.sh
+        env:
+          OCAML_VERSION: 4.08
+          OPAMWITHTEST: true
