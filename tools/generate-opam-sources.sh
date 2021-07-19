@@ -62,7 +62,7 @@ xapi-rrdd                 $XAPI/xcp-rrdd
 rrd-transport             $XAPI/xcp-rrdd
 xenctrl                   $XAPI/xenctrl
 wsproxy                   $XAPI/wsproxy
-xapi-idl                  $XAPI/xcp-idl
+xapi-idl                  $XAPI/message-switch
 xapi-tapctl               $XAPI/tapctl"
 
 echo "$MAP" | while read -r opam repo; do
