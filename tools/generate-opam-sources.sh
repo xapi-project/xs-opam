@@ -10,9 +10,9 @@ MAP="\
 rrd2csv                   $XAPI/xen-api
 rrddump                   $XAPI/xcp-rrdd
 varstored-guard           $XAPI/varstored-guard
-xen-api-client-lwt        $XAPI/xen-api-client
-xen-api-client            $XAPI/xen-api-client
-xen-api-client-async      $XAPI/xen-api-client
+xen-api-client-lwt        $XAPI/xen-api
+xen-api-client            $XAPI/xen-api
+xen-api-client-async      $XAPI/xen-api
 xapi-database             $XAPI/xen-api
 xapi-client               $XAPI/xen-api
 xapi-consts               $XAPI/xen-api
