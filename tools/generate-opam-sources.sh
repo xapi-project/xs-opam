@@ -10,9 +10,9 @@ MAP="\
 rrd2csv                   $XAPI/xen-api
 rrddump                   $XAPI/xcp-rrdd
 varstored-guard           $XAPI/varstored-guard
-xen-api-client-lwt        $XAPI/xen-api-client
-xen-api-client            $XAPI/xen-api-client
-xen-api-client-async      $XAPI/xen-api-client
+xen-api-client-lwt        $XAPI/xen-api
+xen-api-client            $XAPI/xen-api
+xen-api-client-async      $XAPI/xen-api
 xapi-database             $XAPI/xen-api
 xapi-client               $XAPI/xen-api
 xapi-consts               $XAPI/xen-api
@@ -54,7 +54,7 @@ xapi-compression          $XAPI/xen-api-libs-transitional
 xml-light2                $XAPI/xen-api-libs-transitional
 zstd                      $XAPI/xen-api-libs-transitional
 rrdd-plugin               $XAPI/xcp-rrdd
-rrdd-plugins              $XSER/rrdd-plugins
+rrdd-plugins              $XAPI/xcp-rrdd
 xapi-rrdd-plugin          $XAPI/xcp-rrdd
 xapi-rrd-transport-utils  $XAPI/xcp-rrdd
 xapi-rrd-transport        $XAPI/xcp-rrdd
@@ -62,7 +62,7 @@ xapi-rrdd                 $XAPI/xcp-rrdd
 rrd-transport             $XAPI/xcp-rrdd
 xenctrl                   $XAPI/xenctrl
 wsproxy                   $XAPI/wsproxy
-xapi-idl                  $XAPI/xcp-idl
+xapi-idl                  $XAPI/message-switch
 xapi-tapctl               $XAPI/tapctl"
 
 echo "$MAP" | while read -r opam repo; do
