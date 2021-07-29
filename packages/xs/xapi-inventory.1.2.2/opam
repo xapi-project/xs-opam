@@ -7,14 +7,13 @@ bug-reports: "https://github.com/xapi-project/xcp-inventory/issues"
 dev-repo: "git+http://github.com/xapi-project/xcp-inventory.git"
 tags: [ "org:xapi-project" ]
 build: [
-  ["./configure" "--default_inventory=%{prefix}%/etc"]
   ["dune" "build" "-p" name "-j" jobs]
   ["dune" "runtest" "-p" name "-j" jobs] {with-test}
 ]
 depends: [
-  "ocaml" {>= "4.08"}
+  "ocaml"
   "ocamlfind" {build}
-  "dune" {>= "1.4"}
+  "dune"
   "base-threads"
   "astring"
   "xapi-stdext-unix"
@@ -22,12 +21,11 @@ depends: [
   "cmdliner"
   "uuidm"
 ]
-conflicts: "xcp-inventory" {!= "transition"}
 synopsis: "Library for accessing the xapi toolstack inventory file"
 description: """
 The inventory file provides global host identify information
 needed by multiple services."""
 url {
-  src: "https://github.com/xapi-project/xcp-inventory/archive/v1.2.1.tar.gz"
-  checksum: "md5=15d24391dd45d4b318451a639c3beb46"
+  src: "https://github.com/xapi-project/xcp-inventory/archive/v1.2.2.tar.gz"
+  checksum: "sha256=49a844c3b056d8d1067520ff5417ed263dae470aef11aeea10ee1fa39fce0d2f"
 }

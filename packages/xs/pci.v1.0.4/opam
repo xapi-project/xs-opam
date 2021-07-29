@@ -29,7 +29,7 @@ depexts: [
   ["hwdata" "libpci-dev"] {os-family = "debian"}
   ["hwdata" "pciutils-dev"] {os-distribution = "alpine"}
   ["hwdata" "pciutils-devel"] {os-distribution = "centos"}
-  ["hwdata" "pciutil-devel"] {os-distribution = "fedora"}
+  ["hwdata" "pciutils-devel"] {os-distribution = "fedora"}
 
 ]
 dev-repo: "git+https://github.com/simonjbeaumont/ocaml-pci.git"
