@@ -1,8 +1,8 @@
 opam-version: "2.0"
 name: "ctypes"
-version: "0.17.1"
+version: "0.19.1"
 synopsis: "Combinators for binding to C libraries without writing any C"
-description: """
+description: """\
 ctypes is a library for binding to C libraries using pure OCaml. The primary
 aim is to make writing C extensions as straightforward as possible.
 
@@ -27,14 +27,14 @@ homepage: "https://github.com/ocamllabs/ocaml-ctypes"
 doc: "http://ocamllabs.github.io/ocaml-ctypes"
 bug-reports: "http://github.com/ocamllabs/ocaml-ctypes/issues"
 depends: [
-  "ocaml" {>= "4.02.3"}
+  "ocaml" {>= "4.03.0"}
   "integers" {>= "0.3.0"}
   "ocamlfind" {build}
-  "conf-pkg-config" {build}
   "lwt" {with-test & >= "3.2.0"}
   "ctypes-foreign" {with-test}
   "ounit" {with-test}
   "conf-ncurses" {with-test}
+  "bigarray-compat"
 ]
 depopts: ["ctypes-foreign" "mirage-xen"]
 conflicts: [
@@ -52,6 +52,6 @@ build: [
 install: [make "install" "XEN=%{mirage-xen:enable}%"]
 dev-repo: "git+http://github.com/ocamllabs/ocaml-ctypes.git"
 url {
-  src: "https://github.com/ocamllabs/ocaml-ctypes/archive/0.17.1.tar.gz"
-  checksum: "md5=508ea062105518c14fd516aa2ea9db5e"
+  src: "https://github.com/ocamllabs/ocaml-ctypes/archive/0.19.1.tar.gz"
+  checksum: "md5=ceb891ec568fd7da76c31af270a2afe2"
 }
