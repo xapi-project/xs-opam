@@ -1,7 +1,6 @@
-x-commit-hash: "89d04d50aeadf2425fd15a9784ef4d0a6d583ba3"
 opam-version: "2.0"
 name: "alcotest-lwt"
-version: "1.3.0"
+version: "1.5.0"
 synopsis: "Lwt-based helpers for Alcotest"
 description: "Lwt-based helpers for Alcotest"
 maintainer: "thomas@gazagnaire.org"
@@ -11,7 +10,7 @@ homepage: "https://github.com/mirage/alcotest"
 doc: "https://mirage.github.io/alcotest"
 bug-reports: "https://github.com/mirage/alcotest/issues"
 depends: [
-  "dune" {>= "2.2"}
+  "dune" {>= "2.8"}
   "re" {with-test}
   "cmdliner" {with-test}
   "fmt"
@@ -19,9 +18,10 @@ depends: [
   "alcotest" {= version}
   "lwt"
   "logs"
+  "odoc" {with-doc}
 ]
 build: [
-  ["dune" "subst"] {pinned}
+  ["dune" "subst"] {dev}
   [
     "dune"
     "build"
@@ -37,9 +37,10 @@ build: [
 dev-repo: "git+https://github.com/mirage/alcotest.git"
 url {
   src:
-    "https://github.com/mirage/alcotest/releases/download/1.3.0/alcotest-mirage-1.3.0.tbz"
+    "https://github.com/mirage/alcotest/releases/download/1.5.0/alcotest-js-1.5.0.tbz"
   checksum: [
-    "sha256=79f9debdbca895374d6fdd73af8a470dcbe068b410483d35c04bb6ccc33e89ac"
-    "sha512=c41b17354d391d72f5f7bbbf520d7d227ec3df1bb25183e4a6761bb6d76e787ab89302bf58695cfe5a05b7d00cd77fe9d18d1eee396ecc724dfe942ecd1144aa"
+    "sha256=54281907e02d78995df246dc2e10ed182828294ad2059347a1e3a13354848f6c"
+    "sha512=1aea91de40795ec4f6603d510107e4b663c1a94bd223f162ad231316d8595e9e098cabbe28a46bdcb588942f3d103d8377373d533bcc7413ba3868a577469b45"
   ]
 }
+x-commit-hash: "12889aa7f993ad55434443f1c447a59f18ffc9bf"
