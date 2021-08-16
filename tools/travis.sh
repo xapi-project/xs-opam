@@ -8,7 +8,7 @@ set -e
 OCAML_VERSION_FULL=${OCAML_VERSION_FULL:-4.08.1}
 OCAML_VERSION=${OCAML_VERSION_FULL%.*}
 
-IMG="ocaml/opam2:debian-10-ocaml-$OCAML_VERSION"
+IMG="ocaml/opam:debian-10-ocaml-$OCAML_VERSION"
 
 docker pull $IMG
 
