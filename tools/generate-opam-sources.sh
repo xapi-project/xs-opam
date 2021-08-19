@@ -25,7 +25,7 @@ xapi-xenopsd              $XAPI/xenopsd
 xapi-xenopsd-cli          $XAPI/xenopsd
 xapi-xenopsd-simulator    $XAPI/xenopsd
 xapi-xenopsd-xc           $XAPI/xenopsd
-xapi-squeezed             $XAPI/squeezed
+xapi-squeezed             $XAPI/xenopsd
 xapi-networkd             $XAPI/xcp-networkd
 forkexec                  $XAPI/forkexecd
 xapi-forkexecd            $XAPI/forkexecd
