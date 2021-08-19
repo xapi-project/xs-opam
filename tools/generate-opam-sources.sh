@@ -8,7 +8,7 @@ XSER="xenserver"
 
 MAP="\
 rrd2csv                   $XAPI/xen-api
-rrddump                   $XAPI/xcp-rrdd
+rrddump                   $XAPI/xen-api
 varstored-guard           $XAPI/varstored-guard
 xen-api-client-lwt        $XAPI/xen-api
 xen-api-client            $XAPI/xen-api
@@ -53,13 +53,13 @@ gzip                      $XAPI/xen-api-libs-transitional
 xapi-compression          $XAPI/xen-api-libs-transitional
 xml-light2                $XAPI/xen-api-libs-transitional
 zstd                      $XAPI/xen-api-libs-transitional
-rrdd-plugin               $XAPI/xcp-rrdd
-rrdd-plugins              $XAPI/xcp-rrdd
-xapi-rrdd-plugin          $XAPI/xcp-rrdd
-xapi-rrd-transport-utils  $XAPI/xcp-rrdd
-xapi-rrd-transport        $XAPI/xcp-rrdd
-xapi-rrdd                 $XAPI/xcp-rrdd
-rrd-transport             $XAPI/xcp-rrdd
+rrdd-plugin               $XAPI/xen-api
+rrdd-plugins              $XAPI/xen-api
+xapi-rrdd-plugin          $XAPI/xen-api
+xapi-rrd-transport-utils  $XAPI/xen-api
+xapi-rrd-transport        $XAPI/xen-api
+xapi-rrdd                 $XAPI/xen-api
+rrd-transport             $XAPI/xen-api
 xenctrl                   $XAPI/xenctrl
 wsproxy                   $XAPI/wsproxy
 xapi-idl                  $XAPI/message-switch
