@@ -31,5 +31,5 @@ This daemon watches a directory for subdirectories, and when a subdir
 is created a storage service is registered."""
 url {
   src:
-    "https://github.com/xapi-project/xapi-storage-script/archive/v0.34.0.tar.gz"
+    "https://github.com/psafont/xapi-storage-script/archive/private/paus/yang-ppx.tar.gz"
 }

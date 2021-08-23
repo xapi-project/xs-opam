@@ -19,5 +19,5 @@ depends: [
 synopsis:
   "Simulation backend allowing testing of the higher-level xenops logic."
 url {
-  src: "https://github.com/xapi-project/xenopsd/archive/0.150-lcm.tar.gz"
+  src: "https://github.com/psafont/xenopsd/archive/private/paus/yang-ppx.tar.gz"
 }
