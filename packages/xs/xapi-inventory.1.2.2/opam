@@ -1,0 +1,31 @@
+opam-version: "2.0"
+name: "xapi-inventory"
+maintainer: "xen-api@lists.xen.org"
+authors: "xen-api@lists.xen.org"
+homepage: "https://github.com/xapi-project/xcp-inventory"
+bug-reports: "https://github.com/xapi-project/xcp-inventory/issues"
+dev-repo: "git+http://github.com/xapi-project/xcp-inventory.git"
+tags: [ "org:xapi-project" ]
+build: [
+  ["dune" "build" "-p" name "-j" jobs]
+  ["dune" "runtest" "-p" name "-j" jobs] {with-test}
+]
+depends: [
+  "ocaml"
+  "ocamlfind" {build}
+  "dune"
+  "base-threads"
+  "astring"
+  "xapi-stdext-unix"
+  "xapi-stdext-threads"
+  "cmdliner"
+  "uuidm"
+]
+synopsis: "Library for accessing the xapi toolstack inventory file"
+description: """
+The inventory file provides global host identify information
+needed by multiple services."""
+url {
+  src: "https://github.com/xapi-project/xcp-inventory/archive/v1.2.2.tar.gz"
+  checksum: "sha256=49a844c3b056d8d1067520ff5417ed263dae470aef11aeea10ee1fa39fce0d2f"
+}
