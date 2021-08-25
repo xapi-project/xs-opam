@@ -41,5 +41,5 @@ synopsis:
   "A xenops plugin which knows how to use xenstore, xenctrl and xenguest to manage"
 description: "VMs on a xen host."
 url {
-  src: "https://github.com/psafont/xenopsd/archive/private/paus/yang-ppx.tar.gz"
+  src: "https://github.com/xapi-project/xenopsd/archive/0.150-lcm.tar.gz"
 }

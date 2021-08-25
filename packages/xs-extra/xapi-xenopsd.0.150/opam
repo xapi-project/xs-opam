@@ -40,5 +40,5 @@ via a simple API. The API has been tailored to suit the needs of xapi,
 which manages clusters of hosts running Xen, but it can also be used
 standalone."""
 url {
-  src: "https://github.com/psafont/xenopsd/archive/private/paus/yang-ppx.tar.gz"
+  src: "https://github.com/xapi-project/xenopsd/archive/0.150-lcm.tar.gz"
 }
