@@ -1,5 +1,5 @@
 opam-version: "2.0"
-name: "message-switch-cli"
+name: "message-switch-core"
 maintainer: "xen-api@lists.xen.org"
 authors: [ "xen-api@lists.xen.org" ]
 homepage: "https://github.com/xapi-project/message-switch"
@@ -14,14 +14,17 @@ depends: [
   "ocaml"
   "dune" {build & >= "1.4"}
   "odoc" {with-doc}
-  "cmdliner"
-  "message-switch-unix"
+  "astring"
+  "cohttp" {>= "0.21.1"}
   "ppx_deriving_rpc"
+  "ppx_sexp_conv"
+  "rpclib"
+  "sexplib"
 ]
 synopsis: "A simple store-and-forward message switch"
 description: """
 The switch stores messages in queues with well-known names. Clients use
 a simple HTTP protocol to enqueue and dequeue messages."""
 url {
-  src: "https://github.com/xapi-project/message-switch/archive/v1.23.0.tar.gz"
+  src: "https://github.com/xapi-project/message-switch/archive/1.23.1-lcm.tar.gz"
 }

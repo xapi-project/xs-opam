@@ -5,35 +5,17 @@ homepage: "https://github.com/xapi-project/xen-api"
 bug-reports: "https://github.com/xapi-project/xen-api/issues"
 dev-repo: "git+https://github.com/xapi-project/xen-api.git"
 build-env: [[ XAPI_VERSION = "v0.0.0" ]]
-build: [
-  ["dune" "build" "-p" name "-j" jobs]
-  ["dune" "runtest" "-p" name] {with-test}
-]
+build: [[ "dune" "build" "-p" name ]]
 
 depends: [
   "ocaml"
   "dune" {build & >= "1.4"}
-  "alcotest" {with-test}
-  "gzip"
-  "http-svr"
-  "ocaml-migrate-parsetree"
-  "ppx_deriving_rpc"
-  "ppx_sexp_conv"
-  "rpclib"
-  "sexpr"
-  "base-threads"
-  "uuid"
-  "xapi-stdext-encodings"
-  "xapi-stdext-pervasives"
-  "xapi-stdext-std"
-  "xapi-stdext-threads"
-  "xapi-stdext-unix"
-  "xapi-idl"
+  "xapi-inventory"
 ]
 synopsis: "The xapi toolstack daemon which implements the XenAPI"
 description: """
 This daemon exposes the XenAPI and is used by clients such as 'xe'
 and 'XenCenter' to manage clusters of Xen-enabled hosts."""
 url {
-  src: "https://github.com/xapi-project/xen-api/archive/1.249-lcm.tar.gz"
+  src: "https://github.com/xapi-project/xen-api/archive/1.249.10-lcm.tar.gz"
 }
