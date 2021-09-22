@@ -29,7 +29,6 @@ depends: [
   "tar"
   "vhd-format"
   "vhd-format-lwt"
-  "xapi-tapctl"
   "xenstore"
   "xenstore_transport"
 ]

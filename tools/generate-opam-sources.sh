@@ -61,8 +61,7 @@ xapi-rrdd                 $XAPI/xen-api
 rrd-transport             $XAPI/xen-api
 xenctrl                   $XAPI/xenctrl
 wsproxy                   $XAPI/wsproxy
-xapi-idl                  $XAPI/message-switch
-xapi-tapctl               $XAPI/tapctl"
+xapi-idl                  $XAPI/message-switch"
 
 echo "$MAP" | while read -r opam repo; do
   opam_file="$EXTRA/$opam.master/opam"

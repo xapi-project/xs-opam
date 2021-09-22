@@ -48,7 +48,6 @@ depends: [
   "xapi-storage"
   "xapi-storage-cli"
   "xapi-storage-script"
-  "xapi-tapctl"
   "xapi-xenopsd"
   "xapi-xenopsd-cli"
   "xapi-xenopsd-xc"
