@@ -27,8 +27,8 @@ xapi-xenopsd-simulator    $XAPI/xenopsd
 xapi-xenopsd-xc           $XAPI/xenopsd
 xapi-squeezed             $XAPI/xenopsd
 xapi-networkd             $XAPI/xcp-networkd
-forkexec                  $XAPI/forkexecd
-xapi-forkexecd            $XAPI/forkexecd
+forkexec                  $XAPI/message-switch
+xapi-forkexecd            $XAPI/message-switch
 message-switch-lwt        $XAPI/message-switch
 message-switch            $XAPI/message-switch
 message-switch-async      $XAPI/message-switch
@@ -36,23 +36,22 @@ message-switch-cli        $XAPI/message-switch
 message-switch-core       $XAPI/message-switch
 message-switch-unix       $XAPI/message-switch
 xapi-storage              $XAPI/xapi-storage
-vhd-tool                  $XAPI/vhd-tool
+vhd-tool                  $XAPI/xen-api
 xen-api-sdk               $XAPI/xen-api-sdk
 xapi-plugin               $XAPI/ocaml-xapi-plugin
 xapi-storage-script       $XAPI/xapi-storage-script
 xapi-storage-cli          $XAPI/sm-cli
 xapi-nbd                  $XAPI/xapi-nbd
-xapi-libs-transitional    $XAPI/xen-api-libs-transitional
-uuid                      $XAPI/xen-api-libs-transitional
-http-svr                  $XAPI/xen-api-libs-transitional
-safe-resources            $XAPI/xen-api-libs-transitional
-sexpr                     $XAPI/xen-api-libs-transitional
-pciutil                   $XAPI/xen-api-libs-transitional
-stunnel                   $XAPI/xen-api-libs-transitional
-gzip                      $XAPI/xen-api-libs-transitional
-xapi-compression          $XAPI/xen-api-libs-transitional
-xml-light2                $XAPI/xen-api-libs-transitional
-zstd                      $XAPI/xen-api-libs-transitional
+uuid                      $XAPI/xen-api
+http-svr                  $XAPI/xen-api
+safe-resources            $XAPI/xen-api
+sexpr                     $XAPI/xen-api
+pciutil                   $XAPI/xen-api
+stunnel                   $XAPI/xen-api
+gzip                      $XAPI/xen-api
+xapi-compression          $XAPI/xen-api
+xml-light2                $XAPI/xen-api
+zstd                      $XAPI/xen-api
 rrdd-plugin               $XAPI/xen-api
 rrdd-plugins              $XAPI/xen-api
 xapi-rrdd-plugin          $XAPI/xen-api
@@ -62,8 +61,7 @@ xapi-rrdd                 $XAPI/xen-api
 rrd-transport             $XAPI/xen-api
 xenctrl                   $XAPI/xenctrl
 wsproxy                   $XAPI/wsproxy
-xapi-idl                  $XAPI/message-switch
-xapi-tapctl               $XAPI/tapctl"
+xapi-idl                  $XAPI/message-switch"
 
 echo "$MAP" | while read -r opam repo; do
   opam_file="$EXTRA/$opam.master/opam"
