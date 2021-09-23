@@ -17,5 +17,5 @@ depends: [
 synopsis: "varstored-guard"
 description: ""
 url {
-  src: "https://github.com/xapi-project/varstored-guard/archive/v0.6.0.tar.gz"
+  src: "https://github.com/xapi-project/varstored-guard/archive/0.6-lcm.tar.gz"
 }
