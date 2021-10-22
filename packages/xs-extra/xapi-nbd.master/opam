@@ -6,7 +6,7 @@ bug-reports: "https://github.com/xapi-project/xapi-nbd/issues"
 dev-repo: "git+https://github.com/xapi-project/xapi-nbd.git"
 build: [
   [make "release"]
-  ["dune" "runtest"] {with-test}
+  ["dune" "runtest" "-j" jobs] {with-test}
 ]
 depends: [
   "ocaml"
