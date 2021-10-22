@@ -26,7 +26,7 @@ xapi-xenopsd-cli          $XAPI/xen-api
 xapi-xenopsd-simulator    $XAPI/xen-api
 xapi-xenopsd-xc           $XAPI/xen-api
 xapi-squeezed             $XAPI/xen-api
-xapi-networkd             $XAPI/xcp-networkd
+xapi-networkd             $XAPI/xen-api
 forkexec                  $XAPI/message-switch
 xapi-forkexecd            $XAPI/message-switch
 message-switch-lwt        $XAPI/message-switch
