@@ -53,12 +53,12 @@ make
 
 This builds a [Docker] image with all Citrix Hypervisor toolstack
 libraries and components installed. Once built, it can be used to
-compile individual packages like [xenopsd]. The image can be found with
+compile individual packages like [xen-api]. The image can be found with
 `docker image`:
 
 
 ```bash
-$ cd src/xenopsd
+$ cd src/xen-api
 $ docker image ls xenserver/xs-opam
 REPOSITORY         TAG     IMAGE         ID  CREATED  SIZE
 xenserver/xs-opam  6.37.0  1744d037eaec  2   days     ago   4.51GB
@@ -67,7 +67,7 @@ xenserver/xs-opam  6.31.0  b49d1b5311f4  3   months   ago   6.36GB
 ..
 $ docker run --rm -itv $PWD:/mnt xenserver/xs-opam:6.37.
 ```
-Inside the container you can now build [xenopsd] from sources:
+Inside the container you can now build [xen-api] from sources:
 
 ```bash
 opam@9a974a2229af:~/opam-repository$ cd /mnt

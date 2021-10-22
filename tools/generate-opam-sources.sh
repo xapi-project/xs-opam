@@ -21,11 +21,11 @@ xapi                      $XAPI/xen-api
 xapi-cli-protocol         $XAPI/xen-api
 xapi-datamodel            $XAPI/xen-api
 xe                        $XAPI/xen-api
-xapi-xenopsd              $XAPI/xenopsd
-xapi-xenopsd-cli          $XAPI/xenopsd
-xapi-xenopsd-simulator    $XAPI/xenopsd
-xapi-xenopsd-xc           $XAPI/xenopsd
-xapi-squeezed             $XAPI/xenopsd
+xapi-xenopsd              $XAPI/xen-api
+xapi-xenopsd-cli          $XAPI/xen-api
+xapi-xenopsd-simulator    $XAPI/xen-api
+xapi-xenopsd-xc           $XAPI/xen-api
+xapi-squeezed             $XAPI/xen-api
 xapi-networkd             $XAPI/xcp-networkd
 forkexec                  $XAPI/message-switch
 xapi-forkexecd            $XAPI/message-switch
