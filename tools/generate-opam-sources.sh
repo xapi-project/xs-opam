@@ -35,11 +35,11 @@ message-switch-async      $XAPI/message-switch
 message-switch-cli        $XAPI/message-switch
 message-switch-core       $XAPI/message-switch
 message-switch-unix       $XAPI/message-switch
-xapi-storage              $XAPI/xapi-storage
+xapi-storage              $XAPI/message-switch
 vhd-tool                  $XAPI/xen-api
 xen-api-sdk               $XAPI/xen-api-sdk
 xapi-plugin               $XAPI/ocaml-xapi-plugin
-xapi-storage-script       $XAPI/xapi-storage-script
+xapi-storage-script       $XAPI/message-switch
 xapi-storage-cli          $XAPI/sm-cli
 xapi-nbd                  $XAPI/xapi-nbd
 uuid                      $XAPI/xen-api
