@@ -29,5 +29,5 @@ depends: [
 synopsis: "The XCP networking daemon"
 url {
   src:
-    "https://github.com/xapi-project/xen-api/archive/master/master.tar.gz"
+    "https://github.com/xapi-project/xen-api/archive/master.tar.gz"
 }

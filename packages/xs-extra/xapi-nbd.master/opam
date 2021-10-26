@@ -27,5 +27,5 @@ tags: [ "org:mirage" "org:xapi-project" ]
 synopsis: "Expose XenServer disks conveniently over NBD"
 url {
   src:
-    "https://github.com/xapi-project/xapi-nbd/archive/master/master.tar.gz"
+    "https://github.com/xapi-project/xapi-nbd/archive/master.tar.gz"
 }

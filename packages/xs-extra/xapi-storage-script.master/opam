@@ -31,5 +31,5 @@ This daemon watches a directory for subdirectories, and when a subdir
 is created a storage service is registered."""
 url {
   src:
-    "https://github.com/xapi-project/message-switch/archive/master/master.tar.gz"
+    "https://github.com/xapi-project/message-switch/archive/master.tar.gz"
 }
