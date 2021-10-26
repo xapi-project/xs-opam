@@ -2,7 +2,7 @@ opam-version: "2.0"
 name: "wsproxy"
 maintainer: "xen-api@lists.xen.org"
 authors: [ "Jon Ludlam" "Marcello Seri" ]
-license: "LGPL-2.0 with OCaml linking exception"
+license: "LGPL-2.0-only WITH OCaml-LGPL-linking-exception"
 homepage: "https://github.com/xapi-project/wsproxy"
 dev-repo: "git+https://github.com/xapi-project/wsproxy.git"
 bug-reports: "https://github.com/xapi-project/wsproxy/issues"

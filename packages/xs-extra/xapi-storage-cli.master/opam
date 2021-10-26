@@ -2,7 +2,7 @@ opam-version: "2.0"
 name: "xapi-storage-cli"
 maintainer: "xen-api@lists.xen.org"
 authors: [ "xen-api@lists.xen.org" ]
-license: "LGPL-2.1 with OCaml linking exception"
+license: "LGPL-2.1-only WITH OCaml-LGPL-linking-exception"
 homepage: "https://github.com/xapi-project/sm-cli"
 bug-reports: "https://github.com/xapi-project/sm-cli/issues"
 dev-repo: "git+https://github.com/xapi-project/sm-cli.git"
