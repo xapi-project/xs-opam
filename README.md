@@ -42,44 +42,6 @@ opam install --deps-only $PKG
 After that, you can enter the folder containing the cloned sources and
 run the appropriate build command.
 
-## Using Opam inside Docker for Dev Work
-
-If you prefer to use [Docker] for development environments, you can
-do this as well:
-
-```bash
-make
-```
-
-This builds a [Docker] image with all Citrix Hypervisor toolstack
-libraries and components installed. Once built, it can be used to
-compile individual packages like [xenopsd]. The image can be found with
-`docker image`:
-
-
-```bash
-$ cd src/xenopsd
-$ docker image ls xenserver/xs-opam
-REPOSITORY         TAG     IMAGE         ID  CREATED  SIZE
-xenserver/xs-opam  6.37.0  1744d037eaec  2   days     ago   4.51GB
-xenserver/xs-opam  6.35.0  131c4fc20e0c  8   days     ago   6.46GB
-xenserver/xs-opam  6.31.0  b49d1b5311f4  3   months   ago   6.36GB
-..
-$ docker run --rm -itv $PWD:/mnt xenserver/xs-opam:6.37.
-```
-Inside the container you can now build [xenopsd] from sources:
-
-```bash
-opam@9a974a2229af:~/opam-repository$ cd /mnt
-opam@9a974a2229af:/mnt$ ./configure
-opam@9a974a2229af:/mnt$ make
-```
-
-You might run into permission problems because the user inside the
-container might not be able to write files in the directory that is
-mounted as a volume. Widen permissions or look into UID mapping for
-docker.
-
 ## Layout of This Repository
 
 Packages are organised into namespaces:

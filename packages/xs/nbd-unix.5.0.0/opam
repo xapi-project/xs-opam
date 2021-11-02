@@ -5,7 +5,7 @@ This library allows applications to export and consume block
 devices using the NBD protocol (as used by Linux, qemu etc)"""
 maintainer: "jonathan.ludlam@citrix.com"
 authors: ["Jonathan Ludlam" "David Scott" "Thomas Sanders"]
-license: "LGPL-2 with OCaml linking exception"
+license: "LGPL-2.1-only WITH OCaml-LGPL-linking-exception"
 tags: ["org:mirage" "org:xapi-project"]
 homepage: "https://github.com/xapi-project/nbd"
 doc: "https://xapi-project.github.io/nbd/nbd-unix/index.html"

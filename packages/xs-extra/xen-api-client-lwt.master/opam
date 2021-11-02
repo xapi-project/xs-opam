@@ -1,7 +1,7 @@
 opam-version: "2.0"
 maintainer: "xen-api@lists.xen.org"
 authors: [ "David Scott" "Anil Madhavapeddy" "Jerome Maloberti" "John Else" "Jon Ludlam" "Thomas Sanders" "Mike McClurg" ]
-license: "LGPL"
+license: "LGPL-2.1-only WITH OCaml-LGPL-linking-exception"
 homepage: "https://github.com/xapi-project/xen-api"
 dev-repo: "git+https://github.com/xapi-project/xen-api.git"
 bug-reports: "https://github.com/xapi-project/xen-api/issues"
@@ -11,7 +11,7 @@ tags: [
   "org:xapi-project"
 ]
 
-build: [[ "dune" "build" "-p" name ]]
+build: [[ "dune" "build" "-p" name "-j" jobs]]
 
 depends: [
   "ocaml"
