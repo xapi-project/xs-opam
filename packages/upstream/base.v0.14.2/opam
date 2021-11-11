@@ -1,6 +1,6 @@
 opam-version: "2.0"
 name: "base"
-version: "v0.14.1"
+version: "v0.14.2"
 synopsis: "Full standard library replacement for OCaml"
 description: """
 Full standard library replacement for OCaml
@@ -30,6 +30,6 @@ depends: [
 build: ["dune" "build" "-p" name "-j" jobs]
 dev-repo: "git+https://github.com/janestreet/base.git"
 url {
-  src: "https://github.com/janestreet/base/archive/v0.14.1.tar.gz"
-  checksum: "md5=e4419eae60f57e553b154856f0cacf42"
+  src: "https://github.com/janestreet/base/archive/v0.14.2.tar.gz"
+  checksum: "md5=0d1a2d0322b8c446e5dda20290112e5c"
 }
