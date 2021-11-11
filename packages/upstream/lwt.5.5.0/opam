@@ -1,8 +1,8 @@
 opam-version: "2.0"
 name: "lwt"
-version: "5.4.1"
+version: "5.5.0"
 synopsis: "Promises and event-driven I/O"
-description: """
+description: """\
 A promise is a value that may become determined in the future.
 
 Lwt provides typed, composable promises. Promises that are resolved by I/O are
@@ -23,11 +23,11 @@ depends: [
   "cppo" {build & >= "1.1.0"}
   "dune" {>= "1.8.0"}
   "dune-configurator"
-  "mmap" {>= "1.1.0"}
-  "ocaml" {>= "4.02.0"}
+  "mmap" {>= "1.1.0" & "os" != "win32"}
+  "ocaml" {>= "4.02.0" & "os" != "win32 " | >= "4.06.0"}
   ("ocaml" {>= "4.08.0"} | "ocaml-syntax-shims")
   "ocplib-endian"
-  "result"
+  "result" {os != "win32"}
   "seq"
   "ocamlfind" {dev & >= "1.7.3-1"}
 ]
@@ -51,9 +51,9 @@ build: [
 ]
 dev-repo: "git+https://github.com/ocsigen/lwt.git"
 url {
-  src: "https://github.com/ocsigen/lwt/archive/refs/tags/5.4.1.tar.gz"
+  src: "https://github.com/ocsigen/lwt/archive/refs/tags/5.5.0.tar.gz"
   checksum: [
-    "md5=5a8d2a83ee9314781f137d147a4c62ae"
-    "sha512=b872b7abe546c431ba62fe466423d7ace8e487ebd85ea5e859f462eb4c0a6884b242d9efd4a557b6da3ae699b0b695e0a783f89a1d1147cba7d99c4ae9d2db17"
+    "md5=94272fac89c5bf21a89c102b8a8f35a5"
+    "sha512=8951b94555e930634375816d71815b9d85daad6ffb7dab24864661504d11be26575ab0b237196c54693efa372a9b69cdc1d5068a20a250dc0bbb4a3c03c5fda1"
   ]
 }
