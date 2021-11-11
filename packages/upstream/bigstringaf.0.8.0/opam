@@ -1,8 +1,8 @@
 opam-version: "2.0"
 name: "bigstringaf"
-version: "0.7.0"
+version: "0.8.0"
 synopsis: "Bigstring intrinsics and fast blits based on memcpy/memmove"
-description: """
+description: """\
 Bigstring intrinsics and fast blits based on memcpy/memmove
 
 The OCaml compiler has a bunch of intrinsics for Bigstrings, but they're not
@@ -31,12 +31,13 @@ conflicts: [
   "js_of_ocaml" {< "3.5.0"}
 ]
 build: [
-  ["dune" "subst"] {pinned}
+  ["dune" "subst"] {dev}
   ["dune" "build" "-p" name "-j" jobs]
-  ["dune" "runtest" "-p" name] {with-test}
+  ["dune" "runtest" "-p" name]
+    {with-test & arch != "x86_32" & arch != "arm32"}
 ]
 dev-repo: "git+https://github.com/inhabitedtype/bigstringaf.git"
 url {
-  src: "https://github.com/inhabitedtype/bigstringaf/archive/0.7.0.tar.gz"
-  checksum: "md5=3e47593200b77fa6dd2754d37e9cbe19"
+  src: "https://github.com/inhabitedtype/bigstringaf/archive/0.8.0.tar.gz"
+  checksum: "md5=c3b8164c1ed1eba9977dcd0c5490e61d"
 }
