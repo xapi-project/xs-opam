@@ -1,8 +1,9 @@
 opam-version: "2.0"
-maintainer: "anil@recoil.org"
-authors: ["David Sheets" "Anil Madhavapeddy" "Hugo Heuzard"]
-synopsis: "A library for manipulation of IP (and MAC) address representations"
-description: """
+name: "ipaddr"
+version: "5.2.0"
+synopsis:
+  "A library for manipulation of IP (and MAC) address representations"
+description: """\
 Features:
  * Depends only on sexplib (conditionalization under consideration)
  * oUnit-based tests
@@ -18,9 +19,9 @@ Features:
  * IPv4-mapped addresses in IPv6 (::ffff:0:0/96) are an embedding of IPv4
  * MAC-48 (Ethernet) address support
  * `Macaddr` is a `Map.OrderedType`
- * All types have sexplib serializers/deserializers
-"""
-
+ * All types have sexplib serializers/deserializers"""
+maintainer: "anil@recoil.org"
+authors: ["David Sheets" "Anil Madhavapeddy" "Hugo Heuzard"]
 license: "ISC"
 tags: ["org:mirage" "org:xapi-project"]
 homepage: "https://github.com/mirage/ocaml-ipaddr"
@@ -36,17 +37,17 @@ depends: [
   "ppx_sexp_conv" {with-test & >= "v0.9.0"}
 ]
 build: [
-  ["dune" "subst"] {pinned}
+  ["dune" "subst"] {dev}
   ["dune" "build" "-p" name "-j" jobs]
   ["dune" "runtest" "-p" name "-j" jobs] {with-test}
 ]
 dev-repo: "git+https://github.com/mirage/ocaml-ipaddr.git"
-x-commit-hash: "dc36c61789255003bb10c95f550b64fad33f600e"
 url {
   src:
-    "https://github.com/mirage/ocaml-ipaddr/releases/download/v5.0.1/ipaddr-v5.0.1.tbz"
+    "https://github.com/mirage/ocaml-ipaddr/releases/download/v5.2.0/ipaddr-v5.2.0.tbz"
   checksum: [
-    "sha256=00f7c3c38cff938d3ace70dd32e6d3103390567c9030b406ba85840f01d76602"
-    "sha512=0c01117255692f929bb99ba0f7b973859bebb09e7d738adb72954471099a6a4d10741cd5796415fa106f04169c2b5455fa669d4a7fee400505bd3ba005b5b7fb"
+    "sha256=f98d237cc1f783a0ba7dff0c6c69b5f519fec056950e3e3e7c15e5511ee5b7ec"
+    "sha512=28c8c4d525c2ab13e8561de5dfdb8922227ce652cd3c02e78c60daf2ba6844960864027c803f11fc3d1991a18ef864d8a0b95cd99e5f5d8452d3f66541367bd2"
   ]
 }
+x-commit-hash: "7745ea4be2c1c5a7ab95908b26a6ed81a0947ab5"
