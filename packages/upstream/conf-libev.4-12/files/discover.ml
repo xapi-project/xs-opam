@@ -63,6 +63,7 @@ let search_paths = uniq (List.append [
   "/usr/local";
   "/opt";
   "/opt/local";
+  "/opt/homebrew";
   "/sw";
   "/mingw";] env_paths)
 
