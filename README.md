@@ -3,6 +3,7 @@
 [![Build Status](https://github.com/xapi-project/xs-opam/actions/workflows/main.yml/badge.svg)](https://github.com/xapi-project/xs-opam/actions/workflows/main.yml)
 [![LCM Build Status](https://github.com/xapi-project/xs-opam/actions/workflows/lcm.yml/badge.svg)](https://github.com/xapi-project/xs-opam/actions/workflows/lcm.yml)
 [![LCM Scheduled Build Status](https://github.com/xapi-project/xs-opam/actions/workflows/yangtze-lcm.yml/badge.svg)](https://github.com/xapi-project/xs-opam/actions/workflows/yangtze-lcm.yml)
+[![Old LCM Scheduled Build Status](https://github.com/xapi-project/xs-opam/actions/workflows/stockholm-lcm.yml/badge.svg)](https://github.com/xapi-project/xs-opam/actions/workflows/stockholm-lcm.yml)
 
 This [Opam] repository contains the [OCaml] components of the Citrix
 Hypervisor toolstack and their upstream dependencies. This is just
