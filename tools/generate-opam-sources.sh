@@ -37,7 +37,7 @@ message-switch-core       $XAPI/xen-api
 message-switch-unix       $XAPI/xen-api
 xapi-storage              $XAPI/xen-api
 vhd-tool                  $XAPI/xen-api
-xen-api-sdk               $XAPI/xen-api-sdk
+xen-api-sdk               $XAPI/xen-api
 xapi-plugin               $XAPI/ocaml-xapi-plugin
 xapi-storage-script       $XAPI/xen-api
 xapi-storage-cli          $XAPI/sm-cli
