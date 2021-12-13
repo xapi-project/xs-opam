@@ -27,19 +27,19 @@ xapi-xenopsd-simulator    $XAPI/xen-api
 xapi-xenopsd-xc           $XAPI/xen-api
 xapi-squeezed             $XAPI/xen-api
 xapi-networkd             $XAPI/xen-api
-forkexec                  $XAPI/message-switch
-xapi-forkexecd            $XAPI/message-switch
-message-switch-lwt        $XAPI/message-switch
-message-switch            $XAPI/message-switch
-message-switch-async      $XAPI/message-switch
-message-switch-cli        $XAPI/message-switch
-message-switch-core       $XAPI/message-switch
-message-switch-unix       $XAPI/message-switch
-xapi-storage              $XAPI/message-switch
+forkexec                  $XAPI/xen-api
+xapi-forkexecd            $XAPI/xen-api
+message-switch-lwt        $XAPI/xen-api
+message-switch            $XAPI/xen-api
+message-switch-async      $XAPI/xen-api
+message-switch-cli        $XAPI/xen-api
+message-switch-core       $XAPI/xen-api
+message-switch-unix       $XAPI/xen-api
+xapi-storage              $XAPI/xen-api
 vhd-tool                  $XAPI/xen-api
-xen-api-sdk               $XAPI/xen-api-sdk
+xen-api-sdk               $XAPI/xen-api
 xapi-plugin               $XAPI/ocaml-xapi-plugin
-xapi-storage-script       $XAPI/message-switch
+xapi-storage-script       $XAPI/xen-api
 xapi-storage-cli          $XAPI/sm-cli
 xapi-nbd                  $XAPI/xapi-nbd
 uuid                      $XAPI/xen-api
@@ -61,7 +61,7 @@ xapi-rrdd                 $XAPI/xen-api
 rrd-transport             $XAPI/xen-api
 xenctrl                   $XAPI/xenctrl
 wsproxy                   $XAPI/wsproxy
-xapi-idl                  $XAPI/message-switch"
+xapi-idl                  $XAPI/xen-api"
 
 echo "$MAP" | while read -r opam repo; do
   opam_file="$EXTRA/$opam.master/opam"
