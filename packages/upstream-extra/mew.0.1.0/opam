@@ -1,24 +1,22 @@
 opam-version: "2.0"
+name: "mew"
+version: "0.1.0"
+synopsis: "Modal editing witch"
+description:
+  "This is the core module of mew, a general modal editing engine generator."
 maintainer: "zandoye@gmail.com"
-authors: [ "ZAN DoYe" ]
+authors: "ZAN DoYe"
+license: "MIT"
 homepage: "https://github.com/kandu/mew"
 bug-reports: "https://github.com/kandu/mew/issues"
-license: "MIT"
-dev-repo: "git+https://github.com/kandu/mew.git"
-build: [
-  ["dune" "build" "-p" name "-j" jobs]
-]
 depends: [
   "ocaml" {>= "4.02.3"}
   "result"
-  "trie"
+  "trie" {>= "1.0.0"}
   "dune" {>= "1.1.0"}
 ]
-
-synopsis: "Modal editing witch"
-description: """
-This is the core module of mew, a general modal editing engine generator."""
-
+build: ["dune" "build" "-p" name "-j" jobs]
+dev-repo: "git+https://github.com/kandu/mew.git"
 url {
   src: "https://github.com/kandu/mew/archive/0.1.0.tar.gz"
   checksum: "md5=2298149d1415cd804ab4e01f01ea10a0"

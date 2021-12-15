@@ -35,7 +35,7 @@ depends: [
   "ocamlfind" {build}
   "ocamlbuild" {build}
   "topkg" {build & >= "1.0.3"}
-  "cmdliner" {>= "1.0.2"}
+  "cmdliner" {>= "1.0.2" & < "1.1.0"}
 ]
 build: ["ocaml" "pkg/pkg.ml" "build" "--dev-pkg" "%{dev}%"]
 dev-repo: "git+https://erratique.ch/repos/b0.git"

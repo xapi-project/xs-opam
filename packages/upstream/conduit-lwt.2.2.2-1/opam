@@ -27,7 +27,7 @@ patches: "0001-backport-Add-openssl_overrides-to-conduit-context.patch"
 dev-repo: "git+https://github.com/mirage/ocaml-conduit.git"
 extra-files: [
   "0001-backport-Add-openssl_overrides-to-conduit-context.patch"
-  "md5=8763613aac3ea2ecc9cc831dfde8d90f"
+  "md5=c131b837c73db9cd31687fbbdf7e027f"
 ]
 url {
   src:
