@@ -1,4 +1,15 @@
 opam-version: "2.0"
+name: "xenstore"
+version: "2.1.1"
+synopsis: "Xenstore protocol in pure OCaml"
+description: """\
+This repo contains:
+1. a xenstore client library, a merge of the Mirage and XCP ones
+2. a xenstore server library
+3. a xenstore server instance which runs under Unix with libxc
+4. a xenstore server instance which runs on mirage.
+
+The client and the server libraries have sets of unit-tests."""
 maintainer: "dave@recoil.org"
 authors: [
   "Vincent Hanquez"
@@ -20,21 +31,11 @@ depends: [
 ]
 license: "LGPL-2.1-only WITH OCaml-LGPL-linking-exception"
 build: [
-  ["dune" "subst"] {pinned}
+  ["dune" "subst"] {dev}
   ["dune" "build" "-p" name "-j" jobs]
   ["dune" "runtest" "-p" name "-j" jobs] {with-test}
 ]
 dev-repo: "git+https://github.com/mirage/ocaml-xenstore.git"
-synopsis: "Xenstore protocol in pure OCaml"
-description: """
-This repo contains:
-1. a xenstore client library, a merge of the Mirage and XCP ones
-2. a xenstore server library
-3. a xenstore server instance which runs under Unix with libxc
-4. a xenstore server instance which runs on mirage.
-
-The client and the server libraries have sets of unit-tests.
-"""
 url {
   src:
     "https://github.com/mirage/ocaml-xenstore/releases/download/2.1.1/xenstore-2.1.1.tbz"

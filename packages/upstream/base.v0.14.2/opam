@@ -2,7 +2,7 @@ opam-version: "2.0"
 name: "base"
 version: "v0.14.2"
 synopsis: "Full standard library replacement for OCaml"
-description: """
+description: """\
 Full standard library replacement for OCaml
 
 Base is a complete and portable alternative to the OCaml standard
@@ -15,8 +15,8 @@ features such as I/O are not offered by Base. They are instead
 provided by companion libraries such as stdio:
 
   https://github.com/janestreet/stdio"""
-maintainer: "opensource@janestreet.com"
-authors: "Jane Street Group, LLC <opensource@janestreet.com>"
+maintainer: "Jane Street developers"
+authors: "Jane Street Group, LLC"
 license: "MIT"
 homepage: "https://github.com/janestreet/base"
 doc: "https://ocaml.janestreet.com/ocaml-core/latest/doc/base/index.html"

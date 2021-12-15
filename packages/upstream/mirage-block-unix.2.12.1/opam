@@ -2,7 +2,7 @@ opam-version: "2.0"
 name: "mirage-block-unix"
 version: "2.12.1"
 synopsis: "MirageOS disk block driver for Unix"
-description: """
+description: """\
 Unix implementation of the Mirage `BLOCK_DEVICE` interface.
 
 This module provides raw I/O to files and block devices with as little
@@ -19,18 +19,19 @@ depends: [
   "dune" {>= "1.0"}
   "cstruct" {>= "3.0.0"}
   "cstruct-lwt"
-  "mirage-block" {>= "2.0.0"}
+  "mirage-block" {>= "2.0.0" & < "3.0.0"}
   "rresult"
-  "io-page-unix" {>= "2.0.0"}
+  "io-page" {>= "2.0.0"}
   "uri" {>= "1.9.0"}
   "logs"
   "ounit" {with-test}
   "diet" {with-test & >= "0.4"}
   "fmt" {with-test}
+  "io-page-unix" {with-test}
   "conf-linux-libc-dev" {os = "linux"}
 ]
 build: [
-  ["dune" "subst"] {pinned}
+  ["dune" "subst"] {dev}
   ["dune" "build" "-p" name "-j" jobs]
   ["dune" "runtest" "-p" name "-j" jobs] {with-test}
 ]

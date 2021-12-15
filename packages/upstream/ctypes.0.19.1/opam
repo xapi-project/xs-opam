@@ -39,6 +39,8 @@ depends: [
 depopts: ["ctypes-foreign" "mirage-xen"]
 conflicts: [
   "mirage-xen" {>= "6.0.0"}
+  "base-nnp"
+  "ocaml-option-nnpchecker"
 ]
 build: [
   [make "XEN=%{mirage-xen:enable}%" "libffi.config"]

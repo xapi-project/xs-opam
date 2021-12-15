@@ -8,6 +8,7 @@ module, but is faster, scales better and is more correct, and also more
 featureful. And also smaller. Yay."""
 maintainer: "https://github.com/ocaml/opam-repository/issues"
 authors: "Marc Lehmann"
+license: "BSD-2-Clause"
 homepage: "http://software.schmorp.de/pkg/libev.html"
 bug-reports: "https://github.com/ocaml/opam-repository/issues"
 depends: [

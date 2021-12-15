@@ -1,12 +1,17 @@
 opam-version: "2.0"
+name: "conf-xen"
+version: "1"
+synopsis: "Virtual package relying on Xen headers"
+description:
+  "This package can only install if the Xen headers are installed on the system."
 maintainer: "hannes@mehnert.org"
-authors: [ "hannes@mehnert.org" ]
+authors: "hannes@mehnert.org"
+license: ["GPL-2.0-only" "LGPL-3.0-only"]
 homepage: "https://xenproject.org/"
 bug-reports: "https://github.com/ocaml/opam-repository/issues"
-license: "GPLv2 AND LGPL3"
-build: [
-  ["sh" "-exc" "cc -c $CFLAGS -I/usr/local/include test.c"]
-]
+available: os != "macos"
+flags: conf
+build: ["sh" "-exc" "cc -c $CFLAGS -I/usr/local/include test.c"]
 depexts: [
   ["xen-dev"] {os-distribution = "alpine"}
   ["libxen-dev"] {os-family = "debian"}
@@ -19,10 +24,4 @@ depexts: [
   ["xenstore"] {os-distribution = "arch"}
   ["xen-tools"] {os = "freebsd"}
 ]
-available: os != "macos"
-synopsis:
-  "Virtual package relying on Xen headers"
-description: """
-This package can only install if the Xen headers are installed on the system."""
 extra-files: ["test.c" "md5=456d802e49f7bb2724292347d2d167d7"]
-flags: conf

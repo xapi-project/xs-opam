@@ -1,9 +1,8 @@
-x-commit-hash: "987d197802f80778b7b3daa642caee0c27a1ce43"
 opam-version: "2.0"
 name: "mirage-clock-unix"
 version: "3.1.0"
 synopsis: "Unix-based implementation for the MirageOS Clock interface"
-description: """
+description: """\
 The Unix implementation of the MirageOS Clock interface uses
 `gettimeofday` or `clock_gettime`, depending on
 which OS is in use (see [clock_stubs.c](https://github.com/mirage/mirage-clock/blob/master/unix/clock_stubs.c))."""
@@ -21,7 +20,7 @@ depends: [
   "mirage-clock" {= version}
 ]
 build: [
-  ["dune" "subst"] {pinned}
+  ["dune" "subst"] {dev}
   ["dune" "build" "-p" name "-j" jobs]
   ["dune" "runtest" "-p" name] {with-test}
 ]
@@ -34,3 +33,4 @@ url {
     "sha512=a1dbac3ae5671e02d77ebe5b9d8c53d787c0fcce59ec74a5d5ebd5ed28919d838ef6ab1c00ee18e0c261f7bafcb86de34548f1271129838b77654ee1a82ca4ff"
   ]
 }
+x-commit-hash: "987d197802f80778b7b3daa642caee0c27a1ce43"

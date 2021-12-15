@@ -24,4 +24,6 @@ depexts: [
   ["libffi-devel"] {os-distribution = "mageia"}
   ["libffi-devel"] {os-distribution = "ol"}
   ["libffi-devel"] {os-family = "suse"}
+  ["libffi"] {os = "freebsd"}
+  ["libffi"] {os = "win32" & os-distribution = "cygwinports"}
 ]

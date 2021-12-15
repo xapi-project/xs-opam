@@ -1,34 +1,8 @@
 opam-version: "2.0"
-maintainer: "anil@recoil.org"
-authors: [
-  "Anil Madhavapeddy" "Thomas Leonard" "Thomas Gazagnaire" "Rudi Grinberg"
-]
-license: "ISC"
-tags: "org:mirage"
-homepage: "https://github.com/mirage/ocaml-conduit"
-doc: "https://mirage.github.io/ocaml-conduit/"
-bug-reports: "https://github.com/mirage/ocaml-conduit/issues"
-depends: [
-  "ocaml" {>= "4.03.0"}
-  "dune"
-  "ppx_sexp_conv" {>="v0.12.0"}
-  "sexplib"
-  "astring"
-  "uri"
-  "logs" {>= "0.5.0"}
-  "ipaddr" {>= "4.0.0"}
-  "ipaddr-sexp"
-]
-build: [
-  ["dune" "subst"] {pinned}
-  ["dune" "build" "-p" name "-j" jobs]
-]
-patches: [
-  "0001-backport-Add-openssl_overrides-to-conduit-context.patch"
-]
-dev-repo: "git+https://github.com/mirage/ocaml-conduit.git"
+name: "conduit"
+version: "2.2.2-1"
 synopsis: "A network connection establishment library"
-description: """
+description: """\
 The `conduit` library takes care of establishing and listening for 
 TCP and SSL/TLS connections for the Lwt and Async libraries.
 
@@ -47,8 +21,37 @@ The useful opam packages available that extend this library are:
 - `conduit-lwt`: the portable Lwt implementation
 - `conduit-lwt-unix`: the Lwt/Unix implementation
 - `conduit-async` the Jane Street Async implementation
-- `conduit-mirage`: the MirageOS compatible implementation
-"""
+- `conduit-mirage`: the MirageOS compatible implementation"""
+maintainer: "anil@recoil.org"
+authors: [
+  "Anil Madhavapeddy" "Thomas Leonard" "Thomas Gazagnaire" "Rudi Grinberg"
+]
+license: "ISC"
+tags: "org:mirage"
+homepage: "https://github.com/mirage/ocaml-conduit"
+doc: "https://mirage.github.io/ocaml-conduit/"
+bug-reports: "https://github.com/mirage/ocaml-conduit/issues"
+depends: [
+  "ocaml" {>= "4.03.0"}
+  "dune"
+  "ppx_sexp_conv" {>= "v0.12.0"}
+  "sexplib"
+  "astring"
+  "uri"
+  "logs" {>= "0.5.0"}
+  "ipaddr" {>= "4.0.0"}
+  "ipaddr-sexp"
+]
+build: [
+  ["dune" "subst"] {pinned}
+  ["dune" "build" "-p" name "-j" jobs]
+]
+patches: "0001-backport-Add-openssl_overrides-to-conduit-context.patch"
+dev-repo: "git+https://github.com/mirage/ocaml-conduit.git"
+extra-files: [
+  "0001-backport-Add-openssl_overrides-to-conduit-context.patch"
+  "md5=8763613aac3ea2ecc9cc831dfde8d90f"
+]
 url {
   src:
     "https://github.com/mirage/ocaml-conduit/releases/download/v2.2.2/conduit-v2.2.2.tbz"

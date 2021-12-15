@@ -2,7 +2,7 @@ opam-version: "2.0"
 name: "bisect_ppx"
 version: "2.6.0"
 synopsis: "Code coverage for OCaml"
-description: """
+description: """\
 Bisect_ppx helps you test thoroughly. It is a small preprocessor
 that inserts instrumentation at places in your code, such as if-then-else and
 match expressions. After you run tests, Bisect_ppx gives a nice HTML report
