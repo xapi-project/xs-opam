@@ -9,7 +9,7 @@ XSER="xenserver"
 MAP="\
 rrd2csv                   $XAPI/xen-api
 rrddump                   $XAPI/xen-api
-varstored-guard           $XAPI/varstored-guard
+varstored-guard           $XAPI/xen-api
 xen-api-client-lwt        $XAPI/xen-api
 xen-api-client            $XAPI/xen-api
 xen-api-client-async      $XAPI/xen-api
@@ -40,8 +40,8 @@ vhd-tool                  $XAPI/xen-api
 xen-api-sdk               $XAPI/xen-api
 xapi-plugin               $XAPI/ocaml-xapi-plugin
 xapi-storage-script       $XAPI/xen-api
-xapi-storage-cli          $XAPI/sm-cli
-xapi-nbd                  $XAPI/xapi-nbd
+xapi-storage-cli          $XAPI/xen-api
+xapi-nbd                  $XAPI/xen-api
 uuid                      $XAPI/xen-api
 http-svr                  $XAPI/xen-api
 safe-resources            $XAPI/xen-api
@@ -60,7 +60,7 @@ xapi-rrd-transport        $XAPI/xen-api
 xapi-rrdd                 $XAPI/xen-api
 rrd-transport             $XAPI/xen-api
 xenctrl                   $XAPI/xenctrl
-wsproxy                   $XAPI/wsproxy
+wsproxy                   $XAPI/xen-api
 xapi-idl                  $XAPI/xen-api"
 
 echo "$MAP" | while read -r opam repo; do
