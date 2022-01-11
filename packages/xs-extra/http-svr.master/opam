@@ -5,8 +5,8 @@ homepage: "https://xapi-project.github.io/"
 bug-reports: "https://github.com/xapi-project/xen-api.git"
 dev-repo: "git+https://github.com/xapi-project/xen-api.git"
 build: [
-  ["dune" "build" "-p" name "-j" jobs "--profile" "release" ]
-  ["dune" "runtest" "-p" name "-j" jobs "--profile" "release"] {with-test}
+  ["dune" "build" "-p" name "-j" jobs]
+  ["dune" "runtest" "-p" name "-j" jobs] {with-test}
 ]
 available: [ os = "linux" ]
 depends: [
