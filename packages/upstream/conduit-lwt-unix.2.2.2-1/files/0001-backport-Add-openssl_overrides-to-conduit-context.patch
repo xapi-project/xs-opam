@@ -1,4 +1,5 @@
-From 4efe7a57897278e8ce338ec51e09ee6c0d820fa8 Mon Sep 17 00:00:00 2001
+From 3e42fef361a8be61528e3e2bc6da076193691afb Mon Sep 17 00:00:00 2001
+Message-Id: <3e42fef361a8be61528e3e2bc6da076193691afb.1642785804.git.edvin.torok@citrix.com>
 From: Ben Anson <ben.anson@citrix.com>
 Date: Mon, 26 Apr 2021 15:13:41 +0100
 Subject: [PATCH] Add openssl_overrides to conduit context
@@ -46,16 +47,16 @@ let* _resp, resp_body = Client.call ~ctx `POST ~body uri in
 ...
 ```
 ---
- lwt-unix/conduit_lwt_unix.ml            | 21 +++++++++++++++++----
+ lwt-unix/conduit_lwt_unix.ml            | 20 +++++++++++++++-----
  lwt-unix/conduit_lwt_unix.mli           |  1 +
  lwt-unix/conduit_lwt_unix_ssl_dummy.ml  |  8 ++++++++
  lwt-unix/conduit_lwt_unix_ssl_dummy.mli |  8 ++++++++
  lwt-unix/conduit_lwt_unix_ssl_real.ml   |  8 ++++++++
  lwt-unix/conduit_lwt_unix_ssl_real.mli  |  8 ++++++++
- 6 files changed, 50 insertions(+), 4 deletions(-)
+ 6 files changed, 48 insertions(+), 5 deletions(-)
 
 diff --git a/lwt-unix/conduit_lwt_unix.ml b/lwt-unix/conduit_lwt_unix.ml
-index 8dade88..f3a8005 100644
+index 8dade88..9c51564 100644
 --- a/lwt-unix/conduit_lwt_unix.ml
 +++ b/lwt-unix/conduit_lwt_unix.ml
 @@ -110,6 +110,7 @@ type tls_server_key = tls_own_key [@@deriving sexp]
@@ -90,25 +91,24 @@ index 8dade88..f3a8005 100644
      | [] -> Lwt.fail_with "Invalid conduit source address specified"
  
  module Sockaddr_io = struct
-@@ -270,6 +271,18 @@ let connect_with_openssl ~ctx (`Hostname hostname, `IP ip, `Port port) =
+@@ -270,7 +271,16 @@ let connect_with_openssl ~ctx (`Hostname hostname, `IP ip, `Port port) =
          in
          Some ctx_ssl
    in
+-  Conduit_lwt_unix_ssl.Client.connect ?ctx:ctx_ssl ?src:ctx.src ~hostname sa
 +  let hostname, ctx_ssl =
 +    match ctx.openssl_overrides with
-+    | None | Some { client = None } -> (hostname, ctx_ssl)
++    | None | Some { client = None } -> (Some hostname, ctx_ssl)
 +    | Some { client = Some overrides } ->
-+        let hostname =
-+          match overrides.hostname with Some x -> x | None -> hostname
-+        in
 +        let ctx_ssl =
 +          match overrides.ctx with Some x -> Some x | None -> ctx_ssl
 +        in
-+        (hostname, ctx_ssl)
++        (overrides.hostname, ctx_ssl)
 +  in
-   Conduit_lwt_unix_ssl.Client.connect ?ctx:ctx_ssl ?src:ctx.src ~hostname sa
++  Conduit_lwt_unix_ssl.Client.connect ?ctx:ctx_ssl ?src:ctx.src ?hostname sa
    >>= fun (fd, ic, oc) ->
    let flow = TCP {fd;ip;port} in
+   Lwt.return (flow, ic, oc)
 diff --git a/lwt-unix/conduit_lwt_unix.mli b/lwt-unix/conduit_lwt_unix.mli
 index e5db5d0..37ad751 100644
 --- a/lwt-unix/conduit_lwt_unix.mli
