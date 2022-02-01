@@ -14,7 +14,8 @@ for pkg in $packages; do
   versions=$(echo "$the_versions" | wc -w)
   # the compiler is allowed to have more than one version because it's a
   # separate rpm. xenctrl has 2 versions: dummy and master
-  if [ "$versions" -gt 1 ] && echo "$pkg" | grep -vqE '^ocaml$|^ocaml-base-compiler$|^ocaml-system$|^ocaml-config$|^xenctrl$' ; then
+  # some developer tools need a version per ocaml version supported
+  if [ "$versions" -gt 1 ] && echo "$pkg" | grep -vqE '^ocaml$|^ocaml-base-compiler$|^ocaml-system$|^ocaml-config$|^xenctrl$|^ocaml-lsp-server$' ; then
     >&2 echo "ERROR $pkg has multiple versions: $the_versions"
     exit 1
   fi
