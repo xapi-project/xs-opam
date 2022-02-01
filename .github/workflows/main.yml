@@ -66,3 +66,6 @@ jobs:
         # This should purge them from the cache, unversioned package have
         # 'master' as its version
         run: opam list | awk -F " " '$2 == "master" { print $1 }' |  xargs opam uninstall
+
+      - name: Install developer tools
+        run: opam install upstream-extra-dummy
