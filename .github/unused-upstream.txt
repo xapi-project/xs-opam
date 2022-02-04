@@ -4,7 +4,8 @@ fix
 logs-syslog
 ocaml-version
 ocamlformat
-odoc
+ocp-indent
+odoc-parser
 syslog-message
 tyre
 tyxml

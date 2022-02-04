@@ -6,11 +6,8 @@ homepage:       "https://github.com/xapi-project/xs-opam"
 license:        "BSD"
 depends: [
   "merlin"
-  "ocaml-system"
   "ocamlformat"
   "ocaml-lsp-server"
   "odig"
-  "travis-opam"
   "utop"
-  "xenctrl" { = "dummy"}
 ]
