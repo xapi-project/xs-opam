@@ -9,6 +9,7 @@ authors: [
 ]
 homepage: "http://gitlab.inria.fr/fpottier/menhir"
 bug-reports: "menhir@inria.fr"
+license: "LGPL-2.0-only WITH OCaml-LGPL-linking-exception"
 depends: [
   "ocaml" {>= "4.02.3"}
   "dune" {>= "2.0.0"}
