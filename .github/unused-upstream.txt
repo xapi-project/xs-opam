@@ -2,6 +2,7 @@ bisect_ppx
 conf-perl
 fix
 logs-syslog
+memtrace
 ocaml-version
 ocamlformat
 ocp-indent
