@@ -4,6 +4,7 @@ maintainer: "rob.hoes@citrix.com"
 homepage: "https://github.com/xapi-project/ocaml-netlink"
 bug-reports: "https://github.com/xapi-project/ocaml-netlink/issues"
 dev-repo: "git+https://github.com/xapi-project/ocaml-netlink.git"
+license: "LGPL-2.1-only WITH OCaml-LGPL-linking-exception"
 build: ["dune" "build" "-p" name "-j" jobs]
 depends: [
   "ocaml"

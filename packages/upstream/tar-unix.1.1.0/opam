@@ -5,6 +5,7 @@ tags: ["org:xapi-project" "org:mirage"]
 homepage: "https://github.com/mirage/ocaml-tar"
 doc: "https://mirage.github.io/ocaml-tar/"
 bug-reports: "https://github.com/mirage/ocaml-tar/issues"
+license: "ISC"
 depends: [
   "ocaml" {>= "4.03.0"}
   "dune" {build & >= "1.0"}

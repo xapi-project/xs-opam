@@ -60,6 +60,9 @@ jobs:
       - name: Check whether there are unused packages
         run: tools/find-unused-packages.sh
 
+      - name: Check whether there are unlicensed packages
+        run: tools/license-check.sh
+
       - name: Build xs-toolstack, test its dependencies
         run: |
           OPAMERRLOGLEN=10000 opam list -s --required-by xs-toolstack | xargs opam install -t

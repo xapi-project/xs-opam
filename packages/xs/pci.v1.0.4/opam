@@ -4,6 +4,7 @@ maintainer: "xen-api@lists.xen.org"
 authors: "Si Beaumont"
 homepage: "https://github.com/xapi-project/ocaml-pci"
 bug-reports: "https://github.com/xapi-project/ocaml-pci/issues"
+license: "LGPL-2.1-only WITH OCaml-LGPL-linking-exception"
 depends: [
   "ocaml" {>= "4.08.0"}
   "ctypes" {>= "0.4.0"}

@@ -17,6 +17,7 @@ depends: [
   "ocamlfind"
   "conf-gmp"
 ]
+license: "LGPL-2.0-or-later WITH OCaml-LGPL-linking-exception"
 build: [
   ["./configure"] {os != "openbsd" & os != "freebsd" & os != "macos"}
   [

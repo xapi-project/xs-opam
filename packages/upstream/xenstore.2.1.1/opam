@@ -18,6 +18,7 @@ depends: [
   "lwt"
   "ounit" {with-test}
 ]
+license: "LGPL-2.1-only WITH OCaml-LGPL-linking-exception"
 build: [
   ["dune" "subst"] {pinned}
   ["dune" "build" "-p" name "-j" jobs]

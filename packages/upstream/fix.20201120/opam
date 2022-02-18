@@ -6,6 +6,7 @@ maintainer: "francois.pottier@inria.fr"
 authors: "François Pottier <francois.pottier@inria.fr>"
 homepage: "https://gitlab.inria.fr/fpottier/fix"
 bug-reports: "francois.pottier@inria.fr"
+license: "LGPL-2.0-only WITH OCaml-LGPL-linking-exception"
 depends: [
   "ocaml" {>= "4.03"}
   "dune" {>= "1.3"}

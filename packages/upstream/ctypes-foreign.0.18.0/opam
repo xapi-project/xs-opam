@@ -10,6 +10,7 @@ authors: "yallop@gmail.com"
 tags: ["org:ocamllabs" "org:mirage"]
 homepage: "https://github.com/ocamllabs/ocaml-ctypes"
 bug-reports: "http://github.com/ocamllabs/ocaml-ctypes/issues"
+license: "MIT"
 depends: [
   "ctypes" {post}
   "conf-pkg-config" {build}
