@@ -11,7 +11,7 @@ This allows projects that require compatibility with older compiler to
 use these new features in their code."""
 maintainer: "The stdlib-shims programmers"
 authors: "The stdlib-shims programmers"
-license: "typeof OCaml system"
+license: "LGPL-2.1-only WITH OCaml-LGPL-linking-exception"
 tags: ["stdlib" "compatibility" "org:ocaml"]
 homepage: "https://github.com/ocaml/stdlib-shims"
 doc: "https://ocaml.github.io/stdlib-shims/"
