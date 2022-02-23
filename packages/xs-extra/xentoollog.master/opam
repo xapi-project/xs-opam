@@ -1,5 +1,5 @@
 opam-version: "2.0"
-synopsis: "Mock OCaml bindings for the Xen Hypervisor"
+synopsis: "Mock OCaml bindings for Xen's xentoollog"
 maintainer: "xen-api@lists.xen.org"
 authors: "Christian Lindig <christian.lindig@citrix.com>"
 license: "LGPL-2.1-only WITH OCaml-LGPL-linking-exception"
@@ -7,7 +7,6 @@ homepage: "https://github.com/xapi-project/xenctrl"
 bug-reports: "https://github.com/xapi-project/xenctrl/issues"
 depends: [
   "ocaml"
-  "conf-xen"
   "dune" {>= "2.0"}
   "base-unix"
 ]
