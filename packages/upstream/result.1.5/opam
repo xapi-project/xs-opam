@@ -1,20 +1,22 @@
 opam-version: "2.0"
-maintainer: "opensource@janestreet.com"
-authors: ["Jane Street Group, LLC <opensource@janestreet.com>"]
-homepage: "https://github.com/janestreet/result"
-dev-repo: "git+https://github.com/janestreet/result.git"
-bug-reports: "https://github.com/janestreet/result/issues"
+name: "result"
+version: "1.5"
+synopsis: "Compatibility Result module"
+description: """\
+Projects that want to use the new result type defined in OCaml >= 4.03
+while staying compatible with older version of OCaml should use the
+Result module defined in this library."""
+maintainer: "Jane Street developers"
+authors: "Jane Street Group, LLC"
 license: "BSD-3-Clause"
-build: [["dune" "build" "-p" name "-j" jobs]]
+homepage: "https://github.com/janestreet/result"
+bug-reports: "https://github.com/janestreet/result/issues"
 depends: [
   "ocaml"
   "dune" {>= "1.0"}
 ]
-synopsis: "Compatibility Result module"
-description: """
-Projects that want to use the new result type defined in OCaml >= 4.03
-while staying compatible with older version of OCaml should use the
-Result module defined in this library."""
+build: ["dune" "build" "-p" name "-j" jobs]
+dev-repo: "git+https://github.com/janestreet/result.git"
 url {
   src:
     "https://github.com/janestreet/result/releases/download/1.5/result-1.5.tbz"

@@ -1,18 +1,18 @@
 opam-version: "2.0"
+name: "trie"
+version: "1.0.0"
+synopsis: "Strict impure trie tree"
 maintainer: "zandoye@gmail.com"
-authors: [ "ZAN DoYe" ]
+authors: "ZAN DoYe"
+license: "MIT"
 homepage: "https://github.com/kandu/trie/"
 bug-reports: "https://github.com/kandu/trie/issues"
-license: "MIT"
-dev-repo: "git://github.com/kandu/trie.git"
-build: [
-  ["dune" "build" "-p" name "-j" jobs]
-]
 depends: [
   "ocaml" {>= "4.02"}
   "dune" {>= "1.0"}
 ]
-synopsis: "Strict impure trie tree"
+build: ["dune" "build" "-p" name "-j" jobs]
+dev-repo: "git+https://github.com/kandu/trie.git"
 url {
   src: "https://github.com/kandu/trie/archive/1.0.0.tar.gz"
   checksum: "md5=84519b5f8bd92490bfc68a52f706ba14"

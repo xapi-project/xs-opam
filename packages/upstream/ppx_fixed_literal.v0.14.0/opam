@@ -1,26 +1,27 @@
 opam-version: "2.0"
-maintainer: "opensource@janestreet.com"
-authors: ["Jane Street Group, LLC <opensource@janestreet.com>"]
-homepage: "https://github.com/janestreet/ppx_fixed_literal"
-bug-reports: "https://github.com/janestreet/ppx_fixed_literal/issues"
-dev-repo: "git+https://github.com/janestreet/ppx_fixed_literal.git"
-doc: "https://ocaml.janestreet.com/ocaml-core/latest/doc/ppx_fixed_literal/index.html"
+name: "ppx_fixed_literal"
+version: "v0.14.0"
+synopsis: "Simpler notation for fixed point literals"
+description: """\
+A ppx rewriter that rewrites fixed point literal of the 
+form 1.0v to conversion functions currently in scope."""
+maintainer: "Jane Street developers"
+authors: "Jane Street Group, LLC"
 license: "MIT"
-build: [
-  ["dune" "build" "-p" name "-j" jobs]
-]
+homepage: "https://github.com/janestreet/ppx_fixed_literal"
+doc:
+  "https://ocaml.janestreet.com/ocaml-core/latest/doc/ppx_fixed_literal/index.html"
+bug-reports: "https://github.com/janestreet/ppx_fixed_literal/issues"
 depends: [
-  "ocaml"  {>= "4.04.2"}
-  "base"   {>= "v0.14" & < "v0.15"}
-  "dune"   {>= "2.0.0"}
+  "ocaml" {>= "4.04.2"}
+  "base" {>= "v0.14" & < "v0.15"}
+  "dune" {>= "2.0.0"}
   "ppxlib" {>= "0.11.0"}
 ]
-synopsis: "Simpler notation for fixed point literals"
-description: "
-A ppx rewriter that rewrites fixed point literal of the 
-form 1.0v to conversion functions currently in scope.
-"
+build: ["dune" "build" "-p" name "-j" jobs]
+dev-repo: "git+https://github.com/janestreet/ppx_fixed_literal.git"
 url {
-  src: "https://ocaml.janestreet.com/ocaml-core/v0.14/files/ppx_fixed_literal-v0.14.0.tar.gz"
+  src:
+    "https://ocaml.janestreet.com/ocaml-core/v0.14/files/ppx_fixed_literal-v0.14.0.tar.gz"
   checksum: "md5=960bff66d1119cef42c16027e204554f"
 }

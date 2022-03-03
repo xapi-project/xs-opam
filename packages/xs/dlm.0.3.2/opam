@@ -18,7 +18,7 @@ depends: [
   "ctypes" {>= "0.11.1"}
   "lwt" {>= "4.2.0"}
   "odoc" {with-doc}
-  "ounit" {with-test & >= "2.0.0"}
+  "ounit" {>= "2.0.0"}
   "unix-errno"
   "uuidm" {>= "0.9.6"}
 ]

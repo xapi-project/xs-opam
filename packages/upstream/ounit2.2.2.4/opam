@@ -1,9 +1,8 @@
-x-commit-hash: "faf4936b17507406c7592186dcaa3f25c6fc138a"
 opam-version: "2.0"
 name: "ounit2"
 version: "2.2.4"
 synopsis: "OUnit testing framework"
-description: """
+description: """\
 OUnit is a unit test framework for OCaml. It allows one to easily create
 unit-tests for OCaml code. It is loosely based on [HUnit], a unit testing
 framework for Haskell. It is similar to [JUnit], and other XUnit testing
@@ -35,3 +34,4 @@ url {
     "sha512=d69dc501a360c31f7854322b5e2c2abcb1e43890737e1cc00c167ee104d5dee471b6b8d8186f8044b0482c91a8f15210a25d833a1e03ed7baabfba923815962f"
   ]
 }
+x-commit-hash: "faf4936b17507406c7592186dcaa3f25c6fc138a"

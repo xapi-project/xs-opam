@@ -2,7 +2,7 @@ opam-version: "2.0"
 name: "mirage-device"
 version: "2.0.0"
 synopsis: "Abstract devices for MirageOS"
-description: """
+description: """\
 mirage-device defines [Mirage_device.S][1], the signature for
 basic abstract devices for MirageOS and a pretty-printing function
 for device errors.
@@ -33,7 +33,7 @@ depends: [
   "lwt" {>= "4.0.0"}
 ]
 build: [
-  ["dune" "subst"] {pinned}
+  ["dune" "subst"] {dev}
   ["dune" "build" "-p" name "-j" jobs]
 ]
 dev-repo: "git+https://github.com/mirage/mirage-device.git"

@@ -3,11 +3,11 @@ name: "base_quickcheck"
 version: "v0.14.1"
 synopsis:
   "Randomized testing framework, designed for compatibility with Base"
-description: """
+description: """\
 Base_quickcheck provides randomized testing in the style of Haskell's Quickcheck library,
 with support for built-in types as well as types provided by Base."""
-maintainer: "opensource@janestreet.com"
-authors: "Jane Street Group, LLC <opensource@janestreet.com>"
+maintainer: "Jane Street developers"
+authors: "Jane Street Group, LLC"
 license: "MIT"
 homepage: "https://github.com/janestreet/base_quickcheck"
 doc:

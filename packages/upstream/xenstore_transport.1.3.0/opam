@@ -1,4 +1,12 @@
 opam-version: "2.0"
+name: "xenstore_transport"
+version: "1.3.0"
+synopsis:
+  "Low-level libraries for connecting to a xenstore service on a xen host"
+description: """\
+These libraries contain the IO functions for communicating with a
+xenstore service on a xen host. One subpackage deals with regular Unix
+threads and another deals with Lwt co-operative threads."""
 maintainer: "dave@recoil.org"
 authors: [
   "Christian Lindig"
@@ -29,12 +37,6 @@ build: [
   ["dune" "build" "-p" name "-j" jobs]
 ]
 dev-repo: "git+http://github.com/xapi-project/ocaml-xenstore-clients.git"
-synopsis: "Low-level libraries for connecting to a xenstore service on a xen host"
-description: """
-These libraries contain the IO functions for communicating with a
-xenstore service on a xen host. One subpackage deals with regular Unix
-threads and another deals with Lwt co-operative threads.
-"""
 url {
   src:
     "https://github.com/xapi-project/ocaml-xenstore-clients/archive/v1.3.0.tar.gz"

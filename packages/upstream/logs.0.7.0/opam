@@ -1,41 +1,8 @@
 opam-version: "2.0"
-maintainer: "Daniel Bünzli <daniel.buenzl i@erratique.ch>"
-authors: ["The logs programmers"]
-homepage: "https://erratique.ch/software/logs"
-doc: "https://erratique.ch/software/logs/doc"
-dev-repo: "git+https://erratique.ch/repos/logs.git"
-bug-reports: "https://github.com/dbuenzli/logs/issues"
-tags: [ "log" "system" "org:erratique" ]
-license: "ISC"
-depends: [
-  "ocaml" {>= "4.03.0"}
-  "ocamlfind" {build}
-  "ocamlbuild" {build}
-  "topkg" {build}
-  "mtime" {with-test} ]
-depopts: [
-  "js_of_ocaml"
-  "fmt"
-  "cmdliner"
-  "lwt"
-  "base-threads"
-]
-conflicts: [
-  "js_of_ocaml" { < "3.3.0" } ]
-
-build: [[
-  "ocaml" "pkg/pkg.ml" "build"
-          "--pinned" "%{pinned}%"
-          "--with-js_of_ocaml" "%{js_of_ocaml:installed}%"
-          "--with-fmt" "%{fmt:installed}%"
-          "--with-cmdliner" "%{cmdliner:installed}%"
-          "--with-lwt" "%{lwt:installed}%"
-          "--with-base-threads" "%{base-threads:installed}%"
-]]
-
-synopsis: """Logging infrastructure for OCaml"""
+name: "logs"
+version: "0.7.0"
+synopsis: "Logging infrastructure for OCaml"
 description: """\
-
 Logs provides a logging infrastructure for OCaml. Logging is performed
 on sources whose reporting level can be set independently. Log message
 report is decoupled from logging and is handled by a reporter.
@@ -56,9 +23,45 @@ Logs and its reporters are distributed under the ISC license.
 [fmt]: http://erratique.ch/software/fmt
 [jsoo]: http://ocsigen.org/js_of_ocaml/
 [cmdliner]: http://erratique.ch/software/cmdliner
-[lwt]: http://ocsigen.org/lwt/
-"""
+[lwt]: http://ocsigen.org/lwt/"""
+maintainer: "Daniel Bünzli <daniel.buenzl i@erratique.ch>"
+authors: "The logs programmers"
+license: "ISC"
+tags: ["log" "system" "org:erratique"]
+homepage: "https://erratique.ch/software/logs"
+doc: "https://erratique.ch/software/logs/doc"
+bug-reports: "https://github.com/dbuenzli/logs/issues"
+depends: [
+  "ocaml" {>= "4.03.0"}
+  "ocamlfind" {build}
+  "ocamlbuild" {build}
+  "topkg" {build}
+  "mtime" {with-test}
+]
+depopts: ["js_of_ocaml" "fmt" "cmdliner" "lwt" "base-threads"]
+conflicts: [
+  "cmdliner" {< "0.9.8"}
+  "js_of_ocaml" {< "3.3.0"}
+]
+build: [
+  "ocaml"
+  "pkg/pkg.ml"
+  "build"
+  "--pinned"
+  "%{pinned}%"
+  "--with-js_of_ocaml"
+  "%{js_of_ocaml:installed}%"
+  "--with-fmt"
+  "%{fmt:installed}%"
+  "--with-cmdliner"
+  "%{cmdliner:installed}%"
+  "--with-lwt"
+  "%{lwt:installed}%"
+  "--with-base-threads"
+  "%{base-threads:installed}%"
+]
+dev-repo: "git+https://erratique.ch/repos/logs.git"
 url {
-archive: "https://erratique.ch/software/logs/releases/logs-0.7.0.tbz"
-checksum: "2bf021ca13331775e33cf34ab60246f7"
+  src: "https://erratique.ch/software/logs/releases/logs-0.7.0.tbz"
+  checksum: "md5=2bf021ca13331775e33cf34ab60246f7"
 }

@@ -1,25 +1,35 @@
 opam-version: "2.0"
-maintainer: "tim@gfxmonk.net"
-homepage: "https://www.gnu.org/software/ncurses/"
-authors: "GNU Project"
-bug-reports: "https://github.com/ocaml/opam-repository/issues"
-license: "MIT"
-build: ["pkg-config" "ncurses"] {os-distribution != "opensuse"}
-depends: ["conf-pkg-config" {build & os-distribution != "opensuse"}]
-depexts: [
-  ["ncurses-dev"] {os-distribution = "debian"}
-  ["ncurses-dev"] {os-distribution = "ubuntu"}
-  ["ncurses"] {os-distribution = "nixos"}
-  ["ncurses-dev"] {os-distribution = "alpine"}
-  ["ncurses-devel"] {os-distribution = "fedora"}
-  ["ncurses-devel"] {os-distribution = "oraclelinux"}
-  ["ncurses-devel"] {os-distribution = "centos"}
-  ["ncurses-devel"] {os-distribution = "rhel"}
-  ["ncurses-devel"] {os-family = "suse"}
-  ["ncurses"] {os-distribution = "archlinux"}
-]
-available: os != "macos" & os != "freebsd" & os != "netbsd" & os != "openbsd"
+name: "conf-ncurses"
+version: "1"
 synopsis: "Virtual package relying on ncurses"
 description:
   "This package can only install if the ncurses library is installed on the system."
+maintainer: "tim@gfxmonk.net"
+authors: "GNU Project"
+license: "MIT"
+homepage: "https://www.gnu.org/software/ncurses/"
+bug-reports: "https://github.com/ocaml/opam-repository/issues"
+depends: [
+  "conf-pkg-config"
+    {build & os-distribution != "opensuse" & os != "macos" & os != "freebsd" &
+     os != "netbsd" &
+     os != "openbsd"}
+]
 flags: conf
+build:
+  ["pkg-config" "ncurses"]
+    {os-distribution != "opensuse" & os != "macos" & os != "freebsd" &
+     os != "netbsd" &
+     os != "openbsd"}
+depexts: [
+  ["ncurses-dev"] {os-family = "debian"}
+  ["ncurses"] {os-distribution = "nixos"}
+  ["ncurses-dev"] {os-distribution = "alpine"}
+  ["ncurses-devel"] {os-distribution = "fedora"}
+  ["ncurses-devel"] {os-distribution = "ol"}
+  ["ncurses-devel"] {os-distribution = "centos"}
+  ["ncurses-devel"] {os-distribution = "rhel"}
+  ["ncurses-devel"] {os-family = "suse"}
+  ["ncurses"] {os-distribution = "arch"}
+  ["ncurses"] {os = "win32" & os-distribution = "cygwinports"}
+]

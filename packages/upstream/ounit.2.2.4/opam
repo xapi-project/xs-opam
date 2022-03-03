@@ -1,9 +1,8 @@
-x-commit-hash: "faf4936b17507406c7592186dcaa3f25c6fc138a"
 opam-version: "2.0"
 name: "ounit"
 version: "2.2.4"
 synopsis: "This is a transition package, ounit is now ounit2"
-description: """
+description: """\
 More details for the transition:
 https://github.com/gildor478/ounit#transition-to-ounit2"""
 maintainer: "Sylvain Le Gall <sylvaini+ocaml@le-gall.net>"
@@ -26,3 +25,4 @@ url {
     "sha512=d69dc501a360c31f7854322b5e2c2abcb1e43890737e1cc00c167ee104d5dee471b6b8d8186f8044b0482c91a8f15210a25d833a1e03ed7baabfba923815962f"
   ]
 }
+x-commit-hash: "faf4936b17507406c7592186dcaa3f25c6fc138a"

@@ -1,7 +1,15 @@
 opam-version: "2.0"
+name: "opam-ed"
+version: "0.3"
+synopsis: "Command-line edition tool for handling the opam file syntax"
+description: """\
+opam-ed can read and write files in the general opam syntax. It provides a small CLI with some useful commands for mechanically extracting or modifying the file contents.
+
+The specification for the syntax itself is available at:
+    http://opam.ocaml.org/doc/Manual.html#Common-file-format"""
 maintainer: "Louis Gesbert <louis.gesbert@ocamlpro.com>"
 authors: "Louis Gesbert <louis.gesbert@ocamlpro.com>"
-license: "LGPL-2.1-only with OCaml-LGPL-linking-exception"
+license: "LGPL-2.1-only WITH OCaml-LGPL-linking-exception"
 homepage: "https://github.com/AltGr/opam-ed"
 bug-reports: "https://github.com/AltGr/opam-ed/issues"
 depends: [
@@ -11,16 +19,10 @@ depends: [
   "opam-file-format" {>= "2.0.0" & < "2.1"}
 ]
 build: [
-  make "COMP=ocamlc" {!ocaml:native}
+  make
+  "COMP=ocamlc" {!ocaml:native}
 ]
 dev-repo: "git+https://github.com/AltGr/opam-ed.git"
-synopsis: "Command-line edition tool for handling the opam file syntax"
-description: """
-opam-ed can read and write files in the general opam syntax. It provides a small CLI with some useful commands for mechanically extracting or modifying the file contents.
-
-The specification for the syntax itself is available at:
-    http://opam.ocaml.org/doc/Manual.html#Common-file-format
-"""
 url {
   src: "https://github.com/AltGr/opam-ed/archive/0.3.tar.gz"
   checksum: [

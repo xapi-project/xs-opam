@@ -1,27 +1,9 @@
 opam-version: "2.0"
-maintainer: "martin@mjambon.com"
-authors: ["Martin Jambon"]
-homepage: "https://github.com/ocaml-community/yojson"
-bug-reports: "https://github.com/ocaml-community/yojson/issues"
-dev-repo: "git+https://github.com/ocaml-community/yojson.git"
-doc: "https://ocaml-community.github.io/yojson/"
-license: "BSD-3-Clause"
-build: [
-  ["dune" "subst"] {pinned}
-  ["dune" "build" "-p" name "-j" jobs]
-]
-run-test: [["dune" "runtest" "-p" name "-j" jobs]]
-depends: [
-  "ocaml" {>= "4.02.3"}
-  "dune" {build}
-  "cppo" {build}
-  "easy-format"
-  "biniou" {>= "1.2.0"}
-  "alcotest" {with-test & >= "0.8.5"}
-]
+name: "yojson"
+version: "1.7.0"
 synopsis:
   "Yojson is an optimized parsing and printing library for the JSON format"
-description: """
+description: """\
 Yojson is an optimized parsing and printing library for the JSON format.
 
 It addresses a few shortcomings of json-wheel including 2x speedup,
@@ -32,7 +14,28 @@ yojson package.
 
 The program atdgen can be used to derive OCaml-JSON serializers and
 deserializers from type definitions."""
+license: "BSD-3-Clause"
+maintainer: "martin@mjambon.com"
+authors: "Martin Jambon"
+homepage: "https://github.com/ocaml-community/yojson"
+doc: "https://ocaml-community.github.io/yojson/"
+bug-reports: "https://github.com/ocaml-community/yojson/issues"
+depends: [
+  "ocaml" {>= "4.02.3"}
+  "dune"
+  "cppo" {build}
+  "easy-format"
+  "biniou" {>= "1.2.0"}
+  "alcotest" {with-test & >= "0.8.5"}
+]
+build: [
+  ["dune" "subst"] {dev}
+  ["dune" "build" "-p" name "-j" jobs]
+]
+run-test: ["dune" "runtest" "-p" name "-j" jobs]
+dev-repo: "git+https://github.com/ocaml-community/yojson.git"
 url {
-  src: "https://github.com/ocaml-community/yojson/releases/download/1.7.0/yojson-1.7.0.tbz"
+  src:
+    "https://github.com/ocaml-community/yojson/releases/download/1.7.0/yojson-1.7.0.tbz"
   checksum: "md5=b89d39ca3f8c532abe5f547ad3b8f84d"
 }

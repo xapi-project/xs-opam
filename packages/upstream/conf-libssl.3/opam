@@ -28,10 +28,11 @@ depexts: [
   ["openssl-devel"] {os-distribution = "ol"}
   ["openssl-devel"] {os-distribution = "fedora"}
   ["libopenssl-devel"] {os-family = "suse"}
-  ["libressl-dev"] {os-family = "alpine"}
+  ["openssl-dev"] {os-family = "alpine"}
   ["openssl"] {os-family = "arch"}
   ["openssl"] {os-distribution = "homebrew"}
   ["openssl"] {os-distribution = "macports"}
   ["openssl"] {os-distribution = "nixos"}
+  ["openssl"] {os = "win32" & os-distribution = "cygwinports"}
 ]
 extra-files: ["homebrew.sh" "md5=a524c7b9cb12a5be63c7d5933ccd1c43"]
