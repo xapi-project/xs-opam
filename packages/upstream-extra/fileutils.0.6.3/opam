@@ -24,7 +24,7 @@ homepage: "https://github.com/gildor478/ocaml-fileutils"
 doc: "https://gildor478.github.io/ocaml-fileutils/"
 bug-reports: "https://github.com/gildor478/ocaml-fileutils/issues"
 depends: [
-  "ocaml" {>= "4.03"}
+  "ocaml" {>= "4.03" & < "5.0"}
   "base-unix"
   "base-bytes"
   "stdlib-shims"

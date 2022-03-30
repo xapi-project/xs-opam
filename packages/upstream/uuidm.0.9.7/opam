@@ -18,12 +18,15 @@ homepage: "https://erratique.ch/software/uuidm"
 doc: "https://erratique.ch/software/uuidm/doc/Uuidm"
 bug-reports: "https://github.com/dbuenzli/uuidm/issues"
 depends: [
-  "ocaml" {>= "4.03.0"}
+  "ocaml" {>= "4.03.0" & < "5.0"}
   "ocamlfind" {build}
   "ocamlbuild" {build}
   "topkg" {build}
 ]
 depopts: ["cmdliner"]
+conflicts: [
+  "cmdliner" {< "0.9.8"}
+]
 build: [
   "ocaml"
   "pkg/pkg.ml"

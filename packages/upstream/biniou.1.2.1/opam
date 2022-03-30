@@ -27,7 +27,7 @@ bug-reports: "https://github.com/mjambon/biniou/issues"
 depends: [
   "easy-format"
   "dune" {>= "1.10"}
-  "ocaml" {>= "4.02.3"}
+  "ocaml" {>= "4.02.3" & < "5.0"}
 ]
 build: [
   ["dune" "subst"] {dev}

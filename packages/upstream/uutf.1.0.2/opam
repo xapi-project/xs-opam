@@ -21,7 +21,7 @@ homepage: "http://erratique.ch/software/uutf"
 doc: "http://erratique.ch/software/uutf/doc/Uutf"
 bug-reports: "https://github.com/dbuenzli/uutf/issues"
 depends: [
-  "ocaml" {>= "4.01.0"}
+  "ocaml" {>= "4.01.0" & < "5.0"}
   "ocamlfind" {build}
   "ocamlbuild" {build}
   "topkg" {build}

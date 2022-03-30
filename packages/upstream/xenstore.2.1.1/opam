@@ -18,6 +18,7 @@ authors: [
   "Anil Madhavapeddy"
   "Vincent Bernardoff"
 ]
+license: "LGPL-2.1-only WITH OCaml-LGPL-linking-exception"
 homepage: "https://github.com/mirage/ocaml-xenstore"
 doc: "https://mirage.github.io/ocaml-xenstore/"
 bug-reports: "https://github.com/mirage/ocaml-xenstore/issues"
@@ -29,7 +30,6 @@ depends: [
   "lwt"
   "ounit" {with-test}
 ]
-license: "LGPL-2.1-only WITH OCaml-LGPL-linking-exception"
 build: [
   ["dune" "subst"] {dev}
   ["dune" "build" "-p" name "-j" jobs]

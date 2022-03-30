@@ -11,7 +11,7 @@ homepage: "https://github.com/ocamllabs/ocaml-integers"
 doc: "http://ocamllabs.github.io/ocaml-integers/api.docdir/"
 bug-reports: "https://github.com/ocamllabs/ocaml-integers/issues"
 depends: [
-  "ocaml" {>= "4.03"}
+  "ocaml" {>= "4.03" & < "5.0"}
   "dune"
 ]
 build: [
