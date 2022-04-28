@@ -12,7 +12,7 @@ build: [
 ]
 depends: [
   "ocaml"
-  "dune" {build}
+  "dune"
   "base-threads"
   "alcotest" {with-test}
   "astring"
@@ -29,7 +29,7 @@ depends: [
   "sexplib"
   "sexplib0"
   "uri"
-  "uuidm"
+  "uuid"
   "uutf"
   "xapi-backtrace"
   "xapi-idl"

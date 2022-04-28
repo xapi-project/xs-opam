@@ -10,12 +10,12 @@ build: [[ "dune" "build" "-p" name "-j" jobs ]]
 
 depends: [
   "ocaml"
-  "dune" {build}
+  "dune"
   "base-threads"
   "fd-send-recv"
   "ppx_deriving_rpc"
   "rpclib"
-  "uuidm"
+  "uuid"
   "xapi-idl"
   "xapi-stdext-pervasives"
   "xapi-stdext-unix"

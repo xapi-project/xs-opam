@@ -13,7 +13,7 @@ url {
 tags: [ "org:xapi-project" ]
 build: [[ "dune" "build" "-p" name "-j" jobs]]
 depends: [
-  "dune" {build}
+  "dune"
   "xapi-datamodel"
   "mustache"
   "astring"

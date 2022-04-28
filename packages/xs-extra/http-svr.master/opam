@@ -11,12 +11,13 @@ build: [
 available: [ os = "linux" ]
 depends: [
   "ocaml"
-  "dune" {build}
+  "dune"
   "astring"
   "base64" {>= "3.1.0"}
   "rpclib"
   "sha"
   "stunnel"
+  "uuid"
   "xapi-stdext-date"
   "xapi-stdext-pervasives"
   "xapi-stdext-threads"

@@ -11,7 +11,7 @@ build: [
 ]
 depends: [
   "ocaml"
-  "dune" {build}
+  "dune"
   "base-unix"
   "xapi-xenopsd"
 ]
