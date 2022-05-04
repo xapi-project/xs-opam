@@ -30,6 +30,7 @@ depends: [
   "message-switch-unix"
   "mtime"
   "ocaml-migrate-parsetree"
+  "opentelemetry-client-ocurl"
   "pci"
   "pciutil"
   "ppx_deriving_rpc"
