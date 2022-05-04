@@ -12,13 +12,13 @@ build: [
 ]
 depends: [
   "ocaml"
-  "dune" {build}
+  "dune"
   "base64" {>= "3.1.0"}
   "fmt"
   "logs"
   "lwt" {>= "3.0.0"}
   "re"
-  "uuidm"
+  "uuid"
   "ounit" {with-test}
   "qcheck" {with-test}
 ]

@@ -10,7 +10,7 @@ build: [[ "dune" "build" "-p" name "-j" jobs ]]
 synopsis: "Plugins registering to the RRD daemon and exposing various metrics"
 depends: [
   "ocaml"
-  "dune" {build}
+  "dune"
   "base-threads"
   "base-unix"
   "cstruct-unix"

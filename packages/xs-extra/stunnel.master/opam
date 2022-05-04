@@ -9,11 +9,11 @@ build: [[ "dune" "build" "-p" name "-j" jobs ]]
 available: [ os = "linux" ]
 depends: [
   "ocaml"
-  "dune" {build}
+  "dune"
   "astring"
   "forkexec"
   "safe-resources"
-  "uuidm"
+  "uuid"
   "xapi-idl"
   "xapi-inventory"
   "xapi-stdext-pervasives"

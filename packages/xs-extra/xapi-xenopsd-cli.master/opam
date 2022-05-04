@@ -10,13 +10,13 @@ build: [
 ]
 depends: [
   "ocaml"
-  "dune" {build}
+  "dune"
   "base-threads"
   "cmdliner"
   "re"
   "rpclib"
   "rresult"
-  "uuidm"
+  "uuid"
   "xapi-idl"
   "xenstore_transport" {with-test}
 ]
