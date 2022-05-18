@@ -64,7 +64,7 @@ xenctrl                   $XAPI/xenctrl
 xenops                    $XAPI/xenops
 xapi-xenops               $XAPI/xenops
 xapi-xenops-utils         $XAPI/xenops
-xenops-cli                $XAPI/xenops-cli
+xapi-xenopsd-cli          $XAPI/xenopsd
 wsproxy                   $XAPI/wsproxy
 xapi-idl                  $XAPI/xcp-idl
 xapi-tapctl               $XAPI/tapctl"
