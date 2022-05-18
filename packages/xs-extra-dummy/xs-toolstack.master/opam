@@ -59,6 +59,6 @@ depends: [
   "xenctrl"
   "xenctrlext"
   "xenops"
-  "xenops-cli"
+  "xapi-xenopsd-cli"
   "xml-light2"
 ]
