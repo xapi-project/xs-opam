@@ -1,6 +1,6 @@
 opam-version: "2.0"
 name: "opam-depext"
-version: "1.1.5"
+version: "1.2.1"
 synopsis: "Install OS distribution packages"
 description: """\
 opam-depext is a simple program intended to facilitate the interaction between
@@ -20,16 +20,34 @@ homepage: "https://github.com/ocaml/opam-depext"
 bug-reports: "https://github.com/ocaml/opam-depext/issues"
 depends: [
   "ocaml" {>= "4.00"}
+  "base-unix"
+  "cmdliner" {>= "0.9.8" & dev}
+  "ocamlfind" {dev}
 ]
-available: opam-version >= "2.0.0~beta5" & opam-version < "2.1"
+available: opam-version >= "2.0.0~beta5"
 flags: plugin
-build: make
+build: [
+  [make] {!dev}
+  [
+    "ocamlfind"
+    "%{ocaml:native?ocamlopt:ocamlc}%"
+    "-package"
+    "unix,cmdliner"
+    "-linkpkg"
+    "-o"
+    "opam-depext"
+    "depext.ml"
+  ] {dev}
+]
+post-messages:
+  "opam-depext is unnecessary when used with opam >= 2.1. Please use opam install directly instead"
+    {opam-version >= "2.1"}
 dev-repo: "git+https://github.com/ocaml/opam-depext.git#2.0"
 url {
   src:
-    "https://github.com/ocaml-opam/opam-depext/releases/download/v1.1.5/opam-depext-full-v1.1.5.tbz"
+    "https://github.com/ocaml-opam/opam-depext/releases/download/v1.2.1/opam-depext-full-1.2.1.tbz"
   checksum: [
-    "md5=e05aa8bf3f794bbbb293eb2d4d5b1233"
-    "sha512=661bdb43867904ffd9c20390b5679eccd4d3dbcd0e5d1252561f0b24aac3cf1d80d2cf72cadf04e25d480eb3c79d3dda5874c88075971d42445f1c956c0fad9c"
+    "md5=7bda1fdbd88322e8f515919c82a37a2a"
+    "sha512=a031289ac4e2d4d28bf02b892313b2a0ee724c94f0b7a131b3d9bccc5fbaf2292834d53dd6a0b7134f43bab06ee70bd2c98562fb3a6a03f1a526981290cbf501"
   ]
 }
