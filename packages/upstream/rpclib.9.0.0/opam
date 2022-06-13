@@ -1,7 +1,7 @@
 opam-version: "2.0"
-name: "rpclib-lwt"
-version: "8.1.1"
-synopsis: "A library to deal with RPCs in OCaml - Lwt interface"
+name: "rpclib"
+version: "9.0.0"
+synopsis: "A library to deal with RPCs in OCaml"
 description: """\
 `ocaml-rpc` is a library that provides remote procedure calls (RPC)
 using XML or JSON as transport encodings, and multiple generators
@@ -11,20 +11,25 @@ bindings, ...
 The transport mechanism itself is outside the scope of this library
 as all conversions are from and to strings."""
 maintainer: "thomas@gazagnaire.org"
-authors: "Thomas Gazagnaire, Jon Ludlam"
+authors: ["Thomas Gazagnaire" "Jon Ludlam"]
 license: "ISC"
 tags: ["org:mirage" "org:xapi-project"]
 homepage: "https://github.com/mirage/ocaml-rpc"
-doc: "https://mirage.github.io/ocaml-rpc/rpclib-lwt"
+doc: "https://mirage.github.io/ocaml-rpc/rpclib"
 bug-reports: "https://github.com/mirage/ocaml-rpc/issues"
 depends: [
-  "ocaml"
+  "ocaml" {>= "4.08.0"}
   "alcotest" {with-test}
   "dune" {>= "2.0.0"}
-  "rpclib" {= version}
-  "lwt" {>= "3.0.0"}
-  "alcotest-lwt" {with-test}
-  "ppx_deriving_rpc" {with-test & = version}
+  "base64" {>= "3.4.0"}
+  "cmdliner" {>= "1.1.0"}
+  "rresult" {>= "0.3.0"}
+  "result" {>= "1.5"}
+  "xmlm"
+  "yojson" {>= "1.7.0"}
+]
+conflicts: [
+  "result" {< "1.5"}
 ]
 build: [
   ["dune" "build" "-p" name "-j" jobs]
@@ -33,10 +38,10 @@ build: [
 dev-repo: "git://github.com/mirage/ocaml-rpc"
 url {
   src:
-    "https://github.com/mirage/ocaml-rpc/releases/download/v8.1.1/rpclib-8.1.1.tbz"
+    "https://github.com/mirage/ocaml-rpc/releases/download/9.0.0/rpclib-9.0.0.tbz"
   checksum: [
-    "sha256=7490acef5f0914220cf00f4d7977b29b16c6840a378f515864b5f31b93d0f399"
-    "sha512=7424ac12f5a96207875e0a0eba4f13772c93540e87491232105c7852193a47432b5442f748264bb5cb90dab8b1711b1368e870b3eca083ffff9cf73a27df5ed9"
+    "sha256=ce23eb756c028d9374bd19823296bddb7c237d3f055452d30d1cf7d15216e963"
+    "sha512=d4dfd7a9ee1b7996c24819ac1895925af0ad732f117c6e06cd28c215b14aa094dbd045e44d7f84c0eeb7ab807ed970d6879c29d07b02377fcb928325124ba7f6"
   ]
 }
-x-commit-hash: "0f3edef992f241170a12cf9e2e9e118122e6336a"
+x-commit-hash: "273c27c8d37110ca1c92b997d93e979aebcb5079"

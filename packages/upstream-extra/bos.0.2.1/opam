@@ -1,6 +1,6 @@
 opam-version: "2.0"
 name: "bos"
-version: "0.2.0"
+version: "0.2.1"
 synopsis: "Basic OS interaction for OCaml"
 description: """\
 Bos provides support for basic and robust interaction with the
@@ -18,32 +18,36 @@ distributed under the ISC license.
 [astring]: http://erratique.ch/software/astring
 [fmt]: http://erratique.ch/software/fmt
 [fpath]: http://erratique.ch/software/fpath
-[logs]: http://erratique.ch/software/logs"""
+[logs]: http://erratique.ch/software/logs
+
+Home page: http://erratique.ch/software/bos  
+Contact: Daniel Bünzli `<daniel.buenzl i@erratique.ch>`"""
 maintainer: "Daniel Bünzli <daniel.buenzl i@erratique.ch>"
-authors: "Daniel Bünzli <daniel.buenzl i@erratique.ch>"
+authors: "The bos programmers"
 license: "ISC"
 tags: [
   "os" "system" "cli" "command" "file" "path" "log" "unix" "org:erratique"
 ]
-homepage: "http://erratique.ch/software/bos"
-doc: "http://erratique.ch/software/bos/doc"
+homepage: "https://erratique.ch/software/bos"
+doc: "https://erratique.ch/software/bos/doc"
 bug-reports: "https://github.com/dbuenzli/bos/issues"
 depends: [
-  "ocaml" {>= "4.01.0"}
+  "ocaml" {>= "4.08.0"}
   "ocamlfind" {build}
   "ocamlbuild" {build}
-  "topkg" {build & >= "0.9.0"}
+  "topkg" {build & >= "1.0.3"}
   "base-unix"
-  "rresult" {>= "0.4.0" & < "0.7.0"}
+  "rresult" {>= "0.7.0"}
   "astring"
-  "fpath"
-  "fmt" {>= "0.8.0"}
-  "logs" {>= "0.5.0"}
+  "fpath" {>= "0.7.3"}
+  "fmt" {>= "0.8.10"}
+  "logs"
   "mtime" {with-test}
 ]
-build: ["ocaml" "pkg/pkg.ml" "build" "--dev-pkg" "%{pinned}%"]
-dev-repo: "git+http://erratique.ch/repos/bos.git"
+build: ["ocaml" "pkg/pkg.ml" "build" "--dev-pkg" "%{dev}%"]
+dev-repo: "git+https://erratique.ch/repos/bos.git"
 url {
-  src: "http://erratique.ch/software/bos/releases/bos-0.2.0.tbz"
-  checksum: "md5=aeae7447567db459c856ee41b5a66fd2"
+  src: "https://erratique.ch/software/bos/releases/bos-0.2.1.tbz"
+  checksum:
+    "sha512=8daeb8a4c2dd1f2460f6274ada19f4f1b6ebe875ff83a938c93418ce0e6bdb74b8afc5c9a7d410c1c9df2dad030e4fa276b6ed2da580639484e8b5bc92610b1d"
 }
