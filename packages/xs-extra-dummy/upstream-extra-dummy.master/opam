@@ -5,6 +5,7 @@ authors:        "Christian Lindig <christian.lindig@citrix.com>"
 homepage:       "https://github.com/xapi-project/xs-opam"
 license:        "BSD"
 depends: [
+  "merge-fmt"
   "merlin"
   "ocamlformat"
   "ocaml-lsp-server"
