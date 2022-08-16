@@ -1,4 +1,6 @@
 opam-version: "2.0"
+name: "ocaml-system"
+version: "4.08.1"
 synopsis: "The OCaml compiler (system version, from outside of opam)"
 maintainer: "platform@lists.ocaml.org"
 depends: [
@@ -12,4 +14,6 @@ available: sys-ocaml-version = "4.08.1"
 flags: compiler
 build: ["ocaml" "gen_ocaml_config.ml"]
 substs: "gen_ocaml_config.ml"
-extra-files: ["gen_ocaml_config.ml.in" "md5=093e7bec1ec95f9e4c6a313d73c5d840"]
+extra-files: [
+  "gen_ocaml_config.ml.in" "md5=093e7bec1ec95f9e4c6a313d73c5d840"
+]
