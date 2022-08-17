@@ -1,6 +1,6 @@
 opam-version: "2.0"
 name: "alcotest"
-version: "1.5.0"
+version: "1.6.0"
 synopsis: "Alcotest is a lightweight and colourful test framework"
 description: """\
 Alcotest exposes simple interface to perform unit tests. It exposes
@@ -20,11 +20,10 @@ doc: "https://mirage.github.io/alcotest"
 bug-reports: "https://github.com/mirage/alcotest/issues"
 depends: [
   "dune" {>= "2.8"}
-  "ocaml" {>= "4.03.0"}
+  "ocaml" {>= "4.05.0"}
   "fmt" {>= "0.8.7"}
   "astring"
-  "cmdliner" {>= "1.0.0"}
-  "cmdliner" {with-test & < "1.1.0"}
+  "cmdliner" {>= "1.1.0"}
   "re" {>= "1.7.2"}
   "stdlib-shims"
   "uutf" {>= "1.0.1"}
@@ -51,10 +50,10 @@ build: [
 dev-repo: "git+https://github.com/mirage/alcotest.git"
 url {
   src:
-    "https://github.com/mirage/alcotest/releases/download/1.5.0/alcotest-js-1.5.0.tbz"
+    "https://github.com/mirage/alcotest/releases/download/1.6.0/alcotest-1.6.0.tbz"
   checksum: [
-    "sha256=54281907e02d78995df246dc2e10ed182828294ad2059347a1e3a13354848f6c"
-    "sha512=1aea91de40795ec4f6603d510107e4b663c1a94bd223f162ad231316d8595e9e098cabbe28a46bdcb588942f3d103d8377373d533bcc7413ba3868a577469b45"
+    "sha256=fd00f9668395874ff3b1d7ef566d14efc02fa7dd34123eb25d59355be94b2329"
+    "sha512=69a7ef300ba10a9ccb1e25b1cfdb0a0abf9ca976864a52a22f0e1fae1e5d1cbeb99498c086230b839ee9da4d0fd71e63686e126ca42221537f3fdb6f6c5aae95"
   ]
 }
-x-commit-hash: "12889aa7f993ad55434443f1c447a59f18ffc9bf"
+x-commit-hash: "6be328d73513db7f32173f86a997a59904fb1ee6"
