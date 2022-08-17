@@ -1,6 +1,6 @@
 opam-version: "2.0"
 name: "uutf"
-version: "1.0.2"
+version: "1.0.3"
 synopsis: "Non-blocking streaming Unicode codec for OCaml"
 description: """\
 Uutf is a non-blocking streaming codec to decode and encode the UTF-8,
@@ -10,38 +10,42 @@ character position tracking and support newline normalization.
 
 Functions are also provided to fold over the characters of UTF encoded
 OCaml string values and to directly encode characters in OCaml
-Buffer.t values.
+Buffer.t values. **Note** that since OCaml 4.14, that functionality
+can be found in the Stdlib and you are encouraged to migrate to it.
 
-Uutf has no dependency and is distributed under the ISC license."""
+Uutf has no dependency and is distributed under the ISC license.
+
+Home page: http://erratique.ch/software/uutf  
+Contact: Daniel Bünzli `<daniel.buenzl i@erratique.ch>`"""
 maintainer: "Daniel Bünzli <daniel.buenzl i@erratique.ch>"
-authors: "Daniel Bünzli <daniel.buenzl i@erratique.ch>"
+authors: "The uutf programmers"
 license: "ISC"
 tags: ["unicode" "text" "utf-8" "utf-16" "codec" "org:erratique"]
-homepage: "http://erratique.ch/software/uutf"
-doc: "http://erratique.ch/software/uutf/doc/Uutf"
+homepage: "https://erratique.ch/software/uutf"
+doc: "https://erratique.ch/software/uutf/doc/"
 bug-reports: "https://github.com/dbuenzli/uutf/issues"
 depends: [
-  "ocaml" {>= "4.01.0" & < "5.0"}
+  "ocaml" {>= "4.03.0"}
   "ocamlfind" {build}
   "ocamlbuild" {build}
-  "topkg" {build}
-  "uchar"
+  "topkg" {build & >= "1.0.3"}
 ]
 depopts: ["cmdliner"]
 conflicts: [
-  "cmdliner" {< "0.9.6"}
+  "cmdliner" {< "0.9.8"}
 ]
 build: [
   "ocaml"
   "pkg/pkg.ml"
   "build"
-  "--pinned"
-  "%{pinned}%"
+  "--dev-pkg"
+  "%{dev}%"
   "--with-cmdliner"
   "%{cmdliner:installed}%"
 ]
-dev-repo: "git+http://erratique.ch/repos/uutf.git"
+dev-repo: "git+https://erratique.ch/repos/uutf.git"
 url {
-  src: "http://erratique.ch/software/uutf/releases/uutf-1.0.2.tbz"
-  checksum: "md5=a7c542405a39630c689a82bd7ef2292c"
+  src: "https://erratique.ch/software/uutf/releases/uutf-1.0.3.tbz"
+  checksum:
+    "sha512=50cc4486021da46fb08156e9daec0d57b4ca469b07309c508d5a9a41e9dbcf1f32dec2ed7be027326544453dcaf9c2534919395fd826dc7768efc6cc4bfcc9f8"
 }
