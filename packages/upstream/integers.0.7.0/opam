@@ -1,6 +1,6 @@
 opam-version: "2.0"
 name: "integers"
-version: "0.5.1"
+version: "0.7.0"
 synopsis: "Various signed and unsigned integer types for OCaml"
 maintainer: "yallop@gmail.com"
 authors: [
@@ -11,8 +11,9 @@ homepage: "https://github.com/ocamllabs/ocaml-integers"
 doc: "http://ocamllabs.github.io/ocaml-integers/api.docdir/"
 bug-reports: "https://github.com/ocamllabs/ocaml-integers/issues"
 depends: [
-  "ocaml" {>= "4.03" & < "5.0"}
-  "dune"
+  "ocaml" {>= "4.03"}
+  "dune" {>= "1.0"}
+  "stdlib-shims"
 ]
 build: [
   ["dune" "subst"] {dev}
@@ -21,6 +22,6 @@ build: [
 ]
 dev-repo: "git+https://github.com/ocamllabs/ocaml-integers.git"
 url {
-  src: "https://github.com/ocamllabs/ocaml-integers/archive/0.5.1.tar.gz"
-  checksum: "md5=24d629966763b4956edfb7e64d6c5427"
+  src: "https://github.com/ocamllabs/ocaml-integers/archive/0.7.0.tar.gz"
+  checksum: "md5=201cf24143d7cb9a3921d572b6e6c42c"
 }
