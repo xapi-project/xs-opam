@@ -1,6 +1,6 @@
 opam-version: "2.0"
 name: "ocaml-migrate-parsetree"
-version: "2.3.0"
+version: "2.4.0"
 synopsis: "Convert OCaml parsetrees between different versions"
 description: """\
 Convert OCaml parsetrees between different versions
@@ -20,7 +20,7 @@ doc: "https://ocaml-ppx.github.io/ocaml-migrate-parsetree/"
 bug-reports: "https://github.com/ocaml-ppx/ocaml-migrate-parsetree/issues"
 depends: [
   "dune" {>= "2.3"}
-  "ocaml" {>= "4.02.3" & < "4.15"}
+  "ocaml" {>= "4.02.3" & < "5.1"}
   "cinaps" {with-test & >= "v0.13.0"}
 ]
 conflicts: ["base-effects"]
@@ -29,10 +29,10 @@ run-test: ["dune" "runtest" "-p" name "-j" jobs]
 dev-repo: "git+https://github.com/ocaml-ppx/ocaml-migrate-parsetree.git"
 url {
   src:
-    "https://github.com/ocaml-ppx/ocaml-migrate-parsetree/releases/download/v2.3.0/ocaml-migrate-parsetree-2.3.0.tbz"
+    "https://github.com/ocaml-ppx/ocaml-migrate-parsetree/releases/download/2.4.0/ocaml-migrate-parsetree-2.4.0.tbz"
   checksum: [
-    "sha256=108126b247f190e04c8afd3d72ced0b63ffdf73c3f801f09be5db0cd7280bf0a"
-    "sha512=cccd766d33e2c70015735e050c2b7cdacf9f046e2874b563ef64b77706f56d004aa9b9df7d5cc201e5f3ba6e3267f95f654e1e3de58891b91f9c28a61988a9ee"
+    "sha256=ec49c452dc337a620556ab682bf0198bf50182550b502d8fb230a591260aa6a4"
+    "sha512=9478b9e5a969040400ee8fd7402bc4034f0f398d84e619254c43d5b7928463242629a2ccea35427f9747fbcedefa7ffc12edd1955ef8de866ba632e77f173219"
   ]
 }
-x-commit-hash: "7ef6ff49bfd7d6d816be61d3acea460af25d7d99"
+x-commit-hash: "4b05692f45f7a8456725ddc4d50b970e271c4278"
