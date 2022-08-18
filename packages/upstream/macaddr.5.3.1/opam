@@ -1,13 +1,13 @@
 opam-version: "2.0"
 name: "macaddr"
-version: "5.2.0"
+version: "5.3.1"
 synopsis: "A library for manipulation of MAC address representations"
 description: """\
 A library for manipulation of MAC address representations.
 
 Features:
 
- * oUnit-based tests
+ * ounit2-based tests
  * MAC-48 (Ethernet) address support
  * `Macaddr` is a `Map.OrderedType`
  * All types have sexplib serializers/deserializers optionally via the `Macaddr_sexp` library."""
@@ -19,9 +19,9 @@ homepage: "https://github.com/mirage/ocaml-ipaddr"
 doc: "https://mirage.github.io/ocaml-ipaddr/"
 bug-reports: "https://github.com/mirage/ocaml-ipaddr/issues"
 depends: [
-  "ocaml" {>= "4.04.0"}
+  "ocaml" {>= "4.08.0"}
   "dune" {>= "1.9.0"}
-  "ounit" {with-test}
+  "ounit2" {with-test}
   "ppx_sexp_conv" {with-test & >= "v0.9.0"}
 ]
 conflicts: [
@@ -35,10 +35,10 @@ build: [
 dev-repo: "git+https://github.com/mirage/ocaml-ipaddr.git"
 url {
   src:
-    "https://github.com/mirage/ocaml-ipaddr/releases/download/v5.2.0/ipaddr-v5.2.0.tbz"
+    "https://github.com/mirage/ocaml-ipaddr/releases/download/v5.3.1/ipaddr-5.3.1.tbz"
   checksum: [
-    "sha256=f98d237cc1f783a0ba7dff0c6c69b5f519fec056950e3e3e7c15e5511ee5b7ec"
-    "sha512=28c8c4d525c2ab13e8561de5dfdb8922227ce652cd3c02e78c60daf2ba6844960864027c803f11fc3d1991a18ef864d8a0b95cd99e5f5d8452d3f66541367bd2"
+    "sha256=9820bcbccadb6e6d9e22fe26b2f9a044897c8f47c29d157f464b41a2f191e7d4"
+    "sha512=1d400f8344d1a8c2ac1c55e4a7167484034094e2227ce7c8f2f45843b0875a83030851400ceb96b5cdb756fa8798d83c77d839705fcb9e3f2bd5e46d337d63d0"
   ]
 }
-x-commit-hash: "7745ea4be2c1c5a7ab95908b26a6ed81a0947ab5"
+x-commit-hash: "4fe91c7a7774d829a65e711be5d7df1501bc2e75"
