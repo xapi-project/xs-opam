@@ -1,6 +1,6 @@
 opam-version: "2.0"
 name: "ctypes"
-version: "0.19.1"
+version: "0.20.1"
 synopsis: "Combinators for binding to C libraries without writing any C"
 description: """\
 ctypes is a library for binding to C libraries using pure OCaml. The primary
@@ -39,8 +39,6 @@ depends: [
 depopts: ["ctypes-foreign" "mirage-xen"]
 conflicts: [
   "mirage-xen" {>= "6.0.0"}
-  "base-nnp"
-  "ocaml-option-nnpchecker"
 ]
 build: [
   [make "XEN=%{mirage-xen:enable}%" "libffi.config"]
@@ -54,6 +52,6 @@ build: [
 install: [make "install" "XEN=%{mirage-xen:enable}%"]
 dev-repo: "git+http://github.com/ocamllabs/ocaml-ctypes.git"
 url {
-  src: "https://github.com/ocamllabs/ocaml-ctypes/archive/0.19.1.tar.gz"
-  checksum: "md5=ceb891ec568fd7da76c31af270a2afe2"
+  src: "https://github.com/ocamllabs/ocaml-ctypes/archive/0.20.1.tar.gz"
+  checksum: "md5=91211baac16cb43134b1d6009b1edf92"
 }
