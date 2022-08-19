@@ -1,6 +1,6 @@
 opam-version: "2.0"
 name: "cohttp-lwt"
-version: "2.5.6"
+version: "5.0.0"
 synopsis: "CoHTTP implementation using the Lwt concurrency library"
 description: """\
 This is a portable implementation of HTTP that uses the Lwt
@@ -27,13 +27,14 @@ homepage: "https://github.com/mirage/ocaml-cohttp"
 doc: "https://mirage.github.io/ocaml-cohttp/"
 bug-reports: "https://github.com/mirage/ocaml-cohttp/issues"
 depends: [
-  "ocaml" {>= "4.04.1"}
-  "dune" {>= "1.1.0"}
+  "ocaml" {>= "4.08"}
+  "dune" {>= "2.0"}
   "cohttp" {= version}
-  "lwt" {>= "2.6.0"}
+  "lwt" {>= "2.5.0"}
   "sexplib0"
   "ppx_sexp_conv" {>= "v0.13.0"}
   "logs"
+  "uri" {>= "2.0.0"}
 ]
 build: [
   ["dune" "subst"] {dev}
@@ -43,10 +44,10 @@ build: [
 dev-repo: "git+https://github.com/mirage/ocaml-cohttp.git"
 url {
   src:
-    "https://github.com/mirage/ocaml-cohttp/releases/download/v2.5.6/cohttp-2.5.6.tbz"
+    "https://github.com/mirage/ocaml-cohttp/releases/download/v5.0.0/cohttp-5.0.0.tbz"
   checksum: [
-    "sha256=a166aa42eae15b1ff42ed553dd24efaf8720be0fa8d98816e0147f0fc9badcf3"
-    "sha512=1fefff772484786c1401d7ca2cfa853a6e4014ef3aec6412e684186ed47f45d8daab708d39333a7df4702311c1d6f9cd72958a0244816a43451af098ac3ae0e8"
+    "sha256=fd6ff4b86c818355d61b3a08628596dbf517d6a7da6e8edec481bb0653ca5a05"
+    "sha512=f0bfd715806965af5488010cc9388d05406b67ece0b2cb8f7803553b17a5264d03094e59127a62d37c0d6c0e74d4717e643737c43d9bcfb10b112a73d5f49c4d"
   ]
 }
-x-commit-hash: "b6f00300d7e3feb3778e1a70c67f44f7ebd7520d"
+x-commit-hash: "5f9c0ae88a69e4280810fe73344367e90954dea5"

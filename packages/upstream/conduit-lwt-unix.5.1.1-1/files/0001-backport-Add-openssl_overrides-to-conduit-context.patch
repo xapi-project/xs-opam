@@ -1,0 +1,211 @@
+From b492047366c22fb2c7897a6f093009732e178b16 Mon Sep 17 00:00:00 2001
+From: Ben Anson <ben.anson@citrix.com>
+Date: Mon, 26 Apr 2021 15:13:41 +0100
+Subject: [PATCH] Add openssl_overrides to conduit context
+
+This patch really belongs in cohttp, but I don't think conduit
+exposes all the right machinery.
+
+This patch allows openssl cohttp-lwt-unix users to:
+(a) connect to a particular hostname/IP, but specify something else to
+    verify against
+(b) have direct control over the lifetime of their client's ssl context
+
+I believe you should be able to achieve (a) using the following
+resolver (but it results in 'not supported' errors):
+
+```
+let resolver =
+  let table = Hashtbl.create 16 in
+  let cn = "expected-cn" in
+  let Ok ip = Ipaddr.of_string cn in
+  Hashtbl.add table cn (`TLS (cn, `TCP (ip, port)));
+  Resolver_lwt_unix.static table
+```
+
+It's not possible to achieve (b) right now (at least in v2).
+
+(b) is useful if your trusted bundle changes (calling
+`load_verify_locations` with the same SSL context does not work as
+one might expect). The alternative is to restart your application.
+
+Intended usage with cohttp:
+
+```
+let ctx : Ssl.context = ... in
+let openssl_overrides =
+  let open Conduit_lwt_unix_ssl.Overrides in
+  {
+    client =
+      Some Client.{ ctx = Some ctx; hostname = Some cn };
+  }
+in
+let* (ctx : Conduit_lwt_unix.ctx) = Conduit_lwt_unix.init ~openssl_overrides () in
+let ctx : Cohttp_lwt_unix.Client.ctx = Cohttp_lwt_unix.Client.custom_ctx ~ctx () in
+let* _resp, resp_body = Client.call ~ctx `POST ~body uri in
+...
+```
+---
+ src/conduit-lwt-unix/conduit_lwt_unix.ml      | 28 +++++++++++++++++--
+ src/conduit-lwt-unix/conduit_lwt_unix.mli     |  1 +
+ .../conduit_lwt_unix_ssl.dummy.ml             |  9 ++++++
+ .../conduit_lwt_unix_ssl.dummy.mli            |  8 ++++++
+ .../conduit_lwt_unix_ssl.real.ml              |  8 ++++++
+ .../conduit_lwt_unix_ssl.real.mli             |  8 ++++++
+ 6 files changed, 59 insertions(+), 3 deletions(-)
+
+diff --git a/src/conduit-lwt-unix/conduit_lwt_unix.ml b/src/conduit-lwt-unix/conduit_lwt_unix.ml
+index 33deaeb..15742f1 100644
+--- a/src/conduit-lwt-unix/conduit_lwt_unix.ml
++++ b/src/conduit-lwt-unix/conduit_lwt_unix.ml
+@@ -108,6 +108,7 @@ type ctx = {
+   src : Unix.sockaddr option;
+   tls_own_key : tls_own_key;
+   tls_authenticator : Conduit_lwt_tls.X509.authenticator;
++  openssl_overrides : Conduit_lwt_unix_ssl.Overrides.t option;
+ }
+ 
+ let string_of_unix_sockaddr sa =
+@@ -154,19 +155,28 @@ let default_ctx =
+       src = None;
+       tls_own_key = `None;
+       tls_authenticator = Lazy.force Conduit_lwt_tls.X509.default_authenticator;
++      openssl_overrides = None;
+     }
+ 
+ let init ?src ?(tls_own_key = `None)
+     ?(tls_authenticator = Lazy.force Conduit_lwt_tls.X509.default_authenticator)
+-    () =
++    ?openssl_overrides () =
+   match src with
+-  | None -> Lwt.return { src = None; tls_own_key; tls_authenticator }
++  | None ->
++      Lwt.return
++        { src = None; tls_own_key; tls_authenticator; openssl_overrides }
+   | Some host -> (
+       let open Unix in
+       Lwt_unix.getaddrinfo host "0" [ AI_PASSIVE; AI_SOCKTYPE SOCK_STREAM ]
+       >>= function
+       | { ai_addr; _ } :: _ ->
+-          Lwt.return { src = Some ai_addr; tls_own_key; tls_authenticator }
++          Lwt.return
++            {
++              src = Some ai_addr;
++              tls_own_key;
++              tls_authenticator;
++              openssl_overrides;
++            }
+       | [] -> Lwt.fail_with "Invalid conduit source address specified")
+ 
+ module Sockaddr_io = struct
+@@ -293,6 +303,18 @@ let connect_with_openssl ~ctx (`Hostname hostname, `IP ip, `Port port) =
+         in
+         Some ctx_ssl
+   in
++  let hostname, ctx_ssl =
++    match ctx.openssl_overrides with
++    | None | Some { client = None } -> (hostname, ctx_ssl)
++    | Some { client = Some overrides } ->
++        let hostname =
++          match overrides.hostname with Some x -> x | None -> hostname
++        in
++        let ctx_ssl =
++          match overrides.ctx with Some x -> Some x | None -> ctx_ssl
++        in
++        (hostname, ctx_ssl)
++  in
+   Conduit_lwt_unix_ssl.Client.connect ?ctx:ctx_ssl ?src:ctx.src ~hostname sa
+   >>= fun (fd, ic, oc) ->
+   let flow = TCP { fd; ip; port } in
+diff --git a/src/conduit-lwt-unix/conduit_lwt_unix.mli b/src/conduit-lwt-unix/conduit_lwt_unix.mli
+index 1fb1d9d..99b8bf2 100644
+--- a/src/conduit-lwt-unix/conduit_lwt_unix.mli
++++ b/src/conduit-lwt-unix/conduit_lwt_unix.mli
+@@ -161,6 +161,7 @@ val init :
+   ?src:string ->
+   ?tls_own_key:tls_own_key ->
+   ?tls_authenticator:Conduit_lwt_tls.X509.authenticator ->
++  ?openssl_overrides:Conduit_lwt_unix_ssl.Overrides.t ->
+   unit ->
+   ctx io
+ (** [init ?src ?tls_own_key ()] will initialize a Unix conduit that binds to the
+diff --git a/src/conduit-lwt-unix/conduit_lwt_unix_ssl.dummy.ml b/src/conduit-lwt-unix/conduit_lwt_unix_ssl.dummy.ml
+index b8441fc..328cb06 100644
+--- a/src/conduit-lwt-unix/conduit_lwt_unix_ssl.dummy.ml
++++ b/src/conduit-lwt-unix/conduit_lwt_unix_ssl.dummy.ml
+@@ -15,6 +15,15 @@
+  *
+  *)
+ 
++module Overrides = struct
++  module Client = struct
++    type t = { ctx : [ `Ssl_not_available ] option; hostname : string option }
++  end
++
++  type t = { client : Client.t option }
++end
++
++
+ module Client = struct
+   let default_ctx = `Ssl_not_available
+   let create_ctx ?certfile:_ ?keyfile:_ ?password:_ () = default_ctx
+diff --git a/src/conduit-lwt-unix/conduit_lwt_unix_ssl.dummy.mli b/src/conduit-lwt-unix/conduit_lwt_unix_ssl.dummy.mli
+index d0573f1..bbf8f37 100644
+--- a/src/conduit-lwt-unix/conduit_lwt_unix_ssl.dummy.mli
++++ b/src/conduit-lwt-unix/conduit_lwt_unix_ssl.dummy.mli
+@@ -17,6 +17,14 @@
+ 
+ (** TLS/SSL connections via {{:http://www.openssl.org} OpenSSL} C bindings *)
+ 
++module Overrides : sig
++  module Client : sig
++    type t = { ctx : [ `Ssl_not_available ] option; hostname : string option }
++  end
++
++  type t = { client : Client.t option }
++end
++
+ module Client : sig
+   val default_ctx : [ `Ssl_not_available ]
+ 
+diff --git a/src/conduit-lwt-unix/conduit_lwt_unix_ssl.real.ml b/src/conduit-lwt-unix/conduit_lwt_unix_ssl.real.ml
+index 39515c0..964aa73 100644
+--- a/src/conduit-lwt-unix/conduit_lwt_unix_ssl.real.ml
++++ b/src/conduit-lwt-unix/conduit_lwt_unix_ssl.real.ml
+@@ -34,6 +34,14 @@ let chans_of_fd sock =
+   let ic = Lwt_io.make ~mode:Lwt_io.input ~close (Lwt_ssl.read_bytes sock) in
+   (Lwt_ssl.get_fd sock, ic, oc)
+ 
++module Overrides = struct
++  module Client = struct
++    type t = { ctx : Ssl.context option; hostname : string option }
++  end
++
++  type t = { client : Client.t option }
++end
++
+ module Client = struct
+   let create_ctx ?certfile ?keyfile ?password () =
+     let ctx = Ssl.create_context Ssl.SSLv23 Ssl.Client_context in
+diff --git a/src/conduit-lwt-unix/conduit_lwt_unix_ssl.real.mli b/src/conduit-lwt-unix/conduit_lwt_unix_ssl.real.mli
+index 8a3f253..e769bbc 100644
+--- a/src/conduit-lwt-unix/conduit_lwt_unix_ssl.real.mli
++++ b/src/conduit-lwt-unix/conduit_lwt_unix_ssl.real.mli
+@@ -17,6 +17,14 @@
+ 
+ (** TLS/SSL connections via {{:http://www.openssl.org} OpenSSL} C bindings *)
+ 
++module Overrides : sig
++  module Client : sig
++    type t = { ctx : Ssl.context option; hostname : string option }
++  end
++
++  type t = { client : Client.t option }
++end
++
+ module Client : sig
+   val default_ctx : Ssl.context
+ 
+-- 
+2.37.1
+
