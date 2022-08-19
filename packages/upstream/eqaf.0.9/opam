@@ -1,6 +1,6 @@
 opam-version: "2.0"
 name: "eqaf"
-version: "0.8"
+version: "0.9"
 synopsis: "Constant-time equal function on string"
 description:
   "This package provides an equal function on string in constant-time to avoid timing-attack with crypto stuff."
@@ -17,6 +17,8 @@ depends: [
   "base64" {with-test}
   "alcotest" {with-test}
   "crowbar" {with-test}
+  "fmt" {with-test & >= "0.8.7"}
+  "bechamel" {with-test}
 ]
 build: [
   ["dune" "subst"] {dev}
@@ -25,10 +27,10 @@ build: [
 ]
 dev-repo: "git+https://github.com/mirage/eqaf.git"
 url {
-  src: "https://github.com/mirage/eqaf/releases/download/v0.8/eqaf-v0.8.tbz"
+  src: "https://github.com/mirage/eqaf/releases/download/v0.9/eqaf-0.9.tbz"
   checksum: [
-    "sha256=1145a160107437d7943e02e486df6bd233d3937ec1a597d7fa39edb9471cf875"
-    "sha512=303749bdbaae8fc27f57ebaa5cf9b16ed5b8cbaee35f0a35d69f91a437b1a3411a613d145d3aff7ff74a587509d877cc0a569fdae4d00cec65bf50d705361e25"
+    "sha256=ec0e28a946ac6817f95d5854f05a9961ae3a8408bb610e79cfad01b9b255dfe0"
+    "sha512=4df7fd3ea35156953a172c1a021aab05b8b122ee8d3cfdb34f96edb1b5133d1fe2721b90cb64287841d770b16c2ffe70559c66e90f8d61a92b73857da22548c4"
   ]
 }
-x-commit-hash: "b17b607195fac4043e6c64c9ffb67df3d373fc86"
+x-commit-hash: "e878ed56e40ca05c851a0e3297ab00ab76b10e0e"
