@@ -1,6 +1,6 @@
 opam-version: "2.0"
 name: "mirage-time-unix"
-version: "2.0.1"
+version: "3.0.0"
 synopsis: "Time operations for MirageOS on Unix"
 description:
   "mirage-time-unix defines `Time`, an implementation of the `Mirage_time.S` signature for the Unix backend."
@@ -23,7 +23,7 @@ homepage: "https://github.com/mirage/mirage-time"
 doc: "https://mirage.github.io/mirage-time/"
 bug-reports: "https://github.com/mirage/mirage-time/issues"
 depends: [
-  "ocaml" {>= "4.06.0"}
+  "ocaml" {>= "4.08.0"}
   "dune" {>= "1.0"}
   "mirage-time" {= version}
   "lwt" {>= "4.0.0"}
@@ -36,9 +36,10 @@ build: [
 dev-repo: "git+https://github.com/mirage/mirage-time.git"
 url {
   src:
-    "https://github.com/mirage/mirage-time/releases/download/v2.0.1/mirage-time-v2.0.1.tbz"
+    "https://github.com/mirage/mirage-time/releases/download/v3.0.0/mirage-time-v3.0.0.tbz"
   checksum: [
-    "sha256=002e06d2d2cf22bcb15e497f8c09d0618665b54b1a686681662930771ea9d5f0"
-    "sha512=0c195c00f4fd33453a12f3677bdaa89ce7055b39aa067b9ea0b4062aec51cfd8a591f2e9b291ad421e11ca57eebaf9b388d104322b9e1d34def7906a8c1b2963"
+    "sha256=0d40949b58e2c7e8b762ccc8ce066345046233c8c95d0e3d17a242ff289cbd7c"
+    "sha512=066f9271c7871eb754cf9b3f8853f4861ce80d1cc31eb9a2384f3cd62441e15aa7636d19cc3bee6d56219fa5653b9f7da7d9b9d659fd1f7cd17326e7ba1715eb"
   ]
 }
+x-commit-hash: "c68f199b1952f0656526a3212f82afd2a49c1f00"
