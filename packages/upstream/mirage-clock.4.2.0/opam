@@ -1,6 +1,6 @@
 opam-version: "2.0"
 name: "mirage-clock"
-version: "3.1.0"
+version: "4.2.0"
 synopsis: "Libraries and module types for portable clocks"
 description: """\
 This library implements portable support for an operating system timesource
@@ -18,8 +18,8 @@ homepage: "https://github.com/mirage/mirage-clock"
 doc: "https://mirage.github.io/mirage-clock/"
 bug-reports: "https://github.com/mirage/mirage-clock/issues"
 depends: [
-  "ocaml" {>= "4.06.0"}
-  "dune"
+  "ocaml" {>= "4.08.0"}
+  "dune" {>= "2.8"}
 ]
 build: [
   ["dune" "subst"] {dev}
@@ -28,10 +28,10 @@ build: [
 dev-repo: "git+https://github.com/mirage/mirage-clock.git"
 url {
   src:
-    "https://github.com/mirage/mirage-clock/releases/download/v3.1.0/mirage-clock-v3.1.0.tbz"
+    "https://github.com/mirage/mirage-clock/releases/download/v4.2.0/mirage-clock-4.2.0.tbz"
   checksum: [
-    "sha256=b602556cda4f9819cd01c54791d6fe01cd9d9721d4051d7703bcaa89d5010a33"
-    "sha512=a1dbac3ae5671e02d77ebe5b9d8c53d787c0fcce59ec74a5d5ebd5ed28919d838ef6ab1c00ee18e0c261f7bafcb86de34548f1271129838b77654ee1a82ca4ff"
+    "sha256=fa17d15d5be23c79ba741f5f7cb88ed7112de16a4410cea81c71b98086889847"
+    "sha512=05a359dc8400d4ca200ff255dbd030acd33d2c4acb5020838f772c02cdb5f243f3dbafbc43a8cd51e6b5923a140f84c9e7ea25b2c0fa277bb68b996190d36e3b"
   ]
 }
-x-commit-hash: "987d197802f80778b7b3daa642caee0c27a1ce43"
+x-commit-hash: "f457572bfedb9586c8bf9eaa9ece7e53677856e3"
