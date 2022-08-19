@@ -1,6 +1,6 @@
 opam-version: "2.0"
 name: "vhd-format"
-version: "0.12.2"
+version: "0.12.3"
 synopsis: "Pure OCaml library to read/write VHD format data"
 description: """\
 A pure OCaml library to read and write
@@ -20,7 +20,7 @@ depends: [
   "cstruct" {>= "1.9" & < "6.1.0"}
   "io-page"
   "rresult" {>= "0.3.0"}
-  "uuidm"
+  "uuidm" {>= "0.9.6"}
   "stdlib-shims"
   "dune" {>= "1.0"}
   "ppx_cstruct" {build & >= "3.0.0"}
@@ -31,10 +31,10 @@ depexts: ["linux-headers"] {os-distribution = "alpine"}
 dev-repo: "git+https://github.com/mirage/ocaml-vhd.git"
 url {
   src:
-    "https://github.com/mirage/ocaml-vhd/releases/download/v0.12.2/vhd-format-v0.12.2.tbz"
+    "https://github.com/mirage/ocaml-vhd/releases/download/v0.12.3/vhd-format-0.12.3.tbz"
   checksum: [
-    "sha256=c14d8ed7714d6f422ed17bd6e8a20f9a15cfc0f29497d2d7c6725fdcf3c410eb"
-    "sha512=3b9b9434f54fa481e84dcfbd9b4757fd1bd9d5c6e22d76f5d43881dfa1433404b2bc0993306a941da7c9f1bb16f39d20d8190cb3f21e122c13a50603d0800766"
+    "sha256=e3da58f79172f7c55d8b07cea100358771248b435baf5fbe941e61e6d0840730"
+    "sha512=3af8d9f618266c5bd9c65e1b81c97c6e68c07ab84b8031dbef691ac7775fe7ea308be995dfdba8a785f404aeb44a3e094c78861f1e9f8d8321a1110c1da64fd5"
   ]
 }
-x-commit-hash: "d80cceda1c28d8ad4716afb91d8bfc6e5c5cbc69"
+x-commit-hash: "6f3f75bc881c6f22117e01aa8520fa70564fde42"
