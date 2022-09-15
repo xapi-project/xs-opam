@@ -1,6 +1,6 @@
 opam-version: "2.0"
 name: "mirage-block-unix"
-version: "2.12.1"
+version: "2.14.1"
 synopsis: "MirageOS disk block driver for Unix"
 description: """\
 Unix implementation of the Mirage `BLOCK_DEVICE` interface.
@@ -15,19 +15,19 @@ homepage: "https://github.com/mirage/mirage-block-unix"
 doc: "https://mirage.github.io/mirage-block-unix/"
 bug-reports: "https://github.com/mirage/mirage-block-unix/issues"
 depends: [
-  "ocaml" {>= "4.06.0" & < "5.0"}
+  "ocaml" {>= "4.06.0"}
   "dune" {>= "1.0"}
-  "cstruct" {>= "3.0.0" & < "6.1.0"}
+  "cstruct" {>= "6.0.0"}
   "cstruct-lwt"
-  "mirage-block" {>= "2.0.0" & < "3.0.0"}
+  "mirage-block" {>= "2.0.0"}
   "rresult"
-  "io-page" {>= "2.0.0"}
   "uri" {>= "1.9.0"}
   "logs"
-  "ounit" {with-test}
+  "lwt" {>= "5.4.2"}
+  "io-page" {>= "2.4.0"}
+  "ounit2" {with-test}
   "diet" {with-test & >= "0.4"}
   "fmt" {with-test}
-  "io-page-unix" {with-test}
   "conf-linux-libc-dev" {os = "linux"}
 ]
 build: [
@@ -38,9 +38,10 @@ build: [
 dev-repo: "git+https://github.com/mirage/mirage-block-unix.git"
 url {
   src:
-    "https://github.com/mirage/mirage-block-unix/releases/download/v2.12.1/mirage-block-unix-v2.12.1.tbz"
+    "https://github.com/mirage/mirage-block-unix/releases/download/v2.14.1/mirage-block-unix-2.14.1.tbz"
   checksum: [
-    "sha256=4fc0ccea3c06c654e149c0f0e1c2a6f19be4e3fe1afd293c6a0dba1b56b3b8c4"
-    "sha512=3a100b5641e5e2261af10e9720ecc32a1849085aaeec43ec5d983efe279c385dc813240272f68c08b51a1a09f041cb9ee2870fb176dc1c0858396bc6582657ad"
+    "sha256=15c5216e31ca4f5d5e3c35da015cd4755fd6387a313285f264a1b98a42a904d5"
+    "sha512=e37330d940b28749d0253ebb844face1a92b76fbbfa10e989aa001151d8749148375ac5c0af5b50e97fe900bcf5c156c704c4aba5167d247e229264bd6e09359"
   ]
 }
+x-commit-hash: "ef4d4496879925f4c2d09ee990cc19be64e1fc20"

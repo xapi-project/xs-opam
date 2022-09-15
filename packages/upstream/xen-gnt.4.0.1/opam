@@ -1,6 +1,6 @@
 opam-version: "2.0"
 name: "xen-gnt"
-version: "4.0.0"
+version: "4.0.1"
 synopsis: "Xen grant table bindings for OCaml"
 description: """\
 These are used to create Xen device driver "backends" (servers)
@@ -22,10 +22,10 @@ doc: "https://mirage.github.io/ocaml-gnt/"
 bug-reports: "https://github.com/mirage/ocaml-gnt/issues"
 license: "ISC"
 depends: [
-  "ocaml" {>= "4.03.0"}
+  "ocaml" {>= "4.08.0"}
   "dune" {>= "1.0"}
   "cstruct" {>= "1.0.1"}
-  "io-page"
+  "io-page" {>= "2.4.0"}
   "lwt" {>= "2.4.3"}
   "lwt-dllist"
   "cmdliner"
@@ -34,10 +34,15 @@ depends: [
 build: [
   ["dune" "subst"] {dev}
   ["dune" "build" "-p" name "-j" jobs]
+  ["dune" "runtest" "-p" name "-j" jobs] {with-test}
 ]
 dev-repo: "git+https://github.com/mirage/ocaml-gnt.git"
 url {
   src:
-    "https://github.com/mirage/ocaml-gnt/releases/download/v4.0.0/xen-gnt-v4.0.0.tbz"
-  checksum: "md5=3d64522c82c663546ebb0904f52d7c05"
+    "https://github.com/mirage/ocaml-gnt/releases/download/v4.0.1/xen-gnt-4.0.1.tbz"
+  checksum: [
+    "sha256=1faef511d25047b131f2028561a9316acff66d480bae0369f8d0fdc5a645b2f9"
+    "sha512=24d34dc8d21eb65a0ead77b47a772120c084844732d3c4243aa7a6b61a269668c380eb8e625faf06d7d53fe69fc986cc19caec9a188717bdcf850ddee968f839"
+  ]
 }
+x-commit-hash: "d6b47b3e4c5029eb596b49e22b6657ee088b0863"
