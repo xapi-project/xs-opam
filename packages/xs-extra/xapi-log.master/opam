@@ -12,20 +12,7 @@ available: [ os = "linux" ]
 depends: [
   "ocaml"
   "dune"
-  "astring"
-  "base64" {>= "3.1.0"}
-  "rpclib"
-  "sha"
-  "stunnel"
-  "uuid"
-  "xapi-idl"
-  "xapi-log"
-  "xapi-stdext-date"
   "xapi-stdext-pervasives"
-  "xapi-stdext-threads"
-  "xapi-stdext-unix"
-  "xml-light2"
-  "ounit" {with-test & >= "2.0.0"}
 ]
 synopsis: "Library required by xapi"
 description: """
