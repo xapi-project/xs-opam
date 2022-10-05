@@ -12,6 +12,8 @@ depends: [
   "dune"
   "forkexec"
   "safe-resources"
+  "xapi-idl"
+  "xapi-log"
   "xapi-stdext-pervasives"
   "xapi-stdext-unix"
 ]

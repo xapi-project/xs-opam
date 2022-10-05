@@ -32,6 +32,7 @@ depends: [
   "base-unix"
   "uri"
   "xapi-backtrace"
+  "xapi-open-uri"
   "xapi-stdext-date"
   "xapi-stdext-pervasives"
   "xapi-stdext-threads"
