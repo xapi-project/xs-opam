@@ -10,5 +10,5 @@ depends: ["xapi-rrd" "xmlm"]
 build: ["dune" "build" "-p" name "-j" jobs]
 dev-repo: "git+https://github.com/xapi-project/xcp-rrdd.git"
 url {
-  src: "https://github.com/xapi-project/xcp-rrdd/archive/v1.33.0.tar.gz"
+  src: "https://github.com/xapi-project/xcp-rrdd/archive/1.33-lcm.tar.gz"
 }
