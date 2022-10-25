@@ -28,8 +28,6 @@ depends: [
   "re"
   "xapi-rrd"
   "sexplib"
-  "base-threads"
-  "base-unix"
   "uri"
   "xapi-backtrace"
   "xapi-open-uri"
