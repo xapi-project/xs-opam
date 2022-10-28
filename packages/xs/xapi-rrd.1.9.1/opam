@@ -1,19 +1,19 @@
 opam-version: "2.0"
 name: "xapi-rrd"
-version: "1.9.0"
+version: "1.9.1"
 synopsis: "RRD library for use with xapi"
 description: """\
 Round-Robin Databases (RRDs) are constant-space datastructures
 used for archiving historical data where the older data is stored
 at a lower resolution."""
-maintainer: "xen-api@lists.xen.org"
+maintainer: "Xapi project maintainers"
 authors: ["Dave Scott" "Jon Ludlam" "John Else"]
 license: "LGPL-2.1-only WITH OCaml-LGPL-linking-exception"
 tags: "org:xapi-project"
 homepage: "https://github.com/xapi-project/xcp-rrd"
 bug-reports: "https://github.com/xapi-project/xcp-rrd/issues"
 depends: [
-  "ocaml" {>= "4.05"}
+  "ocaml" {>= "4.13"}
   "dune" {>= "2.0.0"}
   "base-bigarray"
   "base-unix"
@@ -34,10 +34,10 @@ build: [
 dev-repo: "git+https://github.com/xapi-project/xcp-rrd.git"
 url {
   src:
-    "https://github.com/xapi-project/xcp-rrd/releases/download/v1.9.0/xapi-rrd-1.9.0.tbz"
+    "https://github.com/xapi-project/xcp-rrd/releases/download/v1.9.1/xapi-rrd-1.9.1.tbz"
   checksum: [
-    "sha256=165da683983352b2d951dee5da99f081049a71f14edd2cc67b3161f2c272310b"
-    "sha512=0f56ab2c738f76156fceebef16eaac9338f8ebf98e73a825ac5f3766ffccaa8bcb202cdb712d375655e0dfca34e01b9bd7302097775c95fa3a57c0ab9bdd87cb"
+    "sha256=1d4288625e3f158dbd3cb853fb00b3fad7776751bd3fe984aa5b1d3f9d04a952"
+    "sha512=d6727675f0904ea48cc4e8bd53e957785e14f87939691061110d27789372089ae98e61865b281731f19dfdc427fefa977a04cdb026a5588fc7fd105ae568c297"
   ]
 }
-x-commit-hash: "7ce1ac344bae7d6b31678c3ad942a4bd8026d296"
+x-commit-hash: "45a0c4c1898569103fb7a37f8dfbc0b6266209cc"
