@@ -1,6 +1,6 @@
 opam-version: "2.0"
 name: "conduit-lwt-unix"
-version: "5.1.1-1"
+version: "6.1.0"
 synopsis: "A network connection establishment library for Lwt_unix"
 maintainer: "anil@recoil.org"
 authors: [
@@ -11,7 +11,7 @@ tags: "org:mirage"
 homepage: "https://github.com/mirage/ocaml-conduit"
 bug-reports: "https://github.com/mirage/ocaml-conduit/issues"
 depends: [
-  "ocaml" {>= "4.07.0"}
+  "ocaml" {>= "4.08.0"}
   "dune" {>= "2.0"}
   "base-unix"
   "logs"
@@ -29,24 +29,19 @@ depends: [
 depopts: ["tls" "lwt_ssl" "launchd"]
 conflicts: [
   "tls" {< "0.14.0"}
-  "ssl" {< "0.5.9"}
+  "ssl" {< "0.5.12"}
 ]
 build: [
   ["dune" "subst"] {dev}
   ["dune" "build" "-p" name "-j" jobs]
 ]
-patches: "0001-backport-Add-openssl_overrides-to-conduit-context.patch"
 dev-repo: "git+https://github.com/mirage/ocaml-conduit.git"
-extra-files: [
-  "0001-backport-Add-openssl_overrides-to-conduit-context.patch"
-  "sha256=b4aacf7146bec0e48bf4d0bce278fff8f489e1a80a9873e529296f585e261393"
-]
 url {
   src:
-    "https://github.com/mirage/ocaml-conduit/releases/download/v5.1.1/conduit-5.1.1.tbz"
+    "https://github.com/mirage/ocaml-conduit/releases/download/v6.1.0/conduit-6.1.0.tbz"
   checksum: [
-    "sha256=89edc2d27f5f8fea44b1f8f9939bd792164eeba2e59744968479df9149de71be"
-    "sha512=7ae788320411c23e163fb13ed23235df923eeada15edf696e6c5ddc71eb28ea18d127f398ff90977a8cf232dd68436e2a69bae8569f2b042fb3047ef10630a96"
+    "sha256=a2e29088630bbef92c1a902192a09548ab4a6b3f75a7eee6722426eca1efc05f"
+    "sha512=308041a9cccf5b01827365ae9e75915bf33c812658ff1a802b275827f4c9af98dd991df9106a5b8d70374cc0d41398621bbafd8de829acfef4cb86e6b9523712"
   ]
 }
-x-commit-hash: "5c10995df6732509b2af2b173b336c6fe2082845"
+x-commit-hash: "dc7af98ec25c71dd7e4ea78223e330b2596ec3f1"
