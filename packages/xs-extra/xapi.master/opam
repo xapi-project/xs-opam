@@ -10,12 +10,13 @@ build: [
 ]
 depends: [
   "ocaml"
-  "dune" {build & >= "1.4"}
+  "dune"
   "alcotest" # needed to generate the quicktest binary
   "angstrom"
   "base64"
   "cdrom"
   "conf-pam"
+  "crowbar" {with-test}
   "ctypes"
   "ctypes-foreign"
   "domain-name"
