@@ -1,6 +1,6 @@
 opam-version: "2.0"
 name: "polly"
-version: "0.2.2"
+version: "0.3.0"
 synopsis: "Bindings for the Linux epoll system call"
 description: """
 Bindings for the Linux epoll system call. The binding avoids
@@ -15,13 +15,13 @@ bug-reports: "https://github.com/lindig/polly/issues"
 depends: [
   "dune" {>= "2.0"}
   "ocaml"
-  "cmdliner"
+  "cmdliner" {>= "1.1.0"}
   "base-unix"
   "conf-linux-libc-dev"
 ]
 build: ["dune" "build" "-p" name "-j" jobs "@install"]
 dev-repo: "git://github.com/lindig/polly.git"
 url {
-  src: "https://github.com/lindig/polly/archive/0.2.2/polly-0.2.2.tar.gz"
-  checksum: "md5=a25291f7adb6b1d7bdd7513f2c22d9de"
+  src: "https://github.com/lindig/polly/archive/refs/tags/0.3.0.tar.gz"
+  checksum: "sha256=957abbaac82bf9f00aa23c015c5be0d8d2aa79151b8f3d5344bfb26c3c82f4c4"
 }
