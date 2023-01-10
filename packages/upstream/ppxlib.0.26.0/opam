@@ -1,8 +1,6 @@
 opam-version: "2.0"
-name: "ppxlib"
-version: "0.25.1"
 synopsis: "Standard library for ppx rewriters"
-description: """\
+description: """
 Ppxlib is the standard library for ppx rewriters and other programs
 that manipulate the in-memory reprensation of OCaml programs, a.k.a
 the "Parsetree".
@@ -12,16 +10,17 @@ write tools that manipulate and/or generate Parsetree values;
 `ppxlib.metaquot` which allows to construct Parsetree values using the
 OCaml syntax directly and `ppxlib.traverse` which provides various
 ways of automatically traversing values of a given type, in particular
-allowing to inject a complex structured value into generated code."""
-maintainer: "opensource@janestreet.com"
-authors: "Jane Street Group, LLC <opensource@janestreet.com>"
+allowing to inject a complex structured value into generated code.
+"""
+maintainer: ["opensource@janestreet.com"]
+authors: ["Jane Street Group, LLC <opensource@janestreet.com>"]
 license: "MIT"
 homepage: "https://github.com/ocaml-ppx/ppxlib"
 doc: "https://ocaml-ppx.github.io/ppxlib/"
 bug-reports: "https://github.com/ocaml-ppx/ppxlib/issues"
 depends: [
   "dune" {>= "2.7"}
-  "ocaml" {>= "4.04.1" & < "5.1.0"}
+  "ocaml" {>= "4.04.1" & < "4.15"}
   "ocaml-compiler-libs" {>= "v0.11.0"}
   "ppx_derivers" {>= "1.0"}
   "sexplib0" {>= "v0.12"}
@@ -55,10 +54,10 @@ build: [
 dev-repo: "git+https://github.com/ocaml-ppx/ppxlib.git"
 url {
   src:
-    "https://github.com/ocaml-ppx/ppxlib/releases/download/0.25.1/ppxlib-0.25.1.tbz"
+    "https://github.com/ocaml-ppx/ppxlib/releases/download/0.26.0/ppxlib-0.26.0.tbz"
   checksum: [
-    "sha256=a51b3868029e62ff14a0f2bd8d278dacfc0c3fc5b22d484a296be90c53e4ffd7"
-    "sha512=6a6d9af49344e901cc9e6da7bcf38c2973705c8cee4cff1c64c0393e9ccc55a6abec1f58d5b56d0807939a3741bec722ee7bfc244f94619167a30438f182488a"
+    "sha256=63117b67ea5863935455fe921f88fe333c0530f0483f730313303a93af817efd"
+    "sha512=9cfc9587657d17cdee5483e2a03292f872c42886e512bcc7442652e6418ce74c0135c731d8a68288c7fecae7f1b2defd93fe5acf8edb41e25144a8cec2806227"
   ]
 }
-x-commit-hash: "15e70402feadd98365f36e0a255e78dcd168e6bb"
+x-commit-hash: "18b1ad68b59d151d662147661e43b159ac491f68"
