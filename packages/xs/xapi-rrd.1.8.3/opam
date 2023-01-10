@@ -4,12 +4,13 @@ authors: ["Dave Scott" "Jon Ludlam" "John Else"]
 homepage: "https://github.com/xapi-project/xcp-rrd"
 bug-reports: "https://github.com/xapi-project/xcp-rrd/issues"
 dev-repo: "git+https://github.com/xapi-project/xcp-rrd.git"
+license: "LGPL-2.1-only WITH OCaml-LGPL-linking-exception"
 tags: [
   "org:xapi-project"
 ]
 build: [
   ["dune" "build" "-p" name "-j" jobs]
-  ["dune" "runtest" "-p" name] {with-test}
+  ["dune" "runtest" "-p" name "-j" jobs] {with-test}
 ]
 depends: [
   "ocaml"
@@ -30,6 +31,6 @@ Round-Robin Databases (RRDs) are constant-space datastructures
 used for archiving historical data where the older data is stored
 at a lower resolution."""
 url {
-  src: "https://github.com/xapi-project/xcp-rrd/archive/v1.8.1.tar.gz"
-  checksum: "sha256=66ce647d121d2ac6002c40243d663989f6a218cd31be2348859b3bc3e7035013"
+  src: "https://github.com/xapi-project/xcp-rrd/archive/v1.8.3.tar.gz"
+  checksum: "sha256=5e930511a3186ae8f779d09ab2b3e12088b6334b5a8c883a0cd1f2046a45c262"
 }
