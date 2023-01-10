@@ -21,4 +21,5 @@ LGPL-2.1-or-later WITH OpenSSL-linking-exception
 GPL-2.0-or-later
 GPL-2.0-only AND LGPL-3.0-only
 MIT AND LGPL-2.1-only WITH OCaml-LGPL-linking-exception
+Ruby
 Unlicense
