@@ -12,6 +12,6 @@ set -euo pipefail
 # there are conflicts with some of these test dependencies or bring in too many other packages
 # next time we upgrade them we should aim to make them testable
 # ocaml-system should always be excluded because the system compiler may be quite different from what we use here
-NOTEST=ocaml-system\|ppx_cstruct\|ipaddr-sexp
+NOTEST=ocaml-system\|ppx_cstruct\|ipaddr-sexp\|vhd-format-lwt\|cohttp-async\|ezjsonm
 ALLDEPS=$(opam admin filter --dry-run --resolve=xs-toolstack | sed -n 2p | tr ' ' '\n' |grep -vE ${NOTEST} | tr '\n' ' ')
 opam install --no-depexts --with-test ${ALLDEPS} -y
