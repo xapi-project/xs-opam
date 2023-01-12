@@ -9,7 +9,9 @@ jobs:
   release:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
 
     - name: Install opam
       run: sudo apt-get install -y opam
@@ -21,31 +23,11 @@ jobs:
       run: make archive
 
     - name: Draft Release ${{ github.ref_name }}
-      id: create_release
-      uses: actions/create-release@v1
+      run: gh release create ${{ github.ref_name }} --draft --generate-notes
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        tag_name: ${{ github.ref_name }}
-        release_name: ${{ github.ref_name }}
-        draft: true
 
-    - name: Upload licenses.txt
-      uses: actions/upload-release-asset@v1.0.1
+    - name: Upload artifacts
+      run: gh release upload ${{ github.ref_name }} licenses.txt xs-opam-repo-${{ github.ref_name }}.tar.gz
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: ./licenses.txt
-        asset_name: licenses.txt
-        asset_content_type: text/plain
-
-    - name: Upload xs-opam-repo-${{ github.ref_name }}.tar.gz
-      uses: actions/upload-release-asset@v1.0.1
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: ./xs-opam-repo-${{ github.ref_name }}.tar.gz
-        asset_name: xs-opam-repo-${{ github.ref_name }}.tar.gz
-        asset_content_type: application/gzip
