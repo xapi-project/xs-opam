@@ -20,6 +20,7 @@ depends: [
   "ctypes"
   "ctypes-foreign"
   "domain-name"
+  "ezcurl" # testing client calls with curl
   "ezxenstore"
   "fmt" {with-test}
   "http-svr"
