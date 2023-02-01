@@ -20,6 +20,7 @@ depends: [
   "ctypes"
   "ctypes-foreign"
   "domain-name"
+  "ezcurl" # testing client calls with curl
   "ezxenstore"
   "fmt" {with-test}
   "http-svr"
@@ -30,6 +31,7 @@ depends: [
   "message-switch-unix"
   "mtime"
   "ocaml-migrate-parsetree"
+  "opentelemetry-client-ocurl"
   "pci"
   "pciutil"
   "ppx_deriving_rpc"
