@@ -1,4 +1,3 @@
-bisect_ppx
 conf-perl
 fix
 logs-syslog
