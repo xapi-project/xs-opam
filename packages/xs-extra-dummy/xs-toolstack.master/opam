@@ -9,6 +9,7 @@ depends: [
   "angstrom"
   "conf-libev"
   "forkexec"
+  "goblint"
   "gzip"
   "http-lib"
   "message-switch"
