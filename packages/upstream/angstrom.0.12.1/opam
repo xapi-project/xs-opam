@@ -12,7 +12,7 @@ with the unbuffered interface enabling zero-copy IO. Parsers are backtracking by
 default and support unbounded lookahead."""
 maintainer: "Spiros Eliopoulos <spiros@inhabitedtype.com>"
 authors: "Spiros Eliopoulos <spiros@inhabitedtype.com>"
-license: "BSD-3-clause"
+license: "BSD-3-Clause"
 homepage: "https://github.com/inhabitedtype/angstrom"
 bug-reports: "https://github.com/inhabitedtype/angstrom/issues"
 depends: [

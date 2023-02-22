@@ -18,7 +18,7 @@ these calls away, meaning there should be no overhead in the non-profiling
 case."""
 maintainer: "Thomas Leonard <talex5@gmail.com>"
 authors: "Thomas Leonard <talex5@gmail.com>"
-license: "BSD-2-clause"
+license: "BSD-2-Clause"
 homepage: "https://github.com/mirage/mirage-profile"
 doc: "https://mirage.github.io/mirage-profile/"
 bug-reports: "https://github.com/mirage/mirage-profile/issues"
