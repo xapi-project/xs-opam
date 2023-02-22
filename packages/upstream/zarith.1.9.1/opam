@@ -1,13 +1,24 @@
 opam-version: "2.0"
+name: "zarith"
+version: "1.9.1"
+synopsis:
+  "Implements arithmetic and logical operations over arbitrary-precision integers"
+description: """\
+The Zarith library implements arithmetic and logical operations over
+arbitrary-precision integers. It uses GMP to efficiently implement
+arithmetic over big integers. Small integers are represented as Caml
+unboxed integers, for speed and space economy."""
 maintainer: "Xavier Leroy <xavier.leroy@inria.fr>"
-authors: [
-  "Antoine Miné"
-  "Xavier Leroy"
-  "Pascal Cuoq"
-]
+authors: ["Antoine Miné" "Xavier Leroy" "Pascal Cuoq"]
 homepage: "https://github.com/ocaml/Zarith"
 bug-reports: "https://github.com/ocaml/Zarith/issues"
-dev-repo: "git+https://github.com/ocaml/Zarith.git"
+depends: [
+  "ocaml"
+  "ocamlfind" {build}
+  "conf-gmp"
+  "conf-perl" {build}
+]
+license: "LGPL-2.0-or-later WITH OCaml-LGPL-linking-exception"
 build: [
   ["./configure"] {os != "openbsd" & os != "freebsd" & os != "macos"}
   [
@@ -22,22 +33,8 @@ build: [
   ] {os = "macos"}
   [make]
 ]
-install: [
-  [make "install"]
-]
-depends: [
-  "ocaml"
-  "ocamlfind" {build}
-  "conf-gmp"
-  "conf-perl" {build}
-]
-synopsis:
-  "Implements arithmetic and logical operations over arbitrary-precision integers"
-description: """
-The Zarith library implements arithmetic and logical operations over
-arbitrary-precision integers. It uses GMP to efficiently implement
-arithmetic over big integers. Small integers are represented as Caml
-unboxed integers, for speed and space economy."""
+install: [make "install"]
+dev-repo: "git+https://github.com/ocaml/Zarith.git"
 url {
   src: "https://github.com/ocaml/Zarith/archive/release-1.9.1.tar.gz"
   checksum: [

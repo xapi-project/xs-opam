@@ -1,13 +1,16 @@
 opam-version: "2.0"
+name: "ocplib-endian"
+version: "1.1"
 synopsis:
   "Optimised functions to read and write int16/32/64 from strings and bigarrays"
-description: """
+description: """\
 The library implements three modules:
 * [EndianString](https://github.com/OCamlPro/ocplib-endian/blob/master/src/endianString.mli) works directly on strings, and provides submodules BigEndian and LittleEndian, with their unsafe counter-parts;
 * [EndianBytes](https://github.com/OCamlPro/ocplib-endian/blob/master/src/endianBytes.mli) works directly on bytes, and provides submodules BigEndian and LittleEndian, with their unsafe counter-parts;
 * [EndianBigstring](https://github.com/OCamlPro/ocplib-endian/blob/master/src/endianBigstring.mli) works on bigstrings (Bigarrays of chars), and provides submodules BigEndian and LittleEndian, with their unsafe counter-parts."""
 maintainer: "pierre.chambart@ocamlpro.com"
 authors: "Pierre Chambart"
+license: "LGPL-2.1-or-later WITH OCaml-LGPL-linking-exception"
 homepage: "https://github.com/OCamlPro/ocplib-endian"
 doc: "https://ocamlpro.github.io/ocplib-endian/ocplib-endian/"
 bug-reports: "https://github.com/OCamlPro/ocplib-endian/issues"

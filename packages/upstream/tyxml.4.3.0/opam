@@ -1,29 +1,8 @@
 opam-version: "2.0"
-maintainer: "dev@ocsigen.org"
-homepage: "https://github.com/ocsigen/tyxml/"
-bug-reports: "https://github.com/ocsigen/tyxml/issues"
-doc: "https://ocsigen.org/tyxml/manual/"
-dev-repo: "git+https://github.com/ocsigen/tyxml.git"
-license: "LGPL-2.1-only with OCaml-LGPL-linking-exception"
-
-build: [
-  ["dune" "subst"] {pinned}
-  ["dune" "build" "-p" name "-j" jobs]
-  ["dune" "runtest" "-p" name "-j" jobs] {with-test}
-]
-
-depends: [
-  "ocaml" {>= "4.02"}
-  "re" {>= "1.5.0"}
-  ("ocaml" {>= "4.07"} | "re" {>= "1.8.0"})
-  "dune"
-  "alcotest" {with-test}
-  "seq"
-  "uutf" {>= "1.0.0"}
-]
-
-synopsis:"TyXML is a library for building correct HTML and SVG documents"
-description:"""
+name: "tyxml"
+version: "4.3.0"
+synopsis: "TyXML is a library for building correct HTML and SVG documents"
+description: """\
 TyXML provides a set of convenient combinators that uses the OCaml
 type system to ensure the validity of the generated documents. TyXML
 can be used with any representation of HTML and SVG: the textual one,
@@ -35,9 +14,28 @@ instantiate a new set of combinators.
 ```ocaml
 open Tyxml
 let to_ocaml = Html.(a ~a:[a_href "ocaml.org"] [txt "OCaml!"])
-```
-"""
+```"""
+maintainer: "dev@ocsigen.org"
 authors: "The ocsigen team"
+license: "LGPL-2.1-only WITH OCaml-LGPL-linking-exception"
+homepage: "https://github.com/ocsigen/tyxml/"
+doc: "https://ocsigen.org/tyxml/manual/"
+bug-reports: "https://github.com/ocsigen/tyxml/issues"
+depends: [
+  "ocaml" {>= "4.02" & < "5.0"}
+  "re" {>= "1.5.0"}
+  ("ocaml" {>= "4.07"} | "re" {>= "1.8.0"})
+  "dune"
+  "alcotest" {with-test}
+  "seq"
+  "uutf" {>= "1.0.0"}
+]
+build: [
+  ["dune" "subst"] {dev}
+  ["dune" "build" "-p" name "-j" jobs]
+  ["dune" "runtest" "-p" name "-j" jobs] {with-test}
+]
+dev-repo: "git+https://github.com/ocsigen/tyxml.git"
 url {
   src:
     "https://github.com/ocsigen/tyxml/releases/download/4.3.0/tyxml-4.3.0.tbz"

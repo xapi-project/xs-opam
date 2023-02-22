@@ -1,21 +1,21 @@
 opam-version: "2.0"
-maintainer: "opensource@janestreet.com"
-authors: ["Jane Street Group, LLC <opensource@janestreet.com>"]
+name: "ocaml-compiler-libs"
+version: "v0.12.1"
+synopsis: "OCaml compiler libraries repackaged"
+description: """\
+This packages exposes the OCaml compiler libraries repackages under
+the toplevel names Ocaml_common, Ocaml_bytecomp, Ocaml_optcomp, ..."""
+maintainer: "Jane Street developers"
+authors: "Jane Street Group, LLC"
+license: "Apache-2.0"
 homepage: "https://github.com/janestreet/ocaml-compiler-libs"
 bug-reports: "https://github.com/janestreet/ocaml-compiler-libs/issues"
-dev-repo: "git+https://github.com/janestreet/ocaml-compiler-libs.git"
-license: "Apache-2.0"
-build: [
-  ["dune" "build" "-p" name "-j" jobs]
-]
 depends: [
   "ocaml" {>= "4.04.1"}
   "dune" {>= "1.5.1"}
 ]
-synopsis: "OCaml compiler libraries repackaged"
-description: """
-This packages exposes the OCaml compiler libraries repackages under
-the toplevel names Ocaml_common, Ocaml_bytecomp, Ocaml_optcomp, ..."""
+build: ["dune" "build" "-p" name "-j" jobs]
+dev-repo: "git+https://github.com/janestreet/ocaml-compiler-libs.git"
 url {
   src:
     "https://github.com/janestreet/ocaml-compiler-libs/archive/v0.12.1.tar.gz"

@@ -1,21 +1,25 @@
 opam-version: "2.0"
-maintainer:   ["anil@recoil.org" "thomas@gazagnaire.org"]
-authors:      ["Thomas Gazagnaire" "Anil Madhavapeddy" "Gabriel Radanne"
-               "Mindy Preston" "Thomas Leonard" "Nicolas Ojeda Bar"
-               "Dave Scott" "David Kaloper" "Hannes Mehnert" "Richard Mortier"]
-homepage:     "https://github.com/mirage/mirage"
-bug-reports:  "https://github.com/mirage/mirage/issues/"
-dev-repo:     "git+https://github.com/mirage/mirage.git"
-license:      "ISC"
-tags:         ["org:mirage" "org:xapi-project"]
-
-
-build: [
-  ["dune" "subst"] {pinned}
-  ["dune" "build" "-p" name "-j" jobs]
-  ["dune" "runtest" "-p" name "-j" jobs] {with-test}
+name: "mirage-types"
+version: "3.6.0"
+synopsis: "Module type definitions for MirageOS applications"
+description: "Module type definitions for MirageOS applications"
+maintainer: ["anil@recoil.org" "thomas@gazagnaire.org"]
+authors: [
+  "Thomas Gazagnaire"
+  "Anil Madhavapeddy"
+  "Gabriel Radanne"
+  "Mindy Preston"
+  "Thomas Leonard"
+  "Nicolas Ojeda Bar"
+  "Dave Scott"
+  "David Kaloper"
+  "Hannes Mehnert"
+  "Richard Mortier"
 ]
-
+license: "ISC"
+tags: ["org:mirage" "org:xapi-project"]
+homepage: "https://github.com/mirage/mirage"
+bug-reports: "https://github.com/mirage/mirage/issues/"
 depends: [
   "ocaml" {>= "4.05.0"}
   "dune" {>= "1.1.0"}
@@ -33,10 +37,12 @@ depends: [
   "mirage-kv" {>= "2.0.0" & < "3.0.0"}
   "mirage-channel" {>= "3.1.0" & < "4.0.0"}
 ]
-synopsis: "Module type definitions for MirageOS applications"
-description: """
-Module type definitions for MirageOS applications
-"""
+build: [
+  ["dune" "subst"] {dev}
+  ["dune" "build" "-p" name "-j" jobs]
+  ["dune" "runtest" "-p" name "-j" jobs] {with-test}
+]
+dev-repo: "git+https://github.com/mirage/mirage.git"
 url {
   src:
     "https://github.com/mirage/mirage/releases/download/v3.6.0/mirage-v3.6.0.tbz"

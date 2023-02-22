@@ -1,26 +1,26 @@
 opam-version: "2.0"
-homepage:     "https://github.com/mirage/mirage-crypto"
-dev-repo:     "git+https://github.com/mirage/mirage-crypto.git"
-bug-reports:  "https://github.com/mirage/mirage-crypto/issues"
-doc:          "https://mirage.github.io/mirage-crypto/doc"
-authors:      ["David Kaloper <dk505@cam.ac.uk>" "Hannes Mehnert <hannes@mehnert.org>" ]
-maintainer:   "Hannes Mehnert <hannes@mehnert.org>"
-license:      "ISC"
-synopsis:     "Simple public-key cryptography for the modern age"
-
-build: [ ["dune" "subst"] {pinned}
-         ["dune" "build" "-p" name "-j" jobs ]
-         ["dune" "runtest" "-p" name "-j" jobs] {with-test} ]
-
+name: "mirage-crypto-pk"
+version: "0.6.2+1"
+synopsis: "Simple public-key cryptography for the modern age"
+description:
+  "Mirage-crypto-pk provides public-key cryptography (RSA, DSA, DH)."
+maintainer: "Hannes Mehnert <hannes@mehnert.org>"
+authors: [
+  "David Kaloper <dk505@cam.ac.uk>" "Hannes Mehnert <hannes@mehnert.org>"
+]
+license: "ISC"
+homepage: "https://github.com/mirage/mirage-crypto"
+doc: "https://mirage.github.io/mirage-crypto/doc"
+bug-reports: "https://github.com/mirage/mirage-crypto/issues"
 depends: [
   "conf-gmp-powm-sec" {build}
   "ocaml" {>= "4.07.0"}
   "dune" {>= "1.7"}
   "ounit" {with-test}
   "randomconv" {with-test & >= "0.1.3"}
-  "cstruct" {>="3.2.0"}
-  "mirage-crypto" {=version}
-  "mirage-crypto-rng" {=version}
+  "cstruct" {>= "3.2.0"}
+  "mirage-crypto" {= version}
+  "mirage-crypto-rng" {= version}
   "sexplib"
   "ppx_sexp_conv"
   "zarith" {>= "1.4"}
@@ -29,9 +29,26 @@ depends: [
   ("mirage-no-xen" | "zarith-xen")
   ("mirage-no-solo5" | "zarith-freestanding")
 ]
-description: """
-Mirage-crypto-pk provides public-key cryptography (RSA, DSA, DH).
-"""
+build: [
+  ["dune" "subst"] {pinned}
+  ["dune" "build" "-p" name "-j" jobs]
+  ["dune" "runtest" "-p" name "-j" jobs] {with-test}
+]
+dev-repo: "git+https://github.com/mirage/mirage-crypto.git"
+extra-files: [
+  [
+    "0003-pk-rsa-use-correct-invariant-when-checking-parameter.patch"
+    "md5=ab829d972a3ef9c5cdd5057587111c50"
+  ]
+  [
+    "0002-tests-add-test-for-valid-openssl-generated-rsa-key.patch"
+    "md5=6d6a8eb137bc0fcc30f35e58f259a3a0"
+  ]
+  [
+    "0001-Fix-computation-of-d-e-1-mod-lam-n-with-lam-lcm-p-1-.patch"
+    "md5=b77e22350810e3899f1ec917b081ce3b"
+  ]
+]
 url {
   src:
     "https://github.com/mirage/mirage-crypto/releases/download/v0.6.2/mirage-crypto-v0.6.2.tbz"

@@ -1,21 +1,24 @@
 opam-version: "2.0"
-maintainer: "https://github.com/ocaml/opam-repository/issues"
-build: [
-  ["ocaml" "setup.ml" "-configure" "--prefix" prefix]
-  ["ocaml" "setup.ml" "-build"]
-]
-depends: [
-  "ocaml"
-  "ocamlfind"
-  "ocamlbuild" {build}
-]
-install: ["ocaml" "setup.ml" "-install"]
+name: "ocamlify"
+version: "0.0.1"
 synopsis: "Include files in OCaml code"
-description: """
+description: """\
 OCamlify allows to create OCaml source code by including whole files
 into OCaml string or string list. The code generated can be compiled
 as a standard OCaml file. It allows embedding external resources as
 OCaml code."""
+maintainer: "https://github.com/ocaml/opam-repository/issues"
+license: "LGPL-2.1-or-later WITH OCaml-LGPL-linking-exception"
+depends: [
+  "ocaml" {< "5.0"}
+  "ocamlfind"
+  "ocamlbuild" {build}
+]
+build: [
+  ["ocaml" "setup.ml" "-configure" "--prefix" prefix]
+  ["ocaml" "setup.ml" "-build"]
+]
+install: ["ocaml" "setup.ml" "-install"]
 extra-files: ["ocamlify.install" "md5=5ae3ee90457ab5a6051136a36885c67e"]
 url {
   src:

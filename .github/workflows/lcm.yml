@@ -15,6 +15,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+
+      - name: Check whether there are unlicensed packages
+        run: tools/license-check.sh
+
       - name: Build the whole xs-toolstack
         run: bash tools/travis.sh
         env:

@@ -1,18 +1,20 @@
 opam-version: "2.0"
-maintainer:   "Mindy Preston <meetup@yomimono.org>"
-authors:      ["Mindy Preston <meetup@yomimono.org>"]
-homepage:     "https://github.com/mirage/mirage-protocols"
-doc:          "https://mirage.github.io/mirage-protocols/"
-license:      "ISC"
-dev-repo:     "git+https://github.com/mirage/mirage-protocols.git"
-bug-reports:  "https://github.com/mirage/mirage-protocols/issues"
-tags:         ["org:mirage"]
+name: "mirage-protocols-lwt"
+version: "3.1.0"
+synopsis: "MirageOS signatures for network protocols"
+description: """\
+mirage-protocols-lwt provides a set of module types specialized to lwt which
+libraries intended to be used as MirageOS network implementations should
+implement.
 
-build: [
-  [ "dune" "subst" ] {pinned}
-  [ "dune" "build" "-p" name "-j" jobs ]
-]
-
+The current signatures are: ETHERNET, ARP, IP, ICMP, UDP, TCP"""
+maintainer: "Mindy Preston <meetup@yomimono.org>"
+authors: "Mindy Preston <meetup@yomimono.org>"
+license: "ISC"
+tags: "org:mirage"
+homepage: "https://github.com/mirage/mirage-protocols"
+doc: "https://mirage.github.io/mirage-protocols/"
+bug-reports: "https://github.com/mirage/mirage-protocols/issues"
 depends: [
   "ocaml" {>= "4.04.2"}
   "dune" {>= "1.0"}
@@ -22,14 +24,11 @@ depends: [
   "lwt"
   "cstruct" {>= "1.9.0"}
 ]
-synopsis: "MirageOS signatures for network protocols"
-description: """
-mirage-protocols-lwt provides a set of module types specialized to lwt which
-libraries intended to be used as MirageOS network implementations should
-implement.
-
-The current signatures are: ETHERNET, ARP, IP, ICMP, UDP, TCP
-"""
+build: [
+  ["dune" "subst"] {dev}
+  ["dune" "build" "-p" name "-j" jobs]
+]
+dev-repo: "git+https://github.com/mirage/mirage-protocols.git"
 url {
   src:
     "https://github.com/mirage/mirage-protocols/releases/download/v3.1.0/mirage-protocols-v3.1.0.tbz"
