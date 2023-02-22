@@ -5,6 +5,7 @@ homepage: "https://github.com/xapi-project/backtrace"
 bug-reports: "https://github.com/xapi-project/backtrace/issues"
 dev-repo: "git://github.com/xapi-project/backtrace.git"
 tags: [ "org:xapi-project" ]
+license: "LGPL-2.1-only WITH OCaml-LGPL-linking-exception"
 
 build: ["dune" "build" "-p" name "-j" jobs]
 
