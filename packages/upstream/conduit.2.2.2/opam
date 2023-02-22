@@ -1,6 +1,6 @@
 opam-version: "2.0"
 name: "conduit"
-version: "2.2.2-1"
+version: "2.2.2"
 synopsis: "A network connection establishment library"
 description: """\
 The `conduit` library takes care of establishing and listening for 
@@ -46,12 +46,7 @@ build: [
   ["dune" "subst"] {pinned}
   ["dune" "build" "-p" name "-j" jobs]
 ]
-patches: "0001-backport-Add-openssl_overrides-to-conduit-context.patch"
 dev-repo: "git+https://github.com/mirage/ocaml-conduit.git"
-extra-files: [
-  "0001-backport-Add-openssl_overrides-to-conduit-context.patch"
-  "md5=c131b837c73db9cd31687fbbdf7e027f"
-]
 url {
   src:
     "https://github.com/mirage/ocaml-conduit/releases/download/v2.2.2/conduit-v2.2.2.tbz"
