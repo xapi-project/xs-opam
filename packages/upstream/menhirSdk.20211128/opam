@@ -7,7 +7,7 @@ authors: [
   "François Pottier <francois.pottier@inria.fr>"
   "Yann Régis-Gianas <yrg@pps.univ-paris-diderot.fr>"
 ]
-license: "LGPL-2.0-only with OCaml-LGPL-linking-exception"
+license: "LGPL-2.0-only WITH OCaml-LGPL-linking-exception"
 homepage: "http://gitlab.inria.fr/fpottier/menhir"
 bug-reports: "https://gitlab.inria.fr/fpottier/menhir/-/issues"
 depends: [

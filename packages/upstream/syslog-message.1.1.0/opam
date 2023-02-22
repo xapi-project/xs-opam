@@ -1,12 +1,16 @@
 opam-version: "2.0"
+name: "syslog-message"
+version: "1.1.0"
+synopsis: "Syslog message parser"
+description: """\
+This is a library for parsing and generating [RFC3164](https://tools.ietf.org/html/rfc3164)
+compatible Syslog messages."""
 maintainer: "Jochen Bartl <jochenbartl@mailbox.org>"
-authors: [ "Jochen Bartl <jochenbartl@mailbox.org>" ]
+authors: "Jochen Bartl <jochenbartl@mailbox.org>"
+license: "BSD-2-Clause"
 homepage: "https://github.com/verbosemode/syslog-message"
 doc: "https://verbosemode.github.io/syslog-message/doc"
-dev-repo: "git+https://github.com/verbosemode/syslog-message.git"
 bug-reports: "https://github.com/verbosemode/syslog-message/issues"
-license: "BSD-2-Clause"
-
 depends: [
   "ocaml" {>= "4.03.0"}
   "dune" {>= "1.1.0"}
@@ -15,18 +19,12 @@ depends: [
   "rresult"
   "qcheck" {with-test}
 ]
-
 build: [
-  [ "dune" "subst" ] {pinned}
-  [ "dune" "build" "-p" name "-j" jobs ]
-  [ "dune" "runtest" "-p" name "-j" jobs ] {with-test}
+  ["dune" "subst"] {dev}
+  ["dune" "build" "-p" name "-j" jobs]
+  ["dune" "runtest" "-p" name "-j" jobs] {with-test}
 ]
-
-synopsis: "Syslog message parser"
-description: """
-This is a library for parsing and generating [RFC3164](https://tools.ietf.org/html/rfc3164)
-compatible Syslog messages.
-"""
+dev-repo: "git+https://github.com/verbosemode/syslog-message.git"
 url {
   src:
     "https://github.com/verbosemode/syslog-message/releases/download/1.1.0/syslog-message-1.1.0.tbz"

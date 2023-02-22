@@ -1,4 +1,13 @@
 opam-version: "2.0"
+name: "mirage-device"
+version: "1.2.0"
+synopsis: "Abstract devices for MirageOS"
+description: """\
+mirage-device defines [Mirage_device.S][1], the signature for
+basic abstract devices for MirageOS and a pretty-printing function
+for device errors.
+
+[1]: https://mirage.github.io/mirage-device/Mirage_device.S.html"""
 maintainer: "thomas@gazagnaire.org"
 authors: [
   "Thomas Gazagnaire"
@@ -19,22 +28,14 @@ doc: "https://mirage.github.io/mirage-device/"
 bug-reports: "https://github.com/mirage/mirage-device/issues"
 depends: [
   "ocaml" {>= "4.04.2"}
-  "dune" {build & >= "1.0"}
+  "dune" {>= "1.0"}
   "fmt"
 ]
 build: [
-  ["dune" "subst"] {pinned}
+  ["dune" "subst"] {dev}
   ["dune" "build" "-p" name "-j" jobs]
 ]
 dev-repo: "git+https://github.com/mirage/mirage-device.git"
-synopsis: "Abstract devices for MirageOS"
-description: """
-mirage-device defines [Mirage_device.S][1], the signature for
-basic abstract devices for MirageOS and a pretty-printing function
-for device errors.
-
-[1]: https://mirage.github.io/mirage-device/Mirage_device.S.html
-"""
 url {
   src:
     "https://github.com/mirage/mirage-device/releases/download/v1.2.0/mirage-device-v1.2.0.tbz"

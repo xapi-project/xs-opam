@@ -1,15 +1,23 @@
 opam-version: "2.0"
+name: "conf-libssl"
+version: "1"
+synopsis: "Virtual package relying on an OpenSSL library system installation"
+description:
+  "This package can only install if the OpenSSL library is installed on the system."
 maintainer: "David Sheets <sheets@alum.mit.edu>"
-authors: ["The OpenSSL Project"]
-bug-reports: "https://github.com/ocaml/opam-repository/issues"
-homepage: "https://www.openssl.org/"
+authors: "The OpenSSL Project"
 license: "Apache-1.0"
+homepage: "https://www.openssl.org/"
+bug-reports: "https://github.com/ocaml/opam-repository/issues"
+depends: [
+  "conf-pkg-config" {build}
+]
+flags: conf
 build: [
   ["pkg-config" "openssl"]
     {os != "macos" & os != "freebsd" & os != "openbsd" & os != "netbsd"}
   ["sh" "./osx-build.sh"] {os = "macos"}
 ]
-depends: ["conf-pkg-config" {build}]
 depexts: [
   ["libssl-dev"] {os-family = "debian"}
   ["openssl-devel"] {os-distribution = "centos"}
@@ -17,13 +25,10 @@ depexts: [
   ["openssl-devel"] {os-distribution = "fedora"}
   ["openssl"] {os = "macos" & os-distribution = "homebrew"}
   ["openssl"] {os = "macos" & os-distribution = "macports"}
-  ["libressl-dev"] {os-distribution = "alpine"}
+  ["openssl-dev"] {os-distribution = "alpine"}
   ["openssl"] {os-distribution = "nixos"}
   ["openssl"] {os-distribution = "arch"}
   ["libopenssl-devel"] {os-family = "suse"}
+  ["openssl"] {os = "win32" & os-distribution = "cygwinports"}
 ]
-synopsis: "Virtual package relying on an OpenSSL library system installation"
-description:
-  "This package can only install if the OpenSSL library is installed on the system."
 extra-files: ["osx-build.sh" "md5=faf81a6bf30e346abe94610f136c6193"]
-flags: conf

@@ -1,8 +1,15 @@
 opam-version: "2.0"
+name: "conf-gmp"
+version: "1"
+synopsis: "Virtual package relying on a GMP lib system installation"
+description:
+  "This package can only install if the GMP lib is installed on the system."
 maintainer: "nbraud"
+authors: "nbraud"
+license: "GPL-1.0-or-later"
 homepage: "http://gmplib.org/"
 bug-reports: "https://github.com/ocaml/opam-repository/issues"
-license: "GPL"
+flags: conf
 build: [
   ["sh" "-exc" "cc -c $CFLAGS -I/usr/local/include test.c"] {os != "macos"}
   [
@@ -12,19 +19,15 @@ build: [
   ] {os = "macos"}
 ]
 depexts: [
-  ["libgmp-dev"] {os-distribution = "debian"}
-  ["libgmp-dev"] {os-distribution = "ubuntu"}
+  ["libgmp-dev"] {os-family = "debian"}
   ["gmp"] {os = "macos" & os-distribution = "homebrew"}
+  ["gmp"] {os-distribution = "macports" & os = "macos"}
   ["gmp" "gmp-devel"] {os-distribution = "centos"}
   ["gmp" "gmp-devel"] {os-distribution = "fedora"}
   ["gmp"] {os = "openbsd"}
   ["gmp"] {os = "freebsd"}
   ["gmp-dev"] {os-distribution = "alpine"}
   ["gmp-devel"] {os-family = "suse"}
+  ["gmp"] {os = "win32" & os-distribution = "cygwinports"}
 ]
-synopsis: "Virtual package relying on a GMP lib system installation"
-description:
-  "This package can only install if the GMP lib is installed on the system."
-authors: "nbraud"
 extra-files: ["test.c" "md5=ec8cc21ab709bdd57103de36e7b0b53f"]
-flags: conf

@@ -1,4 +1,7 @@
 opam-version: "2.0"
+name: "conduit-lwt-unix"
+version: "2.2.2-1"
+synopsis: "A network connection establishment library for Lwt_unix"
 maintainer: "anil@recoil.org"
 authors: [
   "Anil Madhavapeddy" "Thomas Leonard" "Thomas Gazagnaire" "Rudi Grinberg"
@@ -11,8 +14,8 @@ depends: [
   "ocaml" {>= "4.07.0"}
   "dune"
   "base-unix"
-  "ppx_sexp_conv" {>="v0.12.0"}
-  "conduit-lwt" {>="2.1.0" & <"2.3.0"}
+  "ppx_sexp_conv" {>= "v0.12.0"}
+  "conduit-lwt" {>= "2.1.0" & < "2.3.0"}
   "lwt" {>= "3.0.0"}
   "uri" {>= "1.9.4"}
   "ipaddr" {>= "4.0.0"}
@@ -27,11 +30,12 @@ build: [
   ["dune" "subst"] {pinned}
   ["dune" "build" "-p" name "-j" jobs]
 ]
-patches: [
-  "0001-backport-Add-openssl_overrides-to-conduit-context.patch"
-]
+patches: "0001-backport-Add-openssl_overrides-to-conduit-context.patch"
 dev-repo: "git+https://github.com/mirage/ocaml-conduit.git"
-synopsis: "A network connection establishment library for Lwt_unix"
+extra-files: [
+  "0001-backport-Add-openssl_overrides-to-conduit-context.patch"
+  "md5=c131b837c73db9cd31687fbbdf7e027f"
+]
 url {
   src:
     "https://github.com/mirage/ocaml-conduit/releases/download/v2.2.2/conduit-v2.2.2.tbz"

@@ -1,22 +1,8 @@
 opam-version: "2.0"
-maintainer: "opensource@janestreet.com"
-authors: ["Jane Street Group, LLC <opensource@janestreet.com>"]
-homepage: "https://github.com/janestreet/parsexp"
-bug-reports: "https://github.com/janestreet/parsexp/issues"
-dev-repo: "git+https://github.com/janestreet/parsexp.git"
-doc: "https://ocaml.janestreet.com/ocaml-core/latest/doc/parsexp/index.html"
-license: "MIT"
-build: [
-  ["dune" "build" "-p" name "-j" jobs]
-]
-depends: [
-  "ocaml"    {>= "4.04.2"}
-  "base"     {>= "v0.14" & < "v0.15"}
-  "sexplib0" {>= "v0.14" & < "v0.15"}
-  "dune"     {>= "2.0.0"}
-]
+name: "parsexp"
+version: "v0.14.0"
 synopsis: "S-expression parsing library"
-description: "
+description: """\
 This library provides generic parsers for parsing S-expressions from
 strings or other medium.
 
@@ -35,9 +21,23 @@ It provides three different class of parsers:
 
 This library is portable and doesn't provide IO functions. To read
 s-expressions from files or other external sources, you should use
-parsexp_io.
-"
+parsexp_io."""
+maintainer: "Jane Street developers"
+authors: "Jane Street Group, LLC"
+license: "MIT"
+homepage: "https://github.com/janestreet/parsexp"
+doc: "https://ocaml.janestreet.com/ocaml-core/latest/doc/parsexp/index.html"
+bug-reports: "https://github.com/janestreet/parsexp/issues"
+depends: [
+  "ocaml" {>= "4.04.2" & < "4.13"}
+  "base" {>= "v0.14" & < "v0.15"}
+  "sexplib0" {>= "v0.14" & < "v0.15"}
+  "dune" {>= "2.0.0"}
+]
+build: ["dune" "build" "-p" name "-j" jobs]
+dev-repo: "git+https://github.com/janestreet/parsexp.git"
 url {
-  src: "https://ocaml.janestreet.com/ocaml-core/v0.14/files/parsexp-v0.14.0.tar.gz"
+  src:
+    "https://ocaml.janestreet.com/ocaml-core/v0.14/files/parsexp-v0.14.0.tar.gz"
   checksum: "md5=c2c5fa3f9b082e4fe729e2cf95cacd3b"
 }

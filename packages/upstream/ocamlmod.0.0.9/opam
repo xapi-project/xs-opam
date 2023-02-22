@@ -1,10 +1,18 @@
 opam-version: "2.0"
+name: "ocamlmod"
+version: "0.0.9"
+synopsis: "Generate OCaml modules from source files"
 maintainer: "opam-devel@lists.ocaml.org"
+authors: "Sylvain Le Gall"
+license: "LGPL-2.1-only WITH OCaml-LGPL-linking-exception"
 homepage: "https://forge.ocamlcore.org/projects/ocamlmod/"
 bug-reports: "https://forge.ocamlcore.org/tracker/?group_id=244"
-dev-repo: "darcs://https://forge.ocamlcore.org/anonscm/darcs/ocamlmod/ocamlmod"
-authors: [ "Sylvain Le Gall" ]
-license: "LGPL-2.1 with OCaml linking exception"
+depends: [
+  "ocaml" {< "5.0"}
+  "ocamlfind" {build}
+  "ounit" {with-test & >= "2.0.0"}
+  "ocamlbuild" {build}
+]
 build: [
   ["ocaml" "setup.ml" "-configure" "--prefix" prefix]
   ["ocaml" "setup.ml" "-build"]
@@ -13,16 +21,8 @@ build: [
   ["ocaml" "setup.ml" "-test"] {with-test}
 ]
 install: ["ocaml" "setup.ml" "-install"]
-remove: [
-  ["ocaml" "%{etc}%/ocamlmod/_oasis_remove_.ml" "%{etc}%/ocamlmod"]
-]
-depends: [
-  "ocaml"
-  "ocamlfind" {build}
-  "ounit" {with-test & >= "2.0.0"}
-  "ocamlbuild" {build}
-]
-synopsis: "Generate OCaml modules from source files"
+remove: ["ocaml" "%{etc}%/ocamlmod/_oasis_remove_.ml" "%{etc}%/ocamlmod"]
+dev-repo: "darcs+https://forge.ocamlcore.org/anonscm/darcs/ocamlmod/ocamlmod"
 extra-files: [
   ["ocamlmod.install" "md5=0d1b822c897681cf54b3e1aed52dda99"]
   ["_oasis_remove_.ml" "md5=6100ca146fa97d2196eb49a2631d0796"]

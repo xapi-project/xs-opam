@@ -1,32 +1,34 @@
 opam-version: "2.0"
-maintainer: "opensource@janestreet.com"
-authors: ["Jane Street Group, LLC <opensource@janestreet.com>"]
-homepage: "https://github.com/janestreet/jst-config"
-bug-reports: "https://github.com/janestreet/jst-config/issues"
-dev-repo: "git+https://github.com/janestreet/jst-config.git"
-doc: "https://ocaml.janestreet.com/ocaml-core/latest/doc/jst-config/index.html"
-license: "MIT"
-build: [
-  ["dune" "build" "-p" name "-j" jobs]
-]
-depends: [
-  "ocaml"             {>= "4.04.2"}
-  "base"              {>= "v0.14" & < "v0.15"}
-  "ppx_assert"        {>= "v0.14" & < "v0.15"}
-  "stdio"             {>= "v0.14" & < "v0.15"}
-  "dune"              {>= "2.0.0"}
-  "dune-configurator"
-]
+name: "jst-config"
+version: "v0.14.0"
 synopsis: "Compile-time configuration for Jane Street libraries"
-description: "
+description: """\
 Defines compile-time constants used in Jane Street libraries such as Base, Core, and
 Async.
 
 This package has an unstable interface; it is intended only to share configuration between
 different packages from Jane Street. Future updates may not be backward-compatible, and we
-do not recommend using this package directly.
-"
+do not recommend using this package directly."""
+maintainer: "Jane Street developers"
+authors: "Jane Street Group, LLC"
+license: "MIT"
+homepage: "https://github.com/janestreet/jst-config"
+doc:
+  "https://ocaml.janestreet.com/ocaml-core/latest/doc/jst-config/index.html"
+bug-reports: "https://github.com/janestreet/jst-config/issues"
+depends: [
+  "ocaml" {>= "4.04.2"}
+  "base" {>= "v0.14" & < "v0.15"}
+  "ppx_assert" {>= "v0.14" & < "v0.15"}
+  "stdio" {>= "v0.14" & < "v0.15"}
+  "dune" {>= "2.0.0"}
+  "dune-configurator"
+]
+available: arch != "ppc32" & arch != "ppc64" & arch != "s390x"
+build: ["dune" "build" "-p" name "-j" jobs]
+dev-repo: "git+https://github.com/janestreet/jst-config.git"
 url {
-  src: "https://ocaml.janestreet.com/ocaml-core/v0.14/files/jst-config-v0.14.0.tar.gz"
+  src:
+    "https://ocaml.janestreet.com/ocaml-core/v0.14/files/jst-config-v0.14.0.tar.gz"
   checksum: "md5=eefbac104a59bf90c82992cc9fb487d5"
 }

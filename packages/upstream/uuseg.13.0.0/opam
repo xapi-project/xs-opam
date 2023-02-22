@@ -1,31 +1,8 @@
 opam-version: "2.0"
-maintainer: "Daniel Bünzli <daniel.buenzl i@erratique.ch>"
-authors: ["The uuseg programmers"]
-homepage: "https://erratique.ch/software/uuseg"
-doc: "https://erratique.ch/software/uuseg"
-dev-repo: "git+https://erratique.ch/repos/uuseg.git"
-bug-reports: "https://github.com/dbuenzli/uuseg/issues"
-tags: [ "segmentation" "text" "unicode" "org:erratique" ]
-license: "ISC"
-depends: [ "ocaml" {>= "4.03.0"}
-           "ocamlfind" {build}
-           "ocamlbuild" {build}
-           "topkg" {build}
-           "uucp" {>= "13.0.0" & < "14.0.0"} ]
-depopts: [ "uutf"
-           "cmdliner"
-           "uutf" {with-test}
-           "cmdliner" {with-test} ]
-conflicts: [ "uutf" {< "1.0.0"} ]
-build: [[
-  "ocaml" "pkg/pkg.ml" "build"
-  "--pinned" "%{pinned}%"
-  "--with-uutf" "%{uutf:installed}%"
-  "--with-cmdliner" "%{cmdliner:installed}%" ]]
-
-synopsis: """Unicode text segmentation for OCaml"""
+name: "uuseg"
+version: "13.0.0"
+synopsis: "Unicode text segmentation for OCaml"
 description: """\
-
 Uuseg is an OCaml library for segmenting Unicode text. It implements
 the locale independent [Unicode text segmentation algorithms][1] to
 detect grapheme cluster, word and sentence boundaries and the
@@ -41,9 +18,43 @@ optionally on [Uutf](http://erratique.ch/software/uutf) for support on
 OCaml UTF-X encoded strings. It is distributed under the ISC license.
 
 [1]: http://www.unicode.org/reports/tr29/
-[2]: http://www.unicode.org/reports/tr14/
-"""
+[2]: http://www.unicode.org/reports/tr14/"""
+maintainer: "Daniel Bünzli <daniel.buenzl i@erratique.ch>"
+authors: "The uuseg programmers"
+license: "ISC"
+tags: ["segmentation" "text" "unicode" "org:erratique"]
+homepage: "https://erratique.ch/software/uuseg"
+doc: "https://erratique.ch/software/uuseg"
+bug-reports: "https://github.com/dbuenzli/uuseg/issues"
+depends: [
+  "ocaml" {>= "4.03.0"}
+  "ocamlfind" {build}
+  "ocamlbuild" {build}
+  "topkg" {build}
+  "uucp" {>= "13.0.0" & < "14.0.0"}
+]
+depopts: [
+  "uutf"
+  "cmdliner"
+  "uutf" {with-test}
+  "cmdliner" {with-test}
+]
+conflicts: [
+  "uutf" {< "1.0.0"}
+]
+build: [
+  "ocaml"
+  "pkg/pkg.ml"
+  "build"
+  "--pinned"
+  "%{pinned}%"
+  "--with-uutf"
+  "%{uutf:installed}%"
+  "--with-cmdliner"
+  "%{cmdliner:installed}%"
+]
+dev-repo: "git+https://erratique.ch/repos/uuseg.git"
 url {
-archive: "https://erratique.ch/software/uuseg/releases/uuseg-13.0.0.tbz"
-checksum: "a07a97fff61da604614ea8da0547ef6a"
+  src: "https://erratique.ch/software/uuseg/releases/uuseg-13.0.0.tbz"
+  checksum: "md5=a07a97fff61da604614ea8da0547ef6a"
 }

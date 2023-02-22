@@ -1,23 +1,8 @@
 opam-version: "2.0"
-maintainer: "Daniel Bünzli <daniel.buenzl i@erratique.ch>"
-authors: ["Daniel Bünzli <daniel.buenzl i@erratique.ch>"]
-homepage: "http://erratique.ch/software/topkg"
-doc: "http://erratique.ch/software/topkg/doc"
-license: "ISC"
-dev-repo: "git+http://erratique.ch/repos/topkg.git"
-bug-reports: "https://github.com/dbuenzli/topkg/issues"
-tags: ["packaging" "ocamlbuild" "org:erratique"]
-depends: [
-  "ocaml" {>= "4.03.0"}
-  "ocamlfind" {build & >= "1.6.1"}
-  "ocamlbuild" ]
-build: [[
-  "ocaml" "pkg/pkg.ml" "build"
-          "--pkg-name" name
-          "--dev-pkg" "%{pinned}%" ]]
-synopsis: """The transitory OCaml software packager"""
+name: "topkg"
+version: "1.0.1"
+synopsis: "The transitory OCaml software packager"
 description: """\
-
 Topkg is a packager for distributing OCaml software. It provides an
 API to describe the files a package installs in a given build
 configuration and to specify information about the package's
@@ -40,9 +25,24 @@ Topkg-care is distributed under the ISC license it depends on
 [logs]: http://erratique.ch/software/logs
 [bos]: http://erratique.ch/software/bos
 [cmdliner]: http://erratique.ch/software/cmdliner
-[webbrowser]: http://erratique.ch/software/webbrowser
-"""
+[webbrowser]: http://erratique.ch/software/webbrowser"""
+maintainer: "Daniel Bünzli <daniel.buenzl i@erratique.ch>"
+authors: "Daniel Bünzli <daniel.buenzl i@erratique.ch>"
+license: "ISC"
+tags: ["packaging" "ocamlbuild" "org:erratique"]
+homepage: "http://erratique.ch/software/topkg"
+doc: "http://erratique.ch/software/topkg/doc"
+bug-reports: "https://github.com/dbuenzli/topkg/issues"
+depends: [
+  "ocaml" {>= "4.03.0" & < "4.12.0"}
+  "ocamlfind" {build & >= "1.6.1"}
+  "ocamlbuild"
+]
+build: [
+  "ocaml" "pkg/pkg.ml" "build" "--pkg-name" name "--dev-pkg" "%{pinned}%"
+]
+dev-repo: "git+http://erratique.ch/repos/topkg.git"
 url {
-archive: "http://erratique.ch/software/topkg/releases/topkg-1.0.1.tbz"
-checksum: "16b90e066d8972a5ef59655e7c28b3e9"
+  src: "http://erratique.ch/software/topkg/releases/topkg-1.0.1.tbz"
+  checksum: "md5=16b90e066d8972a5ef59655e7c28b3e9"
 }

@@ -1,28 +1,18 @@
 opam-version: "2.0"
+name: "shared-block-ring"
 version: "2.5.0+1"
 maintainer: "jonathan.ludlam@citrix.com"
-authors: [ "David Scott" "Jon Ludlam" "Si Beaumont" ]
+authors: ["David Scott" "Jon Ludlam" "Si Beaumont"]
+license: "ISC"
+tags: ["org:mirage" "org:xapi-project"]
 homepage: "https://github.com/mirage/shared-block-ring"
 bug-reports: "https://github.com/mirage/shared-block-ring/issues/"
-dev-repo: "https://github.com/mirage/shared-block-ring.git"
-license: "ISC"
-tags: [
-  "org:mirage"
-  "org:xapi-project"
-]
-build: [
-  ["dune" "subst"] {pinned}
-  ["dune" "build" "-p" name "-j" jobs]
-]
-build-test: [
-  ["dune" "runtest" "-p" name "-j" jobs]
-]
 depends: [
   "dune"
   "cstruct" {>= "3.0.0"}
   "ppx_cstruct"
-  "ppx_sexp_conv" {>="v0.10.0"}
-  "lwt" 
+  "ppx_sexp_conv" {>= "v0.10.0"}
+  "lwt"
   "lwt_log"
   "mirage-types-lwt" {>= "3.0.0"}
   "mirage-block-unix"
@@ -37,17 +27,15 @@ depends: [
   "duration"
   "ounit" {test}
 ]
-patches: [
-    "0001-dunify.patch"
+build: [
+  ["dune" "subst"] {pinned}
+  ["dune" "build" "-p" name "-j" jobs]
 ]
-extra-files: [
-  [
-    "0001-dunify.patch"
-    "md5=37841bb6a3eeb0c1721bbc153f647311"
-  ]
-]
+run-test: ["dune" "runtest" "-p" name "-j" jobs]
+patches: "0001-dunify.patch"
+dev-repo: "https://github.com/mirage/shared-block-ring.git"
+extra-files: ["0001-dunify.patch" "md5=37841bb6a3eeb0c1721bbc153f647311"]
 url {
   src: "https://github.com/mirage/shared-block-ring/archive/v2.5.0.tar.gz"
   checksum: "md5=9bf024f1ac20fa037cbf2d699caee8c5"
 }
-
