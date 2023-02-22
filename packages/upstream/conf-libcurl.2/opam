@@ -6,7 +6,7 @@ description:
   "This package can only install if the libcurl is installed on the system."
 maintainer: "blue-prawn"
 authors: "Daniel Stenberg"
-license: "BSD-like"
+license: "curl"
 homepage: "http://curl.haxx.se/"
 bug-reports: "https://github.com/ocaml/opam-repository/issues"
 flags: conf

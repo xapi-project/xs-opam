@@ -6,7 +6,7 @@ description:
   "This package can only install if the Xen headers are installed on the system."
 maintainer: "hannes@mehnert.org"
 authors: "hannes@mehnert.org"
-license: ["GPL-2.0-only" "LGPL-3.0-only"]
+license: "GPL-2.0-only AND LGPL-3.0-only"
 homepage: "https://xenproject.org/"
 bug-reports: "https://github.com/ocaml/opam-repository/issues"
 available: os != "macos"

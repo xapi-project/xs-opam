@@ -14,7 +14,7 @@ Bigstrings and other string-like types.
 So here they are. Go crazy."""
 maintainer: "Spiros Eliopoulos <spiros@inhabitedtype.com>"
 authors: "Spiros Eliopoulos <spiros@inhabitedtype.com>"
-license: "BSD-3-clause"
+license: "BSD-3-Clause"
 homepage: "https://github.com/inhabitedtype/bigstringaf"
 bug-reports: "https://github.com/inhabitedtype/bigstringaf/issues"
 depends: [
