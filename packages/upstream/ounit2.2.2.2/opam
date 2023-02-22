@@ -9,6 +9,7 @@ framework for Haskell. It is similar to [JUnit], and other XUnit testing
 frameworks."""
 maintainer: "Sylvain Le Gall <sylvaini+ocaml@le-gall.net>"
 authors: ["Maas-Maarten Zeeman" "Sylvain Le Gall"]
+license: "MIT"
 homepage: "https://github.com/gildor478/ounit"
 doc: "https://gildor478.github.io/ounit/"
 bug-reports: "https://github.com/gildor478/ounit/issues"

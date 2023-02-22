@@ -8,6 +8,7 @@ into OCaml string or string list. The code generated can be compiled
 as a standard OCaml file. It allows embedding external resources as
 OCaml code."""
 maintainer: "https://github.com/ocaml/opam-repository/issues"
+license: "LGPL-2.1-or-later WITH OCaml-LGPL-linking-exception"
 depends: [
   "ocaml" {< "5.0"}
   "ocamlfind"

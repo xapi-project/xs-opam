@@ -4,6 +4,7 @@ version: "20200131"
 synopsis: "Facilities for memoization and fixed points"
 maintainer: "francois.pottier@inria.fr"
 authors: "François Pottier <francois.pottier@inria.fr>"
+license: "MIT"
 homepage: "https://gitlab.inria.fr/fpottier/fix"
 bug-reports: "francois.pottier@inria.fr"
 depends: [

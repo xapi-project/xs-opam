@@ -20,6 +20,7 @@ authors: [
 homepage: "https://github.com/mirage/ocaml-gnt"
 doc: "https://mirage.github.io/ocaml-gnt/"
 bug-reports: "https://github.com/mirage/ocaml-gnt/issues"
+license: "ISC"
 depends: [
   "ocaml" {>= "4.03.0"}
   "dune" {>= "1.0"}

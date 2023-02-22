@@ -10,6 +10,7 @@ interpreting the META files, so that it is very easy to use libraries
 in programs and scripts."""
 maintainer: "Thomas Gazagnaire <thomas@gazagnaire.org>"
 authors: "Gerd Stolpmann <gerd@gerd-stolpmann.de>"
+license: "MIT"
 homepage: "http://projects.camlcity.org/projects/findlib.html"
 bug-reports: "https://gitlab.camlcity.org/gerd/lib-findlib/issues"
 depends: [

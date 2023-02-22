@@ -10,6 +10,7 @@ The library implements three modules:
 * [EndianBigstring](https://github.com/OCamlPro/ocplib-endian/blob/master/src/endianBigstring.mli) works on bigstrings (Bigarrays of chars), and provides submodules BigEndian and LittleEndian, with their unsafe counter-parts."""
 maintainer: "pierre.chambart@ocamlpro.com"
 authors: "Pierre Chambart"
+license: "LGPL-2.1-or-later WITH OCaml-LGPL-linking-exception"
 homepage: "https://github.com/OCamlPro/ocplib-endian"
 doc: "https://ocamlpro.github.io/ocplib-endian/ocplib-endian/"
 bug-reports: "https://github.com/OCamlPro/ocplib-endian/issues"

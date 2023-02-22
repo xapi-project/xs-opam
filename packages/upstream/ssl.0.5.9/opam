@@ -4,6 +4,7 @@ version: "0.5.9"
 synopsis: "Bindings for OpenSSL"
 maintainer: "Samuel Mimram <samuel.mimram@ens-lyon.org>"
 authors: "Samuel Mimram <samuel.mimram@ens-lyon.org>"
+license: "LGPL-2.1-only WITH OCaml-LGPL-linking-exception"
 homepage: "https://github.com/savonet/ocaml-ssl"
 bug-reports: "https://github.com/savonet/ocaml-ssl/issues"
 depends: [

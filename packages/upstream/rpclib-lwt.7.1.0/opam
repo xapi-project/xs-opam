@@ -12,6 +12,7 @@ The transport mechanism itself is outside the scope of this library
 as all conversions are from and to strings."""
 maintainer: "thomas@gazagnaire.org"
 authors: "Thomas Gazagnaire, Jon Ludlam"
+license: "ISC"
 tags: ["org:mirage" "org:xapi-project"]
 homepage: "https://github.com/mirage/ocaml-rpc"
 doc: "https://mirage.github.io/ocaml-rpc/rpclib-lwt"
