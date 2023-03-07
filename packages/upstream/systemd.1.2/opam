@@ -5,7 +5,7 @@ synopsis: "OCaml module for native access to the systemd facilities"
 description: "OCaml library allowing interaction with systemd and journald"
 maintainer: "Juergen Hoetzel <juergen@archlinux.org>"
 authors: "Juergen Hoetzel <juergen@archlinux.org>"
-license: "LGPL-3 with OCaml linking exception"
+license: "LGPL-3.0-only WITH OCaml-LGPL-linking-exception"
 homepage: "https://github.com/juergenhoetzel/ocaml-systemd/"
 bug-reports: "https://github.com/mirage/mirage/issues/"
 depends: [

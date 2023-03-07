@@ -7,7 +7,7 @@ This package can only install if the Python-2.7 interpreter is available
 on the system."""
 maintainer: "unixjunkie@sdf.org"
 authors: "Python Software Foundation"
-license: "PSF"
+license: "PSF-2.0"
 homepage: "https://www.python.org/download/releases/2.7/"
 bug-reports: "https://github.com/ocaml/opam-repository/issues"
 flags: conf
