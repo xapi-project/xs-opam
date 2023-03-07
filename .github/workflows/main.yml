@@ -53,9 +53,7 @@ jobs:
           opam upgrade
 
       - name: Check whether there are packages with more than a version
-        run: |
-          tools/no-duplicates-check-xs-toolstack.bash
-          tools/no-duplicates-check-upstream-extra-dummy.bash
+        run: tools/no-duplicates-check.bash
 
       - name: Check whether there are unused packages
         run: tools/find-unused-packages.sh
