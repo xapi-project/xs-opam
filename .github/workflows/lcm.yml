@@ -13,14 +13,32 @@ jobs:
   build:
     runs-on: ubuntu-20.04
     steps:
+      - name: Update apt cache
+        run: sudo apt-get update
+
       - name: Checkout
         uses: actions/checkout@v3
 
       - name: Check whether there are unlicensed packages
         run: tools/license-check.sh
 
-      - name: Build the whole xs-toolstack
-        run: bash tools/travis.sh
-        env:
-          OCAML_VERSION: 4.08
-          OPAMWITHTEST: true
+      - name: Use ocaml
+        uses: ocaml/setup-ocaml@v2
+        with:
+          ocaml-compiler: "4.08.1"
+          opam-repositories: |
+            xs-opam: "."
+          opam-disable-sandboxing: true
+          opam-pin: false
+
+      - name: Build xs-toolstack, test its dependencies
+        # opam install may ignore installing depexts sometimes
+        # OPAMCOLOR is set to "always" by default and it breaks piping
+        run: |
+          OPAMERRLOGLEN=10000 OPAMCOLOR=NEVER opam list -s --required-by xs-toolstack | xargs opam depext -tu
+          OPAMERRLOGLEN=10000 OPAMCOLOR=NEVER opam list -s --required-by xs-toolstack | xargs opam install -t
+
+      - name: Uninstall unversioned packages
+        # This should purge them from the cache, unversioned package have
+        # 'master' as its version
+        run: opam list | awk -F " " '$2 == "master" { print $1 }' |  xargs opam uninstall
