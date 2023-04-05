@@ -56,7 +56,6 @@ depends: [
   "xen-api-client"
   "xen-api-client-async"
   "xen-api-sdk"
-  "xenctrl"
   "xml-light2"
   "zstd"
 ]
