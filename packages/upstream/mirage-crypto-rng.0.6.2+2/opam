@@ -1,6 +1,6 @@
 opam-version: "2.0"
 name: "mirage-crypto-rng"
-version: "0.6.2+1"
+version: "0.6.2+2"
 synopsis: "A cryptographically secure PRNG"
 description: """\
 Mirage-crypto-rng provides a random number generator interface, and
@@ -28,6 +28,11 @@ build: [
   ["dune" "subst"] {pinned}
   ["dune" "build" "-p" name "-j" jobs]
   ["dune" "runtest" "-p" name "-j" jobs] {with-test}
+]
+patches: [
+  "0001-Fix-computation-of-d-e-1-mod-lam-n-with-lam-lcm-p-1-.patch"
+  "0002-tests-add-test-for-valid-openssl-generated-rsa-key.patch"
+  "0003-pk-rsa-use-correct-invariant-when-checking-parameter.patch"
 ]
 dev-repo: "git+https://github.com/mirage/mirage-crypto.git"
 extra-files: [
