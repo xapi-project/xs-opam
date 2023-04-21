@@ -1,9 +1,3 @@
 ocaml
 ocaml-base-compiler
 ocaml-system
-merlin
-merlin-dot-reader
-ocaml-lsp-server
-ocamlformat
-ocamlformat-rpc-lib
-odoc-parser
