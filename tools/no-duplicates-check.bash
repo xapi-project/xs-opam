@@ -16,11 +16,9 @@ function check_no_duplicates {
 }
 
 # makes sure no ordinary opam packages have more than a single version
-# the only exception is xenctrl.
 # This is required because of how the rpm distributions are built: they
 # try to install all versions of all ordinary packages, which fails because
 # the versions of a single package are never compatible.
-# xenctrl has 2 versions: dummy and master
 # several versions of the compiler might be wanted for testing:
 #   ocaml, ocaml-system, ocaml-base-compiler
 toolstack_packages=$(opam list --required-by "xs-toolstack" --recursive --short)

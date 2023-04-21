@@ -12,6 +12,6 @@ set -euo pipefail
 opam admin check --ignore-test-doc
 # there is a conflict in ppxlib and sexplib0 version in with-test, ignore its tests for now
 RESOLVE=$(opam admin filter --verbose --dry-run --resolve=xs-toolstack | sed -n 2p | grep -v ppxlib)
-RESOLVE+=" upstream-extra-dummy xenctrl.dummy opam-depext opam-ed.0.3"
+RESOLVE+=" upstream-extra-dummy opam-depext opam-ed.0.3"
 RESOLVE+=" ocaml-base-compiler.${OCAML_VERSION_FULL} ocaml-system.${OCAML_VERSION_FULL}"
 exec opam admin filter --dry-run "--resolve=$(echo ${RESOLVE} | tr ' ' ',')" --or --with-test
