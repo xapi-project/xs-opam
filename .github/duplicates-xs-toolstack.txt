@@ -1,5 +1,3 @@
 ocaml
 ocaml-base-compiler
 ocaml-system
-ocamlformat
-odoc-parser
