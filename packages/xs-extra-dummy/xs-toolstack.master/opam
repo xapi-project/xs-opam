@@ -10,7 +10,7 @@ depends: [
   "conf-libev"
   "forkexec"
   "gzip"
-  "http-svr"
+  "http-lib"
   "message-switch"
   "message-switch-cli"
   "nbd-tool"

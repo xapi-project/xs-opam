@@ -23,7 +23,7 @@ depends: [
   "ezcurl" # testing client calls with curl
   "ezxenstore"
   "fmt" {with-test}
-  "http-svr"
+  "http-lib" {with-test} # the public library is only used for testing
   "ipaddr"
   "mirage-crypto" {with-test}
   "mirage-crypto-pk"
@@ -51,7 +51,6 @@ depends: [
   "xapi-client"
   "xapi-cli-protocol"
   "xapi-consts"
-  "xapi-database"
   "xapi-datamodel"
   "xapi-stdext-date"
   "xapi-stdext-pervasives"
