@@ -7,13 +7,16 @@ XAPI="xapi-project"
 XSER="xenserver"
 
 MAP="\
+ezxenstore                $XAPI/xen-api
 rrd2csv                   $XAPI/xen-api
 rrddump                   $XAPI/xen-api
 varstored-guard           $XAPI/xen-api
+vhd-format                $XAPI/xen-api
+vhd-format-lwt            $XAPI/xen-api
 xen-api-client-lwt        $XAPI/xen-api
 xen-api-client            $XAPI/xen-api
 xen-api-client-async      $XAPI/xen-api
-xapi-database             $XAPI/xen-api
+xapi-schema               $XAPI/xen-api
 xapi-client               $XAPI/xen-api
 xapi-consts               $XAPI/xen-api
 xapi-types                $XAPI/xen-api
@@ -45,7 +48,7 @@ xapi-storage-script       $XAPI/xen-api
 xapi-storage-cli          $XAPI/xen-api
 xapi-nbd                  $XAPI/xen-api
 uuid                      $XAPI/xen-api
-http-svr                  $XAPI/xen-api
+http-lib                  $XAPI/xen-api
 safe-resources            $XAPI/xen-api
 sexpr                     $XAPI/xen-api
 pciutil                   $XAPI/xen-api
@@ -62,6 +65,7 @@ xapi-rrd-transport        $XAPI/xen-api
 xapi-rrdd                 $XAPI/xen-api
 rrd-transport             $XAPI/xen-api
 xenctrl                   $XAPI/xenctrl
+xenmmap                   $XAPI/xenctrl
 wsproxy                   $XAPI/xen-api
 xapi-idl                  $XAPI/xen-api"
 

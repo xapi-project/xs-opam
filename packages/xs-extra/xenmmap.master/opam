@@ -10,7 +10,6 @@ depends: [
   "conf-xen"
   "dune" {>= "2.0"}
   "base-unix"
-  "xenmmap"
 ]
 build: ["dune" "build" "-p" name "-j" jobs]
 
