@@ -45,14 +45,9 @@ dev-repo: "git+https://github.com/ocaml/ocaml"
 extra-files: [
   ["fix-gcc10.patch" "md5=17ecd696a8f5647a4c543280599f6974"]
   ["ocaml-base-compiler.install" "md5=3e969b841df1f51ca448e6e6295cb451"]
+  ["alt-signal-stack.patch" "sha256=35403384714b7d9961cc30b775fe9a03a762810c6693d0a4e05fff37c429d521"]
 ]
 url {
   src: "https://github.com/ocaml/ocaml/archive/4.08.1.tar.gz"
   checksum: "md5=723b6bfe8cf5abcbccc6911143f71055"
-}
-extra-source "alt-signal-stack.patch" {
-  src:
-    "https://github.com/ocaml/ocaml/commit/17df117b4939486d3285031900587afce5262c8c.patch"
-  checksum:
-    "sha256=16ad0b9a6f901dd26aa64ff8708a3f24d36237cbf4b34d9eb68a88ed00b96cf3"
 }
