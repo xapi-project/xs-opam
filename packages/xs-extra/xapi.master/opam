@@ -58,6 +58,7 @@ depends: [
   "xapi-stdext-unix"
   "xapi-stdext-zerocheck"
   "xapi-test-utils" {with-test}
+  "xapi-tracing"
   "xapi-types"
   "xapi-xenopsd"
   "xapi-idl"
