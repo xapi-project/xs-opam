@@ -1,6 +1,6 @@
 opam-version: "2.0"
 name: "xapi-rrd"
-version: "1.9.1"
+version: "1.9.2"
 synopsis: "RRD library for use with xapi"
 description: """\
 Round-Robin Databases (RRDs) are constant-space datastructures
@@ -13,7 +13,7 @@ tags: "org:xapi-project"
 homepage: "https://github.com/xapi-project/xcp-rrd"
 bug-reports: "https://github.com/xapi-project/xcp-rrd/issues"
 depends: [
-  "ocaml" {>= "4.13"}
+  "ocaml" {>= "4.14"}
   "dune" {>= "2.0.0"}
   "base-bigarray"
   "base-unix"
@@ -27,6 +27,7 @@ depends: [
   "crowbar" {with-test}
   "xapi-stdext-unix" {with-test}
 ]
+available: [arch != "ppc64"]
 build: [
   ["dune" "build" "-p" name "-j" jobs]
   ["dune" "runtest" "-p" name "-j" jobs] {with-test}
@@ -34,10 +35,10 @@ build: [
 dev-repo: "git+https://github.com/xapi-project/xcp-rrd.git"
 url {
   src:
-    "https://github.com/xapi-project/xcp-rrd/releases/download/v1.9.1/xapi-rrd-1.9.1.tbz"
+    "https://github.com/xapi-project/xcp-rrd/releases/download/v1.9.2/xapi-rrd-1.9.2.tbz"
   checksum: [
-    "sha256=1d4288625e3f158dbd3cb853fb00b3fad7776751bd3fe984aa5b1d3f9d04a952"
-    "sha512=d6727675f0904ea48cc4e8bd53e957785e14f87939691061110d27789372089ae98e61865b281731f19dfdc427fefa977a04cdb026a5588fc7fd105ae568c297"
+    "sha256=4303c3b1eae263aef72dd82619c6a48182b8ffd0e414bfbea03dc8e09662ae37"
+    "sha512=463873b7e0886879db04d7ced7954556770b1e2a1bac1e098ea659369d2937f535be544cee2bebce5930188bd35961b21b5bc3ab3bb47d95e5ce50f559fa651e"
   ]
 }
-x-commit-hash: "45a0c4c1898569103fb7a37f8dfbc0b6266209cc"
+x-commit-hash: "9e793925222556f142e4a973c5491570b2f34ee0"
