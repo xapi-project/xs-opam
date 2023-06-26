@@ -29,7 +29,7 @@ build: [
   ["dune" "build" "-p" name "-j" jobs]
   ["dune" "runtest" "-p" name "-j" jobs] {with-test}
 ]
-dev-repo: "git://github.com/mirage/ocaml-rpc"
+dev-repo: "https://github.com/mirage/ocaml-rpc.git"
 url {
   src:
     "https://github.com/mirage/ocaml-rpc/releases/download/9.0.0/rpclib-9.0.0.tbz"
