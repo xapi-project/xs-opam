@@ -3,7 +3,7 @@ maintainer: "rob.hoes@citrix.com"
 authors: "xen-api@lists.xen.org"
 homepage: "https://xapi-project.github.io/"
 bug-reports: "https://github.com/xapi-project/xapi-test-utils/issues"
-dev-repo: "git://github.com/xapi-project/xapi-test-utils.git"
+dev-repo: "https://github.com/xapi-project/xapi-test-utils.git"
 license: "LGPL-2.1-only WITH OCaml-LGPL-linking-exception"
 build: [[ "dune" "build" "-p" name "-j" jobs ]]
 depends: [
