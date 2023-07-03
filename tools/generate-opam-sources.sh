@@ -38,6 +38,7 @@ xapi-cli-protocol         $XAPI/xen-api
 xapi-client               $XAPI/xen-api
 xapi-compression          $XAPI/xen-api
 xapi-consts               $XAPI/xen-api
+xapi-expiry-alerts        $XAPI/xen-api
 xapi-datamodel            $XAPI/xen-api
 xapi-forkexecd            $XAPI/xen-api
 xapi-idl                  $XAPI/xen-api
