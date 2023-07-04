@@ -7,6 +7,7 @@ XAPI="xapi-project"
 XSER="xenserver"
 
 MAP="\
+cohttp-posix              $XAPI/xen-api
 ezxenstore                $XAPI/xen-api
 rrd2csv                   $XAPI/xen-api
 rrddump                   $XAPI/xen-api
@@ -25,6 +26,7 @@ xapi-cli-protocol         $XAPI/xen-api
 xapi-datamodel            $XAPI/xen-api
 xapi-log                  $XAPI/xen-api
 xapi-open-uri             $XAPI/xen-api
+xapi-tracing              $XAPI/xen-api
 xe                        $XAPI/xen-api
 xapi-xenopsd              $XAPI/xen-api
 xapi-xenopsd-cli          $XAPI/xen-api

@@ -34,6 +34,7 @@ depends: [
   "xapi-stdext-date"
   "xapi-stdext-pervasives"
   "xapi-stdext-threads"
+  "xapi-tracing"
   "xapi-inventory"
   "xmlm"
 ]
