@@ -11,7 +11,7 @@ build: [
 depends: [
   "ocaml"
   "dune"
-  "conf-python-2-7"
+  "conf-python-3"
   "ounit" {with-test}
   "alcotest" {with-test}
   "lwt" {with-test}
