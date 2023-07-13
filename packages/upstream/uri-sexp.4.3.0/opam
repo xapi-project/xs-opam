@@ -1,6 +1,6 @@
 opam-version: "2.0"
 name: "uri-sexp"
-version: "4.3.0"
+version: "4.3.0+1"
 synopsis: "An RFC3986 URI/URL parsing library"
 description: "ocaml-uri with sexp support"
 maintainer: "anil@recoil.org"
@@ -21,6 +21,12 @@ build: [
   ["dune" "subst"] {dev}
   ["dune" "build" "-p" name "-j" jobs]
   ["dune" "runtest" "-p" name "-j" jobs] {with-test}
+]
+patches: [
+  "ipv6.patch"
+]
+extra-files: [
+  ["ipv6.patch" "sha256=836364f7a07eeb6e2e7527b371e65ed2450a2f700687d9e29547b2f730375912"]
 ]
 dev-repo: "git+https://github.com/mirage/ocaml-uri.git"
 url {
