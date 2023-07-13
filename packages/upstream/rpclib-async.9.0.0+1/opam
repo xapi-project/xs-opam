@@ -1,7 +1,7 @@
 opam-version: "2.0"
-name: "rpclib"
+name: "rpclib-async"
 version: "9.0.0"
-synopsis: "A library to deal with RPCs in OCaml"
+synopsis: "A library to deal with RPCs in OCaml - Async interface"
 description: """\
 `ocaml-rpc` is a library that provides remote procedure calls (RPC)
 using XML or JSON as transport encodings, and multiple generators
@@ -15,25 +15,27 @@ authors: ["Thomas Gazagnaire" "Jon Ludlam"]
 license: "ISC"
 tags: ["org:mirage" "org:xapi-project"]
 homepage: "https://github.com/mirage/ocaml-rpc"
-doc: "https://mirage.github.io/ocaml-rpc/rpclib"
+doc: "https://mirage.github.io/ocaml-rpc/rpclib-async"
 bug-reports: "https://github.com/mirage/ocaml-rpc/issues"
 depends: [
-  "ocaml" {>= "4.08.0"}
+  "ocaml"
   "alcotest" {with-test}
   "dune" {>= "2.0.0"}
-  "base64" {>= "3.4.0"}
-  "cmdliner" {>= "1.1.0"}
-  "rresult" {>= "0.3.0"}
-  "result" {>= "1.5"}
-  "xmlm"
-  "yojson" {>= "1.7.0"}
-]
-conflicts: [
-  "result" {< "1.5"}
+  "rpclib" {= version}
+  "async" {>= "v0.9.0"}
+  "ppx_deriving_rpc" {with-test & = version}
 ]
 build: [
   ["dune" "build" "-p" name "-j" jobs]
   ["dune" "runtest" "-p" name "-j" jobs] {with-test}
+]
+patches: [
+  "fddc7da9e35527f049a7fbabd072d55e0ace14ea.patch"
+  "e7054a81e126cf69ce5eea26cbd10741ea67fe2d.patch"
+]
+extra-files: [
+  ["fddc7da9e35527f049a7fbabd072d55e0ace14ea.patch" "sha256=40f9c30a32ffd4ba5c442a189ff34b3c7b8b381966d11f9e0d5567cc7883b67a"]
+  ["e7054a81e126cf69ce5eea26cbd10741ea67fe2d.patch" "sha256=710434a738856df4481a79ef1ec6c34a0e6752ffc9b0463f11fd92ecfc75d1eb"]
 ]
 dev-repo: "https://github.com/mirage/ocaml-rpc.git"
 url {
