@@ -1,6 +1,6 @@
 opam-version: "2.0"
 name: "rpclib-async"
-version: "9.0.0"
+version: "9.0.0+1"
 synopsis: "A library to deal with RPCs in OCaml - Async interface"
 description: """\
 `ocaml-rpc` is a library that provides remote procedure calls (RPC)
@@ -37,7 +37,7 @@ extra-files: [
   ["fddc7da9e35527f049a7fbabd072d55e0ace14ea.patch" "sha256=40f9c30a32ffd4ba5c442a189ff34b3c7b8b381966d11f9e0d5567cc7883b67a"]
   ["e7054a81e126cf69ce5eea26cbd10741ea67fe2d.patch" "sha256=710434a738856df4481a79ef1ec6c34a0e6752ffc9b0463f11fd92ecfc75d1eb"]
 ]
-dev-repo: "https://github.com/mirage/ocaml-rpc.git"
+dev-repo: "git+https://github.com/mirage/ocaml-rpc.git"
 url {
   src:
     "https://github.com/mirage/ocaml-rpc/releases/download/9.0.0/rpclib-9.0.0.tbz"
