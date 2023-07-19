@@ -1,7 +1,7 @@
 opam-version: "2.0"
 name: "ctypes-foreign"
 version: "0.18.0"
-synopsis: "Virtual package for enabling the ctypes.foreign subpackage."
+synopsis: "Virtual package for enabling the ctypes.foreign subpackage"
 description: """\
 `ctypes-foreign` is just a virtual OPAM package that determines
 whether the foreign subpackage should built as part of ctypes."""
