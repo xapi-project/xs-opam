@@ -14,48 +14,28 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        ocaml-version: ["4.14.1"]
+        ocaml-compiler: ["4.14.1"]
         experimental: [false]
           # include:
-          # - ocaml-version: "5.2.0"
+          # - ocaml-compiler: "5.2.0"
           #   experimental: true
 
     continue-on-error: ${{ matrix.experimental }}
-    env:
-      OCAML_VERSION: ${{ matrix.ocaml-version }}
-
     steps:
       - name: Update apt cache
         run: sudo apt-get update
-        shell: bash
 
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Retrieve date for cache key
-        id: cache-key
-        run: echo "date=$(/bin/date -u "+%Y%m%d")" >> $GITHUB_OUTPUT
-        shell: bash
-
-      - name: Restore opam cache
-        id: opam-cache
-        uses: actions/cache@v3
-        with:
-          path: "~/.opam"
-          # invalidate cache daily, gets built daily using a scheduled job
-          key: ${{ steps.cache-key.outputs.date }}-${{ matrix.ocaml-version }}
-
       - name: Use ocaml
-        uses: avsm/setup-ocaml@v1
+        uses: ocaml/setup-ocaml@v2
         with:
-          ocaml-version: ${{ matrix.ocaml-version }}
-          opam-repository: "."
-
-      - name: Upgrade existing packages
-        run: |
-          opam update
-          opam depext -vv -y xs-toolstack
-          opam upgrade
+          ocaml-compiler: ${{ matrix.ocaml-compiler }}
+          opam-repositories: |
+            xs-opam: "."
+          opam-pin: false
+          dune-cache: true
 
       - name: Check whether there are packages with more than a version
         run: tools/no-duplicates-check.bash
@@ -67,8 +47,11 @@ jobs:
         run: tools/license-check.sh
 
       - name: Build xs-toolstack, test its dependencies
+        # opam install may ignore installing depexts sometimes
+        # OPAMCOLOR is set to "always" by default and it breaks piping
         run: |
-          OPAMERRLOGLEN=10000 opam list -s --required-by xs-toolstack | xargs opam install -t
+          OPAMERRLOGLEN=10000 OPAMCOLOR=NEVER opam list -s --required-by xs-toolstack | xargs opam depext -tu
+          OPAMERRLOGLEN=10000 OPAMCOLOR=NEVER opam list -s --required-by xs-toolstack | xargs opam install -t
 
       - name: Uninstall unversioned packages
         # This should purge them from the cache, unversioned package have

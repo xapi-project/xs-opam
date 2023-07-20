@@ -2,6 +2,8 @@
 
 set -euo pipefail
 
+export OPAMCOLOR=NEVER
+
 function check_no_duplicates {
   packages="$1"
   allowed_dupes_file="$2"
