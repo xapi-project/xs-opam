@@ -1,6 +1,6 @@
 opam-version: "2.0"
 name: "dune"
-version: "3.7.0"
+version: "3.10.0"
 synopsis: "Fast, portable, and opinionated build system"
 description: """\
 dune is a build system that was designed to simplify the release of
@@ -26,7 +26,8 @@ homepage: "https://github.com/ocaml/dune"
 doc: "https://dune.readthedocs.io/"
 bug-reports: "https://github.com/ocaml/dune/issues"
 depends: [
-  ("ocaml" {>= "4.08"} | ("ocaml" {< "4.08~~"} & "ocamlfind-secondary"))
+  ("ocaml" {>= "4.08"} |
+   ("ocaml" {>= "4.02" & < "4.08~~"} & "ocamlfind-secondary"))
   "base-unix"
   "base-threads"
 ]
@@ -54,10 +55,11 @@ build: [
 ]
 dev-repo: "git+https://github.com/ocaml/dune.git"
 url {
-  src: "https://github.com/ocaml/dune/releases/download/3.7.0/dune-3.7.0.tbz"
+  src:
+    "https://github.com/ocaml/dune/releases/download/3.10.0/dune-3.10.0.tbz"
   checksum: [
-    "sha256=e2d637c9d080318fedf5e71d2a29fb367624f82ac4a26e83df2b3a03550528b8"
-    "sha512=586e47ee45cd53a8c13095bde0b47de99aad9462d0a52199362140b5b654ca862597fa9f27f729a8cc594684ac46858848f9fa76f8f06dc8dc8ab8b1186a3295"
+    "sha256=9ff03384a98a8df79852cc674f0b4738ba8aec17029b6e2eeb514f895e710355"
+    "sha512=8133cdcc5499a6bf21cd65b4fc8b12445ae39366731006773fcd3b348c553a8d89d004db161c655aa167a2a3653b7919d32b27f29217106ef762bd01b43afc76"
   ]
 }
-x-commit-hash: "d3d628f2eda2278bd2df6e37452d8693f367fcfd"
+x-commit-hash: "fc382520272012638088848d7f3dd1ef6687a284"
