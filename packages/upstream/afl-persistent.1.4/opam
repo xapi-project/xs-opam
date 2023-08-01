@@ -1,6 +1,6 @@
 opam-version: "2.0"
 name: "afl-persistent"
-version: "1.3"
+version: "1.4"
 synopsis: "Use afl-fuzz in persistent mode"
 description: """\
 afl-fuzz normally works by repeatedly fork()ing the program being
@@ -12,29 +12,30 @@ license: "MIT"
 homepage: "https://github.com/stedolan/ocaml-afl-persistent"
 bug-reports: "https://github.com/stedolan/ocaml-afl-persistent/issues"
 depends: [
-  "ocaml" {>= "4.00"}
+  "ocaml" {>= "4.05"}
+  "dune" {>= "2.9"}
   "base-unix"
 ]
-build: "./build.sh"
-post-messages: [
-  """\
-afl-persistent is installed, but since AFL instrumentation is not available
-with this OCaml compiler, instrumented fuzzing with afl-fuzz won't work.
-
-To use instrumented fuzzing, switch to an OCaml version supporting AFL, such
-as 4.07.1+afl."""
-    {success & !afl-available}
+build: [
+  ["dune" "build" "-p" name "-j" jobs]
+  ["./config.sh"]
+]
+post-messages:
   """\
 afl-persistent is installed, but since the current OCaml compiler does
 not enable AFL instrumentation by default, most packages will not be
 instrumented and fuzzing with afl-fuzz may not be effective.
 
-To globally enable AFL instrumentation, use an OCaml switch such as
-4.07.1+afl."""
+To globally enable AFL instrumentation, create an OCaml switch like:
+
+  opam switch create %{ocaml:version}%+afl ocaml-variants.%{ocaml:version}%+options ocaml-option-afl"""
     {success & afl-available & !afl-always}
-]
 dev-repo: "git+https://github.com/stedolan/ocaml-afl-persistent.git"
 url {
-  src: "https://github.com/stedolan/ocaml-afl-persistent/archive/v1.3.tar.gz"
-  checksum: "md5=613ae369149ae8e2942e3c8bddd6798b"
+  src:
+    "https://github.com/stedolan/ocaml-afl-persistent/archive/refs/tags/v1.4.tar.gz"
+  checksum: [
+    "md5=4791d637ade0269ddb348d231e643bb0"
+    "sha512=68b779f67d3e4e25f64b4cfe902a183b977158e476abd9691e65a65b0220595de802a7fdb3ac473c5379e12e2e1a4cd96cc5f51e407c72f892bdb87db364dd2c"
+  ]
 }
