@@ -1,7 +1,9 @@
 opam-version: "2.0"
+name: "catapult"
+version: "0.2"
 synopsis: "Tracing system based on the Catapult/TEF format"
-maintainer: ["simon@imandra.ai"]
-authors: ["simon@imandra.ai"]
+maintainer: "simon@imandra.ai"
+authors: "simon@imandra.ai"
 license: "MIT"
 homepage: "https://github.com/AestheticIntegration/catapult"
 bug-reports: "https://github.com/AestheticIntegration/catapult/issues"
@@ -29,12 +31,9 @@ build: [
 ]
 dev-repo: "git+https://github.com/AestheticIntegration/catapult.git"
 url {
-  src: "https://github.com/AestheticIntegration/catapult/archive/v0.1.tar.gz"
+  src: "https://github.com/AestheticIntegration/catapult/archive/v0.2.tar.gz"
   checksum: [
-    "md5=a7bfa27c3ddd2d29c27173de09293149"
-    "sha512=49766ea38c57734918debd6218d95c62f11eb12a6fd3ef5f6a2c60344cea7c274436a46fab1e48abbe0d3f125f31705d2005ab7cae9e56d5f41778c1d2943d65"
+    "md5=c732cce9430be74e8136cf87d6d8f9e5"
+    "sha512=2c221b86950a5ef81a41358b929633acc9d2b600aef8192a2b978b3b16dfc6237c79457db39f3beb95750d732674c977bc0547dde75bdfdf2fb378d192d37c48"
   ]
 }
-conflicts: [
-  "mtime" {>= "2.0.0"}
-]
