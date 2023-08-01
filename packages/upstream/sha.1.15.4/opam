@@ -1,6 +1,6 @@
 opam-version: "2.0"
 name: "sha"
-version: "1.15.2"
+version: "1.15.4"
 synopsis: "Binding to the SHA cryptographic functions"
 description: """\
 This is the binding for SHA interface code in OCaml. Offering the same
@@ -52,10 +52,10 @@ build: [
 dev-repo: "git+https://github.com/djs55/ocaml-sha.git"
 url {
   src:
-    "https://github.com/djs55/ocaml-sha/releases/download/1.15.2/sha-1.15.2.tbz"
+    "https://github.com/djs55/ocaml-sha/releases/download/v1.15.4/sha-1.15.4.tbz"
   checksum: [
-    "sha256=3fbd57b39a7c40068eb41ae1eccba140938beb5e3806a4cbbd79593b2183ffb7"
-    "sha512=25b01596c49427af484ae903508359261bd2cef355d43b5f29a2a87fb45b2a8a3e913e1324592c3efa02b5fef75b1aea76989d96268356d7a946b6d42c3be1ad"
+    "sha256=6de5b12139b1999ce9df4cc78a5a31886c2a547c9d448bf2853f8b53bcf1f1b1"
+    "sha512=dbb31b523ba0bace023bc1b0558a8f572a0ec20fb3f19f783935be755cd161e09aba352eda2bcf7c4e5ab838c7f874cfbfaed9debf0813df25d9dbe7b9314fdf"
   ]
 }
-x-commit-hash: "a3e1e7e2f661e2f33c04c630623a73a94bb0679b"
+x-commit-hash: "c743398abee8f822fc0d12f229121e431d60dd5d"
