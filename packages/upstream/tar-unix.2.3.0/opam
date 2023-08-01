@@ -1,6 +1,6 @@
 opam-version: "2.0"
 name: "tar-unix"
-version: "2.0.1"
+version: "2.3.0"
 synopsis: "Decode and encode tar format files from Unix"
 description: """\
 tar is a simple library to read and write tar files with an emphasis on
@@ -18,7 +18,6 @@ depends: [
   "cstruct" {>= "6.0.0"}
   "cstruct-lwt"
   "lwt"
-  "re" {>= "1.7.2"}
   "tar" {= version}
   "odoc" {with-doc}
 ]
@@ -41,10 +40,10 @@ build: [
 dev-repo: "git+https://github.com/mirage/ocaml-tar.git"
 url {
   src:
-    "https://github.com/mirage/ocaml-tar/releases/download/v2.0.1/tar-mirage-2.0.1.tbz"
+    "https://github.com/mirage/ocaml-tar/releases/download/v2.3.0/tar-2.3.0.tbz"
   checksum: [
-    "sha256=e9565fb43dab9e944d1860f9a3b5c681df72211b859c66ee1d7085cafc13ee9b"
-    "sha512=e4486274b44e6b34540afc9893bc0f2b604ba01c576b01aeb0b494f30791a0c353d1809de62e2f0ae04de771a2391affb17b98b1fc6c0d2fc2e963741bc65a55"
+    "sha256=09cee3e0a9d3c4f58f8f9a442f2e40323e60532fd50ae661bf335f430c1d79d7"
+    "sha512=924ed87b195a30a88cef2f0323d0363f350d9ca319d79727e3d6c91ee9ce00d4034f65f1d0cbc1f9a781a5d30045df78433bd8f7d6b7e20730c96039b6d77332"
   ]
 }
-x-commit-hash: "a6552cb5e82d3100de3a8d93d803ca1677b34207"
+x-commit-hash: "7b49f6640a876cde2a2a9a2d21aae2751c2df13e"
