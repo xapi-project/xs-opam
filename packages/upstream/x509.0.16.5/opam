@@ -1,6 +1,6 @@
 opam-version: "2.0"
 name: "x509"
-version: "0.16.0"
+version: "0.16.5"
 synopsis: "Public Key Infrastructure (RFC 5280, PKCS) purely in OCaml"
 description: """\
 X.509 is a public key infrastructure used mostly on the Internet.  It consists
@@ -28,8 +28,9 @@ depends: [
   "base64" {>= "3.3.0"}
   "mirage-crypto"
   "mirage-crypto-pk"
-  "mirage-crypto-ec" {>= "0.10.0"}
+  "mirage-crypto-ec" {>= "0.10.7"}
   "mirage-crypto-rng"
+  "mirage-crypto-rng" {with-test & >= "0.11.0"}
   "fmt" {>= "0.8.7"}
   "alcotest" {with-test}
   "cstruct-unix" {with-test & >= "3.0.0"}
@@ -50,10 +51,10 @@ build: [
 dev-repo: "git+https://github.com/mirleft/ocaml-x509.git"
 url {
   src:
-    "https://github.com/mirleft/ocaml-x509/releases/download/v0.16.0/x509-0.16.0.tbz"
+    "https://github.com/mirleft/ocaml-x509/releases/download/v0.16.5/x509-0.16.5.tbz"
   checksum: [
-    "sha256=67a6727fb4c38b919334eef2f8ef4eac0237029a439ff981d408eca8b9833595"
-    "sha512=c9b4cf55d16d8b1e6b6faa18fc9ac08065fa09937f07a3447d4b637539b37bea6374c98d184eba159a8ba8eba860303a78563097e47ef30529fedaaf722115c6"
+    "sha256=149e25a5fea37f619fb2690bee5c00f01c9dcf31d335f8ffcaab39a7538ccd99"
+    "sha512=6dd494dba799eab7edde2af1b63bac6035bf4ae06f3a36dd4fa9abcd13d0c3fe3e93dc5848b65405dc5401b1755fd30c71482cb91f7495bc9cfb7c5bf15ef6d7"
   ]
 }
-x-commit-hash: "e87d4baef3faedc05e1e4f2e36e16a4def5894ff"
+x-commit-hash: "b00656d2952282323604765d504dfea067b17879"
