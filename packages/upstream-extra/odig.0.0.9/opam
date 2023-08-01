@@ -1,6 +1,6 @@
 opam-version: "2.0"
 name: "odig"
-version: "0.0.8"
+version: "0.0.9"
 synopsis: "Lookup documentation of installed OCaml packages"
 description: """\
 odig is a command line tool to lookup documentation of installed OCaml
@@ -29,12 +29,12 @@ depends: [
   "topkg" {build & >= "1.0.3"}
   "cmdliner" {>= "1.1.0"}
   "odoc" {>= "2.0.0"}
-  "b0" {= "0.0.4"}
+  "b0" {= "0.0.5"}
 ]
 build: ["ocaml" "pkg/pkg.ml" "build" "--dev-pkg" "%{dev}%"]
 dev-repo: "git+https://erratique.ch/repos/odig.git"
 url {
-  src: "https://erratique.ch/software/odig/releases/odig-0.0.8.tbz"
+  src: "https://erratique.ch/software/odig/releases/odig-0.0.9.tbz"
   checksum:
-    "sha512=e8d8e902043e92d8a5fc5ef8b267dbd378fc491025a9e65756d31fa01589a7c8b4e8a8b6a63d51caeb27f4ab86df4759259be81e83e0386977d83ac190e9370b"
+    "sha512=1658390e48b7698522bf539ee038476968c27b75cd90277dfeffb21258940fc2a1e24a12403aba24f7ad2ce33dc920d3149c7d3cfb74c5c3e961b1e96639e9de"
 }

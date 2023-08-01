@@ -1,6 +1,6 @@
 opam-version: "2.0"
 name: "b0"
-version: "0.0.4"
+version: "0.0.5"
 synopsis: "Software construction and deployment kit"
 description: """\
 WARNING this package is unstable and work in progress, do not depend on it. 
@@ -40,7 +40,7 @@ depends: [
 build: ["ocaml" "pkg/pkg.ml" "build" "--dev-pkg" "%{dev}%"]
 dev-repo: "git+https://erratique.ch/repos/b0.git"
 url {
-  src: "https://erratique.ch/software/b0/releases/b0-0.0.4.tbz"
+  src: "https://erratique.ch/software/b0/releases/b0-0.0.5.tbz"
   checksum:
-    "sha512=665735c8b7a8674201be765bdd676a18d1e38eff35de9d44c3dc15e2bfed2247e8963c9a32ae62d9ca2d6cd1edebd849aac29fdd5a846c14a30feea3edfc0601"
+    "sha512=00a6868b4dfa34565d0141b335622a81a0e8d5b9e3c6dfad025dabfa3df2db2a1302b492953bbbce30c3a4406c324fcec25250a00b38f6d18a69e15605e3b07e"
 }
