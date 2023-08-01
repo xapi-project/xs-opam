@@ -1,7 +1,9 @@
 opam-version: "2.0"
+name: "jsonrpc"
+version: "1.16.2"
 synopsis: "Jsonrpc protocol implemenation"
 description: "See https://www.jsonrpc.org/specification"
-maintainer: ["Rudi Grinberg <me@rgrinberg.com>"]
+maintainer: "Rudi Grinberg <me@rgrinberg.com>"
 authors: [
   "Andrey Popp <8mayday@gmail.com>"
   "Rusty Key <iam@stfoo.ru>"
@@ -22,27 +24,17 @@ depends: [
   "ocaml" {>= "4.08"}
   "odoc" {with-doc}
 ]
-dev-repo: "git+https://github.com/ocaml/ocaml-lsp.git"
 build: [
   ["dune" "subst"] {dev}
-  ["ocaml" "unix.cma" "unvendor.ml"]
-  [
-    "dune"
-    "build"
-    "-p"
-    name
-    "-j"
-    jobs
-    "@install"
-    "@doc" {with-doc}
-  ]
+  ["dune" "build" "-p" name "-j" jobs "@install" "@doc" {with-doc}]
 ]
+dev-repo: "git+https://github.com/ocaml/ocaml-lsp.git"
 url {
   src:
-    "https://github.com/ocaml/ocaml-lsp/releases/download/1.15.0-4.14/lsp-1.15.0-4.14.tbz"
+    "https://github.com/ocaml/ocaml-lsp/releases/download/1.16.2/lsp-1.16.2.tbz"
   checksum: [
-    "sha256=b778672c85a4a69451de31d5aef370f80851179c56b80688fd6f588923cd5b63"
-    "sha512=e8b80715d333bdd664f02bfbb13998d36a98d389db979db4ad5005bbb388e8b69b6b2e49f4f33934d82648bd275ff3b868f7651612a2c58b9c4e3e690d318711"
+    "sha256=1487d5a4e2f2d4f023341058551bdb8ba86c23367b7c5b4fdda3aa7dc02aaec4"
+    "sha512=4a392f6d3deafc6dd37f9603250e736c8d8195ea42c782252386616e8c1562d744e02beee54ec45254cba23efd343ebb33789babb093b0e70122ba86d7e67717"
   ]
 }
-x-commit-hash: "2d216d5e3344d71cafc51a5b2291d750844343be"
+x-commit-hash: "22cefd841bb0b6b9a6fd4fe5befe5eb68d213ce3"
