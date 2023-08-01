@@ -1,6 +1,6 @@
 opam-version: "2.0"
 name: "duration"
-version: "0.2.0"
+version: "0.2.1"
 synopsis: "Conversions to various time units"
 description: """\
 A duration is represented in nanoseconds as an unsigned 64 bit integer.  This
@@ -25,10 +25,10 @@ build: [
 dev-repo: "git+https://github.com/hannesm/duration.git"
 url {
   src:
-    "https://github.com/hannesm/duration/releases/download/0.2.0/duration-0.2.0.tbz"
+    "https://github.com/hannesm/duration/releases/download/v0.2.1/duration-0.2.1.tbz"
   checksum: [
-    "sha256=ad14fb75a5a6f73fff7ef1721178925ee555cf0f23b23e3ab329184bc0c1ce69"
-    "sha512=6a259ca406739bfc6020c7de767e39c2a7ee06169aa1966d43d426b2a54fc69b81be6465d04b9bd8fbbbbfd9ebe1c82a1cbfbf62100a37eb0f7403f6cf53e3b8"
+    "sha256=c738c1f38cfb99820c121cd3ddf819de4b2228f0d50eacbd1cc3ce99e7c71e2b"
+    "sha512=0de9e15c7d6188872ddd9994f08616c4a1822e4ac92724efa2c312fbb2fc44cd7cbe4b36bcf66a8451d510c1fc95de481760afbcacb8f83e183262595dcf5f0c"
   ]
 }
-x-commit-hash: "ec2b9a36901d1902cc90d202a8987d7e3b3e63df"
+x-commit-hash: "6abe42ebe585a96f79eb91045911b9a73c1db19e"
