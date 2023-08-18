@@ -1,6 +1,6 @@
 opam-version: "2.0"
 name: "qmp"
-version: "0.19.0"
+version: "0.20.0"
 synopsis: "OCaml implementation of a Qemu Message Protocol (QMP) client"
 maintainer: "xen-api@lists.xen.org"
 authors: "Dave Scott"
@@ -11,23 +11,23 @@ bug-reports: "https://github.com/xapi-project/ocaml-qmp/issues"
 depends: [
   "ocaml"
   "base-unix"
-  "dune" {>= "1.4"}
+  "dune" {>= "1.4.0"}
   "yojson" {>= "1.6.0"}
-  "cmdliner"
+  "cmdliner" {>= "1.1.0"}
   "ounit2" {with-test}
 ]
+available: arch != "arm32" & arch != "ppc32" & arch != "x86_32"
 build: [
   ["dune" "build" "-p" name "-j" jobs]
-  ["dune" "runtest" "-p" name "-j" jobs]
-    {with-test & arch != "arm32" & arch != "x86_32"}
+  ["dune" "runtest" "-p" name "-j" jobs] {with-test}
 ]
 dev-repo: "git+https://github.com/xapi-project/ocaml-qmp"
 url {
   src:
-    "https://github.com/xapi-project/ocaml-qmp/releases/download/v0.19.0/qmp-0.19.0.tbz"
+    "https://github.com/xapi-project/ocaml-qmp/releases/download/v0.20.0/qmp-0.20.0.tbz"
   checksum: [
-    "sha256=5456d4ada457eb88155d16aa44cb9158c31fbd7e7ee7bc7fe251fbd973f1453a"
-    "sha512=9f65b45b863fbe2e73b7240f3526b3ec4398cd69eacc7de4f6b5c7b022dfc4e2c4db674d5e663b7138d512928129fbd150feb7ed50869b52bf0ac7d5689305c6"
+    "sha256=5672d9433728adec8151990779a2e8662372455369302bc104b9b1c0b853cfb6"
+    "sha512=504a5eba180c862132de4d85974162ed8eb95ab9e16c8d00bd7f891141766418a354aba004fd49967ac9b7d213c2d910ef1f36cfb8cf409aa7444acac09a7039"
   ]
 }
-x-commit-hash: "adaa2e9d566593c3faeb776bf18b7c4578199210"
+x-commit-hash: "051df743d20d598a10e6b3f2004eb0ee09179515"
