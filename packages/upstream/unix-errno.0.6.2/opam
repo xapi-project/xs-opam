@@ -1,6 +1,6 @@
 opam-version: "2.0"
 name: "unix-errno"
-version: "0.6.1"
+version: "0.6.2"
 synopsis: "Unix errno types, maps, and support"
 description: """\
 unix-errno can be used with or without ctypes and OCaml's Unix
@@ -21,13 +21,10 @@ depends: [
   "ocaml" {>= "4.03.0"}
   "dune" {>= "2.8"}
   "alcotest" {with-test}
-  "base-bytes"
   "result"
   "ctypes" {>= "0.12.0"}
   "integers"
 ]
-depopts: ["base-unix"]
-available: arch != "arm32"
 build: [
   ["dune" "subst"] {dev}
   ["dune" "build" "-p" name "-j" jobs]
@@ -36,10 +33,10 @@ build: [
 dev-repo: "git+https://github.com/xapi-project/ocaml-unix-errno.git"
 url {
   src:
-    "https://github.com/xapi-project/ocaml-unix-errno/releases/download/0.6.1/unix-errno-0.6.1.tbz"
+    "https://github.com/xapi-project/ocaml-unix-errno/releases/download/0.6.2/unix-errno-0.6.2.tbz"
   checksum: [
-    "sha256=8d9aad1f050a4df7e3b8e3f68dd28a411b443812b272585f7a23cef7a8448f87"
-    "sha512=16703e08e8be7e62eb897cbdb62e35c8df0397371dfba12ab87cf211a2925ecdb36f81bb43de77956b09d845cfd00c37043161472ed6a36f1eb77b21259d2083"
+    "sha256=2d6a9bc86731b3a7ff15c38fa3725847753e00bd091de5828868ee621c71ad65"
+    "sha512=3f820834fe4dcc246e777a3e4b9d19c85dcccf87aa77b7b9e3a59e5080f6094dc059d5d035831e82cc3efc4c20065422e3299cb44ff49674b7b0a3139fd15ba7"
   ]
 }
-x-commit-hash: "08ed3586bc6b1810fc27f50b8a5f962909ecdad2"
+x-commit-hash: "c91d9ac97e33f7df0d63f95110130130d040c6ce"
