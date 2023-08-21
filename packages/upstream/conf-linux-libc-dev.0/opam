@@ -19,7 +19,7 @@ build: [
 depexts: [
   ["linux-libc-dev"] {os-family = "debian"}
   ["linux-libc-dev"] {os-family = "ubuntu"}
-  ["linux-glibc-devel"] {os-family = "suse"}
+  ["linux-glibc-devel"] {os-family = "suse" | os-family = "opensuse"}
   ["kernel-headers"]
     {os-distribution = "fedora" | os-distribution = "rhel" |
      os-distribution = "centos" |

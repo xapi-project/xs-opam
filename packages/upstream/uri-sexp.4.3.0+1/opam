@@ -22,13 +22,12 @@ build: [
   ["dune" "build" "-p" name "-j" jobs]
   ["dune" "runtest" "-p" name "-j" jobs] {with-test}
 ]
-patches: [
-  "ipv6.patch"
-]
-extra-files: [
-  ["ipv6.patch" "sha256=836364f7a07eeb6e2e7527b371e65ed2450a2f700687d9e29547b2f730375912"]
-]
+patches: "ipv6.patch"
 dev-repo: "git+https://github.com/mirage/ocaml-uri.git"
+extra-files: [
+  "ipv6.patch"
+  "sha256=836364f7a07eeb6e2e7527b371e65ed2450a2f700687d9e29547b2f730375912"
+]
 url {
   src:
     "https://github.com/mirage/ocaml-uri/releases/download/v4.3.0/uri-4.3.0.tbz"

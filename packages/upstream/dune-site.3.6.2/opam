@@ -1,7 +1,9 @@
 opam-version: "2.0"
+name: "dune-site"
+version: "3.6.2"
 synopsis: "Embed locations information inside executable and libraries"
-maintainer: ["Jane Street Group, LLC <opensource@janestreet.com>"]
-authors: ["Jane Street Group, LLC <opensource@janestreet.com>"]
+maintainer: "Jane Street Group, LLC <opensource@janestreet.com>"
+authors: "Jane Street Group, LLC <opensource@janestreet.com>"
 license: "MIT"
 homepage: "https://github.com/ocaml/dune"
 doc: "https://dune.readthedocs.io/"
@@ -11,22 +13,13 @@ depends: [
   "dune-private-libs" {= version}
   "odoc" {with-doc}
 ]
-dev-repo: "git+https://github.com/ocaml/dune.git"
 build: [
   ["dune" "subst"] {dev}
   ["rm" "-rf" "vendor/csexp"]
   ["rm" "-rf" "vendor/pp"]
-  [
-    "dune"
-    "build"
-    "-p"
-    name
-    "-j"
-    jobs
-    "@install"
-    "@doc" {with-doc}
-  ]
+  ["dune" "build" "-p" name "-j" jobs "@install" "@doc" {with-doc}]
 ]
+dev-repo: "git+https://github.com/ocaml/dune.git"
 url {
   src: "https://github.com/ocaml/dune/releases/download/3.6.2/dune-3.6.2.tbz"
   checksum: [

@@ -1,29 +1,30 @@
 opam-version: "2.0"
-authors: "Roberto Di Cosmo <roberto@dicosmo.org>"
+name: "cpu"
+version: "2.0.0"
+synopsis: "Pin current process to given core number"
+description: """\
+The module installed is called Cpu; in order to not conflic
+with the Setcore module that is installed by parmap.
+
+This library can also get the number of CPU cores online."""
 maintainer: "unixjunkie@sdf.org"
 license: "LGPL-2.0-or-later WITH OCaml-LGPL-linking-exception"
+authors: "Roberto Di Cosmo <roberto@dicosmo.org>"
 homepage: "https://github.com/UnixJunkie/cpu"
-dev-repo: "git+https://github.com/UnixJunkie/cpu.git"
 bug-reports: "https://github.com/UnixJunkie/cpu/issues"
+depends: [
+  "conf-autoconf" {build}
+  "ocaml"
+  "dune" {>= "1.11.0"}
+]
 build: [
   ["autoconf"]
   ["autoheader"]
   ["./configure"]
   ["dune" "build" "-p" name "-j" jobs]
 ]
-depends: [
-  "conf-autoconf" {build}
-  "ocaml"
-  "dune" {>= "1.11.0"}
-]
-synopsis: "Pin current process to given core number"
-description: "
-The module installed is called Cpu; in order to not conflic
-with the Setcore module that is installed by parmap.
-
-This library can also get the number of CPU cores online.
-"
+dev-repo: "git+https://github.com/UnixJunkie/cpu.git"
 url {
- src: "https://github.com/UnixJunkie/cpu/archive/v2.0.0.tar.gz"
- checksum: "md5=644ca40ddbe7c34f8431ec3868958aec"
+  src: "https://github.com/UnixJunkie/cpu/archive/v2.0.0.tar.gz"
+  checksum: "md5=644ca40ddbe7c34f8431ec3868958aec"
 }

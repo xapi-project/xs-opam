@@ -21,13 +21,14 @@ build: [
 ]
 install:
   ["sh" "-ex" "./homebrew.sh" "install" lib] {os-distribution = "homebrew"}
+build-env: HOMEBREW_NO_AUTO_UPDATE = "1"
 depexts: [
   ["libssl-dev"] {os-family = "debian"}
   ["libssl-dev"] {os-family = "ubuntu"}
   ["openssl-devel"] {os-distribution = "centos"}
   ["openssl-devel"] {os-distribution = "ol"}
   ["openssl-devel"] {os-distribution = "fedora"}
-  ["libopenssl-devel"] {os-family = "suse"}
+  ["libopenssl-devel"] {os-family = "suse" | os-family = "opensuse"}
   ["openssl-dev"] {os-family = "alpine"}
   ["openssl"] {os-family = "arch"}
   ["openssl"] {os-distribution = "homebrew"}

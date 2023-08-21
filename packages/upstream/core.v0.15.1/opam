@@ -15,7 +15,7 @@ homepage: "https://github.com/janestreet/core"
 doc: "https://ocaml.janestreet.com/ocaml-core/latest/doc/core/index.html"
 bug-reports: "https://github.com/janestreet/core/issues"
 depends: [
-  "ocaml" {>= "4.11.0"}
+  "ocaml" {>= "4.11.0" & < "5.1~"}
   "base" {>= "v0.15.1" & < "v0.16"}
   "base_bigstring" {>= "v0.15" & < "v0.16"}
   "base_quickcheck" {>= "v0.15" & < "v0.16"}

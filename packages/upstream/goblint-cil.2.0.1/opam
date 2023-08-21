@@ -1,7 +1,9 @@
 opam-version: "2.0"
+name: "goblint-cil"
+version: "2.0.1"
 synopsis:
   "A front-end for the C programming language that facilitates program analysis and transformation"
-description: """
+description: """\
 This is a fork of the 'cil' package used for 'goblint'. Major changes include:
 * Support for C99 and C11.
 * Compatibility with modern OCaml versions.
@@ -42,6 +44,7 @@ depends: [
   "conf-gcc"
 ]
 conflicts: ["cil"]
+available: arch = "x86_64"
 build: [
   ["dune" "subst"] {dev}
   [
@@ -56,13 +59,14 @@ build: [
     "@doc" {with-doc}
   ]
 ]
-dev-repo: "git+https://github.com/goblint/cil.git"
 depexts: [
-  ["perl-ExtUtils-MakeMaker"] {os-distribution = "centos" | os-distribution = "fedora" | os-distribution = "ol"}
+  ["perl-ExtUtils-MakeMaker"]
+    {os-distribution = "centos" | os-distribution = "fedora" |
+     os-distribution = "ol"}
   ["perl-FindBin"] {os-distribution = "fedora"}
   ["build-base"] {os-distribution = "alpine"}
 ]
-available: arch = "x86_64"
+dev-repo: "git+https://github.com/goblint/cil.git"
 url {
   src:
     "https://github.com/goblint/cil/releases/download/2.0.1/goblint-cil-2.0.1.tbz"
