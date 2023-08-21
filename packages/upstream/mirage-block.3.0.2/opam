@@ -1,6 +1,6 @@
 opam-version: "2.0"
 name: "mirage-block"
-version: "3.0.0"
+version: "3.0.2"
 synopsis: "Block signatures and implementations for MirageOS"
 description:
   "This repo contains generic operations over Mirage `BLOCK` devices."
@@ -25,10 +25,10 @@ build: [
 dev-repo: "git+https://github.com/mirage/mirage-block.git"
 url {
   src:
-    "https://github.com/mirage/mirage-block/releases/download/v3.0.0/mirage-block-v3.0.0.tbz"
+    "https://github.com/mirage/mirage-block/releases/download/v3.0.2/mirage-block-3.0.2.tbz"
   checksum: [
-    "sha256=341e67269a6932d762d070e329c080a918cee2f21b00c7e73fddf83fe4a7ce65"
-    "sha512=57826493d421926aa54001c309cea8ef33bbd4ea7c05b35c23ee4483c9ea5ed6baf9ef078a9fbdf298c390b5976025e8875b2ed3ac078a4dee5667af39427291"
+    "sha256=5002d47de2f41b599f4ac2e001bfc7a50e8e575d98b58f8650e606eb2854c002"
+    "sha512=5b36b4b8a886f62f87950cae355d14c0ecc8f70f1be1287d5da0b413f7a78020b11e9771cb16ffbbbb5654f6f902c91436cfbbd4a3cc2d9ba9883c0c579d156f"
   ]
 }
-x-commit-hash: "f6c65a9520f7b4cb352ae179f189f78acdde82ae"
+x-commit-hash: "20e3794e5452b8d37b951cf60ec907e8d96507c7"
