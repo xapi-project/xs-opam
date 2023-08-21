@@ -1,6 +1,6 @@
 opam-version: "2.0"
 name: "conf-perl"
-version: "1"
+version: "2"
 synopsis: "Virtual package relying on perl"
 description:
   "This package can only install if the perl program is installed on the system."
@@ -18,4 +18,5 @@ depexts: [
   ["perl"] {os-distribution = "arch"}
   ["perl-Pod-Html"] {os-distribution = "fedora"}
   ["perl-Pod-Html"] {os-distribution = "centos" & os-version >= "8"}
+  ["perl5"] {os-distribution = "macports" & os = "macos"}
 ]
