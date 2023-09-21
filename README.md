@@ -1,4 +1,4 @@
-# Opam Repository for the XenServer Hypervisor
+# Opam Repository for the xapi components of xenserver
 
 [![Build Status](https://github.com/xapi-project/xs-opam/actions/workflows/main.yml/badge.svg)](https://github.com/xapi-project/xs-opam/actions/workflows/main.yml)
 [![LCM Build Status](https://github.com/xapi-project/xs-opam/actions/workflows/lcm.yml/badge.svg)](https://github.com/xapi-project/xs-opam/actions/workflows/lcm.yml)
