@@ -13,7 +13,7 @@ code, compile, and install packages.
 ## Using this OPAM Repository for Dev Work
 
 You can add this Git repository as a remote [Opam] repository to your
-local [Opam] setup in order to install XenServer Hypervisor packages. See
+local [Opam] setup in order to install XenServer packages. See
 below for an alternative using Docker when you don't want to use [Opam]
 natively. Please be aware that this is not giving you a working XenServer
 Hypervisor installation because this depends on other components. It is
