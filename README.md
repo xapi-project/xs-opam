@@ -1,24 +1,24 @@
-# Opam Repository for Citrix Hypervisor
+# Opam Repository for the XenServer Hypervisor
 
 [![Build Status](https://github.com/xapi-project/xs-opam/actions/workflows/main.yml/badge.svg)](https://github.com/xapi-project/xs-opam/actions/workflows/main.yml)
 [![LCM Build Status](https://github.com/xapi-project/xs-opam/actions/workflows/lcm.yml/badge.svg)](https://github.com/xapi-project/xs-opam/actions/workflows/lcm.yml)
 [![LCM Scheduled Build Status](https://github.com/xapi-project/xs-opam/actions/workflows/yangtze-lcm.yml/badge.svg)](https://github.com/xapi-project/xs-opam/actions/workflows/yangtze-lcm.yml)
 [![Old LCM Scheduled Build Status](https://github.com/xapi-project/xs-opam/actions/workflows/stockholm-lcm.yml/badge.svg)](https://github.com/xapi-project/xs-opam/actions/workflows/stockholm-lcm.yml)
 
-This [Opam] repository contains the [OCaml] components of the Citrix
-Hypervisor toolstack and their upstream dependencies. This is just
-package metadata (not the actual source code) that tells [Opam] how to
-download source code, compile, and install packages.
+This [Opam] repository contains the [OCaml] components of the XenServer
+toolstack and their upstream dependencies. This is just package metadata
+(not the actual source code) that tells [Opam] how to download source
+code, compile, and install packages.
 
 ## Using this OPAM Repository for Dev Work
 
 You can add this Git repository as a remote [Opam] repository to your
-local [Opam] setup in order to install Citrix Hypervisor packages. See
+local [Opam] setup in order to install XenServer Hypervisor packages. See
 below for an alternative using Docker when you don't want to use [Opam]
-natively. Please be aware that this is not giving you a working Citrix
+natively. Please be aware that this is not giving you a working XenServer
 Hypervisor installation because this depends on other components. It is
 most useful for development outside a build system for the complete
-Citrix Hypervisor distribution.
+XenServer Hypervisor distribution.
 
 ```bash
 opam repo add xs-opam https://github.com/xapi-project/xs-opam.git
