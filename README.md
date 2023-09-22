@@ -16,9 +16,9 @@ You can add this Git repository as a remote [Opam] repository to your
 local [Opam] setup in order to install XenServer packages. See
 below for an alternative using Docker when you don't want to use [Opam]
 natively. Please be aware that this is not giving you a working XenServer
-Hypervisor installation because this depends on other components. It is
+installation because this depends on other components. It is
 most useful for development outside a build system for the complete
-XenServer Hypervisor distribution.
+XenServer distribution.
 
 ```bash
 opam repo add xs-opam https://github.com/xapi-project/xs-opam.git
