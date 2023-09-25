@@ -1,29 +1,32 @@
 opam-version: "2.0"
-homepage:     "https://github.com/pqwy/notty"
-dev-repo:     "git+https://github.com/pqwy/notty.git"
-bug-reports:  "https://github.com/pqwy/notty/issues"
-doc:          "https://pqwy.github.io/notty/doc"
-maintainer:   "David Kaloper <dk505@cam.ac.uk>"
-license:      "ISC"
-synopsis:     "Declaring terminals"
-description:
-  "Notty is a declarative terminal library for OCaml structured around a notion
+name: "notty"
+version: "0.2.3"
+synopsis: "Declaring terminals"
+description: """\
+Notty is a declarative terminal library for OCaml structured around a notion
   of composable images. It tries to abstract away the basic terminal programming
-  model, providing something simpler and more expressive."
-
-build: [ [ "dune" "subst" ] {dev}
-         [ "dune" "build" "-p" name "-j" jobs ] ]
+  model, providing something simpler and more expressive."""
+maintainer: "David Kaloper <dk505@cam.ac.uk>"
+authors: "David Kaloper <dk505@cam.ac.uk>"
+license: "ISC"
+homepage: "https://github.com/pqwy/notty"
+doc: "https://pqwy.github.io/notty/doc"
+bug-reports: "https://github.com/pqwy/notty/issues"
 depends: [
   "ocaml" {>= "4.08.0"}
   "dune" {>= "1.7"}
   "cppo" {build & >= "1.1.0"}
   "uutf" {>= "1.0.0"}
 ]
-depopts: [ "lwt" ]
+depopts: ["lwt"]
 conflicts: [
-  "lwt" {<"2.6.0"}
+  "lwt" {< "2.6.0"}
 ]
-authors: "David Kaloper <dk505@cam.ac.uk>"
+build: [
+  ["dune" "subst"] {dev}
+  ["dune" "build" "-p" name "-j" jobs]
+]
+dev-repo: "git+https://github.com/pqwy/notty.git"
 url {
   src:
     "https://github.com/pqwy/notty/releases/download/v0.2.3/notty-0.2.3.tbz"

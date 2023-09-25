@@ -8,7 +8,7 @@ license: "LGPL-2.1-only WITH OCaml-LGPL-linking-exception"
 homepage: "http://calendar.forge.ocamlcore.org/"
 bug-reports: "https://github.com/ocaml-community/calendar/issues"
 depends: [
-  "ocaml" {>= "3.09"}
+  "ocaml" {>= "3.09" & < "5.0"}
   "ocamlfind" {build}
 ]
 flags: light-uninstall
