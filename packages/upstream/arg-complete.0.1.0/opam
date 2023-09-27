@@ -1,7 +1,9 @@
 opam-version: "2.0"
+name: "arg-complete"
+version: "0.1.0"
 synopsis: "Bash completion support for Stdlib.Arg"
-maintainer: ["Simmo Saan <simmo.saan@gmail.com>"]
-authors: ["Simmo Saan <simmo.saan@gmail.com>"]
+maintainer: "Simmo Saan <simmo.saan@gmail.com>"
+authors: "Simmo Saan <simmo.saan@gmail.com>"
 license: "MIT"
 homepage: "https://github.com/sim642/ocaml-arg-complete"
 doc: "https://sim642.github.io/ocaml-arg-complete"

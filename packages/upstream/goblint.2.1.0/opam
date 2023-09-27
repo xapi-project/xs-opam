@@ -1,4 +1,6 @@
 opam-version: "2.0"
+name: "goblint"
+version: "2.1.0"
 synopsis: "Static analysis framework for C"
 maintainer: [
   "Simmo Saan <simmo.saan@gmail.com>"
@@ -20,7 +22,7 @@ bug-reports: "https://github.com/goblint/analyzer/issues"
 depends: [
   "ocaml" {>= "4.10" & < "5.0"}
   "dune" {>= "3.0"}
-  "goblint-cil" {>= "2.0.1"}
+  "goblint-cil" {>= "2.0.1" & < "2.0.2"}
   "batteries" {>= "3.4.0"}
   "zarith" {>= "1.8"}
   "yojson" {>= "2.0.0"}
@@ -39,7 +41,7 @@ depends: [
   "sha" {>= "1.12"}
   "cpu"
   "arg-complete"
-  "yaml"
+  "yaml" {>= "3.0.0"}
   "uuidm"
   "catapult"
   "catapult-file"
@@ -51,6 +53,7 @@ depopts: ["apron" "z3"]
 conflicts: [
   "result" {< "1.5"}
 ]
+available: os-distribution != "alpine" & arch != "arm64"
 build: [
   ["dune" "subst"] {dev}
   [
@@ -67,10 +70,12 @@ build: [
   ]
   ["dune" "install" "-p" name "--create-install-files" name]
 ]
+patches: "0001-Fix-deprecated-File.exists-in-update_suite.rb.patch"
 dev-repo: "git+https://github.com/goblint/analyzer.git"
-# on `dune build` goblint.opam will be generated from goblint.opam.template and dune-project
-# also remember to generate/adjust goblint.opam.locked!
-available: os-distribution != "alpine" & arch != "arm64"
+extra-files: [
+  "0001-Fix-deprecated-File.exists-in-update_suite.rb.patch"
+  "md5=e396c67c2a5fc743ad0d50c6c3207de8"
+]
 url {
   src:
     "https://github.com/goblint/analyzer/releases/download/v2.1.0/goblint-2.1.0.tbz"
@@ -80,11 +85,3 @@ url {
   ]
 }
 x-commit-hash: "694375b2081f51f381792fe02c3dd69a4a2e9f97"
-# pin-depends: [
-  # published goblint-cil 2.0.1 is currently up-to-date, so no pin needed
-  # [ "goblint-cil.2.0.0" "git+https://github.com/goblint/cil.git#3261501a8c7d712748711341677bf023437e3c56" ]
-  # TODO: add back after release, only pinned for optimization (https://github.com/ocaml-ppx/ppx_deriving/pull/252)
-  # [ "ppx_deriving.5.2.1" "git+https://github.com/ocaml-ppx/ppx_deriving.git#0a89b619f94cbbfc3b0fb3255ab4fe5bc77d32d6" ]
-  # TODO: add back after release, only pinned for CI stability
-  # [ "apron.v0.9.13" "git+https://github.com/antoinemine/apron.git#c852ebcc89e5cf4a5a3318e7c13c73e1756abb11"]
-# ]

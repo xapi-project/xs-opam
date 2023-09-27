@@ -18,11 +18,12 @@ depends: [
   "conf-libcurl"
 ]
 depopts: ["lwt" "lwt_ppx"]
+conflicts: ["ocaml-option-bytecode-only"]
 build: [
   ["./configure"]
   [make]
   [make "doc"] {with-doc}
-  [make "test"] {with-test}
+  [make "test"] {with-test & ocaml:version < "5.0.0"}
 ]
 install: [make "install"]
 dev-repo: "git+https://github.com/ygrek/ocurl.git"

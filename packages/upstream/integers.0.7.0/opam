@@ -7,9 +7,9 @@ authors: [
   "Jeremy Yallop" "Demi Obenour" "Stephane Glondu" "Andreas Hauptmann"
 ]
 license: "MIT"
-homepage: "https://github.com/ocamllabs/ocaml-integers"
-doc: "http://ocamllabs.github.io/ocaml-integers/api.docdir/"
-bug-reports: "https://github.com/ocamllabs/ocaml-integers/issues"
+homepage: "https://github.com/yallop/ocaml-integers"
+doc: "http://yallop.github.io/ocaml-integers/api.docdir/"
+bug-reports: "https://github.com/yallop/ocaml-integers/issues"
 depends: [
   "ocaml" {>= "4.03"}
   "dune" {>= "1.0"}
@@ -20,8 +20,8 @@ build: [
   ["dune" "build" "-p" name "-j" jobs]
   ["dune" "runtest" "-p" name "-j" jobs] {with-test}
 ]
-dev-repo: "git+https://github.com/ocamllabs/ocaml-integers.git"
+dev-repo: "git+https://github.com/yallop/ocaml-integers.git"
 url {
-  src: "https://github.com/ocamllabs/ocaml-integers/archive/0.7.0.tar.gz"
+  src: "https://github.com/yallop/ocaml-integers/archive/0.7.0.tar.gz"
   checksum: "md5=201cf24143d7cb9a3921d572b6e6c42c"
 }

@@ -16,6 +16,7 @@ LGPL-2.0-only WITH OCaml-LGPL-linking-exception
 LGPL-2.0-or-later WITH OCaml-LGPL-linking-exception
 LGPL-2.1-only WITH OCaml-LGPL-linking-exception
 LGPL-2.1-or-later WITH OCaml-LGPL-linking-exception
+LGPL-2.1-or-later WITH OCaml-LGPL-linking-exception AND BSD-3-Clause
 LGPL-3.0-only WITH OCaml-LGPL-linking-exception
 LGPL-2.1-or-later WITH OpenSSL-linking-exception
 GPL-2.0-or-later
