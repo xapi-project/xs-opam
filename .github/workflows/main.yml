@@ -10,7 +10,7 @@ on:
 jobs:
   build:
     name: Build and test
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     strategy:
       fail-fast: false
       matrix:
@@ -31,6 +31,9 @@ jobs:
 
       - name: Checkout
         uses: actions/checkout@v3
+
+      - name: Free space
+        run: sudo rm -rf /usr/local/lib/android
 
       - name: Retrieve date for cache key
         id: cache-key
