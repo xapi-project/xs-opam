@@ -32,6 +32,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
+      - name: Free space
+        run: sudo rm -rf /usr/local/lib/android
+
       - name: Retrieve date for cache key
         id: cache-key
         run: echo "date=$(/bin/date -u "+%Y%m%d")" >> $GITHUB_OUTPUT
