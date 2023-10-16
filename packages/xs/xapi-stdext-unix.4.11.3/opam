@@ -12,27 +12,18 @@ build:  [[ "dune" "build" "-p" name "-j" jobs ]]
 depends: [
   "ocaml"
   "dune" {build}
-  "xapi-stdext-date"
-  "xapi-stdext-deprecated"
-  "xapi-stdext-encodings"
-  "xapi-stdext-monadic"
+  "base-unix"
+  "fd-send-recv" {>= "2.0.0"}
   "xapi-stdext-pervasives"
-  "xapi-stdext-range"
   "xapi-stdext-std"
-  "xapi-stdext-threads"
-  "xapi-stdext-unix"
-  "xapi-stdext-zerocheck"
 ]
-synopsis: "A deprecated collection of utility functions"
+synopsis:
+  "A deprecated collection of utility functions - Unix module extensions"
 description: """
-Backward compatibility wrapper, this is introduced along with
-xapi-stdext-3.0.0 and will be removed once the oasis files of the
-necessary packages have been updated.
-
 This library is provided for a transitionary period only.
 No new code should use this library."""
 url {
   src:
-    "https://github.com/xapi-project/stdext/archive/v4.11.2.tar.gz"
-  checksum: "sha256=0c5276e68ecbba743e76b7a609664a73dfa7cfb8d918e80084c25773528ce56e"
+    "https://github.com/xapi-project/stdext/archive/v4.11.3.tar.gz"
+  checksum: "sha256=a6e09f26f01e2858500bb920f6d41c5ac7558f64a45cc2d515f675bd1264fdd3"
 }

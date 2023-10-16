@@ -12,16 +12,13 @@ build:  [[ "dune" "build" "-p" name "-j" jobs ]]
 depends: [
   "ocaml"
   "dune" {build}
-  "uuidm"
-  "xapi-stdext-monadic"
 ]
-synopsis:
-  "A deprecated collection of utility functions - Standard library extensions"
+synopsis: "A deprecated collection of utility functions - Range module"
 description: """
 This library is provided for a transitionary period only.
 No new code should use this library."""
 url {
   src:
-    "https://github.com/xapi-project/stdext/archive/v4.11.2.tar.gz"
-  checksum: "sha256=0c5276e68ecbba743e76b7a609664a73dfa7cfb8d918e80084c25773528ce56e"
+    "https://github.com/xapi-project/stdext/archive/v4.11.3.tar.gz"
+  checksum: "sha256=a6e09f26f01e2858500bb920f6d41c5ac7558f64a45cc2d515f675bd1264fdd3"
 }
