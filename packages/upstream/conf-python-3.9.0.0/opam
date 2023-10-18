@@ -18,7 +18,7 @@ depexts: [
   ["python3"] {os-family = "debian"}
   ["python3"] {os-distribution = "nixos"}
   ["python3"] {os-distribution = "alpine"}
-  ["epel-release" "python39"] {os-distribution = "centos"}
+  ["python3"] {os-distribution = "centos"}
   ["python3"] {os-distribution = "fedora"}
   ["python3"] {os-distribution = "ol"}
   ["python"] {os-distribution = "arch"}
