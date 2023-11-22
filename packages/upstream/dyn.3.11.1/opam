@@ -1,9 +1,8 @@
 opam-version: "2.0"
-name: "stdune"
-version: "3.6.2"
-synopsis: "Dune's unstable standard library"
-description:
-  "This library offers no backwards compatibility guarantees. Use at your own risk."
+name: "dyn"
+version: "3.11.1"
+synopsis: "Dynamic type"
+description: "Dynamic type"
 maintainer: "Jane Street Group, LLC <opensource@janestreet.com>"
 authors: "Jane Street Group, LLC <opensource@janestreet.com>"
 license: "MIT"
@@ -13,11 +12,8 @@ bug-reports: "https://github.com/ocaml/dune/issues"
 depends: [
   "dune" {>= "3.5"}
   "ocaml" {>= "4.08.0"}
-  "base-unix"
-  "dyn" {= version}
   "ordering" {= version}
   "pp" {>= "1.1.0"}
-  "csexp" {>= "1.5.0"}
   "odoc" {with-doc}
 ]
 build: [
@@ -28,10 +24,11 @@ build: [
 ]
 dev-repo: "git+https://github.com/ocaml/dune.git"
 url {
-  src: "https://github.com/ocaml/dune/releases/download/3.6.2/dune-3.6.2.tbz"
+  src:
+    "https://github.com/ocaml/dune/releases/download/3.11.1/dune-3.11.1.tbz"
   checksum: [
-    "sha256=b6d4ab848efb04aa2a325d0015d32ed4414ed7130ec7aa12f98158eff445cf3c"
-    "sha512=d0dd69ada2f1583319a2d6f679b8d49998059117c3258805ee69ae3e71d47bfab7a9c646f19b5fc43a6ccdef934eb87de5bb81205fcd60968bed8bf1790cf0a3"
+    "sha256=866f2307adadaf7604f3bf9d98bb4098792baa046953a6726c96c40fc5ed3f71"
+    "sha512=c888153b204a16bcfed2636de776bbd5f9ca84484e716cc1e9ef3ba3c904e9dd15a2609ae943cddb6097912623ec54618c58386d6730ff742d746850400fb3cc"
   ]
 }
-x-commit-hash: "c939c2b0f7a470cedd189988c61cd307a3cedace"
+x-commit-hash: "7cbb0e7277c6cacd1ccf7941cac5a03c25fc63cf"
