@@ -5,6 +5,7 @@ logs-syslog
 memtrace
 ocaml-version
 ocamlformat
+ocamlformat-lib
 ocp-indent
 odoc-parser
 syslog-message
