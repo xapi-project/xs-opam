@@ -1,6 +1,6 @@
 opam-version: "2.0"
 name: "dune-configurator"
-version: "3.11.1"
+version: "3.12.2"
 synopsis: "Helper library for gathering system configuration"
 description: """\
 dune-configurator is a small library that helps writing OCaml scripts that
@@ -33,10 +33,10 @@ build: [
 dev-repo: "git+https://github.com/ocaml/dune.git"
 url {
   src:
-    "https://github.com/ocaml/dune/releases/download/3.11.1/dune-3.11.1.tbz"
+    "https://github.com/ocaml/dune/releases/download/3.12.2/dune-3.12.2.tbz"
   checksum: [
-    "sha256=866f2307adadaf7604f3bf9d98bb4098792baa046953a6726c96c40fc5ed3f71"
-    "sha512=c888153b204a16bcfed2636de776bbd5f9ca84484e716cc1e9ef3ba3c904e9dd15a2609ae943cddb6097912623ec54618c58386d6730ff742d746850400fb3cc"
+    "sha256=e8aa5f01fee83efac8733df0bec3e23aaecdb4524bc58b8065cd18cc07295fb3"
+    "sha512=ae6039c67a1eca9f946b67bdc84433cafe0648d51d22600b1b108fa5712db34524958137cb3a0d82b5a965c66dae7dc4c9619796eda8f72246178885e460f601"
   ]
 }
-x-commit-hash: "7cbb0e7277c6cacd1ccf7941cac5a03c25fc63cf"
+x-commit-hash: "f5be55fecd654fc097fa8990b62d5d826fa9b22f"
