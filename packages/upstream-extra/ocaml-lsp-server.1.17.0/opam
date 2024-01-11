@@ -1,6 +1,6 @@
 opam-version: "2.0"
 name: "ocaml-lsp-server"
-version: "1.16.2"
+version: "1.17.0"
 synopsis: "LSP Server for OCaml"
 description: "An LSP server for OCaml."
 maintainer: "Rudi Grinberg <me@rgrinberg.com>"
@@ -33,7 +33,8 @@ depends: [
   "ordering"
   "dune-build-info"
   "spawn"
-  "odoc-parser" {>= "2.0.0" & < "2.3.0"}
+  "astring"
+  "camlp-streams"
   "ppx_expect" {>= "v0.15.0" & with-test}
   "ocamlformat" {with-test & = "0.24.1"}
   "ocamlc-loc" {>= "3.7.0"}
@@ -52,10 +53,10 @@ build: [
 dev-repo: "git+https://github.com/ocaml/ocaml-lsp.git"
 url {
   src:
-    "https://github.com/ocaml/ocaml-lsp/releases/download/1.16.2/lsp-1.16.2.tbz"
+    "https://github.com/ocaml/ocaml-lsp/releases/download/1.17.0/lsp-1.17.0.tbz"
   checksum: [
-    "sha256=1487d5a4e2f2d4f023341058551bdb8ba86c23367b7c5b4fdda3aa7dc02aaec4"
-    "sha512=4a392f6d3deafc6dd37f9603250e736c8d8195ea42c782252386616e8c1562d744e02beee54ec45254cba23efd343ebb33789babb093b0e70122ba86d7e67717"
+    "sha256=8fb8bbd717eefd2608b4d83458105b660e0de3a1134dc8fc216ae659d4d19600"
+    "sha512=6876df760dbcb51f85e7fd9d08cc8498c69ede38a52f4e12407187da3fbd9657c71f3223f9490ad97edd5259cfdeb2819d943db65bb9ce3c2a18dace3b65ffa8"
   ]
 }
-x-commit-hash: "22cefd841bb0b6b9a6fd4fe5befe5eb68d213ce3"
+x-commit-hash: "d3d8de5a4213c2a16e43ac4f87cbbe88a894d05f"
