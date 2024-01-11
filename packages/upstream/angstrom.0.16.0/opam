@@ -1,6 +1,6 @@
 opam-version: "2.0"
 name: "angstrom"
-version: "0.15.0"
+version: "0.16.0"
 synopsis: "Parser combinators built for speed and memory-efficiency"
 description: """\
 Angstrom is a parser-combinator library that makes it easy to write efficient,
@@ -20,8 +20,7 @@ depends: [
   "dune" {>= "1.8"}
   "alcotest" {with-test & >= "0.8.1"}
   "bigstringaf"
-  "result"
-  "ppx_let" {with-test & >= "0.14.0"}
+  "ppx_let" {with-test & >= "v0.14.0"}
   "ocaml-syntax-shims" {build}
 ]
 build: [
@@ -31,6 +30,6 @@ build: [
 ]
 dev-repo: "git+https://github.com/inhabitedtype/angstrom.git"
 url {
-  src: "https://github.com/inhabitedtype/angstrom/archive/0.15.0.tar.gz"
-  checksum: "md5=5104768c404ea92fd0a53a5b0f75cd50"
+  src: "https://github.com/inhabitedtype/angstrom/archive/0.16.0.tar.gz"
+  checksum: "md5=58ebc718a920c31ec3eb38f4aa1bea51"
 }
