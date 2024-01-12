@@ -1,6 +1,6 @@
 opam-version: "2.0"
 name: "conduit-async"
-version: "6.2.0"
+version: "6.2.1"
 synopsis: "A network connection establishment library for Async"
 maintainer: "anil@recoil.org"
 authors: [
@@ -34,10 +34,10 @@ build: [
 dev-repo: "git+https://github.com/mirage/ocaml-conduit.git"
 url {
   src:
-    "https://github.com/mirage/ocaml-conduit/releases/download/v6.2.0/conduit-6.2.0.tbz"
+    "https://github.com/mirage/ocaml-conduit/releases/download/v6.2.1/conduit-6.2.1.tbz"
   checksum: [
-    "sha256=3ed440b0edda1b212dd762bdb24831f394dca05985dd1b4ac4f94581d1452394"
-    "sha512=017a28bd9873ea7f49ce69e9f4b680df7fa17440b1ff68c2af880df5527fae205249667fa7d35e4a8fe8d101081b6f7d6a384bee1eb0f6f38a2c57beae56aaac"
+    "sha256=59d5e7b62437be489b0b79ce11ff90ac04ef39c683e4cefca8587afdc2f55bbb"
+    "sha512=c8e12d843d73cc776850f1b77e805380ac64f6c81b7bc4516befdeacf4785aeb638a0ccc62d7c1990c66edda6bf679c59c93210ffefeafed9a5fa3ec1bfedeca"
   ]
 }
-x-commit-hash: "83a12ddcb7898d2a94e966b8f66654e898ae47c8"
+x-commit-hash: "2977ef8b910d8283f6bd7f96305af5006ee7c7dd"
