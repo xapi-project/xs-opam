@@ -1,8 +1,12 @@
 opam-version: "2.0"
 name: "opentelemetry-client-ocurl"
-version: "0.5"
+version: "0.6"
 synopsis: "Collector client for opentelemetry, using http + ezcurl"
-maintainer: "the Imandra team and contributors"
+maintainer: [
+  "Simon Cruanes <simon.cruanes.2007@m4x.org>"
+  "Matt Bray <mattjbray@gmail.com>"
+  "ELLIOTTCABLE <opam@ell.io>"
+]
 authors: "the Imandra team and contributors"
 license: "MIT"
 homepage: "https://github.com/imandra-ai/ocaml-opentelemetry"
@@ -16,6 +20,8 @@ depends: [
   "odoc" {with-doc}
   "ezcurl" {>= "0.2.3"}
   "ocurl"
+  "alcotest" {with-test}
+  "opentelemetry-client-cohttp-lwt" {with-test & = version}
 ]
 build: [
   ["dune" "subst"] {dev}
@@ -34,9 +40,9 @@ build: [
 dev-repo: "git+https://github.com/imandra-ai/ocaml-opentelemetry.git"
 url {
   src:
-    "https://github.com/imandra-ai/ocaml-opentelemetry/archive/v0.5.tar.gz"
+    "https://github.com/imandra-ai/ocaml-opentelemetry/archive/refs/tags/v0.6.tar.gz"
   checksum: [
-    "md5=22afc1c6bc7e2397d5796776d5fb542b"
-    "sha512=26ffd7233439a9a419ed0415b5884b61ee3b8f6bf44505b446065fe99d75f6b062db5236eac6c6641c9d2f294d0a1d3d44f1d44378cc9bcad872bca84767636c"
+    "md5=bb3860b2d9941bbb3680aef45f8db3d8"
+    "sha512=a66f9781fdef825addefa3a9c425a454c98f388ae0e476cf216a555d1573291347668a9aa6461ae17074b17504622cd77bbb2302edb55d18b32324d112e782ff"
   ]
 }
