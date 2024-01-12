@@ -3,6 +3,9 @@ name: "ocaml-migrate-parsetree"
 version: "2.4.0"
 synopsis: "Convert OCaml parsetrees between different versions"
 description: """\
+Deprecated. Please, use Ppxlib instead.
+More info on https://ocaml.org/changelog/2023-10-23-omp-deprecation
+
 Convert OCaml parsetrees between different versions
 
 This library converts parsetrees, outcometree and ast mappers between
@@ -24,6 +27,7 @@ depends: [
   "cinaps" {with-test & >= "v0.13.0"}
 ]
 conflicts: ["base-effects"]
+flags: deprecated
 build: ["dune" "build" "-p" name "-j" jobs]
 run-test: ["dune" "runtest" "-p" name "-j" jobs]
 dev-repo: "git+https://github.com/ocaml-ppx/ocaml-migrate-parsetree.git"
