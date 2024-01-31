@@ -34,11 +34,5 @@ build: [
 ]
 dev-repo: "git+https://github.com/xapi-project/xcp-rrd.git"
 url {
-  src:
-    "https://github.com/xapi-project/xcp-rrd/releases/download/v1.11.0/xapi-rrd-1.11.0.tbz"
-  checksum: [
-    "sha256=7d05044c4074981c714fc299722cc916d1f67141622765c47e9915b89014b55e"
-    "sha512=6531b6a6ce18d6677f29b90b69cb7f1e892d75a8c169e95996490ef38fed3d7785babb50812cc3a72d5eea8c1aa52f3340c7f23e7d4a9bbf1d4e6d96dd415fca"
-  ]
+  src: "https://github.com/xapi-project/xen-api/archive/master.tar.gz"
 }
-x-commit-hash: "61d362abe84eefb43c18e392842c5970a937741c"
