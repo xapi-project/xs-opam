@@ -22,5 +22,5 @@ depends: [
 ]
 synopsis: "Convert XenServer RRD data into CSV format"
 url {
-  src: "https://github.com/xapi-project/xen-api/archive/master.tar.gz"
+  src: "https://github.com/edwintorok/xen-api/archive/master.tar.gz"
 }

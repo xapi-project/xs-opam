@@ -22,5 +22,5 @@ description: """
 The CLI allows you to directly manipulate virtual disk images, without
 them being attached to VMs."""
 url {
-  src: "https://github.com/xapi-project/xen-api/archive/master.tar.gz"
+  src: "https://github.com/edwintorok/xen-api/archive/master.tar.gz"
 }

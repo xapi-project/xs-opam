@@ -27,5 +27,5 @@ build: [
 ]
 dev-repo: "git+http://github.com/xapi-project/xcp-inventory.git"
 url {
-  src: "https://github.com/xapi-project/xen-api/archive/master.tar.gz"
+  src: "https://github.com/edwintorok/xen-api/archive/master.tar.gz"
 }

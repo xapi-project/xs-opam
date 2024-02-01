@@ -36,5 +36,5 @@ This daemon watches a directory for subdirectories, and when a subdir
 is created a storage service is registered."""
 url {
   src:
-    "https://github.com/xapi-project/xen-api/archive/master.tar.gz"
+    "https://github.com/edwintorok/xen-api/archive/master.tar.gz"
 }

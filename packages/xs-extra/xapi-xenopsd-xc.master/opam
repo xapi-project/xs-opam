@@ -49,5 +49,5 @@ synopsis:
   "A xenops plugin which knows how to use xenstore, xenctrl and xenguest to manage"
 description: "VMs on a xen host."
 url {
-  src: "https://github.com/xapi-project/xen-api/archive/master.tar.gz"
+  src: "https://github.com/edwintorok/xen-api/archive/master.tar.gz"
 }

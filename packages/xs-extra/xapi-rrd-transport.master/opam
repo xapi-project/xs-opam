@@ -13,5 +13,5 @@ description: """
 VMs running on a Xen host can use this library to expose performance
 counters which can be sampled by the xapi performance monitoring daemon."""
 url {
-  src: "https://github.com/xapi-project/xen-api/archive/master.tar.gz"
+  src: "https://github.com/edwintorok/xen-api/archive/master.tar.gz"
 }

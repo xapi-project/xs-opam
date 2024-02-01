@@ -25,5 +25,5 @@ depends: [
 tags: [ "org:xapi-project" ]
 synopsis: "Websockets proxy for VNC traffic"
 url {
-  src: "https://github.com/xapi-project/xen-api/archive/master.tar.gz"
+  src: "https://github.com/edwintorok/xen-api/archive/master.tar.gz"
 }
