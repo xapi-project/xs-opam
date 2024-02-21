@@ -1,7 +1,7 @@
 opam-version: "2.0"
-name: "ocamlc-loc"
-version: "3.12.2"
-synopsis: "Parse ocaml compiler output into structured form"
+name: "stdune"
+version: "3.14.0"
+synopsis: "Dune's unstable standard library"
 description:
   "This library offers no backwards compatibility guarantees. Use at your own risk."
 maintainer: "Jane Street Group, LLC <opensource@janestreet.com>"
@@ -11,13 +11,14 @@ homepage: "https://github.com/ocaml/dune"
 doc: "https://dune.readthedocs.io/"
 bug-reports: "https://github.com/ocaml/dune/issues"
 depends: [
-  "dune" {>= "3.5"}
+  "dune" {>= "3.12"}
   "ocaml" {>= "4.08.0"}
+  "base-unix"
   "dyn" {= version}
+  "ordering" {= version}
+  "pp" {>= "1.2.0"}
+  "csexp" {>= "1.5.0"}
   "odoc" {with-doc}
-]
-conflicts: [
-  "ocaml-lsp-server" {< "1.15.0"}
 ]
 build: [
   ["dune" "subst"] {dev}
@@ -28,10 +29,10 @@ build: [
 dev-repo: "git+https://github.com/ocaml/dune.git"
 url {
   src:
-    "https://github.com/ocaml/dune/releases/download/3.12.2/dune-3.12.2.tbz"
+    "https://github.com/ocaml/dune/releases/download/3.14.0/dune-3.14.0.tbz"
   checksum: [
-    "sha256=e8aa5f01fee83efac8733df0bec3e23aaecdb4524bc58b8065cd18cc07295fb3"
-    "sha512=ae6039c67a1eca9f946b67bdc84433cafe0648d51d22600b1b108fa5712db34524958137cb3a0d82b5a965c66dae7dc4c9619796eda8f72246178885e460f601"
+    "sha256=f4d09d89162621fdff424c253fa50c4920d2179fb5b3d1debab7bbe97c68b2fc"
+    "sha512=f5ead1a9a0cc26e00a762e83e107b47c3c3fe9b44d9e505547c385c7938208d4fdcc91a8099512e76ea4a426f3543445b4d75ef0b621dc7dbfdcbb615bc0b999"
   ]
 }
-x-commit-hash: "f5be55fecd654fc097fa8990b62d5d826fa9b22f"
+x-commit-hash: "73250f00372d3f28a25963ded6138728f4202663"
