@@ -1,6 +1,3 @@
-afl-persistent
-bisect_ppx
-crowbar
 either
 fix
 logs-syslog
