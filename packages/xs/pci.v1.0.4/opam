@@ -1,10 +1,12 @@
 opam-version: "2.0"
+name: "pci"
+version: "v1.0.4"
 synopsis: "Ctypes bindings to libpci for OCaml"
 maintainer: "xen-api@lists.xen.org"
 authors: "Si Beaumont"
+license: "LGPL-2.1-only WITH OCaml-LGPL-linking-exception"
 homepage: "https://github.com/xapi-project/ocaml-pci"
 bug-reports: "https://github.com/xapi-project/ocaml-pci/issues"
-license: "LGPL-2.1-only WITH OCaml-LGPL-linking-exception"
 depends: [
   "ocaml" {>= "4.08.0"}
   "ctypes" {>= "0.4.0"}
@@ -31,11 +33,10 @@ depexts: [
   ["hwdata" "pciutils-dev"] {os-distribution = "alpine"}
   ["hwdata" "pciutils-devel"] {os-distribution = "centos"}
   ["hwdata" "pciutils-devel"] {os-distribution = "fedora"}
-
 ]
 dev-repo: "git+https://github.com/simonjbeaumont/ocaml-pci.git"
 url {
-  src:
-    "https://github.com/xapi-project/ocaml-pci/archive/v1.0.4.tar.gz"
-  checksum: "sha256=9fb5e56ecc418cf54e514b70d4b6bdbff017467efbf5b02aa57c87f50477858b"
+  src: "https://github.com/xapi-project/ocaml-pci/archive/v1.0.4.tar.gz"
+  checksum:
+    "sha256=9fb5e56ecc418cf54e514b70d4b6bdbff017467efbf5b02aa57c87f50477858b"
 }

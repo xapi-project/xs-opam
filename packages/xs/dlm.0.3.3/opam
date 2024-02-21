@@ -33,7 +33,7 @@ depexts: [
   ["dlm-devel"] {os-family = "rhel"}
   ["dlm-devel"] {os-family = "fedora"}
   ["dlm-devel"] {os-distribution = "ol"}
-  ["libdlm-devel"] {os-family = "suse"}
+  ["libdlm-devel"] {os-family = "suse" | os-family = "opensuse"}
 ]
 dev-repo: "git+https://github.com/xapi-project/ocaml-dlm.git"
 url {
