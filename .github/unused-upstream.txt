@@ -1,4 +1,6 @@
+afl-persistent
 bisect_ppx
+crowbar
 either
 fix
 logs-syslog
@@ -7,7 +9,6 @@ ocaml-version
 ocamlformat
 ocamlformat-lib
 ocp-indent
-odoc-parser
 syslog-message
 tyre
 tyxml
