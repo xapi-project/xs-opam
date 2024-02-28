@@ -28,6 +28,9 @@ available: os = "linux" | os = "macos"
 build: ["dune" "build" "-p" name "-j" jobs]
 depexts: ["linux-headers"] {os-distribution = "alpine"}
 dev-repo: "git+https://github.com/mirage/ocaml-vhd.git"
+patches: [
+  "0001-XSI-1457-Limit-number-of-sectors-to-coalesce.patch"
+]
 url {
   src:
     "https://github.com/mirage/ocaml-vhd/releases/download/v0.12.0/vhd-format-v0.12.0.tbz"
