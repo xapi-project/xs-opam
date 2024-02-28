@@ -29,6 +29,9 @@ depends: [
   "dune" {>= "1.0"}
 ]
 available: os = "linux" | os = "macos"
+patches: [
+  "0001-XSI-1457-Limit-number-of-sectors-to-coalesce.patch"
+]
 build: [
   ["dune" "build" "-p" name "-j" jobs]
   ["dune" "runtest" "-p" name "-j" jobs] {with-test}
