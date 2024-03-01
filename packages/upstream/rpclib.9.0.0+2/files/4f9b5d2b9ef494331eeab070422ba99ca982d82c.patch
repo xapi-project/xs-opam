@@ -1,0 +1,24 @@
+From 4f9b5d2b9ef494331eeab070422ba99ca982d82c Mon Sep 17 00:00:00 2001
+From: Vincent Liu <shuntian.liu2@cloud.com>
+Date: Thu, 29 Feb 2024 16:42:38 +0000
+Subject: [PATCH 3/3] Fix typo in test_pythongen.ml
+
+---
+ tests/rpc/test_pythongen.ml | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/tests/rpc/test_pythongen.ml b/tests/rpc/test_pythongen.ml
+index 0572169..6a5f586 100644
+--- a/tests/rpc/test_pythongen.ml
++++ b/tests/rpc/test_pythongen.ml
+@@ -199,6 +199,6 @@ let tests =
+     , lint_bindings )
+   ; "Check generated commandline bindings", `Slow, test_commandline
+   ; "Check generated test class with commandline bindings", `Slow, check_test_class
+-  ; "Cehck generated exceptions", `Slow, check_exceptions
++  ; "Check generated exceptions", `Slow, check_exceptions
+   ; "Check python generation on variants with zero-arg constructors", `Quick, check_unit_variants
+   ]
+-- 
+2.41.0
+
