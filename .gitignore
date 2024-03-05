@@ -1,4 +1,5 @@
 cache
 cache.log
+stash/
 xs-opam-repo-*/
 xs-opam-repo-*
