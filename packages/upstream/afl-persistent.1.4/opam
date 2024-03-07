@@ -20,6 +20,7 @@ build: [
   ["dune" "build" "-p" name "-j" jobs]
   ["./config.sh"]
 ]
+patches: "config.patch"
 post-messages:
   """\
 afl-persistent is installed, but since the current OCaml compiler does
@@ -31,6 +32,7 @@ To globally enable AFL instrumentation, create an OCaml switch like:
   opam switch create %{ocaml:version}%+afl ocaml-variants.%{ocaml:version}%+options ocaml-option-afl"""
     {success & afl-available & !afl-always}
 dev-repo: "git+https://github.com/stedolan/ocaml-afl-persistent.git"
+extra-files: ["config.patch" "md5=ff93f594181d6508acdce88597e3c7b6"]
 url {
   src:
     "https://github.com/stedolan/ocaml-afl-persistent/archive/refs/tags/v1.4.tar.gz"

@@ -2,7 +2,7 @@
 #
 
 SHELL   = /bin/bash
-VERSION = $(shell git describe --abbrev=0 --tags)
+VERSION = $(shell git describe --tags)
 NAME 	= xs-opam-repo-$(VERSION)
 
 .PHONY: all archive clean licenses
@@ -13,17 +13,14 @@ all:
 archive: $(NAME).tar.gz
 
 $(NAME).tar.gz:
-	# don't package ocaml, do package cache
-	mv packages/ocaml .
-	mv packages/upstream-extra .
+	# Add only upstream and xs pkgs into cache, add ocaml ones to metadata
+	mkdir -p stash
+	mv packages/{ocaml,upstream-extra,xs-extra,xs-extra-dummy} stash
 	env OPAMFETCH=wget opam admin cache |& tee cache.log
 	! grep ERROR cache.log
-	git archive --format=tar.gz --prefix=$(NAME)/ HEAD > $@
-	tar zxf $@
-	cd $(NAME) && ln -fs ../cache .
-	tar czhf $@ $(NAME)
-	mv ocaml packages
-	mv upstream-extra packages
+	mv stash/ocaml packages/
+	tar zcf $@ --transform "flags=r;s|^|$(NAME)/|" cache packages tools repo
+	mv stash/* packages/
 
 # report licenses of xs-toolstack from *installed* packages
 licenses:

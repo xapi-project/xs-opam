@@ -2,6 +2,9 @@
 
 set -euo pipefail
 
+export LANG=C
+export LC_ALL=C
+
 export OPAMCOLOR=NEVER
 
 USED=$(opam list -t --required-by xs-toolstack --recursive --short | sort)
