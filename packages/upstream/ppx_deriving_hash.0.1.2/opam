@@ -1,6 +1,6 @@
 opam-version: "2.0"
 name: "ppx_deriving_hash"
-version: "0.1.1"
+version: "0.1.2"
 synopsis: "[@@deriving hash]"
 description:
   "Deriver for standard hash functions without extra dependencies."
@@ -32,10 +32,10 @@ build: [
 dev-repo: "git+https://github.com/sim642/ppx_deriving_hash.git"
 url {
   src:
-    "https://github.com/sim642/ppx_deriving_hash/releases/download/0.1.1/ppx_deriving_hash-0.1.1.tbz"
+    "https://github.com/sim642/ppx_deriving_hash/releases/download/0.1.2/ppx_deriving_hash-0.1.2.tbz"
   checksum: [
-    "sha256=bdaaac5ab278eee6ded154e405eb7fa8a2dd2b7483032628ce56ef21ae062f24"
-    "sha512=2f19db33fe08c7deb196c7040d649713e5a45389b4cc4074f49b25c9744cd9c70fcd6cdb4814981418d4a7120eecddbeabb7f63688080517c777000dba857655"
+    "sha256=b2cdce00b0fef439b9c2dc20bd0d1248bec2bb4c56ba6c0a98b04a3c387815af"
+    "sha512=3bd89f1215439a20aa81f8eae46574d8b80800a059ce4590774616e5ec349f73f010e0126c3390909942f8c5c258b67ab0ef10df7a5084322861a542a4ec8399"
   ]
 }
-x-commit-hash: "221737ebcfed3dfe8d6af981739c7c335c4822e6"
+x-commit-hash: "c916f11a2365b3fe2ab77096b6073ebf62ea082b"
