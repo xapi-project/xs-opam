@@ -1,6 +1,6 @@
 opam-version: "2.0"
 name: "bechamel"
-version: "0.3.0"
+version: "0.5.0"
 synopsis: "Yet Another Benchmark in OCaml"
 description: """\
 BEnchmark for a CHAMEL/camel/caml which
@@ -16,8 +16,7 @@ depends: [
   "ocaml" {>= "4.08.0"}
   "dune" {>= "2.0.0"}
   "fmt" {>= "0.9.0"}
-  "base-bytes"
-  "stdlib-shims"
+  "alcotest" {with-test}
 ]
 build: [
   ["dune" "build" "-p" name "-j" jobs]
@@ -26,10 +25,10 @@ build: [
 dev-repo: "git+https://github.com/mirage/bechamel.git"
 url {
   src:
-    "https://github.com/mirage/bechamel/releases/download/v0.3.0/bechamel-0.3.0.tbz"
+    "https://github.com/mirage/bechamel/releases/download/v0.5.0/bechamel-0.5.0.tbz"
   checksum: [
-    "sha256=d719040841a1a3be6f93699ae9bf1f8cb2c5d294f0218c0bc0a735386c2d71a0"
-    "sha512=dc1233d4dcf01a997a3fcbafc116df0aae22ea5a6c98c09e200e4aa984c558976c8290b3e14b1156519ad12a6cc4b1b9fa4adf3dc2458d373d77a07fb9f7acff"
+    "sha256=2f9aa544395fa62ea067352782988bf94d977162d4d3ee6e321e49a29c5ec868"
+    "sha512=80af7d3015fd3e63514b6241190f7fc96a1329480d98526dc426c8e24fdf2f196917a9bdae72ac7234e21b2835c38a5ac989cfc00360d9530afe52f97f58c79f"
   ]
 }
-x-commit-hash: "adf2b19fe09be6f405f11a69e15845529a5d80b7"
+x-commit-hash: "e6d903bcea41542dde87c5304317357065d1762c"
