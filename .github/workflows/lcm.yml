@@ -17,7 +17,7 @@ jobs:
         run: sudo apt-get update
 
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Check whether there are unlicensed packages
         run: tools/license-check.sh
