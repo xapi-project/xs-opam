@@ -13,6 +13,7 @@ depends: [
   "ocaml"
   "dune"
   "alcotest" {with-test}
+  "cohttp-posix"
   "fmt" {with-test}
   "astring"
   "cmdliner"

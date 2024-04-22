@@ -57,6 +57,7 @@ xapi-storage              $XAPI/xen-api
 xapi-storage-cli          $XAPI/xen-api
 xapi-storage-script       $XAPI/xen-api
 xapi-tracing              $XAPI/xen-api
+xapi-tracing-export       $XAPI/xen-api
 xapi-types                $XAPI/xen-api
 xapi-xenopsd              $XAPI/xen-api
 xapi-xenopsd-cli          $XAPI/xen-api
