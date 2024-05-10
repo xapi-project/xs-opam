@@ -13,6 +13,7 @@ flags: conf
 build: ["perl" "--version"]
 depexts: [
   ["perl"] {os-family = "debian"}
+  ["perl"] {os-family = "ubuntu"}
   ["perl"] {os-distribution = "alpine"}
   ["perl"] {os-distribution = "nixos"}
   ["perl"] {os-distribution = "arch"}
