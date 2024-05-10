@@ -1,6 +1,6 @@
 opam-version: "2.0"
 name: "ocaml-version"
-version: "3.6.4"
+version: "3.6.7"
 synopsis: "Manipulate, parse and generate OCaml compiler version strings"
 description: """\
 This library provides facilities to parse version numbers of the OCaml compiler, and enumerates the various official OCaml releases and configuration variants.
@@ -47,10 +47,10 @@ build: [
 dev-repo: "git+https://github.com/ocurrent/ocaml-version.git"
 url {
   src:
-    "https://github.com/ocurrent/ocaml-version/releases/download/v3.6.4/ocaml-version-3.6.4.tbz"
+    "https://github.com/ocurrent/ocaml-version/releases/download/v3.6.7/ocaml-version-3.6.7.tbz"
   checksum: [
-    "sha256=270bcebfe43881ebc09c897bde5ea3b90737b7673ee4100f8c0c6cff321872dc"
-    "sha512=bc431d9984c6341a08ca8ce68dcead9cbf6a7954aa10966b32ba1d8df0beb363d1ecfcff373b7afc3b301a681dd131fe588bfdb965f2c983db6061f361fec40a"
+    "sha256=d50ffd5b669d33edb0d889c476a71de4888d90008d58336038d210ced28f810c"
+    "sha512=128c2777152d6050a1cc07e520876aa7bef380459dd6a3dbcc8e42352afcbd7ebb8f8ef1751beb865346d49ba6f0c2dc45359f2367e5d4c53906008fc51d95eb"
   ]
 }
-x-commit-hash: "bf2f60c037aa84c41a38f0275c87df9e822d99e2"
+x-commit-hash: "1fd32aebc48b86a81e3f825229180f530a94729a"
