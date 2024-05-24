@@ -13,11 +13,11 @@ depends: [
   "ocaml"
   "dune"
   "alcotest" {with-test}
-  "cohttp-posix"
   "fmt" {with-test}
   "astring"
   "cmdliner"
   "cohttp"
+  "cohttp-posix"
   "fd-send-recv"
   "ipaddr"
   "logs"
