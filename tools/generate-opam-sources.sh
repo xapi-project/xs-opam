@@ -47,7 +47,6 @@ xapi-nbd                  $XAPI/xen-api
 xapi-networkd             $XAPI/xen-api
 xapi-open-uri             $XAPI/xen-api
 xapi-plugin               $XAPI/ocaml-xapi-plugin
-xapi-rrd-transport        $XAPI/xen-api
 xapi-rrd-transport-utils  $XAPI/xen-api
 xapi-rrdd                 $XAPI/xen-api
 xapi-rrdd-plugin          $XAPI/xen-api
@@ -67,7 +66,6 @@ xe                        $XAPI/xen-api
 xen-api-client            $XAPI/xen-api
 xen-api-client-async      $XAPI/xen-api
 xen-api-client-lwt        $XAPI/xen-api
-xen-api-sdk               $XAPI/xen-api
 xenctrl                   $XAPI/xenctrl
 xenmmap                   $XAPI/xenctrl
 xml-light2                $XAPI/xen-api

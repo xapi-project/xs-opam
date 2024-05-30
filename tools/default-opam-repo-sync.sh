@@ -32,7 +32,6 @@ xapi-forkexecd
 xapi-idl
 xapi-libs-transitional
 xapi-rrdd
-xapi-rrd-transport
 xen-api-client
 xenctrl"
 

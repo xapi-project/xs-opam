@@ -1,6 +1,5 @@
 opam-version: "2.0"
 name: "xapi-stdext-encodings"
-version: "4.24.0"
 synopsis: "Xapi's standard library extension, Encodings"
 maintainer: "Xapi project maintainers"
 authors: "Jonathan Ludlam"

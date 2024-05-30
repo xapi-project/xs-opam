@@ -44,7 +44,6 @@ depends: [
   "xapi-rrd"
   "xapi-rrdd"
   "xapi-rrdd-plugin"
-  "xapi-rrd-transport"
   "xapi-rrd-transport-utils"
   "xapi-squeezed"
   "xapi-storage"
@@ -57,7 +56,6 @@ depends: [
   "xe"
   "xen-api-client"
   "xen-api-client-async"
-  "xen-api-sdk"
   "xml-light2"
   "zstd"
 ]
