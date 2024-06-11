@@ -35,6 +35,17 @@ jobs:
       - name: Free space
         run: sudo rm -rf /usr/local/lib/android
 
+      - name: Use disk with more space for TMPDIR and XDG_CACHE_HOME
+        shell: bash
+        run: |
+          df -h || true
+          export TMPDIR="/mnt/build/tmp"
+          export XDG_CACHE_HOME="/mnt/build/cache"
+          sudo mkdir -p "${TMPDIR}" "${XDG_CACHE_HOME}"
+          sudo chown "$(id -u):$(id -g)" "${TMPDIR}" "${XDG_CACHE_HOME}"
+          echo "TMPDIR=${TMPDIR}" >>"$GITHUB_ENV"
+          echo "XDG_CACHE_HOME=${XDG_CACHE_HOME}" >>"$GITHUB_ENV"
+
       - name: Use ocaml
         uses: ocaml/setup-ocaml@v2
         with:
@@ -69,3 +80,7 @@ jobs:
 
       - name: Install developer tools
         run: opam install upstream-extra-dummy
+
+      - name: Print disk usage
+        shell: bash
+        run: df -h || true
