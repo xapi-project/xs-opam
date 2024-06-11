@@ -35,6 +35,17 @@ jobs:
       - name: Free space
         run: sudo rm -rf /usr/local/lib/android
 
+      - name: Use disk with more space for TMPDIR and XDG_CACHE_HOME
+        shell: bash
+        run: |
+          df -h || true
+          export TMPDIR="/mnt/build/tmp"
+          export XDG_CACHE_HOME="/mnt/build/cache"
+          sudo mkdir -p "${TMPDIR}" "${XDG_CACHE_HOME}"
+          sudo chown "$(id -u):$(id -g)" "${TMPDIR}" "${XDG_CACHE_HOME}"
+          echo "TMPDIR=${TMPDIR}" >>"$GITHUB_ENV"
+          echo "XDG_CACHE_HOME=${XDG_CACHE_HOME}" >>"$GITHUB_ENV"
+
       - name: Use ocaml
         uses: ocaml/setup-ocaml@v2
         with:
@@ -57,15 +68,26 @@ jobs:
 
       - name: Build xs-toolstack, test its dependencies
         # opam install may ignore installing depexts sometimes
-        # OPAMCOLOR is set to "always" by default and it breaks piping
         run: |
-          OPAMERRLOGLEN=10000 OPAMCOLOR=NEVER opam list -s --required-by xs-toolstack | xargs opam depext -tu
-          OPAMERRLOGLEN=10000 OPAMCOLOR=NEVER opam list -s --required-by xs-toolstack | xargs opam install -t
+          opam list -s --required-by xs-toolstack | xargs opam depext -tu
+          opam list -s --required-by xs-toolstack | xargs opam install -t
+        env:
+          # OPAMCOLOR is set to "always" by default and it breaks piping
+          OPAMCOLOR: NEVER
+          OPAMERRLOGLEN: 10000
 
       - name: Uninstall unversioned packages
         # This should purge them from the cache, unversioned package have
         # 'master' as its version
-        run: OPAMCOLOR=NEVER opam list | awk -F " " '$2 == "master" { print $1 }' |  xargs opam uninstall
+        run: opam list | awk -F " " '$2 == "master" { print $1 }' |  xargs opam uninstall
+        env:
+          # OPAMCOLOR is set to "always" by default and it breaks piping
+          OPAMCOLOR: NEVER
+          OPAMERRLOGLEN: 10000
 
       - name: Install developer tools
         run: opam install upstream-extra-dummy
+
+      - name: Print disk usage
+        shell: bash
+        run: df -h || true
