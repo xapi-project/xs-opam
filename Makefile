@@ -14,13 +14,14 @@ archive: $(NAME).tar.gz
 
 $(NAME).tar.gz:
 	# Add only upstream and xs pkgs into cache, add ocaml ones to metadata
-	mkdir -p stash
-	mv packages/{ocaml,upstream-extra,xs-extra,xs-extra-dummy} stash
+	mkdir -p stash/ocaml
+	mv packages/{upstream-extra,xs-extra,xs-extra-dummy} stash
+	mv packages/ocaml/ocaml-base-compiler.* stash/ocaml
 	env OPAMFETCH=wget opam admin cache |& tee cache.log
 	! grep ERROR cache.log
-	mv stash/ocaml packages/
 	tar zcf $@ --transform "flags=r;s|^|$(NAME)/|" cache packages tools repo
-	mv stash/* packages/
+	cp -R stash/* packages/
+	rm -R stash/
 
 # report licenses of xs-toolstack from *installed* packages
 licenses:
