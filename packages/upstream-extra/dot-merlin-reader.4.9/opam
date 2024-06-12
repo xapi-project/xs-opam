@@ -11,9 +11,9 @@ license: "MIT"
 homepage: "https://github.com/ocaml/merlin"
 bug-reports: "https://github.com/ocaml/merlin/issues"
 depends: [
-  "ocaml" {>= "4.08" & < "6.0"}
+  "ocaml" {>= "4.08" & < "5.2"}
   "dune" {>= "2.9.0"}
-  "merlin-lib" {>= "4.9" & < "4.14-502"}
+  "merlin-lib" {>= "4.9" & < "5.0"}
   "ocamlfind" {>= "1.6.0"}
 ]
 build: [
