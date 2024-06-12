@@ -45,6 +45,7 @@ depends: [
   "xapi-rrdd"
   "xapi-rrdd-plugin"
   "xapi-rrd-transport-utils"
+  "xapi-sdk"
   "xapi-squeezed"
   "xapi-storage"
   "xapi-storage-cli"
