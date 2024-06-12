@@ -1,6 +1,6 @@
 opam-version: "2.0"
 name: "ipaddr-sexp"
-version: "5.5.0"
+version: "5.6.0"
 synopsis:
   "A library for manipulation of IP address representations using sexp"
 description: "Sexp convertions for ipaddr"
@@ -28,10 +28,10 @@ build: [
 dev-repo: "git+https://github.com/mirage/ocaml-ipaddr.git"
 url {
   src:
-    "https://github.com/mirage/ocaml-ipaddr/releases/download/v5.5.0/ipaddr-5.5.0.tbz"
+    "https://github.com/mirage/ocaml-ipaddr/releases/download/v5.6.0/ipaddr-5.6.0.tbz"
   checksum: [
-    "sha256=62890b316e035792ad29af1ad971456d10defd525b74b53db1b67fa42375c178"
-    "sha512=d9742648e3e4fe3d0bc7a5b08e62d97dab5d52b6421712c0415b345ddeb63a2a5fbb61e3083e90ae8cf05009673975e2e2ece5e15bce256ccd34cbe78d810c83"
+    "sha256=9e30433fdb4ca437a6aa8ffb447baca5eba7615fb88e7b0cd8a4b416c3208133"
+    "sha512=66a3bedfd91dacd6c1de9ba35abac3ef2ad3c2c8543f7b4e2a0cc6283a8d42138b48d02e904df0232ee9f320920e889bddbbda9a5148c5c6b72fd0164e0c6a34"
   ]
 }
-x-commit-hash: "234c6009a221e23a7dd4883756e6b2cc0d7c663b"
+x-commit-hash: "a3852099627a9f9c56d75efe1c1adf4941c6c3d4"
