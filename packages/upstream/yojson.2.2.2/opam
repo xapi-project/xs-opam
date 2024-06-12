@@ -1,6 +1,6 @@
 opam-version: "2.0"
 name: "yojson"
-version: "2.1.2"
+version: "2.2.2"
 synopsis:
   "Yojson is an optimized parsing and printing library for the JSON format"
 description: """\
@@ -14,12 +14,11 @@ maintainer: [
 authors: "Martin Jambon"
 license: "BSD-3-Clause"
 homepage: "https://github.com/ocaml-community/yojson"
-doc: "https://ocaml-community.github.io/yojson"
+doc: "https://ocaml.org/p/yojson/latest"
 bug-reports: "https://github.com/ocaml-community/yojson/issues"
 depends: [
   "dune" {>= "2.7"}
   "ocaml" {>= "4.02.3"}
-  "cppo" {build}
   "alcotest" {with-test & >= "0.8.5"}
   "seq" {>= "0.2.2"}
   "odoc" {with-doc}
@@ -41,10 +40,10 @@ build: [
 dev-repo: "git+https://github.com/ocaml-community/yojson.git"
 url {
   src:
-    "https://github.com/ocaml-community/yojson/releases/download/2.1.2/yojson-2.1.2.tbz"
+    "https://github.com/ocaml-community/yojson/releases/download/2.2.2/yojson-2.2.2.tbz"
   checksum: [
-    "sha256=59f2f1abbfc8a7ccbdbf608894e5c75e8a76006e34899254446f83e200dfb4f9"
-    "sha512=309cba7568dec51de20c7ab8df033258c275b8d58b0a36a66b26e673a3bc050cbd7e39ff8fe4796e89263e125bcc21e04dc36a394f3cc201956887eee1fb281a"
+    "sha256=9abfad8c9a79d4723ad2f6448e669c1e68dbfc87cc54a1b7c064b0c90912c595"
+    "sha512=ac52eae3ca1d3129a7885ca638e6ae5bcfc387598a82cc30d3e4988fd154f1756719c399f96e950d898c79a6dbd4ccc44b6f468bcafbd620e6945a0415b41e0c"
   ]
 }
-x-commit-hash: "e51163ee04ad79408975545ec5fc3b7dc41f68eb"
+x-commit-hash: "3f82b79d1865eec82c6f498ee1835a90c74c31b4"
