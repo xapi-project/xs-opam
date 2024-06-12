@@ -1,6 +1,6 @@
 opam-version: "2.0"
 name: "dune-private-libs"
-version: "3.15.2"
+version: "3.15.3"
 synopsis: "Private libraries of Dune"
 description: """\
 !!!!!!!!!!!!!!!!!!!!!!
@@ -34,10 +34,10 @@ build: [
 dev-repo: "git+https://github.com/ocaml/dune.git"
 url {
   src:
-    "https://github.com/ocaml/dune/releases/download/3.15.2/dune-3.15.2.tbz"
+    "https://github.com/ocaml/dune/releases/download/3.15.3/dune-3.15.3.tbz"
   checksum: [
-    "sha256=f959980542ca85909b3f3f8e9be65c2b8a375f3a4e3bd83c7ad7a07f2e077933"
-    "sha512=d752b8c09130cf3d564b3a524e3148783b581daa3f9a61d0f52bf4d6995ef73258e71877dbfd8b7516f9a4bac5ad973e80f4fed596df9446e704acc724aac55e"
+    "sha256=3c27c7676414056f0368a71fdc670d2b0a59898090c78a1b68230984e5beb713"
+    "sha512=c88ac7a6ed9334a4bc6231ecfb0efaa961dda99bc386fd5b92505151ff833dfaf058d75305fbb64c496e570058ec9000ac6add06dda7a395e757e924af1d1a7f"
   ]
 }
-x-commit-hash: "c28817c416ac0b381f6a6938236419ab5d86d6e1"
+x-commit-hash: "55da8f9248e3f5a06d6234ae35b140d1b37c6f0b"
