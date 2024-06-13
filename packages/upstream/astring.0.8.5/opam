@@ -33,5 +33,8 @@ build: ["ocaml" "pkg/pkg.ml" "build" "--pinned" "%{pinned}%"]
 dev-repo: "git+http://erratique.ch/repos/astring.git"
 url {
   src: "https://erratique.ch/software/astring/releases/astring-0.8.5.tbz"
-  checksum: "md5=e148907c24157d1df43bec89b58b3ec8"
+  checksum: [
+    "sha256=865692630c07c3ab87c66cdfc2734c0fdfc9c34a57f8e89ffec7c7d15e7a70fa"
+    "md5=e148907c24157d1df43bec89b58b3ec8"
+  ]
 }
