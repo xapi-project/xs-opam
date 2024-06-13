@@ -11,9 +11,19 @@ available: os = "linux"
 flags: conf
 build: ["cc" "-lpam" "main.c"]
 depexts: [
-  ["libpam0g-dev"] {os-family = "debian"}
+  ["libpam0g-dev"] {os-family = "debian" | os-family = "ubuntu"}
   ["pam-devel"] {os-distribution = "centos"}
   ["pam-devel"] {os-distribution = "fedora"}
+  ["pam-devel"] {os-family = "suse" | os-family = "opensuse"}
+  ["pam-devel"] {os-distribution = "ol"}
+  ["pam"] {os-distribution = "arch"}
   ["linux-pam-dev"] {os-distribution = "alpine"}
 ]
-extra-files: ["main.c" "md5=f4bf9f8ac17a811ede3f472e58653b8e"]
+extra-source "main.c" {
+  src:
+    "https://raw.githubusercontent.com/ocaml/opam-source-archives/main/patches/conf-pam/main.c"
+  checksum: [
+    "sha256=2f7923033c5947dab87b6b72ff71bceaee95db1037549a2106b8a78e8fd1af1f"
+    "md5=f4bf9f8ac17a811ede3f472e58653b8e"
+  ]
+}

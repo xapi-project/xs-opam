@@ -28,7 +28,14 @@ depexts: [
   ["lang/python39"] {os = "netbsd"}
   ["python3"] {os = "freebsd"}
   ["python39"] {os-distribution = "macports" & os = "macos"}
-  ["python@3"] {os-distribution = "homebrew" & os = "macos"}
+  ["python@3.9"] {os-distribution = "homebrew" & os = "macos"}
   ["system:python3"] {os-distribution = "cygwinports"}
 ]
-extra-files: ["test.py" "md5=db8829ab1f4aa1fc15f380afba9d01f5"]
+extra-source "test.py" {
+  src:
+    "https://raw.githubusercontent.com/ocaml/opam-source-archives/main/patches/conf-python-3/test.py"
+  checksum: [
+    "sha256=50738b59f747bf6464ec69a083c7f21e768f0a77df6520a091636c74bb1b7b77"
+    "md5=db8829ab1f4aa1fc15f380afba9d01f5"
+  ]
+}
