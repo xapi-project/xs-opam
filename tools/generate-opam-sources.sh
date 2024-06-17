@@ -50,6 +50,7 @@ xapi-plugin               $XAPI/ocaml-xapi-plugin
 xapi-rrd-transport-utils  $XAPI/xen-api
 xapi-rrdd                 $XAPI/xen-api
 xapi-rrdd-plugin          $XAPI/xen-api
+xapi-sdk                  $XAPI/xen-api
 xapi-schema               $XAPI/xen-api
 xapi-squeezed             $XAPI/xen-api
 xapi-storage              $XAPI/xen-api
