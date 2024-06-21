@@ -7,6 +7,7 @@ XAPI="xapi-project"
 XSER="xenserver"
 
 MAP="\
+clock                     $XAPI/xen-api
 cohttp-posix              $XAPI/xen-api
 ezxenstore                $XAPI/xen-api
 forkexec                  $XAPI/xen-api
