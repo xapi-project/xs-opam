@@ -7,6 +7,7 @@ ocamlformat
 ocamlformat-lib
 ocp-indent
 psq
+qcheck-alcotest
 syslog-message
 trace
 tyre
