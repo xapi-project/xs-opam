@@ -13,6 +13,8 @@ depends: [
   "fd-send-recv" {>= "2.0.0"}
   "odoc" {with-doc}
   "xapi-backtrace"
+  "unix-errno"
+  "astring"
   "xapi-stdext-pervasives" {= version}
 ]
 available: os = "macos" | os = "linux"
