@@ -17,6 +17,7 @@ depends: [
   "dune"
   "astring"
   "forkexec"
+  "systemd" {>= "1.2"}
   "uuid"
   "xapi-stdext-unix"
 ]
