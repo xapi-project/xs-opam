@@ -20,6 +20,7 @@ depends: [
   "netlink"
   "re"
   "rpclib"
+  "systemd"
   "xapi-idl"
   "xapi-inventory"
   "xapi-stdext-pervasives"
