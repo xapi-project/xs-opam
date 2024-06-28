@@ -7,6 +7,7 @@ XAPI="xapi-project"
 XSER="xenserver"
 
 MAP="\
+clock                     $XAPI/xen-api
 cohttp-posix              $XAPI/xen-api
 ezxenstore                $XAPI/xen-api
 forkexec                  $XAPI/xen-api
@@ -53,6 +54,13 @@ xapi-rrdd-plugin          $XAPI/xen-api
 xapi-sdk                  $XAPI/xen-api
 xapi-schema               $XAPI/xen-api
 xapi-squeezed             $XAPI/xen-api
+xapi-stdext-date          $XAPI/xen-api
+xapi-stdext-encodings     $XAPI/xen-api
+xapi-stdext-pervasives    $XAPI/xen-api
+xapi-stdext-std           $XAPI/xen-api
+xapi-stdext-threads       $XAPI/xen-api
+xapi-stdext-unix          $XAPI/xen-api
+xapi-stdext-zerocheck     $XAPI/xen-api
 xapi-storage              $XAPI/xen-api
 xapi-storage-cli          $XAPI/xen-api
 xapi-storage-script       $XAPI/xen-api
