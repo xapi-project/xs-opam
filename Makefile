@@ -17,7 +17,7 @@ $(NAME).tar.gz:
 	mkdir -p stash/ocaml
 	mv packages/{upstream-extra,xs-extra,xs-extra-dummy} stash
 	mv packages/ocaml/ocaml-base-compiler.* stash/ocaml
-	env OPAMFETCH=wget opam admin cache |& tee cache.log
+	env OPAMFETCH=curl opam admin cache |& tee cache.log
 	! grep ERROR cache.log
 	tar zcf $@ --transform "flags=r;s|^|$(NAME)/|" cache packages tools repo
 	cp -R stash/* packages/
