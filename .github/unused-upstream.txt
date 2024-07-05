@@ -6,7 +6,6 @@ ocaml-version
 ocamlformat
 ocamlformat-lib
 ocp-indent
-psq
 syslog-message
 trace
 tyre
