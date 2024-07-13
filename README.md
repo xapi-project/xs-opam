@@ -26,33 +26,17 @@ opam repo add xs-opam https://github.com/xapi-project/xs-opam.git
 
 ### Installing packages
 
-To install a package $PKG it's enough to run
+To install all dependencies of xapi, use the xs-toolstack metapackage:
 
 ```bash
-opam depext $PKG
-opam install $PKG
+opam install -t xs-toolstack
 ```
 
-For development, it is often useful to clone the package sources and
-only install its dependencies, leaving the job to build the package and
-make changes to the developer.  This can be done as follows:
+Additionally, there are developer tools, like utop, merlin or the lsp server:
 
 ```bash
-opam depext $PKG
-opam install --deps-only $PKG
+opam install dev-tools
 ```
-
-After that, you can enter the folder containing the cloned sources and
-run the appropriate build command.
-
-## Layout of This Repository
-
-Packages are organised into namespaces:
-
-* `upstream`: upstream packages for xs
-* `upstream-extra`: upstream packages required for xs-extra
-* `xs`: packages required for xs-extra
-* `xs-extra`: toolstack components - latest version
 
 ## Continuous Integration
 
