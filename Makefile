@@ -13,15 +13,19 @@ all:
 archive: $(NAME).tar.gz
 
 $(NAME).tar.gz:
-	# Add only upstream and xs pkgs into cache, add ocaml ones to metadata
-	mkdir -p stash/ocaml
-	mv packages/{upstream-extra,xs-extra,xs-extra-dummy} stash
-	mv packages/ocaml/ocaml-base-compiler.* stash/ocaml
-	env OPAMFETCH=curl opam admin cache |& tee cache.log
+	# Remove unneeded packages (like dev tools), and retain special packages
+	opam admin filter --recursive --required-by xs-toolstack --or host-system-other -y
+	# Remove all xapi dev packages
+	opam admin filter '*.master' --remove -y
+	# Remove compilable ocaml versions
+	opam admin filter 'ocaml-base-compiler' --remove -y
+	# Remove xen-related packages, the libraries are built by the xen package
+	opam admin filter 'conf-xen' --remove -y
+	opam admin cache |& tee cache.log
 	! grep ERROR cache.log
 	tar zcf $@ --transform "flags=r;s|^|$(NAME)/|" cache packages tools repo
-	cp -R stash/* packages/
-	rm -R stash/
+	# restore removed packages
+	git checkout -- packages
 
 # report licenses of xs-toolstack from *installed* packages
 licenses:
