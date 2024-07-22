@@ -25,10 +25,10 @@ build: [
 dev-repo: "git+https://github.com/mirage/ocaml-uri.git"
 url {
   src:
-    "https://github.com/mirage/ocaml-uri/releases/download/v4.4.0/uri-4.4.0.tbz"
+    "https://github.com/mirage/ocaml-uri/archive/8d6da91636c3d81ecc126552664658bc715b4f14.zip"
   checksum: [
-    "sha256=cdabaf6ef5cd2161e59cc7b74c6e4a68ecb80a9f4e96002e338e1b6bf17adec4"
-    "sha512=88374143e0d8aaf6d40aa3cbd7593f9832e9c9727738c6e651498125150c83d5646e13b5737d5c3e81484dd041127f67f8acea13fdc0300ac4e46107559f8ae2"
+    "sha256=462753c947f6c9ef35d5d9d1668289c4192f38b2c62f2318184db2a14d240eed"
+    "sha512=72b926f950c3d1b81ac0ae17cfc59a4179c0dd24345efe99690654d8a2c6ee687885ec1494b9b59397f6d2b3de7b874eec3822897349f5da040a860cce2907de"
   ]
 }
 x-commit-hash: "c336c796f4deb8979a4c7ceea3bef34b46240623"
