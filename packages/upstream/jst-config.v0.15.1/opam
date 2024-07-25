@@ -16,6 +16,9 @@ homepage: "https://github.com/janestreet/jst-config"
 doc:
   "https://ocaml.janestreet.com/ocaml-core/latest/doc/jst-config/index.html"
 bug-reports: "https://github.com/janestreet/jst-config/issues"
+patches: [
+  "a5cddd0e657b9fc3f6775da8ebdaa6d25446b649.patch"
+]
 depends: [
   "ocaml" {>= "4.08.0"}
   "base" {>= "v0.15" & < "v0.16"}
