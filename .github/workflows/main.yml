@@ -86,7 +86,7 @@ jobs:
           OPAMERRLOGLEN: 10000
 
       - name: Install developer tools
-        run: opam install upstream-extra-dummy
+        run: opam install dev-tools
 
       - name: Print disk usage
         shell: bash

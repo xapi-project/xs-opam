@@ -35,9 +35,9 @@ check_no_duplicates "$toolstack_packages" "$toolstack_dupes"
 #   ocaml, ocaml-system, ocaml-base-compiler, ocaml-config
 # several versions of the dev tools might be needed:
 #   merlin, ocaml-lsp-server
-extra_packages=$(opam list --required-by "upstream-extra-dummy" --recursive --short)
-extra_dupes=".github/duplicates-upstream-extra.txt"
-echo checking upstream-extra-dummy...
-check_no_duplicates "$extra_packages" "$extra_dupes"
+dev_packages=$(opam list --required-by "dev-tools" --recursive --short)
+dev_dupes=".github/duplicates-dev-tools.txt"
+echo checking dev-tools...
+check_no_duplicates "$dev_packages" "$dev_dupes"
 
 echo OK
