@@ -5,6 +5,7 @@ authors:        "Christian Lindig <christian.lindig@citrix.com>"
 homepage:       "https://github.com/xapi-project/xs-opam"
 license:        "BSD-2-Clause"
 synopsis: "Metapackage to install all xapi toolstack daemons and its dependencies"
+tags: ["org:xapi-project" "dummy"]
 depends: [
   "ocaml"
   "angstrom"
