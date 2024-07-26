@@ -7,11 +7,11 @@ license:        "BSD-2-Clause"
 synopsis: "Metapackage to install all xapi toolstack daemons and its dependencies"
 tags: ["org:xapi-project" "dummy"]
 depends: [
-  "ocaml"
-  "angstrom"
-  "conf-libev"
+  "conf-libev" # needed for lwt to avoid using select
+  "goblint" # Edwin wants this to test some FFI properties
+  "ocamlformat" # needed to use it while developing the koji rpm
+  "clock"
   "forkexec"
-  "goblint"
   "gzip"
   "http-lib"
   "message-switch"
@@ -40,10 +40,17 @@ depends: [
   "xapi-plugin"
   "xapi-rrd"
   "xapi-sdk"
+  "xapi-stdext-date"
+  "xapi-stdext-encodings"
+  "xapi-stdext-pervasives"
+  "xapi-stdext-threads"
+  "xapi-stdext-unix"
+  "xapi-stdext-zerocheck"
   "xapi-storage"
   "xapi-storage-cli"
   "xapi-storage-script"
   "xapi-tools"
+  "xapi-test-utils" # includes test dependencies
   "xe"
   "xen-api-client"
   "xml-light2"
