@@ -9,7 +9,7 @@ license: "LGPL-2.1-only WITH OCaml-LGPL-linking-exception"
 homepage: "https://xapi-project.github.io/"
 bug-reports: "https://github.com/xapi-project/xen-api/issues"
 depends: [
-  "dune" {>= "3.0"}
+  "dune" {>= "3.15"}
   "alcotest"
   "angstrom"
   "base-threads"
@@ -22,11 +22,12 @@ depends: [
   "domain-name"
   "ezxenstore" {= version}
   "fmt" {with-test}
+  "hex"
   "http-lib" {with-test & = version}
   "ipaddr"
   "mirage-crypto"
   "mirage-crypto-pk"
-  "mirage-crypto-rng" {with-test & >= "0.11.0"}
+  "mirage-crypto-rng" {>= "0.11.0"}
   "message-switch-unix" {= version}
   "mtime"
   "opentelemetry-client-ocurl"
@@ -36,6 +37,7 @@ depends: [
   "ppx_sexp_conv"
   "ppx_deriving"
   "psq"
+  "qcheck-alcotest"
   "rpclib"
   "rrdd-plugin" {= version}
   "rresult"
