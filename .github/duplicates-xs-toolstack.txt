@@ -1,3 +1,0 @@
-ocaml
-ocaml-base-compiler
-ocaml-system
