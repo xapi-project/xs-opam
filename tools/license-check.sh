@@ -13,7 +13,7 @@ do
     errors=true
   fi
   license=$(grep -Po 'license: \K.*' $file| tr -d '"')
-  if echo $license | grep -qxvf .github/known-licenses.txt; then 
+  if echo $license | grep -iqxvf .github/known-licenses.txt; then 
     echo "Unrecognised license used for $name: $license. Is it a valid a SPDX identifier?"
     errors=true
   fi
