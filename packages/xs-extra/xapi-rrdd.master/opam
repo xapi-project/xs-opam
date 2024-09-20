@@ -21,6 +21,7 @@ depends: [
   "ppx_deriving_rpc"
   "rpclib"
   "ezxenstore" {= version}
+  "rrd-transport" {= version}
   "uuid" {= version}
   "xapi-backtrace"
   "xapi-idl" {= version}
