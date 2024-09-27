@@ -1,9 +1,8 @@
 opam-version: "2.0"
-name: "chrome-trace"
-version: "3.15.3"
-synopsis: "Chrome trace event generation library"
-description:
-  "This library offers no backwards compatibility guarantees. Use at your own risk."
+name: "dyn"
+version: "3.16.0"
+synopsis: "Dynamic type"
+description: "Dynamic type"
 maintainer: "Jane Street Group, LLC <opensource@janestreet.com>"
 authors: "Jane Street Group, LLC <opensource@janestreet.com>"
 license: "MIT"
@@ -13,6 +12,8 @@ bug-reports: "https://github.com/ocaml/dune/issues"
 depends: [
   "dune" {>= "3.12"}
   "ocaml" {>= "4.08.0"}
+  "ordering" {= version}
+  "pp" {>= "1.1.0" & < "2.0.0"}
   "odoc" {with-doc}
 ]
 build: [
@@ -24,10 +25,10 @@ build: [
 dev-repo: "git+https://github.com/ocaml/dune.git"
 url {
   src:
-    "https://github.com/ocaml/dune/releases/download/3.15.3/dune-3.15.3.tbz"
+    "https://github.com/ocaml/dune/releases/download/3.16.0/dune-3.16.0.tbz"
   checksum: [
-    "sha256=3c27c7676414056f0368a71fdc670d2b0a59898090c78a1b68230984e5beb713"
-    "sha512=c88ac7a6ed9334a4bc6231ecfb0efaa961dda99bc386fd5b92505151ff833dfaf058d75305fbb64c496e570058ec9000ac6add06dda7a395e757e924af1d1a7f"
+    "sha256=5481dde7918ca3121e02c34d74339f734b32d5883efb8c1b8056471e74f9bda6"
+    "sha512=529f937c61bc9ea7b135c2425f2d730478b48e6ab6b6455c354138d27b76bd43afce40d4784a6f183d6308d3cf0f5d5cea5bea070f83442949762ed818fb44bc"
   ]
 }
-x-commit-hash: "55da8f9248e3f5a06d6234ae35b140d1b37c6f0b"
+x-commit-hash: "e4380ffddbdf924b3ec4c56048cd8331e1bf39ed"
