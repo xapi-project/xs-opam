@@ -1,6 +1,6 @@
 opam-version: "2.0"
 name: "conduit-lwt-unix"
-version: "6.2.3"
+version: "7.1.0"
 synopsis: "A network connection establishment library for Lwt_unix"
 maintainer: "anil@recoil.org"
 authors: [
@@ -11,13 +11,13 @@ tags: "org:mirage"
 homepage: "https://github.com/mirage/ocaml-conduit"
 bug-reports: "https://github.com/mirage/ocaml-conduit/issues"
 depends: [
-  "ocaml" {>= "4.08.0"}
+  "ocaml" {>= "4.13.0"}
   "dune" {>= "2.0"}
   "base-unix"
   "logs"
   "ppx_sexp_conv" {>= "v0.13.0"}
   "conduit-lwt" {= version}
-  "lwt" {>= "3.0.0"}
+  "lwt" {>= "5.7.0"}
   "uri" {>= "1.9.4"}
   "ipaddr" {>= "4.0.0"}
   "ipaddr-sexp"
@@ -28,7 +28,7 @@ depends: [
 ]
 depopts: ["tls-lwt" "lwt_ssl" "launchd"]
 conflicts: [
-  "tls-lwt" {< "0.16.0"}
+  "tls-lwt" {< "1.0.0"}
   "ssl" {< "0.5.12"}
 ]
 build: [
@@ -38,10 +38,10 @@ build: [
 dev-repo: "git+https://github.com/mirage/ocaml-conduit.git"
 url {
   src:
-    "https://github.com/mirage/ocaml-conduit/releases/download/v6.2.3/conduit-6.2.3.tbz"
+    "https://github.com/mirage/ocaml-conduit/releases/download/v7.1.0/conduit-7.1.0.tbz"
   checksum: [
-    "sha256=3a4684bb1485b1f247d6084dd0a356e1027e92c2cd467b35cabd59a764423e79"
-    "sha512=9fdb07540ae495e820e454a81f333551c18d3207c974adf35719198b93ff3f3d368f6558af8a80b6bd2af720ec6cbd274e7eecb816ac87384bcf8ac0d87357d3"
+    "sha256=58d2218a07e71706025de38ca0253233e970f35b4cacd37f706941b4cbea57f7"
+    "sha512=3d52e16202b443c72801828ab4a08ff2ae36ca03f3991793f6b155770d687718f6646fe85b70d7cadf670e4caf99af42bcf492ee70236f6a9a0d8a425deb03a6"
   ]
 }
-x-commit-hash: "81fe395407308b01f573b598e85be99fea1cdbef"
+x-commit-hash: "0805a919c51c702fcc4ff0b8565930b10d762218"
