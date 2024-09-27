@@ -1,6 +1,6 @@
 opam-version: "2.0"
 name: "uuseg"
-version: "15.1.0"
+version: "16.0.0"
 synopsis: "Unicode text segmentation for OCaml"
 description: """\
 Uuseg is an OCaml library for segmenting Unicode text. It implements
@@ -31,7 +31,7 @@ depends: [
   "ocamlfind" {build}
   "ocamlbuild" {build}
   "topkg" {build & >= "1.0.3"}
-  "uucp" {>= "15.1.0" & < "16.0.0"}
+  "uucp" {>= "16.0.0" & < "17.0.0"}
 ]
 depopts: ["uutf" "cmdliner"]
 conflicts: [
@@ -51,7 +51,7 @@ build: [
 ]
 dev-repo: "git+https://erratique.ch/repos/uuseg.git"
 url {
-  src: "https://erratique.ch/software/uuseg/releases/uuseg-15.1.0.tbz"
+  src: "https://erratique.ch/software/uuseg/releases/uuseg-16.0.0.tbz"
   checksum:
-    "sha512=1e9460dc5a856c985d40c61fd1560bdfdb8bbaf8d7430405814589b47d4a7f7869658d1e3198c7a9132412e9b4b85402ceb4bda5040da426b69e9aef4222a23a"
+    "sha512=355139aee2a72baddf3d811e522948456147546ee946b6eca20f57711865770d4b8d32ea01a7338b8e6cdedb4423ee65cee387704bb9c0c057bcbd65012679b8"
 }
