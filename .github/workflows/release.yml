@@ -21,6 +21,7 @@ jobs:
           xs-opam: "."
         opam-pin: false
         dune-cache: true
+        allow-prerelease-opam: true
 
     - name: Collect licenses
       run: ./tools/print-licenses.sh > licenses.txt
