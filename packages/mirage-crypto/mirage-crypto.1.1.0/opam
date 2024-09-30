@@ -1,10 +1,9 @@
 opam-version: "2.0"
 name: "mirage-crypto"
-version: "0.11.3"
+version: "1.1.0"
 synopsis: "Simple symmetric cryptography for the modern age"
-description: """\
-Mirage-crypto provides symmetric ciphers (DES, AES, RC4, ChaCha20/Poly1305), and
-hashes (MD5, SHA-1, SHA-2)."""
+description:
+  "Mirage-crypto provides symmetric ciphers (DES, AES, RC4, ChaCha20/Poly1305)."
 maintainer: "Hannes Mehnert <hannes@mehnert.org>"
 authors: [
   "David Kaloper <dk505@cam.ac.uk>" "Hannes Mehnert <hannes@mehnert.org>"
@@ -14,12 +13,12 @@ homepage: "https://github.com/mirage/mirage-crypto"
 doc: "https://mirage.github.io/mirage-crypto/doc"
 bug-reports: "https://github.com/mirage/mirage-crypto/issues"
 depends: [
-  "ocaml" {>= "4.08.0"}
+  "ocaml" {>= "4.13.0"}
   "dune" {>= "2.7"}
   "dune-configurator" {>= "2.0.0"}
   "ounit2" {with-test}
-  "cstruct" {>= "6.0.0"}
-  "eqaf" {>= "0.8" & < "0.10"}
+  "ohex" {with-test & >= "0.2.0"}
+  "eqaf" {>= "0.8"}
 ]
 conflicts: [
   "ocaml-freestanding"
@@ -33,10 +32,10 @@ build: [
 dev-repo: "git+https://github.com/mirage/mirage-crypto.git"
 url {
   src:
-    "https://github.com/mirage/mirage-crypto/releases/download/v0.11.3/mirage-crypto-0.11.3.tbz"
+    "https://github.com/mirage/mirage-crypto/releases/download/v1.1.0/mirage-crypto-1.1.0.tbz"
   checksum: [
-    "sha256=bfb530fa169cd905ebc7e2449f3407cfbd67023ac0b291b8b6f4a1437a5d95b1"
-    "sha512=7b6f4e8128622b53eb2176881b5d6160f224e8606c7dd21aaf47974f15db7aa475cffaff3214aaaabba0f8986398f159c1fbb1bff29228c9b0a3fae67ef8d731"
+    "sha256=c7189767a7ead54923cab020f39cd0c34af7d4b048776939d94f028abf536353"
+    "sha512=312f0ea8433bb35224f4ae6e00ff2d5e6ca72f8e5b6d9e24cf609f004629ac55708fe6987edcc6bdd58e67f0044e053d08ccd783abc7f791fe27e77f6eb1ec62"
   ]
 }
-x-commit-hash: "3ebc0e3e1bb6c471292b9f0c18afa3ce20d5f051"
+x-commit-hash: "cc388cdb0ac068cde73d660d8600c3223feadf96"
