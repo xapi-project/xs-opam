@@ -1,6 +1,6 @@
 opam-version: "2.0"
 name: "ctypes"
-version: "0.22.0"
+version: "0.23.0"
 synopsis: "Combinators for binding to C libraries without writing any C"
 description: """\
 ctypes is a library for binding to C libraries using pure OCaml. The primary
@@ -36,6 +36,7 @@ depends: [
   "conf-pkg-config" {with-test}
   "odoc" {with-doc}
 ]
+conflicts: ["host-system-msvc"]
 build: [
   ["dune" "subst"] {dev}
   [
@@ -55,9 +56,9 @@ build: [
 dev-repo: "git+https://github.com/yallop/ocaml-ctypes.git"
 url {
   src:
-    "https://github.com/yallop/ocaml-ctypes/archive/refs/tags/0.22.0.tar.gz"
+    "https://github.com/yallop/ocaml-ctypes/archive/refs/tags/0.23.0.tar.gz"
   checksum: [
-    "sha256=aa797c5d6bcaee8883aece2d1d9a524fc1f63c78c1538b0fe69969c0e989419f"
-    "md5=8a301a3e3b79156448a6659859ad506c"
+    "sha256=cae47d815b27dd4c824a007f1145856044542fe2588d23a443ef4eefec360bf1"
+    "md5=b1af973ec9cf7867a63714e92df82f2a"
   ]
 }
