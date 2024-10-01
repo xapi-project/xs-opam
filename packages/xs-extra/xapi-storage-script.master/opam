@@ -11,26 +11,25 @@ dev-repo: "git+https://github.com/xapi-project/xen-api.git"
 tags: [ "org:xapi-project" ]
 build: [[ "dune" "build" "-p" name "-j" jobs ]]
 depends: [
-  "ocaml"
   "dune"
   "conf-python-3" {with-test}
-  "xapi-idl" {>= "0.10.0"}
-  "xapi-storage"
   "async" {>= "v0.9.0"}
   "async_inotify"
-  "async_unix" {>= "112.24.00"}
+  "async_unix"
+  "base"
   "core"
-  "message-switch-unix"
-  "message-switch-async"
-  "rpclib"
-  "rpclib-async"
+  "message-switch-async" {= version}
+  "message-switch-lwt" {= version}
+  "message-switch-unix" {= version}
   "ppx_deriving_rpc"
   "ppx_sexp_conv"
-  "xapi-stdext-date"
-]
-# python 2.7 is not enough to ensure the availability of 'python' in these
-depexts: [
-  ["python"] {os-family = "debian" & with-test}
+  "rpclib"
+  "rpclib-async"
+  "rpclib-lwt"
+  "sexplib0"
+  "xapi-idl" {= version}
+  "xapi-stdext-date" {= version}
+  "xapi-storage" {= version}
 ]
 synopsis: "A directory full of scripts can be a Xapi storage implementation"
 description: """
