@@ -1,6 +1,6 @@
 opam-version: "2.0"
 name: "opentelemetry"
-version: "0.9"
+version: "0.10"
 synopsis: "Instrumentation for https://opentelemetry.io"
 maintainer: [
   "Simon Cruanes <simon.cruanes.2007@m4x.org>"
@@ -47,10 +47,10 @@ build: [
 dev-repo: "git+https://github.com/imandra-ai/ocaml-opentelemetry.git"
 url {
   src:
-    "https://github.com/imandra-ai/ocaml-opentelemetry/releases/download/v0.9/opentelemetry-0.9.tbz"
+    "https://github.com/imandra-ai/ocaml-opentelemetry/releases/download/v0.10/opentelemetry-0.10.tbz"
   checksum: [
-    "sha256=400e6fcaff55b92e65d5c082d0262a7c2fc91b385dac0f18ed28405db2669978"
-    "sha512=9f4d2329dec682bb2a839d1c7065f35bc557fc8ef5996c5923cf05af716e6519b0ce66316687e74232cf93baa5c1df4899d1bdd4b4f4b44468bb8b3f57619913"
+    "sha256=281bb075de20663233709e67aec9dc95d75ec9b09a7e52e5c07557ff2cb89b17"
+    "sha512=4d7f07bd628dec23cb1b5171fe2012364b1720beb9cf3a5b74e9e6c0eae5777a0907deafdab08f18546c45b26eaf777ac9913753b1fa185b6554efe171595d8d"
   ]
 }
-x-commit-hash: "f9233113b130b7426e5d14ec3eee5c24c4bdd71e"
+x-commit-hash: "b4a9ccf57b94a2e146cd8230f591adfdf65257e4"
