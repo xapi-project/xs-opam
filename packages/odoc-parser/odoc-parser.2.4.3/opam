@@ -1,6 +1,6 @@
 opam-version: "2.0"
 name: "odoc-parser"
-version: "2.4.2"
+version: "2.4.3"
 synopsis: "Parser for ocaml documentation comments"
 description: """\
 Odoc_parser is a library for parsing the contents of OCaml documentation
@@ -36,10 +36,10 @@ build: [
 ]
 dev-repo: "git+https://github.com/ocaml/odoc.git"
 url {
-  src: "https://github.com/ocaml/odoc/releases/download/2.4.2/odoc-2.4.2.tbz"
+  src: "https://github.com/ocaml/odoc/releases/download/2.4.3/odoc-2.4.3.tbz"
   checksum: [
-    "sha256=563cfdbb26ec8a30e737a9cf285a06e0bbae953f48e25bbb0f69f7a99c2ba40b"
-    "sha512=8d48c99e0c253791177dd65287ce5cee47e7c6805e33f3ae0cf6c8e7d349128f26eebbe36459c31429c11519ad5979dbe36fbcb9403a5fde199a69976a3fb3a6"
+    "sha256=d6bb2cec05b4893ce787d7b7b16110b6583fcdcde840446710befbbf3bbb2b12"
+    "sha512=e78faa68c726db3034c12f0cbf76efb87e73f03430a734f82eeea4fb8813e5ebb8ad176012ed20cc1d56a874c601489ca3f02c929474f925eec6d51ce6bdb856"
   ]
 }
-x-commit-hash: "85644b01ca86d1061766908bba3653ced2c15ce4"
+x-commit-hash: "09a5562f7b61ed9e7512afdf87421dd17b6e4966"
