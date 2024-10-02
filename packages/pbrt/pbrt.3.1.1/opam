@@ -1,6 +1,6 @@
 opam-version: "2.0"
 name: "pbrt"
-version: "3.0.2"
+version: "3.1.1"
 synopsis: "Runtime library for Protobuf tooling"
 maintainer: ["Maxime Ransan <maxime.ransan@gmail.com>" "Simon Cruanes"]
 authors: ["Maxime Ransan <maxime.ransan@gmail.com>" "Simon Cruanes"]
@@ -26,17 +26,17 @@ build: [
     "-j"
     jobs
     "@install"
-    "@runtest" {with-test}
+    "@src/tests/unit-tests/pbrt/runtest" {with-test}
     "@doc" {with-doc}
   ]
 ]
 dev-repo: "git+https://github.com/mransan/ocaml-protoc.git"
 url {
   src:
-    "https://github.com/mransan/ocaml-protoc/releases/download/v3.0.2/ocaml-protoc-3.0.2.tbz"
+    "https://github.com/mransan/ocaml-protoc/releases/download/v3.1.1/ocaml-protoc-3.1.1.tbz"
   checksum: [
-    "sha256=eb3ca953610cc0766b2a89dcb201d49372949458b7d3cb826e15a5ab35205fec"
-    "sha512=8db991f12d3a02f226fb7cf3e99ca02d907497d8b4f48f1393d396594868e25a9fa0e4a3e73322bda8d65e690754b73d2523abf8236e47b77fc0c059f2244e3a"
+    "sha256=c5657fcbfcbaea361beb847f72b8a6a6f36ce9e773bf285b278a0da75f988fbc"
+    "sha512=ea86d04b6293eba48360409049f907fc3e73138ec434b5d1894a2dcdaa0478f6f5a1d13f1ba87c553ddf6806a618525f621d2af862b495ce3426242a3a42e339"
   ]
 }
-x-commit-hash: "5d6ed70dd90d19ebd5bcc7e059de199e62bf6dfd"
+x-commit-hash: "20e71e04d2bd2df037d7647dd0818817ffe5f7be"
