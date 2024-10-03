@@ -14,7 +14,6 @@ forkexec                  $XAPI/xen-api
 gzip                      $XAPI/xen-api
 http-lib                  $XAPI/xen-api
 message-switch            $XAPI/xen-api
-message-switch-async      $XAPI/xen-api
 message-switch-cli        $XAPI/xen-api
 message-switch-core       $XAPI/xen-api
 message-switch-lwt        $XAPI/xen-api
@@ -73,7 +72,6 @@ xapi-xenopsd-simulator    $XAPI/xen-api
 xapi-xenopsd-xc           $XAPI/xen-api
 xe                        $XAPI/xen-api
 xen-api-client            $XAPI/xen-api
-xen-api-client-async      $XAPI/xen-api
 xen-api-client-lwt        $XAPI/xen-api
 xenctrl                   $XAPI/xenctrl
 xenmmap                   $XAPI/xenctrl
