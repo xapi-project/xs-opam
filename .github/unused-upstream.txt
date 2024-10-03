@@ -2,7 +2,6 @@ either
 fix
 logs-syslog
 memtrace
-ocaml-version
 ocamlformat
 ocamlformat-lib
 ocp-indent
