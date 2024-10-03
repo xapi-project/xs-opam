@@ -45,7 +45,6 @@ depends: [
   "xapi-tools"
   "xe"
   "xen-api-client"
-  "xen-api-client-async"
   "xml-light2"
   "zstd"
 ]

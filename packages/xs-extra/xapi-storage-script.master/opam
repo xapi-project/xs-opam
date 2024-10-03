@@ -21,7 +21,6 @@ depends: [
   "async_unix" {>= "112.24.00"}
   "core"
   "message-switch-unix"
-  "message-switch-async"
   "rpclib"
   "rpclib-async"
   "ppx_deriving_rpc"
