@@ -17,27 +17,16 @@ function check_no_duplicates {
   done
 }
 
-# makes sure no ordinary opam packages have more than a single version
+# Make sure no ordinary opam packages have more than a single version
 # This is required because of how the rpm distributions are built: they
 # try to install all versions of all ordinary packages, which fails because
 # the versions of a single package are never compatible.
 # several versions of the compiler might be wanted for testing:
 #   ocaml, ocaml-system, ocaml-base-compiler
-toolstack_packages=$(opam list --required-by "xs-toolstack" --recursive --short)
-toolstack_dupes=".github/duplicates-xs-toolstack.txt"
-echo checking xs-toolstack...
-check_no_duplicates "$toolstack_packages" "$toolstack_dupes"
-
-# When preparing to switch ocaml compiler versions, several versions of
-# developer tools need multiple versions as each version only allows a single
-# version of the compiler.
-# several versions of the compiler might be wanted for testing:
-#   ocaml, ocaml-system, ocaml-base-compiler, ocaml-config
 # several versions of the dev tools might be needed:
 #   merlin, ocaml-lsp-server
-extra_packages=$(opam list --required-by "upstream-extra-dummy" --recursive --short)
-extra_dupes=".github/duplicates-upstream-extra.txt"
-echo checking upstream-extra-dummy...
-check_no_duplicates "$extra_packages" "$extra_dupes"
+packages=$(opam list --short)
+dupes=".github/duplicates.txt"
+check_no_duplicates "$packages" "$dupes"
 
 echo OK

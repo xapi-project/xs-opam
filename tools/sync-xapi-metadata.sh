@@ -2,7 +2,6 @@
 # Emit a table of opam file and where to download it. This can be used
 # to update Opam files to the version in a code repository
 
-EXTRA="packages/xs-extra"
 XAPI="xapi-project"
 XSER="xenserver"
 
@@ -67,14 +66,14 @@ xenmmap                   $XAPI/xenctrl
 xml-light2                $XAPI/xen-api
 zstd                      $XAPI/xen-api"
 
-echo "$MAP" | while read -r opam repo; do
-  opam_file="$EXTRA/$opam.master/opam"
+echo "$MAP" | while read -r name repo; do
+  opam_file="packages/$name/$name.master/opam"
   url_source="\
 url {
   src: \"https://github.com/$repo/archive/master.tar.gz\"
 }"
 
-  curl -L https://raw.githubusercontent.com/"$repo"/master/"$opam".opam > "$opam_file"
+  curl -L https://raw.githubusercontent.com/"$repo"/master/"$name".opam > "$opam_file"
   # do not add the field if it's already in the opam file
   if ! grep -Fq "url {" "$opam_file"; then
     echo "$url_source" >> "$opam_file"

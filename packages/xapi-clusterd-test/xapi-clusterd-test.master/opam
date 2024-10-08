@@ -1,0 +1,28 @@
+opam-version: "2.0"
+maintainer: "xenserver developers"
+synopsis: "Dummy package to install dependencies of the proprietary xapi-clusterd-test"
+tags: ["org:xapi-project" "dummy"]
+depends: [
+  "ocaml"
+  "dune" {build & >= "1.0"}
+  "angstrom"
+  "astring"
+  "base64"
+  "cohttp"
+  "cohttp-lwt"
+  "cohttp-lwt-unix"
+  "dlm"
+  "fmt"
+  "inotify"
+  "ipaddr"
+  "ptime"
+  "re"
+  "message-switch-lwt"
+  "mtime" { >= "1.1.0" }
+  "ppx_deriving_rpc"
+  "rpclib"
+  "uuidm"
+  "xapi-idl"
+  "xen-api-client"
+  "xen-api-client-lwt"
+]
