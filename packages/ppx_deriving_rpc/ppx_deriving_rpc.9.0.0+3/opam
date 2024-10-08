@@ -36,6 +36,7 @@ patches: [
   "6cacde3c903e959d6e9b89a275b271ab7040ef54.patch"
   "d610d47bfebbea9b0b1707bfffe26a0ff52a0720.patch"
   "4f9b5d2b9ef494331eeab070422ba99ca982d82c.patch"
+  "0327f71d559ce52bf118a30fe556b5f66050aec9.patch"
 ]
 dev-repo: "git+https://github.com/mirage/ocaml-rpc.git"
 extra-files: [
@@ -58,6 +59,10 @@ extra-files: [
   [
     "4f9b5d2b9ef494331eeab070422ba99ca982d82c.patch"
     "sha256=b220112573f132d10409168f75367da1ce32321f64103b25af29349ddf0a7526"
+  ]
+  [
+    "0327f71d559ce52bf118a30fe556b5f66050aec9.patch"
+    "sha256=3cfc8c2f88bbb2b76dd9bed36673d82010a1495eba6eda1f1634b8f60dc532e4"
   ]
 ]
 url {
