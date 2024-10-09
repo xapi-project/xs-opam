@@ -12,6 +12,7 @@ depends: [
   "alcotest"
   "ocaml"
   "dune" {build}
+  "crowbar"
 ]
 build: ["dune" "build" "-p" name "-j" jobs]
 dev-repo: "git+https://github.com/xapi-project/xapi-test-utils.git"
