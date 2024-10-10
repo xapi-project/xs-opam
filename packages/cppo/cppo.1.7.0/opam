@@ -1,6 +1,6 @@
 opam-version: "2.0"
 name: "cppo"
-version: "1.6.9"
+version: "1.7.0"
 synopsis: "Code preprocessor like cpp for OCaml"
 description: """\
 Cppo is an equivalent of the C preprocessor for OCaml programs.
@@ -22,20 +22,29 @@ doc: "https://ocaml-community.github.io/cppo"
 bug-reports: "https://github.com/ocaml-community/cppo/issues"
 depends: [
   "ocaml" {>= "4.02.3"}
-  "dune" {>= "1.10"}
+  "dune" {>= "2.0"}
   "base-unix"
 ]
 build: [
   ["dune" "subst"] {dev}
-  ["dune" "build" "-p" name "-j" jobs]
-  ["dune" "runtest" "-p" name "-j" jobs] {with-test}
-  ["dune" "build" "-p" name "@doc"] {with-doc}
+  [
+    "dune"
+    "build"
+    "-p"
+    name
+    "-j"
+    jobs
+    "@install"
+    "@runtest" {with-test}
+    "@doc" {with-doc}
+  ]
 ]
 dev-repo: "git+https://github.com/ocaml-community/cppo.git"
 url {
-  src: "https://github.com/ocaml-community/cppo/archive/v1.6.9.tar.gz"
+  src:
+    "https://github.com/ocaml-community/cppo/archive/refs/tags/v1.7.0.tar.gz"
   checksum: [
-    "md5=d23ffe85ac7dc8f0afd1ddf622770d09"
-    "sha512=26ff5a7b7f38c460661974b23ca190f0feae3a99f1974e0fd12ccf08745bd7d91b7bc168c70a5385b837bfff9530e0e4e41cf269f23dd8cf16ca658008244b44"
+    "md5=90f66810f73b115cc55e581a34bf7db9"
+    "sha512=cafa2f7add42912b413f39e1d9fb7a2a42a9be134128c179dfe353f35a6c32840720d2166a77d985941300cb945b9c424b38401d20027d814b25f3bac534506d"
   ]
 }
