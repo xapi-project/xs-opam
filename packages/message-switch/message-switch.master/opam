@@ -18,7 +18,6 @@ depends: [
   "dune" {>= "3.15"}
   "odoc" {with-doc}
   "cmdliner"
-  "cohttp-async" {with-test}
   "cohttp-lwt-unix"
   "io-page" {>= "2.4.0"}
   "lwt_log"
