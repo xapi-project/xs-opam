@@ -1,6 +1,6 @@
 opam-version: "2.0"
 name: "parsexp"
-version: "v0.15.0"
+version: "v0.16.0"
 synopsis: "S-expression parsing library"
 description: """\
 This library provides generic parsers for parsing S-expressions from
@@ -29,16 +29,15 @@ homepage: "https://github.com/janestreet/parsexp"
 doc: "https://ocaml.janestreet.com/ocaml-core/latest/doc/parsexp/index.html"
 bug-reports: "https://github.com/janestreet/parsexp/issues"
 depends: [
-  "ocaml" {>= "4.08.0"}
-  "base" {>= "v0.15" & < "v0.16"}
-  "sexplib0" {>= "v0.15" & < "v0.16"}
+  "ocaml" {>= "4.14.0"}
+  "sexplib0" {>= "v0.16" & < "v0.17"}
   "dune" {>= "2.0.0"}
 ]
 build: ["dune" "build" "-p" name "-j" jobs]
 dev-repo: "git+https://github.com/janestreet/parsexp.git"
 url {
   src:
-    "https://ocaml.janestreet.com/ocaml-core/v0.15/files/parsexp-v0.15.0.tar.gz"
+    "https://ocaml.janestreet.com/ocaml-core/v0.16/files/parsexp-v0.16.0.tar.gz"
   checksum:
-    "sha256=d1ee902b12ac7c0c888863025990d06845530fb75328454814e5ce5b6d43d193"
+    "sha256=b6e2572c8e6191a85cb8f9c3276ed87fe00522c81ba7a268179fb08185e55e12"
 }
