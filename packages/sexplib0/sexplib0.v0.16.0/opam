@@ -1,6 +1,6 @@
 opam-version: "2.0"
 name: "sexplib0"
-version: "v0.15.1"
+version: "v0.16.0"
 synopsis:
   "Library containing the definition of S-expressions and some base converters"
 description: """\
@@ -15,16 +15,14 @@ homepage: "https://github.com/janestreet/sexplib0"
 doc: "https://ocaml.janestreet.com/ocaml-core/latest/doc/sexplib0/index.html"
 bug-reports: "https://github.com/janestreet/sexplib0/issues"
 depends: [
-  "ocaml" {>= "4.08"}
+  "ocaml" {>= "4.08.0"}
   "dune" {>= "2.0.0"}
 ]
 build: ["dune" "build" "-p" name "-j" jobs]
 dev-repo: "git+https://github.com/janestreet/sexplib0.git"
 url {
   src:
-    "https://github.com/janestreet/sexplib0/archive/refs/tags/v0.15.1.tar.gz"
-  checksum: [
-    "sha256=e8cd817eb3bc3f84a2065fa0255ab2b986a24baf1cc329d05627c516464267b3"
-    "md5=ab8fd6273f35a792cad48cbb3024a7f9"
-  ]
+    "https://ocaml.janestreet.com/ocaml-core/v0.16/files/sexplib0-v0.16.0.tar.gz"
+  checksum:
+    "sha256=86dba26468194512f789f2fb709063515a9cb4e5c4461c021c239a369590701d"
 }

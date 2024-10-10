@@ -1,6 +1,6 @@
 opam-version: "2.0"
 name: "sexplib"
-version: "v0.15.1"
+version: "v0.16.0"
 synopsis: "Library for serializing OCaml values to and from S-expressions"
 description: """\
 Part of Jane Street's Core library
@@ -14,9 +14,9 @@ homepage: "https://github.com/janestreet/sexplib"
 doc: "https://ocaml.janestreet.com/ocaml-core/latest/doc/sexplib/index.html"
 bug-reports: "https://github.com/janestreet/sexplib/issues"
 depends: [
-  "ocaml" {>= "4.08.0"}
-  "parsexp" {>= "v0.15" & < "v0.16"}
-  "sexplib0" {>= "v0.15" & < "v0.16"}
+  "ocaml" {>= "4.14.0"}
+  "parsexp" {>= "v0.16" & < "v0.17"}
+  "sexplib0" {>= "v0.16" & < "v0.17"}
   "dune" {>= "2.0.0"}
   "num"
 ]
@@ -24,7 +24,7 @@ build: ["dune" "build" "-p" name "-j" jobs]
 dev-repo: "git+https://github.com/janestreet/sexplib.git"
 url {
   src:
-    "https://github.com/janestreet/sexplib/archive/refs/tags/v0.15.1.tar.gz"
+    "https://ocaml.janestreet.com/ocaml-core/v0.16/files/sexplib-v0.16.0.tar.gz"
   checksum:
-    "sha256=75da7d290d92d758c01f441f9589ccce031e11301563efde1c19149d39edbcbc"
+    "sha256=e564d5d1ca157314ba5fd64b4e89fa12c6cba8efee3becf6d09d7d9dda21ac5b"
 }
