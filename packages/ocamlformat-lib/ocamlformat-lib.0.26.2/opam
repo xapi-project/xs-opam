@@ -16,11 +16,11 @@ authors: [
   "Guillaume Petiot <guillaume@tarides.com>"
   "Jules Aguillon <jules@j3s.fr>"
 ]
-license: "MIT AND LGPL-2.1-only WITH OCaml-LGPL-linking-exception"
+license: ["MIT" "LGPL-2.1-only WITH OCaml-LGPL-linking-exception"]
 homepage: "https://github.com/ocaml-ppx/ocamlformat"
 bug-reports: "https://github.com/ocaml-ppx/ocamlformat/issues"
 depends: [
-  "ocaml" {>= "4.08"}
+  "ocaml" {>= "4.08" & < "5.3"}
   "alcotest" {with-test & >= "1.3.0"}
   "base" {>= "v0.12.0"}
   "dune" {>= "2.8"}

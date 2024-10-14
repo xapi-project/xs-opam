@@ -1,6 +1,6 @@
 opam-version: "2.0"
 name: "uri"
-version: "4.4.0"
+version: "4.4.0+1"
 synopsis: "An RFC3986 URI/URL parsing library"
 description: """\
 This is an OCaml implementation of the [RFC3986](http://tools.ietf.org/html/rfc3986) specification
