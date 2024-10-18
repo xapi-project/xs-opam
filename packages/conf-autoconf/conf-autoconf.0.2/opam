@@ -11,7 +11,11 @@ license: "GPL-3.0-only"
 homepage: "http://www.gnu.org/software/autoconf"
 bug-reports: "https://github.com/ocaml/opam-repository/issues"
 flags: conf
-build: ["autoconf" "-V"]
+build: [
+  ["sh" "-exc" "autoconf -V"]
+    {os = "win32" & os-distribution != "cygwinports"}
+  ["autoconf" "-V"] {os != "win32" | os-distribution = "cygwinports"}
+]
 depexts: [
   ["autoconf"] {os-family = "debian" | os-family = "ubuntu"}
   ["autoconf"] {os-distribution = "centos"}

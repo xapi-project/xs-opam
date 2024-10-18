@@ -1,0 +1,29 @@
+opam-version: "2.0"
+name: "menhirSdk"
+version: "20240715"
+synopsis: "Compile-time library for auxiliary tools related to Menhir"
+maintainer: "francois.pottier@inria.fr"
+authors: [
+  "François Pottier <francois.pottier@inria.fr>"
+  "Yann Régis-Gianas <yrg@pps.univ-paris-diderot.fr>"
+]
+license: "LGPL-2.0-only WITH OCaml-LGPL-linking-exception"
+homepage: "http://gitlab.inria.fr/fpottier/menhir"
+bug-reports: "https://gitlab.inria.fr/fpottier/menhir/-/issues"
+depends: [
+  "ocaml" {>= "4.03.0"}
+  "dune" {>= "2.8.0"}
+]
+conflicts: [
+  "menhir" {!= version}
+]
+build: ["dune" "build" "-p" name "-j" jobs]
+dev-repo: "git+https://gitlab.inria.fr/fpottier/menhir.git"
+url {
+  src:
+    "https://gitlab.inria.fr/fpottier/menhir/-/archive/20240715/archive.tar.gz"
+  checksum: [
+    "md5=d39a8943fe1be28199e5ec1f4133504c"
+    "sha512=4f933cfc9026f5f2ffda9b0e626862560a233c35ecf097d179edd926d9009bdf46b6611294aea02b63c34427348568f37376a033fbe8cf98a7746fa6f1354dbd"
+  ]
+}

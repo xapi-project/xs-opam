@@ -9,6 +9,14 @@ authors: "nbraud"
 license: "GPL-1.0-or-later"
 homepage: "http://gmplib.org/"
 bug-reports: "https://github.com/ocaml/opam-repository/issues"
+depends: [
+  (("host-arch-x86_32" {os = "win32" & os-distribution != "cygwinports"} &
+    "conf-mingw-w64-gmp-i686"
+      {os = "win32" & os-distribution != "cygwinports"}) |
+   ("host-arch-x86_64" {os = "win32" & os-distribution != "cygwinports"} &
+    "conf-mingw-w64-gmp-x86_64"
+      {os = "win32" & os-distribution != "cygwinports"}))
+]
 flags: conf
 build: [
   ["sh" "-exc" "cc -c $CFLAGS -I/usr/local/include test.c"]
@@ -23,6 +31,11 @@ build: [
     "-exc"
     "cc -c $CFLAGS -I/opt/homebrew/include -I/opt/local/include -I/usr/local/include test.c"
   ] {os = "macos"}
+  [
+    "sh"
+    "-exc"
+    "%{host-arch-x86_64:installed?x86_64:}%%{host-arch-x86_32:installed?i686:}%-w64-mingw32-gcc -c $CFLAGS test.c"
+  ] {os = "win32" & os-distribution != "cygwinports"}
 ]
 depexts: [
   ["libgmp-dev"] {os-family = "debian"}

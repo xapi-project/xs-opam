@@ -5,7 +5,10 @@ BSD-3-Clause
 curl
 GPL-1.0-or-later
 GPL-2.0-only
+GPL-2.0-or-later
 GPL-3.0-only
+GPL-2.0-only AND LGPL-3.0-only
+GPL-3.0-or-later
 ISC
 MIT
 MPL-2.0
@@ -20,8 +23,6 @@ LGPL-2.1-or-later WITH OCaml-LGPL-linking-exception AND BSD-3-Clause
 LGPL-3.0-only
 LGPL-3.0-only WITH OCaml-LGPL-linking-exception
 LGPL-2.1-or-later WITH OpenSSL-linking-exception
-GPL-2.0-or-later
-GPL-2.0-only AND LGPL-3.0-only
 MIT AND LGPL-2.1-only WITH OCaml-LGPL-linking-exception
 Ruby
 Unlicense

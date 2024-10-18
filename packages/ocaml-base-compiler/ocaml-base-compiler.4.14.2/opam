@@ -65,17 +65,6 @@ build: [
 ]
 install: [make "install"]
 build-env: MSYS2_ARG_CONV_EXCL = "*"
-post-messages: [
-  """\
-A failure in the middle of the build may be caused by build parallelism
-   (enabled by default).
-   Please file a bug report at https://github.com/ocaml/opam-repository/issues"""
-    {failure & jobs > "1"}
-  """\
-You can try installing again including --jobs=1
-   to force a sequential build instead."""
-    {failure & jobs > "1" & opam-version >= "2.0.5"}
-]
 dev-repo: "git+https://github.com/ocaml/ocaml#4.14"
 url {
   src: "https://github.com/ocaml/ocaml/archive/4.14.2.tar.gz"
