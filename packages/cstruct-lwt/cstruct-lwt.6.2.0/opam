@@ -1,6 +1,6 @@
 opam-version: "2.0"
-name: "cstruct"
-version: "6.0.1"
+name: "cstruct-lwt"
+version: "6.2.0"
 synopsis: "Access C-like structures directly from OCaml"
 description: """\
 Cstruct is a library and syntax extension to make it easier to access C-like
@@ -17,7 +17,6 @@ authors: [
   "David Scott"
   "Mindy Preston"
   "Thomas Leonard"
-  "Anton Kochkov"
   "Etienne Millon"
 ]
 license: "ISC"
@@ -26,27 +25,23 @@ homepage: "https://github.com/mirage/ocaml-cstruct"
 doc: "https://mirage.github.io/ocaml-cstruct/"
 bug-reports: "https://github.com/mirage/ocaml-cstruct/issues"
 depends: [
-  "ocaml" {>= "4.03.0"}
+  "ocaml" {>= "4.08.0"}
+  "base-unix"
   "dune" {>= "2.0.0"}
-  "bigarray-compat"
-  "alcotest" {with-test}
-  ("crowbar" {with-test} | "ocaml" {with-test & < "4.08"})
-]
-conflicts: [
-  "js_of_ocaml" {< "3.5.0"}
+  "lwt"
+  "cstruct" {= version}
 ]
 build: [
   ["dune" "subst"] {dev}
   ["dune" "build" "-p" name "-j" jobs]
-  ["dune" "runtest" "-p" name "-j" jobs] {with-test}
 ]
 dev-repo: "git+https://github.com/mirage/ocaml-cstruct.git"
 url {
   src:
-    "https://github.com/mirage/ocaml-cstruct/releases/download/v6.0.1/cstruct-v6.0.1.tbz"
+    "https://github.com/mirage/ocaml-cstruct/releases/download/v6.2.0/cstruct-6.2.0.tbz"
   checksum: [
-    "sha256=4a67bb8f042753453c59eabf0e47865631253ba694091ce6062aac05d47a9bed"
-    "sha512=3eeeb6ae0fd3b625cf1d308498f0a1e6951d16566561f3362fdf74e7158d92d8f6c6d9fa968ff15f8c19a1886dce99d0ef17b44dbb37b97cc68c9b088fdc2248"
+    "sha256=9a78073392580e8349148fa3ab4b1b2e989dc9d30d07401b04c96b7c60f03e62"
+    "sha512=8d33fe6b3707a3994d0225cd33cadde0bb2ca834ef01096e3df33a08e4a8c6d02ebccddf558a73988b8a5595b65fdc10de61efbf872c6c9e55c719c7e19c463d"
   ]
 }
-x-commit-hash: "28dade8963a9edfddeb8dba782a8eae0341e80d4"
+x-commit-hash: "8c7c94a038aae72dc89c994551c9d2c690895607"
