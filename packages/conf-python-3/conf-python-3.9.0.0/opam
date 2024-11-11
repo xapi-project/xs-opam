@@ -30,6 +30,7 @@ depexts: [
   ["python39"] {os-distribution = "macports" & os = "macos"}
   ["python@3.9"] {os-distribution = "homebrew" & os = "macos"}
   ["system:python3"] {os-distribution = "cygwinports"}
+  ["python3"] {os-distribution = "cygwin"}
 ]
 extra-source "test.py" {
   src:

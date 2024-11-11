@@ -42,6 +42,7 @@ url {
   src:
     "https://github.com/ocaml-community/yojson/releases/download/2.2.2/yojson-2.2.2.tbz"
   checksum: [
+    "sha256=9abfad8c9a79d4723ad2f6448e669c1e68dbfc87cc54a1b7c064b0c90912c595"
     "sha512=ac52eae3ca1d3129a7885ca638e6ae5bcfc387598a82cc30d3e4988fd154f1756719c399f96e950d898c79a6dbd4ccc44b6f468bcafbd620e6945a0415b41e0c"
   ]
 }

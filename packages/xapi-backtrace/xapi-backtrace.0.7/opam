@@ -23,5 +23,8 @@ build: ["dune" "build" "-p" name "-j" jobs]
 dev-repo: "git+https://github.com/xapi-project/backtrace.git"
 url {
   src: "https://github.com/xapi-project/backtrace/archive/v0.7.tar.gz"
-  checksum: "md5=0c62a615ae48504e4de2c5d62ab344b5"
+  checksum: [
+    "sha256=9a9f7276997cc53e1eaa5739d91ccd790f78c7423b75060331bf3ce44f5ac1ea"
+    "md5=0c62a615ae48504e4de2c5d62ab344b5"
+  ]
 }
