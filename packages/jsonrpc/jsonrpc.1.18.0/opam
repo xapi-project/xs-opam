@@ -1,6 +1,6 @@
 opam-version: "2.0"
 name: "jsonrpc"
-version: "1.19.0"
+version: "1.18.0"
 synopsis: "Jsonrpc protocol implemenation"
 description: "See https://www.jsonrpc.org/specification"
 maintainer: "Rudi Grinberg <me@rgrinberg.com>"
@@ -31,10 +31,10 @@ build: [
 dev-repo: "git+https://github.com/ocaml/ocaml-lsp.git"
 url {
   src:
-    "https://github.com/ocaml/ocaml-lsp/releases/download/1.19.0/lsp-1.19.0.tbz"
+    "https://github.com/ocaml/ocaml-lsp/releases/download/1.18.0/lsp-1.18.0.tbz"
   checksum: [
-    "sha256=e783d9f1a7f89ce1bf4c9148aa34a228368bd149bbcca43de80b459221dee5ec"
-    "sha512=85c233a7a14d38e76b3d28694054b04fb818290d2c4c009e7ce189040e2aab570ee0caaf1a826b064fb1595f29b696932daea9f6812d3dfa9b6f0387e02e254b"
+    "sha256=b59da43ccfd2ffd277c9e5f695a0e39c72c0d78e1bf2cbf2f62c1a7b7da75f03"
+    "sha512=be24188a2c63bf3a255c8085a8db067fa3d77d8ec989a7c9ba623bfea139455cf9eef6dd543d1bd276321abe77403c51b107745fbf4aa090e5902645dfb0343b"
   ]
 }
-x-commit-hash: "45f5ddac12bb580b4ecaec2d93ee7fac2c903aff"
+x-commit-hash: "58c71c7d5a3e6d6c143a7d87896d7ae9d2fec547"
