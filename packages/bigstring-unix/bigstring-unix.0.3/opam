@@ -5,6 +5,7 @@ synopsis:
   "I/O functions for bigstrings using file descriptors and memory-maps"
 maintainer: "Simon Cruanes <simon.cruanes.2007@m4x.org>"
 authors: "Simon Cruanes <simon.cruanes.2007@m4x.org>"
+license: "BSD-2-Clause"
 tags: ["bigstring" "bigarray"]
 homepage: "https://github.com/c-cube/ocaml-bigstring/"
 bug-reports: "https://github.com/c-cube/ocaml-bigstring/issues"
