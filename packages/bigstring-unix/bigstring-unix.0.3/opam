@@ -14,7 +14,7 @@ depends: [
   "base-bigarray"
   "base-unix"
   "ocaml" {>= "4.03.0"}
-  "alcotest" {with-test & < "1.2"}
+  "alcotest" {with-test}
   "bigstring" {with-test}
 ]
 build: [
