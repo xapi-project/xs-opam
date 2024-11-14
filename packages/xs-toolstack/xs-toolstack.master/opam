@@ -15,6 +15,7 @@ depends: [
   "forkexec"
   "gluten"
   "gzip"
+  "h2"
   "http-lib"
   "httpun"
   "message-switch"
