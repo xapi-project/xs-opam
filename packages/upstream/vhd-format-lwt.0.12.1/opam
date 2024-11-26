@@ -1,6 +1,6 @@
 opam-version: "2.0"
 name: "vhd-format-lwt"
-version: "0.12.0"
+version: "0.12.1"
 synopsis: "Lwt interface to read/write VHD format data"
 description: """\
 A pure OCaml library to read and write
@@ -43,3 +43,7 @@ url {
     "https://github.com/mirage/ocaml-vhd/releases/download/v0.12.0/vhd-format-v0.12.0.tbz"
   checksum: "md5=73b88364f534dc0fcee23e6c4ceca8c7"
 }
+extra-files: [
+  "0001-XSI-1457-Limit-number-of-sectors-to-coalesce.patch"
+  "md5=34ff33a867ae299a38c1df5e9fd81716"
+]
