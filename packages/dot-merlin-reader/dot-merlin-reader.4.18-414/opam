@@ -1,6 +1,6 @@
 opam-version: "2.0"
 name: "dot-merlin-reader"
-version: "4.9"
+version: "4.18-414"
 synopsis: "Reads config files for merlin"
 description: """\
 Helper process: reads .merlin files and outputs the normalized content to
@@ -11,9 +11,9 @@ license: "MIT"
 homepage: "https://github.com/ocaml/merlin"
 bug-reports: "https://github.com/ocaml/merlin/issues"
 depends: [
-  "ocaml" {>= "4.08" & < "5.2"}
+  "ocaml" {>= "4.14"}
   "dune" {>= "2.9.0"}
-  "merlin-lib" {>= "4.9" & < "5.0"}
+  "merlin-lib" {= version}
   "ocamlfind" {>= "1.6.0"}
 ]
 build: [
@@ -23,10 +23,10 @@ build: [
 dev-repo: "git+https://github.com/ocaml/merlin.git"
 url {
   src:
-    "https://github.com/ocaml/merlin/releases/download/v4.9-414/merlin-4.9-414.tbz"
+    "https://github.com/ocaml/merlin/releases/download/v4.18-414/merlin-4.18-414.tbz"
   checksum: [
-    "sha256=e23fc47813591269ff9d27c820988e520a662c89dd0af7ea652b21517499cbfd"
-    "sha512=2199f963368597d10cc197e41ebb883f6a166018c9da3fe259c354550df41b713781003598a2fe5956b0a4ae96f8c07ba33831d3cf6f9d494b731944f87e491e"
+    "sha256=f6d6f7a266141e358c1a869612c8135c859185d547ea3ba5c9ad7bb67fe30cc1"
+    "sha512=4f272bdb028fd984fef406f7e1eadd0a3ab99d94016316f1b842782b1d1bba2bd50dcf3b4021c2096c6d9b5e5f9f6bae61bedcfd9f933f15c190e01777ef83a9"
   ]
 }
-x-commit-hash: "df75a4550704c113ac29505fd68ef9b7893d4bf5"
+x-commit-hash: "2b9cd21c24a687ca4dc6d0a191942b13903eae82"
