@@ -1,6 +1,6 @@
 opam-version: "2.0"
 name: "goblint-cil"
-version: "2.0.4"
+version: "2.0.5"
 synopsis:
   "A front-end for the C programming language that facilitates program analysis and transformation"
 description: """\
@@ -69,11 +69,11 @@ depexts: [
 dev-repo: "git+https://github.com/goblint/cil.git"
 url {
   src:
-    "https://github.com/goblint/cil/releases/download/2.0.4/goblint-cil-2.0.4.tbz"
+    "https://github.com/goblint/cil/releases/download/2.0.5/goblint-cil-2.0.5.tbz"
   checksum: [
-    "sha256=adea96efdb7611a688849491b363bcd5fc1e1fb8d6a937185560faefb42dd9cb"
-    "sha512=b8d8d835e9425cbbd59aeb06ce457e110cbd91c982d99c51e5a24bd5b7b9362f545db32c33ac6abc87a02015f29c8dc19e97ceb756ae1aefc659914f3598df19"
+    "sha256=bef0769f2322d03248f6e23b447642baec63c72c430c5affd04239a063d5d601"
+    "sha512=3d0d4a161515cb9ee51c32eca967fa3b2fbb43b647aab61da2f5cb15fec975eb088ed00a5b9961f1e0b7780773c369509a177639c6630b48d222deb56a795760"
   ]
 }
 x-ci-accept-failures: ["freebsd"]
-x-commit-hash: "317e26d48b06d5cdc4acff3df1a6824587052b53"
+x-commit-hash: "c79208b21ea61d7b72eae29a18c1ddeda4795dfd"
