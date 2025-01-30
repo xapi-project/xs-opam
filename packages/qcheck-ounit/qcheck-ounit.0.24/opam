@@ -1,11 +1,11 @@
 opam-version: "2.0"
-name: "qcheck-alcotest"
-version: "0.22"
-synopsis: "Alcotest backend for qcheck"
+name: "qcheck-ounit"
+version: "0.24"
+synopsis: "OUnit backend for qcheck"
 maintainer: "simon.cruanes.2007@m4x.org"
 authors: "the qcheck contributors"
 license: "BSD-2-Clause"
-tags: ["test" "quickcheck" "qcheck" "alcotest"]
+tags: ["qcheck" "quickcheck" "ounit"]
 homepage: "https://github.com/c-cube/qcheck/"
 doc: "http://c-cube.github.io/qcheck/"
 bug-reports: "https://github.com/c-cube/qcheck/issues"
@@ -13,7 +13,7 @@ depends: [
   "dune" {>= "2.8.0"}
   "base-unix"
   "qcheck-core" {= version}
-  "alcotest" {>= "1.2.0"}
+  "ounit2"
   "odoc" {with-doc}
   "ocaml" {>= "4.08.0"}
 ]
@@ -24,9 +24,10 @@ build: [
 ]
 dev-repo: "git+https://github.com/c-cube/qcheck.git"
 url {
-  src: "https://github.com/c-cube/qcheck/archive/v0.22.tar.gz"
+  src: "https://github.com/c-cube/qcheck/archive/v0.24.tar.gz"
   checksum: [
-    "md5=f05bdc3a15da4c65e9e4a87f845bc1ef"
-    "sha512=2bc273d73b9732564eadb78a2ab390b85c6f9ffb7ba46d3ec8725384631f199e17937740264c550ef4f06df62ffe655f2be19259f8f4cf4c2e81010a9c1a19e3"
+    "md5=4eecb056dba04a9b68786135dd2e66bc"
+    "sha512=b7a0dcf6c46e297f8e44f0c66d4b671f285c87fe4052f5e990f02012a5386b8052a5f1e79fc92093e7ef20c6d69155d63e40fc7e30cdc4d34b2d1c8654568958"
   ]
 }
+x-maintenance-intent: ["(latest)"]
