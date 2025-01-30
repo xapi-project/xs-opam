@@ -1,6 +1,6 @@
 opam-version: "2.0"
 name: "cppo"
-version: "1.7.0"
+version: "1.8.0"
 synopsis: "Code preprocessor like cpp for OCaml"
 description: """\
 Cppo is an equivalent of the C preprocessor for OCaml programs.
@@ -41,10 +41,9 @@ build: [
 ]
 dev-repo: "git+https://github.com/ocaml-community/cppo.git"
 url {
-  src:
-    "https://github.com/ocaml-community/cppo/archive/refs/tags/v1.7.0.tar.gz"
+  src: "https://github.com/ocaml-community/cppo/archive/v1.8.0.tar.gz"
   checksum: [
-    "md5=90f66810f73b115cc55e581a34bf7db9"
-    "sha512=cafa2f7add42912b413f39e1d9fb7a2a42a9be134128c179dfe353f35a6c32840720d2166a77d985941300cb945b9c424b38401d20027d814b25f3bac534506d"
+    "md5=a197cb393b84f6b30e0ff55080ac429b"
+    "sha512=3840725b767a0300bdc48f11d26d798bdcae0a764ed6798df3a08dfc8cc76fe124b14a19d47c9b5ea8e229d68b0311510afce77c0e4d9131fbda5116dc2689a2"
   ]
 }
