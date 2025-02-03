@@ -23,6 +23,7 @@ rrdd-plugin               $XAPI/xen-api
 safe-resources            $XAPI/xen-api
 sexpr                     $XAPI/xen-api
 stunnel                   $XAPI/xen-api
+tgroup                    $XAPI/xen-api
 uuid                      $XAPI/xen-api
 varstored-guard           $XAPI/xen-api
 vhd-format                $XAPI/xen-api
