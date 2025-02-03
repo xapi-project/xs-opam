@@ -17,7 +17,7 @@ homepage: "https://github.com/mirage/ocaml-vhd"
 bug-reports: "https://github.com/mirage/ocaml-vhd/issues"
 depends: [
   "dune" {>= "3.15"}
-  "ocaml" {>= "4.10"}
+  "ocaml" {>= "4.10.0"}
   "alcotest" {with-test}
   "alcotest-lwt" {with-test & >= "1.0.0"}
   "bigarray-compat" {>= "1.1.0"}

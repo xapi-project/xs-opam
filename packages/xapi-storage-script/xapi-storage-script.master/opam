@@ -13,19 +13,20 @@ build: [[ "dune" "build" "-p" name "-j" jobs ]]
 depends: [
   "ocaml"
   "dune" {>= "3.15"}
-  "base"
   "conf-python-3" {with-test}
-  "xapi-idl" {>= "0.10.0"}
-  "xapi-storage"
+  "base"
+  "inotify"
+  "lwt"
+  "message-switch-lwt"
   "message-switch-unix"
-  "rpclib"
   "ppx_deriving_rpc"
   "ppx_sexp_conv"
+  "rpclib"
+  "rpclib-lwt"
+  "sexplib0"
+  "xapi-idl" {>= "0.10.0"}
   "xapi-stdext-date"
-]
-# python 2.7 is not enough to ensure the availability of 'python' in these
-depexts: [
-  ["python"] {os-family = "debian" & with-test}
+  "xapi-storage"
 ]
 synopsis: "A directory full of scripts can be a Xapi storage implementation"
 description: """
