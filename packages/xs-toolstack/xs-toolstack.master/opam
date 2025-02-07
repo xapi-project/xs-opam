@@ -10,10 +10,14 @@ depends: [
   "conf-libev" # needed for lwt to avoid using select
   "goblint" # Edwin wants this to test some FFI properties
   "ocamlformat" # needed to use it while developing the koji rpm
+  "bigstring-unix"
   "clock"
   "forkexec"
+  "gluten"
   "gzip"
+  "h2"
   "http-lib"
+  "httpun"
   "message-switch"
   "message-switch-cli"
   "nbd-tool"
