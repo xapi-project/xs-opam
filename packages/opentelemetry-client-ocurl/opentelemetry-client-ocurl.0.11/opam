@@ -1,6 +1,6 @@
 opam-version: "2.0"
 name: "opentelemetry-client-ocurl"
-version: "0.10"
+version: "0.11"
 synopsis: "Collector client for opentelemetry, using http + ezcurl"
 maintainer: [
   "Simon Cruanes <simon.cruanes.2007@m4x.org>"
@@ -40,10 +40,10 @@ build: [
 dev-repo: "git+https://github.com/imandra-ai/ocaml-opentelemetry.git"
 url {
   src:
-    "https://github.com/imandra-ai/ocaml-opentelemetry/releases/download/v0.10/opentelemetry-0.10.tbz"
+    "https://github.com/imandra-ai/ocaml-opentelemetry/releases/download/v0.11/opentelemetry-0.11.tbz"
   checksum: [
-    "sha256=281bb075de20663233709e67aec9dc95d75ec9b09a7e52e5c07557ff2cb89b17"
-    "sha512=4d7f07bd628dec23cb1b5171fe2012364b1720beb9cf3a5b74e9e6c0eae5777a0907deafdab08f18546c45b26eaf777ac9913753b1fa185b6554efe171595d8d"
+    "sha256=7c674ecf1851d23cc520dad81ac1135ad4ac2460e54985dfe655fcfda265a713"
+    "sha512=34f585d9961d0c9ad908f479b3cf93cadc9602ffc39ec37396c8613cc76ae3e2fbaf5446a51c4820cc02b16e01d6df74cb607e3fa1b291d1847f2d76b31f5f0e"
   ]
 }
-x-commit-hash: "b4a9ccf57b94a2e146cd8230f591adfdf65257e4"
+x-commit-hash: "c3c5761b06a2fcf8246679d08e582249706aa73a"
