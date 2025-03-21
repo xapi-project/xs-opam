@@ -1,0 +1,34 @@
+From 6cacde3c903e959d6e9b89a275b271ab7040ef54 Mon Sep 17 00:00:00 2001
+From: Vincent Liu <shuntian.liu2@cloud.com>
+Date: Wed, 28 Feb 2024 17:02:12 +0000
+Subject: [PATCH 1/3] Check for list emptiness before checking variants
+
+Signed-off-by: Vincent Liu <shuntian.liu2@cloud.com>
+---
+ src/lib/pythongen.ml | 10 ++++++----
+ 1 file changed, 6 insertions(+), 4 deletions(-)
+
+diff --git a/src/lib/pythongen.ml b/src/lib/pythongen.ml
+index ead82af..70fbb74 100644
+--- a/src/lib/pythongen.ml
++++ b/src/lib/pythongen.ml
+@@ -213,10 +213,12 @@ let rec typecheck : type a. a typ -> string -> t list =
+         variants
+     in
+     let check_contents =
+-      List.fold_left
+-        (fun acc x -> List.concat [ acc; check false x ])
+-        (check true (List.hd variants_to_check))
+-        (List.tl variants_to_check)
++      match variants_to_check with
++      | [] -> []
++      | v :: vs ->
++        List.fold_left
++          (fun acc x -> List.concat [ acc; check false x ])
++          (check true v) vs
+     in
+     let all_tags = List.map (fun (BoxedTag t) -> t.tname) variants in
+     let pylist =
+-- 
+2.41.0
+
