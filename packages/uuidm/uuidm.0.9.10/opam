@@ -1,6 +1,6 @@
 opam-version: "2.0"
 name: "uuidm"
-version: "0.9.9"
+version: "0.9.10"
 synopsis: "Universally unique identifiers (UUIDs) for OCaml"
 description: """\
 Uuidm is an OCaml library implementing 128 bits universally unique
@@ -41,7 +41,8 @@ build: [
 ]
 dev-repo: "git+https://erratique.ch/repos/uuidm.git"
 url {
-  src: "https://erratique.ch/software/uuidm/releases/uuidm-0.9.9.tbz"
+  src: "https://erratique.ch/software/uuidm/releases/uuidm-0.9.10.tbz"
   checksum:
-    "sha512=284218681f28150b23bc6c9a5f6fea66d05b934d1f76d962e4770b04e21d41a60cdb1fefcdf1628ed46fbcd4d8615a7bfa62174e9109342df299be9df7779916"
+    "sha512=22cbc872a0be910ebd5cda67bb471b5ab93cd1edfa535a86169a9d0f7a5cce85824b9e8a43d16d7587e1968b37a70fac1b75af075700117089a28879297dda07"
 }
+x-maintenance-intent: ["(latest)"]
