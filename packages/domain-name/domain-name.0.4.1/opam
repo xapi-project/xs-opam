@@ -1,6 +1,6 @@
 opam-version: "2.0"
 name: "domain-name"
-version: "0.4.0"
+version: "0.4.1"
 synopsis: "RFC 1035 Internet domain names"
 description: """\
 A domain name is a sequence of labels separated by dots, such as `foo.example`.
@@ -17,7 +17,7 @@ doc: "https://hannesm.github.io/domain-name/doc"
 bug-reports: "https://github.com/hannesm/domain-name/issues"
 depends: [
   "ocaml" {>= "4.04.2"}
-  "dune"
+  "dune" {>= "1.0"}
   "alcotest" {with-test}
 ]
 build: [
@@ -28,10 +28,11 @@ build: [
 dev-repo: "git+https://github.com/hannesm/domain-name.git"
 url {
   src:
-    "https://github.com/hannesm/domain-name/releases/download/v0.4.0/domain-name-0.4.0.tbz"
+    "https://github.com/hannesm/domain-name/releases/download/v0.4.1/domain-name-0.4.1.tbz"
   checksum: [
-    "sha256=a5c06e22845895201973e812fe3019274d1db81c0a7873da6c8007c4ad2108c5"
-    "sha512=f25aedb1ddf6ab8c49b1545cf88f4990114a9e7954d91cabf260e6ce470abd42dd135e8a55084262a77d4c9ee4bff6dc00c71307b23a48d82d50593b910ee173"
+    "sha256=1dba32f35a7cd5cc8187d21e2cc21a0b667a645447a0eefe57afe3ca25bc4566"
+    "sha512=6846998704d11a63756035ad6226cc4708c7c29b2327ca7ca279a174b8c1c403962801019cc5a0ce27474bb3c382ce878c19fd85f694fab4360f4969341f0656"
   ]
 }
-x-commit-hash: "e9833486ee40ef2c49c43dd72976022a627b4a34"
+x-commit-hash: "26c8a60f57d73e5f767ca8049dba29ca0a214d55"
+x-maintenance-intent: ["(latest)"]
