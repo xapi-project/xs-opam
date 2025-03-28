@@ -1,6 +1,6 @@
 opam-version: "2.0"
 name: "conduit-lwt"
-version: "7.1.0"
+version: "8.0.0"
 synopsis: "A portable network connection establishment library using Lwt"
 maintainer: "anil@recoil.org"
 authors: [
@@ -26,10 +26,11 @@ build: [
 dev-repo: "git+https://github.com/mirage/ocaml-conduit.git"
 url {
   src:
-    "https://github.com/mirage/ocaml-conduit/releases/download/v7.1.0/conduit-7.1.0.tbz"
+    "https://github.com/mirage/ocaml-conduit/releases/download/v8.0.0/conduit-8.0.0.tbz"
   checksum: [
-    "sha256=58d2218a07e71706025de38ca0253233e970f35b4cacd37f706941b4cbea57f7"
-    "sha512=3d52e16202b443c72801828ab4a08ff2ae36ca03f3991793f6b155770d687718f6646fe85b70d7cadf670e4caf99af42bcf492ee70236f6a9a0d8a425deb03a6"
+    "sha256=0a63d910865b5473893a170cda51f61388f488ecf4c4b2ed7fe9ec4e2cf66f61"
+    "sha512=63c73616c5a4a6436aa9a1c8d2771d70e15789c639aaec6b9a95622aee0b364f18278e88ed769fbae84fefb817bef1c9c81fe41e969f03db99612295a159b536"
   ]
 }
-x-commit-hash: "0805a919c51c702fcc4ff0b8565930b10d762218"
+x-commit-hash: "cb1e6cfed4a24bf3fa49627424fb9d43bdc20d0f"
+x-maintenance-intent: ["(latest)"]
