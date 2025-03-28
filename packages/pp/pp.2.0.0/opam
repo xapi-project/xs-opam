@@ -1,6 +1,6 @@
 opam-version: "2.0"
 name: "pp"
-version: "1.2.0"
+version: "2.0.0"
 synopsis: "Pretty-printing library"
 description: """\
 This library provides a lean alternative to the Format [1] module of
@@ -29,8 +29,9 @@ doc: "https://ocaml-dune.github.io/pp/"
 bug-reports: "https://github.com/ocaml-dune/pp/issues"
 depends: [
   "dune" {>= "2.8"}
-  "ocaml" {>= "4.08.0"}
+  "ocaml" {>= "4.08"}
   "ppx_expect" {with-test}
+  "ocamlformat" {with-dev-setup & = "0.26.2"}
   "odoc" {with-doc}
 ]
 build: [
@@ -50,10 +51,10 @@ build: [
 dev-repo: "git+https://github.com/ocaml-dune/pp.git"
 url {
   src:
-    "https://github.com/ocaml-dune/pp/releases/download/1.2.0/pp-1.2.0.tbz"
+    "https://github.com/ocaml-dune/pp/releases/download/2.0.0/pp-2.0.0.tbz"
   checksum: [
-    "sha256=a5e822573c55afb42db29ec56eacd1f2acd8f65cf2df2878e291de374ce6909c"
-    "sha512=912164c2aa7241d73f735dadfbefe8ed0138d241579d2e885440e068fac78eb9f0b3d782c2420e757e313168c1725daff6ab91800dd315b1e05288456998b40a"
+    "sha256=8651351518b092b4a2def4e08171c276152f92fb6a84a8b19b6b929ccdb44419"
+    "sha512=78cb68f35c0b975dd1e91bd83d5e33bcec1ee642431585d55864c483c70a032755dfcf21ec5697691e7e7554381ddb580639fd149e28ba6f74d04d2ee43d360d"
   ]
 }
-x-commit-hash: "83b68c740f21acdcfe54436355ab328372871357"
+x-commit-hash: "b6741dd41ef5fc5bda8b3640097ac29818a43577"
