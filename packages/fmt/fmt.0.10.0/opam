@@ -1,6 +1,6 @@
 opam-version: "2.0"
 name: "fmt"
-version: "0.9.0"
+version: "0.10.0"
 synopsis: "OCaml Format pretty-printer combinators"
 description: """\
 Fmt exposes combinators to devise `Format` pretty-printing functions.
@@ -8,13 +8,13 @@ Fmt exposes combinators to devise `Format` pretty-printing functions.
 Fmt depends only on the OCaml standard library. The optional `Fmt_tty`
 library that allows to setup formatters for terminal color output
 depends on the Unix library. The optional `Fmt_cli` library that
-provides command line support for Fmt depends on [`Cmdliner`][cmdliner].
+provides command line support for Fmt depends on [`cmdliner`].
 
 Fmt is distributed under the ISC license.
 
-[cmdliner]: http://erratique.ch/software/cmdliner
+Home page: <http://erratique.ch/software/fmt>
 
-Home page: http://erratique.ch/software/fmt"""
+[`cmdliner`]: http://erratique.ch/software/cmdliner"""
 maintainer: "Daniel Bünzli <daniel.buenzl i@erratique.ch>"
 authors: "The fmt programmers"
 license: "ISC"
@@ -30,7 +30,7 @@ depends: [
 ]
 depopts: ["base-unix" "cmdliner"]
 conflicts: [
-  "cmdliner" {< "0.9.8"}
+  "cmdliner" {< "1.3.0"}
 ]
 build: [
   "ocaml"
@@ -45,7 +45,8 @@ build: [
 ]
 dev-repo: "git+https://erratique.ch/repos/fmt.git"
 url {
-  src: "https://erratique.ch/software/fmt/releases/fmt-0.9.0.tbz"
+  src: "https://erratique.ch/software/fmt/releases/fmt-0.10.0.tbz"
   checksum:
-    "sha512=66cf4b8bb92232a091dfda5e94d1c178486a358cdc34b1eec516d48ea5acb6209c0dfcb416f0c516c50ddbddb3c94549a45e4a6d5c5fd1c81d3374dec823a83b"
+    "sha512=26d7f2002f0f1d605c08129ec09d487a8c37d764b77370e56b869fd94fe6bc903f808159ab7b79e85c2e2b6263ee5fa7df66f9f9625bdf0e726e8a92a9056258"
 }
+x-maintenance-intent: ["(latest)"]
