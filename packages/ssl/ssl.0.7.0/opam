@@ -1,8 +1,8 @@
 opam-version: "2.0"
 name: "ssl"
-version: "0.6.0"
+version: "0.7.0"
 synopsis: "Bindings for OpenSSL"
-maintainer: "Samuel Mimram <samuel.mimram@ens-lyon.org>"
+maintainer: "Antonio Monteiro <anmonteiro@gmail.com>"
 authors: "Samuel Mimram <samuel.mimram@ens-lyon.org>"
 license: "LGPL-2.1-only WITH OCaml-LGPL-linking-exception"
 homepage: "https://github.com/savonet/ocaml-ssl"
@@ -11,22 +11,30 @@ depends: [
   "dune" {>= "2.7"}
   "ocaml" {>= "4.03.0"}
   "dune-configurator"
-  "base-unix"
   "conf-libssl"
   "alcotest" {with-test}
   "bisect_ppx" {dev & >= "2.5.0"}
+  "odoc" {with-doc}
 ]
 build: [
   ["dune" "subst"] {dev}
-  ["dune" "build" "-p" name "-j" jobs]
+  [
+    "dune"
+    "build"
+    "-p"
+    name
+    "-j"
+    jobs
+    "@install"
+    "@runtest" {with-test & ocaml:version >= "4.08.0"}
+    "@doc" {with-doc}
+  ]
 ]
 dev-repo: "git+https://github.com/savonet/ocaml-ssl.git"
 url {
-  src:
-    "https://github.com/savonet/ocaml-ssl/releases/download/0.6.0/ssl-0.6.0.tbz"
+  src: "https://github.com/savonet/ocaml-ssl/archive/refs/tags/v0.7.0.tar.gz"
   checksum: [
-    "sha256=39d1c8e69dbfdd4ea121bef52f8a30802e4baa556272ff1de43a66302960c051"
-    "sha512=8cd4a0d4efa947daaa98a55f3d1b7ef3533604f8b863c5f7cf3facfb7c9fafec9352c34d4cd86177294ecd499efb3f084e2afac9dc595451525c3cc214adb36f"
+    "md5=0ced13c2beef2135cd9d3a3743ea0e37"
+    "sha512=969c4d64828449a49bdef26ca5f8faa72d2fe2a2304ccbf589a3ff097c2bf8ae9eb83ae1c90216f6b4d6f359e462ea47e0106a7386e26848d14910138fcb07f8"
   ]
 }
-x-commit-hash: "09c9ce9d28e4d592a4998b909bd1e5a524e84bd0"
