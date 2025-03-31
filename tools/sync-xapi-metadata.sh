@@ -45,7 +45,6 @@ xapi-open-uri             $XAPI/xen-api
 xapi-plugin               $XAPI/ocaml-xapi-plugin
 xapi-sdk                  $XAPI/xen-api
 xapi-schema               $XAPI/xen-api
-xapi-stdext-date          $XAPI/xen-api
 xapi-stdext-encodings     $XAPI/xen-api
 xapi-stdext-pervasives    $XAPI/xen-api
 xapi-stdext-std           $XAPI/xen-api

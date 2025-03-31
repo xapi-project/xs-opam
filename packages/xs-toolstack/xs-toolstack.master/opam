@@ -44,7 +44,6 @@ depends: [
   "xapi-plugin"
   "xapi-rrd"
   "xapi-sdk"
-  "xapi-stdext-date"
   "xapi-stdext-encodings"
   "xapi-stdext-pervasives"
   "xapi-stdext-threads"
