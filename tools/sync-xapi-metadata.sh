@@ -73,7 +73,11 @@ url {
   src: \"https://github.com/$repo/archive/master.tar.gz\"
 }"
 
-  curl -L https://raw.githubusercontent.com/"$repo"/master/"$name".opam > "$opam_file"
+  old="https://raw.githubusercontent.com/$repo/master/$name.opam"
+  new="https://raw.githubusercontent.com/$repo/master/opam/$name.opam"
+
+  curl -f -L "$new" > "$opam_file" || curl -L "$old" > "$opam_file"
+
   # do not add the field if it's already in the opam file
   if ! grep -Fq "url {" "$opam_file"; then
     echo "$url_source" >> "$opam_file"
