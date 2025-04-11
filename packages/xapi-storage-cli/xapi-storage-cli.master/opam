@@ -17,6 +17,7 @@ depends: [
   "rpclib"
   "ppx_deriving_rpc"
   "xapi-idl"
+  "xapi-types"
   "cmdliner"
 ]
 synopsis: "A CLI for xapi storage services"
