@@ -1,0 +1,38 @@
+From 0327f71d559ce52bf118a30fe556b5f66050aec9 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Edwin=20T=C3=B6r=C3=B6k?= <edwin.torok@cloud.com>
+Date: Fri, 20 Sep 2024 11:43:26 +0100
+Subject: [PATCH] fix python cmdline parser for variants
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+Given
+```
+type operation = Copy of string | Mirror of string
+```
+
+Represented as `["Copy", "arg"]` we need to parse that as JSON when given on the cmdline.
+
+Otherwise it'd do `operation[0]`, where `operation` is a string, which is not what we want.
+
+This doesn't affect usage from xapi-storage-script (which always calls it with --json),
+but it affects testing the python code by hand, because you can't supply the correct cmdline arguments
+(unless you construct an entire JSON by hand and pass it on stdin which is a bit tedious)
+
+Signed-off-by: Edwin Török <edwin.torok@cloud.com>
+---
+ src/lib/pythongen.ml | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/src/lib/pythongen.ml b/src/lib/pythongen.ml
+index 70fbb74..2ac75d7 100644
+--- a/src/lib/pythongen.ml
++++ b/src/lib/pythongen.ml
+@@ -699,6 +699,7 @@ let commandline_parse _ (BoxedFunction m) =
+                    | Basic Int32 -> ", type=int"
+                    | Basic Bool -> ", type=lambda x: json.loads(x.lower())"
+                    | Basic Float -> ", type=float"
++                   | Variant _ -> ", type=json.loads"
+                    | _ -> "")))
+           inputs
+       @ [ Line "return vars(parser.parse_args())" ])
