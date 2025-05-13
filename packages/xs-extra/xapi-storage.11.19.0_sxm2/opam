@@ -23,7 +23,7 @@ depends: [
 depexts: [
   ["python"] {os-distribution = "centos"}
   ["python"] {os-distribution = "debian"}
-  ["python"] {os-distribution = "ubuntu"}
+  ["python2"] {os-distribution = "ubuntu"}
 ]
 synopsis: "Code and documentation generator for the Xapi storage interface"
 url {
