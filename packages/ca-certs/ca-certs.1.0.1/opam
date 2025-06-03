@@ -1,6 +1,6 @@
 opam-version: "2.0"
 name: "ca-certs"
-version: "0.2.3"
+version: "1.0.1"
 synopsis: "Detect root CA certificates from the operating system"
 description: """\
 TLS requires a set of root anchors (Certificate Authorities) to
@@ -16,14 +16,15 @@ doc: "https://mirage.github.io/ca-certs/doc"
 bug-reports: "https://github.com/mirage/ca-certs/issues"
 depends: [
   "dune" {>= "2.0"}
-  "astring"
   "bos"
   "fpath"
   "ptime"
   "logs"
-  "mirage-crypto" {< "1.0.0"}
-  "x509" {>= "0.13.0"}
-  "ocaml" {>= "4.08.0"}
+  "digestif" {>= "1.2.0"}
+  "mirage-crypto" {>= "1.0.0"}
+  "x509" {>= "1.0.0"}
+  "ocaml" {>= "4.13.0"}
+  "ohex" {>= "0.2.0"}
   "alcotest" {with-test}
   "fmt" {with-test & >= "0.8.7"}
 ]
@@ -48,10 +49,11 @@ depexts: ["ca_root_nss"] {os = "freebsd"}
 dev-repo: "git+https://github.com/mirage/ca-certs.git"
 url {
   src:
-    "https://github.com/mirage/ca-certs/releases/download/v0.2.3/ca-certs-0.2.3.tbz"
+    "https://github.com/mirage/ca-certs/releases/download/v1.0.1/ca-certs-1.0.1.tbz"
   checksum: [
-    "sha256=d2d8d6457d915ef6d783def82f3be5ec2f56f92e20214f58edd63c9c2fc60e9c"
-    "sha512=e945112be3b2f1fbcaeb95aebb600cd5119f1f05583ebcc0a4a20dd159d8cfec5adc3443aae678ee159c0e0c32b1d7c0ba3ba4405e3483e3f565e4d29d3da0f7"
+    "sha256=d3cd7c8f548baecef208d425877a811d898ec7d1d9c4bdea6f78652c7c8361cc"
+    "sha512=cb2e2c509531a4824b035762e57217143d7eec7bc57434845b65850144051344b4ed27d61972b6580b83d2d012766919c101a0274fb6218c4e4f65b45d3c79fa"
   ]
 }
-x-commit-hash: "9ee07b8ab77eb9ec8b6d84f98359e45e1beb9b9d"
+x-commit-hash: "319c8a6e7c06da6a4fc3dab5db41cdd28be2e9cf"
+x-maintenance-intent: ["(latest)"]
