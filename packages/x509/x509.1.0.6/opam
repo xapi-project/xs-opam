@@ -1,6 +1,6 @@
 opam-version: "2.0"
 name: "x509"
-version: "0.16.5"
+version: "1.0.6"
 synopsis: "Public Key Infrastructure (RFC 5280, PKCS) purely in OCaml"
 description: """\
 X.509 is a public key infrastructure used mostly on the Internet.  It consists
@@ -20,24 +20,23 @@ homepage: "https://github.com/mirleft/ocaml-x509"
 doc: "https://mirleft.github.io/ocaml-x509/doc"
 bug-reports: "https://github.com/mirleft/ocaml-x509/issues"
 depends: [
-  "ocaml" {>= "4.08.0"}
-  "dune" {>= "1.2"}
-  "cstruct" {>= "6.0.0"}
-  "asn1-combinators" {>= "0.2.0" & < "0.3.0"}
+  "ocaml" {>= "4.13.0"}
+  "dune" {>= "2.0"}
+  "asn1-combinators" {>= "0.3.1"}
   "ptime"
   "base64" {>= "3.3.0"}
-  "mirage-crypto" {< "1.0.0"}
-  "mirage-crypto-pk" {< "1.0.0"}
-  "mirage-crypto-ec" {>= "0.10.7" & < "1.0.0"}
-  "mirage-crypto-rng" {< "1.0.0"}
-  "mirage-crypto-rng" {with-test & >= "0.11.0" & < "1.0.0"}
+  "mirage-crypto" {>= "1.0.0"}
+  "mirage-crypto-pk"
+  "mirage-crypto-ec" {>= "0.10.7"}
+  "mirage-crypto-rng"
+  "mirage-crypto-rng" {with-test & >= "1.2.0"}
   "fmt" {>= "0.8.7"}
   "alcotest" {with-test}
-  "cstruct-unix" {with-test & >= "3.0.0"}
   "gmap" {>= "0.3.0"}
   "domain-name" {>= "0.3.0"}
   "logs"
-  "pbkdf"
+  "kdf" {>= "1.0.0"}
+  "ohex" {>= "0.2.0"}
   "ipaddr" {>= "5.2.0"}
 ]
 conflicts: [
@@ -51,10 +50,11 @@ build: [
 dev-repo: "git+https://github.com/mirleft/ocaml-x509.git"
 url {
   src:
-    "https://github.com/mirleft/ocaml-x509/releases/download/v0.16.5/x509-0.16.5.tbz"
+    "https://github.com/mirleft/ocaml-x509/releases/download/v1.0.6/x509-1.0.6.tbz"
   checksum: [
-    "sha256=149e25a5fea37f619fb2690bee5c00f01c9dcf31d335f8ffcaab39a7538ccd99"
-    "sha512=6dd494dba799eab7edde2af1b63bac6035bf4ae06f3a36dd4fa9abcd13d0c3fe3e93dc5848b65405dc5401b1755fd30c71482cb91f7495bc9cfb7c5bf15ef6d7"
+    "sha256=fc816ae2c65e8b42fa60d90a507b2140495e28d095ad37b27e4c268ae3c00d6c"
+    "sha512=3ca30aa78366cbb0599cce69a7bbfeaf857cc885f1367f3cf62d4236a55b40172478b73bda70c38b658dcfe9e407326f8db0a260cb36b568e3063c6eb75e0bd7"
   ]
 }
-x-commit-hash: "b00656d2952282323604765d504dfea067b17879"
+x-commit-hash: "af4ab13517c5138161eb11492c7c7acb1b34fe1a"
+x-maintenance-intent: ["(latest)"]
