@@ -7,4 +7,3 @@ ocaml-system
 opam-depext
 syslog-message
 trace
-tyre
