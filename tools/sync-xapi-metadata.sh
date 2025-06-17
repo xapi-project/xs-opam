@@ -76,7 +76,8 @@ url {
   old="https://raw.githubusercontent.com/$repo/master/$name.opam"
   new="https://raw.githubusercontent.com/$repo/master/opam/$name.opam"
 
-  curl -f -L "$new" > "$opam_file" || curl -L "$old" > "$opam_file"
+  echo synching $name ...
+  curl -s -f -L "$new" > "$opam_file" || curl -s -S -L "$old" > "$opam_file"
 
   # do not add the field if it's already in the opam file
   if ! grep -Fq "url {" "$opam_file"; then
