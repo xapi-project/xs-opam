@@ -50,7 +50,7 @@ depends: [
   "ppx_deriving"
   "psq"
   "ptime"
-  "qcow-tool"
+  "qcow-stream"
   "qcheck-alcotest"
   "qcheck-core"
   "re"
