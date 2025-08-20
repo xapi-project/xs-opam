@@ -8,7 +8,6 @@ synopsis: "Metapackage to install all xapi toolstack daemons and its dependencie
 tags: ["org:xapi-project" "dummy"]
 depends: [
   "conf-libev" # needed for lwt to avoid using select
-  "goblint" # Edwin wants this to test some FFI properties
   "ocamlformat" # needed to use it while developing the koji rpm
   "bigstring-unix"
   "clock"
