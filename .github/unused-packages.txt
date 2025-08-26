@@ -1,3 +1,4 @@
+host-arch-arm64
 host-arch-x86_64
 host-system-other
 logs-syslog
