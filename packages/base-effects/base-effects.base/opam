@@ -1,0 +1,11 @@
+opam-version: "2.0"
+name: "base-effects"
+version: "base"
+synopsis: ""
+description:
+  "Effects-based variant distributed with the Multicore OCaml compiler\""
+maintainer: "https://github.com/ocaml-multicore/multicore-opam/issues"
+depends: [
+  "ocaml-variants" {= "4.12.0+domains+effects" | = "5.1.1+effect-syntax"} |
+  "ocaml" {>= "5.3.0"}
+]

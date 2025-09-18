@@ -1,3 +1,6 @@
+base-domains
+base-effects
+base-nnp
 host-arch-arm64
 host-arch-x86_64
 host-system-other
