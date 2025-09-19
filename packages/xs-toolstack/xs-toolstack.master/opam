@@ -9,7 +9,6 @@ tags: ["org:xapi-project" "dummy"]
 depends: [
   "conf-libev" # needed for lwt to avoid using select
   "ocamlformat" # needed to use it while developing the koji rpm
-  "bigstring-unix"
   "clock"
   "forkexec"
   "gluten"
