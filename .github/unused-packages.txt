@@ -1,8 +1,12 @@
+base-domains
+base-effects
+base-nnp
 host-arch-arm64
 host-arch-x86_64
 host-system-other
 logs-syslog
 memtrace
+ocaml-index
 ocaml-options-vanilla
 ocaml-system
 opam-depext
