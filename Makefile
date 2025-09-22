@@ -14,7 +14,11 @@ archive: $(NAME).tar.gz
 
 $(NAME).tar.gz:
 	# Remove unneeded packages (like dev tools), and retain special packages
-	opam admin filter --recursive --required-by xs-toolstack --or host-system-other -y
+	# the base packages are a postinstall dependency of the compilers, and need
+	# to be explicitly included
+	opam admin filter --recursive --or -y --required-by \
+		xs-toolstack host-system-other \
+		base-bigarray base-bytes base-domains base-nnp base-threads base-unix
 	# Remove all xapi dev packages
 	opam admin filter '*.master' --remove -y
 	# Remove compilable ocaml versions
