@@ -18,7 +18,7 @@ $(NAME).tar.gz:
 	# to be explicitly included
 	opam admin filter --recursive --or -y --required-by \
 		xs-toolstack host-system-other \
-		base-bigarray base-bytes base-domains base-nnp base-threads base-unix
+		base-bigarray base-bytes base-domains base-effects base-nnp base-threads base-unix
 	# Remove all xapi dev packages
 	opam admin filter '*.master' --remove -y
 	# Remove compilable ocaml versions
