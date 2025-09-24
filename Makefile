@@ -22,7 +22,7 @@ $(NAME).tar.gz:
 	# Remove all xapi dev packages
 	opam admin filter '*.master' --remove -y
 	# Remove compilable ocaml versions
-	opam admin filter 'ocaml-base-compiler' --remove -y
+	opam admin filter --or 'ocaml-base-compiler' 'ocaml-compiler' --remove -y
 	# Remove xen-related packages, the libraries are built by the xen package
 	opam admin filter 'conf-xen' --remove -y
 	opam admin cache |& tee cache.log
