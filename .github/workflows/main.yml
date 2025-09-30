@@ -62,8 +62,8 @@ jobs:
         env:
           DUNE_CACHE_STORAGE_MODE: copy
 
-      - name: update opam metadata
-        run: opam update
+      - name: update opam metadata and packages (dune)
+        run: opam update --upgrade
 
       - name: Check whether there are packages with more than a version
         run: tools/no-duplicates-check.bash
