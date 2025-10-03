@@ -19,6 +19,7 @@ depends: [
   "message-switch"
   "message-switch-cli"
   "nbd-tool"
+  "oxenstored"
   "pciutil"
   "polly"
   "qcow-stream-tool"

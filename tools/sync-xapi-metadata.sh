@@ -17,6 +17,7 @@ message-switch-cli        $XAPI/xen-api
 message-switch-core       $XAPI/xen-api
 message-switch-lwt        $XAPI/xen-api
 message-switch-unix       $XAPI/xen-api
+oxenstored                $XAPI/oxenstored
 pciutil                   $XAPI/xen-api
 qcow-stream-tool          $XAPI/xen-api
 rrd-transport             $XAPI/xen-api
