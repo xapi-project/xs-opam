@@ -21,6 +21,7 @@ depends: [
   "nbd-tool"
   "pciutil"
   "polly"
+  "qcow-stream-tool"
   "rrdd-plugin"
   "rrd-transport"
   "safe-resources"
