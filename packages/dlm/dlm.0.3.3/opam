@@ -30,7 +30,7 @@ build: [
 ]
 depexts: [
   ["libdlm-dev"] {os-family = "debian"}
-  ["dlm-devel"] {os-family = "rhel"}
+  ["dlm-devel"] {os-family = "rhel" | os-family = "centos"}
   ["dlm-devel"] {os-family = "fedora"}
   ["dlm-devel"] {os-distribution = "ol"}
   ["libdlm-devel"] {os-family = "suse" | os-family = "opensuse"}
