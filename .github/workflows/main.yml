@@ -20,7 +20,7 @@ jobs:
         - ocaml-version: "4.14.2"
           runs-on: ["ubuntu-22.04-arm"]
           experimental: true
-        - ocaml-version: "5.3.0"
+        - ocaml-version: "5.4.0"
           runs-on: ["ubuntu-22.04"]
           experimental: true
 
