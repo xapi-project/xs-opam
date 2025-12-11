@@ -62,3 +62,4 @@ url {
     "md5=b1af973ec9cf7867a63714e92df82f2a"
   ]
 }
+x-maintenance-intent: ["(any).(any).(latest)"]

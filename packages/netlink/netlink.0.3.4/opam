@@ -6,9 +6,9 @@ description: """\
 The Netlink Protocol Library Suite (libnl, see
 http://www.infradead.org/~tgr/libnl/) provides APIs to the netlink
 protocol, allowing you to interact with network devices in the Linux kernel."""
-license: "LGPL-2.1-only WITH OCaml-LGPL-linking-exception"
 maintainer: "rob.hoes@citrix.com"
 authors: "rob.hoes@citrix.com"
+license: "LGPL-2.1-only WITH OCaml-LGPL-linking-exception"
 homepage: "https://github.com/xapi-project/ocaml-netlink"
 bug-reports: "https://github.com/xapi-project/ocaml-netlink/issues"
 depends: [

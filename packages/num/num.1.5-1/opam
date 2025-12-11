@@ -9,7 +9,7 @@ license: "LGPL-2.1-only WITH OCaml-LGPL-linking-exception"
 homepage: "https://github.com/ocaml/num/"
 bug-reports: "https://github.com/ocaml/num/issues"
 depends: [
-  "ocaml" {>= "4.06.0"}
+  "ocaml" {>= "4.06.0" & < "5.4"}
 ]
 conflicts: ["base-num"]
 build: [
@@ -36,3 +36,4 @@ extra-source "num-in-findlib-dir.patch" {
   checksum:
     "sha256=f93880031ed823249f4aac860e0d9e5cdc2878550db13914db25b1585803cf05"
 }
+x-maintenance-intent: ["(latest)"]

@@ -20,12 +20,14 @@ depends: [
 ]
 flags: conf
 build: [
-  "pkgconf" {os = "win32" & os-distribution = "cygwin"}
+  "pkgconf" {os = "win32" & os-distribution != "cygwinports"}
   "--personality=i686-w64-mingw32"
-    {os = "win32" & os-distribution = "cygwin" & host-arch-x86_32:installed}
+    {os = "win32" & os-distribution != "cygwinports" &
+     host-arch-x86_32:installed}
   "--personality=x86_64-w64-mingw32"
-    {os = "win32" & os-distribution = "cygwin" & host-arch-x86_64:installed}
-  "pkg-config" {os != "win32" | os-distribution != "cygwin"}
+    {os = "win32" & os-distribution != "cygwinports" &
+     host-arch-x86_64:installed}
+  "pkg-config" {os != "win32" | os-distribution = "cygwinports"}
   "libffi"
 ]
 depexts: [
@@ -35,7 +37,7 @@ depexts: [
   ["libffi-dev"] {os-family = "debian"}
   ["libffi-dev"] {os-family = "ubuntu"}
   ["libffi-devel"] {os-distribution = "centos"}
-  ["libffi-devel"] {os-distribution = "fedora"}
+  ["libffi-devel"] {os-family = "fedora"}
   ["libffi-devel"] {os-distribution = "mageia"}
   ["libffi-devel"] {os-distribution = "ol"}
   ["libffi-devel"] {os-family = "suse" | os-family = "opensuse"}

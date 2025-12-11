@@ -15,27 +15,13 @@ depends: [
   "base-unix" {post}
   "base-bigarray" {post}
   "base-threads" {post}
-  "host-arch-arm32" {arch = "arm32" & post}
-  "host-arch-arm64" {arch = "arm64" & post}
-  "host-arch-ppc64" {arch = "ppc64" & post}
-  "host-arch-riscv64" {arch = "riscv64" & post}
-  "host-arch-s390x" {arch = "s390x" & post}
-  "host-arch-x86_32" {os != "win32" & arch = "x86_32" & post}
-  "host-arch-x86_64" {os != "win32" & arch = "x86_64" & post}
-  "host-arch-unknown"
-    {os != "win32" & arch != "arm32" & arch != "arm64" & arch != "ppc64" &
-     arch != "riscv64" &
-     arch != "s390x" &
-     arch != "x86_32" &
-     arch != "x86_64" &
-     post}
   (("arch-x86_64" {os = "win32" & arch = "x86_64"} &
     (("system-mingw" & "mingw-w64-shims" {os-distribution = "cygwin" & post}) |
      "system-msvc")) |
    ("arch-x86_32" {os = "win32"} &
     (("system-mingw" & "mingw-w64-shims" {os-distribution = "cygwin" & post}) |
      "system-msvc")) |
-   "host-system-other" {os != "win32" & post})
+   "base-unix" {os != "win32" & post})
   "ocaml-options-vanilla" {post}
   "flexdll" {>= "0.36" & os = "win32"}
 ]

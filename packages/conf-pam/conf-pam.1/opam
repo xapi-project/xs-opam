@@ -13,7 +13,7 @@ build: ["cc" "-lpam" "main.c"]
 depexts: [
   ["libpam0g-dev"] {os-family = "debian" | os-family = "ubuntu"}
   ["pam-devel"] {os-distribution = "centos"}
-  ["pam-devel"] {os-distribution = "fedora"}
+  ["pam-devel"] {os-family = "fedora"}
   ["pam-devel"] {os-family = "suse" | os-family = "opensuse"}
   ["pam-devel"] {os-distribution = "ol"}
   ["pam"] {os-distribution = "arch"}
@@ -27,3 +27,4 @@ extra-source "main.c" {
     "md5=f4bf9f8ac17a811ede3f472e58653b8e"
   ]
 }
+x-maintenance-intent: ["(latest)"]
