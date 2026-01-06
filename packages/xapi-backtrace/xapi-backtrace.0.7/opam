@@ -7,8 +7,8 @@ This allows backtraces from multiple processes to be combined together
 and pretty-printed."""
 maintainer: "xen-api@lists.xen.org"
 authors: "xen-api@lists.xen.org"
-tags: "org:xapi-project"
 license: "LGPL-2.1-only WITH OCaml-LGPL-linking-exception"
+tags: "org:xapi-project"
 homepage: "https://github.com/xapi-project/backtrace"
 bug-reports: "https://github.com/xapi-project/backtrace/issues"
 depends: [

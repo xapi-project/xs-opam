@@ -1,11 +1,13 @@
 opam-version: "2.0"
+name: "qcow-stream"
+version: "0.12.2"
 synopsis: "Library offering QCOW streaming capabilities"
 maintainer: [
   "Dave Scott <dave@recoil.org>" "Pau Ruiz Safont" "Edwin Török "
 ]
-authors: ["David Scott"]
+authors: "David Scott"
 license: "ISC"
-tags: ["org:mirage"]
+tags: "org:mirage"
 homepage: "https://github.com/mirage/ocaml-qcow"
 bug-reports: "https://github.com/mirage/ocaml-qcow/issues"
 depends: [
@@ -17,20 +19,17 @@ depends: [
   "odoc" {with-doc}
 ]
 build: [
-  [
-    "dune"
-    "build"
-    "-p"
-    name
-    "-j"
-    jobs
-    "@install"
-    "@runtest" {with-test}
-    "@doc" {with-doc}
-  ]
+  "dune"
+  "build"
+  "-p"
+  name
+  "-j"
+  jobs
+  "@install"
+  "@runtest" {with-test}
+  "@doc" {with-doc}
 ]
 dev-repo: "git+https://github.com/mirage/ocaml-qcow.git"
-x-maintenance-intent: ["latest"]
 url {
   src:
     "https://github.com/mirage/ocaml-qcow/releases/download/0.12.2/qcow-0.12.2.tbz"
@@ -40,3 +39,4 @@ url {
   ]
 }
 x-commit-hash: "b7fc9dfd4b071b49eebbfdf7401551eb305bda01"
+x-maintenance-intent: ["(latest)"]

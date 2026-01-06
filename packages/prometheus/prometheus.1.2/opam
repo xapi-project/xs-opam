@@ -1,5 +1,15 @@
 opam-version: "2.0"
+name: "prometheus"
+version: "1.2"
 synopsis: "Client library for Prometheus monitoring"
+description: """\
+To run services reliably, it is useful if they can report various metrics
+(for example, heap size, queue lengths, number of warnings logged, etc).
+
+A monitoring service can be configured to collect this data regularly.
+The data can be graphed to help understand the performance of the service over time,
+or to help debug problems quickly.
+It can also be used to send alerts if a service is down or behaving poorly."""
 maintainer: "talex5@gmail.com"
 authors: ["Thomas Leonard" "David Scott"]
 license: "Apache-2.0"
@@ -19,15 +29,6 @@ build: [
   ["dune" "runtest" "-p" name "-j" jobs] {with-test}
 ]
 dev-repo: "git+https://github.com/mirage/prometheus.git"
-description: """
-To run services reliably, it is useful if they can report various metrics
-(for example, heap size, queue lengths, number of warnings logged, etc).
-
-A monitoring service can be configured to collect this data regularly.
-The data can be graphed to help understand the performance of the service over time,
-or to help debug problems quickly.
-It can also be used to send alerts if a service is down or behaving poorly.
-"""
 url {
   src:
     "https://github.com/mirage/prometheus/releases/download/v1.2/prometheus-1.2.tbz"

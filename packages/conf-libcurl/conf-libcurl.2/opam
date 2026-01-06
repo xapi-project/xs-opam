@@ -10,6 +10,7 @@ license: "curl"
 homepage: "http://curl.haxx.se/"
 bug-reports: "https://github.com/ocaml/opam-repository/issues"
 depends: [
+  "mingw-w64-shims" {os-distribution = "cygwin" & build}
   ("host-arch-x86_32" {os = "win32" & os-distribution != "cygwinports"} &
    "conf-mingw-w64-curl-i686"
      {os = "win32" & os-distribution != "cygwinports"} |
@@ -33,7 +34,7 @@ depexts: [
   ["curl"] {os = "win32" & os-distribution = "cygwinports"}
   ["curl-dev"] {os-distribution = "alpine"}
   ["libcurl-devel"] {os-family = "suse" | os-family = "opensuse"}
-  ["libcurl-devel"] {os-distribution = "fedora"}
+  ["libcurl-devel"] {os-family = "fedora"}
   ["libcurl-devel"] {os-distribution = "ol"}
   ["curl"] {os-distribution = "homebrew" & os = "macos"}
   ["curl"] {os-distribution = "macports" & os = "macos"}

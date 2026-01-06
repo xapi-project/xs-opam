@@ -1,4 +1,11 @@
 opam-version: "2.0"
+name: "diet"
+version: "0.4"
+synopsis: "Discrete Interval Encoding Trees"
+description: """\
+This data structure is based on the
+[Functional Pearls: Diets for Fat Sets](https://web.engr.oregonstate.edu/~erwig/papers/Diet_JFP98.pdf)
+by Martin Erwig."""
 maintainer: "dave@recoil.org"
 authors: "David Scott"
 license: "ISC"
@@ -17,11 +24,6 @@ build: [
   ["dune" "runtest" "-p" name "-j" jobs] {with-test}
 ]
 dev-repo: "git+https://github.com/mirage/ocaml-diet.git"
-synopsis: "Discrete Interval Encoding Trees"
-description: """
-This data structure is based on the
-[Functional Pearls: Diets for Fat Sets](https://web.engr.oregonstate.edu/~erwig/papers/Diet_JFP98.pdf)
-by Martin Erwig."""
 url {
   src:
     "https://github.com/mirage/ocaml-diet/releases/download/v0.4/diet-v0.4.tbz"

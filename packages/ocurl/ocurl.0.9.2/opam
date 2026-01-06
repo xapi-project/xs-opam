@@ -18,7 +18,10 @@ depends: [
   "conf-libcurl"
 ]
 depopts: ["lwt" "lwt_ppx"]
-conflicts: ["ocaml-option-bytecode-only"]
+conflicts: [
+  "ocaml-option-bytecode-only"
+  "lwt" {>= "6~"}
+]
 build: [
   ["./configure"]
   [make]

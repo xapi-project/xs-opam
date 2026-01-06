@@ -1,6 +1,8 @@
 opam-version: "2.0"
+name: "xenstore"
+version: "2.4.0"
 synopsis: "Xenstore protocol in pure OCam"
-description: """
+description: """\
 This repo contains:
 
   1. a xenstore client library, a merge of the Mirage and XCP ones
@@ -12,9 +14,8 @@ This repo contains:
   4. a xenstore server instance which runs on mirage.
 
 
-  The client and the server libraries have sets of unit-tests.
-"""
-maintainer: ["Hannes Mehnert <hannes@mehnert.org>"]
+  The client and the server libraries have sets of unit-tests."""
+maintainer: "Hannes Mehnert <hannes@mehnert.org>"
 authors: [
   "Vincent Hanquez"
   "Thomas Gazagnaire"
@@ -46,7 +47,6 @@ build: [
   ]
 ]
 dev-repo: "git+https://github.com/mirage/ocaml-xenstore.git"
-x-maintenance-intent: [ "(latest)" ]
 url {
   src:
     "https://github.com/mirage/ocaml-xenstore/releases/download/2.4.0/xenstore-2.4.0.tbz"
@@ -56,3 +56,4 @@ url {
   ]
 }
 x-commit-hash: "0dc6db269b6176160f945376bb91c342ba39f00d"
+x-maintenance-intent: ["(latest)"]

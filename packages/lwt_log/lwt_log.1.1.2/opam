@@ -13,7 +13,7 @@ doc:
 bug-reports: "https://github.com/ocsigen/lwt_log/issues"
 depends: [
   "dune" {>= "1.0"}
-  "lwt" {>= "4.0.0"}
+  "lwt" {>= "4.0.0" & < "6~"}
   "ocaml" {>= "4.03"}
 ]
 build: ["dune" "build" "-p" name "-j" jobs]
