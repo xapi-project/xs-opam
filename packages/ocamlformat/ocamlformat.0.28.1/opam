@@ -25,7 +25,7 @@ license: ["MIT" "LGPL-2.1-only WITH OCaml-LGPL-linking-exception"]
 homepage: "https://github.com/ocaml-ppx/ocamlformat"
 bug-reports: "https://github.com/ocaml-ppx/ocamlformat/issues"
 depends: [
-  "ocaml" {>= "5.0"}
+  "ocaml"
   "cmdliner" {with-test = "false" & >= "1.1.0" | with-test & >= "1.2.0"}
   "csexp" {>= "1.4.0"}
   "dune" {>= "2.8"}
