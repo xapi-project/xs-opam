@@ -21,7 +21,7 @@ most useful for development outside a build system for the complete
 XenServer distribution.
 
 ```bash
-opam repo add xs-opam https://github.com/xapi-project/xs-opam.git
+opam repo add xs-8.3 git+ssh://github.com/xapi-project/xs-opam#6.99-lcm
 ```
 
 ### Installing packages
