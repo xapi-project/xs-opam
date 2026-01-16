@@ -20,7 +20,7 @@ OPAMCOLOR=NEVER
 # make sure splits are done by newlines
 SAVEDIFS=$IFS
 IFS=$'\n'
-for package in $(opam list --required-by xs-toolstack --recursive --short | xargs opam info -f name:,license:,version: | paste -d ";" - - - | grep -ve 'version: "base"' -e 'version: "master"');
+for package in $(opam list --required-by xs-toolstack --recursive --short | xargs opam info -f name:,license:,version: | paste -d ";" - - - | grep -ve 'version: "base"' -e 'version: "26.1-lcm"' -e 'version: "1.3-lcm"');
 do
   IFS=$SAVEDIFS
   name=$(echo "$package" | cut -f 1 -d ";" | cut -f 2 -d ":" | tr -d '"')

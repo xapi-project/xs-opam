@@ -1,0 +1,31 @@
+opam-version: "2.0"
+name: "xapi-inventory"
+version: "1.2.3"
+synopsis: "Library for accessing the xapi toolstack inventory file"
+description: """\
+The inventory file provides global host identify information
+needed by multiple services."""
+maintainer: "xen-api@lists.xen.org"
+authors: "xen-api@lists.xen.org"
+license: "LGPL-2.1-only WITH OCaml-LGPL-linking-exception"
+tags: "org:xapi-project"
+homepage: "https://github.com/xapi-project/xcp-inventory"
+bug-reports: "https://github.com/xapi-project/xcp-inventory/issues"
+depends: [
+  "ocaml"
+  "dune" {>= "1.4.0"}
+  "base-threads"
+  "astring"
+  "xapi-stdext-unix"
+  "xapi-stdext-threads"
+  "cmdliner"
+  "uuidm"
+]
+build: [
+  ["dune" "build" "-p" name "-j" jobs]
+  ["dune" "runtest" "-p" name "-j" jobs] {with-test}
+]
+dev-repo: "git+http://github.com/xapi-project/xcp-inventory.git"
+url {
+  src: "https://github.com/xapi-project/xen-api/archive/26.1-lcm.tar.gz"
+}
