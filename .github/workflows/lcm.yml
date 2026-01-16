@@ -1,11 +1,14 @@
-name: Build and test
+name: Build and test (8.3)
 
 on:
   push:
+    branches:
+      - "6.99-lcm"
+    tags:
+      - "*"
   pull_request:
-  schedule:
-    # run daily, for initializing the cache if not generated yet.
-    - cron: '41 3 * * *'
+    branches:
+      - "6.99-lcm"
 
 jobs:
   build:
@@ -16,15 +19,7 @@ jobs:
         ocaml-version: ["4.14.2"]
         runs-on: ["ubuntu-22.04"]
         experimental: [false]
-        include:
-        - ocaml-version: "4.14.2"
-          runs-on: ["ubuntu-22.04-arm"]
-          experimental: true
-        - ocaml-version: "5.3.0"
-          runs-on: ["ubuntu-22.04"]
-          experimental: true
 
-    continue-on-error: ${{ matrix.experimental }}
     runs-on: ${{ matrix.runs-on }}
     env:
       OCAML_VERSION: ${{ matrix.ocaml-version }}
