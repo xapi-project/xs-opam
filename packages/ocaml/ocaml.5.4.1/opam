@@ -1,6 +1,6 @@
 opam-version: "2.0"
 name: "ocaml"
-version: "5.4.0"
+version: "5.4.1"
 synopsis: "The OCaml compiler (virtual package)"
 description: """\
 This package requires a matching implementation of OCaml,
@@ -20,10 +20,10 @@ homepage: "https://ocaml.org"
 bug-reports: "https://github.com/ocaml/opam-repository/issues"
 depends: [
   "ocaml-config" {>= "3"}
-  "ocaml-base-compiler" {>= "5.4.0~" & < "5.4.1~"} |
-  "ocaml-variants" {>= "5.4.0~" & < "5.4.1~"} |
-  "ocaml-system" {>= "5.4.0~" & < "5.4.1~"} |
-  "dkml-base-compiler" {>= "5.4.0~" & < "5.4.1~"}
+  "ocaml-base-compiler" {>= "5.4.1~" & < "5.4.2~"} |
+  "ocaml-variants" {>= "5.4.1~" & < "5.4.2~"} |
+  "ocaml-system" {>= "5.4.1~" & < "5.4.2~"} |
+  "dkml-base-compiler" {>= "5.4.1~" & < "5.4.2~"}
 ]
 flags: conf
 setenv: [
