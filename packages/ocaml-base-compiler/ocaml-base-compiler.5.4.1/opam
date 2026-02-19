@@ -1,7 +1,7 @@
 opam-version: "2.0"
 name: "ocaml-base-compiler"
-version: "5.4.0"
-synopsis: "Official release of OCaml 5.4.0"
+version: "5.4.1"
+synopsis: "Official release of OCaml 5.4.1"
 maintainer: [
   "David Allsopp <david@tarides.com>"
   "Florian Angeletti <florian.angeletti@inria.fr>"
@@ -11,9 +11,9 @@ license: "LGPL-2.1-or-later WITH OCaml-LGPL-linking-exception"
 homepage: "https://ocaml.org"
 bug-reports: "https://github.com/ocaml/opam-repository/issues"
 depends: [
-  "ocaml-compiler" {= "5.4.0"}
+  "ocaml-compiler" {= "5.4.1"}
   "ocaml-options-vanilla" {post}
 ]
 conflict-class: "ocaml-core-compiler"
 flags: compiler
-dev-repo: "git+https://github.com/ocaml/ocaml#5.4"
+dev-repo: "git+https://github.com/ocaml/ocaml#5.4.1"

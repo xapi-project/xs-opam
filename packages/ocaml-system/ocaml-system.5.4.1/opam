@@ -1,6 +1,6 @@
 opam-version: "2.0"
 name: "ocaml-system"
-version: "5.4.0"
+version: "5.4.1"
 synopsis: "The OCaml compiler (system version, from outside of opam)"
 maintainer: [
   "David Allsopp <david@tarides.com>"
@@ -11,7 +11,7 @@ license: "LGPL-2.1-or-later WITH OCaml-LGPL-linking-exception"
 homepage: "https://ocaml.org"
 bug-reports: "https://github.com/ocaml/opam-repository/issues"
 depends: [
-  "ocaml" {= "5.4.0" & post}
+  "ocaml" {= "5.4.1" & post}
   "base-unix" {post}
   "base-bigarray" {post}
   "base-threads" {post}
@@ -63,7 +63,7 @@ depends: [
 ]
 conflict-class: "ocaml-core-compiler"
 available:
-  sys-ocaml-version = "5.4.0" & (os != "win32" | sys-ocaml-libc = "msvc")
+  sys-ocaml-version = "5.4.1" & (os != "win32" | sys-ocaml-libc = "msvc")
 flags: [compiler avoid-version]
 build: ["ocaml" "gen_ocaml_config.ml"]
 substs: "gen_ocaml_config.ml"

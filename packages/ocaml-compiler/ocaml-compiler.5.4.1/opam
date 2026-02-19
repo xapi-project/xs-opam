@@ -1,7 +1,7 @@
 opam-version: "2.0"
 name: "ocaml-compiler"
-version: "5.4.0"
-synopsis: "Official release of OCaml 5.4.0"
+version: "5.4.1"
+synopsis: "Official release of OCaml 5.4.1"
 maintainer: [
   "David Allsopp <david@tarides.com>"
   "Florian Angeletti <florian.angeletti@inria.fr>"
@@ -19,7 +19,7 @@ license: "LGPL-2.1-or-later WITH OCaml-LGPL-linking-exception"
 homepage: "https://ocaml.org"
 bug-reports: "https://github.com/ocaml/opam-repository/issues"
 depends: [
-  "ocaml" {= "5.4.0" & post}
+  "ocaml" {= "5.4.1" & post}
   "base-unix" {post}
   "base-bigarray" {post}
   "base-threads" {post}
@@ -119,7 +119,7 @@ build-env: [
 dev-repo: "git+https://github.com/ocaml/ocaml.git#5.4"
 url {
   src:
-    "https://github.com/ocaml/ocaml/releases/download/5.4.0/ocaml-5.4.0.tar.gz"
+    "https://github.com/ocaml/ocaml/releases/download/5.4.1/ocaml-5.4.1.tar.gz"
   checksum:
     "sha256=6fcf1b192e389e54c4f5cb51306ab2baee2a54a25b1770366de5a8b42695996e"
 }
