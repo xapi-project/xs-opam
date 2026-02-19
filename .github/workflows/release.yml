@@ -3,7 +3,8 @@ name: Create release from tag
 on:
   push:
     tags:
-      - '6.*'
+      # matches 0.0.0 through 99.99.99, allowing for suffixes
+      - '[0-9][0-9]?.[0-9][0-9]?.[0-9][0-9]?*'
 
 jobs:
   release:
