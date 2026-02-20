@@ -60,6 +60,7 @@ xapi-tools                $XAPI/xen-api
 xapi-tracing              $XAPI/xen-api
 xapi-tracing-export       $XAPI/xen-api
 xapi-types                $XAPI/xen-api
+xapi-work-queues          $XAPI/xen-api
 xe                        $XAPI/xen-api
 xen-api-client            $XAPI/xen-api
 xen-api-client-lwt        $XAPI/xen-api
