@@ -12,3 +12,4 @@ ocaml-system
 opam-depext
 syslog-message
 trace
+xapi-backtrace
