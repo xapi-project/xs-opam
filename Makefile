@@ -20,7 +20,7 @@ $(NAME).tar.gz:
 		xs-toolstack host-system-other \
 		base-bigarray base-bytes base-domains base-effects base-nnp base-threads base-unix
 	# Remove all xapi dev packages
-	opam admin filter '*.master' --remove -y
+	opam admin filter --or '*.master' '*.*-lcm' --remove -y
 	# Remove compilable ocaml versions
 	opam admin filter --or 'ocaml-base-compiler' 'ocaml-compiler' --remove -y
 	# Remove xen-related packages, the libraries are built by the xen package
