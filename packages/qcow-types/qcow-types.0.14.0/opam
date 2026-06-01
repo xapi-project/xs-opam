@@ -1,6 +1,6 @@
 opam-version: "2.0"
 name: "qcow-types"
-version: "0.12.2"
+version: "0.14.0"
 synopsis: "Minimal set of dependencies for qcow-stream, shared with qcow"
 maintainer: [
   "Dave Scott <dave@recoil.org>" "Pau Ruiz Safont" "Edwin Török "
@@ -18,6 +18,7 @@ depends: [
   "diet" {>= "0.3.0"}
   "logs"
   "lwt"
+  "lwt_ppx" {>= "1.0.1"}
   "mirage-block" {>= "3.0.0"}
   "ppx_sexp_conv"
   "prometheus"
@@ -36,13 +37,13 @@ build: [
   "@doc" {with-doc}
 ]
 dev-repo: "git+https://github.com/mirage/ocaml-qcow.git"
+x-maintenance-intent: ["latest"]
 url {
   src:
-    "https://github.com/mirage/ocaml-qcow/releases/download/0.12.2/qcow-0.12.2.tbz"
+    "https://github.com/mirage/ocaml-qcow/releases/download/0.14.0/qcow-0.14.0.tbz"
   checksum: [
-    "sha256=bb12f9f37ad69b54af000e64add460034ea09102687aacb4f748488afe83c868"
-    "sha512=883fc7a1d98ee1c272408829050a0b56c785664bc16c0820440d638039e08e55c458813728c2f8c8ac49ceea582a79c3d93142664d5134f87e6bb6618a6b8f66"
+    "sha256=0c7845059853675ae99bf0d1463670f81af4e84131f9c871e0cc5e813fb53504"
+    "sha512=5bb14b6a1ca355f09fc800692ba97590c6d653823b4df951a11c3bfd83c574b41364e32b124738c219bbb5d11af3ea04d7b69afe9562f5112c2cb6b6834e77d1"
   ]
 }
-x-commit-hash: "b7fc9dfd4b071b49eebbfdf7401551eb305bda01"
-x-maintenance-intent: ["(latest)"]
+x-commit-hash: "1eacfe0af61f1743ea17aecf96901fdb70304b85"
