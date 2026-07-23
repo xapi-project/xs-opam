@@ -45,6 +45,7 @@ xapi-log                  $XAPI/xen-api
 xapi-nbd                  $XAPI/xen-api
 xapi-open-uri             $XAPI/xen-api
 xapi-plugin               $XAPI/ocaml-xapi-plugin
+xapi-rate-limit           $XAPI/xen-api
 xapi-sdk                  $XAPI/xen-api
 xapi-schema               $XAPI/xen-api
 xapi-stdext-encodings     $XAPI/xen-api
