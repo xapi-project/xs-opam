@@ -1,6 +1,6 @@
 opam-version: "2.0"
 name: "qcow-types"
-version: "0.14.0"
+version: "0.15.0"
 synopsis: "Minimal set of dependencies for qcow-stream, shared with qcow"
 maintainer: [
   "Dave Scott <dave@recoil.org>" "Pau Ruiz Safont" "Edwin Török "
@@ -26,24 +26,27 @@ depends: [
   "odoc" {with-doc}
 ]
 build: [
-  "dune"
-  "build"
-  "-p"
-  name
-  "-j"
-  jobs
-  "@install"
-  "@runtest" {with-test}
-  "@doc" {with-doc}
+  ["dune" "subst"] {dev}
+  [
+    "dune"
+    "build"
+    "-p"
+    name
+    "-j"
+    jobs
+    "@install"
+    "@runtest" {with-test}
+    "@doc" {with-doc}
+  ]
 ]
 dev-repo: "git+https://github.com/mirage/ocaml-qcow.git"
 x-maintenance-intent: ["latest"]
 url {
   src:
-    "https://github.com/mirage/ocaml-qcow/releases/download/0.14.0/qcow-0.14.0.tbz"
+    "https://github.com/mirage/ocaml-qcow/releases/download/0.15.0/qcow-0.15.0.tbz"
   checksum: [
-    "sha256=0c7845059853675ae99bf0d1463670f81af4e84131f9c871e0cc5e813fb53504"
-    "sha512=5bb14b6a1ca355f09fc800692ba97590c6d653823b4df951a11c3bfd83c574b41364e32b124738c219bbb5d11af3ea04d7b69afe9562f5112c2cb6b6834e77d1"
+    "sha256=da9c7d259e2d7067b7eccd3fecbed79bf339af7bac223766451a5f3d5303e32b"
+    "sha512=629bafa73a69b460a521eb7aa46a3ca5b0aa29445df49eaecdac3f2cfca78684ba7d5db1b20b0af731e3830561d77d844983ee51f0eff17c4fa8941023920e8f"
   ]
 }
-x-commit-hash: "1eacfe0af61f1743ea17aecf96901fdb70304b85"
+x-commit-hash: "90001d182f9acb618c7f8f3fb230e471c7ae7145"
