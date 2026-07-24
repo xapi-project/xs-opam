@@ -17,7 +17,7 @@ jobs:
     - name: Install opam
       uses: ocaml/setup-ocaml@v3
       with:
-        ocaml-compiler: "4.14.2"
+        ocaml-compiler: "4.14.4"
         opam-repositories: |
           xs-opam: "."
         opam-pin: false

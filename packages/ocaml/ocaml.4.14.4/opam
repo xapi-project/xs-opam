@@ -1,11 +1,11 @@
 opam-version: "2.0"
 name: "ocaml"
-version: "4.14.2"
+version: "4.14.4"
 synopsis: "The OCaml compiler (virtual package)"
 description: """\
 This package requires a matching implementation of OCaml,
 and polls it to initialise specific variables like `ocaml:native-dynlink`"""
-maintainer: "David Allsopp <david@tarides.com>"
+maintainer: "David Allsopp <dra27@dra27.uk>"
 authors: [
   "Xavier Leroy"
   "Damien Doligez"
@@ -19,10 +19,13 @@ homepage: "https://ocaml.org"
 bug-reports: "https://github.com/ocaml/opam-repository/issues"
 depends: [
   "ocaml-config" {>= "2"}
-  "ocaml-base-compiler" {>= "4.14.2~" & < "4.14.3~"} |
-  "ocaml-variants" {>= "4.14.2~" & < "4.14.3~"} |
-  "ocaml-system" {>= "4.14.2" & < "4.14.3~"} |
-  "dkml-base-compiler" {>= "4.14.2~" & < "4.14.3~"}
+  "ocaml-base-compiler" {>= "4.14.4~" & < "4.14.5~"} |
+  "ocaml-variants" {>= "4.14.4~" & < "4.14.5~"} |
+  "ocaml-system" {>= "4.14.4" & < "4.14.5~"} |
+  "dkml-base-compiler" {>= "4.14.4~" & < "4.14.5~"}
+  ("ocaml-env-mingw64" {os = "win32"} | "ocaml-env-mingw32" {os = "win32"} |
+   "ocaml-env-msvc64" {os = "win32"} |
+   "ocaml-env-msvc32" {os = "win32"})
 ]
 flags: conf
 setenv: [
@@ -39,3 +42,4 @@ x-env-path-rewrite: [
   [CAML_LD_LIBRARY_PATH (";" {os = "win32"} ":" {os != "win32"}) "target"]
   [OCAMLTOP_INCLUDE_PATH (";" {os = "win32"} ":" {os != "win32"}) "target"]
 ]
+x-revision: "2"
