@@ -50,12 +50,16 @@ jobs:
         uses: ocaml/setup-ocaml@v3
         with:
           ocaml-compiler: ${{ matrix.ocaml-version }}
+          cache: false
           opam-repositories: |
-            xs-opam: "."
+            xs-opam: "git+file://${{ github.workspace }}"
           opam-pin: false
           dune-cache: true
         env:
           DUNE_CACHE_STORAGE_MODE: copy
+
+      - name: Ensure opam uses the git checkout as a repository
+        run: opam repository set-url xs-opam "git+file://${GITHUB_WORKSPACE}" --all-switches
 
       - name: update opam metadata and packages (dune)
         run: opam update --upgrade
