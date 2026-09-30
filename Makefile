@@ -26,10 +26,12 @@ $(NAME).tar.gz:
 	# Remove xen-related packages, the libraries are built by the xen package
 	opam admin filter 'conf-xen' --remove -y
 	opam admin cache |& tee cache.log
+	# Keep track the current Changeset and commit date
+	git log --max-count=1 --format="Changeset: %H%nCommit date: %cD" >.gitarchive-info
 	! grep ERROR cache.log
-	tar zcf $@ --transform "flags=r;s|^|$(NAME)/|" cache packages tools repo
+	tar zcf $@ --transform "flags=r;s|^|$(NAME)/|" cache packages tools repo .gitarchive-info
 	# restore removed packages
-	git checkout -- packages
+	git checkout -- packages .gitarchive-info
 
 # report licenses of xs-toolstack from *installed* packages
 licenses:
