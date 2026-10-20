@@ -43,7 +43,7 @@ xapi-idl                  $XAPI/xen-api
 xapi-log                  $XAPI/xen-api
 xapi-nbd                  $XAPI/xen-api
 xapi-open-uri             $XAPI/xen-api
-xapi-plugin               $XAPI/ocaml-xapi-plugin
+xapi-plugin               $XAPI/ocaml-xapi-plugin     master
 xapi-rate-limit           $XAPI/xen-api
 xapi-sdk                  $XAPI/xen-api
 xapi-schema               $XAPI/xen-api
@@ -63,20 +63,22 @@ xapi-types                $XAPI/xen-api
 xe                        $XAPI/xen-api
 xen-api-client            $XAPI/xen-api
 xen-api-client-lwt        $XAPI/xen-api
-xenctrl                   $XAPI/xenctrl
-xenmmap                   $XAPI/xenctrl
+xenctrl                   $XAPI/xenctrl               1.3-lcm
+xenmmap                   $XAPI/xenctrl               1.3-lcm
 xml-light2                $XAPI/xen-api
 zstd                      $XAPI/xen-api"
 
-echo "$MAP" | while read -r name repo; do
-  opam_file="packages/$name/$name.master/opam"
+echo "$MAP" | while read -r name repo branch; do
+  # default branch is 26.1-lcm
+  [[ -z "$branch" ]] && branch="26.1-lcm"
+  opam_file="packages/$name/$name.$branch/opam"
   url_source="\
 url {
-  src: \"https://github.com/$repo/archive/master.tar.gz\"
+  src: \"https://github.com/$repo/archive/$branch.tar.gz\"
 }"
 
-  old="https://raw.githubusercontent.com/$repo/master/$name.opam"
-  new="https://raw.githubusercontent.com/$repo/master/opam/$name.opam"
+  old="https://raw.githubusercontent.com/$repo/$branch/$name.opam"
+  new="https://raw.githubusercontent.com/$repo/$branch/opam/$name.opam"
 
   echo synching $name ...
   curl -s -f -L "$new" > "$opam_file" || curl -s -S -L "$old" > "$opam_file"
