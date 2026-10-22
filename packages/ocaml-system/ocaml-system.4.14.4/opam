@@ -1,9 +1,9 @@
 opam-version: "2.0"
 name: "ocaml-system"
-version: "4.14.2"
+version: "4.14.4"
 synopsis: "The OCaml compiler (system version, from outside of opam)"
 maintainer: [
-  "David Allsopp <david@tarides.com>"
+  "David Allsopp <dra27@dra27.uk>"
   "Florian Angeletti <florian.angeletti@inria.fr>"
 ]
 authors: "Xavier Leroy and many contributors"
@@ -11,7 +11,7 @@ license: "LGPL-2.1-or-later WITH OCaml-LGPL-linking-exception"
 homepage: "https://ocaml.org"
 bug-reports: "https://github.com/ocaml/opam-repository/issues"
 depends: [
-  "ocaml" {= "4.14.2" & post}
+  "ocaml" {= "4.14.4" & post}
   "base-unix" {post}
   "base-threads" {post}
   "base-bigarray" {post}
@@ -40,9 +40,13 @@ depends: [
     {?sys-ocaml-arch & sys-ocaml-arch = "i686" & sys-ocaml-libc = "msvc" &
      sys-ocaml-cc = "cc" &
      post}
-  "mingw-w64-shims"
-    {?sys-ocaml-arch & sys-ocaml-libc = "msvc" & sys-ocaml-cc = "cc" &
-     os-distribution = "cygwin" &
+  "ocaml-env-mingw32"
+    {?sys-ocaml-arch & sys-ocaml-libc = "msvc" & sys-ocaml-arch = "i686" &
+     sys-ocaml-cc = "cc" &
+     post}
+  "ocaml-env-mingw64"
+    {?sys-ocaml-arch & sys-ocaml-libc = "msvc" & sys-ocaml-arch = "x86_64" &
+     sys-ocaml-cc = "cc" &
      post}
   "ocaml-env-msvc32"
     {?sys-ocaml-arch & sys-ocaml-arch = "i686" & sys-ocaml-cc = "msvc" & post}
@@ -52,16 +56,17 @@ depends: [
 ]
 conflict-class: "ocaml-core-compiler"
 available:
-  sys-ocaml-version = "4.14.2" & (os != "win32" | sys-ocaml-libc = "msvc")
+  sys-ocaml-version = "4.14.4" & (os != "win32" | sys-ocaml-libc = "msvc")
 flags: [compiler avoid-version]
 build: ["ocaml" "gen_ocaml_config.ml"]
 substs: "gen_ocaml_config.ml"
 dev-repo: "git+https://github.com/ocaml/ocaml"
 extra-source "gen_ocaml_config.ml.in" {
   src:
-    "https://raw.githubusercontent.com/ocaml/opam-source-archives/main/patches/ocaml-system/gen_ocaml_config.ml.in"
+    "https://raw.githubusercontent.com/ocaml/ocaml/bcb802e851a1391ac6fff957d63b0edbf849225a/tools/opam/gen_ocaml-system_config.ml.in"
   checksum: [
     "sha256=71bcd3d35e28cbf71eda81991c8741268f4b87ced71573b2e75f64f136cebfc1"
     "md5=093e7bec1ec95f9e4c6a313d73c5d840"
   ]
 }
+x-revision: "2"
