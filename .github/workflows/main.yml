@@ -56,7 +56,7 @@ jobs:
         with:
           ocaml-compiler: ${{ matrix.ocaml-version }}
           opam-repositories: |
-            xs-opam: "."
+            xs-opam: "git+file://${{ github.workspace }}"
           opam-pin: false
           dune-cache: true
         env:
