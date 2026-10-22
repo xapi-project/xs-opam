@@ -19,7 +19,7 @@ jobs:
       with:
         ocaml-compiler: "4.14.2"
         opam-repositories: |
-          xs-opam: "."
+          xs-opam: "git+file://${{ github.workspace }}"
         opam-pin: false
         dune-cache: true
         allow-prerelease-opam: true
